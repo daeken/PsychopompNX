@@ -8,13 +8,15 @@
 import SwiftUI
 
 struct ContentView: View {
+    let emu : Emulator
+    
     var body: some View {
         Text("Hello, world!!!!!!!!!!!!")
             .padding()
     }
     
     init() throws {
-        let _ = try Emulator()
+        emu = try Emulator()
     }
 }
 

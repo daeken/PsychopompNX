@@ -31,15 +31,16 @@ func hv_guard(_ ret: hv_return_t) throws {
 }
 
 class Vmm {
-    static var instance = Vmm(fake: true)
+    static var instance : Vmm? = nil
     
+    let vbar : uint64 = 0x100000
     let chunkSize : UInt64 = 0x1000000
     var physTop : UInt64 = 0x10000000
     var freeTables = [UInt64]()
     var physMappings = [UnsafeMutableRawPointer?](repeating: nil, count: 4096)
     var virtMappings = [[[UInt64?]?]?](repeating: nil, count: 512)
-    var pageTableBase = GuestPointer<UInt64>(0)
-    var pageTables = [(GuestPointer<UInt64>, [(GuestPointer<UInt64>, [UInt64?])?])?](repeating: nil, count: 512)
+    var pageTableBase = GuestPhysicalPointer<UInt64>(0)
+    var pageTables = [(GuestPhysicalPointer<UInt64>, [(GuestPhysicalPointer<UInt64>, [UInt64?])?])?](repeating: nil, count: 512)
     
     init() throws {
         Vmm.instance = self
@@ -48,10 +49,17 @@ class Vmm {
             throw VmmError.vmCreationFailed
         }
         
-        pageTableBase = GuestPointer<UInt64>(try allocTable())
+        pageTableBase = GuestPhysicalPointer<UInt64>(try allocTable())
+        
+        let (paddr, pmem) = try mapChunk()
+        try mapVirtualPage(physAddr: paddr, virtAddr: vbar)
+        let table = pmem.bindMemory(to: UInt32.self, capacity: 16 * 32)
+        for i in 0..<16 {
+            for j in 0..<32 {
+                table[i * 32 + j] = UInt32(0xd4200000 | (i << 5))
+            }
+        }
     }
-    
-    init(fake: Bool) {}
     
     deinit {
         try! hv_guard(hv_vm_destroy()) {
@@ -97,27 +105,27 @@ class Vmm {
         let l3Index = Int((virtAddr >> 12) & 0b1111_1111_1)
         
         if pageTables[l1Index] == nil {
-            let pta = GuestPointer<UInt64>(try allocTable())
-            pageTables[l1Index] = (pta, [(GuestPointer<UInt64>, [UInt64?])?](repeating: nil, count: 512))
+            let pta = GuestPhysicalPointer<UInt64>(try allocTable())
+            pageTables[l1Index] = (pta, [(GuestPhysicalPointer<UInt64>, [UInt64?])?](repeating: nil, count: 512))
             pageTableBase[l1Index] = pta.address | 0b11
         }
-        var (l2p, l2a) = pageTables[l1Index]!
+        let (l2p, l2a) = pageTables[l1Index]!
         
         if l2a[l2Index] == nil {
-            let pta = GuestPointer<UInt64>(try allocTable())
-            l2a[l2Index] = (pta, [UInt64?](repeating: nil, count: 512))
+            let pta = GuestPhysicalPointer<UInt64>(try allocTable())
+            pageTables[l1Index]!.1[l2Index] = (pta, [UInt64?](repeating: nil, count: 512))
             l2p[l2Index] = pta.address | 0b11
         }
-        var (l3p, l3a) = l2a[l2Index]!
+        let (l3p, l3a) = pageTables[l1Index]!.1[l2Index]!
         
         if l3a[l3Index] == nil {
-            l3a[l3Index] = physAddr
+            pageTables[l1Index]!.1[l2Index]!.1[l3Index] = physAddr
             l3p[l3Index] = (
                 physAddr |
                 0b11 | // valid page
                 (1 << 10) | // Access flag
                 (0b11 << 8) | // Inner sharable
-                (0b01 << 6) // RW/RW
+                (0b01 << 6) // RW/RW // 0b01 allows el0 only
             )
         }
     }
@@ -130,9 +138,9 @@ class Vmm {
         let l2Index = Int((virtAddr >> 21) & 0b1111_1111_1)
         let l3Index = Int((virtAddr >> 12) & 0b1111_1111_1)
         
-        guard let (_, l2a) = pageTables[l1Index] else { throw VmmError.unmappedVirtualMemory }
-        guard let (_, l3a) = l2a[l2Index] else { throw VmmError.unmappedVirtualMemory }
-        guard let phys = l3a[l3Index] else { throw VmmError.unmappedVirtualMemory }
+        guard let (_, l2a) = pageTables[l1Index] else { print("Failed l1"); throw VmmError.unmappedVirtualMemory }
+        guard let (_, l3a) = l2a[l2Index] else { print("Failed l2"); throw VmmError.unmappedVirtualMemory }
+        guard let phys = l3a[l3Index] else { print("Failed l3"); throw VmmError.unmappedVirtualMemory }
         return phys
     }
     

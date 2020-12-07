@@ -34,6 +34,7 @@ class Cpu {
         let exitInfo = eip!
         
         try hv_guard(hv_vcpu_set_trap_debug_exceptions(cpu, true))
+        try hv_guard(hv_vcpu_set_trap_debug_reg_accesses(cpu, true))
 
         var tcr : UInt64 = 0
         tcr |= 0b001 << 32 // 36-bit IPA space
@@ -53,24 +54,28 @@ class Cpu {
         let mair : UInt64 = 0x000000FF
         try hv_guard(hv_vcpu_set_sys_reg(cpu, HV_SYS_REG_MAIR_EL1, mair))
 
-        try hv_guard(hv_vcpu_set_sys_reg(cpu, HV_SYS_REG_TTBR0_EL1, Vmm.instance.pageTableBase.address))
-        try hv_guard(hv_vcpu_set_sys_reg(cpu, HV_SYS_REG_TTBR1_EL1, Vmm.instance.pageTableBase.address))
+        try hv_guard(hv_vcpu_set_sys_reg(cpu, HV_SYS_REG_TTBR0_EL1, Vmm.instance!.pageTableBase.address))
+        try hv_guard(hv_vcpu_set_sys_reg(cpu, HV_SYS_REG_TTBR1_EL1, Vmm.instance!.pageTableBase.address))
 
         var sctlr : UInt64 = 0
         try hv_guard(hv_vcpu_get_sys_reg(cpu, HV_SYS_REG_SCTLR_EL1, &sctlr))
         sctlr |= 1
         try hv_guard(hv_vcpu_set_sys_reg(cpu, HV_SYS_REG_SCTLR_EL1, sctlr))
 
-        //hv_vcpu_set_sys_reg(cpu, HV_SYS_REG_VBAR_EL1, 0x1000000)
+        try hv_guard(hv_vcpu_set_sys_reg(cpu, HV_SYS_REG_VBAR_EL1, Vmm.instance!.vbar))
         
         var curThread : NxThread? = nil
         
+        print("Waiting for thread")
         while !quitting {
             let nextThread = tm.nextThread(number)
             if nextThread == nil {
                 Thread.sleep(forTimeInterval: 0.01)
                 continue
             }
+            
+            print("Got thread!")
+            print(nextThread!)
             
             if curThread != nil && curThread !== nextThread {
                 let ct = curThread!
@@ -104,9 +109,25 @@ class Cpu {
             }
             curThread = nextThread
             
-            try hv_guard(hv_vcpu_run(cpu))
+            DispatchQueue.global(qos: .userInitiated).async {
+                print("Async thingy")
+                Thread.sleep(forTimeInterval: 2)
+                print("Async thingy slept")
+                try! hv_guard(hv_vcpus_exit(&cpu, 1))
+                print("Forced exit")
+            }
             
-            print(exitInfo)
+            print("Running")
+            try hv_guard(hv_vcpu_run(cpu))
+            print("Exited")
+            
+            var temp : uint64 = 0
+            try hv_guard(hv_vcpu_get_reg(cpu, HV_REG_PC, &temp))
+            print(temp)
+            try hv_guard(hv_vcpu_get_reg(cpu, HV_REG_X2, &temp))
+            print(temp)
+            print(try! *GuestPointer<uint64>(0xdead0010))
+
             break
         }
     }
