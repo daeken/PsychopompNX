@@ -50,3 +50,44 @@ func print_bin(_ values: Any...) {
     }
     print(args.joined(separator: " "))
 }
+
+func readNullTerminatedString(_ address: uint64) -> String {
+    var data = [UInt8]()
+    var i = 0
+    let gp = GuestPointer<UInt8>(address)
+    while true {
+        let v = gp[i]
+        i += 1
+        if v == 0 {
+            break
+        }
+        data.append(v)
+    }
+    return String(bytes: data, encoding: .utf8)!
+}
+
+func hexdump(_ data: [UInt8]) {
+    let printable = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789~!@#$%^&*()_+`-=[]{}\\|;':\",./<>?"
+    var buf = ""
+    for i in stride(from: 0, to: data.count, by: 16) {
+        buf += String(format: "%04x | ", i)
+        for j in 0..<16 {
+            buf += i + j < data.count ? String(format: "%02x ", data[i + j]) : "   "
+            if j == 7 {
+                buf += " "
+            }
+        }
+        buf += "| "
+        for j in 0..<16 {
+            if i + j >= data.count { break }
+            let c = Character(UnicodeScalar(data[i + j]))
+            buf += printable.contains(c) ? c.description : "."
+            if j == 7 {
+                buf += " "
+            }
+        }
+        buf += "\n"
+    }
+    buf += String(format: "%04x", data.count)
+    print(buf)
+}

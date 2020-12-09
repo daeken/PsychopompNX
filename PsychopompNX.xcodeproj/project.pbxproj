@@ -15,6 +15,10 @@
 		4C21AC3F257F4E250023284C /* NxoReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C21AC3E257F4E250023284C /* NxoReader.swift */; };
 		4C21AC42257F4EEC0023284C /* BinaryReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C21AC41257F4EEC0023284C /* BinaryReader.swift */; };
 		4C21AC45258070290023284C /* Kernel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C21AC44258070290023284C /* Kernel.swift */; };
+		4C21AC4A2580991C0023284C /* nn.sm.detail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C21AC492580991C0023284C /* nn.sm.detail.swift */; };
+		4C21AC4E25809DBA0023284C /* IpcManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C21AC4D25809DBA0023284C /* IpcManager.swift */; };
+		4C21AC512580A4070023284C /* ServiceMappings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C21AC502580A4070023284C /* ServiceMappings.swift */; };
+		4C21AC542580A7BF0023284C /* KObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C21AC532580A7BF0023284C /* KObject.swift */; };
 		4C8379922579AA64006FF416 /* PsychopompNXApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8379912579AA64006FF416 /* PsychopompNXApp.swift */; };
 		4C8379942579AA64006FF416 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8379932579AA64006FF416 /* ContentView.swift */; };
 		4C8379962579AA66006FF416 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C8379952579AA66006FF416 /* Assets.xcassets */; };
@@ -32,6 +36,10 @@
 		4C21AC3E257F4E250023284C /* NxoReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NxoReader.swift; sourceTree = "<group>"; };
 		4C21AC41257F4EEC0023284C /* BinaryReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinaryReader.swift; sourceTree = "<group>"; };
 		4C21AC44258070290023284C /* Kernel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kernel.swift; sourceTree = "<group>"; };
+		4C21AC492580991C0023284C /* nn.sm.detail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = nn.sm.detail.swift; sourceTree = "<group>"; };
+		4C21AC4D25809DBA0023284C /* IpcManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IpcManager.swift; sourceTree = "<group>"; };
+		4C21AC502580A4070023284C /* ServiceMappings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceMappings.swift; sourceTree = "<group>"; };
+		4C21AC532580A7BF0023284C /* KObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KObject.swift; sourceTree = "<group>"; };
 		4C83798E2579AA64006FF416 /* PsychopompNX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PsychopompNX.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C8379912579AA64006FF416 /* PsychopompNXApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PsychopompNXApp.swift; sourceTree = "<group>"; };
 		4C8379932579AA64006FF416 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -54,6 +62,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4C21AC47258094AD0023284C /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				4C21AC48258098B90023284C /* Generated */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		4C21AC48258098B90023284C /* Generated */ = {
+			isa = PBXGroup;
+			children = (
+				4C21AC492580991C0023284C /* nn.sm.detail.swift */,
+				4C21AC502580A4070023284C /* ServiceMappings.swift */,
+			);
+			path = Generated;
+			sourceTree = "<group>";
+		};
 		4C8379852579AA64006FF416 = {
 			isa = PBXGroup;
 			children = (
@@ -73,6 +98,7 @@
 		4C8379902579AA64006FF416 /* PsychopompNX */ = {
 			isa = PBXGroup;
 			children = (
+				4C21AC47258094AD0023284C /* Services */,
 				4C8379912579AA64006FF416 /* PsychopompNXApp.swift */,
 				4C8379932579AA64006FF416 /* ContentView.swift */,
 				4C8379952579AA66006FF416 /* Assets.xcassets */,
@@ -89,6 +115,8 @@
 				4C21AC3E257F4E250023284C /* NxoReader.swift */,
 				4C21AC41257F4EEC0023284C /* BinaryReader.swift */,
 				4C21AC44258070290023284C /* Kernel.swift */,
+				4C21AC4D25809DBA0023284C /* IpcManager.swift */,
+				4C21AC532580A7BF0023284C /* KObject.swift */,
 			);
 			path = PsychopompNX;
 			sourceTree = "<group>";
@@ -176,12 +204,16 @@
 				4C8379BC2579EC8D006FF416 /* Cpu.swift in Sources */,
 				4C21AC42257F4EEC0023284C /* BinaryReader.swift in Sources */,
 				4C8379942579AA64006FF416 /* ContentView.swift in Sources */,
+				4C21AC512580A4070023284C /* ServiceMappings.swift in Sources */,
 				4C8379922579AA64006FF416 /* PsychopompNXApp.swift in Sources */,
 				4C21AC36257C4FD80023284C /* TaskManager.swift in Sources */,
 				4C21AC3F257F4E250023284C /* NxoReader.swift in Sources */,
+				4C21AC542580A7BF0023284C /* KObject.swift in Sources */,
 				4C21AC3C257F35230023284C /* Utilities.swift in Sources */,
+				4C21AC4E25809DBA0023284C /* IpcManager.swift in Sources */,
 				4C21AC39257C9A0B0023284C /* PfsReader.swift in Sources */,
 				4C8379B92579E9DA006FF416 /* Vmm.swift in Sources */,
+				4C21AC4A2580991C0023284C /* nn.sm.detail.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

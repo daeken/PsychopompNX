@@ -88,7 +88,7 @@ class Vmm {
             throw VmmError.vmMappingFailed
         }
         for i in 0..<count {
-            physMappings[Int(addr >> 24) + i] = pmem
+            physMappings[Int(addr >> 24) + i] = pmem + UnsafeMutableRawPointer.Stride(chunkSize * UInt64(i))
         }
         return (addr, pmem)
     }

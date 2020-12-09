@@ -7,6 +7,10 @@
 
 import Foundation
 
+enum KernelError: Error {
+    case unknownNamedPort
+}
+
 enum SvcCodes: Int {
     case SetHeapSize = 0x01
     case SetMemoryPermission = 0x02
@@ -129,8 +133,20 @@ enum SvcCodes: Int {
 }
 
 class Kernel {
+    var handleIter : UInt32 = 0
+    var handles = [UInt32 : KObject]()
+    let ipcManager = IpcManager()
+    
+    func add(_ object: KObject) -> UInt32 {
+        let handle = handleIter
+        handleIter += 1
+        handles[handle] = object
+        return handle
+    }
+    
     func svc(_ thread: NxThread, _ svc: Int) throws {
         let code = SvcCodes(rawValue: svc)
+        print(code!)
         switch code {
         case .QueryMemory:
             print_hex("QueryMemory", thread.X[2])
@@ -204,6 +220,18 @@ class Kernel {
         case .SignalProcessWideKey:
             print("SignalProcessWideKey")
             thread.X[0] = 0
+        
+        case .ConnectToNamedPort:
+            let name = readNullTerminatedString(thread.X[1])
+            print("ConnectToNamedPort: '" + name + "'")
+            guard let op = ipcManager.serviceMappings[name]?._construct() else { throw KernelError.unknownNamedPort }
+            thread.X[0] = 0
+            thread.X[1] = UInt64(op.handle)
+            
+        case .SendSyncRequest:
+            let buf = GuestPointer<UInt8>(thread.TPIDRRO)
+            hexdump(buf[0..<0x100])
+            try! bailout()
         
         default:
             print_hex("Unhandled SVC:", code!)

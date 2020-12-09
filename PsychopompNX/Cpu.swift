@@ -180,7 +180,7 @@ class Cpu {
                     try! bailout()
                 case .ServiceCall:
                     let svc = esr & 0xFFFF
-                    print_hex("Service call:", svc)
+                    //print_hex("Service call:", svc)
                     try saveState(curThread!)
                     curThread!.CPSR = try get_sys_reg(HV_SYS_REG_SPSR_EL1)
                     try Emulator.instance!.kernel.svc(curThread!, Int(svc))

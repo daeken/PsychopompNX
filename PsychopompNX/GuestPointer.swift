@@ -26,6 +26,12 @@ class GuestPointer<T> {
         }
     }
     
+    subscript(range: Range<Int>) -> [T] {
+        get {
+            range.map { self[$0] }
+        }
+    }
+    
     func to<T2>() -> GuestPointer<T2> {
         GuestPointer<T2>(address)
     }
@@ -64,6 +70,12 @@ class GuestPhysicalPointer<T> {
         }
         set {
             try! Vmm.instance!.writePhysMem(address + UInt64(index * MemoryLayout<T>.size), newValue)
+        }
+    }
+    
+    subscript(range: Range<Int>) -> [T] {
+        get {
+            range.map { self[$0] }
         }
     }
     
