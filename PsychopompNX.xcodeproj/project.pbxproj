@@ -11,6 +11,9 @@
 		4C21AC33257BEB040023284C /* Emulator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C21AC32257BEB040023284C /* Emulator.swift */; };
 		4C21AC36257C4FD80023284C /* TaskManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C21AC35257C4FD80023284C /* TaskManager.swift */; };
 		4C21AC39257C9A0B0023284C /* PfsReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C21AC38257C9A0B0023284C /* PfsReader.swift */; };
+		4C21AC3C257F35230023284C /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C21AC3B257F35230023284C /* Utilities.swift */; };
+		4C21AC3F257F4E250023284C /* NxoReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C21AC3E257F4E250023284C /* NxoReader.swift */; };
+		4C21AC42257F4EEC0023284C /* BinaryReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C21AC41257F4EEC0023284C /* BinaryReader.swift */; };
 		4C8379922579AA64006FF416 /* PsychopompNXApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8379912579AA64006FF416 /* PsychopompNXApp.swift */; };
 		4C8379942579AA64006FF416 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8379932579AA64006FF416 /* ContentView.swift */; };
 		4C8379962579AA66006FF416 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C8379952579AA66006FF416 /* Assets.xcassets */; };
@@ -24,6 +27,9 @@
 		4C21AC32257BEB040023284C /* Emulator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Emulator.swift; sourceTree = "<group>"; };
 		4C21AC35257C4FD80023284C /* TaskManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskManager.swift; sourceTree = "<group>"; };
 		4C21AC38257C9A0B0023284C /* PfsReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PfsReader.swift; sourceTree = "<group>"; };
+		4C21AC3B257F35230023284C /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		4C21AC3E257F4E250023284C /* NxoReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NxoReader.swift; sourceTree = "<group>"; };
+		4C21AC41257F4EEC0023284C /* BinaryReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinaryReader.swift; sourceTree = "<group>"; };
 		4C83798E2579AA64006FF416 /* PsychopompNX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PsychopompNX.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C8379912579AA64006FF416 /* PsychopompNXApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PsychopompNXApp.swift; sourceTree = "<group>"; };
 		4C8379932579AA64006FF416 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -77,6 +83,9 @@
 				4C21AC32257BEB040023284C /* Emulator.swift */,
 				4C21AC35257C4FD80023284C /* TaskManager.swift */,
 				4C21AC38257C9A0B0023284C /* PfsReader.swift */,
+				4C21AC3B257F35230023284C /* Utilities.swift */,
+				4C21AC3E257F4E250023284C /* NxoReader.swift */,
+				4C21AC41257F4EEC0023284C /* BinaryReader.swift */,
 			);
 			path = PsychopompNX;
 			sourceTree = "<group>";
@@ -161,9 +170,12 @@
 				4C21AC33257BEB040023284C /* Emulator.swift in Sources */,
 				4C21AC2C257ABA8A0023284C /* GuestPointer.swift in Sources */,
 				4C8379BC2579EC8D006FF416 /* Cpu.swift in Sources */,
+				4C21AC42257F4EEC0023284C /* BinaryReader.swift in Sources */,
 				4C8379942579AA64006FF416 /* ContentView.swift in Sources */,
 				4C8379922579AA64006FF416 /* PsychopompNXApp.swift in Sources */,
 				4C21AC36257C4FD80023284C /* TaskManager.swift in Sources */,
+				4C21AC3F257F4E250023284C /* NxoReader.swift in Sources */,
+				4C21AC3C257F35230023284C /* Utilities.swift in Sources */,
 				4C21AC39257C9A0B0023284C /* PfsReader.swift in Sources */,
 				4C8379B92579E9DA006FF416 /* Vmm.swift in Sources */,
 			);

@@ -10,6 +10,13 @@ import Hypervisor
 
 enum CpuError: Error {
     case cpuCreationFailed
+    case cpuInvalidDataAbort
+}
+
+enum ExceptionCode: UInt64 {
+    case InsnAbort        = 0b100000
+    case DataAbort        = 0b100100
+    case PcAlignmentFault = 0b100010
 }
 
 class Cpu {
@@ -25,6 +32,24 @@ class Cpu {
     }
     
     @objc func loop() throws {
+        func get_reg(_ reg: hv_reg_t) throws -> uint64 {
+            var val : uint64 = 0
+            try hv_guard(hv_vcpu_get_reg(cpu, reg, &val))
+            return val
+        }
+        func set_reg(_ reg: hv_reg_t, _ val: uint64) throws {
+            try hv_guard(hv_vcpu_set_reg(cpu, reg, val))
+        }
+        
+        func get_sys_reg(_ reg: hv_sys_reg_t) throws -> uint64 {
+            var val : uint64 = 0
+            try hv_guard(hv_vcpu_get_sys_reg(cpu, reg, &val))
+            return val
+        }
+        func set_sys_reg(_ reg: hv_sys_reg_t, _ val: uint64) throws {
+            try hv_guard(hv_vcpu_set_sys_reg(cpu, reg, val))
+        }
+        
         var cpu = hv_vcpu_t(0)
         var eip : UnsafeMutablePointer<hv_vcpu_exit_t>? = nil
         try hv_guard(hv_vcpu_create(&cpu, &eip, nil)) {
@@ -119,14 +144,38 @@ class Cpu {
             
             print("Running")
             try hv_guard(hv_vcpu_run(cpu))
-            print("Exited")
+            print_hex("Exited from", try get_reg(HV_REG_LR))
+            print_hex("Exited at", try get_reg(HV_REG_PC))
             
-            var temp : uint64 = 0
-            try hv_guard(hv_vcpu_get_reg(cpu, HV_REG_PC, &temp))
-            print(temp)
-            try hv_guard(hv_vcpu_get_reg(cpu, HV_REG_X2, &temp))
-            print(temp)
-            print(try! *GuestPointer<uint64>(0xdead0010))
+            switch exitInfo.pointee.reason {
+            case HV_EXIT_REASON_EXCEPTION:
+                print("Exception!")
+                let esr = try get_sys_reg(HV_SYS_REG_ESR_EL1)
+                let far = try get_sys_reg(HV_SYS_REG_FAR_EL1)
+                let ec = esr >> 26
+                let ece = ExceptionCode(rawValue: ec)
+                switch ece {
+                case .DataAbort:
+                    let isv = ((esr >> 24) & 1) == 1
+                    if isv {
+                        let bits = 8 << ((esr >> 22) & 3)
+                        let write = ((esr >> 6) & 1) == 1
+                        print_hex("Data abort", write ? "writing to" : "reading from", far, "(bits: ", bits, ")")
+                    } else {
+                        print_hex("Data abort accessing", far)
+                    }
+                case .InsnAbort:
+                    print_hex("Instruction abort accessing", far)
+                default:
+                    print_bin("Unknown exception code:", ec)
+                    if ece != nil {
+                        print(ece!)
+                    }
+                    print_hex("ESR:", esr)
+                }
+            default:
+                print("Other exit reason")
+            }
 
             break
         }
