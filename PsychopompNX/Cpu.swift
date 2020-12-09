@@ -14,6 +14,7 @@ enum CpuError: Error {
 }
 
 enum ExceptionCode: UInt64 {
+    case ServiceCall      = 0b010101
     case InsnAbort        = 0b100000
     case DataAbort        = 0b100100
     case PcAlignmentFault = 0b100010
@@ -89,6 +90,42 @@ class Cpu {
 
         try hv_guard(hv_vcpu_set_sys_reg(cpu, HV_SYS_REG_VBAR_EL1, Vmm.instance!.vbar))
         
+        // Enable FP
+        let cpacr : UInt64 = 3 << 20
+        try hv_guard(hv_vcpu_set_sys_reg(cpu, HV_SYS_REG_CPACR_EL1, cpacr))
+        
+        func saveState(_ thread: NxThread) throws {
+            for i in 0..<31 {
+                try hv_guard(hv_vcpu_get_reg(cpu, hv_reg_t(HV_REG_X0.rawValue + uint32(i)), &thread.X[i]))
+            }
+            for i in 0..<32 {
+                try hv_guard(hv_vcpu_get_simd_fp_reg(cpu, hv_simd_fp_reg_t(HV_SIMD_FP_REG_Q0.rawValue + uint32(i)), &thread.V[i]))
+            }
+            try hv_guard(hv_vcpu_get_reg(cpu, HV_REG_PC, &thread.PC))
+            try hv_guard(hv_vcpu_get_reg(cpu, HV_REG_FPCR, &thread.FPCR))
+            try hv_guard(hv_vcpu_get_reg(cpu, HV_REG_FPSR, &thread.FPSR))
+            try hv_guard(hv_vcpu_get_reg(cpu, HV_REG_CPSR, &thread.CPSR))
+            try hv_guard(hv_vcpu_get_sys_reg(cpu, HV_SYS_REG_SP_EL0, &thread.SP))
+            try hv_guard(hv_vcpu_get_sys_reg(cpu, HV_SYS_REG_TPIDR_EL0, &thread.TPIDR))
+            try hv_guard(hv_vcpu_get_sys_reg(cpu, HV_SYS_REG_TPIDRRO_EL0, &thread.TPIDRRO))
+        }
+        
+        func restoreState(_ thread: NxThread) throws {
+            for i in 0..<31 {
+                try hv_guard(hv_vcpu_set_reg(cpu, hv_reg_t(HV_REG_X0.rawValue + uint32(i)), thread.X[i]))
+            }
+            for i in 0..<32 {
+                try hv_guard(hv_vcpu_set_simd_fp_reg(cpu, hv_simd_fp_reg_t(HV_SIMD_FP_REG_Q0.rawValue + uint32(i)), thread.V[i]))
+            }
+            try hv_guard(hv_vcpu_set_reg(cpu, HV_REG_PC, thread.PC))
+            try hv_guard(hv_vcpu_set_reg(cpu, HV_REG_FPCR, thread.FPCR))
+            try hv_guard(hv_vcpu_set_reg(cpu, HV_REG_FPSR, thread.FPSR))
+            try hv_guard(hv_vcpu_set_reg(cpu, HV_REG_CPSR, thread.CPSR))
+            try hv_guard(hv_vcpu_set_sys_reg(cpu, HV_SYS_REG_SP_EL0, thread.SP))
+            try hv_guard(hv_vcpu_set_sys_reg(cpu, HV_SYS_REG_TPIDR_EL0, thread.TPIDR))
+            try hv_guard(hv_vcpu_set_sys_reg(cpu, HV_SYS_REG_TPIDRRO_EL0, thread.TPIDRRO))
+        }
+        
         var curThread : NxThread? = nil
         
         print("Waiting for thread")
@@ -99,57 +136,30 @@ class Cpu {
                 continue
             }
             
-            print("Got thread!")
-            print(nextThread!)
-            
             if curThread != nil && curThread !== nextThread {
-                let ct = curThread!
-                for i in 0..<31 {
-                    try hv_guard(hv_vcpu_get_reg(cpu, hv_reg_t(HV_REG_X0.rawValue + uint32(i)), &ct.X[i]))
-                }
-                for i in 0..<32 {
-                    try hv_guard(hv_vcpu_get_simd_fp_reg(cpu, hv_simd_fp_reg_t(HV_SIMD_FP_REG_Q0.rawValue + uint32(i)), &ct.V[i]))
-                }
-                try hv_guard(hv_vcpu_get_reg(cpu, HV_REG_PC, &ct.PC))
-                try hv_guard(hv_vcpu_get_reg(cpu, HV_REG_FPCR, &ct.FPCR))
-                try hv_guard(hv_vcpu_get_reg(cpu, HV_REG_FPSR, &ct.FPSR))
-                try hv_guard(hv_vcpu_get_reg(cpu, HV_REG_CPSR, &ct.CPSR))
-                try hv_guard(hv_vcpu_get_sys_reg(cpu, HV_SYS_REG_SP_EL1, &ct.SP))
-                try hv_guard(hv_vcpu_get_sys_reg(cpu, HV_SYS_REG_TPIDR_EL1, &ct.TPIDR))
+                try saveState(curThread!)
             }
             if curThread !== nextThread {
-                let nt = nextThread!
-                for i in 0..<31 {
-                    try hv_guard(hv_vcpu_set_reg(cpu, hv_reg_t(HV_REG_X0.rawValue + uint32(i)), nt.X[i]))
-                }
-                for i in 0..<32 {
-                    try hv_guard(hv_vcpu_set_simd_fp_reg(cpu, hv_simd_fp_reg_t(HV_SIMD_FP_REG_Q0.rawValue + uint32(i)), nt.V[i]))
-                }
-                try hv_guard(hv_vcpu_set_reg(cpu, HV_REG_PC, nt.PC))
-                try hv_guard(hv_vcpu_set_reg(cpu, HV_REG_FPCR, nt.FPCR))
-                try hv_guard(hv_vcpu_set_reg(cpu, HV_REG_FPSR, nt.FPSR))
-                try hv_guard(hv_vcpu_set_reg(cpu, HV_REG_CPSR, nt.CPSR))
-                try hv_guard(hv_vcpu_set_sys_reg(cpu, HV_SYS_REG_SP_EL1, nt.SP))
-                try hv_guard(hv_vcpu_set_sys_reg(cpu, HV_SYS_REG_TPIDR_EL1, nt.TPIDR))
+                try restoreState(nextThread!)
             }
             curThread = nextThread
             
-            DispatchQueue.global(qos: .userInitiated).async {
+            /*DispatchQueue.global(qos: .userInitiated).async {
                 print("Async thingy")
                 Thread.sleep(forTimeInterval: 2)
                 print("Async thingy slept")
                 try! hv_guard(hv_vcpus_exit(&cpu, 1))
                 print("Forced exit")
-            }
+            }*/
             
-            print("Running")
             try hv_guard(hv_vcpu_run(cpu))
-            print_hex("Exited from", try get_reg(HV_REG_LR))
+            let elr = try get_sys_reg(HV_SYS_REG_ELR_EL1)
+            print_hex("Exited from", elr)
             print_hex("Exited at", try get_reg(HV_REG_PC))
-            
+            print_hex("LR", try get_reg(HV_REG_LR))
+
             switch exitInfo.pointee.reason {
             case HV_EXIT_REASON_EXCEPTION:
-                print("Exception!")
                 let esr = try get_sys_reg(HV_SYS_REG_ESR_EL1)
                 let far = try get_sys_reg(HV_SYS_REG_FAR_EL1)
                 let ec = esr >> 26
@@ -164,20 +174,29 @@ class Cpu {
                     } else {
                         print_hex("Data abort accessing", far)
                     }
+                    try! bailout()
                 case .InsnAbort:
                     print_hex("Instruction abort accessing", far)
+                    try! bailout()
+                case .ServiceCall:
+                    let svc = esr & 0xFFFF
+                    print_hex("Service call:", svc)
+                    try saveState(curThread!)
+                    curThread!.CPSR = try get_sys_reg(HV_SYS_REG_SPSR_EL1)
+                    try Emulator.instance!.kernel.svc(curThread!, Int(svc))
+                    curThread!.PC = elr
+                    try restoreState(curThread!)
                 default:
                     print_bin("Unknown exception code:", ec)
                     if ece != nil {
                         print(ece!)
                     }
                     print_hex("ESR:", esr)
+                    try! bailout()
                 }
             default:
                 print("Other exit reason")
             }
-
-            break
         }
     }
 }

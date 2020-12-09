@@ -7,6 +7,14 @@
 
 import Foundation
 
+enum BailoutError: Error {
+    case bailout
+}
+
+func bailout() throws {
+    throw BailoutError.bailout
+}
+
 func print_hex(_ values: Any...) {
     var args = [String]()
     for value in values {

@@ -8,6 +8,8 @@
 import Foundation
 
 class NxThread {
+    static var idIter : uint64 = 0
+    
     var X = [uint64](repeating: 0, count: 31)
     var V = [SIMD16<UInt8>](repeating: SIMD16<UInt8>(), count: 32)
     var SP : uint64 = 0
@@ -15,10 +17,20 @@ class NxThread {
     var FPCR : uint64 = 0
     var FPSR : uint64 = 0
     var CPSR : uint64 = 0
-    var TPIDR : uint64 = 0 // TLS Base
+    var TPIDR : uint64 // TLS Base
+    var TPIDRRO : uint64 // TLS Base (initial?)
     
     var affinityMask : uint64 = 0
     var priority = 0
+    var id : uint64
+    
+    init() {
+        id = NxThread.idIter
+        NxThread.idIter += 1
+
+        TPIDR = Emulator.instance!.tlsSpace + id * 0x10000
+        TPIDRRO = TPIDR
+    }
 }
 
 class TaskManager {
