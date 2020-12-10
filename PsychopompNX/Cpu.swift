@@ -14,55 +14,57 @@ enum CpuError: Error {
 }
 
 enum ExceptionCode: UInt64 {
-    case ServiceCall      = 0b010101
-    case InsnAbort        = 0b100000
-    case DataAbort        = 0b100100
+    case ServiceCall = 0b010101
+    case InsnAbort = 0b100000
+    case DataAbort = 0b100100
     case PcAlignmentFault = 0b100010
 }
 
 class Cpu {
-    let tm : TaskManager
-    let number : Int
+    let tm: TaskManager
+    let number: Int
     var quitting = false
-    
-    init(_ number : Int, _ tm : TaskManager) {
+
+    init(_ number: Int, _ tm: TaskManager) {
         self.number = number
         self.tm = tm
         let thread = Thread(target: self, selector: #selector(loop), object: nil)
         thread.start()
     }
-    
+
     @objc func loop() throws {
         func get_reg(_ reg: hv_reg_t) throws -> uint64 {
-            var val : uint64 = 0
+            var val: uint64 = 0
             try hv_guard(hv_vcpu_get_reg(cpu, reg, &val))
             return val
         }
+
         func set_reg(_ reg: hv_reg_t, _ val: uint64) throws {
             try hv_guard(hv_vcpu_set_reg(cpu, reg, val))
         }
-        
+
         func get_sys_reg(_ reg: hv_sys_reg_t) throws -> uint64 {
-            var val : uint64 = 0
+            var val: uint64 = 0
             try hv_guard(hv_vcpu_get_sys_reg(cpu, reg, &val))
             return val
         }
+
         func set_sys_reg(_ reg: hv_sys_reg_t, _ val: uint64) throws {
             try hv_guard(hv_vcpu_set_sys_reg(cpu, reg, val))
         }
-        
+
         var cpu = hv_vcpu_t(0)
-        var eip : UnsafeMutablePointer<hv_vcpu_exit_t>? = nil
+        var eip: UnsafeMutablePointer<hv_vcpu_exit_t>? = nil
         try hv_guard(hv_vcpu_create(&cpu, &eip, nil)) {
             throw CpuError.cpuCreationFailed
         }
-        
+
         let exitInfo = eip!
-        
+
         try hv_guard(hv_vcpu_set_trap_debug_exceptions(cpu, true))
         try hv_guard(hv_vcpu_set_trap_debug_reg_accesses(cpu, true))
 
-        var tcr : UInt64 = 0
+        var tcr: UInt64 = 0
         tcr |= 0b001 << 32 // 36-bit IPA space
         tcr |= 0b10 << 30  // Granule size for TTBR1_EL1: 4k
         tcr |= 0b11 << 28  // Inner sharable
@@ -77,23 +79,23 @@ class Cpu {
 
         try hv_guard(hv_vcpu_set_sys_reg(cpu, HV_SYS_REG_TCR_EL1, tcr))
 
-        let mair : UInt64 = 0x000000FF
+        let mair: UInt64 = 0x000000FF
         try hv_guard(hv_vcpu_set_sys_reg(cpu, HV_SYS_REG_MAIR_EL1, mair))
 
         try hv_guard(hv_vcpu_set_sys_reg(cpu, HV_SYS_REG_TTBR0_EL1, Vmm.instance!.pageTableBase.address))
         try hv_guard(hv_vcpu_set_sys_reg(cpu, HV_SYS_REG_TTBR1_EL1, Vmm.instance!.pageTableBase.address))
 
-        var sctlr : UInt64 = 0
+        var sctlr: UInt64 = 0
         try hv_guard(hv_vcpu_get_sys_reg(cpu, HV_SYS_REG_SCTLR_EL1, &sctlr))
         sctlr |= 1
         try hv_guard(hv_vcpu_set_sys_reg(cpu, HV_SYS_REG_SCTLR_EL1, sctlr))
 
         try hv_guard(hv_vcpu_set_sys_reg(cpu, HV_SYS_REG_VBAR_EL1, Vmm.instance!.vbar))
-        
+
         // Enable FP
-        let cpacr : UInt64 = 3 << 20
+        let cpacr: UInt64 = 3 << 20
         try hv_guard(hv_vcpu_set_sys_reg(cpu, HV_SYS_REG_CPACR_EL1, cpacr))
-        
+
         func saveState(_ thread: NxThread) throws {
             for i in 0..<31 {
                 try hv_guard(hv_vcpu_get_reg(cpu, hv_reg_t(HV_REG_X0.rawValue + uint32(i)), &thread.X[i]))
@@ -109,7 +111,7 @@ class Cpu {
             try hv_guard(hv_vcpu_get_sys_reg(cpu, HV_SYS_REG_TPIDR_EL0, &thread.TPIDR))
             try hv_guard(hv_vcpu_get_sys_reg(cpu, HV_SYS_REG_TPIDRRO_EL0, &thread.TPIDRRO))
         }
-        
+
         func restoreState(_ thread: NxThread) throws {
             for i in 0..<31 {
                 try hv_guard(hv_vcpu_set_reg(cpu, hv_reg_t(HV_REG_X0.rawValue + uint32(i)), thread.X[i]))
@@ -125,9 +127,9 @@ class Cpu {
             try hv_guard(hv_vcpu_set_sys_reg(cpu, HV_SYS_REG_TPIDR_EL0, thread.TPIDR))
             try hv_guard(hv_vcpu_set_sys_reg(cpu, HV_SYS_REG_TPIDRRO_EL0, thread.TPIDRRO))
         }
-        
-        var curThread : NxThread? = nil
-        
+
+        var curThread: NxThread? = nil
+
         print("Waiting for thread")
         while !quitting {
             let nextThread = tm.nextThread(number)
@@ -135,7 +137,7 @@ class Cpu {
                 Thread.sleep(forTimeInterval: 0.01)
                 continue
             }
-            
+
             if curThread != nil && curThread !== nextThread {
                 try saveState(curThread!)
             }
@@ -143,7 +145,7 @@ class Cpu {
                 try restoreState(nextThread!)
             }
             curThread = nextThread
-            
+
             /*DispatchQueue.global(qos: .userInitiated).async {
                 print("Async thingy")
                 Thread.sleep(forTimeInterval: 2)
@@ -151,7 +153,7 @@ class Cpu {
                 try! hv_guard(hv_vcpus_exit(&cpu, 1))
                 print("Forced exit")
             }*/
-            
+
             try hv_guard(hv_vcpu_run(cpu))
             let elr = try get_sys_reg(HV_SYS_REG_ELR_EL1)
             print_hex("Exited from", elr)

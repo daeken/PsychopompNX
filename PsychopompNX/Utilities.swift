@@ -79,7 +79,9 @@ func hexdump(_ data: [UInt8]) {
         }
         buf += "| "
         for j in 0..<16 {
-            if i + j >= data.count { break }
+            if i + j >= data.count {
+                break
+            }
             let c = Character(UnicodeScalar(data[i + j]))
             buf += printable.contains(c) ? c.description : "."
             if j == 7 {
@@ -102,10 +104,12 @@ extension Array {
             }
         }
     }
-    
+
     func getValueAtOffset<T>(of: T.Type, offset: Int) -> T {
         return withUnsafeBufferPointer {
-            ($0.baseAddress! + offset).withMemoryRebound(to: of, capacity: 1) { $0.pointee }
+            ($0.baseAddress! + offset).withMemoryRebound(to: of, capacity: 1) {
+                $0.pointee
+            }
         }
     }
 }

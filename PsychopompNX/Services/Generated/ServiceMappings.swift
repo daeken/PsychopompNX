@@ -7,7 +7,7 @@
 
 import Foundation
 
-let ipcServiceMappings : [String:AccessibleIpcService.Type] =
-    [
-        "sm:" : NnSmDetail_IUserInterface_Impl.self
-    ]
+let ipcServiceMappings: [String: AccessibleIpcService.Type] =
+        [
+            "sm:": NnSmDetail_IUserInterface_Impl.self
+        ]

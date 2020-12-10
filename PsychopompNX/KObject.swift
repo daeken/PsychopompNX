@@ -10,5 +10,8 @@ import Foundation
 class KObject {
     lazy var handle = Emulator.instance!.kernel.add(self)
     var closed = false
-    func close() { closed = true }
+
+    func close() {
+        closed = true
+    }
 }

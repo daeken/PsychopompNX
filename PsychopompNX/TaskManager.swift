@@ -8,22 +8,22 @@
 import Foundation
 
 class NxThread {
-    static var idIter : uint64 = 0
-    
+    static var idIter: uint64 = 0
+
     var X = [uint64](repeating: 0, count: 31)
     var V = [SIMD16<UInt8>](repeating: SIMD16<UInt8>(), count: 32)
-    var SP : uint64 = 0
-    var PC : uint64 = 0
-    var FPCR : uint64 = 0
-    var FPSR : uint64 = 0
-    var CPSR : uint64 = 0
-    var TPIDR : uint64 // TLS Base
-    var TPIDRRO : uint64 // TLS Base (initial?)
-    
-    var affinityMask : uint64 = 0
+    var SP: uint64 = 0
+    var PC: uint64 = 0
+    var FPCR: uint64 = 0
+    var FPSR: uint64 = 0
+    var CPSR: uint64 = 0
+    var TPIDR: uint64 // TLS Base
+    var TPIDRRO: uint64 // TLS Base (initial?)
+
+    var affinityMask: uint64 = 0
     var priority = 0
-    var id : uint64
-    
+    var id: uint64
+
     init() {
         id = NxThread.idIter
         NxThread.idIter += 1
@@ -34,38 +34,42 @@ class NxThread {
 }
 
 class TaskManager {
-    var cpus : [Cpu]
+    var cpus: [Cpu]
     var glock = NSLock()
-    var locks : [NSLock]
-    var queues : [[NxThread]]
+    var locks: [NSLock]
+    var queues: [[NxThread]]
     var indices = [Int](repeating: 0, count: 4)
     var suspended = [NxThread]()
     var waiting = [NxThread]()
     var running = [NxThread]()
-    
+
     init() {
         cpus = []
         locks = [NSLock(), NSLock(), NSLock(), NSLock()]
         queues = [[NxThread](), [NxThread](), [NxThread](), [NxThread]()]
         cpus = [Cpu(0, self), Cpu(1, self), Cpu(2, self), Cpu(3, self)]
     }
-    
+
     func insertThread(_ thread: NxThread) {
         glock.lock()
         running.append(thread)
-        let counts = queues.enumerated().map { ($0.offset, $0.element.count) }
-        let lowest = counts.min { $0.1 < $1.1 }!.0
+        let counts = queues.enumerated().map {
+            ($0.offset, $0.element.count)
+        }
+        let lowest = counts.min {
+            $0.1 < $1.1
+        }!.0
         locks[lowest].lock()
         queues[lowest].append(thread)
         locks[lowest].unlock()
         glock.unlock()
     }
-    
+
     func nextThread(_ cpu: Int) -> NxThread? {
         locks[cpu].lock()
         let queue = queues[cpu]
         let qc = queue.count
-        var nt : NxThread?
+        var nt: NxThread?
         if qc == 0 {
             nt = nil
         } else {

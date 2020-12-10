@@ -135,29 +135,31 @@ enum SvcCodes: Int {
 }
 
 class Kernel {
-    var handleIter : UInt32 = 0
-    var handles = [UInt32 : KObject]()
-    
+    var handleIter: UInt32 = 0
+    var handles = [UInt32: KObject]()
+
     let heapBase: UInt64 = 0x8_0000_0000
     var heapSize: UInt64 = 0
-    
+
     func add(_ object: KObject) -> UInt32 {
         let handle = handleIter
         handleIter += 1
         handles[handle] = object
         return handle
     }
-    
+
     func getHandle<T>(_ handle: UInt32) -> T? {
         handles[handle] as? T
     }
-    
+
     func close(_ handle: UInt32) {
-        guard let obj = getHandle(handle) as KObject? else { return }
+        guard let obj = getHandle(handle) as KObject? else {
+            return
+        }
         obj.close()
         handles.removeValue(forKey: handle)
     }
-    
+
     func svc(_ thread: NxThread, _ svc: Int) throws {
         let code = SvcCodes(rawValue: svc)
         print(code!)
@@ -185,25 +187,27 @@ class Kernel {
                 tp2[2] = 0
             }
             thread.X[0] = 0
-        
+
         case .OutputDebugString:
             let ptr = GuestPointer<UInt8>(thread.X[0])
             let size = Int(thread.X[1])
             thread.X[0] = 0
-            print("Output debug string: ", String(bytes: (0..<size).map { ptr[$0] }, encoding: .utf8)!)
-        
+            print("Output debug string: ", String(bytes: (0..<size).map {
+                ptr[$0]
+            }, encoding: .utf8)!)
+
         case .GetThreadPriority:
             thread.X[0] = 0
             thread.X[1] = UInt64(thread.priority)
-        
+
         case .GetThreadId:
             thread.X[0] = 0
             thread.X[1] = thread.id
-        
+
         case .GetInfo:
             let pair = (Int(thread.X[1]), Int(thread.X[3]))
             let handle = thread.X[2]
-            var value : uint64 = 0
+            var value: uint64 = 0
             thread.X[0] = 0
             switch pair {
             case (2, 0):
@@ -230,18 +234,20 @@ class Kernel {
                 try! bailout()
             }
             thread.X[1] = value
-        
+
         case .SignalProcessWideKey:
             print("SignalProcessWideKey")
             thread.X[0] = 0
-        
+
         case .ConnectToNamedPort:
             let name = readNullTerminatedString(thread.X[1])
             print("ConnectToNamedPort: '" + name + "'")
-            guard let op = ipcServiceMappings[name]?._construct() else { throw KernelError.unknownNamedPort }
+            guard let op = ipcServiceMappings[name]?._construct() else {
+                throw KernelError.unknownNamedPort
+            }
             thread.X[0] = 0
             thread.X[1] = UInt64(op.handle)
-            
+
         case .SendSyncRequest:
             let handle = UInt32(thread.X[0])
             guard let service = getHandle(handle) as IpcService? else {
@@ -249,20 +255,22 @@ class Kernel {
                 return
             }
             let (ret, closeHandle) = try service.handleMessage(thread.TPIDRRO)
-            if closeHandle { close(handle) }
+            if closeHandle {
+                close(handle)
+            }
             thread.X[0] = UInt64(ret)
-        
+
         case .CloseHandle:
             (getHandle(UInt32(thread.X[0])) as KObject?)?.close()
             thread.X[0] = 0
-        
+
         case .SetHeapSize:
             print_hex("SetHeapSize:", thread.X[1])
             if heapSize != 0 {
                 print("Attempted to reallocate heap")
                 try! bailout()
             }
-            
+
             heapSize = thread.X[1]
             heapSize = 0x10000000
             let chunks = heapSize / Vmm.instance!.chunkSize
@@ -273,10 +281,10 @@ class Kernel {
                 try Vmm.instance!.mapVirtualPage(physAddr: paddr + (i * 0x1000), virtAddr: heapBase + (i * 0x1000), accessFlags: AccessFlags.rw)
             }
             print("All mapped")
-            
+
             thread.X[0] = 0
             thread.X[1] = heapBase
-        
+
         default:
             print_hex("Unhandled SVC:", code!)
             try! bailout()
