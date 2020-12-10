@@ -9,6 +9,8 @@ import Foundation
 
 enum KernelError: Error {
     case unknownNamedPort
+    case unknownHandle
+    case typeMismatch
 }
 
 enum SvcCodes: Int {
@@ -135,7 +137,9 @@ enum SvcCodes: Int {
 class Kernel {
     var handleIter : UInt32 = 0
     var handles = [UInt32 : KObject]()
-    let ipcManager = IpcManager()
+    
+    let heapBase: UInt64 = 0x8_0000_0000
+    var heapSize: UInt64 = 0
     
     func add(_ object: KObject) -> UInt32 {
         let handle = handleIter
@@ -144,14 +148,22 @@ class Kernel {
         return handle
     }
     
+    func getHandle<T>(_ handle: UInt32) -> T? {
+        handles[handle] as? T
+    }
+    
+    func close(_ handle: UInt32) {
+        guard let obj = getHandle(handle) as KObject? else { return }
+        obj.close()
+        handles.removeValue(forKey: handle)
+    }
+    
     func svc(_ thread: NxThread, _ svc: Int) throws {
         let code = SvcCodes(rawValue: svc)
         print(code!)
         switch code {
         case .QueryMemory:
-            print_hex("QueryMemory", thread.X[2])
             let mi = Vmm.instance!.getVirtInfo(thread.X[2])
-            print(mi)
             let mip = thread.X[0]
             let tp = GuestPointer<UInt64>(mip)
             tp[0] = mi.base
@@ -210,6 +222,8 @@ class Kernel {
                 value = Emulator.instance!.stackBase
             case (15, 0):
                 value = Emulator.instance!.stackSize
+            case (16, 0):
+                value = 0
             default:
                 print_hex("Unhandled GetInfo:", pair, "Handle:", handle)
                 thread.X[0] = 0xF001
@@ -224,14 +238,44 @@ class Kernel {
         case .ConnectToNamedPort:
             let name = readNullTerminatedString(thread.X[1])
             print("ConnectToNamedPort: '" + name + "'")
-            guard let op = ipcManager.serviceMappings[name]?._construct() else { throw KernelError.unknownNamedPort }
+            guard let op = ipcServiceMappings[name]?._construct() else { throw KernelError.unknownNamedPort }
             thread.X[0] = 0
             thread.X[1] = UInt64(op.handle)
             
         case .SendSyncRequest:
-            let buf = GuestPointer<UInt8>(thread.TPIDRRO)
-            hexdump(buf[0..<0x100])
-            try! bailout()
+            let handle = UInt32(thread.X[0])
+            guard let service = getHandle(handle) as IpcService? else {
+                thread.X[0] = 0xf601
+                return
+            }
+            let (ret, closeHandle) = try service.handleMessage(thread.TPIDRRO)
+            if closeHandle { close(handle) }
+            thread.X[0] = UInt64(ret)
+        
+        case .CloseHandle:
+            (getHandle(UInt32(thread.X[0])) as KObject?)?.close()
+            thread.X[0] = 0
+        
+        case .SetHeapSize:
+            print_hex("SetHeapSize:", thread.X[1])
+            if heapSize != 0 {
+                print("Attempted to reallocate heap")
+                try! bailout()
+            }
+            
+            heapSize = thread.X[1]
+            heapSize = 0x10000000
+            let chunks = heapSize / Vmm.instance!.chunkSize
+            print("Chunks:", chunks)
+            let pages = heapSize / 0x1000
+            let (paddr, _) = try Vmm.instance!.mapChunk(Int(chunks))
+            for i in 0..<pages {
+                try Vmm.instance!.mapVirtualPage(physAddr: paddr + (i * 0x1000), virtAddr: heapBase + (i * 0x1000), accessFlags: AccessFlags.rw)
+            }
+            print("All mapped")
+            
+            thread.X[0] = 0
+            thread.X[1] = heapBase
         
         default:
             print_hex("Unhandled SVC:", code!)

@@ -41,6 +41,7 @@ struct AccessFlags: OptionSet {
     static let el1Write = AccessFlags(rawValue: 16)
     static let el1Execute = AccessFlags(rawValue: 32)
     static let normal : AccessFlags = [el0Read, el0Write, el0Execute, el1Read, el1Write]
+    static let rw : AccessFlags = [el0Read, el0Write, el1Read, el1Write]
     static let invalid = AccessFlags(rawValue: -1)
 }
 

@@ -91,3 +91,21 @@ func hexdump(_ data: [UInt8]) {
     buf += String(format: "%04x", data.count)
     print(buf)
 }
+
+extension Array {
+    func withUnsafeBufferPointer<T, Result>(of: T.Type, body: (UnsafeBufferPointer<T>) throws -> Result) rethrows -> Result {
+        return try withUnsafeBufferPointer {
+            let bytes = $0.count * MemoryLayout<Element>.size
+            let newCount = bytes / MemoryLayout<T>.size
+            return try $0.baseAddress!.withMemoryRebound(to: of, capacity: newCount) {
+                try body(UnsafeBufferPointer(start: $0, count: newCount))
+            }
+        }
+    }
+    
+    func getValueAtOffset<T>(of: T.Type, offset: Int) -> T {
+        return withUnsafeBufferPointer {
+            ($0.baseAddress! + offset).withMemoryRebound(to: of, capacity: 1) { $0.pointee }
+        }
+    }
+}

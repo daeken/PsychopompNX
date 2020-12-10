@@ -30,6 +30,9 @@ class GuestPointer<T> {
         get {
             range.map { self[$0] }
         }
+        set {
+            newValue.enumerated().forEach { self[$0.offset] = $0.element }
+        }
     }
     
     func to<T2>() -> GuestPointer<T2> {
