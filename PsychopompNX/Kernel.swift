@@ -272,14 +272,11 @@ class Kernel {
             }
 
             heapSize = thread.X[1]
-            heapSize = 0x10000000
             let chunks = heapSize / Vmm.instance!.chunkSize
             print("Chunks:", chunks)
-            let pages = heapSize / 0x1000
+            let pages = Int(heapSize / 0x1000)
             let (paddr, _) = try Vmm.instance!.mapChunk(Int(chunks))
-            for i in 0..<pages {
-                try Vmm.instance!.mapVirtualPage(physAddr: paddr + (i * 0x1000), virtAddr: heapBase + (i * 0x1000), accessFlags: AccessFlags.rw)
-            }
+            try Vmm.instance!.mapVirtualPages(physAddr: paddr, virtAddr: heapBase, pages: pages, accessFlags: AccessFlags.rw)
             print("All mapped")
 
             thread.X[0] = 0

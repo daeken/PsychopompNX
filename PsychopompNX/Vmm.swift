@@ -54,7 +54,7 @@ class Vmm {
     var freeTables = [UInt64]()
     var physMappings = [UnsafeMutableRawPointer?](repeating: nil, count: 4096)
     var pageTableBase = GuestPhysicalPointer<UInt64>(0)
-    var pageTables = [(GuestPhysicalPointer < UInt64>, [(GuestPhysicalPointer < UInt64>, [(UInt64, AccessFlags)?])?])?](repeating: nil, count: 512)
+    var pageTables = [(GuestPhysicalPointer<UInt64>, [(GuestPhysicalPointer<UInt64>, [(UInt64, AccessFlags)?])?])?](repeating: nil, count: 512)
 
     init() throws {
         Vmm.instance = self
@@ -122,7 +122,7 @@ class Vmm {
 
         if pageTables[l1Index] == nil {
             let pta = GuestPhysicalPointer<UInt64>(try allocTable())
-            pageTables[l1Index] = (pta, [(GuestPhysicalPointer < UInt64>, [(UInt64, AccessFlags)?])?](repeating: nil, count: 512))
+            pageTables[l1Index] = (pta, [(GuestPhysicalPointer<UInt64>, [(UInt64, AccessFlags)?])?](repeating: nil, count: 512))
             pageTableBase[l1Index] = pta.address | 0b11
         }
         let (l2p, l2a) = pageTables[l1Index]!
@@ -161,6 +161,71 @@ class Vmm {
                             (0b11 << 8) | // Inner sharable
                             pflags
             )
+        }
+    }
+    
+    func mapVirtualPages(physAddr: uint64, virtAddr: uint64, pages: Int, accessFlags: AccessFlags) throws {
+        if accessFlags.contains(AccessFlags.el1Execute) && accessFlags.contains(AccessFlags.el0Write) {
+            throw VmmError.vmMutuallyExclusivePermissions
+        }
+        var pflags: uint64 = 0
+        if !accessFlags.contains(.el0Execute) {
+            pflags |= 1 << 54
+        }
+        if !accessFlags.contains(.el1Execute) {
+            pflags |= 1 << 53
+        }
+        let (el0r, el0w, el1w) = (accessFlags.contains(.el0Read), accessFlags.contains(.el0Write), accessFlags.contains(.el1Write))
+        if el0r && el0w {
+            pflags |= 0b01 << 6
+        } else if el0r && el1w {
+            throw VmmError.vmMutuallyExclusivePermissions
+        } else if el0r {
+            pflags |= 0b11 << 6
+        }
+        
+        let virtTop = virtAddr + UInt64(pages * 0x1000)
+        var curPhys = physAddr
+        for l1Index in Int(virtAddr >> 30)...Int((virtTop - 1) >> 30) {
+            if pageTables[l1Index] == nil {
+                let pta = GuestPhysicalPointer<UInt64>(try allocTable())
+                pageTables[l1Index] = (pta, [(GuestPhysicalPointer<UInt64>, [(UInt64, AccessFlags)?])?](repeating: nil, count: 512))
+                pageTableBase[l1Index] = pta.address | 0b11
+            }
+            let (l2p, l2a) = pageTables[l1Index]!
+            
+            let l1Addr = UInt64(l1Index) << 30
+            let l1Bottom = virtAddr <= l1Addr ? l1Addr : virtAddr
+            let l1Max = l1Addr + UInt64(1 << 30)
+            let l1Top = (l1Max <= virtTop ? l1Max : virtTop) - 1
+            let l1Left = Int((l1Bottom - l1Addr) >> 21)
+            let l1Right = Int((l1Top - l1Addr) >> 21)
+            for l2Index in l1Left...l1Right {
+                if l2a[l2Index] == nil {
+                    let pta = GuestPhysicalPointer<UInt64>(try allocTable())
+                    pageTables[l1Index]!.1[l2Index] = (pta, [(UInt64, AccessFlags)?](repeating: nil, count: 512))
+                    l2p[l2Index] = pta.address | 0b11
+                }
+                let (l3p, _) = pageTables[l1Index]!.1[l2Index]!
+                
+                let l2Addr = l1Addr | (UInt64(l2Index) << 21)
+                let l2Bottom = virtAddr <= l2Addr ? l2Addr : virtAddr
+                let l2Max = l2Addr + UInt64(1 << 21)
+                let l2Top = (l2Max <= virtTop ? l2Max : virtTop) - 1
+                let l2Left = Int((l2Bottom - l2Addr) >> 12)
+                let l2Right = Int((l2Top - l2Addr) >> 12)
+                for l3Index in l2Left...l2Right {
+                    pageTables[l1Index]!.1[l2Index]!.1[l3Index] = (curPhys, accessFlags)
+                    l3p[l3Index] = (
+                            curPhys |
+                                    0b11 | // valid page
+                                    (1 << 10) | // Access flag
+                                    (0b11 << 8) | // Inner sharable
+                                    pflags
+                    )
+                    curPhys += 0x1000
+                }
+            }
         }
     }
 
