@@ -134,9 +134,14 @@ enum SvcCodes: Int {
     case CallSecureMonitor = 0x7F
 }
 
+class KProcess: KObject {
+}
+
 class Kernel {
     var handleIter: UInt32 = 0
-    var handles = [UInt32: KObject]()
+    var handles: [UInt32: KObject] = [
+        0xFFFF8001: KProcess()
+    ]
 
     let heapBase: UInt64 = 0x8_0000_0000
     var heapSize: UInt64 = 0
@@ -163,6 +168,7 @@ class Kernel {
         guard let obj = getHandle(handle) as KObject? else {
             return
         }
+        print("Closing \(obj)")
         obj.close()
         handles.removeValue(forKey: handle)
     }
@@ -264,6 +270,7 @@ class Kernel {
             }
             let (ret, closeHandle) = try service.handleMessage(thread.TPIDRRO)
             if closeHandle {
+                print("SendSyncRequest closing handle")
                 close(handle)
             }
             thread.X[0] = UInt64(ret)

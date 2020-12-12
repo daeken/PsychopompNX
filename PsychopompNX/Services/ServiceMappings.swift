@@ -17,7 +17,7 @@ let ipcServiceMappings: [String: () -> IpcService] =
             "caps:su": { NnCapsrvSf_IScreenShotApplicationService() }, 
             "caps:ss": { NnCapsrvSf_IScreenShotService() }, 
             "usb:ds": { NnUsbDs_IDsService() }, 
-            "lm": { NnLm_ILogService() }, 
+            "lm": { NnLm_ILogService_Impl() }, 
             "lm:get": { NnLm_ILogGetter() }, 
             "miiimg": { NnMiiDetail_IImageDatabaseService() }, 
             "mii:u": { NnMiiDetail_IStaticService() }, 

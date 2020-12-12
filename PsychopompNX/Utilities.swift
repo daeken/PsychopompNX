@@ -106,9 +106,20 @@ extension Array {
     }
 
     func getValueAtOffset<T>(of: T.Type, offset: Int) -> T {
+        if T.self == Element.self {
+            return self[offset / MemoryLayout<T>.stride] as! T
+        }
         return withUnsafeBufferPointer {
-            ($0.baseAddress! + offset).withMemoryRebound(to: of, capacity: 1) {
-                $0.pointee
+            UnsafeRawPointer($0.baseAddress!).load(fromByteOffset: offset, as: T.self)
+        }
+    }
+    
+    mutating func setValueAtOffset<T>(offset: Int, value: T) {
+        if T.self == Element.self {
+            self[offset / MemoryLayout<T>.stride] = value as! Element
+        } else {
+            withUnsafeMutableBufferPointer {
+                UnsafeMutableRawPointer($0.baseAddress!).storeBytes(of: value, toByteOffset: offset, as: T.self)
             }
         }
     }

@@ -167,6 +167,7 @@
 		4C9622CC2584AD270096E007 /* NnAudioctrl_Detail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C96223F2584AD270096E007 /* NnAudioctrl_Detail.swift */; };
 		4C9622CF2584B02F0096E007 /* UInt128.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9622CE2584B02F0096E007 /* UInt128.swift */; };
 		4C9622D22584B0FE0096E007 /* NnSm_Detail_Impl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9622D12584B0FE0096E007 /* NnSm_Detail_Impl.swift */; };
+		4C9622D62584B8440096E007 /* Nn_Lm_Impl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9622D52584B8440096E007 /* Nn_Lm_Impl.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -333,6 +334,7 @@
 		4C96223F2584AD270096E007 /* NnAudioctrl_Detail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NnAudioctrl_Detail.swift; path = Generated/NnAudioctrl_Detail.swift; sourceTree = "<group>"; };
 		4C9622CE2584B02F0096E007 /* UInt128.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UInt128.swift; sourceTree = "<group>"; };
 		4C9622D12584B0FE0096E007 /* NnSm_Detail_Impl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NnSm_Detail_Impl.swift; sourceTree = "<group>"; };
+		4C9622D52584B8440096E007 /* Nn_Lm_Impl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nn_Lm_Impl.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -352,6 +354,7 @@
 				4C9620962584AAC50096E007 /* Generated */,
 				4C961F12258499B00096E007 /* ServiceMappings.swift */,
 				4C9622D12584B0FE0096E007 /* NnSm_Detail_Impl.swift */,
+				4C9622D52584B8440096E007 /* Nn_Lm_Impl.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -772,6 +775,7 @@
 				4C96228A2584AD270096E007 /* Nn.swift in Sources */,
 				4C9622B02584AD270096E007 /* Nn_Sasbus.swift in Sources */,
 				4C9622C42584AD270096E007 /* Nn_Btm.swift in Sources */,
+				4C9622D62584B8440096E007 /* Nn_Lm_Impl.swift in Sources */,
 				4C9622B52584AD270096E007 /* NnAccount_Profile.swift in Sources */,
 				4C9622472584AD270096E007 /* NnPctlDetail_Ipc.swift in Sources */,
 				4C9622AD2584AD270096E007 /* Nn_Vi.swift in Sources */,

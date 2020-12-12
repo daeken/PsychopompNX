@@ -91,11 +91,11 @@ class IncomingMessage {
     }
     
     func getCopy(_ number: Int) -> UInt32 {
-        0
+        buf[(copyOffset >> 2) + number]
     }
 
     func getMove(_ number: Int) -> UInt32 {
-        0
+        isDomainObject ? buf[(sfciOffset >> 2) + 4 + number] : buf[(moveOffset >> 2) + number]
     }
 
     func getData<T>(_ offset: Int) -> T {
@@ -157,9 +157,11 @@ class OutgoingMessage {
     }
     
     func setData<T>(_ offset: Int, _ value: T) {
+        buf.setValueAtOffset(offset: sfcoOffset + 8 + offset + (offset < 8 ? 0 : realDataOffset), value: value)
     }
     
     func setBytes(_ offset: Int, _ value: [UInt8]) {
+        try! bailout()
     }
     
     func copy(_ number: Int, _ obj: KObject) {
@@ -216,6 +218,21 @@ class IpcService: KObject {
                     print("Unhandled IPC error: \(error)")
                     try! bailout()
                 }
+            case 5, 7:
+                switch im.commandId {
+                case 0: // ConvertSessionToDomain
+                    print("Converting session to domain for \(self)")
+                    om.initialize(0, 0, 4)
+                    isDomainObject = true
+                    om.setData(8, thisHandle)
+                case 3: // QueryPointerBufferSize
+                    om.initialize(0, 0, 4)
+                    om.setData(8, UInt32(0x500))
+                default:
+                    print("Unhandled meta command: \(im.commandId)")
+                    try! bailout()
+                }
+                ret = 0
             default:
                 print("Unhandled IPC type: \(im.type)")
                 try! bailout()
@@ -232,6 +249,8 @@ class IpcService: KObject {
             om.bake()
         }
         (tptr.to() as GuestPointer<UInt32>)[0..<0x40] = om.buf
+        let buf2 = tptr[0..<0x100]
+        hexdump(buf2)
 
         return (ret, closeHandle)
     }
