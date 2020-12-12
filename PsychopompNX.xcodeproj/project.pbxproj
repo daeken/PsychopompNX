@@ -15,9 +15,7 @@
 		4C21AC3F257F4E250023284C /* NxoReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C21AC3E257F4E250023284C /* NxoReader.swift */; };
 		4C21AC42257F4EEC0023284C /* BinaryReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C21AC41257F4EEC0023284C /* BinaryReader.swift */; };
 		4C21AC45258070290023284C /* Kernel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C21AC44258070290023284C /* Kernel.swift */; };
-		4C21AC4A2580991C0023284C /* nn.sm.detail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C21AC492580991C0023284C /* nn.sm.detail.swift */; };
 		4C21AC4E25809DBA0023284C /* Ipc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C21AC4D25809DBA0023284C /* Ipc.swift */; };
-		4C21AC512580A4070023284C /* ServiceMappings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C21AC502580A4070023284C /* ServiceMappings.swift */; };
 		4C21AC542580A7BF0023284C /* KObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C21AC532580A7BF0023284C /* KObject.swift */; };
 		4C8379922579AA64006FF416 /* PsychopompNXApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8379912579AA64006FF416 /* PsychopompNXApp.swift */; };
 		4C8379942579AA64006FF416 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8379932579AA64006FF416 /* ContentView.swift */; };
@@ -25,6 +23,149 @@
 		4C8379992579AA66006FF416 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C8379982579AA66006FF416 /* Preview Assets.xcassets */; };
 		4C8379B92579E9DA006FF416 /* Vmm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8379B82579E9DA006FF416 /* Vmm.swift */; };
 		4C8379BC2579EC8D006FF416 /* Cpu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8379BB2579EC8D006FF416 /* Cpu.swift */; };
+		4C961F13258499B00096E007 /* ServiceMappings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C961F12258499B00096E007 /* ServiceMappings.swift */; };
+		4C9622402584AD270096E007 /* Nn_Pcv.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9621B32584AD250096E007 /* Nn_Pcv.swift */; };
+		4C9622412584AD270096E007 /* Nn_Uart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9621B42584AD250096E007 /* Nn_Uart.swift */; };
+		4C9622422584AD270096E007 /* NnEupld_Sf.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9621B52584AD250096E007 /* NnEupld_Sf.swift */; };
+		4C9622432584AD270096E007 /* Nn_Audio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9621B62584AD250096E007 /* Nn_Audio.swift */; };
+		4C9622442584AD270096E007 /* NnAccount_Detail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9621B72584AD250096E007 /* NnAccount_Detail.swift */; };
+		4C9622452584AD270096E007 /* NnNfcMifare_Detail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9621B82584AD250096E007 /* NnNfcMifare_Detail.swift */; };
+		4C9622462584AD270096E007 /* NnErpt_Sf.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9621B92584AD250096E007 /* NnErpt_Sf.swift */; };
+		4C9622472584AD270096E007 /* NnPctlDetail_Ipc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9621BA2584AD250096E007 /* NnPctlDetail_Ipc.swift */; };
+		4C9622482584AD270096E007 /* NnXcd_Detail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9621BB2584AD250096E007 /* NnXcd_Detail.swift */; };
+		4C9622492584AD270096E007 /* NnSm_Detail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9621BC2584AD250096E007 /* NnSm_Detail.swift */; };
+		4C96224A2584AD270096E007 /* Nn_Hidbus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9621BD2584AD250096E007 /* Nn_Hidbus.swift */; };
+		4C96224B2584AD270096E007 /* NnAudio_Detail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9621BE2584AD250096E007 /* NnAudio_Detail.swift */; };
+		4C96224C2584AD270096E007 /* Nn_Irsensor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9621BF2584AD250096E007 /* Nn_Irsensor.swift */; };
+		4C96224D2584AD270096E007 /* Nn_Err.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9621C02584AD250096E007 /* Nn_Err.swift */; };
+		4C96224E2584AD270096E007 /* NnBsdsocket_Cfg.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9621C12584AD250096E007 /* NnBsdsocket_Cfg.swift */; };
+		4C96224F2584AD270096E007 /* Nv_Gemcoredump.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9621C22584AD250096E007 /* Nv_Gemcoredump.swift */; };
+		4C9622502584AD270096E007 /* NnNtcDetail_Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9621C32584AD250096E007 /* NnNtcDetail_Service.swift */; };
+		4C9622512584AD270096E007 /* NnRo_Detail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9621C42584AD250096E007 /* NnRo_Detail.swift */; };
+		4C9622522584AD270096E007 /* NnTime_Sf.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9621C52584AD250096E007 /* NnTime_Sf.swift */; };
+		4C9622532584AD270096E007 /* Nn_Pinmux.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9621C62584AD250096E007 /* Nn_Pinmux.swift */; };
+		4C9622542584AD270096E007 /* NnHid_System.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9621C72584AD260096E007 /* NnHid_System.swift */; };
+		4C9622552584AD270096E007 /* NnUsb_Pm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9621C82584AD260096E007 /* NnUsb_Pm.swift */; };
+		4C9622562584AD270096E007 /* Nns_Hosbinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9621C92584AD260096E007 /* Nns_Hosbinder.swift */; };
+		4C9622572584AD270096E007 /* NnAccount_Baas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9621CA2584AD260096E007 /* NnAccount_Baas.swift */; };
+		4C9622582584AD270096E007 /* NnMigration_User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9621CB2584AD260096E007 /* NnMigration_User.swift */; };
+		4C9622592584AD270096E007 /* Nn_Kpr.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9621CC2584AD260096E007 /* Nn_Kpr.swift */; };
+		4C96225A2584AD270096E007 /* NnMii_Detail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9621CD2584AD260096E007 /* NnMii_Detail.swift */; };
+		4C96225B2584AD270096E007 /* NnNfp_Detail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9621CE2584AD260096E007 /* NnNfp_Detail.swift */; };
+		4C96225C2584AD270096E007 /* NnPdm_Detail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9621CF2584AD260096E007 /* NnPdm_Detail.swift */; };
+		4C96225D2584AD270096E007 /* NnSettings_System.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9621D02584AD260096E007 /* NnSettings_System.swift */; };
+		4C96225E2584AD270096E007 /* NnAocsrv_Detail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9621D12584AD260096E007 /* NnAocsrv_Detail.swift */; };
+		4C96225F2584AD270096E007 /* Nn_Mmnv.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9621D22584AD260096E007 /* Nn_Mmnv.swift */; };
+		4C9622602584AD270096E007 /* NnFan_Detail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9621D32584AD260096E007 /* NnFan_Detail.swift */; };
+		4C9622612584AD270096E007 /* NnLdr_Detail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9621D42584AD260096E007 /* NnLdr_Detail.swift */; };
+		4C9622622584AD270096E007 /* Nn_Es.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9621D52584AD260096E007 /* Nn_Es.swift */; };
+		4C9622632584AD270096E007 /* Nn_Pcm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9621D62584AD260096E007 /* Nn_Pcm.swift */; };
+		4C9622642584AD270096E007 /* NnNifmDetail_Sf.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9621D72584AD260096E007 /* NnNifmDetail_Sf.swift */; };
+		4C9622652584AD270096E007 /* Nn_Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9621D82584AD260096E007 /* Nn_Account.swift */; };
+		4C9622662584AD270096E007 /* NnLbl_Detail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9621D92584AD260096E007 /* NnLbl_Detail.swift */; };
+		4C9622672584AD270096E007 /* Nn_Friends.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9621DA2584AD260096E007 /* Nn_Friends.swift */; };
+		4C9622682584AD270096E007 /* NnTimesrvDetail_Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9621DB2584AD260096E007 /* NnTimesrvDetail_Service.swift */; };
+		4C9622692584AD270096E007 /* Nn_Bcat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9621DC2584AD260096E007 /* Nn_Bcat.swift */; };
+		4C96226A2584AD270096E007 /* Nn_Bgtc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9621DD2584AD260096E007 /* Nn_Bgtc.swift */; };
+		4C96226B2584AD270096E007 /* NnNewsDetail_Ipc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9621DE2584AD260096E007 /* NnNewsDetail_Ipc.swift */; };
+		4C96226C2584AD270096E007 /* NnPcv_Detail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9621DF2584AD260096E007 /* NnPcv_Detail.swift */; };
+		4C96226D2584AD270096E007 /* NnNfc_Detail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9621E02584AD260096E007 /* NnNfc_Detail.swift */; };
+		4C96226E2584AD270096E007 /* Nn_Grcsrv.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9621E12584AD260096E007 /* Nn_Grcsrv.swift */; };
+		4C96226F2584AD270096E007 /* NnCodec_Detail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9621E22584AD260096E007 /* NnCodec_Detail.swift */; };
+		4C9622702584AD270096E007 /* NnSpl_Detail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9621E32584AD260096E007 /* NnSpl_Detail.swift */; };
+		4C9622712584AD270096E007 /* NnFriendsDetail_Ipc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9621E42584AD260096E007 /* NnFriendsDetail_Ipc.swift */; };
+		4C9622722584AD270096E007 /* Nn_Mii.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9621E52584AD260096E007 /* Nn_Mii.swift */; };
+		4C9622732584AD270096E007 /* NnOmm_Detail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9621E62584AD260096E007 /* NnOmm_Detail.swift */; };
+		4C9622742584AD270096E007 /* NnFgm_Sf.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9621E72584AD260096E007 /* NnFgm_Sf.swift */; };
+		4C9622752584AD270096E007 /* NnNim_Detail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9621E82584AD260096E007 /* NnNim_Detail.swift */; };
+		4C9622762584AD270096E007 /* Nn_Nifm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9621E92584AD260096E007 /* Nn_Nifm.swift */; };
+		4C9622772584AD270096E007 /* NnSettings_Factory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9621EA2584AD260096E007 /* NnSettings_Factory.swift */; };
+		4C9622782584AD270096E007 /* Nn_Bluetooth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9621EB2584AD260096E007 /* Nn_Bluetooth.swift */; };
+		4C9622792584AD270096E007 /* NnPrepoDetail_Ipc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9621EC2584AD260096E007 /* NnPrepoDetail_Ipc.swift */; };
+		4C96227A2584AD270096E007 /* NnVi_Native.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9621ED2584AD260096E007 /* NnVi_Native.swift */; };
+		4C96227B2584AD270096E007 /* NnAccount_Http.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9621EE2584AD260096E007 /* NnAccount_Http.swift */; };
+		4C96227C2584AD270096E007 /* Nn_I2c.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9621EF2584AD260096E007 /* Nn_I2c.swift */; };
+		4C96227D2584AD270096E007 /* NnNfcAm_Detail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9621F02584AD260096E007 /* NnNfcAm_Detail.swift */; };
+		4C96227E2584AD270096E007 /* Nn_Npns.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9621F12584AD260096E007 /* Nn_Npns.swift */; };
+		4C96227F2584AD270096E007 /* NnSocket_Resolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9621F22584AD260096E007 /* NnSocket_Resolver.swift */; };
+		4C9622802584AD270096E007 /* NnAhid_Hdr.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9621F32584AD260096E007 /* NnAhid_Hdr.swift */; };
+		4C9622812584AD270096E007 /* NnBcat_Detail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9621F42584AD260096E007 /* NnBcat_Detail.swift */; };
+		4C9622822584AD270096E007 /* NnPl_Detail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9621F52584AD260096E007 /* NnPl_Detail.swift */; };
+		4C9622832584AD270096E007 /* NnArp_Detail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9621F62584AD260096E007 /* NnArp_Detail.swift */; };
+		4C9622842584AD270096E007 /* NnSfHipc_Detail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9621F72584AD260096E007 /* NnSfHipc_Detail.swift */; };
+		4C9622852584AD270096E007 /* Nv_MemoryProfiler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9621F82584AD260096E007 /* Nv_MemoryProfiler.swift */; };
+		4C9622862584AD270096E007 /* Nn_Applet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9621F92584AD260096E007 /* Nn_Applet.swift */; };
+		4C9622872584AD270096E007 /* Nn_Socket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9621FA2584AD260096E007 /* Nn_Socket.swift */; };
+		4C9622882584AD270096E007 /* Root.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9621FB2584AD260096E007 /* Root.swift */; };
+		4C9622892584AD270096E007 /* NnEth_Sf.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9621FC2584AD260096E007 /* NnEth_Sf.swift */; };
+		4C96228A2584AD270096E007 /* Nn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9621FD2584AD260096E007 /* Nn.swift */; };
+		4C96228B2584AD270096E007 /* NnHid_Debug.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9621FE2584AD260096E007 /* NnHid_Debug.swift */; };
+		4C96228C2584AD270096E007 /* NnCapsrv_Sf.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9621FF2584AD260096E007 /* NnCapsrv_Sf.swift */; };
+		4C96228D2584AD270096E007 /* Nn_Tma.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9622002584AD260096E007 /* Nn_Tma.swift */; };
+		4C96228E2584AD270096E007 /* Nn_Gpio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9622012584AD260096E007 /* Nn_Gpio.swift */; };
+		4C96228F2584AD270096E007 /* NnPcie_Detail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9622022584AD260096E007 /* NnPcie_Detail.swift */; };
+		4C9622902584AD270096E007 /* NnSocket_Sf.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9622032584AD260096E007 /* NnSocket_Sf.swift */; };
+		4C9622912584AD270096E007 /* Nn_Apm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9622042584AD260096E007 /* Nn_Apm.swift */; };
+		4C9622922584AD270096E007 /* NnVisrv_Sf.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9622052584AD260096E007 /* NnVisrv_Sf.swift */; };
+		4C9622932584AD270096E007 /* NnCapsrv_Detail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9622062584AD260096E007 /* NnCapsrv_Detail.swift */; };
+		4C9622942584AD270096E007 /* Nn_Pwm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9622072584AD260096E007 /* Nn_Pwm.swift */; };
+		4C9622952584AD270096E007 /* NnUsb_Ds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9622082584AD260096E007 /* NnUsb_Ds.swift */; };
+		4C9622962584AD270096E007 /* Nn_Ahid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9622092584AD260096E007 /* Nn_Ahid.swift */; };
+		4C9622972584AD270096E007 /* NnBcatDetail_Ipc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C96220A2584AD260096E007 /* NnBcatDetail_Ipc.swift */; };
+		4C9622982584AD270096E007 /* Nn_Ns.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C96220B2584AD260096E007 /* Nn_Ns.swift */; };
+		4C9622992584AD270096E007 /* NnLdn_Detail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C96220C2584AD260096E007 /* NnLdn_Detail.swift */; };
+		4C96229A2584AD270096E007 /* Nn_Dmnt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C96220D2584AD260096E007 /* Nn_Dmnt.swift */; };
+		4C96229B2584AD270096E007 /* Nn_Fgm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C96220E2584AD260096E007 /* Nn_Fgm.swift */; };
+		4C96229C2584AD270096E007 /* Nn_Tc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C96220F2584AD260096E007 /* Nn_Tc.swift */; };
+		4C96229D2584AD270096E007 /* Nn_Hid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9622102584AD260096E007 /* Nn_Hid.swift */; };
+		4C96229E2584AD270096E007 /* NnSpsm_Detail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9622112584AD260096E007 /* NnSpsm_Detail.swift */; };
+		4C96229F2584AD270096E007 /* Nn_Jitsrv.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9622122584AD260096E007 /* Nn_Jitsrv.swift */; };
+		4C9622A02584AD270096E007 /* Nn_Capsrv.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9622132584AD260096E007 /* Nn_Capsrv.swift */; };
+		4C9622A12584AD270096E007 /* Nn_Profiler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9622142584AD260096E007 /* Nn_Profiler.swift */; };
+		4C9622A22584AD270096E007 /* NnFssrv_Sf.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9622152584AD260096E007 /* NnFssrv_Sf.swift */; };
+		4C9622A32584AD270096E007 /* NnUsbPd_Detail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9622162584AD260096E007 /* NnUsbPd_Detail.swift */; };
+		4C9622A42584AD270096E007 /* NnPm_Detail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9622172584AD260096E007 /* NnPm_Detail.swift */; };
+		4C9622A52584AD270096E007 /* Nn_Psm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9622182584AD260096E007 /* Nn_Psm.swift */; };
+		4C9622A62584AD270096E007 /* NnFriends_Detail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9622192584AD260096E007 /* NnFriends_Detail.swift */; };
+		4C9622A72584AD270096E007 /* NnNsd_Detail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C96221A2584AD260096E007 /* NnNsd_Detail.swift */; };
+		4C9622A82584AD270096E007 /* NnSsl_Sf.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C96221B2584AD260096E007 /* NnSsl_Sf.swift */; };
+		4C9622A92584AD270096E007 /* NnIdle_Detail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C96221C2584AD260096E007 /* NnIdle_Detail.swift */; };
+		4C9622AA2584AD270096E007 /* Nv_Gemcontrol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C96221D2584AD260096E007 /* Nv_Gemcontrol.swift */; };
+		4C9622AB2584AD270096E007 /* NnNs_Detail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C96221E2584AD260096E007 /* NnNs_Detail.swift */; };
+		4C9622AC2584AD270096E007 /* Nn_Oe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C96221F2584AD260096E007 /* Nn_Oe.swift */; };
+		4C9622AD2584AD270096E007 /* Nn_Vi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9622202584AD260096E007 /* Nn_Vi.swift */; };
+		4C9622AE2584AD270096E007 /* Nn_Usb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9622212584AD260096E007 /* Nn_Usb.swift */; };
+		4C9622AF2584AD270096E007 /* Nn_Pctl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9622222584AD260096E007 /* Nn_Pctl.swift */; };
+		4C9622B02584AD270096E007 /* Nn_Sasbus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9622232584AD260096E007 /* Nn_Sasbus.swift */; };
+		4C9622B12584AD270096E007 /* Nn_Fatalsrv.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9622242584AD260096E007 /* Nn_Fatalsrv.swift */; };
+		4C9622B22584AD270096E007 /* NnMigration_Detail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9622252584AD260096E007 /* NnMigration_Detail.swift */; };
+		4C9622B32584AD270096E007 /* NnUsb_Hs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9622262584AD260096E007 /* NnUsb_Hs.swift */; };
+		4C9622B42584AD270096E007 /* NnWlan_Detail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9622272584AD260096E007 /* NnWlan_Detail.swift */; };
+		4C9622B52584AD270096E007 /* NnAccount_Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9622282584AD260096E007 /* NnAccount_Profile.swift */; };
+		4C9622B62584AD270096E007 /* NnHid_Tmp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9622292584AD260096E007 /* NnHid_Tmp.swift */; };
+		4C9622B72584AD270096E007 /* Nn_Ncm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C96222A2584AD260096E007 /* Nn_Ncm.swift */; };
+		4C9622B82584AD270096E007 /* NnVi_Fbshare.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C96222B2584AD260096E007 /* NnVi_Fbshare.swift */; };
+		4C9622B92584AD270096E007 /* Nn_Cec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C96222C2584AD260096E007 /* Nn_Cec.swift */; };
+		4C9622BA2584AD270096E007 /* NnAccount_Nas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C96222D2584AD260096E007 /* NnAccount_Nas.swift */; };
+		4C9622BB2584AD270096E007 /* Nn_Am.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C96222E2584AD270096E007 /* Nn_Am.swift */; };
+		4C9622BC2584AD270096E007 /* Nn_Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C96222F2584AD270096E007 /* Nn_Util.swift */; };
+		4C9622BD2584AD270096E007 /* Nn_Lr.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9622302584AD270096E007 /* Nn_Lr.swift */; };
+		4C9622BE2584AD270096E007 /* Nn_Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9622312584AD270096E007 /* Nn_Settings.swift */; };
+		4C9622BF2584AD270096E007 /* NnPsc_Sf.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9622322584AD270096E007 /* NnPsc_Sf.swift */; };
+		4C9622C02584AD270096E007 /* Nn_Lm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9622332584AD270096E007 /* Nn_Lm.swift */; };
+		4C9622C12584AD270096E007 /* NnHtc_Tenv.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9622342584AD270096E007 /* NnHtc_Tenv.swift */; };
+		4C9622C22584AD270096E007 /* Nn_Bpc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9622352584AD270096E007 /* Nn_Bpc.swift */; };
+		4C9622C32584AD270096E007 /* NnNifm_Detail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9622362584AD270096E007 /* NnNifm_Detail.swift */; };
+		4C9622C42584AD270096E007 /* Nn_Btm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9622372584AD270096E007 /* Nn_Btm.swift */; };
+		4C9622C52584AD270096E007 /* Nn_Ovln.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9622382584AD270096E007 /* Nn_Ovln.swift */; };
+		4C9622C62584AD270096E007 /* Nn_Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9622392584AD270096E007 /* Nn_Time.swift */; };
+		4C9622C72584AD270096E007 /* NnAm_Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C96223A2584AD270096E007 /* NnAm_Service.swift */; };
+		4C9622C82584AD270096E007 /* NnTs_Server.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C96223B2584AD270096E007 /* NnTs_Server.swift */; };
+		4C9622C92584AD270096E007 /* NnSrepoDetail_Ipc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C96223C2584AD270096E007 /* NnSrepoDetail_Ipc.swift */; };
+		4C9622CA2584AD270096E007 /* NnPctl_Detail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C96223D2584AD270096E007 /* NnPctl_Detail.swift */; };
+		4C9622CB2584AD270096E007 /* Nns_Nvdrv.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C96223E2584AD270096E007 /* Nns_Nvdrv.swift */; };
+		4C9622CC2584AD270096E007 /* NnAudioctrl_Detail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C96223F2584AD270096E007 /* NnAudioctrl_Detail.swift */; };
+		4C9622CF2584B02F0096E007 /* UInt128.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9622CE2584B02F0096E007 /* UInt128.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,9 +177,7 @@
 		4C21AC3E257F4E250023284C /* NxoReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NxoReader.swift; sourceTree = "<group>"; };
 		4C21AC41257F4EEC0023284C /* BinaryReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinaryReader.swift; sourceTree = "<group>"; };
 		4C21AC44258070290023284C /* Kernel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kernel.swift; sourceTree = "<group>"; };
-		4C21AC492580991C0023284C /* nn.sm.detail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = nn.sm.detail.swift; sourceTree = "<group>"; };
 		4C21AC4D25809DBA0023284C /* Ipc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ipc.swift; sourceTree = "<group>"; };
-		4C21AC502580A4070023284C /* ServiceMappings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceMappings.swift; sourceTree = "<group>"; };
 		4C21AC532580A7BF0023284C /* KObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KObject.swift; sourceTree = "<group>"; };
 		4C83798E2579AA64006FF416 /* PsychopompNX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PsychopompNX.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C8379912579AA64006FF416 /* PsychopompNXApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PsychopompNXApp.swift; sourceTree = "<group>"; };
@@ -49,6 +188,149 @@
 		4C83799B2579AA66006FF416 /* PsychopompNX.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PsychopompNX.entitlements; sourceTree = "<group>"; };
 		4C8379B82579E9DA006FF416 /* Vmm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vmm.swift; sourceTree = "<group>"; };
 		4C8379BB2579EC8D006FF416 /* Cpu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cpu.swift; sourceTree = "<group>"; };
+		4C961F12258499B00096E007 /* ServiceMappings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceMappings.swift; sourceTree = "<group>"; };
+		4C9621B32584AD250096E007 /* Nn_Pcv.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Nn_Pcv.swift; path = Generated/Nn_Pcv.swift; sourceTree = "<group>"; };
+		4C9621B42584AD250096E007 /* Nn_Uart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Nn_Uart.swift; path = Generated/Nn_Uart.swift; sourceTree = "<group>"; };
+		4C9621B52584AD250096E007 /* NnEupld_Sf.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NnEupld_Sf.swift; path = Generated/NnEupld_Sf.swift; sourceTree = "<group>"; };
+		4C9621B62584AD250096E007 /* Nn_Audio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Nn_Audio.swift; path = Generated/Nn_Audio.swift; sourceTree = "<group>"; };
+		4C9621B72584AD250096E007 /* NnAccount_Detail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NnAccount_Detail.swift; path = Generated/NnAccount_Detail.swift; sourceTree = "<group>"; };
+		4C9621B82584AD250096E007 /* NnNfcMifare_Detail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NnNfcMifare_Detail.swift; path = Generated/NnNfcMifare_Detail.swift; sourceTree = "<group>"; };
+		4C9621B92584AD250096E007 /* NnErpt_Sf.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NnErpt_Sf.swift; path = Generated/NnErpt_Sf.swift; sourceTree = "<group>"; };
+		4C9621BA2584AD250096E007 /* NnPctlDetail_Ipc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NnPctlDetail_Ipc.swift; path = Generated/NnPctlDetail_Ipc.swift; sourceTree = "<group>"; };
+		4C9621BB2584AD250096E007 /* NnXcd_Detail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NnXcd_Detail.swift; path = Generated/NnXcd_Detail.swift; sourceTree = "<group>"; };
+		4C9621BC2584AD250096E007 /* NnSm_Detail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NnSm_Detail.swift; path = Generated/NnSm_Detail.swift; sourceTree = "<group>"; };
+		4C9621BD2584AD250096E007 /* Nn_Hidbus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Nn_Hidbus.swift; path = Generated/Nn_Hidbus.swift; sourceTree = "<group>"; };
+		4C9621BE2584AD250096E007 /* NnAudio_Detail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NnAudio_Detail.swift; path = Generated/NnAudio_Detail.swift; sourceTree = "<group>"; };
+		4C9621BF2584AD250096E007 /* Nn_Irsensor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Nn_Irsensor.swift; path = Generated/Nn_Irsensor.swift; sourceTree = "<group>"; };
+		4C9621C02584AD250096E007 /* Nn_Err.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Nn_Err.swift; path = Generated/Nn_Err.swift; sourceTree = "<group>"; };
+		4C9621C12584AD250096E007 /* NnBsdsocket_Cfg.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NnBsdsocket_Cfg.swift; path = Generated/NnBsdsocket_Cfg.swift; sourceTree = "<group>"; };
+		4C9621C22584AD250096E007 /* Nv_Gemcoredump.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Nv_Gemcoredump.swift; path = Generated/Nv_Gemcoredump.swift; sourceTree = "<group>"; };
+		4C9621C32584AD250096E007 /* NnNtcDetail_Service.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NnNtcDetail_Service.swift; path = Generated/NnNtcDetail_Service.swift; sourceTree = "<group>"; };
+		4C9621C42584AD250096E007 /* NnRo_Detail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NnRo_Detail.swift; path = Generated/NnRo_Detail.swift; sourceTree = "<group>"; };
+		4C9621C52584AD250096E007 /* NnTime_Sf.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NnTime_Sf.swift; path = Generated/NnTime_Sf.swift; sourceTree = "<group>"; };
+		4C9621C62584AD250096E007 /* Nn_Pinmux.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Nn_Pinmux.swift; path = Generated/Nn_Pinmux.swift; sourceTree = "<group>"; };
+		4C9621C72584AD260096E007 /* NnHid_System.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NnHid_System.swift; path = Generated/NnHid_System.swift; sourceTree = "<group>"; };
+		4C9621C82584AD260096E007 /* NnUsb_Pm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NnUsb_Pm.swift; path = Generated/NnUsb_Pm.swift; sourceTree = "<group>"; };
+		4C9621C92584AD260096E007 /* Nns_Hosbinder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Nns_Hosbinder.swift; path = Generated/Nns_Hosbinder.swift; sourceTree = "<group>"; };
+		4C9621CA2584AD260096E007 /* NnAccount_Baas.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NnAccount_Baas.swift; path = Generated/NnAccount_Baas.swift; sourceTree = "<group>"; };
+		4C9621CB2584AD260096E007 /* NnMigration_User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NnMigration_User.swift; path = Generated/NnMigration_User.swift; sourceTree = "<group>"; };
+		4C9621CC2584AD260096E007 /* Nn_Kpr.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Nn_Kpr.swift; path = Generated/Nn_Kpr.swift; sourceTree = "<group>"; };
+		4C9621CD2584AD260096E007 /* NnMii_Detail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NnMii_Detail.swift; path = Generated/NnMii_Detail.swift; sourceTree = "<group>"; };
+		4C9621CE2584AD260096E007 /* NnNfp_Detail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NnNfp_Detail.swift; path = Generated/NnNfp_Detail.swift; sourceTree = "<group>"; };
+		4C9621CF2584AD260096E007 /* NnPdm_Detail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NnPdm_Detail.swift; path = Generated/NnPdm_Detail.swift; sourceTree = "<group>"; };
+		4C9621D02584AD260096E007 /* NnSettings_System.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NnSettings_System.swift; path = Generated/NnSettings_System.swift; sourceTree = "<group>"; };
+		4C9621D12584AD260096E007 /* NnAocsrv_Detail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NnAocsrv_Detail.swift; path = Generated/NnAocsrv_Detail.swift; sourceTree = "<group>"; };
+		4C9621D22584AD260096E007 /* Nn_Mmnv.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Nn_Mmnv.swift; path = Generated/Nn_Mmnv.swift; sourceTree = "<group>"; };
+		4C9621D32584AD260096E007 /* NnFan_Detail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NnFan_Detail.swift; path = Generated/NnFan_Detail.swift; sourceTree = "<group>"; };
+		4C9621D42584AD260096E007 /* NnLdr_Detail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NnLdr_Detail.swift; path = Generated/NnLdr_Detail.swift; sourceTree = "<group>"; };
+		4C9621D52584AD260096E007 /* Nn_Es.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Nn_Es.swift; path = Generated/Nn_Es.swift; sourceTree = "<group>"; };
+		4C9621D62584AD260096E007 /* Nn_Pcm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Nn_Pcm.swift; path = Generated/Nn_Pcm.swift; sourceTree = "<group>"; };
+		4C9621D72584AD260096E007 /* NnNifmDetail_Sf.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NnNifmDetail_Sf.swift; path = Generated/NnNifmDetail_Sf.swift; sourceTree = "<group>"; };
+		4C9621D82584AD260096E007 /* Nn_Account.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Nn_Account.swift; path = Generated/Nn_Account.swift; sourceTree = "<group>"; };
+		4C9621D92584AD260096E007 /* NnLbl_Detail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NnLbl_Detail.swift; path = Generated/NnLbl_Detail.swift; sourceTree = "<group>"; };
+		4C9621DA2584AD260096E007 /* Nn_Friends.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Nn_Friends.swift; path = Generated/Nn_Friends.swift; sourceTree = "<group>"; };
+		4C9621DB2584AD260096E007 /* NnTimesrvDetail_Service.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NnTimesrvDetail_Service.swift; path = Generated/NnTimesrvDetail_Service.swift; sourceTree = "<group>"; };
+		4C9621DC2584AD260096E007 /* Nn_Bcat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Nn_Bcat.swift; path = Generated/Nn_Bcat.swift; sourceTree = "<group>"; };
+		4C9621DD2584AD260096E007 /* Nn_Bgtc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Nn_Bgtc.swift; path = Generated/Nn_Bgtc.swift; sourceTree = "<group>"; };
+		4C9621DE2584AD260096E007 /* NnNewsDetail_Ipc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NnNewsDetail_Ipc.swift; path = Generated/NnNewsDetail_Ipc.swift; sourceTree = "<group>"; };
+		4C9621DF2584AD260096E007 /* NnPcv_Detail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NnPcv_Detail.swift; path = Generated/NnPcv_Detail.swift; sourceTree = "<group>"; };
+		4C9621E02584AD260096E007 /* NnNfc_Detail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NnNfc_Detail.swift; path = Generated/NnNfc_Detail.swift; sourceTree = "<group>"; };
+		4C9621E12584AD260096E007 /* Nn_Grcsrv.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Nn_Grcsrv.swift; path = Generated/Nn_Grcsrv.swift; sourceTree = "<group>"; };
+		4C9621E22584AD260096E007 /* NnCodec_Detail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NnCodec_Detail.swift; path = Generated/NnCodec_Detail.swift; sourceTree = "<group>"; };
+		4C9621E32584AD260096E007 /* NnSpl_Detail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NnSpl_Detail.swift; path = Generated/NnSpl_Detail.swift; sourceTree = "<group>"; };
+		4C9621E42584AD260096E007 /* NnFriendsDetail_Ipc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NnFriendsDetail_Ipc.swift; path = Generated/NnFriendsDetail_Ipc.swift; sourceTree = "<group>"; };
+		4C9621E52584AD260096E007 /* Nn_Mii.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Nn_Mii.swift; path = Generated/Nn_Mii.swift; sourceTree = "<group>"; };
+		4C9621E62584AD260096E007 /* NnOmm_Detail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NnOmm_Detail.swift; path = Generated/NnOmm_Detail.swift; sourceTree = "<group>"; };
+		4C9621E72584AD260096E007 /* NnFgm_Sf.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NnFgm_Sf.swift; path = Generated/NnFgm_Sf.swift; sourceTree = "<group>"; };
+		4C9621E82584AD260096E007 /* NnNim_Detail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NnNim_Detail.swift; path = Generated/NnNim_Detail.swift; sourceTree = "<group>"; };
+		4C9621E92584AD260096E007 /* Nn_Nifm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Nn_Nifm.swift; path = Generated/Nn_Nifm.swift; sourceTree = "<group>"; };
+		4C9621EA2584AD260096E007 /* NnSettings_Factory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NnSettings_Factory.swift; path = Generated/NnSettings_Factory.swift; sourceTree = "<group>"; };
+		4C9621EB2584AD260096E007 /* Nn_Bluetooth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Nn_Bluetooth.swift; path = Generated/Nn_Bluetooth.swift; sourceTree = "<group>"; };
+		4C9621EC2584AD260096E007 /* NnPrepoDetail_Ipc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NnPrepoDetail_Ipc.swift; path = Generated/NnPrepoDetail_Ipc.swift; sourceTree = "<group>"; };
+		4C9621ED2584AD260096E007 /* NnVi_Native.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NnVi_Native.swift; path = Generated/NnVi_Native.swift; sourceTree = "<group>"; };
+		4C9621EE2584AD260096E007 /* NnAccount_Http.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NnAccount_Http.swift; path = Generated/NnAccount_Http.swift; sourceTree = "<group>"; };
+		4C9621EF2584AD260096E007 /* Nn_I2c.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Nn_I2c.swift; path = Generated/Nn_I2c.swift; sourceTree = "<group>"; };
+		4C9621F02584AD260096E007 /* NnNfcAm_Detail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NnNfcAm_Detail.swift; path = Generated/NnNfcAm_Detail.swift; sourceTree = "<group>"; };
+		4C9621F12584AD260096E007 /* Nn_Npns.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Nn_Npns.swift; path = Generated/Nn_Npns.swift; sourceTree = "<group>"; };
+		4C9621F22584AD260096E007 /* NnSocket_Resolver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NnSocket_Resolver.swift; path = Generated/NnSocket_Resolver.swift; sourceTree = "<group>"; };
+		4C9621F32584AD260096E007 /* NnAhid_Hdr.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NnAhid_Hdr.swift; path = Generated/NnAhid_Hdr.swift; sourceTree = "<group>"; };
+		4C9621F42584AD260096E007 /* NnBcat_Detail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NnBcat_Detail.swift; path = Generated/NnBcat_Detail.swift; sourceTree = "<group>"; };
+		4C9621F52584AD260096E007 /* NnPl_Detail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NnPl_Detail.swift; path = Generated/NnPl_Detail.swift; sourceTree = "<group>"; };
+		4C9621F62584AD260096E007 /* NnArp_Detail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NnArp_Detail.swift; path = Generated/NnArp_Detail.swift; sourceTree = "<group>"; };
+		4C9621F72584AD260096E007 /* NnSfHipc_Detail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NnSfHipc_Detail.swift; path = Generated/NnSfHipc_Detail.swift; sourceTree = "<group>"; };
+		4C9621F82584AD260096E007 /* Nv_MemoryProfiler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Nv_MemoryProfiler.swift; path = Generated/Nv_MemoryProfiler.swift; sourceTree = "<group>"; };
+		4C9621F92584AD260096E007 /* Nn_Applet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Nn_Applet.swift; path = Generated/Nn_Applet.swift; sourceTree = "<group>"; };
+		4C9621FA2584AD260096E007 /* Nn_Socket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Nn_Socket.swift; path = Generated/Nn_Socket.swift; sourceTree = "<group>"; };
+		4C9621FB2584AD260096E007 /* Root.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Root.swift; path = Generated/Root.swift; sourceTree = "<group>"; };
+		4C9621FC2584AD260096E007 /* NnEth_Sf.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NnEth_Sf.swift; path = Generated/NnEth_Sf.swift; sourceTree = "<group>"; };
+		4C9621FD2584AD260096E007 /* Nn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Nn.swift; path = Generated/Nn.swift; sourceTree = "<group>"; };
+		4C9621FE2584AD260096E007 /* NnHid_Debug.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NnHid_Debug.swift; path = Generated/NnHid_Debug.swift; sourceTree = "<group>"; };
+		4C9621FF2584AD260096E007 /* NnCapsrv_Sf.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NnCapsrv_Sf.swift; path = Generated/NnCapsrv_Sf.swift; sourceTree = "<group>"; };
+		4C9622002584AD260096E007 /* Nn_Tma.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Nn_Tma.swift; path = Generated/Nn_Tma.swift; sourceTree = "<group>"; };
+		4C9622012584AD260096E007 /* Nn_Gpio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Nn_Gpio.swift; path = Generated/Nn_Gpio.swift; sourceTree = "<group>"; };
+		4C9622022584AD260096E007 /* NnPcie_Detail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NnPcie_Detail.swift; path = Generated/NnPcie_Detail.swift; sourceTree = "<group>"; };
+		4C9622032584AD260096E007 /* NnSocket_Sf.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NnSocket_Sf.swift; path = Generated/NnSocket_Sf.swift; sourceTree = "<group>"; };
+		4C9622042584AD260096E007 /* Nn_Apm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Nn_Apm.swift; path = Generated/Nn_Apm.swift; sourceTree = "<group>"; };
+		4C9622052584AD260096E007 /* NnVisrv_Sf.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NnVisrv_Sf.swift; path = Generated/NnVisrv_Sf.swift; sourceTree = "<group>"; };
+		4C9622062584AD260096E007 /* NnCapsrv_Detail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NnCapsrv_Detail.swift; path = Generated/NnCapsrv_Detail.swift; sourceTree = "<group>"; };
+		4C9622072584AD260096E007 /* Nn_Pwm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Nn_Pwm.swift; path = Generated/Nn_Pwm.swift; sourceTree = "<group>"; };
+		4C9622082584AD260096E007 /* NnUsb_Ds.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NnUsb_Ds.swift; path = Generated/NnUsb_Ds.swift; sourceTree = "<group>"; };
+		4C9622092584AD260096E007 /* Nn_Ahid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Nn_Ahid.swift; path = Generated/Nn_Ahid.swift; sourceTree = "<group>"; };
+		4C96220A2584AD260096E007 /* NnBcatDetail_Ipc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NnBcatDetail_Ipc.swift; path = Generated/NnBcatDetail_Ipc.swift; sourceTree = "<group>"; };
+		4C96220B2584AD260096E007 /* Nn_Ns.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Nn_Ns.swift; path = Generated/Nn_Ns.swift; sourceTree = "<group>"; };
+		4C96220C2584AD260096E007 /* NnLdn_Detail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NnLdn_Detail.swift; path = Generated/NnLdn_Detail.swift; sourceTree = "<group>"; };
+		4C96220D2584AD260096E007 /* Nn_Dmnt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Nn_Dmnt.swift; path = Generated/Nn_Dmnt.swift; sourceTree = "<group>"; };
+		4C96220E2584AD260096E007 /* Nn_Fgm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Nn_Fgm.swift; path = Generated/Nn_Fgm.swift; sourceTree = "<group>"; };
+		4C96220F2584AD260096E007 /* Nn_Tc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Nn_Tc.swift; path = Generated/Nn_Tc.swift; sourceTree = "<group>"; };
+		4C9622102584AD260096E007 /* Nn_Hid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Nn_Hid.swift; path = Generated/Nn_Hid.swift; sourceTree = "<group>"; };
+		4C9622112584AD260096E007 /* NnSpsm_Detail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NnSpsm_Detail.swift; path = Generated/NnSpsm_Detail.swift; sourceTree = "<group>"; };
+		4C9622122584AD260096E007 /* Nn_Jitsrv.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Nn_Jitsrv.swift; path = Generated/Nn_Jitsrv.swift; sourceTree = "<group>"; };
+		4C9622132584AD260096E007 /* Nn_Capsrv.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Nn_Capsrv.swift; path = Generated/Nn_Capsrv.swift; sourceTree = "<group>"; };
+		4C9622142584AD260096E007 /* Nn_Profiler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Nn_Profiler.swift; path = Generated/Nn_Profiler.swift; sourceTree = "<group>"; };
+		4C9622152584AD260096E007 /* NnFssrv_Sf.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NnFssrv_Sf.swift; path = Generated/NnFssrv_Sf.swift; sourceTree = "<group>"; };
+		4C9622162584AD260096E007 /* NnUsbPd_Detail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NnUsbPd_Detail.swift; path = Generated/NnUsbPd_Detail.swift; sourceTree = "<group>"; };
+		4C9622172584AD260096E007 /* NnPm_Detail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NnPm_Detail.swift; path = Generated/NnPm_Detail.swift; sourceTree = "<group>"; };
+		4C9622182584AD260096E007 /* Nn_Psm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Nn_Psm.swift; path = Generated/Nn_Psm.swift; sourceTree = "<group>"; };
+		4C9622192584AD260096E007 /* NnFriends_Detail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NnFriends_Detail.swift; path = Generated/NnFriends_Detail.swift; sourceTree = "<group>"; };
+		4C96221A2584AD260096E007 /* NnNsd_Detail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NnNsd_Detail.swift; path = Generated/NnNsd_Detail.swift; sourceTree = "<group>"; };
+		4C96221B2584AD260096E007 /* NnSsl_Sf.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NnSsl_Sf.swift; path = Generated/NnSsl_Sf.swift; sourceTree = "<group>"; };
+		4C96221C2584AD260096E007 /* NnIdle_Detail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NnIdle_Detail.swift; path = Generated/NnIdle_Detail.swift; sourceTree = "<group>"; };
+		4C96221D2584AD260096E007 /* Nv_Gemcontrol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Nv_Gemcontrol.swift; path = Generated/Nv_Gemcontrol.swift; sourceTree = "<group>"; };
+		4C96221E2584AD260096E007 /* NnNs_Detail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NnNs_Detail.swift; path = Generated/NnNs_Detail.swift; sourceTree = "<group>"; };
+		4C96221F2584AD260096E007 /* Nn_Oe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Nn_Oe.swift; path = Generated/Nn_Oe.swift; sourceTree = "<group>"; };
+		4C9622202584AD260096E007 /* Nn_Vi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Nn_Vi.swift; path = Generated/Nn_Vi.swift; sourceTree = "<group>"; };
+		4C9622212584AD260096E007 /* Nn_Usb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Nn_Usb.swift; path = Generated/Nn_Usb.swift; sourceTree = "<group>"; };
+		4C9622222584AD260096E007 /* Nn_Pctl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Nn_Pctl.swift; path = Generated/Nn_Pctl.swift; sourceTree = "<group>"; };
+		4C9622232584AD260096E007 /* Nn_Sasbus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Nn_Sasbus.swift; path = Generated/Nn_Sasbus.swift; sourceTree = "<group>"; };
+		4C9622242584AD260096E007 /* Nn_Fatalsrv.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Nn_Fatalsrv.swift; path = Generated/Nn_Fatalsrv.swift; sourceTree = "<group>"; };
+		4C9622252584AD260096E007 /* NnMigration_Detail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NnMigration_Detail.swift; path = Generated/NnMigration_Detail.swift; sourceTree = "<group>"; };
+		4C9622262584AD260096E007 /* NnUsb_Hs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NnUsb_Hs.swift; path = Generated/NnUsb_Hs.swift; sourceTree = "<group>"; };
+		4C9622272584AD260096E007 /* NnWlan_Detail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NnWlan_Detail.swift; path = Generated/NnWlan_Detail.swift; sourceTree = "<group>"; };
+		4C9622282584AD260096E007 /* NnAccount_Profile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NnAccount_Profile.swift; path = Generated/NnAccount_Profile.swift; sourceTree = "<group>"; };
+		4C9622292584AD260096E007 /* NnHid_Tmp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NnHid_Tmp.swift; path = Generated/NnHid_Tmp.swift; sourceTree = "<group>"; };
+		4C96222A2584AD260096E007 /* Nn_Ncm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Nn_Ncm.swift; path = Generated/Nn_Ncm.swift; sourceTree = "<group>"; };
+		4C96222B2584AD260096E007 /* NnVi_Fbshare.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NnVi_Fbshare.swift; path = Generated/NnVi_Fbshare.swift; sourceTree = "<group>"; };
+		4C96222C2584AD260096E007 /* Nn_Cec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Nn_Cec.swift; path = Generated/Nn_Cec.swift; sourceTree = "<group>"; };
+		4C96222D2584AD260096E007 /* NnAccount_Nas.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NnAccount_Nas.swift; path = Generated/NnAccount_Nas.swift; sourceTree = "<group>"; };
+		4C96222E2584AD270096E007 /* Nn_Am.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Nn_Am.swift; path = Generated/Nn_Am.swift; sourceTree = "<group>"; };
+		4C96222F2584AD270096E007 /* Nn_Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Nn_Util.swift; path = Generated/Nn_Util.swift; sourceTree = "<group>"; };
+		4C9622302584AD270096E007 /* Nn_Lr.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Nn_Lr.swift; path = Generated/Nn_Lr.swift; sourceTree = "<group>"; };
+		4C9622312584AD270096E007 /* Nn_Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Nn_Settings.swift; path = Generated/Nn_Settings.swift; sourceTree = "<group>"; };
+		4C9622322584AD270096E007 /* NnPsc_Sf.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NnPsc_Sf.swift; path = Generated/NnPsc_Sf.swift; sourceTree = "<group>"; };
+		4C9622332584AD270096E007 /* Nn_Lm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Nn_Lm.swift; path = Generated/Nn_Lm.swift; sourceTree = "<group>"; };
+		4C9622342584AD270096E007 /* NnHtc_Tenv.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NnHtc_Tenv.swift; path = Generated/NnHtc_Tenv.swift; sourceTree = "<group>"; };
+		4C9622352584AD270096E007 /* Nn_Bpc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Nn_Bpc.swift; path = Generated/Nn_Bpc.swift; sourceTree = "<group>"; };
+		4C9622362584AD270096E007 /* NnNifm_Detail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NnNifm_Detail.swift; path = Generated/NnNifm_Detail.swift; sourceTree = "<group>"; };
+		4C9622372584AD270096E007 /* Nn_Btm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Nn_Btm.swift; path = Generated/Nn_Btm.swift; sourceTree = "<group>"; };
+		4C9622382584AD270096E007 /* Nn_Ovln.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Nn_Ovln.swift; path = Generated/Nn_Ovln.swift; sourceTree = "<group>"; };
+		4C9622392584AD270096E007 /* Nn_Time.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Nn_Time.swift; path = Generated/Nn_Time.swift; sourceTree = "<group>"; };
+		4C96223A2584AD270096E007 /* NnAm_Service.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NnAm_Service.swift; path = Generated/NnAm_Service.swift; sourceTree = "<group>"; };
+		4C96223B2584AD270096E007 /* NnTs_Server.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NnTs_Server.swift; path = Generated/NnTs_Server.swift; sourceTree = "<group>"; };
+		4C96223C2584AD270096E007 /* NnSrepoDetail_Ipc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NnSrepoDetail_Ipc.swift; path = Generated/NnSrepoDetail_Ipc.swift; sourceTree = "<group>"; };
+		4C96223D2584AD270096E007 /* NnPctl_Detail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NnPctl_Detail.swift; path = Generated/NnPctl_Detail.swift; sourceTree = "<group>"; };
+		4C96223E2584AD270096E007 /* Nns_Nvdrv.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Nns_Nvdrv.swift; path = Generated/Nns_Nvdrv.swift; sourceTree = "<group>"; };
+		4C96223F2584AD270096E007 /* NnAudioctrl_Detail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NnAudioctrl_Detail.swift; path = Generated/NnAudioctrl_Detail.swift; sourceTree = "<group>"; };
+		4C9622CE2584B02F0096E007 /* UInt128.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UInt128.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,18 +347,10 @@
 		4C21AC47258094AD0023284C /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				4C21AC48258098B90023284C /* Generated */,
+				4C9620962584AAC50096E007 /* Generated */,
+				4C961F12258499B00096E007 /* ServiceMappings.swift */,
 			);
 			path = Services;
-			sourceTree = "<group>";
-		};
-		4C21AC48258098B90023284C /* Generated */ = {
-			isa = PBXGroup;
-			children = (
-				4C21AC492580991C0023284C /* nn.sm.detail.swift */,
-				4C21AC502580A4070023284C /* ServiceMappings.swift */,
-			);
-			path = Generated;
 			sourceTree = "<group>";
 		};
 		4C8379852579AA64006FF416 = {
@@ -117,6 +391,7 @@
 				4C21AC44258070290023284C /* Kernel.swift */,
 				4C21AC4D25809DBA0023284C /* Ipc.swift */,
 				4C21AC532580A7BF0023284C /* KObject.swift */,
+				4C9622CE2584B02F0096E007 /* UInt128.swift */,
 			);
 			path = PsychopompNX;
 			sourceTree = "<group>";
@@ -127,6 +402,154 @@
 				4C8379982579AA66006FF416 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		4C9620962584AAC50096E007 /* Generated */ = {
+			isa = PBXGroup;
+			children = (
+				4C9621D82584AD260096E007 /* Nn_Account.swift */,
+				4C9622092584AD260096E007 /* Nn_Ahid.swift */,
+				4C96222E2584AD270096E007 /* Nn_Am.swift */,
+				4C9622042584AD260096E007 /* Nn_Apm.swift */,
+				4C9621F92584AD260096E007 /* Nn_Applet.swift */,
+				4C9621B62584AD250096E007 /* Nn_Audio.swift */,
+				4C9621DC2584AD260096E007 /* Nn_Bcat.swift */,
+				4C9621DD2584AD260096E007 /* Nn_Bgtc.swift */,
+				4C9621EB2584AD260096E007 /* Nn_Bluetooth.swift */,
+				4C9622352584AD270096E007 /* Nn_Bpc.swift */,
+				4C9622372584AD270096E007 /* Nn_Btm.swift */,
+				4C9622132584AD260096E007 /* Nn_Capsrv.swift */,
+				4C96222C2584AD260096E007 /* Nn_Cec.swift */,
+				4C96220D2584AD260096E007 /* Nn_Dmnt.swift */,
+				4C9621C02584AD250096E007 /* Nn_Err.swift */,
+				4C9621D52584AD260096E007 /* Nn_Es.swift */,
+				4C9622242584AD260096E007 /* Nn_Fatalsrv.swift */,
+				4C96220E2584AD260096E007 /* Nn_Fgm.swift */,
+				4C9621DA2584AD260096E007 /* Nn_Friends.swift */,
+				4C9622012584AD260096E007 /* Nn_Gpio.swift */,
+				4C9621E12584AD260096E007 /* Nn_Grcsrv.swift */,
+				4C9622102584AD260096E007 /* Nn_Hid.swift */,
+				4C9621BD2584AD250096E007 /* Nn_Hidbus.swift */,
+				4C9621EF2584AD260096E007 /* Nn_I2c.swift */,
+				4C9621BF2584AD250096E007 /* Nn_Irsensor.swift */,
+				4C9622122584AD260096E007 /* Nn_Jitsrv.swift */,
+				4C9621CC2584AD260096E007 /* Nn_Kpr.swift */,
+				4C9622332584AD270096E007 /* Nn_Lm.swift */,
+				4C9622302584AD270096E007 /* Nn_Lr.swift */,
+				4C9621E52584AD260096E007 /* Nn_Mii.swift */,
+				4C9621D22584AD260096E007 /* Nn_Mmnv.swift */,
+				4C96222A2584AD260096E007 /* Nn_Ncm.swift */,
+				4C9621E92584AD260096E007 /* Nn_Nifm.swift */,
+				4C9621F12584AD260096E007 /* Nn_Npns.swift */,
+				4C96220B2584AD260096E007 /* Nn_Ns.swift */,
+				4C96221F2584AD260096E007 /* Nn_Oe.swift */,
+				4C9622382584AD270096E007 /* Nn_Ovln.swift */,
+				4C9621D62584AD260096E007 /* Nn_Pcm.swift */,
+				4C9622222584AD260096E007 /* Nn_Pctl.swift */,
+				4C9621B32584AD250096E007 /* Nn_Pcv.swift */,
+				4C9621C62584AD250096E007 /* Nn_Pinmux.swift */,
+				4C9622142584AD260096E007 /* Nn_Profiler.swift */,
+				4C9622182584AD260096E007 /* Nn_Psm.swift */,
+				4C9622072584AD260096E007 /* Nn_Pwm.swift */,
+				4C9622232584AD260096E007 /* Nn_Sasbus.swift */,
+				4C9622312584AD270096E007 /* Nn_Settings.swift */,
+				4C9621FA2584AD260096E007 /* Nn_Socket.swift */,
+				4C96220F2584AD260096E007 /* Nn_Tc.swift */,
+				4C9622392584AD270096E007 /* Nn_Time.swift */,
+				4C9622002584AD260096E007 /* Nn_Tma.swift */,
+				4C9621B42584AD250096E007 /* Nn_Uart.swift */,
+				4C9622212584AD260096E007 /* Nn_Usb.swift */,
+				4C96222F2584AD270096E007 /* Nn_Util.swift */,
+				4C9622202584AD260096E007 /* Nn_Vi.swift */,
+				4C9621FD2584AD260096E007 /* Nn.swift */,
+				4C9621CA2584AD260096E007 /* NnAccount_Baas.swift */,
+				4C9621B72584AD250096E007 /* NnAccount_Detail.swift */,
+				4C9621EE2584AD260096E007 /* NnAccount_Http.swift */,
+				4C96222D2584AD260096E007 /* NnAccount_Nas.swift */,
+				4C9622282584AD260096E007 /* NnAccount_Profile.swift */,
+				4C9621F32584AD260096E007 /* NnAhid_Hdr.swift */,
+				4C96223A2584AD270096E007 /* NnAm_Service.swift */,
+				4C9621D12584AD260096E007 /* NnAocsrv_Detail.swift */,
+				4C9621F62584AD260096E007 /* NnArp_Detail.swift */,
+				4C9621BE2584AD250096E007 /* NnAudio_Detail.swift */,
+				4C96223F2584AD270096E007 /* NnAudioctrl_Detail.swift */,
+				4C9621F42584AD260096E007 /* NnBcat_Detail.swift */,
+				4C96220A2584AD260096E007 /* NnBcatDetail_Ipc.swift */,
+				4C9621C12584AD250096E007 /* NnBsdsocket_Cfg.swift */,
+				4C9622062584AD260096E007 /* NnCapsrv_Detail.swift */,
+				4C9621FF2584AD260096E007 /* NnCapsrv_Sf.swift */,
+				4C9621E22584AD260096E007 /* NnCodec_Detail.swift */,
+				4C9621B92584AD250096E007 /* NnErpt_Sf.swift */,
+				4C9621FC2584AD260096E007 /* NnEth_Sf.swift */,
+				4C9621B52584AD250096E007 /* NnEupld_Sf.swift */,
+				4C9621D32584AD260096E007 /* NnFan_Detail.swift */,
+				4C9621E72584AD260096E007 /* NnFgm_Sf.swift */,
+				4C9622192584AD260096E007 /* NnFriends_Detail.swift */,
+				4C9621E42584AD260096E007 /* NnFriendsDetail_Ipc.swift */,
+				4C9622152584AD260096E007 /* NnFssrv_Sf.swift */,
+				4C9621FE2584AD260096E007 /* NnHid_Debug.swift */,
+				4C9621C72584AD260096E007 /* NnHid_System.swift */,
+				4C9622292584AD260096E007 /* NnHid_Tmp.swift */,
+				4C9622342584AD270096E007 /* NnHtc_Tenv.swift */,
+				4C96221C2584AD260096E007 /* NnIdle_Detail.swift */,
+				4C9621D92584AD260096E007 /* NnLbl_Detail.swift */,
+				4C96220C2584AD260096E007 /* NnLdn_Detail.swift */,
+				4C9621D42584AD260096E007 /* NnLdr_Detail.swift */,
+				4C9622252584AD260096E007 /* NnMigration_Detail.swift */,
+				4C9621CB2584AD260096E007 /* NnMigration_User.swift */,
+				4C9621CD2584AD260096E007 /* NnMii_Detail.swift */,
+				4C9621DE2584AD260096E007 /* NnNewsDetail_Ipc.swift */,
+				4C9621E02584AD260096E007 /* NnNfc_Detail.swift */,
+				4C9621F02584AD260096E007 /* NnNfcAm_Detail.swift */,
+				4C9621B82584AD250096E007 /* NnNfcMifare_Detail.swift */,
+				4C9621CE2584AD260096E007 /* NnNfp_Detail.swift */,
+				4C9622362584AD270096E007 /* NnNifm_Detail.swift */,
+				4C9621D72584AD260096E007 /* NnNifmDetail_Sf.swift */,
+				4C9621E82584AD260096E007 /* NnNim_Detail.swift */,
+				4C96221E2584AD260096E007 /* NnNs_Detail.swift */,
+				4C96221A2584AD260096E007 /* NnNsd_Detail.swift */,
+				4C9621C32584AD250096E007 /* NnNtcDetail_Service.swift */,
+				4C9621E62584AD260096E007 /* NnOmm_Detail.swift */,
+				4C9622022584AD260096E007 /* NnPcie_Detail.swift */,
+				4C96223D2584AD270096E007 /* NnPctl_Detail.swift */,
+				4C9621BA2584AD250096E007 /* NnPctlDetail_Ipc.swift */,
+				4C9621DF2584AD260096E007 /* NnPcv_Detail.swift */,
+				4C9621CF2584AD260096E007 /* NnPdm_Detail.swift */,
+				4C9621F52584AD260096E007 /* NnPl_Detail.swift */,
+				4C9622172584AD260096E007 /* NnPm_Detail.swift */,
+				4C9621EC2584AD260096E007 /* NnPrepoDetail_Ipc.swift */,
+				4C9622322584AD270096E007 /* NnPsc_Sf.swift */,
+				4C9621C42584AD250096E007 /* NnRo_Detail.swift */,
+				4C9621C92584AD260096E007 /* Nns_Hosbinder.swift */,
+				4C96223E2584AD270096E007 /* Nns_Nvdrv.swift */,
+				4C9621EA2584AD260096E007 /* NnSettings_Factory.swift */,
+				4C9621D02584AD260096E007 /* NnSettings_System.swift */,
+				4C9621F72584AD260096E007 /* NnSfHipc_Detail.swift */,
+				4C9621BC2584AD250096E007 /* NnSm_Detail.swift */,
+				4C9621F22584AD260096E007 /* NnSocket_Resolver.swift */,
+				4C9622032584AD260096E007 /* NnSocket_Sf.swift */,
+				4C9621E32584AD260096E007 /* NnSpl_Detail.swift */,
+				4C9622112584AD260096E007 /* NnSpsm_Detail.swift */,
+				4C96223C2584AD270096E007 /* NnSrepoDetail_Ipc.swift */,
+				4C96221B2584AD260096E007 /* NnSsl_Sf.swift */,
+				4C9621C52584AD250096E007 /* NnTime_Sf.swift */,
+				4C9621DB2584AD260096E007 /* NnTimesrvDetail_Service.swift */,
+				4C96223B2584AD270096E007 /* NnTs_Server.swift */,
+				4C9622082584AD260096E007 /* NnUsb_Ds.swift */,
+				4C9622262584AD260096E007 /* NnUsb_Hs.swift */,
+				4C9621C82584AD260096E007 /* NnUsb_Pm.swift */,
+				4C9622162584AD260096E007 /* NnUsbPd_Detail.swift */,
+				4C96222B2584AD260096E007 /* NnVi_Fbshare.swift */,
+				4C9621ED2584AD260096E007 /* NnVi_Native.swift */,
+				4C9622052584AD260096E007 /* NnVisrv_Sf.swift */,
+				4C9622272584AD260096E007 /* NnWlan_Detail.swift */,
+				4C9621BB2584AD250096E007 /* NnXcd_Detail.swift */,
+				4C96221D2584AD260096E007 /* Nv_Gemcontrol.swift */,
+				4C9621C22584AD250096E007 /* Nv_Gemcoredump.swift */,
+				4C9621F82584AD260096E007 /* Nv_MemoryProfiler.swift */,
+				4C9621FB2584AD260096E007 /* Root.swift */,
+			);
+			name = Generated;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -198,22 +621,163 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C9622CC2584AD270096E007 /* NnAudioctrl_Detail.swift in Sources */,
+				4C9622442584AD270096E007 /* NnAccount_Detail.swift in Sources */,
+				4C96227A2584AD270096E007 /* NnVi_Native.swift in Sources */,
+				4C9622462584AD270096E007 /* NnErpt_Sf.swift in Sources */,
+				4C96225A2584AD270096E007 /* NnMii_Detail.swift in Sources */,
+				4C9622792584AD270096E007 /* NnPrepoDetail_Ipc.swift in Sources */,
+				4C961F13258499B00096E007 /* ServiceMappings.swift in Sources */,
+				4C96226E2584AD270096E007 /* Nn_Grcsrv.swift in Sources */,
+				4C96229B2584AD270096E007 /* Nn_Fgm.swift in Sources */,
+				4C9622652584AD270096E007 /* Nn_Account.swift in Sources */,
+				4C9622912584AD270096E007 /* Nn_Apm.swift in Sources */,
+				4C96224B2584AD270096E007 /* NnAudio_Detail.swift in Sources */,
+				4C9622742584AD270096E007 /* NnFgm_Sf.swift in Sources */,
+				4C9622802584AD270096E007 /* NnAhid_Hdr.swift in Sources */,
+				4C96227B2584AD270096E007 /* NnAccount_Http.swift in Sources */,
+				4C9622BE2584AD270096E007 /* Nn_Settings.swift in Sources */,
+				4C9622B42584AD270096E007 /* NnWlan_Detail.swift in Sources */,
+				4C9622BB2584AD270096E007 /* Nn_Am.swift in Sources */,
+				4C96228D2584AD270096E007 /* Nn_Tma.swift in Sources */,
+				4C9622422584AD270096E007 /* NnEupld_Sf.swift in Sources */,
+				4C9622CB2584AD270096E007 /* Nns_Nvdrv.swift in Sources */,
 				4C21AC45258070290023284C /* Kernel.swift in Sources */,
+				4C9622812584AD270096E007 /* NnBcat_Detail.swift in Sources */,
+				4C96228C2584AD270096E007 /* NnCapsrv_Sf.swift in Sources */,
+				4C9622C32584AD270096E007 /* NnNifm_Detail.swift in Sources */,
+				4C9622562584AD270096E007 /* Nns_Hosbinder.swift in Sources */,
+				4C9622A12584AD270096E007 /* Nn_Profiler.swift in Sources */,
+				4C9622CF2584B02F0096E007 /* UInt128.swift in Sources */,
+				4C9622AC2584AD270096E007 /* Nn_Oe.swift in Sources */,
+				4C96227E2584AD270096E007 /* Nn_Npns.swift in Sources */,
+				4C9622882584AD270096E007 /* Root.swift in Sources */,
+				4C9622962584AD270096E007 /* Nn_Ahid.swift in Sources */,
+				4C9622972584AD270096E007 /* NnBcatDetail_Ipc.swift in Sources */,
+				4C9622C22584AD270096E007 /* Nn_Bpc.swift in Sources */,
+				4C9622702584AD270096E007 /* NnSpl_Detail.swift in Sources */,
 				4C21AC33257BEB040023284C /* Emulator.swift in Sources */,
+				4C9622452584AD270096E007 /* NnNfcMifare_Detail.swift in Sources */,
+				4C9622BF2584AD270096E007 /* NnPsc_Sf.swift in Sources */,
+				4C9622A72584AD270096E007 /* NnNsd_Detail.swift in Sources */,
+				4C9622C92584AD270096E007 /* NnSrepoDetail_Ipc.swift in Sources */,
+				4C9622432584AD270096E007 /* Nn_Audio.swift in Sources */,
+				4C9622892584AD270096E007 /* NnEth_Sf.swift in Sources */,
+				4C96224A2584AD270096E007 /* Nn_Hidbus.swift in Sources */,
+				4C9622B82584AD270096E007 /* NnVi_Fbshare.swift in Sources */,
+				4C9622922584AD270096E007 /* NnVisrv_Sf.swift in Sources */,
+				4C96225C2584AD270096E007 /* NnPdm_Detail.swift in Sources */,
 				4C21AC2C257ABA8A0023284C /* GuestPointer.swift in Sources */,
+				4C9622AE2584AD270096E007 /* Nn_Usb.swift in Sources */,
+				4C9622942584AD270096E007 /* Nn_Pwm.swift in Sources */,
+				4C9622A52584AD270096E007 /* Nn_Psm.swift in Sources */,
+				4C9622992584AD270096E007 /* NnLdn_Detail.swift in Sources */,
+				4C96229E2584AD270096E007 /* NnSpsm_Detail.swift in Sources */,
+				4C9622A62584AD270096E007 /* NnFriends_Detail.swift in Sources */,
+				4C96228F2584AD270096E007 /* NnPcie_Detail.swift in Sources */,
 				4C8379BC2579EC8D006FF416 /* Cpu.swift in Sources */,
+				4C9622B62584AD270096E007 /* NnHid_Tmp.swift in Sources */,
+				4C9622A42584AD270096E007 /* NnPm_Detail.swift in Sources */,
+				4C9622582584AD270096E007 /* NnMigration_User.swift in Sources */,
+				4C9622602584AD270096E007 /* NnFan_Detail.swift in Sources */,
 				4C21AC42257F4EEC0023284C /* BinaryReader.swift in Sources */,
+				4C9622412584AD270096E007 /* Nn_Uart.swift in Sources */,
+				4C9622872584AD270096E007 /* Nn_Socket.swift in Sources */,
+				4C96226C2584AD270096E007 /* NnPcv_Detail.swift in Sources */,
 				4C8379942579AA64006FF416 /* ContentView.swift in Sources */,
-				4C21AC512580A4070023284C /* ServiceMappings.swift in Sources */,
+				4C9622A92584AD270096E007 /* NnIdle_Detail.swift in Sources */,
+				4C9622BC2584AD270096E007 /* Nn_Util.swift in Sources */,
+				4C9622692584AD270096E007 /* Nn_Bcat.swift in Sources */,
+				4C96225B2584AD270096E007 /* NnNfp_Detail.swift in Sources */,
+				4C9622BA2584AD270096E007 /* NnAccount_Nas.swift in Sources */,
+				4C9622AF2584AD270096E007 /* Nn_Pctl.swift in Sources */,
+				4C9622522584AD270096E007 /* NnTime_Sf.swift in Sources */,
+				4C96224E2584AD270096E007 /* NnBsdsocket_Cfg.swift in Sources */,
+				4C9622902584AD270096E007 /* NnSocket_Sf.swift in Sources */,
+				4C9622A22584AD270096E007 /* NnFssrv_Sf.swift in Sources */,
+				4C9622862584AD270096E007 /* Nn_Applet.swift in Sources */,
+				4C96224D2584AD270096E007 /* Nn_Err.swift in Sources */,
+				4C9622682584AD270096E007 /* NnTimesrvDetail_Service.swift in Sources */,
+				4C9622982584AD270096E007 /* Nn_Ns.swift in Sources */,
+				4C9622AB2584AD270096E007 /* NnNs_Detail.swift in Sources */,
+				4C96229A2584AD270096E007 /* Nn_Dmnt.swift in Sources */,
+				4C9622B12584AD270096E007 /* Nn_Fatalsrv.swift in Sources */,
+				4C9622662584AD270096E007 /* NnLbl_Detail.swift in Sources */,
+				4C9622752584AD270096E007 /* NnNim_Detail.swift in Sources */,
+				4C9622762584AD270096E007 /* Nn_Nifm.swift in Sources */,
+				4C9622A32584AD270096E007 /* NnUsbPd_Detail.swift in Sources */,
+				4C9622592584AD270096E007 /* Nn_Kpr.swift in Sources */,
+				4C9622C12584AD270096E007 /* NnHtc_Tenv.swift in Sources */,
+				4C9622732584AD270096E007 /* NnOmm_Detail.swift in Sources */,
+				4C96225E2584AD270096E007 /* NnAocsrv_Detail.swift in Sources */,
+				4C9622932584AD270096E007 /* NnCapsrv_Detail.swift in Sources */,
+				4C9622B72584AD270096E007 /* Nn_Ncm.swift in Sources */,
+				4C96227C2584AD270096E007 /* Nn_I2c.swift in Sources */,
 				4C8379922579AA64006FF416 /* PsychopompNXApp.swift in Sources */,
+				4C9622A82584AD270096E007 /* NnSsl_Sf.swift in Sources */,
+				4C9622632584AD270096E007 /* Nn_Pcm.swift in Sources */,
+				4C96224C2584AD270096E007 /* Nn_Irsensor.swift in Sources */,
 				4C21AC36257C4FD80023284C /* TaskManager.swift in Sources */,
+				4C9622C02584AD270096E007 /* Nn_Lm.swift in Sources */,
+				4C9622C52584AD270096E007 /* Nn_Ovln.swift in Sources */,
+				4C9622552584AD270096E007 /* NnUsb_Pm.swift in Sources */,
+				4C9622532584AD270096E007 /* Nn_Pinmux.swift in Sources */,
+				4C96229C2584AD270096E007 /* Nn_Tc.swift in Sources */,
+				4C9622AA2584AD270096E007 /* Nv_Gemcontrol.swift in Sources */,
+				4C9622C72584AD270096E007 /* NnAm_Service.swift in Sources */,
+				4C9622CA2584AD270096E007 /* NnPctl_Detail.swift in Sources */,
+				4C9622492584AD270096E007 /* NnSm_Detail.swift in Sources */,
 				4C21AC3F257F4E250023284C /* NxoReader.swift in Sources */,
 				4C21AC542580A7BF0023284C /* KObject.swift in Sources */,
+				4C96227D2584AD270096E007 /* NnNfcAm_Detail.swift in Sources */,
+				4C9622782584AD270096E007 /* Nn_Bluetooth.swift in Sources */,
+				4C9622402584AD270096E007 /* Nn_Pcv.swift in Sources */,
+				4C9622832584AD270096E007 /* NnArp_Detail.swift in Sources */,
+				4C9622822584AD270096E007 /* NnPl_Detail.swift in Sources */,
+				4C9622852584AD270096E007 /* Nv_MemoryProfiler.swift in Sources */,
+				4C9622C82584AD270096E007 /* NnTs_Server.swift in Sources */,
+				4C9622502584AD270096E007 /* NnNtcDetail_Service.swift in Sources */,
+				4C9622842584AD270096E007 /* NnSfHipc_Detail.swift in Sources */,
+				4C96225F2584AD270096E007 /* Nn_Mmnv.swift in Sources */,
+				4C96228E2584AD270096E007 /* Nn_Gpio.swift in Sources */,
+				4C9622482584AD270096E007 /* NnXcd_Detail.swift in Sources */,
+				4C9622A02584AD270096E007 /* Nn_Capsrv.swift in Sources */,
+				4C9622612584AD270096E007 /* NnLdr_Detail.swift in Sources */,
+				4C9622772584AD270096E007 /* NnSettings_Factory.swift in Sources */,
+				4C9622722584AD270096E007 /* Nn_Mii.swift in Sources */,
+				4C9622622584AD270096E007 /* Nn_Es.swift in Sources */,
+				4C9622B92584AD270096E007 /* Nn_Cec.swift in Sources */,
+				4C9622642584AD270096E007 /* NnNifmDetail_Sf.swift in Sources */,
 				4C21AC3C257F35230023284C /* Utilities.swift in Sources */,
+				4C9622BD2584AD270096E007 /* Nn_Lr.swift in Sources */,
+				4C96227F2584AD270096E007 /* NnSocket_Resolver.swift in Sources */,
+				4C96226D2584AD270096E007 /* NnNfc_Detail.swift in Sources */,
+				4C9622712584AD270096E007 /* NnFriendsDetail_Ipc.swift in Sources */,
+				4C96228B2584AD270096E007 /* NnHid_Debug.swift in Sources */,
 				4C21AC4E25809DBA0023284C /* Ipc.swift in Sources */,
+				4C9622B22584AD270096E007 /* NnMigration_Detail.swift in Sources */,
+				4C96229F2584AD270096E007 /* Nn_Jitsrv.swift in Sources */,
+				4C9622672584AD270096E007 /* Nn_Friends.swift in Sources */,
+				4C96226F2584AD270096E007 /* NnCodec_Detail.swift in Sources */,
 				4C21AC39257C9A0B0023284C /* PfsReader.swift in Sources */,
+				4C9622512584AD270096E007 /* NnRo_Detail.swift in Sources */,
 				4C8379B92579E9DA006FF416 /* Vmm.swift in Sources */,
-				4C21AC4A2580991C0023284C /* nn.sm.detail.swift in Sources */,
+				4C9622C62584AD270096E007 /* Nn_Time.swift in Sources */,
+				4C9622B32584AD270096E007 /* NnUsb_Hs.swift in Sources */,
+				4C9622572584AD270096E007 /* NnAccount_Baas.swift in Sources */,
+				4C96228A2584AD270096E007 /* Nn.swift in Sources */,
+				4C9622B02584AD270096E007 /* Nn_Sasbus.swift in Sources */,
+				4C9622C42584AD270096E007 /* Nn_Btm.swift in Sources */,
+				4C9622B52584AD270096E007 /* NnAccount_Profile.swift in Sources */,
+				4C9622472584AD270096E007 /* NnPctlDetail_Ipc.swift in Sources */,
+				4C9622AD2584AD270096E007 /* Nn_Vi.swift in Sources */,
+				4C96225D2584AD270096E007 /* NnSettings_System.swift in Sources */,
+				4C9622542584AD270096E007 /* NnHid_System.swift in Sources */,
+				4C9622952584AD270096E007 /* NnUsb_Ds.swift in Sources */,
+				4C96229D2584AD270096E007 /* Nn_Hid.swift in Sources */,
+				4C96224F2584AD270096E007 /* Nv_Gemcoredump.swift in Sources */,
+				4C96226A2584AD270096E007 /* Nn_Bgtc.swift in Sources */,
+				4C96226B2584AD270096E007 /* NnNewsDetail_Ipc.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -341,6 +905,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = PsychopompNX/PsychopompNX.entitlements;
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"PsychopompNX/Preview Content\"";
@@ -363,6 +928,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = PsychopompNX/PsychopompNX.entitlements;
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"PsychopompNX/Preview Content\"";

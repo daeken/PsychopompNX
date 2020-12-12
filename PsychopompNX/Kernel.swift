@@ -151,6 +151,13 @@ class Kernel {
     func getHandle<T>(_ handle: UInt32) -> T? {
         handles[handle] as? T
     }
+    
+    func tryGetHandle<T>(_ handle: UInt32) throws -> T {
+        guard let obj = handles[handle] as? T else {
+            throw KernelError.unknownHandle
+        }
+        return obj
+    }
 
     func close(_ handle: UInt32) {
         guard let obj = getHandle(handle) as KObject? else {
@@ -242,7 +249,7 @@ class Kernel {
         case .ConnectToNamedPort:
             let name = readNullTerminatedString(thread.X[1])
             print("ConnectToNamedPort: '" + name + "'")
-            guard let op = ipcServiceMappings[name]?._construct() else {
+            guard let op = ipcServiceMappings[name]?() else {
                 throw KernelError.unknownNamedPort
             }
             thread.X[0] = 0
@@ -251,6 +258,7 @@ class Kernel {
         case .SendSyncRequest:
             let handle = UInt32(thread.X[0])
             guard let service = getHandle(handle) as IpcService? else {
+                print_hex("SendSyncRequest to bad handle?", handle)
                 thread.X[0] = 0xf601
                 return
             }
@@ -281,6 +289,11 @@ class Kernel {
 
             thread.X[0] = 0
             thread.X[1] = heapBase
+        
+        case .CreateTransferMemory:
+            print_hex("CreateTransferMemory stub", thread.X[1], thread.X[2])
+            thread.X[0] = 0
+            thread.X[1] = 0xffff
 
         default:
             print_hex("Unhandled SVC:", code!)

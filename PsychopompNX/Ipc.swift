@@ -7,21 +7,28 @@
 
 import Foundation
 
+typealias Pid = UInt64
+
+enum IpcError: Error {
+    case unimplemented
+    case byteCountMismatch
+}
+
 class IncomingMessage {
+    let bbuf: [UInt8]
     let buf: [UInt32]
     let isDomainObject: Bool
     let type: Int
     let commandId: UInt32
     let aCount, bCount, xCount, moveCount, copyCount: Int
-    let pid: UInt64
+    let pid: Pid
     let hasC, hasPid: Bool
     let domainHandle, domainCommand: UInt32
     let wLen, rawOffset, sfciOffset, descOffset, copyOffset, moveOffset: Int
 
     init(_ buffer: [UInt8], _ isDomainObject: Bool) {
-        buf = buffer.withUnsafeBufferPointer(of: UInt32.self) {
-            Array($0)
-        }
+        bbuf = buffer
+        buf = buffer.withUnsafeBufferPointer(of: UInt32.self) { Array($0) }
         self.isDomainObject = isDomainObject
         let type = Int(buf[0] & 0xFFFF)
         self.type = type
@@ -39,10 +46,10 @@ class IncomingMessage {
             copyCount = Int((hd >> 1) & 0xF)
             moveCount = Int(hd >> 5)
             if hasPid {
-                pid = UInt64(buf[pos]) | (UInt64(buf[pos + 1]) << 32)
+                pid = Pid(buf[pos]) | (UInt64(buf[pos + 1]) << 32)
                 pos += 2
             } else {
-                pid = 0
+                pid = Pid(0)
             }
             copyOffset = pos * 4
             pos += copyCount
@@ -50,7 +57,7 @@ class IncomingMessage {
             pos += moveCount
         } else {
             hasPid = false
-            pid = 0
+            pid = Pid(0)
             copyCount = 0
             moveCount = 0
             copyOffset = 0
@@ -82,9 +89,25 @@ class IncomingMessage {
 
         assert(type == 2 || (isDomainObject && domainCommand == 2) || buf[pos] == 0x49434653)
     }
+    
+    func getCopy(_ number: Int) -> UInt32 {
+        0
+    }
+
+    func getMove(_ number: Int) -> UInt32 {
+        0
+    }
 
     func getData<T>(_ offset: Int) -> T {
         buf.getValueAtOffset(of: T.self, offset: sfciOffset + 8 + offset)
+    }
+    
+    func getBytes(_ offset: Int, _ count: Int) -> [UInt8] {
+        Array(bbuf[sfciOffset + 8 + offset ..< sfciOffset + 8 + offset + count])
+    }
+    
+    func getBuffer<T>(_ type: Int, _ number: Int) -> Buffer<T> {
+        Buffer<T>()
     }
 }
 
@@ -132,6 +155,21 @@ class OutgoingMessage {
     func bake() {
         buf[(sfcoOffset >> 2) + 2] = errCode
     }
+    
+    func setData<T>(_ offset: Int, _ value: T) {
+    }
+    
+    func setBytes(_ offset: Int, _ value: [UInt8]) {
+    }
+    
+    func copy(_ number: Int, _ obj: KObject) {
+    }
+    
+    func move(_ number: Int, _ obj: KObject) {
+    }
+}
+
+class Buffer<T> {
 }
 
 class IpcService: KObject {
@@ -165,8 +203,13 @@ class IpcService: KObject {
                 ret = 0x25a0b
             case 4:
                 print("IPC command \(im.commandId) for \(target)")
-                om.initialize(0, 0, 0)
-                ret = 0
+                do {
+                    try target.dispatch(im, om)
+                    ret = 0
+                } catch {
+                    print("Unhandled IPC error: \(error)")
+                    try! bailout()
+                }
             default:
                 print("Unhandled IPC type: \(im.type)")
                 try! bailout()
@@ -187,11 +230,7 @@ class IpcService: KObject {
         return (ret, closeHandle)
     }
 
-    func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) {
+    func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
         try! bailout()
     }
-}
-
-protocol AccessibleIpcService: IpcService {
-    static func _construct() -> AccessibleIpcService
 }

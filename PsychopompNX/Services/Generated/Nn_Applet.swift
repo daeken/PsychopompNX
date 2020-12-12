@@ -1,0 +1,1 @@
+typealias NnApplet_AppletResourceUserId = UInt64
