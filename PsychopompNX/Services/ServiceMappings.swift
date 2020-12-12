@@ -84,7 +84,7 @@ let ipcServiceMappings: [String: () -> IpcService] =
             "pwm": { NnPwm_IManager() }, 
             "es": { NnEs_IETicketService() }, 
             "sm:m": { NnSmDetail_IManagerInterface() }, 
-            "sm:": { NnSmDetail_IUserInterface() }, 
+            "sm:": { NnSmDetail_IUserInterface_Impl() }, 
             "nvdrvdbg": { NnsNvdrv_INvDrvDebugFSServices() }, 
             "nvdrv:s": { NnsNvdrv_INvDrvServices() }, 
             "nvdrv:t": { NnsNvdrv_INvDrvServices() }, 
