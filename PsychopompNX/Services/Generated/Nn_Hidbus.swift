@@ -73,3 +73,21 @@ class NnHidbus_IHidbusServer: IpcService {
 		}
 	}
 }
+
+/*
+class NnHidbus_IHidbusServer_Impl: NnHidbus_IHidbusServer {
+	override func getBusHandle(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::hidbus::nn::hidbus::IHidbusServer#GetBusHandle") }
+	override func isExternalDeviceConnected(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::hidbus::nn::hidbus::IHidbusServer#IsExternalDeviceConnected") }
+	override func initialize(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::hidbus::nn::hidbus::IHidbusServer#Initialize") }
+	override func finalize(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::hidbus::nn::hidbus::IHidbusServer#Finalize") }
+	override func enableExternalDevice(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::hidbus::nn::hidbus::IHidbusServer#EnableExternalDevice") }
+	override func getExternalDeviceId(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::hidbus::nn::hidbus::IHidbusServer#GetExternalDeviceId") }
+	override func sendCommandAsync(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::hidbus::nn::hidbus::IHidbusServer#SendCommandAsync") }
+	override func getSendCommandAsynceResult(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::hidbus::nn::hidbus::IHidbusServer#GetSendCommandAsynceResult") }
+	override func setEventForSendCommandAsycResult(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::hidbus::nn::hidbus::IHidbusServer#SetEventForSendCommandAsycResult") }
+	override func getSharedMemoryHandle(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::hidbus::nn::hidbus::IHidbusServer#GetSharedMemoryHandle") }
+	override func enableJoyPollingReceiveMode(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::hidbus::nn::hidbus::IHidbusServer#EnableJoyPollingReceiveMode") }
+	override func disableJoyPollingReceiveMode(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::hidbus::nn::hidbus::IHidbusServer#DisableJoyPollingReceiveMode") }
+	override func getPollingData(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::hidbus::nn::hidbus::IHidbusServer#GetPollingData") }
+}
+*/

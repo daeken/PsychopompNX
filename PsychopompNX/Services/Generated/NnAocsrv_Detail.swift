@@ -60,3 +60,17 @@ class NnAocsrvDetail_IAddOnContentManager: IpcService {
 		}
 	}
 }
+
+/*
+class NnAocsrvDetail_IAddOnContentManager_Impl: NnAocsrvDetail_IAddOnContentManager {
+	override func countAddOnContentByApplicationId(_ _0: NnNcm_ApplicationId) throws -> UInt32 { throw IpcError.unimplemented(name: "nn::aocsrv::detail::nn::aocsrv::detail::IAddOnContentManager#CountAddOnContentByApplicationId") }
+	override func listAddOnContentByApplicationId(_ _0: UInt32, _ _1: UInt32, _ _2: NnNcm_ApplicationId, _ _3: Buffer<UInt32>) throws -> UInt32 { throw IpcError.unimplemented(name: "nn::aocsrv::detail::nn::aocsrv::detail::IAddOnContentManager#ListAddOnContentByApplicationId") }
+	override func countAddOnContent(_ _0: UInt64, _ _1: Pid) throws -> UInt32 { throw IpcError.unimplemented(name: "nn::aocsrv::detail::nn::aocsrv::detail::IAddOnContentManager#CountAddOnContent") }
+	override func listAddOnContent(_ _0: UInt32, _ _1: UInt32, _ _2: UInt64, _ _3: Pid, _ _4: Buffer<UInt32>) throws -> UInt32 { throw IpcError.unimplemented(name: "nn::aocsrv::detail::nn::aocsrv::detail::IAddOnContentManager#ListAddOnContent") }
+	override func getAddOnContentBaseIdByApplicationId(_ _0: NnNcm_ApplicationId) throws -> UInt64 { throw IpcError.unimplemented(name: "nn::aocsrv::detail::nn::aocsrv::detail::IAddOnContentManager#GetAddOnContentBaseIdByApplicationId") }
+	override func getAddOnContentBaseId(_ _0: UInt64, _ _1: Pid) throws -> UInt64 { throw IpcError.unimplemented(name: "nn::aocsrv::detail::nn::aocsrv::detail::IAddOnContentManager#GetAddOnContentBaseId") }
+	override func prepareAddOnContentByApplicationId(_ _0: UInt32, _ _1: NnNcm_ApplicationId) throws { throw IpcError.unimplemented(name: "nn::aocsrv::detail::nn::aocsrv::detail::IAddOnContentManager#PrepareAddOnContentByApplicationId") }
+	override func prepareAddOnContent(_ _0: UInt32, _ _1: UInt64, _ _2: Pid) throws { throw IpcError.unimplemented(name: "nn::aocsrv::detail::nn::aocsrv::detail::IAddOnContentManager#PrepareAddOnContent") }
+	override func getAddOnContentListChangedEvent() throws -> KObject { throw IpcError.unimplemented(name: "nn::aocsrv::detail::nn::aocsrv::detail::IAddOnContentManager#GetAddOnContentListChangedEvent") }
+}
+*/

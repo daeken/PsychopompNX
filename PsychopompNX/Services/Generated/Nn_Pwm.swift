@@ -42,6 +42,17 @@ class NnPwm_IChannelSession: IpcService {
 	}
 }
 
+/*
+class NnPwm_IChannelSession_Impl: NnPwm_IChannelSession {
+	override func setPeriod(_ _0: UInt64) throws { throw IpcError.unimplemented(name: "nn::pwm::nn::pwm::IChannelSession#SetPeriod") }
+	override func getPeriod() throws -> UInt64 { throw IpcError.unimplemented(name: "nn::pwm::nn::pwm::IChannelSession#GetPeriod") }
+	override func setDuty(_ _0: UInt32) throws { throw IpcError.unimplemented(name: "nn::pwm::nn::pwm::IChannelSession#SetDuty") }
+	override func getDuty() throws -> UInt32 { throw IpcError.unimplemented(name: "nn::pwm::nn::pwm::IChannelSession#GetDuty") }
+	override func setEnabled(_ _0: UInt8) throws { throw IpcError.unimplemented(name: "nn::pwm::nn::pwm::IChannelSession#SetEnabled") }
+	override func getEnabled() throws -> UInt8 { throw IpcError.unimplemented(name: "nn::pwm::nn::pwm::IChannelSession#GetEnabled") }
+}
+*/
+
 class NnPwm_IManager: IpcService {
 	func openSessionForDev(_ _0: UInt32) throws -> NnPwm_IChannelSession { throw IpcError.unimplemented(name: "nn::pwm::nn::pwm::IManager#OpenSessionForDev") }
 	func openSession(_ _0: UInt32) throws -> NnPwm_IChannelSession { throw IpcError.unimplemented(name: "nn::pwm::nn::pwm::IManager#OpenSession") }
@@ -64,3 +75,10 @@ class NnPwm_IManager: IpcService {
 		}
 	}
 }
+
+/*
+class NnPwm_IManager_Impl: NnPwm_IManager {
+	override func openSessionForDev(_ _0: UInt32) throws -> NnPwm_IChannelSession { throw IpcError.unimplemented(name: "nn::pwm::nn::pwm::IManager#OpenSessionForDev") }
+	override func openSession(_ _0: UInt32) throws -> NnPwm_IChannelSession { throw IpcError.unimplemented(name: "nn::pwm::nn::pwm::IManager#OpenSession") }
+}
+*/

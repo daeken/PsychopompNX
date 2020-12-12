@@ -99,3 +99,25 @@ class NnNsdDetail_IManager: IpcService {
 		}
 	}
 }
+
+/*
+class NnNsdDetail_IManager_Impl: NnNsdDetail_IManager {
+	override func getSettingName(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::nsd::detail::nn::nsd::detail::IManager#GetSettingName") }
+	override func getEnvironmentIdentifier(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::nsd::detail::nn::nsd::detail::IManager#GetEnvironmentIdentifier") }
+	override func getDeviceId() throws -> [UInt8] { throw IpcError.unimplemented(name: "nn::nsd::detail::nn::nsd::detail::IManager#GetDeviceId") }
+	override func deleteSettings(_ _0: UInt32) throws { throw IpcError.unimplemented(name: "nn::nsd::detail::nn::nsd::detail::IManager#DeleteSettings") }
+	override func importSettings(_ _0: UInt32, _ _1: Buffer<UInt8>, _ _2: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::nsd::detail::nn::nsd::detail::IManager#ImportSettings") }
+	override func resolve(_ _0: Buffer<UInt8>, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::nsd::detail::nn::nsd::detail::IManager#Resolve") }
+	override func resolveEx(_ _0: Buffer<UInt8>, _ _1: Buffer<UInt8>) throws -> UInt32 { throw IpcError.unimplemented(name: "nn::nsd::detail::nn::nsd::detail::IManager#ResolveEx") }
+	override func getNasServiceSetting(_ _0: Buffer<UInt8>, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::nsd::detail::nn::nsd::detail::IManager#GetNasServiceSetting") }
+	override func getNasServiceSettingEx(_ _0: Buffer<UInt8>, _ _1: Buffer<UInt8>) throws -> UInt32 { throw IpcError.unimplemented(name: "nn::nsd::detail::nn::nsd::detail::IManager#GetNasServiceSettingEx") }
+	override func getNasRequestFqdn(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::nsd::detail::nn::nsd::detail::IManager#GetNasRequestFqdn") }
+	override func getNasRequestFqdnEx(_ _0: Buffer<UInt8>) throws -> UInt32 { throw IpcError.unimplemented(name: "nn::nsd::detail::nn::nsd::detail::IManager#GetNasRequestFqdnEx") }
+	override func getNasApiFqdn(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::nsd::detail::nn::nsd::detail::IManager#GetNasApiFqdn") }
+	override func getNasApiFqdnEx(_ _0: Buffer<UInt8>) throws -> UInt32 { throw IpcError.unimplemented(name: "nn::nsd::detail::nn::nsd::detail::IManager#GetNasApiFqdnEx") }
+	override func getCurrentSetting(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::nsd::detail::nn::nsd::detail::IManager#GetCurrentSetting") }
+	override func readSaveDataFromFsForTest(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::nsd::detail::nn::nsd::detail::IManager#ReadSaveDataFromFsForTest") }
+	override func writeSaveDataToFsForTest(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::nsd::detail::nn::nsd::detail::IManager#WriteSaveDataToFsForTest") }
+	override func deleteSaveDataOfFsForTest() throws { throw IpcError.unimplemented(name: "nn::nsd::detail::nn::nsd::detail::IManager#DeleteSaveDataOfFsForTest") }
+}
+*/

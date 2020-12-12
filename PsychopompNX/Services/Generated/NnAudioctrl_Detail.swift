@@ -157,3 +157,35 @@ class NnAudioctrlDetail_IAudioController: IpcService {
 		}
 	}
 }
+
+/*
+class NnAudioctrlDetail_IAudioController_Impl: NnAudioctrlDetail_IAudioController {
+	override func getTargetVolume(_ _0: UInt32) throws -> UInt32 { throw IpcError.unimplemented(name: "nn::audioctrl::detail::nn::audioctrl::detail::IAudioController#GetTargetVolume") }
+	override func setTargetVolume(_ _0: UInt32, _ _1: UInt32) throws { throw IpcError.unimplemented(name: "nn::audioctrl::detail::nn::audioctrl::detail::IAudioController#SetTargetVolume") }
+	override func getTargetVolumeMin() throws -> UInt32 { throw IpcError.unimplemented(name: "nn::audioctrl::detail::nn::audioctrl::detail::IAudioController#GetTargetVolumeMin") }
+	override func getTargetVolumeMax() throws -> UInt32 { throw IpcError.unimplemented(name: "nn::audioctrl::detail::nn::audioctrl::detail::IAudioController#GetTargetVolumeMax") }
+	override func isTargetMute(_ _0: UInt32) throws -> UInt8 { throw IpcError.unimplemented(name: "nn::audioctrl::detail::nn::audioctrl::detail::IAudioController#IsTargetMute") }
+	override func setTargetMute(_ _0: UInt64) throws { throw IpcError.unimplemented(name: "nn::audioctrl::detail::nn::audioctrl::detail::IAudioController#SetTargetMute") }
+	override func isTargetConnected(_ _0: UInt32) throws -> UInt8 { throw IpcError.unimplemented(name: "nn::audioctrl::detail::nn::audioctrl::detail::IAudioController#IsTargetConnected") }
+	override func setDefaultTarget(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::audioctrl::detail::nn::audioctrl::detail::IAudioController#SetDefaultTarget") }
+	override func getDefaultTarget() throws -> UInt32 { throw IpcError.unimplemented(name: "nn::audioctrl::detail::nn::audioctrl::detail::IAudioController#GetDefaultTarget") }
+	override func getAudioOutputMode(_ _0: UInt32) throws -> UInt32 { throw IpcError.unimplemented(name: "nn::audioctrl::detail::nn::audioctrl::detail::IAudioController#GetAudioOutputMode") }
+	override func setAudioOutputMode(_ _0: UInt32, _ _1: UInt32) throws { throw IpcError.unimplemented(name: "nn::audioctrl::detail::nn::audioctrl::detail::IAudioController#SetAudioOutputMode") }
+	override func setForceMutePolicy(_ _0: UInt32) throws { throw IpcError.unimplemented(name: "nn::audioctrl::detail::nn::audioctrl::detail::IAudioController#SetForceMutePolicy") }
+	override func getForceMutePolicy() throws -> UInt32 { throw IpcError.unimplemented(name: "nn::audioctrl::detail::nn::audioctrl::detail::IAudioController#GetForceMutePolicy") }
+	override func getOutputModeSetting(_ _0: UInt32) throws -> UInt32 { throw IpcError.unimplemented(name: "nn::audioctrl::detail::nn::audioctrl::detail::IAudioController#GetOutputModeSetting") }
+	override func setOutputModeSetting(_ _0: UInt32, _ _1: UInt32) throws { throw IpcError.unimplemented(name: "nn::audioctrl::detail::nn::audioctrl::detail::IAudioController#SetOutputModeSetting") }
+	override func setOutputTarget(_ _0: UInt32) throws { throw IpcError.unimplemented(name: "nn::audioctrl::detail::nn::audioctrl::detail::IAudioController#SetOutputTarget") }
+	override func setInputTargetForceEnabled(_ _0: UInt8) throws { throw IpcError.unimplemented(name: "nn::audioctrl::detail::nn::audioctrl::detail::IAudioController#SetInputTargetForceEnabled") }
+	override func setHeadphoneOutputLevelMode(_ _0: UInt32) throws { throw IpcError.unimplemented(name: "nn::audioctrl::detail::nn::audioctrl::detail::IAudioController#SetHeadphoneOutputLevelMode") }
+	override func getHeadphoneOutputLevelMode() throws -> UInt32 { throw IpcError.unimplemented(name: "nn::audioctrl::detail::nn::audioctrl::detail::IAudioController#GetHeadphoneOutputLevelMode") }
+	override func acquireAudioVolumeUpdateEventForPlayReport() throws -> KObject { throw IpcError.unimplemented(name: "nn::audioctrl::detail::nn::audioctrl::detail::IAudioController#AcquireAudioVolumeUpdateEventForPlayReport") }
+	override func acquireAudioOutputDeviceUpdateEventForPlayReport() throws -> KObject { throw IpcError.unimplemented(name: "nn::audioctrl::detail::nn::audioctrl::detail::IAudioController#AcquireAudioOutputDeviceUpdateEventForPlayReport") }
+	override func getAudioOutputTargetForPlayReport() throws -> UInt32 { throw IpcError.unimplemented(name: "nn::audioctrl::detail::nn::audioctrl::detail::IAudioController#GetAudioOutputTargetForPlayReport") }
+	override func notifyHeadphoneVolumeWarningDisplayedEvent() throws { throw IpcError.unimplemented(name: "nn::audioctrl::detail::nn::audioctrl::detail::IAudioController#NotifyHeadphoneVolumeWarningDisplayedEvent") }
+	override func setSystemOutputMasterVolume(_ _0: UInt32) throws { throw IpcError.unimplemented(name: "nn::audioctrl::detail::nn::audioctrl::detail::IAudioController#SetSystemOutputMasterVolume") }
+	override func getSystemOutputMasterVolume() throws -> UInt32 { throw IpcError.unimplemented(name: "nn::audioctrl::detail::nn::audioctrl::detail::IAudioController#GetSystemOutputMasterVolume") }
+	override func getAudioVolumeDataForPlayReport() throws -> Any? { throw IpcError.unimplemented(name: "nn::audioctrl::detail::nn::audioctrl::detail::IAudioController#GetAudioVolumeDataForPlayReport") }
+	override func updateHeadphoneSettings(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::audioctrl::detail::nn::audioctrl::detail::IAudioController#UpdateHeadphoneSettings") }
+}
+*/

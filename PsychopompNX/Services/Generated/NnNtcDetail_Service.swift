@@ -42,6 +42,17 @@ class NnNtcDetailService_IEnsureNetworkClockAvailabilityService: IpcService {
 	}
 }
 
+/*
+class NnNtcDetailService_IEnsureNetworkClockAvailabilityService_Impl: NnNtcDetailService_IEnsureNetworkClockAvailabilityService {
+	override func startTask() throws { throw IpcError.unimplemented(name: "nn::ntc::detail::service::nn::ntc::detail::service::IEnsureNetworkClockAvailabilityService#StartTask") }
+	override func getFinishNotificationEvent() throws -> KObject { throw IpcError.unimplemented(name: "nn::ntc::detail::service::nn::ntc::detail::service::IEnsureNetworkClockAvailabilityService#GetFinishNotificationEvent") }
+	override func getResult() throws { throw IpcError.unimplemented(name: "nn::ntc::detail::service::nn::ntc::detail::service::IEnsureNetworkClockAvailabilityService#GetResult") }
+	override func cancel() throws { throw IpcError.unimplemented(name: "nn::ntc::detail::service::nn::ntc::detail::service::IEnsureNetworkClockAvailabilityService#Cancel") }
+	override func isProcessing() throws -> UInt8 { throw IpcError.unimplemented(name: "nn::ntc::detail::service::nn::ntc::detail::service::IEnsureNetworkClockAvailabilityService#IsProcessing") }
+	override func getServerTime() throws -> UInt64 { throw IpcError.unimplemented(name: "nn::ntc::detail::service::nn::ntc::detail::service::IEnsureNetworkClockAvailabilityService#GetServerTime") }
+}
+*/
+
 class NnNtcDetailService_IStaticService: IpcService {
 	func openEnsureNetworkClockAvailabilityService(_ _0: UInt32, _ _1: UInt32) throws -> NnNtcDetailService_IEnsureNetworkClockAvailabilityService { throw IpcError.unimplemented(name: "nn::ntc::detail::service::nn::ntc::detail::service::IStaticService#OpenEnsureNetworkClockAvailabilityService") }
 	func suspendAutonomicTimeCorrection() throws { throw IpcError.unimplemented(name: "nn::ntc::detail::service::nn::ntc::detail::service::IStaticService#SuspendAutonomicTimeCorrection") }
@@ -68,3 +79,11 @@ class NnNtcDetailService_IStaticService: IpcService {
 		}
 	}
 }
+
+/*
+class NnNtcDetailService_IStaticService_Impl: NnNtcDetailService_IStaticService {
+	override func openEnsureNetworkClockAvailabilityService(_ _0: UInt32, _ _1: UInt32) throws -> NnNtcDetailService_IEnsureNetworkClockAvailabilityService { throw IpcError.unimplemented(name: "nn::ntc::detail::service::nn::ntc::detail::service::IStaticService#OpenEnsureNetworkClockAvailabilityService") }
+	override func suspendAutonomicTimeCorrection() throws { throw IpcError.unimplemented(name: "nn::ntc::detail::service::nn::ntc::detail::service::IStaticService#SuspendAutonomicTimeCorrection") }
+	override func resumeAutonomicTimeCorrection() throws { throw IpcError.unimplemented(name: "nn::ntc::detail::service::nn::ntc::detail::service::IStaticService#ResumeAutonomicTimeCorrection") }
+}
+*/

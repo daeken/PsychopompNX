@@ -44,3 +44,15 @@ class NnCec_ICecManager: IpcService {
 		}
 	}
 }
+
+/*
+class NnCec_ICecManager_Impl: NnCec_ICecManager {
+	override func unknown0() throws -> (Any?, KObject) { throw IpcError.unimplemented(name: "nn::cec::nn::cec::ICecManager#Unknown0") }
+	override func unknown1(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::cec::nn::cec::ICecManager#Unknown1") }
+	override func unknown2(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::cec::nn::cec::ICecManager#Unknown2") }
+	override func unknown3(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::cec::nn::cec::ICecManager#Unknown3") }
+	override func unknown4(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::cec::nn::cec::ICecManager#Unknown4") }
+	override func unknown5() throws -> Any? { throw IpcError.unimplemented(name: "nn::cec::nn::cec::ICecManager#Unknown5") }
+	override func unknown6() throws -> Any? { throw IpcError.unimplemented(name: "nn::cec::nn::cec::ICecManager#Unknown6") }
+}
+*/

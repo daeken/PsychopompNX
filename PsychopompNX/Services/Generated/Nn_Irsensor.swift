@@ -116,6 +116,29 @@ class NnIrsensor_IIrSensorServer: IpcService {
 	}
 }
 
+/*
+class NnIrsensor_IIrSensorServer_Impl: NnIrsensor_IIrSensorServer {
+	override func activateIrsensor(_ _0: NnApplet_AppletResourceUserId, _ _1: Pid) throws { throw IpcError.unimplemented(name: "nn::irsensor::nn::irsensor::IIrSensorServer#ActivateIrsensor") }
+	override func deactivateIrsensor(_ _0: NnApplet_AppletResourceUserId, _ _1: Pid) throws { throw IpcError.unimplemented(name: "nn::irsensor::nn::irsensor::IIrSensorServer#DeactivateIrsensor") }
+	override func getIrsensorSharedMemoryHandle(_ _0: NnApplet_AppletResourceUserId, _ _1: Pid) throws -> KObject { throw IpcError.unimplemented(name: "nn::irsensor::nn::irsensor::IIrSensorServer#GetIrsensorSharedMemoryHandle") }
+	override func stopImageProcessor(_ _0: NnIrsensor_IrCameraHandle, _ _1: NnApplet_AppletResourceUserId, _ _2: Pid) throws { throw IpcError.unimplemented(name: "nn::irsensor::nn::irsensor::IIrSensorServer#StopImageProcessor") }
+	override func runMomentProcessor(_ _0: NnIrsensor_IrCameraHandle, _ _1: NnApplet_AppletResourceUserId, _ _2: NnIrsensor_PackedMomentProcessorConfig, _ _3: Pid) throws { throw IpcError.unimplemented(name: "nn::irsensor::nn::irsensor::IIrSensorServer#RunMomentProcessor") }
+	override func runClusteringProcessor(_ _0: NnIrsensor_IrCameraHandle, _ _1: NnApplet_AppletResourceUserId, _ _2: NnIrsensor_PackedClusteringProcessorConfig, _ _3: Pid) throws { throw IpcError.unimplemented(name: "nn::irsensor::nn::irsensor::IIrSensorServer#RunClusteringProcessor") }
+	override func runImageTransferProcessor(_ _0: NnIrsensor_IrCameraHandle, _ _1: NnApplet_AppletResourceUserId, _ _2: NnIrsensor_PackedImageTransferProcessorConfig, _ _3: UInt64, _ _4: Pid, _ _5: KObject) throws { throw IpcError.unimplemented(name: "nn::irsensor::nn::irsensor::IIrSensorServer#RunImageTransferProcessor") }
+	override func getImageTransferProcessorState(_ _0: NnIrsensor_IrCameraHandle, _ _1: NnApplet_AppletResourceUserId, _ _2: Pid, _ _3: Buffer<UInt8>) throws -> NnIrsensor_ImageTransferProcessorState { throw IpcError.unimplemented(name: "nn::irsensor::nn::irsensor::IIrSensorServer#GetImageTransferProcessorState") }
+	override func runTeraPluginProcessor(_ _0: NnIrsensor_IrCameraHandle, _ _1: NnIrsensor_PackedTeraPluginProcessorConfig, _ _2: NnApplet_AppletResourceUserId, _ _3: Pid) throws { throw IpcError.unimplemented(name: "nn::irsensor::nn::irsensor::IIrSensorServer#RunTeraPluginProcessor") }
+	override func getNpadIrCameraHandle(_ _0: UInt32) throws -> NnIrsensor_IrCameraHandle { throw IpcError.unimplemented(name: "nn::irsensor::nn::irsensor::IIrSensorServer#GetNpadIrCameraHandle") }
+	override func runPointingProcessor(_ _0: NnIrsensor_IrCameraHandle, _ _1: NnIrsensor_PackedPointingProcessorConfig, _ _2: NnApplet_AppletResourceUserId, _ _3: Pid) throws { throw IpcError.unimplemented(name: "nn::irsensor::nn::irsensor::IIrSensorServer#RunPointingProcessor") }
+	override func suspendImageProcessor(_ _0: NnIrsensor_IrCameraHandle, _ _1: NnApplet_AppletResourceUserId, _ _2: Pid) throws { throw IpcError.unimplemented(name: "nn::irsensor::nn::irsensor::IIrSensorServer#SuspendImageProcessor") }
+	override func checkFirmwareVersion(_ _0: NnIrsensor_IrCameraHandle, _ _1: NnIrsensor_PackedMcuVersion, _ _2: NnApplet_AppletResourceUserId, _ _3: Pid) throws { throw IpcError.unimplemented(name: "nn::irsensor::nn::irsensor::IIrSensorServer#CheckFirmwareVersion") }
+	override func setFunctionLevel(_ _0: NnIrsensor_IrCameraHandle, _ _1: NnIrsensor_PackedFunctionLevel, _ _2: NnApplet_AppletResourceUserId, _ _3: Pid) throws { throw IpcError.unimplemented(name: "nn::irsensor::nn::irsensor::IIrSensorServer#SetFunctionLevel") }
+	override func runImageTransferExProcessor(_ _0: NnIrsensor_IrCameraHandle, _ _1: NnApplet_AppletResourceUserId, _ _2: NnIrsensor_PackedImageTransferProcessorExConfig, _ _3: UInt64, _ _4: Pid, _ _5: KObject) throws { throw IpcError.unimplemented(name: "nn::irsensor::nn::irsensor::IIrSensorServer#RunImageTransferExProcessor") }
+	override func runIrLedProcessor(_ _0: NnIrsensor_IrCameraHandle, _ _1: NnIrsensor_PackedIrLedProcessorConfig, _ _2: NnApplet_AppletResourceUserId, _ _3: Pid) throws { throw IpcError.unimplemented(name: "nn::irsensor::nn::irsensor::IIrSensorServer#RunIrLedProcessor") }
+	override func stopImageProcessorAsync(_ _0: NnIrsensor_IrCameraHandle, _ _1: NnApplet_AppletResourceUserId, _ _2: Pid) throws { throw IpcError.unimplemented(name: "nn::irsensor::nn::irsensor::IIrSensorServer#StopImageProcessorAsync") }
+	override func activateIrsensorWithFunctionLevel(_ _0: NnIrsensor_PackedFunctionLevel, _ _1: NnApplet_AppletResourceUserId, _ _2: Pid) throws { throw IpcError.unimplemented(name: "nn::irsensor::nn::irsensor::IIrSensorServer#ActivateIrsensorWithFunctionLevel") }
+}
+*/
+
 class NnIrsensor_IIrSensorSystemServer: IpcService {
 	func setAppletResourceUserId(_ _0: NnApplet_AppletResourceUserId) throws { throw IpcError.unimplemented(name: "nn::irsensor::nn::irsensor::IIrSensorSystemServer#SetAppletResourceUserId") }
 	func registerAppletResourceUserId(_ _0: UInt8, _ _1: NnApplet_AppletResourceUserId) throws { throw IpcError.unimplemented(name: "nn::irsensor::nn::irsensor::IIrSensorSystemServer#RegisterAppletResourceUserId") }
@@ -146,3 +169,12 @@ class NnIrsensor_IIrSensorSystemServer: IpcService {
 		}
 	}
 }
+
+/*
+class NnIrsensor_IIrSensorSystemServer_Impl: NnIrsensor_IIrSensorSystemServer {
+	override func setAppletResourceUserId(_ _0: NnApplet_AppletResourceUserId) throws { throw IpcError.unimplemented(name: "nn::irsensor::nn::irsensor::IIrSensorSystemServer#SetAppletResourceUserId") }
+	override func registerAppletResourceUserId(_ _0: UInt8, _ _1: NnApplet_AppletResourceUserId) throws { throw IpcError.unimplemented(name: "nn::irsensor::nn::irsensor::IIrSensorSystemServer#RegisterAppletResourceUserId") }
+	override func unregisterAppletResourceUserId(_ _0: NnApplet_AppletResourceUserId) throws { throw IpcError.unimplemented(name: "nn::irsensor::nn::irsensor::IIrSensorSystemServer#UnregisterAppletResourceUserId") }
+	override func enableAppletToGetInput(_ _0: UInt8, _ _1: NnApplet_AppletResourceUserId) throws { throw IpcError.unimplemented(name: "nn::irsensor::nn::irsensor::IIrSensorSystemServer#EnableAppletToGetInput") }
+}
+*/

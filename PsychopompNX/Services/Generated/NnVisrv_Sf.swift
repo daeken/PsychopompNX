@@ -134,6 +134,32 @@ class NnVisrvSf_IApplicationDisplayService: IpcService {
 	}
 }
 
+/*
+class NnVisrvSf_IApplicationDisplayService_Impl: NnVisrvSf_IApplicationDisplayService {
+	override func getRelayService() throws -> NnsHosbinder_IHOSBinderDriver { throw IpcError.unimplemented(name: "nn::visrv::sf::nn::visrv::sf::IApplicationDisplayService#GetRelayService") }
+	override func getSystemDisplayService() throws -> NnVisrvSf_ISystemDisplayService { throw IpcError.unimplemented(name: "nn::visrv::sf::nn::visrv::sf::IApplicationDisplayService#GetSystemDisplayService") }
+	override func getManagerDisplayService() throws -> NnVisrvSf_IManagerDisplayService { throw IpcError.unimplemented(name: "nn::visrv::sf::nn::visrv::sf::IApplicationDisplayService#GetManagerDisplayService") }
+	override func getIndirectDisplayTransactionService() throws -> NnsHosbinder_IHOSBinderDriver { throw IpcError.unimplemented(name: "nn::visrv::sf::nn::visrv::sf::IApplicationDisplayService#GetIndirectDisplayTransactionService") }
+	override func listDisplays(_ _0: Buffer<NnVi_DisplayInfo>) throws -> UInt64 { throw IpcError.unimplemented(name: "nn::visrv::sf::nn::visrv::sf::IApplicationDisplayService#ListDisplays") }
+	override func openDisplay(_ _0: NnVi_DisplayName) throws -> UInt64 { throw IpcError.unimplemented(name: "nn::visrv::sf::nn::visrv::sf::IApplicationDisplayService#OpenDisplay") }
+	override func openDefaultDisplay() throws -> UInt64 { throw IpcError.unimplemented(name: "nn::visrv::sf::nn::visrv::sf::IApplicationDisplayService#OpenDefaultDisplay") }
+	override func closeDisplay(_ _0: UInt64) throws { throw IpcError.unimplemented(name: "nn::visrv::sf::nn::visrv::sf::IApplicationDisplayService#CloseDisplay") }
+	override func setDisplayEnabled(_ _0: UInt8, _ _1: UInt64) throws { throw IpcError.unimplemented(name: "nn::visrv::sf::nn::visrv::sf::IApplicationDisplayService#SetDisplayEnabled") }
+	override func getDisplayResolution(_ _0: UInt64) throws -> (UInt64, UInt64) { throw IpcError.unimplemented(name: "nn::visrv::sf::nn::visrv::sf::IApplicationDisplayService#GetDisplayResolution") }
+	override func openLayer(_ _0: NnVi_DisplayName, _ _1: UInt64, _ _2: NnApplet_AppletResourceUserId, _ _3: Pid, _ _4: Buffer<UInt8>) throws -> UInt64 { throw IpcError.unimplemented(name: "nn::visrv::sf::nn::visrv::sf::IApplicationDisplayService#OpenLayer") }
+	override func closeLayer(_ _0: UInt64) throws { throw IpcError.unimplemented(name: "nn::visrv::sf::nn::visrv::sf::IApplicationDisplayService#CloseLayer") }
+	override func createStrayLayer(_ _0: UInt32, _ _1: UInt64, _ _2: Buffer<UInt8>) throws -> (UInt64, UInt64) { throw IpcError.unimplemented(name: "nn::visrv::sf::nn::visrv::sf::IApplicationDisplayService#CreateStrayLayer") }
+	override func destroyStrayLayer(_ _0: UInt64) throws { throw IpcError.unimplemented(name: "nn::visrv::sf::nn::visrv::sf::IApplicationDisplayService#DestroyStrayLayer") }
+	override func setLayerScalingMode(_ _0: UInt32, _ _1: UInt64) throws { throw IpcError.unimplemented(name: "nn::visrv::sf::nn::visrv::sf::IApplicationDisplayService#SetLayerScalingMode") }
+	override func convertScalingMode(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::visrv::sf::nn::visrv::sf::IApplicationDisplayService#ConvertScalingMode") }
+	override func getIndirectLayerImageMap(_ _0: UInt64, _ _1: UInt64, _ _2: UInt64, _ _3: NnApplet_AppletResourceUserId, _ _4: Pid, _ _5: Buffer<UInt8>) throws -> (UInt64, UInt64) { throw IpcError.unimplemented(name: "nn::visrv::sf::nn::visrv::sf::IApplicationDisplayService#GetIndirectLayerImageMap") }
+	override func getIndirectLayerImageCropMap(_ _0: Float32, _ _1: Float32, _ _2: Float32, _ _3: Float32, _ _4: UInt64, _ _5: UInt64, _ _6: UInt64, _ _7: NnApplet_AppletResourceUserId, _ _8: Pid, _ _9: Buffer<UInt8>) throws -> (UInt64, UInt64) { throw IpcError.unimplemented(name: "nn::visrv::sf::nn::visrv::sf::IApplicationDisplayService#GetIndirectLayerImageCropMap") }
+	override func getIndirectLayerImageRequiredMemoryInfo(_ _0: UInt64, _ _1: UInt64) throws -> (UInt64, UInt64) { throw IpcError.unimplemented(name: "nn::visrv::sf::nn::visrv::sf::IApplicationDisplayService#GetIndirectLayerImageRequiredMemoryInfo") }
+	override func getDisplayVsyncEvent(_ _0: UInt64) throws -> KObject { throw IpcError.unimplemented(name: "nn::visrv::sf::nn::visrv::sf::IApplicationDisplayService#GetDisplayVsyncEvent") }
+	override func getDisplayVsyncEventForDebug(_ _0: UInt64) throws -> KObject { throw IpcError.unimplemented(name: "nn::visrv::sf::nn::visrv::sf::IApplicationDisplayService#GetDisplayVsyncEventForDebug") }
+}
+*/
+
 class NnVisrvSf_IManagerDisplayService: IpcService {
 	func allocateProcessHeapBlock(_ _0: UInt64) throws -> UInt64 { throw IpcError.unimplemented(name: "nn::visrv::sf::nn::visrv::sf::IManagerDisplayService#AllocateProcessHeapBlock") }
 	func freeProcessHeapBlock(_ _0: UInt64) throws { throw IpcError.unimplemented(name: "nn::visrv::sf::nn::visrv::sf::IManagerDisplayService#FreeProcessHeapBlock") }
@@ -497,6 +523,76 @@ class NnVisrvSf_IManagerDisplayService: IpcService {
 	}
 }
 
+/*
+class NnVisrvSf_IManagerDisplayService_Impl: NnVisrvSf_IManagerDisplayService {
+	override func allocateProcessHeapBlock(_ _0: UInt64) throws -> UInt64 { throw IpcError.unimplemented(name: "nn::visrv::sf::nn::visrv::sf::IManagerDisplayService#AllocateProcessHeapBlock") }
+	override func freeProcessHeapBlock(_ _0: UInt64) throws { throw IpcError.unimplemented(name: "nn::visrv::sf::nn::visrv::sf::IManagerDisplayService#FreeProcessHeapBlock") }
+	override func getDisplayResolution(_ _0: UInt64) throws -> (UInt64, UInt64) { throw IpcError.unimplemented(name: "nn::visrv::sf::nn::visrv::sf::IManagerDisplayService#GetDisplayResolution") }
+	override func createManagedLayer(_ _0: UInt32, _ _1: UInt64, _ _2: NnApplet_AppletResourceUserId) throws -> UInt64 { throw IpcError.unimplemented(name: "nn::visrv::sf::nn::visrv::sf::IManagerDisplayService#CreateManagedLayer") }
+	override func destroyManagedLayer(_ _0: UInt64) throws { throw IpcError.unimplemented(name: "nn::visrv::sf::nn::visrv::sf::IManagerDisplayService#DestroyManagedLayer") }
+	override func createIndirectLayer() throws -> UInt64 { throw IpcError.unimplemented(name: "nn::visrv::sf::nn::visrv::sf::IManagerDisplayService#CreateIndirectLayer") }
+	override func destroyIndirectLayer(_ _0: UInt64) throws { throw IpcError.unimplemented(name: "nn::visrv::sf::nn::visrv::sf::IManagerDisplayService#DestroyIndirectLayer") }
+	override func createIndirectProducerEndPoint(_ _0: UInt64, _ _1: NnApplet_AppletResourceUserId) throws -> UInt64 { throw IpcError.unimplemented(name: "nn::visrv::sf::nn::visrv::sf::IManagerDisplayService#CreateIndirectProducerEndPoint") }
+	override func destroyIndirectProducerEndPoint(_ _0: UInt64) throws { throw IpcError.unimplemented(name: "nn::visrv::sf::nn::visrv::sf::IManagerDisplayService#DestroyIndirectProducerEndPoint") }
+	override func createIndirectConsumerEndPoint(_ _0: UInt64, _ _1: NnApplet_AppletResourceUserId) throws -> UInt64 { throw IpcError.unimplemented(name: "nn::visrv::sf::nn::visrv::sf::IManagerDisplayService#CreateIndirectConsumerEndPoint") }
+	override func destroyIndirectConsumerEndPoint(_ _0: UInt64) throws { throw IpcError.unimplemented(name: "nn::visrv::sf::nn::visrv::sf::IManagerDisplayService#DestroyIndirectConsumerEndPoint") }
+	override func acquireLayerTexturePresentingEvent(_ _0: UInt64) throws -> KObject { throw IpcError.unimplemented(name: "nn::visrv::sf::nn::visrv::sf::IManagerDisplayService#AcquireLayerTexturePresentingEvent") }
+	override func releaseLayerTexturePresentingEvent(_ _0: UInt64) throws { throw IpcError.unimplemented(name: "nn::visrv::sf::nn::visrv::sf::IManagerDisplayService#ReleaseLayerTexturePresentingEvent") }
+	override func getDisplayHotplugEvent(_ _0: UInt64) throws -> KObject { throw IpcError.unimplemented(name: "nn::visrv::sf::nn::visrv::sf::IManagerDisplayService#GetDisplayHotplugEvent") }
+	override func getDisplayHotplugState(_ _0: UInt64) throws -> UInt32 { throw IpcError.unimplemented(name: "nn::visrv::sf::nn::visrv::sf::IManagerDisplayService#GetDisplayHotplugState") }
+	override func getCompositorErrorInfo(_ _0: UInt64, _ _1: UInt64, _ _2: Buffer<NnVi_CompositorError>) throws -> UInt32 { throw IpcError.unimplemented(name: "nn::visrv::sf::nn::visrv::sf::IManagerDisplayService#GetCompositorErrorInfo") }
+	override func getDisplayErrorEvent(_ _0: UInt64) throws -> KObject { throw IpcError.unimplemented(name: "nn::visrv::sf::nn::visrv::sf::IManagerDisplayService#GetDisplayErrorEvent") }
+	override func setDisplayAlpha(_ _0: Float32, _ _1: UInt64) throws { throw IpcError.unimplemented(name: "nn::visrv::sf::nn::visrv::sf::IManagerDisplayService#SetDisplayAlpha") }
+	override func setDisplayLayerStack(_ _0: UInt32, _ _1: UInt64) throws { throw IpcError.unimplemented(name: "nn::visrv::sf::nn::visrv::sf::IManagerDisplayService#SetDisplayLayerStack") }
+	override func setDisplayPowerState(_ _0: UInt32, _ _1: UInt64) throws { throw IpcError.unimplemented(name: "nn::visrv::sf::nn::visrv::sf::IManagerDisplayService#SetDisplayPowerState") }
+	override func setDefaultDisplay(_ _0: UInt64) throws { throw IpcError.unimplemented(name: "nn::visrv::sf::nn::visrv::sf::IManagerDisplayService#SetDefaultDisplay") }
+	override func addToLayerStack(_ _0: UInt32, _ _1: UInt64) throws { throw IpcError.unimplemented(name: "nn::visrv::sf::nn::visrv::sf::IManagerDisplayService#AddToLayerStack") }
+	override func removeFromLayerStack(_ _0: UInt32, _ _1: UInt64) throws { throw IpcError.unimplemented(name: "nn::visrv::sf::nn::visrv::sf::IManagerDisplayService#RemoveFromLayerStack") }
+	override func setLayerVisibility(_ _0: UInt8, _ _1: UInt64) throws { throw IpcError.unimplemented(name: "nn::visrv::sf::nn::visrv::sf::IManagerDisplayService#SetLayerVisibility") }
+	override func setLayerConfig(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::visrv::sf::nn::visrv::sf::IManagerDisplayService#SetLayerConfig") }
+	override func attachLayerPresentationTracer(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::visrv::sf::nn::visrv::sf::IManagerDisplayService#AttachLayerPresentationTracer") }
+	override func detachLayerPresentationTracer(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::visrv::sf::nn::visrv::sf::IManagerDisplayService#DetachLayerPresentationTracer") }
+	override func startLayerPresentationRecording(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::visrv::sf::nn::visrv::sf::IManagerDisplayService#StartLayerPresentationRecording") }
+	override func stopLayerPresentationRecording(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::visrv::sf::nn::visrv::sf::IManagerDisplayService#StopLayerPresentationRecording") }
+	override func startLayerPresentationFenceWait(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::visrv::sf::nn::visrv::sf::IManagerDisplayService#StartLayerPresentationFenceWait") }
+	override func stopLayerPresentationFenceWait(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::visrv::sf::nn::visrv::sf::IManagerDisplayService#StopLayerPresentationFenceWait") }
+	override func getLayerPresentationAllFencesExpiredEvent(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::visrv::sf::nn::visrv::sf::IManagerDisplayService#GetLayerPresentationAllFencesExpiredEvent") }
+	override func setContentVisibility(_ _0: UInt8) throws { throw IpcError.unimplemented(name: "nn::visrv::sf::nn::visrv::sf::IManagerDisplayService#SetContentVisibility") }
+	override func setConductorLayer(_ _0: UInt8, _ _1: UInt64) throws { throw IpcError.unimplemented(name: "nn::visrv::sf::nn::visrv::sf::IManagerDisplayService#SetConductorLayer") }
+	override func setIndirectProducerFlipOffset(_ _0: UInt64, _ _1: UInt64, _ _2: Nn_TimeSpan) throws { throw IpcError.unimplemented(name: "nn::visrv::sf::nn::visrv::sf::IManagerDisplayService#SetIndirectProducerFlipOffset") }
+	override func createSharedBufferStaticStorage(_ _0: UInt64, _ _1: Buffer<NnViFbshare_SharedMemoryPoolLayout>) throws -> NnViFbshare_SharedBufferHandle { throw IpcError.unimplemented(name: "nn::visrv::sf::nn::visrv::sf::IManagerDisplayService#CreateSharedBufferStaticStorage") }
+	override func createSharedBufferTransferMemory(_ _0: UInt64, _ _1: KObject, _ _2: Buffer<NnViFbshare_SharedMemoryPoolLayout>) throws -> NnViFbshare_SharedBufferHandle { throw IpcError.unimplemented(name: "nn::visrv::sf::nn::visrv::sf::IManagerDisplayService#CreateSharedBufferTransferMemory") }
+	override func destroySharedBuffer(_ _0: NnViFbshare_SharedBufferHandle) throws { throw IpcError.unimplemented(name: "nn::visrv::sf::nn::visrv::sf::IManagerDisplayService#DestroySharedBuffer") }
+	override func bindSharedLowLevelLayerToManagedLayer(_ _0: NnVi_DisplayName, _ _1: UInt64, _ _2: NnApplet_AppletResourceUserId, _ _3: Pid) throws { throw IpcError.unimplemented(name: "nn::visrv::sf::nn::visrv::sf::IManagerDisplayService#BindSharedLowLevelLayerToManagedLayer") }
+	override func bindSharedLowLevelLayerToIndirectLayer(_ _0: UInt64, _ _1: NnApplet_AppletResourceUserId, _ _2: Pid) throws { throw IpcError.unimplemented(name: "nn::visrv::sf::nn::visrv::sf::IManagerDisplayService#BindSharedLowLevelLayerToIndirectLayer") }
+	override func unbindSharedLowLevelLayer(_ _0: UInt64) throws { throw IpcError.unimplemented(name: "nn::visrv::sf::nn::visrv::sf::IManagerDisplayService#UnbindSharedLowLevelLayer") }
+	override func connectSharedLowLevelLayerToSharedBuffer(_ _0: UInt64, _ _1: NnViFbshare_SharedBufferHandle) throws { throw IpcError.unimplemented(name: "nn::visrv::sf::nn::visrv::sf::IManagerDisplayService#ConnectSharedLowLevelLayerToSharedBuffer") }
+	override func disconnectSharedLowLevelLayerFromSharedBuffer(_ _0: UInt64) throws { throw IpcError.unimplemented(name: "nn::visrv::sf::nn::visrv::sf::IManagerDisplayService#DisconnectSharedLowLevelLayerFromSharedBuffer") }
+	override func createSharedLayer(_ _0: NnApplet_AppletResourceUserId) throws -> NnViFbshare_SharedLayerHandle { throw IpcError.unimplemented(name: "nn::visrv::sf::nn::visrv::sf::IManagerDisplayService#CreateSharedLayer") }
+	override func destroySharedLayer(_ _0: NnViFbshare_SharedLayerHandle) throws { throw IpcError.unimplemented(name: "nn::visrv::sf::nn::visrv::sf::IManagerDisplayService#DestroySharedLayer") }
+	override func attachSharedLayerToLowLevelLayer(_ _0: NnViFbshare_SharedLayerTextureIndexList, _ _1: NnViFbshare_SharedLayerHandle, _ _2: UInt64) throws { throw IpcError.unimplemented(name: "nn::visrv::sf::nn::visrv::sf::IManagerDisplayService#AttachSharedLayerToLowLevelLayer") }
+	override func forceDetachSharedLayerFromLowLevelLayer(_ _0: NnViFbshare_SharedLayerHandle) throws { throw IpcError.unimplemented(name: "nn::visrv::sf::nn::visrv::sf::IManagerDisplayService#ForceDetachSharedLayerFromLowLevelLayer") }
+	override func startDetachSharedLayerFromLowLevelLayer(_ _0: NnViFbshare_SharedLayerHandle) throws { throw IpcError.unimplemented(name: "nn::visrv::sf::nn::visrv::sf::IManagerDisplayService#StartDetachSharedLayerFromLowLevelLayer") }
+	override func finishDetachSharedLayerFromLowLevelLayer(_ _0: NnViFbshare_SharedLayerHandle) throws { throw IpcError.unimplemented(name: "nn::visrv::sf::nn::visrv::sf::IManagerDisplayService#FinishDetachSharedLayerFromLowLevelLayer") }
+	override func getSharedLayerDetachReadyEvent(_ _0: NnViFbshare_SharedLayerHandle) throws -> KObject { throw IpcError.unimplemented(name: "nn::visrv::sf::nn::visrv::sf::IManagerDisplayService#GetSharedLayerDetachReadyEvent") }
+	override func getSharedLowLevelLayerSynchronizedEvent(_ _0: UInt64) throws -> KObject { throw IpcError.unimplemented(name: "nn::visrv::sf::nn::visrv::sf::IManagerDisplayService#GetSharedLowLevelLayerSynchronizedEvent") }
+	override func checkSharedLowLevelLayerSynchronized(_ _0: UInt64) throws -> UInt64 { throw IpcError.unimplemented(name: "nn::visrv::sf::nn::visrv::sf::IManagerDisplayService#CheckSharedLowLevelLayerSynchronized") }
+	override func registerSharedBufferImporterAruid(_ _0: NnViFbshare_SharedBufferHandle, _ _1: NnApplet_AppletResourceUserId) throws { throw IpcError.unimplemented(name: "nn::visrv::sf::nn::visrv::sf::IManagerDisplayService#RegisterSharedBufferImporterAruid") }
+	override func unregisterSharedBufferImporterAruid(_ _0: NnViFbshare_SharedBufferHandle, _ _1: NnApplet_AppletResourceUserId) throws { throw IpcError.unimplemented(name: "nn::visrv::sf::nn::visrv::sf::IManagerDisplayService#UnregisterSharedBufferImporterAruid") }
+	override func createSharedBufferProcessHeap(_ _0: UInt64, _ _1: Buffer<NnViFbshare_SharedMemoryPoolLayout>) throws -> NnViFbshare_SharedBufferHandle { throw IpcError.unimplemented(name: "nn::visrv::sf::nn::visrv::sf::IManagerDisplayService#CreateSharedBufferProcessHeap") }
+	override func getSharedLayerLayerStacks(_ _0: NnViFbshare_SharedLayerHandle) throws -> UInt32 { throw IpcError.unimplemented(name: "nn::visrv::sf::nn::visrv::sf::IManagerDisplayService#GetSharedLayerLayerStacks") }
+	override func setSharedLayerLayerStacks(_ _0: UInt32, _ _1: NnViFbshare_SharedLayerHandle) throws { throw IpcError.unimplemented(name: "nn::visrv::sf::nn::visrv::sf::IManagerDisplayService#SetSharedLayerLayerStacks") }
+	override func presentDetachedSharedFrameBufferToLowLevelLayer(_ _0: NnViFbshare_SharedBufferHandle, _ _1: UInt64, _ _2: UInt64) throws { throw IpcError.unimplemented(name: "nn::visrv::sf::nn::visrv::sf::IManagerDisplayService#PresentDetachedSharedFrameBufferToLowLevelLayer") }
+	override func fillDetachedSharedFrameBufferColor(_ _0: UInt32, _ _1: UInt32, _ _2: UInt32, _ _3: UInt32, _ _4: UInt32, _ _5: NnViFbshare_SharedBufferHandle, _ _6: UInt64) throws { throw IpcError.unimplemented(name: "nn::visrv::sf::nn::visrv::sf::IManagerDisplayService#FillDetachedSharedFrameBufferColor") }
+	override func getDetachedSharedFrameBufferImage(_ _0: NnViFbshare_SharedBufferHandle, _ _1: UInt64, _ _2: Buffer<UInt8>) throws -> UInt64 { throw IpcError.unimplemented(name: "nn::visrv::sf::nn::visrv::sf::IManagerDisplayService#GetDetachedSharedFrameBufferImage") }
+	override func setDetachedSharedFrameBufferImage(_ _0: UInt32, _ _1: NnViFbshare_SharedBufferHandle, _ _2: UInt64, _ _3: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::visrv::sf::nn::visrv::sf::IManagerDisplayService#SetDetachedSharedFrameBufferImage") }
+	override func copyDetachedSharedFrameBufferImage(_ _0: UInt32, _ _1: UInt32, _ _2: NnViFbshare_SharedBufferHandle, _ _3: UInt64, _ _4: UInt64) throws { throw IpcError.unimplemented(name: "nn::visrv::sf::nn::visrv::sf::IManagerDisplayService#CopyDetachedSharedFrameBufferImage") }
+	override func setDetachedSharedFrameBufferSubImage(_ _0: UInt32, _ _1: UInt32, _ _2: UInt32, _ _3: UInt32, _ _4: UInt32, _ _5: UInt32, _ _6: NnViFbshare_SharedBufferHandle, _ _7: UInt64, _ _8: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::visrv::sf::nn::visrv::sf::IManagerDisplayService#SetDetachedSharedFrameBufferSubImage") }
+	override func getSharedFrameBufferContentParameter(_ _0: NnViFbshare_SharedBufferHandle, _ _1: UInt64) throws -> (UInt32, NnVi_CropRegion, UInt32, UInt32, UInt32) { throw IpcError.unimplemented(name: "nn::visrv::sf::nn::visrv::sf::IManagerDisplayService#GetSharedFrameBufferContentParameter") }
+	override func expandStartupLogoOnSharedFrameBuffer(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::visrv::sf::nn::visrv::sf::IManagerDisplayService#ExpandStartupLogoOnSharedFrameBuffer") }
+}
+*/
+
 class NnVisrvSf_IApplicationRootService: IpcService {
 	func getDisplayService(_ _0: UInt32) throws -> NnVisrvSf_IApplicationDisplayService { throw IpcError.unimplemented(name: "nn::visrv::sf::nn::visrv::sf::IApplicationRootService#GetDisplayService") }
 	
@@ -513,6 +609,12 @@ class NnVisrvSf_IApplicationRootService: IpcService {
 		}
 	}
 }
+
+/*
+class NnVisrvSf_IApplicationRootService_Impl: NnVisrvSf_IApplicationRootService {
+	override func getDisplayService(_ _0: UInt32) throws -> NnVisrvSf_IApplicationDisplayService { throw IpcError.unimplemented(name: "nn::visrv::sf::nn::visrv::sf::IApplicationRootService#GetDisplayService") }
+}
+*/
 
 class NnVisrvSf_ISystemDisplayService: IpcService {
 	func getZOrderCountMin(_ _0: UInt64) throws -> UInt64 { throw IpcError.unimplemented(name: "nn::visrv::sf::nn::visrv::sf::ISystemDisplayService#GetZOrderCountMin") }
@@ -766,6 +868,54 @@ class NnVisrvSf_ISystemDisplayService: IpcService {
 	}
 }
 
+/*
+class NnVisrvSf_ISystemDisplayService_Impl: NnVisrvSf_ISystemDisplayService {
+	override func getZOrderCountMin(_ _0: UInt64) throws -> UInt64 { throw IpcError.unimplemented(name: "nn::visrv::sf::nn::visrv::sf::ISystemDisplayService#GetZOrderCountMin") }
+	override func getZOrderCountMax(_ _0: UInt64) throws -> UInt64 { throw IpcError.unimplemented(name: "nn::visrv::sf::nn::visrv::sf::ISystemDisplayService#GetZOrderCountMax") }
+	override func getDisplayLogicalResolution(_ _0: UInt64) throws -> (UInt32, UInt32) { throw IpcError.unimplemented(name: "nn::visrv::sf::nn::visrv::sf::ISystemDisplayService#GetDisplayLogicalResolution") }
+	override func setDisplayMagnification(_ _0: UInt32, _ _1: UInt32, _ _2: UInt32, _ _3: UInt32, _ _4: UInt64) throws { throw IpcError.unimplemented(name: "nn::visrv::sf::nn::visrv::sf::ISystemDisplayService#SetDisplayMagnification") }
+	override func setLayerPosition(_ _0: Float32, _ _1: Float32, _ _2: UInt64) throws { throw IpcError.unimplemented(name: "nn::visrv::sf::nn::visrv::sf::ISystemDisplayService#SetLayerPosition") }
+	override func setLayerSize(_ _0: UInt64, _ _1: UInt64, _ _2: UInt64) throws { throw IpcError.unimplemented(name: "nn::visrv::sf::nn::visrv::sf::ISystemDisplayService#SetLayerSize") }
+	override func getLayerZ(_ _0: UInt64) throws -> UInt64 { throw IpcError.unimplemented(name: "nn::visrv::sf::nn::visrv::sf::ISystemDisplayService#GetLayerZ") }
+	override func setLayerZ(_ _0: UInt64, _ _1: UInt64) throws { throw IpcError.unimplemented(name: "nn::visrv::sf::nn::visrv::sf::ISystemDisplayService#SetLayerZ") }
+	override func setLayerVisibility(_ _0: UInt8, _ _1: UInt64) throws { throw IpcError.unimplemented(name: "nn::visrv::sf::nn::visrv::sf::ISystemDisplayService#SetLayerVisibility") }
+	override func setLayerAlpha(_ _0: Float32, _ _1: UInt64) throws { throw IpcError.unimplemented(name: "nn::visrv::sf::nn::visrv::sf::ISystemDisplayService#SetLayerAlpha") }
+	override func createStrayLayer(_ _0: UInt32, _ _1: UInt64, _ _2: Buffer<UInt8>) throws -> (UInt64, UInt64) { throw IpcError.unimplemented(name: "nn::visrv::sf::nn::visrv::sf::ISystemDisplayService#CreateStrayLayer") }
+	override func openIndirectLayer(_ _0: UInt64, _ _1: NnApplet_AppletResourceUserId, _ _2: Pid, _ _3: Buffer<UInt8>) throws -> UInt64 { throw IpcError.unimplemented(name: "nn::visrv::sf::nn::visrv::sf::ISystemDisplayService#OpenIndirectLayer") }
+	override func closeIndirectLayer(_ _0: UInt64) throws { throw IpcError.unimplemented(name: "nn::visrv::sf::nn::visrv::sf::ISystemDisplayService#CloseIndirectLayer") }
+	override func flipIndirectLayer(_ _0: UInt64) throws { throw IpcError.unimplemented(name: "nn::visrv::sf::nn::visrv::sf::ISystemDisplayService#FlipIndirectLayer") }
+	override func listDisplayModes(_ _0: UInt64, _ _1: Buffer<NnVi_DisplayModeInfo>) throws -> UInt64 { throw IpcError.unimplemented(name: "nn::visrv::sf::nn::visrv::sf::ISystemDisplayService#ListDisplayModes") }
+	override func listDisplayRgbRanges(_ _0: UInt64, _ _1: Buffer<UInt32>) throws -> UInt64 { throw IpcError.unimplemented(name: "nn::visrv::sf::nn::visrv::sf::ISystemDisplayService#ListDisplayRgbRanges") }
+	override func listDisplayContentTypes(_ _0: UInt64, _ _1: Buffer<UInt32>) throws -> UInt64 { throw IpcError.unimplemented(name: "nn::visrv::sf::nn::visrv::sf::ISystemDisplayService#ListDisplayContentTypes") }
+	override func getDisplayMode(_ _0: UInt64) throws -> NnVi_DisplayModeInfo { throw IpcError.unimplemented(name: "nn::visrv::sf::nn::visrv::sf::ISystemDisplayService#GetDisplayMode") }
+	override func setDisplayMode(_ _0: UInt64, _ _1: NnVi_DisplayModeInfo) throws { throw IpcError.unimplemented(name: "nn::visrv::sf::nn::visrv::sf::ISystemDisplayService#SetDisplayMode") }
+	override func getDisplayUnderscan(_ _0: UInt64) throws -> UInt64 { throw IpcError.unimplemented(name: "nn::visrv::sf::nn::visrv::sf::ISystemDisplayService#GetDisplayUnderscan") }
+	override func setDisplayUnderscan(_ _0: UInt64, _ _1: UInt64) throws { throw IpcError.unimplemented(name: "nn::visrv::sf::nn::visrv::sf::ISystemDisplayService#SetDisplayUnderscan") }
+	override func getDisplayContentType(_ _0: UInt64) throws -> UInt32 { throw IpcError.unimplemented(name: "nn::visrv::sf::nn::visrv::sf::ISystemDisplayService#GetDisplayContentType") }
+	override func setDisplayContentType(_ _0: UInt32, _ _1: UInt64) throws { throw IpcError.unimplemented(name: "nn::visrv::sf::nn::visrv::sf::ISystemDisplayService#SetDisplayContentType") }
+	override func getDisplayRgbRange(_ _0: UInt64) throws -> UInt32 { throw IpcError.unimplemented(name: "nn::visrv::sf::nn::visrv::sf::ISystemDisplayService#GetDisplayRgbRange") }
+	override func setDisplayRgbRange(_ _0: UInt32, _ _1: UInt64) throws { throw IpcError.unimplemented(name: "nn::visrv::sf::nn::visrv::sf::ISystemDisplayService#SetDisplayRgbRange") }
+	override func getDisplayCmuMode(_ _0: UInt64) throws -> UInt32 { throw IpcError.unimplemented(name: "nn::visrv::sf::nn::visrv::sf::ISystemDisplayService#GetDisplayCmuMode") }
+	override func setDisplayCmuMode(_ _0: UInt32, _ _1: UInt64) throws { throw IpcError.unimplemented(name: "nn::visrv::sf::nn::visrv::sf::ISystemDisplayService#SetDisplayCmuMode") }
+	override func getDisplayContrastRatio(_ _0: UInt64) throws -> Float32 { throw IpcError.unimplemented(name: "nn::visrv::sf::nn::visrv::sf::ISystemDisplayService#GetDisplayContrastRatio") }
+	override func setDisplayContrastRatio(_ _0: Float32, _ _1: UInt64) throws { throw IpcError.unimplemented(name: "nn::visrv::sf::nn::visrv::sf::ISystemDisplayService#SetDisplayContrastRatio") }
+	override func getDisplayGamma(_ _0: UInt64) throws -> Float32 { throw IpcError.unimplemented(name: "nn::visrv::sf::nn::visrv::sf::ISystemDisplayService#GetDisplayGamma") }
+	override func setDisplayGamma(_ _0: Float32, _ _1: UInt64) throws { throw IpcError.unimplemented(name: "nn::visrv::sf::nn::visrv::sf::ISystemDisplayService#SetDisplayGamma") }
+	override func getDisplayCmuLuma(_ _0: UInt64) throws -> Float32 { throw IpcError.unimplemented(name: "nn::visrv::sf::nn::visrv::sf::ISystemDisplayService#GetDisplayCmuLuma") }
+	override func setDisplayCmuLuma(_ _0: Float32, _ _1: UInt64) throws { throw IpcError.unimplemented(name: "nn::visrv::sf::nn::visrv::sf::ISystemDisplayService#SetDisplayCmuLuma") }
+	override func getSharedBufferMemoryHandleId(_ _0: NnViFbshare_SharedBufferHandle, _ _1: NnApplet_AppletResourceUserId, _ _2: Pid, _ _3: Buffer<NnViFbshare_SharedMemoryPoolLayout>) throws -> (NnViNative_NativeMemoryHandleId, UInt64) { throw IpcError.unimplemented(name: "nn::visrv::sf::nn::visrv::sf::ISystemDisplayService#GetSharedBufferMemoryHandleId") }
+	override func openSharedLayer(_ _0: NnViFbshare_SharedLayerHandle, _ _1: NnApplet_AppletResourceUserId, _ _2: Pid) throws { throw IpcError.unimplemented(name: "nn::visrv::sf::nn::visrv::sf::ISystemDisplayService#OpenSharedLayer") }
+	override func closeSharedLayer(_ _0: NnViFbshare_SharedLayerHandle) throws { throw IpcError.unimplemented(name: "nn::visrv::sf::nn::visrv::sf::ISystemDisplayService#CloseSharedLayer") }
+	override func connectSharedLayer(_ _0: NnViFbshare_SharedLayerHandle) throws { throw IpcError.unimplemented(name: "nn::visrv::sf::nn::visrv::sf::ISystemDisplayService#ConnectSharedLayer") }
+	override func disconnectSharedLayer(_ _0: NnViFbshare_SharedLayerHandle) throws { throw IpcError.unimplemented(name: "nn::visrv::sf::nn::visrv::sf::ISystemDisplayService#DisconnectSharedLayer") }
+	override func acquireSharedFrameBuffer(_ _0: NnViFbshare_SharedLayerHandle) throws -> (NnViNative_NativeSync, NnViFbshare_SharedLayerTextureIndexList, UInt64) { throw IpcError.unimplemented(name: "nn::visrv::sf::nn::visrv::sf::ISystemDisplayService#AcquireSharedFrameBuffer") }
+	override func presentSharedFrameBuffer(_ _0: NnViNative_NativeSync, _ _1: NnVi_CropRegion, _ _2: UInt32, _ _3: UInt32, _ _4: NnViFbshare_SharedLayerHandle, _ _5: UInt64) throws { throw IpcError.unimplemented(name: "nn::visrv::sf::nn::visrv::sf::ISystemDisplayService#PresentSharedFrameBuffer") }
+	override func getSharedFrameBufferAcquirableEvent(_ _0: NnViFbshare_SharedLayerHandle) throws -> KObject { throw IpcError.unimplemented(name: "nn::visrv::sf::nn::visrv::sf::ISystemDisplayService#GetSharedFrameBufferAcquirableEvent") }
+	override func fillSharedFrameBufferColor(_ _0: UInt32, _ _1: UInt32, _ _2: UInt32, _ _3: UInt32, _ _4: NnViFbshare_SharedLayerHandle, _ _5: UInt64) throws { throw IpcError.unimplemented(name: "nn::visrv::sf::nn::visrv::sf::ISystemDisplayService#FillSharedFrameBufferColor") }
+	override func cancelSharedFrameBuffer(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::visrv::sf::nn::visrv::sf::ISystemDisplayService#CancelSharedFrameBuffer") }
+}
+*/
+
 class NnVisrvSf_IManagerRootService: IpcService {
 	func getDisplayService(_ _0: UInt32) throws -> NnVisrvSf_IApplicationDisplayService { throw IpcError.unimplemented(name: "nn::visrv::sf::nn::visrv::sf::IManagerRootService#GetDisplayService") }
 	func getDisplayServiceWithProxyNameExchange(_ _0: NnVi_ProxyName, _ _1: UInt32) throws -> NnVisrvSf_IApplicationDisplayService { throw IpcError.unimplemented(name: "nn::visrv::sf::nn::visrv::sf::IManagerRootService#GetDisplayServiceWithProxyNameExchange") }
@@ -789,6 +939,13 @@ class NnVisrvSf_IManagerRootService: IpcService {
 	}
 }
 
+/*
+class NnVisrvSf_IManagerRootService_Impl: NnVisrvSf_IManagerRootService {
+	override func getDisplayService(_ _0: UInt32) throws -> NnVisrvSf_IApplicationDisplayService { throw IpcError.unimplemented(name: "nn::visrv::sf::nn::visrv::sf::IManagerRootService#GetDisplayService") }
+	override func getDisplayServiceWithProxyNameExchange(_ _0: NnVi_ProxyName, _ _1: UInt32) throws -> NnVisrvSf_IApplicationDisplayService { throw IpcError.unimplemented(name: "nn::visrv::sf::nn::visrv::sf::IManagerRootService#GetDisplayServiceWithProxyNameExchange") }
+}
+*/
+
 class NnVisrvSf_ISystemRootService: IpcService {
 	func getDisplayService(_ _0: UInt32) throws -> NnVisrvSf_IApplicationDisplayService { throw IpcError.unimplemented(name: "nn::visrv::sf::nn::visrv::sf::ISystemRootService#GetDisplayService") }
 	func getDisplayServiceWithProxyNameExchange(_ _0: NnVi_ProxyName, _ _1: UInt32) throws -> NnVisrvSf_IApplicationDisplayService { throw IpcError.unimplemented(name: "nn::visrv::sf::nn::visrv::sf::ISystemRootService#GetDisplayServiceWithProxyNameExchange") }
@@ -811,3 +968,10 @@ class NnVisrvSf_ISystemRootService: IpcService {
 		}
 	}
 }
+
+/*
+class NnVisrvSf_ISystemRootService_Impl: NnVisrvSf_ISystemRootService {
+	override func getDisplayService(_ _0: UInt32) throws -> NnVisrvSf_IApplicationDisplayService { throw IpcError.unimplemented(name: "nn::visrv::sf::nn::visrv::sf::ISystemRootService#GetDisplayService") }
+	override func getDisplayServiceWithProxyNameExchange(_ _0: NnVi_ProxyName, _ _1: UInt32) throws -> NnVisrvSf_IApplicationDisplayService { throw IpcError.unimplemented(name: "nn::visrv::sf::nn::visrv::sf::ISystemRootService#GetDisplayServiceWithProxyNameExchange") }
+}
+*/

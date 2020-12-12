@@ -15,6 +15,12 @@ class NnOvln_ISenderService: IpcService {
 	}
 }
 
+/*
+class NnOvln_ISenderService_Impl: NnOvln_ISenderService {
+	override func unknown0(_ _0: Any?) throws -> NnOvln_ISender { throw IpcError.unimplemented(name: "nn::ovln::nn::ovln::ISenderService#Unknown0") }
+}
+*/
+
 class NnOvln_IReceiver: IpcService {
 	func unknown0(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::ovln::nn::ovln::IReceiver#Unknown0") }
 	func unknown1(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::ovln::nn::ovln::IReceiver#Unknown1") }
@@ -52,6 +58,16 @@ class NnOvln_IReceiver: IpcService {
 	}
 }
 
+/*
+class NnOvln_IReceiver_Impl: NnOvln_IReceiver {
+	override func unknown0(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::ovln::nn::ovln::IReceiver#Unknown0") }
+	override func unknown1(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::ovln::nn::ovln::IReceiver#Unknown1") }
+	override func unknown2() throws -> KObject { throw IpcError.unimplemented(name: "nn::ovln::nn::ovln::IReceiver#Unknown2") }
+	override func unknown3() throws -> Any? { throw IpcError.unimplemented(name: "nn::ovln::nn::ovln::IReceiver#Unknown3") }
+	override func unknown4() throws -> Any? { throw IpcError.unimplemented(name: "nn::ovln::nn::ovln::IReceiver#Unknown4") }
+}
+*/
+
 class NnOvln_ISender: IpcService {
 	func unknown0(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::ovln::nn::ovln::ISender#Unknown0") }
 	func unknown1() throws -> Any? { throw IpcError.unimplemented(name: "nn::ovln::nn::ovln::ISender#Unknown1") }
@@ -73,6 +89,13 @@ class NnOvln_ISender: IpcService {
 	}
 }
 
+/*
+class NnOvln_ISender_Impl: NnOvln_ISender {
+	override func unknown0(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::ovln::nn::ovln::ISender#Unknown0") }
+	override func unknown1() throws -> Any? { throw IpcError.unimplemented(name: "nn::ovln::nn::ovln::ISender#Unknown1") }
+}
+*/
+
 class NnOvln_IReceiverService: IpcService {
 	func unknown0() throws -> NnOvln_IReceiver { throw IpcError.unimplemented(name: "nn::ovln::nn::ovln::IReceiverService#Unknown0") }
 	
@@ -89,3 +112,9 @@ class NnOvln_IReceiverService: IpcService {
 		}
 	}
 }
+
+/*
+class NnOvln_IReceiverService_Impl: NnOvln_IReceiverService {
+	override func unknown0() throws -> NnOvln_IReceiver { throw IpcError.unimplemented(name: "nn::ovln::nn::ovln::IReceiverService#Unknown0") }
+}
+*/

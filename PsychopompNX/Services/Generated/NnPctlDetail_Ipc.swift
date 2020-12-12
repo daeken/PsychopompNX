@@ -545,6 +545,104 @@ class NnPctlDetailIpc_IParentalControlService: IpcService {
 	}
 }
 
+/*
+class NnPctlDetailIpc_IParentalControlService_Impl: NnPctlDetailIpc_IParentalControlService {
+	override func initialize() throws { throw IpcError.unimplemented(name: "nn::pctl::detail::ipc::nn::pctl::detail::ipc::IParentalControlService#Initialize") }
+	override func checkFreeCommunicationPermission() throws { throw IpcError.unimplemented(name: "nn::pctl::detail::ipc::nn::pctl::detail::ipc::IParentalControlService#CheckFreeCommunicationPermission") }
+	override func confirmLaunchApplicationPermission(_ _0: UInt8, _ _1: NnNcm_ApplicationId, _ _2: Buffer<Int8>) throws { throw IpcError.unimplemented(name: "nn::pctl::detail::ipc::nn::pctl::detail::ipc::IParentalControlService#ConfirmLaunchApplicationPermission") }
+	override func confirmResumeApplicationPermission(_ _0: UInt8, _ _1: NnNcm_ApplicationId, _ _2: Buffer<Int8>) throws { throw IpcError.unimplemented(name: "nn::pctl::detail::ipc::nn::pctl::detail::ipc::IParentalControlService#ConfirmResumeApplicationPermission") }
+	override func confirmSnsPostPermission() throws { throw IpcError.unimplemented(name: "nn::pctl::detail::ipc::nn::pctl::detail::ipc::IParentalControlService#ConfirmSnsPostPermission") }
+	override func confirmSystemSettingsPermission() throws { throw IpcError.unimplemented(name: "nn::pctl::detail::ipc::nn::pctl::detail::ipc::IParentalControlService#ConfirmSystemSettingsPermission") }
+	override func isRestrictionTemporaryUnlocked() throws -> UInt8 { throw IpcError.unimplemented(name: "nn::pctl::detail::ipc::nn::pctl::detail::ipc::IParentalControlService#IsRestrictionTemporaryUnlocked") }
+	override func revertRestrictionTemporaryUnlocked() throws { throw IpcError.unimplemented(name: "nn::pctl::detail::ipc::nn::pctl::detail::ipc::IParentalControlService#RevertRestrictionTemporaryUnlocked") }
+	override func enterRestrictedSystemSettings() throws { throw IpcError.unimplemented(name: "nn::pctl::detail::ipc::nn::pctl::detail::ipc::IParentalControlService#EnterRestrictedSystemSettings") }
+	override func leaveRestrictedSystemSettings() throws { throw IpcError.unimplemented(name: "nn::pctl::detail::ipc::nn::pctl::detail::ipc::IParentalControlService#LeaveRestrictedSystemSettings") }
+	override func isRestrictedSystemSettingsEntered() throws -> UInt8 { throw IpcError.unimplemented(name: "nn::pctl::detail::ipc::nn::pctl::detail::ipc::IParentalControlService#IsRestrictedSystemSettingsEntered") }
+	override func revertRestrictedSystemSettingsEntered() throws { throw IpcError.unimplemented(name: "nn::pctl::detail::ipc::nn::pctl::detail::ipc::IParentalControlService#RevertRestrictedSystemSettingsEntered") }
+	override func getRestrictedFeatures() throws -> UInt32 { throw IpcError.unimplemented(name: "nn::pctl::detail::ipc::nn::pctl::detail::ipc::IParentalControlService#GetRestrictedFeatures") }
+	override func confirmStereoVisionPermission() throws { throw IpcError.unimplemented(name: "nn::pctl::detail::ipc::nn::pctl::detail::ipc::IParentalControlService#ConfirmStereoVisionPermission") }
+	override func confirmPlayableApplicationVideoOld(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::pctl::detail::ipc::nn::pctl::detail::ipc::IParentalControlService#ConfirmPlayableApplicationVideoOld") }
+	override func confirmPlayableApplicationVideo(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::pctl::detail::ipc::nn::pctl::detail::ipc::IParentalControlService#ConfirmPlayableApplicationVideo") }
+	override func isRestrictionEnabled() throws -> UInt8 { throw IpcError.unimplemented(name: "nn::pctl::detail::ipc::nn::pctl::detail::ipc::IParentalControlService#IsRestrictionEnabled") }
+	override func getSafetyLevel() throws -> UInt32 { throw IpcError.unimplemented(name: "nn::pctl::detail::ipc::nn::pctl::detail::ipc::IParentalControlService#GetSafetyLevel") }
+	override func setSafetyLevel(_ _0: UInt32) throws { throw IpcError.unimplemented(name: "nn::pctl::detail::ipc::nn::pctl::detail::ipc::IParentalControlService#SetSafetyLevel") }
+	override func getSafetyLevelSettings(_ _0: UInt32) throws -> NnPctl_RestrictionSettings { throw IpcError.unimplemented(name: "nn::pctl::detail::ipc::nn::pctl::detail::ipc::IParentalControlService#GetSafetyLevelSettings") }
+	override func getCurrentSettings() throws -> NnPctl_RestrictionSettings { throw IpcError.unimplemented(name: "nn::pctl::detail::ipc::nn::pctl::detail::ipc::IParentalControlService#GetCurrentSettings") }
+	override func setCustomSafetyLevelSettings(_ _0: NnPctl_RestrictionSettings) throws { throw IpcError.unimplemented(name: "nn::pctl::detail::ipc::nn::pctl::detail::ipc::IParentalControlService#SetCustomSafetyLevelSettings") }
+	override func getDefaultRatingOrganization() throws -> UInt32 { throw IpcError.unimplemented(name: "nn::pctl::detail::ipc::nn::pctl::detail::ipc::IParentalControlService#GetDefaultRatingOrganization") }
+	override func setDefaultRatingOrganization(_ _0: UInt32) throws { throw IpcError.unimplemented(name: "nn::pctl::detail::ipc::nn::pctl::detail::ipc::IParentalControlService#SetDefaultRatingOrganization") }
+	override func getFreeCommunicationApplicationListCount() throws -> UInt32 { throw IpcError.unimplemented(name: "nn::pctl::detail::ipc::nn::pctl::detail::ipc::IParentalControlService#GetFreeCommunicationApplicationListCount") }
+	override func addToFreeCommunicationApplicationList(_ _0: NnNcm_ApplicationId) throws { throw IpcError.unimplemented(name: "nn::pctl::detail::ipc::nn::pctl::detail::ipc::IParentalControlService#AddToFreeCommunicationApplicationList") }
+	override func deleteSettings() throws { throw IpcError.unimplemented(name: "nn::pctl::detail::ipc::nn::pctl::detail::ipc::IParentalControlService#DeleteSettings") }
+	override func getFreeCommunicationApplicationList(_ _0: UInt32, _ _1: Buffer<NnPctl_FreeCommunicationApplicationInfo>) throws -> UInt32 { throw IpcError.unimplemented(name: "nn::pctl::detail::ipc::nn::pctl::detail::ipc::IParentalControlService#GetFreeCommunicationApplicationList") }
+	override func updateFreeCommunicationApplicationList(_ _0: Buffer<NnPctl_FreeCommunicationApplicationInfo>) throws { throw IpcError.unimplemented(name: "nn::pctl::detail::ipc::nn::pctl::detail::ipc::IParentalControlService#UpdateFreeCommunicationApplicationList") }
+	override func disableFeaturesForReset() throws { throw IpcError.unimplemented(name: "nn::pctl::detail::ipc::nn::pctl::detail::ipc::IParentalControlService#DisableFeaturesForReset") }
+	override func notifyApplicationDownloadStarted(_ _0: NnNcm_ApplicationId) throws { throw IpcError.unimplemented(name: "nn::pctl::detail::ipc::nn::pctl::detail::ipc::IParentalControlService#NotifyApplicationDownloadStarted") }
+	override func confirmStereoVisionRestrictionConfigurable() throws { throw IpcError.unimplemented(name: "nn::pctl::detail::ipc::nn::pctl::detail::ipc::IParentalControlService#ConfirmStereoVisionRestrictionConfigurable") }
+	override func getStereoVisionRestriction() throws -> UInt8 { throw IpcError.unimplemented(name: "nn::pctl::detail::ipc::nn::pctl::detail::ipc::IParentalControlService#GetStereoVisionRestriction") }
+	override func setStereoVisionRestriction(_ _0: UInt8) throws { throw IpcError.unimplemented(name: "nn::pctl::detail::ipc::nn::pctl::detail::ipc::IParentalControlService#SetStereoVisionRestriction") }
+	override func resetConfirmedStereoVisionPermission(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::pctl::detail::ipc::nn::pctl::detail::ipc::IParentalControlService#ResetConfirmedStereoVisionPermission") }
+	override func isStereoVisionPermitted(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::pctl::detail::ipc::nn::pctl::detail::ipc::IParentalControlService#IsStereoVisionPermitted") }
+	override func unlockRestrictionTemporarily(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::pctl::detail::ipc::nn::pctl::detail::ipc::IParentalControlService#UnlockRestrictionTemporarily") }
+	override func unlockSystemSettingsRestriction(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::pctl::detail::ipc::nn::pctl::detail::ipc::IParentalControlService#UnlockSystemSettingsRestriction") }
+	override func setPinCode(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::pctl::detail::ipc::nn::pctl::detail::ipc::IParentalControlService#SetPinCode") }
+	override func generateInquiryCode() throws -> NnPctl_InquiryCode { throw IpcError.unimplemented(name: "nn::pctl::detail::ipc::nn::pctl::detail::ipc::IParentalControlService#GenerateInquiryCode") }
+	override func checkMasterKey(_ _0: NnPctl_InquiryCode, _ _1: Buffer<UInt8>) throws -> UInt8 { throw IpcError.unimplemented(name: "nn::pctl::detail::ipc::nn::pctl::detail::ipc::IParentalControlService#CheckMasterKey") }
+	override func getPinCodeLength() throws -> UInt32 { throw IpcError.unimplemented(name: "nn::pctl::detail::ipc::nn::pctl::detail::ipc::IParentalControlService#GetPinCodeLength") }
+	override func getPinCodeChangedEvent() throws -> KObject { throw IpcError.unimplemented(name: "nn::pctl::detail::ipc::nn::pctl::detail::ipc::IParentalControlService#GetPinCodeChangedEvent") }
+	override func getPinCode(_ _0: Buffer<UInt8>) throws -> UInt32 { throw IpcError.unimplemented(name: "nn::pctl::detail::ipc::nn::pctl::detail::ipc::IParentalControlService#GetPinCode") }
+	override func isPairingActive() throws -> UInt8 { throw IpcError.unimplemented(name: "nn::pctl::detail::ipc::nn::pctl::detail::ipc::IParentalControlService#IsPairingActive") }
+	override func getSettingsLastUpdated() throws -> NnTime_PosixTime { throw IpcError.unimplemented(name: "nn::pctl::detail::ipc::nn::pctl::detail::ipc::IParentalControlService#GetSettingsLastUpdated") }
+	override func getPairingAccountInfo(_ _0: NnPctlDetail_PairingInfoBase) throws -> NnPctlDetail_PairingAccountInfoBase { throw IpcError.unimplemented(name: "nn::pctl::detail::ipc::nn::pctl::detail::ipc::IParentalControlService#GetPairingAccountInfo") }
+	override func getAccountNickname(_ _0: NnPctlDetail_PairingAccountInfoBase, _ _1: Buffer<UInt8>) throws -> UInt32 { throw IpcError.unimplemented(name: "nn::pctl::detail::ipc::nn::pctl::detail::ipc::IParentalControlService#GetAccountNickname") }
+	override func getAccountState(_ _0: NnPctlDetail_PairingAccountInfoBase) throws -> UInt32 { throw IpcError.unimplemented(name: "nn::pctl::detail::ipc::nn::pctl::detail::ipc::IParentalControlService#GetAccountState") }
+	override func getSynchronizationEvent() throws -> KObject { throw IpcError.unimplemented(name: "nn::pctl::detail::ipc::nn::pctl::detail::ipc::IParentalControlService#GetSynchronizationEvent") }
+	override func startPlayTimer() throws { throw IpcError.unimplemented(name: "nn::pctl::detail::ipc::nn::pctl::detail::ipc::IParentalControlService#StartPlayTimer") }
+	override func stopPlayTimer() throws { throw IpcError.unimplemented(name: "nn::pctl::detail::ipc::nn::pctl::detail::ipc::IParentalControlService#StopPlayTimer") }
+	override func isPlayTimerEnabled() throws -> UInt8 { throw IpcError.unimplemented(name: "nn::pctl::detail::ipc::nn::pctl::detail::ipc::IParentalControlService#IsPlayTimerEnabled") }
+	override func getPlayTimerRemainingTime() throws -> Nn_TimeSpanType { throw IpcError.unimplemented(name: "nn::pctl::detail::ipc::nn::pctl::detail::ipc::IParentalControlService#GetPlayTimerRemainingTime") }
+	override func isRestrictedByPlayTimer() throws -> UInt8 { throw IpcError.unimplemented(name: "nn::pctl::detail::ipc::nn::pctl::detail::ipc::IParentalControlService#IsRestrictedByPlayTimer") }
+	override func getPlayTimerSettings() throws -> NnPctl_PlayTimerSettings { throw IpcError.unimplemented(name: "nn::pctl::detail::ipc::nn::pctl::detail::ipc::IParentalControlService#GetPlayTimerSettings") }
+	override func getPlayTimerEventToRequestSuspension() throws -> KObject { throw IpcError.unimplemented(name: "nn::pctl::detail::ipc::nn::pctl::detail::ipc::IParentalControlService#GetPlayTimerEventToRequestSuspension") }
+	override func isPlayTimerAlarmDisabled() throws -> UInt8 { throw IpcError.unimplemented(name: "nn::pctl::detail::ipc::nn::pctl::detail::ipc::IParentalControlService#IsPlayTimerAlarmDisabled") }
+	override func notifyWrongPinCodeInputManyTimes() throws { throw IpcError.unimplemented(name: "nn::pctl::detail::ipc::nn::pctl::detail::ipc::IParentalControlService#NotifyWrongPinCodeInputManyTimes") }
+	override func cancelNetworkRequest() throws { throw IpcError.unimplemented(name: "nn::pctl::detail::ipc::nn::pctl::detail::ipc::IParentalControlService#CancelNetworkRequest") }
+	override func getUnlinkedEvent() throws -> KObject { throw IpcError.unimplemented(name: "nn::pctl::detail::ipc::nn::pctl::detail::ipc::IParentalControlService#GetUnlinkedEvent") }
+	override func clearUnlinkedEvent() throws { throw IpcError.unimplemented(name: "nn::pctl::detail::ipc::nn::pctl::detail::ipc::IParentalControlService#ClearUnlinkedEvent") }
+	override func disableAllFeatures() throws -> UInt8 { throw IpcError.unimplemented(name: "nn::pctl::detail::ipc::nn::pctl::detail::ipc::IParentalControlService#DisableAllFeatures") }
+	override func postEnableAllFeatures() throws -> UInt8 { throw IpcError.unimplemented(name: "nn::pctl::detail::ipc::nn::pctl::detail::ipc::IParentalControlService#PostEnableAllFeatures") }
+	override func isAllFeaturesDisabled() throws -> (UInt8, UInt8) { throw IpcError.unimplemented(name: "nn::pctl::detail::ipc::nn::pctl::detail::ipc::IParentalControlService#IsAllFeaturesDisabled") }
+	override func deleteFromFreeCommunicationApplicationListForDebug(_ _0: NnNcm_ApplicationId) throws { throw IpcError.unimplemented(name: "nn::pctl::detail::ipc::nn::pctl::detail::ipc::IParentalControlService#DeleteFromFreeCommunicationApplicationListForDebug") }
+	override func clearFreeCommunicationApplicationListForDebug() throws { throw IpcError.unimplemented(name: "nn::pctl::detail::ipc::nn::pctl::detail::ipc::IParentalControlService#ClearFreeCommunicationApplicationListForDebug") }
+	override func getExemptApplicationListCountForDebug(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::pctl::detail::ipc::nn::pctl::detail::ipc::IParentalControlService#GetExemptApplicationListCountForDebug") }
+	override func getExemptApplicationListForDebug(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::pctl::detail::ipc::nn::pctl::detail::ipc::IParentalControlService#GetExemptApplicationListForDebug") }
+	override func updateExemptApplicationListForDebug(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::pctl::detail::ipc::nn::pctl::detail::ipc::IParentalControlService#UpdateExemptApplicationListForDebug") }
+	override func addToExemptApplicationListForDebug(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::pctl::detail::ipc::nn::pctl::detail::ipc::IParentalControlService#AddToExemptApplicationListForDebug") }
+	override func deleteFromExemptApplicationListForDebug(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::pctl::detail::ipc::nn::pctl::detail::ipc::IParentalControlService#DeleteFromExemptApplicationListForDebug") }
+	override func clearExemptApplicationListForDebug(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::pctl::detail::ipc::nn::pctl::detail::ipc::IParentalControlService#ClearExemptApplicationListForDebug") }
+	override func deletePairing() throws { throw IpcError.unimplemented(name: "nn::pctl::detail::ipc::nn::pctl::detail::ipc::IParentalControlService#DeletePairing") }
+	override func setPlayTimerSettingsForDebug(_ _0: NnPctl_PlayTimerSettings) throws { throw IpcError.unimplemented(name: "nn::pctl::detail::ipc::nn::pctl::detail::ipc::IParentalControlService#SetPlayTimerSettingsForDebug") }
+	override func getPlayTimerSpentTimeForTest() throws -> Nn_TimeSpanType { throw IpcError.unimplemented(name: "nn::pctl::detail::ipc::nn::pctl::detail::ipc::IParentalControlService#GetPlayTimerSpentTimeForTest") }
+	override func setPlayTimerAlarmDisabledForDebug(_ _0: UInt8) throws { throw IpcError.unimplemented(name: "nn::pctl::detail::ipc::nn::pctl::detail::ipc::IParentalControlService#SetPlayTimerAlarmDisabledForDebug") }
+	override func requestPairingAsync(_ _0: Buffer<UInt8>) throws -> (NnPctlDetail_AsyncData, KObject) { throw IpcError.unimplemented(name: "nn::pctl::detail::ipc::nn::pctl::detail::ipc::IParentalControlService#RequestPairingAsync") }
+	override func finishRequestPairing(_ _0: NnPctlDetail_AsyncData) throws -> NnPctlDetail_PairingInfoBase { throw IpcError.unimplemented(name: "nn::pctl::detail::ipc::nn::pctl::detail::ipc::IParentalControlService#FinishRequestPairing") }
+	override func authorizePairingAsync(_ _0: NnPctlDetail_PairingInfoBase) throws -> (NnPctlDetail_AsyncData, KObject) { throw IpcError.unimplemented(name: "nn::pctl::detail::ipc::nn::pctl::detail::ipc::IParentalControlService#AuthorizePairingAsync") }
+	override func finishAuthorizePairing(_ _0: NnPctlDetail_AsyncData) throws -> NnPctlDetail_PairingInfoBase { throw IpcError.unimplemented(name: "nn::pctl::detail::ipc::nn::pctl::detail::ipc::IParentalControlService#FinishAuthorizePairing") }
+	override func retrievePairingInfoAsync() throws -> (NnPctlDetail_AsyncData, KObject) { throw IpcError.unimplemented(name: "nn::pctl::detail::ipc::nn::pctl::detail::ipc::IParentalControlService#RetrievePairingInfoAsync") }
+	override func finishRetrievePairingInfo(_ _0: NnPctlDetail_AsyncData) throws -> NnPctlDetail_PairingInfoBase { throw IpcError.unimplemented(name: "nn::pctl::detail::ipc::nn::pctl::detail::ipc::IParentalControlService#FinishRetrievePairingInfo") }
+	override func unlinkPairingAsync(_ _0: UInt8) throws -> (NnPctlDetail_AsyncData, KObject) { throw IpcError.unimplemented(name: "nn::pctl::detail::ipc::nn::pctl::detail::ipc::IParentalControlService#UnlinkPairingAsync") }
+	override func finishUnlinkPairing(_ _0: UInt8, _ _1: NnPctlDetail_AsyncData) throws { throw IpcError.unimplemented(name: "nn::pctl::detail::ipc::nn::pctl::detail::ipc::IParentalControlService#FinishUnlinkPairing") }
+	override func getAccountMiiImageAsync(_ _0: NnPctlDetail_PairingAccountInfoBase, _ _1: Buffer<UInt8>) throws -> (NnPctlDetail_AsyncData, UInt32, KObject) { throw IpcError.unimplemented(name: "nn::pctl::detail::ipc::nn::pctl::detail::ipc::IParentalControlService#GetAccountMiiImageAsync") }
+	override func finishGetAccountMiiImage(_ _0: NnPctlDetail_AsyncData, _ _1: Buffer<UInt8>) throws -> UInt32 { throw IpcError.unimplemented(name: "nn::pctl::detail::ipc::nn::pctl::detail::ipc::IParentalControlService#FinishGetAccountMiiImage") }
+	override func getAccountMiiImageContentTypeAsync(_ _0: NnPctlDetail_PairingAccountInfoBase, _ _1: Buffer<UInt8>) throws -> (NnPctlDetail_AsyncData, UInt32, KObject) { throw IpcError.unimplemented(name: "nn::pctl::detail::ipc::nn::pctl::detail::ipc::IParentalControlService#GetAccountMiiImageContentTypeAsync") }
+	override func finishGetAccountMiiImageContentType(_ _0: NnPctlDetail_AsyncData, _ _1: Buffer<UInt8>) throws -> UInt32 { throw IpcError.unimplemented(name: "nn::pctl::detail::ipc::nn::pctl::detail::ipc::IParentalControlService#FinishGetAccountMiiImageContentType") }
+	override func synchronizeParentalControlSettingsAsync() throws -> (NnPctlDetail_AsyncData, KObject) { throw IpcError.unimplemented(name: "nn::pctl::detail::ipc::nn::pctl::detail::ipc::IParentalControlService#SynchronizeParentalControlSettingsAsync") }
+	override func finishSynchronizeParentalControlSettings(_ _0: NnPctlDetail_AsyncData) throws { throw IpcError.unimplemented(name: "nn::pctl::detail::ipc::nn::pctl::detail::ipc::IParentalControlService#FinishSynchronizeParentalControlSettings") }
+	override func finishSynchronizeParentalControlSettingsWithLastUpdated(_ _0: NnPctlDetail_AsyncData) throws -> NnTime_PosixTime { throw IpcError.unimplemented(name: "nn::pctl::detail::ipc::nn::pctl::detail::ipc::IParentalControlService#FinishSynchronizeParentalControlSettingsWithLastUpdated") }
+	override func requestUpdateExemptionListAsync(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::pctl::detail::ipc::nn::pctl::detail::ipc::IParentalControlService#RequestUpdateExemptionListAsync") }
+}
+*/
+
 class NnPctlDetailIpc_IParentalControlServiceFactory: IpcService {
 	func createService(_ _0: UInt64, _ _1: Pid) throws -> NnPctlDetailIpc_IParentalControlService { throw IpcError.unimplemented(name: "nn::pctl::detail::ipc::nn::pctl::detail::ipc::IParentalControlServiceFactory#CreateService") }
 	func createServiceWithoutInitialize(_ _0: UInt64, _ _1: Pid) throws -> NnPctlDetailIpc_IParentalControlService { throw IpcError.unimplemented(name: "nn::pctl::detail::ipc::nn::pctl::detail::ipc::IParentalControlServiceFactory#CreateServiceWithoutInitialize") }
@@ -567,3 +665,10 @@ class NnPctlDetailIpc_IParentalControlServiceFactory: IpcService {
 		}
 	}
 }
+
+/*
+class NnPctlDetailIpc_IParentalControlServiceFactory_Impl: NnPctlDetailIpc_IParentalControlServiceFactory {
+	override func createService(_ _0: UInt64, _ _1: Pid) throws -> NnPctlDetailIpc_IParentalControlService { throw IpcError.unimplemented(name: "nn::pctl::detail::ipc::nn::pctl::detail::ipc::IParentalControlServiceFactory#CreateService") }
+	override func createServiceWithoutInitialize(_ _0: UInt64, _ _1: Pid) throws -> NnPctlDetailIpc_IParentalControlService { throw IpcError.unimplemented(name: "nn::pctl::detail::ipc::nn::pctl::detail::ipc::IParentalControlServiceFactory#CreateServiceWithoutInitialize") }
+}
+*/

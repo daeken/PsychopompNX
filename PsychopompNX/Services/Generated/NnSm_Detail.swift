@@ -19,6 +19,13 @@ class NnSmDetail_IManagerInterface: IpcService {
 	}
 }
 
+/*
+class NnSmDetail_IManagerInterface_Impl: NnSmDetail_IManagerInterface {
+	override func registerProcess(_ _0: UInt64, _ _1: Buffer<UInt8>, _ _2: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::sm::detail::nn::sm::detail::IManagerInterface#RegisterProcess") }
+	override func unregisterProcess(_ _0: UInt64) throws { throw IpcError.unimplemented(name: "nn::sm::detail::nn::sm::detail::IManagerInterface#UnregisterProcess") }
+}
+*/
+
 class NnSmDetail_IUserInterface: IpcService {
 	func initialize(_ _0: Pid, _ reserved: UInt64) throws { throw IpcError.unimplemented(name: "nn::sm::detail::nn::sm::detail::IUserInterface#Initialize") }
 	func getService(_ name: ServiceName) throws -> IpcService { throw IpcError.unimplemented(name: "nn::sm::detail::nn::sm::detail::IUserInterface#GetService") }
@@ -51,3 +58,12 @@ class NnSmDetail_IUserInterface: IpcService {
 		}
 	}
 }
+
+/*
+class NnSmDetail_IUserInterface_Impl: NnSmDetail_IUserInterface {
+	override func initialize(_ _0: Pid, _ reserved: UInt64) throws { throw IpcError.unimplemented(name: "nn::sm::detail::nn::sm::detail::IUserInterface#Initialize") }
+	override func getService(_ name: ServiceName) throws -> IpcService { throw IpcError.unimplemented(name: "nn::sm::detail::nn::sm::detail::IUserInterface#GetService") }
+	override func registerService(_ name: ServiceName, _ _1: UInt8, _ maxHandles: UInt32) throws -> IpcService { throw IpcError.unimplemented(name: "nn::sm::detail::nn::sm::detail::IUserInterface#RegisterService") }
+	override func unregisterService(_ name: ServiceName) throws { throw IpcError.unimplemented(name: "nn::sm::detail::nn::sm::detail::IUserInterface#UnregisterService") }
+}
+*/

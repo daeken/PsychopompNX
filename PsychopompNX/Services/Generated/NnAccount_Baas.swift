@@ -99,6 +99,27 @@ class NnAccountBaas_IManagerForSystemService: IpcService {
 	}
 }
 
+/*
+class NnAccountBaas_IManagerForSystemService_Impl: NnAccountBaas_IManagerForSystemService {
+	override func checkAvailability() throws { throw IpcError.unimplemented(name: "nn::account::baas::nn::account::baas::IManagerForSystemService#CheckAvailability") }
+	override func getAccountId() throws -> NnAccount_NetworkServiceAccountId { throw IpcError.unimplemented(name: "nn::account::baas::nn::account::baas::IManagerForSystemService#GetAccountId") }
+	override func ensureIdTokenCacheAsync() throws -> NnAccountDetail_IAsyncContext { throw IpcError.unimplemented(name: "nn::account::baas::nn::account::baas::IManagerForSystemService#EnsureIdTokenCacheAsync") }
+	override func loadIdTokenCache(_ _0: Buffer<UInt8>) throws -> UInt32 { throw IpcError.unimplemented(name: "nn::account::baas::nn::account::baas::IManagerForSystemService#LoadIdTokenCache") }
+	override func setSystemProgramIdentification(_ _0: UInt64, _ _1: Pid, _ _2: Buffer<NnAccount_SystemProgramIdentification>) throws { throw IpcError.unimplemented(name: "nn::account::baas::nn::account::baas::IManagerForSystemService#SetSystemProgramIdentification") }
+	override func getServiceEntryRequirementCache(_ _0: Nn_ApplicationId) throws -> UInt32 { throw IpcError.unimplemented(name: "nn::account::baas::nn::account::baas::IManagerForSystemService#GetServiceEntryRequirementCache") }
+	override func invalidateServiceEntryRequirementCache(_ _0: Nn_ApplicationId) throws { throw IpcError.unimplemented(name: "nn::account::baas::nn::account::baas::IManagerForSystemService#InvalidateServiceEntryRequirementCache") }
+	override func invalidateTokenCache(_ _0: Nn_ApplicationId) throws { throw IpcError.unimplemented(name: "nn::account::baas::nn::account::baas::IManagerForSystemService#InvalidateTokenCache") }
+	override func getNintendoAccountId() throws -> NnAccount_NintendoAccountId { throw IpcError.unimplemented(name: "nn::account::baas::nn::account::baas::IManagerForSystemService#GetNintendoAccountId") }
+	override func getNintendoAccountUserResourceCache(_ _0: Buffer<NnAccountNas_NasUserBase>, _ _1: Buffer<UInt8>) throws -> NnAccount_NintendoAccountId { throw IpcError.unimplemented(name: "nn::account::baas::nn::account::baas::IManagerForSystemService#GetNintendoAccountUserResourceCache") }
+	override func refreshNintendoAccountUserResourceCacheAsync() throws -> NnAccountDetail_IAsyncContext { throw IpcError.unimplemented(name: "nn::account::baas::nn::account::baas::IManagerForSystemService#RefreshNintendoAccountUserResourceCacheAsync") }
+	override func refreshNintendoAccountUserResourceCacheAsyncIfSecondsElapsed(_ _0: UInt32) throws -> (UInt8, NnAccountDetail_IAsyncContext) { throw IpcError.unimplemented(name: "nn::account::baas::nn::account::baas::IManagerForSystemService#RefreshNintendoAccountUserResourceCacheAsyncIfSecondsElapsed") }
+	override func getNetworkServiceLicenseCache(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::account::baas::nn::account::baas::IManagerForSystemService#GetNetworkServiceLicenseCache") }
+	override func refreshNetworkServiceLicenseCacheAsync(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::account::baas::nn::account::baas::IManagerForSystemService#RefreshNetworkServiceLicenseCacheAsync") }
+	override func refreshNetworkServiceLicenseCacheAsyncIfSecondsElapsed(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::account::baas::nn::account::baas::IManagerForSystemService#RefreshNetworkServiceLicenseCacheAsyncIfSecondsElapsed") }
+	override func createAuthorizationRequest(_ _0: UInt32, _ _1: KObject, _ _2: Buffer<NnAccountNas_NasClientInfo>, _ _3: Buffer<NnAccount_NintendoAccountAuthorizationRequestParameters>) throws -> NnAccountNas_IAuthorizationRequest { throw IpcError.unimplemented(name: "nn::account::baas::nn::account::baas::IManagerForSystemService#CreateAuthorizationRequest") }
+}
+*/
+
 class NnAccountBaas_IFloatingRegistrationRequest: IpcService {
 	func getSessionId() throws -> NnAccountDetail_Uuid { throw IpcError.unimplemented(name: "nn::account::baas::nn::account::baas::IFloatingRegistrationRequest#GetSessionId") }
 	func getAccountId() throws -> NnAccount_NetworkServiceAccountId { throw IpcError.unimplemented(name: "nn::account::baas::nn::account::baas::IFloatingRegistrationRequest#GetAccountId") }
@@ -181,6 +202,23 @@ class NnAccountBaas_IFloatingRegistrationRequest: IpcService {
 	}
 }
 
+/*
+class NnAccountBaas_IFloatingRegistrationRequest_Impl: NnAccountBaas_IFloatingRegistrationRequest {
+	override func getSessionId() throws -> NnAccountDetail_Uuid { throw IpcError.unimplemented(name: "nn::account::baas::nn::account::baas::IFloatingRegistrationRequest#GetSessionId") }
+	override func getAccountId() throws -> NnAccount_NetworkServiceAccountId { throw IpcError.unimplemented(name: "nn::account::baas::nn::account::baas::IFloatingRegistrationRequest#GetAccountId") }
+	override func getLinkedNintendoAccountId() throws -> NnAccount_NintendoAccountId { throw IpcError.unimplemented(name: "nn::account::baas::nn::account::baas::IFloatingRegistrationRequest#GetLinkedNintendoAccountId") }
+	override func getNickname(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::account::baas::nn::account::baas::IFloatingRegistrationRequest#GetNickname") }
+	override func getProfileImage(_ _0: Buffer<UInt8>) throws -> UInt32 { throw IpcError.unimplemented(name: "nn::account::baas::nn::account::baas::IFloatingRegistrationRequest#GetProfileImage") }
+	override func loadIdTokenCache(_ _0: Buffer<UInt8>) throws -> UInt32 { throw IpcError.unimplemented(name: "nn::account::baas::nn::account::baas::IFloatingRegistrationRequest#LoadIdTokenCache") }
+	override func registerUser() throws -> NnAccount_Uid { throw IpcError.unimplemented(name: "nn::account::baas::nn::account::baas::IFloatingRegistrationRequest#RegisterUser") }
+	override func registerUserWithUid(_ _0: NnAccount_Uid) throws { throw IpcError.unimplemented(name: "nn::account::baas::nn::account::baas::IFloatingRegistrationRequest#RegisterUserWithUid") }
+	override func registerNetworkServiceAccountAsync() throws -> NnAccountDetail_IAsyncContext { throw IpcError.unimplemented(name: "nn::account::baas::nn::account::baas::IFloatingRegistrationRequest#RegisterNetworkServiceAccountAsync") }
+	override func registerNetworkServiceAccountWithUidAsync(_ _0: NnAccount_Uid) throws -> NnAccountDetail_IAsyncContext { throw IpcError.unimplemented(name: "nn::account::baas::nn::account::baas::IFloatingRegistrationRequest#RegisterNetworkServiceAccountWithUidAsync") }
+	override func setSystemProgramIdentification(_ _0: UInt64, _ _1: Pid, _ _2: Buffer<NnAccount_SystemProgramIdentification>) throws { throw IpcError.unimplemented(name: "nn::account::baas::nn::account::baas::IFloatingRegistrationRequest#SetSystemProgramIdentification") }
+	override func ensureIdTokenCacheAsync() throws -> NnAccountDetail_IAsyncContext { throw IpcError.unimplemented(name: "nn::account::baas::nn::account::baas::IFloatingRegistrationRequest#EnsureIdTokenCacheAsync") }
+}
+*/
+
 class NnAccountBaas_IManagerForApplication: IpcService {
 	func checkAvailability() throws { throw IpcError.unimplemented(name: "nn::account::baas::nn::account::baas::IManagerForApplication#CheckAvailability") }
 	func getAccountId() throws -> NnAccount_NetworkServiceAccountId { throw IpcError.unimplemented(name: "nn::account::baas::nn::account::baas::IManagerForApplication#GetAccountId") }
@@ -231,6 +269,18 @@ class NnAccountBaas_IManagerForApplication: IpcService {
 		}
 	}
 }
+
+/*
+class NnAccountBaas_IManagerForApplication_Impl: NnAccountBaas_IManagerForApplication {
+	override func checkAvailability() throws { throw IpcError.unimplemented(name: "nn::account::baas::nn::account::baas::IManagerForApplication#CheckAvailability") }
+	override func getAccountId() throws -> NnAccount_NetworkServiceAccountId { throw IpcError.unimplemented(name: "nn::account::baas::nn::account::baas::IManagerForApplication#GetAccountId") }
+	override func ensureIdTokenCacheAsync() throws -> NnAccountDetail_IAsyncContext { throw IpcError.unimplemented(name: "nn::account::baas::nn::account::baas::IManagerForApplication#EnsureIdTokenCacheAsync") }
+	override func loadIdTokenCache(_ _0: Buffer<UInt8>) throws -> UInt32 { throw IpcError.unimplemented(name: "nn::account::baas::nn::account::baas::IManagerForApplication#LoadIdTokenCache") }
+	override func getNintendoAccountUserResourceCacheForApplication(_ _0: Buffer<NnAccountNas_NasUserBaseForApplication>, _ _1: Buffer<UInt8>) throws -> NnAccount_NintendoAccountId { throw IpcError.unimplemented(name: "nn::account::baas::nn::account::baas::IManagerForApplication#GetNintendoAccountUserResourceCacheForApplication") }
+	override func createAuthorizationRequest(_ _0: UInt32, _ _1: KObject, _ _2: Buffer<NnAccount_NintendoAccountAuthorizationRequestParameters>) throws -> NnAccountNas_IAuthorizationRequest { throw IpcError.unimplemented(name: "nn::account::baas::nn::account::baas::IManagerForApplication#CreateAuthorizationRequest") }
+	override func storeOpenContext(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::account::baas::nn::account::baas::IManagerForApplication#StoreOpenContext") }
+}
+*/
 
 class NnAccountBaas_IAdministrator: IpcService {
 	func checkAvailability() throws { throw IpcError.unimplemented(name: "nn::account::baas::nn::account::baas::IAdministrator#CheckAvailability") }
@@ -434,6 +484,44 @@ class NnAccountBaas_IAdministrator: IpcService {
 	}
 }
 
+/*
+class NnAccountBaas_IAdministrator_Impl: NnAccountBaas_IAdministrator {
+	override func checkAvailability() throws { throw IpcError.unimplemented(name: "nn::account::baas::nn::account::baas::IAdministrator#CheckAvailability") }
+	override func getAccountId() throws -> NnAccount_NetworkServiceAccountId { throw IpcError.unimplemented(name: "nn::account::baas::nn::account::baas::IAdministrator#GetAccountId") }
+	override func ensureIdTokenCacheAsync() throws -> NnAccountDetail_IAsyncContext { throw IpcError.unimplemented(name: "nn::account::baas::nn::account::baas::IAdministrator#EnsureIdTokenCacheAsync") }
+	override func loadIdTokenCache(_ _0: Buffer<UInt8>) throws -> UInt32 { throw IpcError.unimplemented(name: "nn::account::baas::nn::account::baas::IAdministrator#LoadIdTokenCache") }
+	override func setSystemProgramIdentification(_ _0: UInt64, _ _1: Pid, _ _2: Buffer<NnAccount_SystemProgramIdentification>) throws { throw IpcError.unimplemented(name: "nn::account::baas::nn::account::baas::IAdministrator#SetSystemProgramIdentification") }
+	override func getServiceEntryRequirementCache(_ _0: Nn_ApplicationId) throws -> UInt32 { throw IpcError.unimplemented(name: "nn::account::baas::nn::account::baas::IAdministrator#GetServiceEntryRequirementCache") }
+	override func invalidateServiceEntryRequirementCache(_ _0: Nn_ApplicationId) throws { throw IpcError.unimplemented(name: "nn::account::baas::nn::account::baas::IAdministrator#InvalidateServiceEntryRequirementCache") }
+	override func invalidateTokenCache(_ _0: Nn_ApplicationId) throws { throw IpcError.unimplemented(name: "nn::account::baas::nn::account::baas::IAdministrator#InvalidateTokenCache") }
+	override func getNintendoAccountId() throws -> NnAccount_NintendoAccountId { throw IpcError.unimplemented(name: "nn::account::baas::nn::account::baas::IAdministrator#GetNintendoAccountId") }
+	override func getNintendoAccountUserResourceCache(_ _0: Buffer<NnAccountNas_NasUserBase>, _ _1: Buffer<UInt8>) throws -> NnAccount_NintendoAccountId { throw IpcError.unimplemented(name: "nn::account::baas::nn::account::baas::IAdministrator#GetNintendoAccountUserResourceCache") }
+	override func refreshNintendoAccountUserResourceCacheAsync() throws -> NnAccountDetail_IAsyncContext { throw IpcError.unimplemented(name: "nn::account::baas::nn::account::baas::IAdministrator#RefreshNintendoAccountUserResourceCacheAsync") }
+	override func refreshNintendoAccountUserResourceCacheAsyncIfSecondsElapsed(_ _0: UInt32) throws -> (UInt8, NnAccountDetail_IAsyncContext) { throw IpcError.unimplemented(name: "nn::account::baas::nn::account::baas::IAdministrator#RefreshNintendoAccountUserResourceCacheAsyncIfSecondsElapsed") }
+	override func getNetworkServiceLicenseCache(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::account::baas::nn::account::baas::IAdministrator#GetNetworkServiceLicenseCache") }
+	override func refreshNetworkServiceLicenseCacheAsync(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::account::baas::nn::account::baas::IAdministrator#RefreshNetworkServiceLicenseCacheAsync") }
+	override func refreshNetworkServiceLicenseCacheAsyncIfSecondsElapsed(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::account::baas::nn::account::baas::IAdministrator#RefreshNetworkServiceLicenseCacheAsyncIfSecondsElapsed") }
+	override func createAuthorizationRequest(_ _0: UInt32, _ _1: KObject, _ _2: Buffer<NnAccountNas_NasClientInfo>, _ _3: Buffer<NnAccount_NintendoAccountAuthorizationRequestParameters>) throws -> NnAccountNas_IAuthorizationRequest { throw IpcError.unimplemented(name: "nn::account::baas::nn::account::baas::IAdministrator#CreateAuthorizationRequest") }
+	override func isRegistered() throws -> UInt8 { throw IpcError.unimplemented(name: "nn::account::baas::nn::account::baas::IAdministrator#IsRegistered") }
+	override func registerAsync() throws -> NnAccountDetail_IAsyncContext { throw IpcError.unimplemented(name: "nn::account::baas::nn::account::baas::IAdministrator#RegisterAsync") }
+	override func unregisterAsync() throws -> NnAccountDetail_IAsyncContext { throw IpcError.unimplemented(name: "nn::account::baas::nn::account::baas::IAdministrator#UnregisterAsync") }
+	override func deleteRegistrationInfoLocally() throws { throw IpcError.unimplemented(name: "nn::account::baas::nn::account::baas::IAdministrator#DeleteRegistrationInfoLocally") }
+	override func synchronizeProfileAsync() throws -> NnAccountDetail_IAsyncContext { throw IpcError.unimplemented(name: "nn::account::baas::nn::account::baas::IAdministrator#SynchronizeProfileAsync") }
+	override func uploadProfileAsync() throws -> NnAccountDetail_IAsyncContext { throw IpcError.unimplemented(name: "nn::account::baas::nn::account::baas::IAdministrator#UploadProfileAsync") }
+	override func synchronizeProfileAsyncIfSecondsElapsed(_ _0: UInt32) throws -> (UInt8, NnAccountDetail_IAsyncContext) { throw IpcError.unimplemented(name: "nn::account::baas::nn::account::baas::IAdministrator#SynchronizeProfileAsyncIfSecondsElapsed") }
+	override func isLinkedWithNintendoAccount() throws -> UInt8 { throw IpcError.unimplemented(name: "nn::account::baas::nn::account::baas::IAdministrator#IsLinkedWithNintendoAccount") }
+	override func createProcedureToLinkWithNintendoAccount() throws -> NnAccountNas_IOAuthProcedureForNintendoAccountLinkage { throw IpcError.unimplemented(name: "nn::account::baas::nn::account::baas::IAdministrator#CreateProcedureToLinkWithNintendoAccount") }
+	override func resumeProcedureToLinkWithNintendoAccount(_ _0: NnAccountDetail_Uuid) throws -> NnAccountNas_IOAuthProcedureForNintendoAccountLinkage { throw IpcError.unimplemented(name: "nn::account::baas::nn::account::baas::IAdministrator#ResumeProcedureToLinkWithNintendoAccount") }
+	override func createProcedureToUpdateLinkageStateOfNintendoAccount() throws -> NnAccountHttp_IOAuthProcedure { throw IpcError.unimplemented(name: "nn::account::baas::nn::account::baas::IAdministrator#CreateProcedureToUpdateLinkageStateOfNintendoAccount") }
+	override func resumeProcedureToUpdateLinkageStateOfNintendoAccount(_ _0: NnAccountDetail_Uuid) throws -> NnAccountHttp_IOAuthProcedure { throw IpcError.unimplemented(name: "nn::account::baas::nn::account::baas::IAdministrator#ResumeProcedureToUpdateLinkageStateOfNintendoAccount") }
+	override func createProcedureToLinkNnidWithNintendoAccount() throws -> NnAccountHttp_IOAuthProcedure { throw IpcError.unimplemented(name: "nn::account::baas::nn::account::baas::IAdministrator#CreateProcedureToLinkNnidWithNintendoAccount") }
+	override func resumeProcedureToLinkNnidWithNintendoAccount(_ _0: NnAccountDetail_Uuid) throws -> NnAccountHttp_IOAuthProcedure { throw IpcError.unimplemented(name: "nn::account::baas::nn::account::baas::IAdministrator#ResumeProcedureToLinkNnidWithNintendoAccount") }
+	override func proxyProcedureToAcquireApplicationAuthorizationForNintendoAccount(_ _0: NnAccountDetail_Uuid) throws -> NnAccountHttp_IOAuthProcedure { throw IpcError.unimplemented(name: "nn::account::baas::nn::account::baas::IAdministrator#ProxyProcedureToAcquireApplicationAuthorizationForNintendoAccount") }
+	override func debugUnlinkNintendoAccountAsync() throws -> NnAccountDetail_IAsyncContext { throw IpcError.unimplemented(name: "nn::account::baas::nn::account::baas::IAdministrator#DebugUnlinkNintendoAccountAsync") }
+	override func debugSetAvailabilityErrorDetail(_ _0: UInt32) throws { throw IpcError.unimplemented(name: "nn::account::baas::nn::account::baas::IAdministrator#DebugSetAvailabilityErrorDetail") }
+}
+*/
+
 class NnAccountBaas_IGuestLoginRequest: IpcService {
 	func getSessionId() throws -> NnAccountDetail_Uuid { throw IpcError.unimplemented(name: "nn::account::baas::nn::account::baas::IGuestLoginRequest#GetSessionId") }
 	func getAccountId() throws -> NnAccount_NetworkServiceAccountId { throw IpcError.unimplemented(name: "nn::account::baas::nn::account::baas::IGuestLoginRequest#GetAccountId") }
@@ -480,3 +568,14 @@ class NnAccountBaas_IGuestLoginRequest: IpcService {
 		}
 	}
 }
+
+/*
+class NnAccountBaas_IGuestLoginRequest_Impl: NnAccountBaas_IGuestLoginRequest {
+	override func getSessionId() throws -> NnAccountDetail_Uuid { throw IpcError.unimplemented(name: "nn::account::baas::nn::account::baas::IGuestLoginRequest#GetSessionId") }
+	override func getAccountId() throws -> NnAccount_NetworkServiceAccountId { throw IpcError.unimplemented(name: "nn::account::baas::nn::account::baas::IGuestLoginRequest#GetAccountId") }
+	override func getLinkedNintendoAccountId() throws -> NnAccount_NintendoAccountId { throw IpcError.unimplemented(name: "nn::account::baas::nn::account::baas::IGuestLoginRequest#GetLinkedNintendoAccountId") }
+	override func getNickname(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::account::baas::nn::account::baas::IGuestLoginRequest#GetNickname") }
+	override func getProfileImage(_ _0: Buffer<UInt8>) throws -> UInt32 { throw IpcError.unimplemented(name: "nn::account::baas::nn::account::baas::IGuestLoginRequest#GetProfileImage") }
+	override func loadIdTokenCache(_ _0: Buffer<UInt8>) throws -> UInt32 { throw IpcError.unimplemented(name: "nn::account::baas::nn::account::baas::IGuestLoginRequest#LoadIdTokenCache") }
+}
+*/

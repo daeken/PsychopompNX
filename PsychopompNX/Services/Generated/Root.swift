@@ -17,6 +17,12 @@ class JpegDecoder: IpcService {
 	}
 }
 
+/*
+class JpegDecoder_Impl: JpegDecoder {
+	override func unknown3001(_ _0: Any?, _ _1: Buffer<UInt8>, _ _2: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "Root::JpegDecoder#Unknown3001") }
+}
+*/
+
 class CecManagerSubinterface100: IpcService {
 	func unknown0() throws -> KObject { throw IpcError.unimplemented(name: "Root::CecManagerSubinterface100#Unknown0") }
 	func unknown1() throws -> Any? { throw IpcError.unimplemented(name: "Root::CecManagerSubinterface100#Unknown1") }
@@ -48,3 +54,12 @@ class CecManagerSubinterface100: IpcService {
 		}
 	}
 }
+
+/*
+class CecManagerSubinterface100_Impl: CecManagerSubinterface100 {
+	override func unknown0() throws -> KObject { throw IpcError.unimplemented(name: "Root::CecManagerSubinterface100#Unknown0") }
+	override func unknown1() throws -> Any? { throw IpcError.unimplemented(name: "Root::CecManagerSubinterface100#Unknown1") }
+	override func unknown2(_ _0: Any?) throws { throw IpcError.unimplemented(name: "Root::CecManagerSubinterface100#Unknown2") }
+	override func unknown3() throws -> Any? { throw IpcError.unimplemented(name: "Root::CecManagerSubinterface100#Unknown3") }
+}
+*/

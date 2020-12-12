@@ -150,6 +150,39 @@ class NnWlanDetail_IInfraManager: IpcService {
 	}
 }
 
+/*
+class NnWlanDetail_IInfraManager_Impl: NnWlanDetail_IInfraManager {
+	override func unknown0() throws { throw IpcError.unimplemented(name: "nn::wlan::detail::nn::wlan::detail::IInfraManager#Unknown0") }
+	override func unknown1() throws { throw IpcError.unimplemented(name: "nn::wlan::detail::nn::wlan::detail::IInfraManager#Unknown1") }
+	override func getMacAddress() throws -> Any? { throw IpcError.unimplemented(name: "nn::wlan::detail::nn::wlan::detail::IInfraManager#GetMacAddress") }
+	override func startScan(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::wlan::detail::nn::wlan::detail::IInfraManager#StartScan") }
+	override func stopScan() throws { throw IpcError.unimplemented(name: "nn::wlan::detail::nn::wlan::detail::IInfraManager#StopScan") }
+	override func connect(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::wlan::detail::nn::wlan::detail::IInfraManager#Connect") }
+	override func cancelConnect() throws { throw IpcError.unimplemented(name: "nn::wlan::detail::nn::wlan::detail::IInfraManager#CancelConnect") }
+	override func disconnect() throws { throw IpcError.unimplemented(name: "nn::wlan::detail::nn::wlan::detail::IInfraManager#Disconnect") }
+	override func unknown8(_ _0: Any?) throws -> KObject { throw IpcError.unimplemented(name: "nn::wlan::detail::nn::wlan::detail::IInfraManager#Unknown8") }
+	override func unknown9() throws -> Any? { throw IpcError.unimplemented(name: "nn::wlan::detail::nn::wlan::detail::IInfraManager#Unknown9") }
+	override func getState() throws -> Any? { throw IpcError.unimplemented(name: "nn::wlan::detail::nn::wlan::detail::IInfraManager#GetState") }
+	override func getScanResult(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::wlan::detail::nn::wlan::detail::IInfraManager#GetScanResult") }
+	override func getRssi() throws -> Any? { throw IpcError.unimplemented(name: "nn::wlan::detail::nn::wlan::detail::IInfraManager#GetRssi") }
+	override func changeRxAntenna(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::wlan::detail::nn::wlan::detail::IInfraManager#ChangeRxAntenna") }
+	override func unknown14(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::wlan::detail::nn::wlan::detail::IInfraManager#Unknown14") }
+	override func unknown15() throws { throw IpcError.unimplemented(name: "nn::wlan::detail::nn::wlan::detail::IInfraManager#Unknown15") }
+	override func requestWakeUp() throws { throw IpcError.unimplemented(name: "nn::wlan::detail::nn::wlan::detail::IInfraManager#RequestWakeUp") }
+	override func requestIfUpDown(_ _0: Any?, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::wlan::detail::nn::wlan::detail::IInfraManager#RequestIfUpDown") }
+	override func unknown18() throws -> Any? { throw IpcError.unimplemented(name: "nn::wlan::detail::nn::wlan::detail::IInfraManager#Unknown18") }
+	override func unknown19(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::wlan::detail::nn::wlan::detail::IInfraManager#Unknown19") }
+	override func unknown20() throws { throw IpcError.unimplemented(name: "nn::wlan::detail::nn::wlan::detail::IInfraManager#Unknown20") }
+	override func unknown21() throws -> Any? { throw IpcError.unimplemented(name: "nn::wlan::detail::nn::wlan::detail::IInfraManager#Unknown21") }
+	override func unknown22(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::wlan::detail::nn::wlan::detail::IInfraManager#Unknown22") }
+	override func unknown23(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::wlan::detail::nn::wlan::detail::IInfraManager#Unknown23") }
+	override func unknown24() throws -> Any? { throw IpcError.unimplemented(name: "nn::wlan::detail::nn::wlan::detail::IInfraManager#Unknown24") }
+	override func unknown25(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::wlan::detail::nn::wlan::detail::IInfraManager#Unknown25") }
+	override func unknown26() throws { throw IpcError.unimplemented(name: "nn::wlan::detail::nn::wlan::detail::IInfraManager#Unknown26") }
+	override func unknown27() throws { throw IpcError.unimplemented(name: "nn::wlan::detail::nn::wlan::detail::IInfraManager#Unknown27") }
+}
+*/
+
 class NnWlanDetail_ISocketManager: IpcService {
 	func unknown0(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::wlan::detail::nn::wlan::detail::ISocketManager#Unknown0") }
 	func unknown1(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::wlan::detail::nn::wlan::detail::ISocketManager#Unknown1") }
@@ -221,6 +254,23 @@ class NnWlanDetail_ISocketManager: IpcService {
 	}
 }
 
+/*
+class NnWlanDetail_ISocketManager_Impl: NnWlanDetail_ISocketManager {
+	override func unknown0(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::wlan::detail::nn::wlan::detail::ISocketManager#Unknown0") }
+	override func unknown1(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::wlan::detail::nn::wlan::detail::ISocketManager#Unknown1") }
+	override func unknown2(_ _0: Any?, _ _1: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented(name: "nn::wlan::detail::nn::wlan::detail::ISocketManager#Unknown2") }
+	override func unknown3(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::wlan::detail::nn::wlan::detail::ISocketManager#Unknown3") }
+	override func unknown4(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::wlan::detail::nn::wlan::detail::ISocketManager#Unknown4") }
+	override func unknown5(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::wlan::detail::nn::wlan::detail::ISocketManager#Unknown5") }
+	override func getMacAddress() throws -> Any? { throw IpcError.unimplemented(name: "nn::wlan::detail::nn::wlan::detail::ISocketManager#GetMacAddress") }
+	override func switchTsfTimerFunction(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::wlan::detail::nn::wlan::detail::ISocketManager#SwitchTsfTimerFunction") }
+	override func unknown8() throws -> Any? { throw IpcError.unimplemented(name: "nn::wlan::detail::nn::wlan::detail::ISocketManager#Unknown8") }
+	override func unknown9(_ _0: Any?, _ _1: KObject, _ _2: KObject, _ _3: KObject, _ _4: KObject, _ _5: KObject) throws { throw IpcError.unimplemented(name: "nn::wlan::detail::nn::wlan::detail::ISocketManager#Unknown9") }
+	override func unknown10() throws { throw IpcError.unimplemented(name: "nn::wlan::detail::nn::wlan::detail::ISocketManager#Unknown10") }
+	override func unknown11() throws { throw IpcError.unimplemented(name: "nn::wlan::detail::nn::wlan::detail::ISocketManager#Unknown11") }
+}
+*/
+
 class NnWlanDetail_ILocalGetActionFrame: IpcService {
 	func unknown0(_ _0: Any?, _ _1: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented(name: "nn::wlan::detail::nn::wlan::detail::ILocalGetActionFrame#Unknown0") }
 	
@@ -236,6 +286,12 @@ class NnWlanDetail_ILocalGetActionFrame: IpcService {
 		}
 	}
 }
+
+/*
+class NnWlanDetail_ILocalGetActionFrame_Impl: NnWlanDetail_ILocalGetActionFrame {
+	override func unknown0(_ _0: Any?, _ _1: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented(name: "nn::wlan::detail::nn::wlan::detail::ILocalGetActionFrame#Unknown0") }
+}
+*/
 
 class NnWlanDetail_ISocketGetFrame: IpcService {
 	func unknown0(_ _0: Any?, _ _1: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented(name: "nn::wlan::detail::nn::wlan::detail::ISocketGetFrame#Unknown0") }
@@ -253,6 +309,12 @@ class NnWlanDetail_ISocketGetFrame: IpcService {
 	}
 }
 
+/*
+class NnWlanDetail_ISocketGetFrame_Impl: NnWlanDetail_ISocketGetFrame {
+	override func unknown0(_ _0: Any?, _ _1: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented(name: "nn::wlan::detail::nn::wlan::detail::ISocketGetFrame#Unknown0") }
+}
+*/
+
 class NnWlanDetail_ILocalGetFrame: IpcService {
 	func unknown0(_ _0: Any?, _ _1: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented(name: "nn::wlan::detail::nn::wlan::detail::ILocalGetFrame#Unknown0") }
 	
@@ -268,6 +330,12 @@ class NnWlanDetail_ILocalGetFrame: IpcService {
 		}
 	}
 }
+
+/*
+class NnWlanDetail_ILocalGetFrame_Impl: NnWlanDetail_ILocalGetFrame {
+	override func unknown0(_ _0: Any?, _ _1: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented(name: "nn::wlan::detail::nn::wlan::detail::ILocalGetFrame#Unknown0") }
+}
+*/
 
 class NnWlanDetail_ILocalManager: IpcService {
 	func unknown0() throws { throw IpcError.unimplemented(name: "nn::wlan::detail::nn::wlan::detail::ILocalManager#Unknown0") }
@@ -526,3 +594,57 @@ class NnWlanDetail_ILocalManager: IpcService {
 		}
 	}
 }
+
+/*
+class NnWlanDetail_ILocalManager_Impl: NnWlanDetail_ILocalManager {
+	override func unknown0() throws { throw IpcError.unimplemented(name: "nn::wlan::detail::nn::wlan::detail::ILocalManager#Unknown0") }
+	override func unknown1() throws { throw IpcError.unimplemented(name: "nn::wlan::detail::nn::wlan::detail::ILocalManager#Unknown1") }
+	override func unknown2() throws { throw IpcError.unimplemented(name: "nn::wlan::detail::nn::wlan::detail::ILocalManager#Unknown2") }
+	override func unknown3() throws { throw IpcError.unimplemented(name: "nn::wlan::detail::nn::wlan::detail::ILocalManager#Unknown3") }
+	override func unknown4() throws { throw IpcError.unimplemented(name: "nn::wlan::detail::nn::wlan::detail::ILocalManager#Unknown4") }
+	override func unknown5() throws { throw IpcError.unimplemented(name: "nn::wlan::detail::nn::wlan::detail::ILocalManager#Unknown5") }
+	override func getMacAddress() throws -> Any? { throw IpcError.unimplemented(name: "nn::wlan::detail::nn::wlan::detail::ILocalManager#GetMacAddress") }
+	override func createBss(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::wlan::detail::nn::wlan::detail::ILocalManager#CreateBss") }
+	override func destroyBss() throws { throw IpcError.unimplemented(name: "nn::wlan::detail::nn::wlan::detail::ILocalManager#DestroyBss") }
+	override func startScan(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::wlan::detail::nn::wlan::detail::ILocalManager#StartScan") }
+	override func stopScan() throws { throw IpcError.unimplemented(name: "nn::wlan::detail::nn::wlan::detail::ILocalManager#StopScan") }
+	override func connect(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::wlan::detail::nn::wlan::detail::ILocalManager#Connect") }
+	override func cancelConnect() throws { throw IpcError.unimplemented(name: "nn::wlan::detail::nn::wlan::detail::ILocalManager#CancelConnect") }
+	override func join(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::wlan::detail::nn::wlan::detail::ILocalManager#Join") }
+	override func cancelJoin() throws { throw IpcError.unimplemented(name: "nn::wlan::detail::nn::wlan::detail::ILocalManager#CancelJoin") }
+	override func disconnect(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::wlan::detail::nn::wlan::detail::ILocalManager#Disconnect") }
+	override func setBeaconLostCount(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::wlan::detail::nn::wlan::detail::ILocalManager#SetBeaconLostCount") }
+	override func unknown17(_ _0: Any?) throws -> KObject { throw IpcError.unimplemented(name: "nn::wlan::detail::nn::wlan::detail::ILocalManager#Unknown17") }
+	override func unknown18() throws -> Any? { throw IpcError.unimplemented(name: "nn::wlan::detail::nn::wlan::detail::ILocalManager#Unknown18") }
+	override func unknown19(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::wlan::detail::nn::wlan::detail::ILocalManager#Unknown19") }
+	override func getBssIndicationEvent() throws -> KObject { throw IpcError.unimplemented(name: "nn::wlan::detail::nn::wlan::detail::ILocalManager#GetBssIndicationEvent") }
+	override func getBssIndicationInfo(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::wlan::detail::nn::wlan::detail::ILocalManager#GetBssIndicationInfo") }
+	override func getState() throws -> Any? { throw IpcError.unimplemented(name: "nn::wlan::detail::nn::wlan::detail::ILocalManager#GetState") }
+	override func getAllowedChannels() throws -> Any? { throw IpcError.unimplemented(name: "nn::wlan::detail::nn::wlan::detail::ILocalManager#GetAllowedChannels") }
+	override func addIe(_ _0: Any?, _ _1: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented(name: "nn::wlan::detail::nn::wlan::detail::ILocalManager#AddIe") }
+	override func deleteIe(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::wlan::detail::nn::wlan::detail::ILocalManager#DeleteIe") }
+	override func unknown26(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::wlan::detail::nn::wlan::detail::ILocalManager#Unknown26") }
+	override func unknown27(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::wlan::detail::nn::wlan::detail::ILocalManager#Unknown27") }
+	override func createRxEntry(_ _0: Any?, _ _1: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented(name: "nn::wlan::detail::nn::wlan::detail::ILocalManager#CreateRxEntry") }
+	override func deleteRxEntry(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::wlan::detail::nn::wlan::detail::ILocalManager#DeleteRxEntry") }
+	override func unknown30(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::wlan::detail::nn::wlan::detail::ILocalManager#Unknown30") }
+	override func unknown31(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::wlan::detail::nn::wlan::detail::ILocalManager#Unknown31") }
+	override func addMatchingDataToRxEntry(_ _0: Any?, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::wlan::detail::nn::wlan::detail::ILocalManager#AddMatchingDataToRxEntry") }
+	override func removeMatchingDataFromRxEntry(_ _0: Any?, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::wlan::detail::nn::wlan::detail::ILocalManager#RemoveMatchingDataFromRxEntry") }
+	override func getScanResult(_ _0: Buffer<UInt8>, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::wlan::detail::nn::wlan::detail::ILocalManager#GetScanResult") }
+	override func unknown35(_ _0: Any?, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::wlan::detail::nn::wlan::detail::ILocalManager#Unknown35") }
+	override func setActionFrameWithBeacon(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::wlan::detail::nn::wlan::detail::ILocalManager#SetActionFrameWithBeacon") }
+	override func cancelActionFrameWithBeacon() throws { throw IpcError.unimplemented(name: "nn::wlan::detail::nn::wlan::detail::ILocalManager#CancelActionFrameWithBeacon") }
+	override func createRxEntryForActionFrame(_ _0: Any?, _ _1: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented(name: "nn::wlan::detail::nn::wlan::detail::ILocalManager#CreateRxEntryForActionFrame") }
+	override func deleteRxEntryForActionFrame(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::wlan::detail::nn::wlan::detail::ILocalManager#DeleteRxEntryForActionFrame") }
+	override func unknown40(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::wlan::detail::nn::wlan::detail::ILocalManager#Unknown40") }
+	override func unknown41(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::wlan::detail::nn::wlan::detail::ILocalManager#Unknown41") }
+	override func cancelGetActionFrame(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::wlan::detail::nn::wlan::detail::ILocalManager#CancelGetActionFrame") }
+	override func getRssi() throws -> Any? { throw IpcError.unimplemented(name: "nn::wlan::detail::nn::wlan::detail::ILocalManager#GetRssi") }
+	override func unknown44(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::wlan::detail::nn::wlan::detail::ILocalManager#Unknown44") }
+	override func unknown45() throws { throw IpcError.unimplemented(name: "nn::wlan::detail::nn::wlan::detail::ILocalManager#Unknown45") }
+	override func unknown46() throws { throw IpcError.unimplemented(name: "nn::wlan::detail::nn::wlan::detail::ILocalManager#Unknown46") }
+	override func unknown47() throws { throw IpcError.unimplemented(name: "nn::wlan::detail::nn::wlan::detail::ILocalManager#Unknown47") }
+	override func unknown48() throws { throw IpcError.unimplemented(name: "nn::wlan::detail::nn::wlan::detail::ILocalManager#Unknown48") }
+}
+*/

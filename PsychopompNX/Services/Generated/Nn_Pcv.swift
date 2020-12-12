@@ -19,6 +19,12 @@ class NnPcv_IImmediateManager: IpcService {
 	}
 }
 
+/*
+class NnPcv_IImmediateManager_Impl: NnPcv_IImmediateManager {
+	override func setClockRate(_ _0: UInt32, _ _1: UInt32) throws { throw IpcError.unimplemented(name: "nn::pcv::nn::pcv::IImmediateManager#SetClockRate") }
+}
+*/
+
 class NnPcv_IArbitrationManager: IpcService {
 	func releaseControl(_ _0: UInt32) throws { throw IpcError.unimplemented(name: "nn::pcv::nn::pcv::IArbitrationManager#ReleaseControl") }
 	
@@ -34,3 +40,9 @@ class NnPcv_IArbitrationManager: IpcService {
 		}
 	}
 }
+
+/*
+class NnPcv_IArbitrationManager_Impl: NnPcv_IArbitrationManager {
+	override func releaseControl(_ _0: UInt32) throws { throw IpcError.unimplemented(name: "nn::pcv::nn::pcv::IArbitrationManager#ReleaseControl") }
+}
+*/

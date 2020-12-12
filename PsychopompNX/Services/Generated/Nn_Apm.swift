@@ -26,6 +26,13 @@ class NnApm_IManager: IpcService {
 	}
 }
 
+/*
+class NnApm_IManager_Impl: NnApm_IManager {
+	override func openSession() throws -> NnApm_ISession { throw IpcError.unimplemented(name: "nn::apm::nn::apm::IManager#OpenSession") }
+	override func getPerformanceMode() throws -> NnApm_PerformanceMode { throw IpcError.unimplemented(name: "nn::apm::nn::apm::IManager#GetPerformanceMode") }
+}
+*/
+
 class NnApm_IManagerPrivileged: IpcService {
 	func openSession() throws -> NnApm_ISession { throw IpcError.unimplemented(name: "nn::apm::nn::apm::IManagerPrivileged#OpenSession") }
 	
@@ -42,6 +49,12 @@ class NnApm_IManagerPrivileged: IpcService {
 		}
 	}
 }
+
+/*
+class NnApm_IManagerPrivileged_Impl: NnApm_IManagerPrivileged {
+	override func openSession() throws -> NnApm_ISession { throw IpcError.unimplemented(name: "nn::apm::nn::apm::IManagerPrivileged#OpenSession") }
+}
+*/
 
 class NnApm_ISystemManager: IpcService {
 	func requestPerformanceMode(_ _0: NnApm_PerformanceMode) throws { throw IpcError.unimplemented(name: "nn::apm::nn::apm::ISystemManager#RequestPerformanceMode") }
@@ -89,6 +102,17 @@ class NnApm_ISystemManager: IpcService {
 	}
 }
 
+/*
+class NnApm_ISystemManager_Impl: NnApm_ISystemManager {
+	override func requestPerformanceMode(_ _0: NnApm_PerformanceMode) throws { throw IpcError.unimplemented(name: "nn::apm::nn::apm::ISystemManager#RequestPerformanceMode") }
+	override func getPerformanceEvent(_ _0: NnApm_EventTarget) throws -> KObject { throw IpcError.unimplemented(name: "nn::apm::nn::apm::ISystemManager#GetPerformanceEvent") }
+	override func getThrottlingState() throws -> NnApm_ThrottlingState { throw IpcError.unimplemented(name: "nn::apm::nn::apm::ISystemManager#GetThrottlingState") }
+	override func getLastThrottlingState() throws -> NnApm_ThrottlingState { throw IpcError.unimplemented(name: "nn::apm::nn::apm::ISystemManager#GetLastThrottlingState") }
+	override func clearLastThrottlingState() throws { throw IpcError.unimplemented(name: "nn::apm::nn::apm::ISystemManager#ClearLastThrottlingState") }
+	override func loadAndApplySettings(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::apm::nn::apm::ISystemManager#LoadAndApplySettings") }
+}
+*/
+
 class NnApm_IDebugManager: IpcService {
 	func getThrottlingState() throws -> Any? { throw IpcError.unimplemented(name: "nn::apm::nn::apm::IDebugManager#GetThrottlingState") }
 	func getLastThrottlingState() throws -> Any? { throw IpcError.unimplemented(name: "nn::apm::nn::apm::IDebugManager#GetLastThrottlingState") }
@@ -115,6 +139,14 @@ class NnApm_IDebugManager: IpcService {
 	}
 }
 
+/*
+class NnApm_IDebugManager_Impl: NnApm_IDebugManager {
+	override func getThrottlingState() throws -> Any? { throw IpcError.unimplemented(name: "nn::apm::nn::apm::IDebugManager#GetThrottlingState") }
+	override func getLastThrottlingState() throws -> Any? { throw IpcError.unimplemented(name: "nn::apm::nn::apm::IDebugManager#GetLastThrottlingState") }
+	override func clearLastThrottlingState() throws { throw IpcError.unimplemented(name: "nn::apm::nn::apm::IDebugManager#ClearLastThrottlingState") }
+}
+*/
+
 class NnApm_ISession: IpcService {
 	func setPerformanceConfiguration(_ _0: NnApm_PerformanceMode, _ _1: NnApm_PerformanceConfiguration) throws { throw IpcError.unimplemented(name: "nn::apm::nn::apm::ISession#SetPerformanceConfiguration") }
 	func getPerformanceConfiguration(_ _0: NnApm_PerformanceMode) throws -> NnApm_PerformanceConfiguration { throw IpcError.unimplemented(name: "nn::apm::nn::apm::ISession#GetPerformanceConfiguration") }
@@ -136,3 +168,10 @@ class NnApm_ISession: IpcService {
 		}
 	}
 }
+
+/*
+class NnApm_ISession_Impl: NnApm_ISession {
+	override func setPerformanceConfiguration(_ _0: NnApm_PerformanceMode, _ _1: NnApm_PerformanceConfiguration) throws { throw IpcError.unimplemented(name: "nn::apm::nn::apm::ISession#SetPerformanceConfiguration") }
+	override func getPerformanceConfiguration(_ _0: NnApm_PerformanceMode) throws -> NnApm_PerformanceConfiguration { throw IpcError.unimplemented(name: "nn::apm::nn::apm::ISession#GetPerformanceConfiguration") }
+}
+*/

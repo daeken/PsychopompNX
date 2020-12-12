@@ -82,3 +82,22 @@ class NnPrepoDetailIpc_IPrepoService: IpcService {
 		}
 	}
 }
+
+/*
+class NnPrepoDetailIpc_IPrepoService_Impl: NnPrepoDetailIpc_IPrepoService {
+	override func saveReport(_ _0: UInt64, _ _1: Pid, _ _2: Buffer<UInt8>, _ _3: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::prepo::detail::ipc::nn::prepo::detail::ipc::IPrepoService#SaveReport") }
+	override func saveReportWithUser(_ _0: NnAccount_Uid, _ _1: UInt64, _ _2: Pid, _ _3: Buffer<UInt8>, _ _4: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::prepo::detail::ipc::nn::prepo::detail::ipc::IPrepoService#SaveReportWithUser") }
+	override func requestImmediateTransmission() throws { throw IpcError.unimplemented(name: "nn::prepo::detail::ipc::nn::prepo::detail::ipc::IPrepoService#RequestImmediateTransmission") }
+	override func getTransmissionStatus() throws -> UInt32 { throw IpcError.unimplemented(name: "nn::prepo::detail::ipc::nn::prepo::detail::ipc::IPrepoService#GetTransmissionStatus") }
+	override func saveSystemReport(_ _0: Nn_ApplicationId, _ _1: Buffer<UInt8>, _ _2: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::prepo::detail::ipc::nn::prepo::detail::ipc::IPrepoService#SaveSystemReport") }
+	override func saveSystemReportWithUser(_ _0: NnAccount_Uid, _ _1: Nn_ApplicationId, _ _2: Buffer<UInt8>, _ _3: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::prepo::detail::ipc::nn::prepo::detail::ipc::IPrepoService#SaveSystemReportWithUser") }
+	override func setOperationMode(_ _0: UInt64) throws { throw IpcError.unimplemented(name: "nn::prepo::detail::ipc::nn::prepo::detail::ipc::IPrepoService#SetOperationMode") }
+	override func clearStorage() throws { throw IpcError.unimplemented(name: "nn::prepo::detail::ipc::nn::prepo::detail::ipc::IPrepoService#ClearStorage") }
+	override func isUserAgreementCheckEnabled() throws -> UInt8 { throw IpcError.unimplemented(name: "nn::prepo::detail::ipc::nn::prepo::detail::ipc::IPrepoService#IsUserAgreementCheckEnabled") }
+	override func setUserAgreementCheckEnabled(_ _0: UInt8) throws { throw IpcError.unimplemented(name: "nn::prepo::detail::ipc::nn::prepo::detail::ipc::IPrepoService#SetUserAgreementCheckEnabled") }
+	override func getStorageUsage() throws -> (UInt64, UInt64) { throw IpcError.unimplemented(name: "nn::prepo::detail::ipc::nn::prepo::detail::ipc::IPrepoService#GetStorageUsage") }
+	override func getStatistics(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::prepo::detail::ipc::nn::prepo::detail::ipc::IPrepoService#GetStatistics") }
+	override func getThroughputHistory(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::prepo::detail::ipc::nn::prepo::detail::ipc::IPrepoService#GetThroughputHistory") }
+	override func getLastUploadError(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::prepo::detail::ipc::nn::prepo::detail::ipc::IPrepoService#GetLastUploadError") }
+}
+*/

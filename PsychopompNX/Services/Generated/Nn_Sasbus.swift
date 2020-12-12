@@ -15,6 +15,12 @@ class NnSasbus_IManager: IpcService {
 	}
 }
 
+/*
+class NnSasbus_IManager_Impl: NnSasbus_IManager {
+	override func openSession(_ _0: Any?) throws -> NnSasbus_ISession { throw IpcError.unimplemented(name: "nn::sasbus::nn::sasbus::IManager#OpenSession") }
+}
+*/
+
 class NnSasbus_ISession: IpcService {
 	func unknown0(_ _0: Any?, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::sasbus::nn::sasbus::ISession#Unknown0") }
 	func unknown1(_ _0: Any?, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::sasbus::nn::sasbus::ISession#Unknown1") }
@@ -45,3 +51,12 @@ class NnSasbus_ISession: IpcService {
 		}
 	}
 }
+
+/*
+class NnSasbus_ISession_Impl: NnSasbus_ISession {
+	override func unknown0(_ _0: Any?, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::sasbus::nn::sasbus::ISession#Unknown0") }
+	override func unknown1(_ _0: Any?, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::sasbus::nn::sasbus::ISession#Unknown1") }
+	override func unknown2(_ _0: Any?, _ _1: KObject) throws { throw IpcError.unimplemented(name: "nn::sasbus::nn::sasbus::ISession#Unknown2") }
+	override func unknown3() throws { throw IpcError.unimplemented(name: "nn::sasbus::nn::sasbus::ISession#Unknown3") }
+}
+*/

@@ -15,6 +15,12 @@ class NnNfcMifareDetail_IUserManager: IpcService {
 	}
 }
 
+/*
+class NnNfcMifareDetail_IUserManager_Impl: NnNfcMifareDetail_IUserManager {
+	override func createUserInterface() throws -> NnNfcDetail_IUser { throw IpcError.unimplemented(name: "nn::nfc::mifare::detail::nn::nfc::mifare::detail::IUserManager#CreateUserInterface") }
+}
+*/
+
 class NnNfcMifareDetail_IUser: IpcService {
 	func initialize(_ _0: UInt64, _ _1: UInt64, _ _2: Pid, _ _3: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::nfc::mifare::detail::nn::nfc::mifare::detail::IUser#Initialize") }
 	func finalize() throws { throw IpcError.unimplemented(name: "nn::nfc::mifare::detail::nn::nfc::mifare::detail::IUser#Finalize") }
@@ -102,3 +108,22 @@ class NnNfcMifareDetail_IUser: IpcService {
 		}
 	}
 }
+
+/*
+class NnNfcMifareDetail_IUser_Impl: NnNfcMifareDetail_IUser {
+	override func initialize(_ _0: UInt64, _ _1: UInt64, _ _2: Pid, _ _3: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::nfc::mifare::detail::nn::nfc::mifare::detail::IUser#Initialize") }
+	override func finalize() throws { throw IpcError.unimplemented(name: "nn::nfc::mifare::detail::nn::nfc::mifare::detail::IUser#Finalize") }
+	override func listDevices(_ _0: Buffer<UInt8>) throws -> UInt32 { throw IpcError.unimplemented(name: "nn::nfc::mifare::detail::nn::nfc::mifare::detail::IUser#ListDevices") }
+	override func startDetection(_ _0: [UInt8]) throws { throw IpcError.unimplemented(name: "nn::nfc::mifare::detail::nn::nfc::mifare::detail::IUser#StartDetection") }
+	override func stopDetection(_ _0: [UInt8]) throws { throw IpcError.unimplemented(name: "nn::nfc::mifare::detail::nn::nfc::mifare::detail::IUser#StopDetection") }
+	override func read(_ _0: [UInt8], _ _1: Buffer<UInt8>, _ _2: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::nfc::mifare::detail::nn::nfc::mifare::detail::IUser#Read") }
+	override func write(_ _0: [UInt8], _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::nfc::mifare::detail::nn::nfc::mifare::detail::IUser#Write") }
+	override func getTagInfo(_ _0: [UInt8], _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::nfc::mifare::detail::nn::nfc::mifare::detail::IUser#GetTagInfo") }
+	override func getActivateEventHandle(_ _0: [UInt8]) throws -> KObject { throw IpcError.unimplemented(name: "nn::nfc::mifare::detail::nn::nfc::mifare::detail::IUser#GetActivateEventHandle") }
+	override func getDeactivateEventHandle(_ _0: [UInt8]) throws -> KObject { throw IpcError.unimplemented(name: "nn::nfc::mifare::detail::nn::nfc::mifare::detail::IUser#GetDeactivateEventHandle") }
+	override func getState() throws -> UInt32 { throw IpcError.unimplemented(name: "nn::nfc::mifare::detail::nn::nfc::mifare::detail::IUser#GetState") }
+	override func getDeviceState(_ _0: [UInt8]) throws -> UInt32 { throw IpcError.unimplemented(name: "nn::nfc::mifare::detail::nn::nfc::mifare::detail::IUser#GetDeviceState") }
+	override func getNpadId(_ _0: [UInt8]) throws -> UInt32 { throw IpcError.unimplemented(name: "nn::nfc::mifare::detail::nn::nfc::mifare::detail::IUser#GetNpadId") }
+	override func getAvailabilityChangeEventHandle() throws -> KObject { throw IpcError.unimplemented(name: "nn::nfc::mifare::detail::nn::nfc::mifare::detail::IUser#GetAvailabilityChangeEventHandle") }
+}
+*/

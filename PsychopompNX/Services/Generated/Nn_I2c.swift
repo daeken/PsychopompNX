@@ -33,6 +33,15 @@ class NnI2c_IManager: IpcService {
 	}
 }
 
+/*
+class NnI2c_IManager_Impl: NnI2c_IManager {
+	override func openSessionForDev(_ _0: UInt16, _ _1: UInt32, _ _2: UInt32, _ _3: UInt32) throws -> NnI2c_ISession { throw IpcError.unimplemented(name: "nn::i2c::nn::i2c::IManager#OpenSessionForDev") }
+	override func openSession(_ _0: UInt32) throws -> NnI2c_ISession { throw IpcError.unimplemented(name: "nn::i2c::nn::i2c::IManager#OpenSession") }
+	override func hasDevice(_ _0: UInt32) throws -> UInt8 { throw IpcError.unimplemented(name: "nn::i2c::nn::i2c::IManager#HasDevice") }
+	override func hasDeviceForDev(_ _0: UInt16, _ _1: UInt32, _ _2: UInt32, _ _3: UInt32) throws -> UInt8 { throw IpcError.unimplemented(name: "nn::i2c::nn::i2c::IManager#HasDeviceForDev") }
+}
+*/
+
 class NnI2c_ISession: IpcService {
 	func send(_ _0: UInt32, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::i2c::nn::i2c::ISession#Send") }
 	func receive(_ _0: UInt32, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::i2c::nn::i2c::ISession#Receive") }
@@ -73,3 +82,14 @@ class NnI2c_ISession: IpcService {
 		}
 	}
 }
+
+/*
+class NnI2c_ISession_Impl: NnI2c_ISession {
+	override func send(_ _0: UInt32, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::i2c::nn::i2c::ISession#Send") }
+	override func receive(_ _0: UInt32, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::i2c::nn::i2c::ISession#Receive") }
+	override func executeCommandList(_ _0: Buffer<UInt8>, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::i2c::nn::i2c::ISession#ExecuteCommandList") }
+	override func sendAuto(_ _0: UInt32, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::i2c::nn::i2c::ISession#SendAuto") }
+	override func receiveAuto(_ _0: UInt32, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::i2c::nn::i2c::ISession#ReceiveAuto") }
+	override func executeCommandListAuto(_ _0: Buffer<UInt8>, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::i2c::nn::i2c::ISession#ExecuteCommandListAuto") }
+}
+*/

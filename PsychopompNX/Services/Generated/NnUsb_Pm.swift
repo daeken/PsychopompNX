@@ -40,3 +40,14 @@ class NnUsbPm_IPmService: IpcService {
 		}
 	}
 }
+
+/*
+class NnUsbPm_IPmService_Impl: NnUsbPm_IPmService {
+	override func unknown0() throws -> KObject { throw IpcError.unimplemented(name: "nn::usb::pm::nn::usb::pm::IPmService#Unknown0") }
+	override func unknown1(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::usb::pm::nn::usb::pm::IPmService#Unknown1") }
+	override func unknown2() throws -> KObject { throw IpcError.unimplemented(name: "nn::usb::pm::nn::usb::pm::IPmService#Unknown2") }
+	override func unknown3() throws -> Any? { throw IpcError.unimplemented(name: "nn::usb::pm::nn::usb::pm::IPmService#Unknown3") }
+	override func unknown4(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::usb::pm::nn::usb::pm::IPmService#Unknown4") }
+	override func unknown5(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::usb::pm::nn::usb::pm::IPmService#Unknown5") }
+}
+*/

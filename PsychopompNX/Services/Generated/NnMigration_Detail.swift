@@ -29,3 +29,12 @@ class NnMigrationDetail_IAsyncContext: IpcService {
 		}
 	}
 }
+
+/*
+class NnMigrationDetail_IAsyncContext_Impl: NnMigrationDetail_IAsyncContext {
+	override func unknown0() throws -> KObject { throw IpcError.unimplemented(name: "nn::migration::detail::nn::migration::detail::IAsyncContext#Unknown0") }
+	override func unknown1() throws { throw IpcError.unimplemented(name: "nn::migration::detail::nn::migration::detail::IAsyncContext#Unknown1") }
+	override func unknown2() throws -> Any? { throw IpcError.unimplemented(name: "nn::migration::detail::nn::migration::detail::IAsyncContext#Unknown2") }
+	override func unknown3() throws { throw IpcError.unimplemented(name: "nn::migration::detail::nn::migration::detail::IAsyncContext#Unknown3") }
+}
+*/

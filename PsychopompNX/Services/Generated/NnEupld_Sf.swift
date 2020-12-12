@@ -40,6 +40,17 @@ class NnEupldSf_IRequest: IpcService {
 	}
 }
 
+/*
+class NnEupldSf_IRequest_Impl: NnEupldSf_IRequest {
+	override func initialize() throws -> KObject { throw IpcError.unimplemented(name: "nn::eupld::sf::nn::eupld::sf::IRequest#Initialize") }
+	override func uploadAll() throws { throw IpcError.unimplemented(name: "nn::eupld::sf::nn::eupld::sf::IRequest#UploadAll") }
+	override func uploadSelected(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::eupld::sf::nn::eupld::sf::IRequest#UploadSelected") }
+	override func getUploadStatus(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::eupld::sf::nn::eupld::sf::IRequest#GetUploadStatus") }
+	override func cancelUpload() throws { throw IpcError.unimplemented(name: "nn::eupld::sf::nn::eupld::sf::IRequest#CancelUpload") }
+	override func getResult() throws { throw IpcError.unimplemented(name: "nn::eupld::sf::nn::eupld::sf::IRequest#GetResult") }
+}
+*/
+
 class NnEupldSf_IControl: IpcService {
 	func setUrl(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::eupld::sf::nn::eupld::sf::IControl#SetUrl") }
 	func importCrt(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::eupld::sf::nn::eupld::sf::IControl#ImportCrt") }
@@ -70,3 +81,12 @@ class NnEupldSf_IControl: IpcService {
 		}
 	}
 }
+
+/*
+class NnEupldSf_IControl_Impl: NnEupldSf_IControl {
+	override func setUrl(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::eupld::sf::nn::eupld::sf::IControl#SetUrl") }
+	override func importCrt(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::eupld::sf::nn::eupld::sf::IControl#ImportCrt") }
+	override func importPki(_ _0: Buffer<UInt8>, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::eupld::sf::nn::eupld::sf::IControl#ImportPki") }
+	override func setAutoUpload(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::eupld::sf::nn::eupld::sf::IControl#SetAutoUpload") }
+}
+*/

@@ -23,3 +23,11 @@ class NnProfiler_IProfiler: IpcService {
 		}
 	}
 }
+
+/*
+class NnProfiler_IProfiler_Impl: NnProfiler_IProfiler {
+	override func getSystemEvent(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::profiler::nn::profiler::IProfiler#GetSystemEvent") }
+	override func startSignalingEvent(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::profiler::nn::profiler::IProfiler#StartSignalingEvent") }
+	override func stopSignalingEvent(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::profiler::nn::profiler::IProfiler#StopSignalingEvent") }
+}
+*/

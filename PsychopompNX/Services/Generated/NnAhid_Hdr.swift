@@ -33,3 +33,13 @@ class NnAhidHdr_ISession: IpcService {
 		}
 	}
 }
+
+/*
+class NnAhidHdr_ISession_Impl: NnAhidHdr_ISession {
+	override func unknown0() throws -> Any? { throw IpcError.unimplemented(name: "nn::ahid::hdr::nn::ahid::hdr::ISession#Unknown0") }
+	override func unknown1(_ _0: Any?, _ _1: Buffer<UInt8>, _ _2: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented(name: "nn::ahid::hdr::nn::ahid::hdr::ISession#Unknown1") }
+	override func unknown2(_ _0: Any?, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::ahid::hdr::nn::ahid::hdr::ISession#Unknown2") }
+	override func unknown3(_ _0: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented(name: "nn::ahid::hdr::nn::ahid::hdr::ISession#Unknown3") }
+	override func unknown4(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::ahid::hdr::nn::ahid::hdr::ISession#Unknown4") }
+}
+*/

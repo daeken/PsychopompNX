@@ -83,6 +83,25 @@ class NnNpns_INpnsUser: IpcService {
 	}
 }
 
+/*
+class NnNpns_INpnsUser_Impl: NnNpns_INpnsUser {
+	override func unknown1() throws { throw IpcError.unimplemented(name: "nn::npns::nn::npns::INpnsUser#Unknown1") }
+	override func unknown2(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::npns::nn::npns::INpnsUser#Unknown2") }
+	override func unknown3(_ _0: Any?, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::npns::nn::npns::INpnsUser#Unknown3") }
+	override func unknown4(_ _0: Any?, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::npns::nn::npns::INpnsUser#Unknown4") }
+	override func unknown5() throws -> KObject { throw IpcError.unimplemented(name: "nn::npns::nn::npns::INpnsUser#Unknown5") }
+	override func unknown7() throws -> KObject { throw IpcError.unimplemented(name: "nn::npns::nn::npns::INpnsUser#Unknown7") }
+	override func unknown21(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::npns::nn::npns::INpnsUser#Unknown21") }
+	override func unknown23(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::npns::nn::npns::INpnsUser#Unknown23") }
+	override func unknown25(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::npns::nn::npns::INpnsUser#Unknown25") }
+	override func unknown101() throws { throw IpcError.unimplemented(name: "nn::npns::nn::npns::INpnsUser#Unknown101") }
+	override func unknown102() throws { throw IpcError.unimplemented(name: "nn::npns::nn::npns::INpnsUser#Unknown102") }
+	override func unknown103() throws -> Any? { throw IpcError.unimplemented(name: "nn::npns::nn::npns::INpnsUser#Unknown103") }
+	override func unknown104(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::npns::nn::npns::INpnsUser#Unknown104") }
+	override func unknown111(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::npns::nn::npns::INpnsUser#Unknown111") }
+}
+*/
+
 class NnNpns_INpnsSystem: IpcService {
 	func unknown1() throws { throw IpcError.unimplemented(name: "nn::npns::nn::npns::INpnsSystem#Unknown1") }
 	func unknown2(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::npns::nn::npns::INpnsSystem#Unknown2") }
@@ -241,3 +260,37 @@ class NnNpns_INpnsSystem: IpcService {
 		}
 	}
 }
+
+/*
+class NnNpns_INpnsSystem_Impl: NnNpns_INpnsSystem {
+	override func unknown1() throws { throw IpcError.unimplemented(name: "nn::npns::nn::npns::INpnsSystem#Unknown1") }
+	override func unknown2(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::npns::nn::npns::INpnsSystem#Unknown2") }
+	override func unknown3(_ _0: Any?, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::npns::nn::npns::INpnsSystem#Unknown3") }
+	override func unknown4(_ _0: Any?, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::npns::nn::npns::INpnsSystem#Unknown4") }
+	override func unknown5() throws -> KObject { throw IpcError.unimplemented(name: "nn::npns::nn::npns::INpnsSystem#Unknown5") }
+	override func unknown6() throws { throw IpcError.unimplemented(name: "nn::npns::nn::npns::INpnsSystem#Unknown6") }
+	override func unknown7() throws -> KObject { throw IpcError.unimplemented(name: "nn::npns::nn::npns::INpnsSystem#Unknown7") }
+	override func unknown11(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::npns::nn::npns::INpnsSystem#Unknown11") }
+	override func unknown12(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::npns::nn::npns::INpnsSystem#Unknown12") }
+	override func unknown13(_ _0: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented(name: "nn::npns::nn::npns::INpnsSystem#Unknown13") }
+	override func unknown21(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::npns::nn::npns::INpnsSystem#Unknown21") }
+	override func unknown22(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::npns::nn::npns::INpnsSystem#Unknown22") }
+	override func unknown23(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::npns::nn::npns::INpnsSystem#Unknown23") }
+	override func unknown24(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::npns::nn::npns::INpnsSystem#Unknown24") }
+	override func unknown25(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::npns::nn::npns::INpnsSystem#Unknown25") }
+	override func unknown31(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::npns::nn::npns::INpnsSystem#Unknown31") }
+	override func unknown32(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::npns::nn::npns::INpnsSystem#Unknown32") }
+	override func unknown101() throws { throw IpcError.unimplemented(name: "nn::npns::nn::npns::INpnsSystem#Unknown101") }
+	override func unknown102() throws { throw IpcError.unimplemented(name: "nn::npns::nn::npns::INpnsSystem#Unknown102") }
+	override func unknown103() throws -> Any? { throw IpcError.unimplemented(name: "nn::npns::nn::npns::INpnsSystem#Unknown103") }
+	override func unknown104(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::npns::nn::npns::INpnsSystem#Unknown104") }
+	override func unknown105() throws -> KObject { throw IpcError.unimplemented(name: "nn::npns::nn::npns::INpnsSystem#Unknown105") }
+	override func unknown111(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::npns::nn::npns::INpnsSystem#Unknown111") }
+	override func unknown112() throws { throw IpcError.unimplemented(name: "nn::npns::nn::npns::INpnsSystem#Unknown112") }
+	override func unknown113() throws { throw IpcError.unimplemented(name: "nn::npns::nn::npns::INpnsSystem#Unknown113") }
+	override func unknown114(_ _0: Buffer<UInt8>, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::npns::nn::npns::INpnsSystem#Unknown114") }
+	override func unknown115(_ _0: Buffer<UInt8>, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::npns::nn::npns::INpnsSystem#Unknown115") }
+	override func unknown201(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::npns::nn::npns::INpnsSystem#Unknown201") }
+	override func unknown202(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::npns::nn::npns::INpnsSystem#Unknown202") }
+}
+*/

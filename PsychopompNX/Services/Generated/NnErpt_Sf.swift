@@ -39,6 +39,17 @@ class NnErptSf_IReport: IpcService {
 	}
 }
 
+/*
+class NnErptSf_IReport_Impl: NnErptSf_IReport {
+	override func open(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::erpt::sf::nn::erpt::sf::IReport#Open") }
+	override func read(_ _0: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented(name: "nn::erpt::sf::nn::erpt::sf::IReport#Read") }
+	override func setFlags(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::erpt::sf::nn::erpt::sf::IReport#SetFlags") }
+	override func getFlags() throws -> Any? { throw IpcError.unimplemented(name: "nn::erpt::sf::nn::erpt::sf::IReport#GetFlags") }
+	override func _close() throws { throw IpcError.unimplemented(name: "nn::erpt::sf::nn::erpt::sf::IReport#Close") }
+	override func getSize() throws -> Any? { throw IpcError.unimplemented(name: "nn::erpt::sf::nn::erpt::sf::IReport#GetSize") }
+}
+*/
+
 class NnErptSf_IContext: IpcService {
 	func submitContext(_ _0: Buffer<UInt8>, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::erpt::sf::nn::erpt::sf::IContext#SubmitContext") }
 	func createReport(_ _0: Any?, _ _1: Buffer<UInt8>, _ _2: Buffer<UInt8>, _ _3: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::erpt::sf::nn::erpt::sf::IContext#CreateReport") }
@@ -85,6 +96,18 @@ class NnErptSf_IContext: IpcService {
 	}
 }
 
+/*
+class NnErptSf_IContext_Impl: NnErptSf_IContext {
+	override func submitContext(_ _0: Buffer<UInt8>, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::erpt::sf::nn::erpt::sf::IContext#SubmitContext") }
+	override func createReport(_ _0: Any?, _ _1: Buffer<UInt8>, _ _2: Buffer<UInt8>, _ _3: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::erpt::sf::nn::erpt::sf::IContext#CreateReport") }
+	override func unknown2(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::erpt::sf::nn::erpt::sf::IContext#Unknown2") }
+	override func unknown3() throws { throw IpcError.unimplemented(name: "nn::erpt::sf::nn::erpt::sf::IContext#Unknown3") }
+	override func unknown4() throws { throw IpcError.unimplemented(name: "nn::erpt::sf::nn::erpt::sf::IContext#Unknown4") }
+	override func unknown5() throws { throw IpcError.unimplemented(name: "nn::erpt::sf::nn::erpt::sf::IContext#Unknown5") }
+	override func unknown6(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::erpt::sf::nn::erpt::sf::IContext#Unknown6") }
+}
+*/
+
 class NnErptSf_IManager: IpcService {
 	func getReportList(_ _0: Any?, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::erpt::sf::nn::erpt::sf::IManager#GetReportList") }
 	func getEvent() throws -> KObject { throw IpcError.unimplemented(name: "nn::erpt::sf::nn::erpt::sf::IManager#GetEvent") }
@@ -122,6 +145,16 @@ class NnErptSf_IManager: IpcService {
 	}
 }
 
+/*
+class NnErptSf_IManager_Impl: NnErptSf_IManager {
+	override func getReportList(_ _0: Any?, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::erpt::sf::nn::erpt::sf::IManager#GetReportList") }
+	override func getEvent() throws -> KObject { throw IpcError.unimplemented(name: "nn::erpt::sf::nn::erpt::sf::IManager#GetEvent") }
+	override func unknown2() throws { throw IpcError.unimplemented(name: "nn::erpt::sf::nn::erpt::sf::IManager#Unknown2") }
+	override func unknown3(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::erpt::sf::nn::erpt::sf::IManager#Unknown3") }
+	override func unknown4(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::erpt::sf::nn::erpt::sf::IManager#Unknown4") }
+}
+*/
+
 class NnErptSf_ISession: IpcService {
 	func openReport() throws -> NnErptSf_IReport { throw IpcError.unimplemented(name: "nn::erpt::sf::nn::erpt::sf::ISession#OpenReport") }
 	func openManager() throws -> NnErptSf_IManager { throw IpcError.unimplemented(name: "nn::erpt::sf::nn::erpt::sf::ISession#OpenManager") }
@@ -144,3 +177,10 @@ class NnErptSf_ISession: IpcService {
 		}
 	}
 }
+
+/*
+class NnErptSf_ISession_Impl: NnErptSf_ISession {
+	override func openReport() throws -> NnErptSf_IReport { throw IpcError.unimplemented(name: "nn::erpt::sf::nn::erpt::sf::ISession#OpenReport") }
+	override func openManager() throws -> NnErptSf_IManager { throw IpcError.unimplemented(name: "nn::erpt::sf::nn::erpt::sf::ISession#OpenManager") }
+}
+*/

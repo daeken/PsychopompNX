@@ -48,6 +48,17 @@ class NnAccountProfile_IProfileEditor: IpcService {
 	}
 }
 
+/*
+class NnAccountProfile_IProfileEditor_Impl: NnAccountProfile_IProfileEditor {
+	override func get(_ _0: Buffer<NnAccountProfile_UserData>) throws -> NnAccountProfile_ProfileBase { throw IpcError.unimplemented(name: "nn::account::profile::nn::account::profile::IProfileEditor#Get") }
+	override func getBase() throws -> NnAccountProfile_ProfileBase { throw IpcError.unimplemented(name: "nn::account::profile::nn::account::profile::IProfileEditor#GetBase") }
+	override func getImageSize() throws -> UInt32 { throw IpcError.unimplemented(name: "nn::account::profile::nn::account::profile::IProfileEditor#GetImageSize") }
+	override func loadImage(_ _0: Buffer<UInt8>) throws -> UInt32 { throw IpcError.unimplemented(name: "nn::account::profile::nn::account::profile::IProfileEditor#LoadImage") }
+	override func store(_ _0: NnAccountProfile_ProfileBase, _ _1: Buffer<NnAccountProfile_UserData>) throws { throw IpcError.unimplemented(name: "nn::account::profile::nn::account::profile::IProfileEditor#Store") }
+	override func storeWithImage(_ _0: NnAccountProfile_ProfileBase, _ _1: Buffer<NnAccountProfile_UserData>, _ _2: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::account::profile::nn::account::profile::IProfileEditor#StoreWithImage") }
+}
+*/
+
 class NnAccountProfile_IProfile: IpcService {
 	func get(_ _0: Buffer<NnAccountProfile_UserData>) throws -> NnAccountProfile_ProfileBase { throw IpcError.unimplemented(name: "nn::account::profile::nn::account::profile::IProfile#Get") }
 	func getBase() throws -> NnAccountProfile_ProfileBase { throw IpcError.unimplemented(name: "nn::account::profile::nn::account::profile::IProfile#GetBase") }
@@ -84,3 +95,12 @@ class NnAccountProfile_IProfile: IpcService {
 		}
 	}
 }
+
+/*
+class NnAccountProfile_IProfile_Impl: NnAccountProfile_IProfile {
+	override func get(_ _0: Buffer<NnAccountProfile_UserData>) throws -> NnAccountProfile_ProfileBase { throw IpcError.unimplemented(name: "nn::account::profile::nn::account::profile::IProfile#Get") }
+	override func getBase() throws -> NnAccountProfile_ProfileBase { throw IpcError.unimplemented(name: "nn::account::profile::nn::account::profile::IProfile#GetBase") }
+	override func getImageSize() throws -> UInt32 { throw IpcError.unimplemented(name: "nn::account::profile::nn::account::profile::IProfile#GetImageSize") }
+	override func loadImage(_ _0: Buffer<UInt8>) throws -> UInt32 { throw IpcError.unimplemented(name: "nn::account::profile::nn::account::profile::IProfile#LoadImage") }
+}
+*/

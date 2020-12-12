@@ -29,6 +29,15 @@ class NnArpDetail_IReader: IpcService {
 	}
 }
 
+/*
+class NnArpDetail_IReader_Impl: NnArpDetail_IReader {
+	override func getApplicationLaunchProperty(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::arp::detail::nn::arp::detail::IReader#GetApplicationLaunchProperty") }
+	override func getApplicationLaunchPropertyWithApplicationId(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::arp::detail::nn::arp::detail::IReader#GetApplicationLaunchPropertyWithApplicationId") }
+	override func getApplicationControlProperty(_ _0: Any?, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::arp::detail::nn::arp::detail::IReader#GetApplicationControlProperty") }
+	override func getApplicationControlPropertyWithApplicationId(_ _0: Any?, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::arp::detail::nn::arp::detail::IReader#GetApplicationControlPropertyWithApplicationId") }
+}
+*/
+
 class NnArpDetail_IWriter: IpcService {
 	func acquireRegistrar() throws -> NnArpDetail_IRegistrar { throw IpcError.unimplemented(name: "nn::arp::detail::nn::arp::detail::IWriter#AcquireRegistrar") }
 	func deleteProperties(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::arp::detail::nn::arp::detail::IWriter#DeleteProperties") }
@@ -50,6 +59,13 @@ class NnArpDetail_IWriter: IpcService {
 		}
 	}
 }
+
+/*
+class NnArpDetail_IWriter_Impl: NnArpDetail_IWriter {
+	override func acquireRegistrar() throws -> NnArpDetail_IRegistrar { throw IpcError.unimplemented(name: "nn::arp::detail::nn::arp::detail::IWriter#AcquireRegistrar") }
+	override func deleteProperties(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::arp::detail::nn::arp::detail::IWriter#DeleteProperties") }
+}
+*/
 
 class NnArpDetail_IRegistrar: IpcService {
 	func issue(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::arp::detail::nn::arp::detail::IRegistrar#Issue") }
@@ -76,3 +92,11 @@ class NnArpDetail_IRegistrar: IpcService {
 		}
 	}
 }
+
+/*
+class NnArpDetail_IRegistrar_Impl: NnArpDetail_IRegistrar {
+	override func issue(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::arp::detail::nn::arp::detail::IRegistrar#Issue") }
+	override func setApplicationLaunchProperty(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::arp::detail::nn::arp::detail::IRegistrar#SetApplicationLaunchProperty") }
+	override func setApplicationControlProperty(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::arp::detail::nn::arp::detail::IRegistrar#SetApplicationControlProperty") }
+}
+*/

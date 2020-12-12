@@ -55,6 +55,20 @@ class NnNsDetail_IDevelopInterface: IpcService {
 	}
 }
 
+/*
+class NnNsDetail_IDevelopInterface_Impl: NnNsDetail_IDevelopInterface {
+	override func launchProgram(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IDevelopInterface#LaunchProgram") }
+	override func terminateProcess(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IDevelopInterface#TerminateProcess") }
+	override func terminateProgram(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IDevelopInterface#TerminateProgram") }
+	override func getShellEventHandle() throws -> KObject { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IDevelopInterface#GetShellEventHandle") }
+	override func getShellEventInfo() throws -> Any? { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IDevelopInterface#GetShellEventInfo") }
+	override func terminateApplication() throws { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IDevelopInterface#TerminateApplication") }
+	override func prepareLaunchProgramFromHost(_ _0: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IDevelopInterface#PrepareLaunchProgramFromHost") }
+	override func launchApplication(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IDevelopInterface#LaunchApplication") }
+	override func launchApplicationWithStorageId(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IDevelopInterface#LaunchApplicationWithStorageId") }
+}
+*/
+
 class NnNsDetail_IGameCardStopper: IpcService {
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
@@ -64,6 +78,11 @@ class NnNsDetail_IGameCardStopper: IpcService {
 		}
 	}
 }
+
+/*
+class NnNsDetail_IGameCardStopper_Impl: NnNsDetail_IGameCardStopper {
+}
+*/
 
 class NnNsDetail_IApplicationManagerInterface: IpcService {
 	func listApplicationRecord(_ _0: Any?, _ _1: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#ListApplicationRecord") }
@@ -1159,6 +1178,219 @@ class NnNsDetail_IApplicationManagerInterface: IpcService {
 	}
 }
 
+/*
+class NnNsDetail_IApplicationManagerInterface_Impl: NnNsDetail_IApplicationManagerInterface {
+	override func listApplicationRecord(_ _0: Any?, _ _1: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#ListApplicationRecord") }
+	override func generateApplicationRecordCount() throws -> Any? { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#GenerateApplicationRecordCount") }
+	override func getApplicationRecordUpdateSystemEvent() throws -> KObject { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#GetApplicationRecordUpdateSystemEvent") }
+	override func getApplicationViewDeprecated(_ _0: Buffer<UInt8>, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#GetApplicationViewDeprecated") }
+	override func deleteApplicationEntity(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#DeleteApplicationEntity") }
+	override func deleteApplicationCompletely(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#DeleteApplicationCompletely") }
+	override func isAnyApplicationEntityRedundant() throws -> Any? { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#IsAnyApplicationEntityRedundant") }
+	override func deleteRedundantApplicationEntity() throws { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#DeleteRedundantApplicationEntity") }
+	override func isApplicationEntityMovable(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#IsApplicationEntityMovable") }
+	override func moveApplicationEntity(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#MoveApplicationEntity") }
+	override func calculateApplicationOccupiedSize(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#CalculateApplicationOccupiedSize") }
+	override func pushApplicationRecord(_ _0: Any?, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#PushApplicationRecord") }
+	override func listApplicationRecordContentMeta(_ _0: Any?, _ _1: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#ListApplicationRecordContentMeta") }
+	override func launchApplication(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#LaunchApplication") }
+	override func getApplicationContentPath(_ _0: Any?, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#GetApplicationContentPath") }
+	override func terminateApplication(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#TerminateApplication") }
+	override func resolveApplicationContentPath(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#ResolveApplicationContentPath") }
+	override func beginInstallApplication(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#BeginInstallApplication") }
+	override func deleteApplicationRecord(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#DeleteApplicationRecord") }
+	override func requestApplicationUpdateInfo(_ _0: Any?) throws -> (KObject, NnNsDetail_IAsyncValue) { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#RequestApplicationUpdateInfo") }
+	override func cancelApplicationDownload(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#CancelApplicationDownload") }
+	override func resumeApplicationDownload(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#ResumeApplicationDownload") }
+	override func updateVersionList(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#UpdateVersionList") }
+	override func pushLaunchVersion(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#PushLaunchVersion") }
+	override func listRequiredVersion(_ _0: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#ListRequiredVersion") }
+	override func checkApplicationLaunchVersion(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#CheckApplicationLaunchVersion") }
+	override func checkApplicationLaunchRights(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#CheckApplicationLaunchRights") }
+	override func getApplicationLogoData(_ _0: Any?, _ _1: Buffer<UInt8>, _ _2: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#GetApplicationLogoData") }
+	override func calculateApplicationDownloadRequiredSize(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#CalculateApplicationDownloadRequiredSize") }
+	override func cleanupSdCard() throws { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#CleanupSdCard") }
+	override func checkSdCardMountStatus() throws { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#CheckSdCardMountStatus") }
+	override func getSdCardMountStatusChangedEvent() throws -> KObject { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#GetSdCardMountStatusChangedEvent") }
+	override func getGameCardAttachmentEvent() throws -> KObject { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#GetGameCardAttachmentEvent") }
+	override func getGameCardAttachmentInfo() throws -> Any? { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#GetGameCardAttachmentInfo") }
+	override func getTotalSpaceSize(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#GetTotalSpaceSize") }
+	override func getFreeSpaceSize(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#GetFreeSpaceSize") }
+	override func getSdCardRemovedEvent() throws -> KObject { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#GetSdCardRemovedEvent") }
+	override func getGameCardUpdateDetectionEvent() throws -> KObject { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#GetGameCardUpdateDetectionEvent") }
+	override func disableApplicationAutoDelete(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#DisableApplicationAutoDelete") }
+	override func enableApplicationAutoDelete(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#EnableApplicationAutoDelete") }
+	override func getApplicationDesiredLanguage(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#GetApplicationDesiredLanguage") }
+	override func setApplicationTerminateResult(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#SetApplicationTerminateResult") }
+	override func clearApplicationTerminateResult(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#ClearApplicationTerminateResult") }
+	override func getLastSdCardMountUnexpectedResult() throws { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#GetLastSdCardMountUnexpectedResult") }
+	override func convertApplicationLanguageToLanguageCode(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#ConvertApplicationLanguageToLanguageCode") }
+	override func convertLanguageCodeToApplicationLanguage(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#ConvertLanguageCodeToApplicationLanguage") }
+	override func getBackgroundDownloadStressTaskInfo() throws -> Any? { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#GetBackgroundDownloadStressTaskInfo") }
+	override func getGameCardStopper() throws -> NnNsDetail_IGameCardStopper { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#GetGameCardStopper") }
+	override func isSystemProgramInstalled(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#IsSystemProgramInstalled") }
+	override func startApplyDeltaTask(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#StartApplyDeltaTask") }
+	override func getRequestServerStopper() throws -> NnNsDetail_IRequestServerStopper { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#GetRequestServerStopper") }
+	override func getBackgroundApplyDeltaStressTaskInfo() throws -> Any? { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#GetBackgroundApplyDeltaStressTaskInfo") }
+	override func cancelApplicationApplyDelta(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#CancelApplicationApplyDelta") }
+	override func resumeApplicationApplyDelta(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#ResumeApplicationApplyDelta") }
+	override func calculateApplicationApplyDeltaRequiredSize(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#CalculateApplicationApplyDeltaRequiredSize") }
+	override func resumeAll() throws { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#ResumeAll") }
+	override func getStorageSize(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#GetStorageSize") }
+	override func requestDownloadApplication(_ _0: Any?) throws -> (KObject, NnNsDetail_IAsyncResult) { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#RequestDownloadApplication") }
+	override func requestDownloadAddOnContent(_ _0: Any?, _ _1: Buffer<UInt8>) throws -> (KObject, NnNsDetail_IAsyncResult) { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#RequestDownloadAddOnContent") }
+	override func downloadApplication(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#DownloadApplication") }
+	override func checkApplicationResumeRights(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#CheckApplicationResumeRights") }
+	override func getDynamicCommitEvent() throws -> KObject { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#GetDynamicCommitEvent") }
+	override func requestUpdateApplication2(_ _0: Any?) throws -> (KObject, NnNsDetail_IAsyncResult) { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#RequestUpdateApplication2") }
+	override func enableApplicationCrashReport(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#EnableApplicationCrashReport") }
+	override func isApplicationCrashReportEnabled() throws -> Any? { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#IsApplicationCrashReportEnabled") }
+	override func boostSystemMemoryResourceLimit(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#BoostSystemMemoryResourceLimit") }
+	override func unknown91(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#Unknown91") }
+	override func unknown92(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#Unknown92") }
+	override func unknown93(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#Unknown93") }
+	override func launchApplication2(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#LaunchApplication2") }
+	override func unknown95(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#Unknown95") }
+	override func unknown96(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#Unknown96") }
+	override func unknown97(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#Unknown97") }
+	override func unknown98(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#Unknown98") }
+	override func resetToFactorySettings() throws { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#ResetToFactorySettings") }
+	override func resetToFactorySettingsWithoutUserSaveData() throws { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#ResetToFactorySettingsWithoutUserSaveData") }
+	override func resetToFactorySettingsForRefurbishment() throws { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#ResetToFactorySettingsForRefurbishment") }
+	override func calculateUserSaveDataStatistics(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#CalculateUserSaveDataStatistics") }
+	override func deleteUserSaveDataAll(_ _0: Any?) throws -> NnNsDetail_IProgressMonitorForDeleteUserSaveDataAll { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#DeleteUserSaveDataAll") }
+	override func deleteUserSystemSaveData(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#DeleteUserSystemSaveData") }
+	override func unknown211(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#Unknown211") }
+	override func unregisterNetworkServiceAccount(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#UnregisterNetworkServiceAccount") }
+	override func unknown221(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#Unknown221") }
+	override func getApplicationShellEvent() throws -> KObject { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#GetApplicationShellEvent") }
+	override func popApplicationShellEventInfo(_ _0: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#PopApplicationShellEventInfo") }
+	override func launchLibraryApplet(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#LaunchLibraryApplet") }
+	override func terminateLibraryApplet(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#TerminateLibraryApplet") }
+	override func launchSystemApplet() throws -> Any? { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#LaunchSystemApplet") }
+	override func terminateSystemApplet(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#TerminateSystemApplet") }
+	override func launchOverlayApplet() throws -> Any? { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#LaunchOverlayApplet") }
+	override func terminateOverlayApplet(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#TerminateOverlayApplet") }
+	override func getApplicationControlData(_ _0: Any?, _ _1: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#GetApplicationControlData") }
+	override func invalidateAllApplicationControlCache() throws { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#InvalidateAllApplicationControlCache") }
+	override func requestDownloadApplicationControlData(_ _0: Any?) throws -> (KObject, NnNsDetail_IAsyncResult) { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#RequestDownloadApplicationControlData") }
+	override func getMaxApplicationControlCacheCount() throws -> Any? { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#GetMaxApplicationControlCacheCount") }
+	override func invalidateApplicationControlCache(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#InvalidateApplicationControlCache") }
+	override func listApplicationControlCacheEntryInfo(_ _0: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#ListApplicationControlCacheEntryInfo") }
+	override func unknown406(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#Unknown406") }
+	override func requestCheckGameCardRegistration(_ _0: Any?) throws -> (KObject, NnNsDetail_IAsyncResult) { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#RequestCheckGameCardRegistration") }
+	override func requestGameCardRegistrationGoldPoint(_ _0: Any?) throws -> (KObject, NnNsDetail_IAsyncValue) { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#RequestGameCardRegistrationGoldPoint") }
+	override func requestRegisterGameCard(_ _0: Any?) throws -> (KObject, NnNsDetail_IAsyncResult) { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#RequestRegisterGameCard") }
+	override func getGameCardMountFailureEvent() throws -> KObject { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#GetGameCardMountFailureEvent") }
+	override func isGameCardInserted() throws -> Any? { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#IsGameCardInserted") }
+	override func ensureGameCardAccess() throws { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#EnsureGameCardAccess") }
+	override func getLastGameCardMountFailureResult() throws { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#GetLastGameCardMountFailureResult") }
+	override func listApplicationIdOnGameCard(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#ListApplicationIdOnGameCard") }
+	override func countApplicationContentMeta(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#CountApplicationContentMeta") }
+	override func listApplicationContentMetaStatus(_ _0: Any?, _ _1: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#ListApplicationContentMetaStatus") }
+	override func listAvailableAddOnContent(_ _0: Any?, _ _1: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#ListAvailableAddOnContent") }
+	override func getOwnedApplicationContentMetaStatus(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#GetOwnedApplicationContentMetaStatus") }
+	override func registerContentsExternalKey(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#RegisterContentsExternalKey") }
+	override func listApplicationContentMetaStatusWithRightsCheck(_ _0: Any?, _ _1: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#ListApplicationContentMetaStatusWithRightsCheck") }
+	override func getContentMetaStorage(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#GetContentMetaStorage") }
+	override func unknown607(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#Unknown607") }
+	override func pushDownloadTaskList(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#PushDownloadTaskList") }
+	override func clearTaskStatusList() throws { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#ClearTaskStatusList") }
+	override func requestDownloadTaskList() throws { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#RequestDownloadTaskList") }
+	override func requestEnsureDownloadTask() throws -> (KObject, NnNsDetail_IAsyncResult) { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#RequestEnsureDownloadTask") }
+	override func listDownloadTaskStatus(_ _0: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#ListDownloadTaskStatus") }
+	override func requestDownloadTaskListData() throws -> (KObject, NnNsDetail_IAsyncValue) { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#RequestDownloadTaskListData") }
+	override func requestVersionList() throws { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#RequestVersionList") }
+	override func listVersionList(_ _0: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#ListVersionList") }
+	override func requestVersionListData() throws -> (KObject, NnNsDetail_IAsyncValue) { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#RequestVersionListData") }
+	override func getApplicationRecord(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#GetApplicationRecord") }
+	override func getApplicationRecordProperty(_ _0: Any?, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#GetApplicationRecordProperty") }
+	override func enableApplicationAutoUpdate(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#EnableApplicationAutoUpdate") }
+	override func disableApplicationAutoUpdate(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#DisableApplicationAutoUpdate") }
+	override func touchApplication(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#TouchApplication") }
+	override func requestApplicationUpdate(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#RequestApplicationUpdate") }
+	override func isApplicationUpdateRequested(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#IsApplicationUpdateRequested") }
+	override func withdrawApplicationUpdateRequest(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#WithdrawApplicationUpdateRequest") }
+	override func listApplicationRecordInstalledContentMeta(_ _0: Any?, _ _1: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#ListApplicationRecordInstalledContentMeta") }
+	override func withdrawCleanupAddOnContentsWithNoRightsRecommendation(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#WithdrawCleanupAddOnContentsWithNoRightsRecommendation") }
+	override func unknown910(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#Unknown910") }
+	override func unknown911(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#Unknown911") }
+	override func unknown912(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#Unknown912") }
+	override func requestVerifyApplicationDeprecated(_ _0: Any?, _ _1: KObject) throws -> (KObject, NnNsDetail_IProgressAsyncResult) { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#RequestVerifyApplicationDeprecated") }
+	override func corruptApplicationForDebug(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#CorruptApplicationForDebug") }
+	override func requestVerifyAddOnContentsRights(_ _0: Any?) throws -> (KObject, NnNsDetail_IProgressAsyncResult) { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#RequestVerifyAddOnContentsRights") }
+	override func requestVerifyApplication(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#RequestVerifyApplication") }
+	override func corruptContentForDebug(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#CorruptContentForDebug") }
+	override func needsUpdateVulnerability() throws -> Any? { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#NeedsUpdateVulnerability") }
+	override func isAnyApplicationEntityInstalled(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#IsAnyApplicationEntityInstalled") }
+	override func deleteApplicationContentEntities(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#DeleteApplicationContentEntities") }
+	override func cleanupUnrecordedApplicationEntity(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#CleanupUnrecordedApplicationEntity") }
+	override func cleanupAddOnContentsWithNoRights(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#CleanupAddOnContentsWithNoRights") }
+	override func deleteApplicationContentEntity(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#DeleteApplicationContentEntity") }
+	override func unknown1308(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#Unknown1308") }
+	override func unknown1309(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#Unknown1309") }
+	override func prepareShutdown() throws { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#PrepareShutdown") }
+	override func formatSdCard() throws { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#FormatSdCard") }
+	override func needsSystemUpdateToFormatSdCard() throws -> Any? { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#NeedsSystemUpdateToFormatSdCard") }
+	override func getLastSdCardFormatUnexpectedResult() throws { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#GetLastSdCardFormatUnexpectedResult") }
+	override func insertSdCard() throws { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#InsertSdCard") }
+	override func removeSdCard() throws { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#RemoveSdCard") }
+	override func getSystemSeedForPseudoDeviceId() throws -> Any? { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#GetSystemSeedForPseudoDeviceId") }
+	override func resetSystemSeedForPseudoDeviceId() throws { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#ResetSystemSeedForPseudoDeviceId") }
+	override func listApplicationDownloadingContentMeta(_ _0: Any?, _ _1: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#ListApplicationDownloadingContentMeta") }
+	override func getApplicationView(_ _0: Buffer<UInt8>, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#GetApplicationView") }
+	override func getApplicationDownloadTaskStatus(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#GetApplicationDownloadTaskStatus") }
+	override func getApplicationViewDownloadErrorContext(_ _0: Any?, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#GetApplicationViewDownloadErrorContext") }
+	override func isNotificationSetupCompleted() throws -> Any? { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#IsNotificationSetupCompleted") }
+	override func getLastNotificationInfoCount() throws -> Any? { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#GetLastNotificationInfoCount") }
+	override func listLastNotificationInfo(_ _0: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#ListLastNotificationInfo") }
+	override func listNotificationTask(_ _0: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#ListNotificationTask") }
+	override func isActiveAccount(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#IsActiveAccount") }
+	override func requestDownloadApplicationPrepurchasedRights(_ _0: Any?) throws -> (KObject, NnNsDetail_IAsyncResult) { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#RequestDownloadApplicationPrepurchasedRights") }
+	override func getApplicationTicketInfo(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#GetApplicationTicketInfo") }
+	override func getSystemDeliveryInfo(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#GetSystemDeliveryInfo") }
+	override func selectLatestSystemDeliveryInfo(_ _0: Buffer<UInt8>, _ _1: Buffer<UInt8>, _ _2: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#SelectLatestSystemDeliveryInfo") }
+	override func verifyDeliveryProtocolVersion(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#VerifyDeliveryProtocolVersion") }
+	override func getApplicationDeliveryInfo(_ _0: Any?, _ _1: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#GetApplicationDeliveryInfo") }
+	override func hasAllContentsToDeliver(_ _0: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#HasAllContentsToDeliver") }
+	override func compareApplicationDeliveryInfo(_ _0: Buffer<UInt8>, _ _1: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#CompareApplicationDeliveryInfo") }
+	override func canDeliverApplication(_ _0: Buffer<UInt8>, _ _1: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#CanDeliverApplication") }
+	override func listContentMetaKeyToDeliverApplication(_ _0: Any?, _ _1: Buffer<UInt8>, _ _2: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#ListContentMetaKeyToDeliverApplication") }
+	override func needsSystemUpdateToDeliverApplication(_ _0: Buffer<UInt8>, _ _1: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#NeedsSystemUpdateToDeliverApplication") }
+	override func estimateRequiredSize(_ _0: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#EstimateRequiredSize") }
+	override func requestReceiveApplication(_ _0: Any?, _ _1: Buffer<UInt8>) throws -> (KObject, NnNsDetail_IAsyncResult) { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#RequestReceiveApplication") }
+	override func commitReceiveApplication(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#CommitReceiveApplication") }
+	override func getReceiveApplicationProgress(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#GetReceiveApplicationProgress") }
+	override func requestSendApplication(_ _0: Any?, _ _1: Buffer<UInt8>) throws -> (KObject, NnNsDetail_IAsyncResult) { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#RequestSendApplication") }
+	override func getSendApplicationProgress(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#GetSendApplicationProgress") }
+	override func compareSystemDeliveryInfo(_ _0: Buffer<UInt8>, _ _1: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#CompareSystemDeliveryInfo") }
+	override func listNotCommittedContentMeta(_ _0: Any?, _ _1: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#ListNotCommittedContentMeta") }
+	override func createDownloadTask(_ _0: Any?, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#CreateDownloadTask") }
+	override func unknown2018(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#Unknown2018") }
+	override func unknown2050(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#Unknown2050") }
+	override func unknown2100(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#Unknown2100") }
+	override func unknown2101(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#Unknown2101") }
+	override func unknown2150(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#Unknown2150") }
+	override func unknown2151(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#Unknown2151") }
+	override func unknown2152(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#Unknown2152") }
+	override func unknown2153(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#Unknown2153") }
+	override func unknown2154(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#Unknown2154") }
+	override func unknown2160(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#Unknown2160") }
+	override func unknown2161(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#Unknown2161") }
+	override func unknown2170(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#Unknown2170") }
+	override func unknown2171(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#Unknown2171") }
+	override func unknown2180(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#Unknown2180") }
+	override func unknown2181(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#Unknown2181") }
+	override func unknown2182(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#Unknown2182") }
+	override func unknown2190(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#Unknown2190") }
+	override func unknown2199(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#Unknown2199") }
+	override func unknown2200(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#Unknown2200") }
+	override func unknown2201(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#Unknown2201") }
+	override func unknown2250(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#Unknown2250") }
+	override func unknown2300(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationManagerInterface#Unknown2300") }
+}
+*/
+
 class NnNsDetail_ISystemUpdateInterface: IpcService {
 	func getBackgroundNetworkUpdateState() throws -> Any? { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::ISystemUpdateInterface#GetBackgroundNetworkUpdateState") }
 	func openSystemUpdateControl() throws -> NnNsDetail_ISystemUpdateControl { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::ISystemUpdateInterface#OpenSystemUpdateControl") }
@@ -1239,6 +1471,24 @@ class NnNsDetail_ISystemUpdateInterface: IpcService {
 	}
 }
 
+/*
+class NnNsDetail_ISystemUpdateInterface_Impl: NnNsDetail_ISystemUpdateInterface {
+	override func getBackgroundNetworkUpdateState() throws -> Any? { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::ISystemUpdateInterface#GetBackgroundNetworkUpdateState") }
+	override func openSystemUpdateControl() throws -> NnNsDetail_ISystemUpdateControl { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::ISystemUpdateInterface#OpenSystemUpdateControl") }
+	override func notifyExFatDriverRequired() throws { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::ISystemUpdateInterface#NotifyExFatDriverRequired") }
+	override func clearExFatDriverStatusForDebug() throws { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::ISystemUpdateInterface#ClearExFatDriverStatusForDebug") }
+	override func requestBackgroundNetworkUpdate() throws { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::ISystemUpdateInterface#RequestBackgroundNetworkUpdate") }
+	override func notifyBackgroundNetworkUpdate(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::ISystemUpdateInterface#NotifyBackgroundNetworkUpdate") }
+	override func notifyExFatDriverDownloadedForDebug() throws { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::ISystemUpdateInterface#NotifyExFatDriverDownloadedForDebug") }
+	override func getSystemUpdateNotificationEventForContentDelivery() throws -> KObject { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::ISystemUpdateInterface#GetSystemUpdateNotificationEventForContentDelivery") }
+	override func notifySystemUpdateForContentDelivery() throws { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::ISystemUpdateInterface#NotifySystemUpdateForContentDelivery") }
+	override func prepareShutdown() throws { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::ISystemUpdateInterface#PrepareShutdown") }
+	override func destroySystemUpdateTask() throws { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::ISystemUpdateInterface#DestroySystemUpdateTask") }
+	override func requestSendSystemUpdate(_ _0: Any?, _ _1: Buffer<UInt8>) throws -> (KObject, NnNsDetail_IAsyncResult) { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::ISystemUpdateInterface#RequestSendSystemUpdate") }
+	override func getSendSystemUpdateProgress() throws -> Any? { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::ISystemUpdateInterface#GetSendSystemUpdateProgress") }
+}
+*/
+
 class NnNsDetail_IDownloadTaskInterface: IpcService {
 	func clearTaskStatusList() throws { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IDownloadTaskInterface#ClearTaskStatusList") }
 	func requestDownloadTaskList() throws { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IDownloadTaskInterface#RequestDownloadTaskList") }
@@ -1299,6 +1549,20 @@ class NnNsDetail_IDownloadTaskInterface: IpcService {
 	}
 }
 
+/*
+class NnNsDetail_IDownloadTaskInterface_Impl: NnNsDetail_IDownloadTaskInterface {
+	override func clearTaskStatusList() throws { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IDownloadTaskInterface#ClearTaskStatusList") }
+	override func requestDownloadTaskList() throws { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IDownloadTaskInterface#RequestDownloadTaskList") }
+	override func requestEnsureDownloadTask() throws -> (KObject, NnNsDetail_IAsyncResult) { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IDownloadTaskInterface#RequestEnsureDownloadTask") }
+	override func listDownloadTaskStatus(_ _0: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IDownloadTaskInterface#ListDownloadTaskStatus") }
+	override func requestDownloadTaskListData() throws -> (KObject, NnNsDetail_IAsyncValue) { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IDownloadTaskInterface#RequestDownloadTaskListData") }
+	override func tryCommitCurrentApplicationDownloadTask() throws { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IDownloadTaskInterface#TryCommitCurrentApplicationDownloadTask") }
+	override func enableAutoCommit() throws { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IDownloadTaskInterface#EnableAutoCommit") }
+	override func disableAutoCommit() throws { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IDownloadTaskInterface#DisableAutoCommit") }
+	override func triggerDynamicCommitEvent() throws { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IDownloadTaskInterface#TriggerDynamicCommitEvent") }
+}
+*/
+
 class NnNsDetail_IApplicationVersionInterface: IpcService {
 	func unknown0(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationVersionInterface#Unknown0") }
 	func unknown1(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationVersionInterface#Unknown1") }
@@ -1357,6 +1621,20 @@ class NnNsDetail_IApplicationVersionInterface: IpcService {
 	}
 }
 
+/*
+class NnNsDetail_IApplicationVersionInterface_Impl: NnNsDetail_IApplicationVersionInterface {
+	override func unknown0(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationVersionInterface#Unknown0") }
+	override func unknown1(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationVersionInterface#Unknown1") }
+	override func unknown35(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationVersionInterface#Unknown35") }
+	override func unknown36(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationVersionInterface#Unknown36") }
+	override func unknown37(_ _0: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationVersionInterface#Unknown37") }
+	override func unknown800() throws { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationVersionInterface#Unknown800") }
+	override func unknown801(_ _0: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationVersionInterface#Unknown801") }
+	override func unknown802() throws -> (KObject, NnNsDetail_IAsyncValue) { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationVersionInterface#Unknown802") }
+	override func unknown1000() throws { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IApplicationVersionInterface#Unknown1000") }
+}
+*/
+
 class NnNsDetail_IProgressAsyncResult: IpcService {
 	func unknown0() throws { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IProgressAsyncResult#Unknown0") }
 	func unknown1() throws { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IProgressAsyncResult#Unknown1") }
@@ -1393,6 +1671,16 @@ class NnNsDetail_IProgressAsyncResult: IpcService {
 	}
 }
 
+/*
+class NnNsDetail_IProgressAsyncResult_Impl: NnNsDetail_IProgressAsyncResult {
+	override func unknown0() throws { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IProgressAsyncResult#Unknown0") }
+	override func unknown1() throws { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IProgressAsyncResult#Unknown1") }
+	override func unknown2(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IProgressAsyncResult#Unknown2") }
+	override func unknown3() throws { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IProgressAsyncResult#Unknown3") }
+	override func unknown4(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IProgressAsyncResult#Unknown4") }
+}
+*/
+
 class NnNsDetail_IDocumentInterface: IpcService {
 	func getApplicationContentPath(_ _0: Any?, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IDocumentInterface#GetApplicationContentPath") }
 	func resolveApplicationContentPath(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IDocumentInterface#ResolveApplicationContentPath") }
@@ -1413,6 +1701,13 @@ class NnNsDetail_IDocumentInterface: IpcService {
 		}
 	}
 }
+
+/*
+class NnNsDetail_IDocumentInterface_Impl: NnNsDetail_IDocumentInterface {
+	override func getApplicationContentPath(_ _0: Any?, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IDocumentInterface#GetApplicationContentPath") }
+	override func resolveApplicationContentPath(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IDocumentInterface#ResolveApplicationContentPath") }
+}
+*/
 
 class NnNsDetail_ISystemUpdateControl: IpcService {
 	func unknown0() throws -> Any? { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::ISystemUpdateControl#Unknown0") }
@@ -1543,6 +1838,33 @@ class NnNsDetail_ISystemUpdateControl: IpcService {
 	}
 }
 
+/*
+class NnNsDetail_ISystemUpdateControl_Impl: NnNsDetail_ISystemUpdateControl {
+	override func unknown0() throws -> Any? { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::ISystemUpdateControl#Unknown0") }
+	override func unknown1() throws -> (KObject, NnNsDetail_IAsyncValue) { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::ISystemUpdateControl#Unknown1") }
+	override func unknown2() throws -> (KObject, NnNsDetail_IAsyncResult) { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::ISystemUpdateControl#Unknown2") }
+	override func unknown3() throws -> Any? { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::ISystemUpdateControl#Unknown3") }
+	override func unknown4() throws { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::ISystemUpdateControl#Unknown4") }
+	override func unknown5() throws -> (KObject, NnNsDetail_IAsyncResult) { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::ISystemUpdateControl#Unknown5") }
+	override func unknown6() throws -> Any? { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::ISystemUpdateControl#Unknown6") }
+	override func unknown7() throws -> Any? { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::ISystemUpdateControl#Unknown7") }
+	override func unknown8() throws { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::ISystemUpdateControl#Unknown8") }
+	override func unknown9(_ _0: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::ISystemUpdateControl#Unknown9") }
+	override func unknown10(_ _0: Buffer<UInt8>, _ _1: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::ISystemUpdateControl#Unknown10") }
+	override func unknown11(_ _0: Any?, _ _1: KObject) throws { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::ISystemUpdateControl#Unknown11") }
+	override func unknown12(_ _0: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::ISystemUpdateControl#Unknown12") }
+	override func unknown13(_ _0: Buffer<UInt8>, _ _1: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::ISystemUpdateControl#Unknown13") }
+	override func unknown14(_ _0: Any?, _ _1: KObject) throws { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::ISystemUpdateControl#Unknown14") }
+	override func unknown15() throws -> Any? { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::ISystemUpdateControl#Unknown15") }
+	override func unknown16(_ _0: Any?, _ _1: Buffer<UInt8>) throws -> (KObject, NnNsDetail_IAsyncResult) { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::ISystemUpdateControl#Unknown16") }
+	override func unknown17() throws -> Any? { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::ISystemUpdateControl#Unknown17") }
+	override func unknown18() throws { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::ISystemUpdateControl#Unknown18") }
+	override func unknown19(_ _0: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::ISystemUpdateControl#Unknown19") }
+	override func unknown20(_ _0: Buffer<UInt8>, _ _1: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::ISystemUpdateControl#Unknown20") }
+	override func unknown21() throws { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::ISystemUpdateControl#Unknown21") }
+}
+*/
+
 class NnNsDetail_IAsyncValue: IpcService {
 	func unknown0() throws -> Any? { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IAsyncValue#Unknown0") }
 	func unknown1(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IAsyncValue#Unknown1") }
@@ -1574,6 +1896,15 @@ class NnNsDetail_IAsyncValue: IpcService {
 	}
 }
 
+/*
+class NnNsDetail_IAsyncValue_Impl: NnNsDetail_IAsyncValue {
+	override func unknown0() throws -> Any? { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IAsyncValue#Unknown0") }
+	override func unknown1(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IAsyncValue#Unknown1") }
+	override func unknown2() throws { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IAsyncValue#Unknown2") }
+	override func unknown3(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IAsyncValue#Unknown3") }
+}
+*/
+
 class NnNsDetail_IVulnerabilityManagerInterface: IpcService {
 	func needsUpdateVulnerability() throws -> Any? { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IVulnerabilityManagerInterface#NeedsUpdateVulnerability") }
 	func updateSafeSystemVersionForDebug(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IVulnerabilityManagerInterface#UpdateSafeSystemVersionForDebug") }
@@ -1599,6 +1930,14 @@ class NnNsDetail_IVulnerabilityManagerInterface: IpcService {
 		}
 	}
 }
+
+/*
+class NnNsDetail_IVulnerabilityManagerInterface_Impl: NnNsDetail_IVulnerabilityManagerInterface {
+	override func needsUpdateVulnerability() throws -> Any? { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IVulnerabilityManagerInterface#NeedsUpdateVulnerability") }
+	override func updateSafeSystemVersionForDebug(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IVulnerabilityManagerInterface#UpdateSafeSystemVersionForDebug") }
+	override func getSafeSystemVersion() throws -> Any? { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IVulnerabilityManagerInterface#GetSafeSystemVersion") }
+}
+*/
 
 class NnNsDetail_IProgressMonitorForDeleteUserSaveDataAll: IpcService {
 	func unknown0() throws -> KObject { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IProgressMonitorForDeleteUserSaveDataAll#Unknown0") }
@@ -1632,6 +1971,15 @@ class NnNsDetail_IProgressMonitorForDeleteUserSaveDataAll: IpcService {
 	}
 }
 
+/*
+class NnNsDetail_IProgressMonitorForDeleteUserSaveDataAll_Impl: NnNsDetail_IProgressMonitorForDeleteUserSaveDataAll {
+	override func unknown0() throws -> KObject { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IProgressMonitorForDeleteUserSaveDataAll#Unknown0") }
+	override func unknown1() throws -> Any? { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IProgressMonitorForDeleteUserSaveDataAll#Unknown1") }
+	override func unknown2() throws { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IProgressMonitorForDeleteUserSaveDataAll#Unknown2") }
+	override func unknown10() throws -> Any? { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IProgressMonitorForDeleteUserSaveDataAll#Unknown10") }
+}
+*/
+
 class NnNsDetail_IRequestServerStopper: IpcService {
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
@@ -1641,6 +1989,11 @@ class NnNsDetail_IRequestServerStopper: IpcService {
 		}
 	}
 }
+
+/*
+class NnNsDetail_IRequestServerStopper_Impl: NnNsDetail_IRequestServerStopper {
+}
+*/
 
 class NnNsDetail_IFactoryResetInterface: IpcService {
 	func resetToFactorySettings() throws { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IFactoryResetInterface#ResetToFactorySettings") }
@@ -1668,6 +2021,14 @@ class NnNsDetail_IFactoryResetInterface: IpcService {
 	}
 }
 
+/*
+class NnNsDetail_IFactoryResetInterface_Impl: NnNsDetail_IFactoryResetInterface {
+	override func resetToFactorySettings() throws { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IFactoryResetInterface#ResetToFactorySettings") }
+	override func resetToFactorySettingsWithoutUserSaveData() throws { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IFactoryResetInterface#ResetToFactorySettingsWithoutUserSaveData") }
+	override func resetToFactorySettingsForRefurbishment() throws { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IFactoryResetInterface#ResetToFactorySettingsForRefurbishment") }
+}
+*/
+
 class NnNsDetail_IAsyncResult: IpcService {
 	func unknown0() throws { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IAsyncResult#Unknown0") }
 	func unknown1() throws { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IAsyncResult#Unknown1") }
@@ -1693,6 +2054,14 @@ class NnNsDetail_IAsyncResult: IpcService {
 		}
 	}
 }
+
+/*
+class NnNsDetail_IAsyncResult_Impl: NnNsDetail_IAsyncResult {
+	override func unknown0() throws { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IAsyncResult#Unknown0") }
+	override func unknown1() throws { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IAsyncResult#Unknown1") }
+	override func unknown2(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IAsyncResult#Unknown2") }
+}
+*/
 
 class NnNsDetail_IContentManagementInterface: IpcService {
 	func calculateApplicationOccupiedSize(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IContentManagementInterface#CalculateApplicationOccupiedSize") }
@@ -1745,6 +2114,19 @@ class NnNsDetail_IContentManagementInterface: IpcService {
 	}
 }
 
+/*
+class NnNsDetail_IContentManagementInterface_Impl: NnNsDetail_IContentManagementInterface {
+	override func calculateApplicationOccupiedSize(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IContentManagementInterface#CalculateApplicationOccupiedSize") }
+	override func checkSdCardMountStatus() throws { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IContentManagementInterface#CheckSdCardMountStatus") }
+	override func getTotalSpaceSize(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IContentManagementInterface#GetTotalSpaceSize") }
+	override func getFreeSpaceSize(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IContentManagementInterface#GetFreeSpaceSize") }
+	override func countApplicationContentMeta(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IContentManagementInterface#CountApplicationContentMeta") }
+	override func listApplicationContentMetaStatus(_ _0: Any?, _ _1: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IContentManagementInterface#ListApplicationContentMetaStatus") }
+	override func listApplicationContentMetaStatusWithRightsCheck(_ _0: Any?, _ _1: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IContentManagementInterface#ListApplicationContentMetaStatusWithRightsCheck") }
+	override func isAnyApplicationRunning() throws -> Any? { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IContentManagementInterface#IsAnyApplicationRunning") }
+}
+*/
+
 class NnNsDetail_IECommerceInterface: IpcService {
 	func unknown0(_ _0: Any?) throws -> (KObject, NnNsDetail_IAsyncResult) { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IECommerceInterface#Unknown0") }
 	
@@ -1763,6 +2145,12 @@ class NnNsDetail_IECommerceInterface: IpcService {
 	}
 }
 
+/*
+class NnNsDetail_IECommerceInterface_Impl: NnNsDetail_IECommerceInterface {
+	override func unknown0(_ _0: Any?) throws -> (KObject, NnNsDetail_IAsyncResult) { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IECommerceInterface#Unknown0") }
+}
+*/
+
 class NnNsDetail_IAccountProxyInterface: IpcService {
 	func createUserAccount(_ _0: Any?, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IAccountProxyInterface#CreateUserAccount") }
 	
@@ -1778,6 +2166,12 @@ class NnNsDetail_IAccountProxyInterface: IpcService {
 		}
 	}
 }
+
+/*
+class NnNsDetail_IAccountProxyInterface_Impl: NnNsDetail_IAccountProxyInterface {
+	override func createUserAccount(_ _0: Any?, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IAccountProxyInterface#CreateUserAccount") }
+}
+*/
 
 class NnNsDetail_IServiceGetterInterface: IpcService {
 	func getECommerceInterface() throws -> NnNsDetail_IECommerceInterface { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IServiceGetterInterface#GetECommerceInterface") }
@@ -1837,3 +2231,16 @@ class NnNsDetail_IServiceGetterInterface: IpcService {
 		}
 	}
 }
+
+/*
+class NnNsDetail_IServiceGetterInterface_Impl: NnNsDetail_IServiceGetterInterface {
+	override func getECommerceInterface() throws -> NnNsDetail_IECommerceInterface { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IServiceGetterInterface#GetECommerceInterface") }
+	override func getApplicationVersionInterface() throws -> NnNsDetail_IApplicationVersionInterface { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IServiceGetterInterface#GetApplicationVersionInterface") }
+	override func getFactoryResetInterface() throws -> NnNsDetail_IFactoryResetInterface { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IServiceGetterInterface#GetFactoryResetInterface") }
+	override func getAccountProxyInterface() throws -> NnNsDetail_IAccountProxyInterface { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IServiceGetterInterface#GetAccountProxyInterface") }
+	override func getApplicationManagerInterface() throws -> NnNsDetail_IApplicationManagerInterface { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IServiceGetterInterface#GetApplicationManagerInterface") }
+	override func getDownloadTaskInterface() throws -> NnNsDetail_IDownloadTaskInterface { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IServiceGetterInterface#GetDownloadTaskInterface") }
+	override func getContentManagementInterface() throws -> NnNsDetail_IContentManagementInterface { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IServiceGetterInterface#GetContentManagementInterface") }
+	override func getDocumentInterface() throws -> NnNsDetail_IDocumentInterface { throw IpcError.unimplemented(name: "nn::ns::detail::nn::ns::detail::IServiceGetterInterface#GetDocumentInterface") }
+}
+*/

@@ -66,6 +66,20 @@ class NnAccountNas_IOAuthProcedureForGuestLogin: IpcService {
 	}
 }
 
+/*
+class NnAccountNas_IOAuthProcedureForGuestLogin_Impl: NnAccountNas_IOAuthProcedureForGuestLogin {
+	override func prepareAsync() throws -> NnAccountDetail_IAsyncContext { throw IpcError.unimplemented(name: "nn::account::nas::nn::account::nas::IOAuthProcedureForGuestLogin#PrepareAsync") }
+	override func getRequest(_ _0: Buffer<NnAccount_RequestUrl>, _ _1: Buffer<NnAccount_CallbackUri>) throws { throw IpcError.unimplemented(name: "nn::account::nas::nn::account::nas::IOAuthProcedureForGuestLogin#GetRequest") }
+	override func applyResponse(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::account::nas::nn::account::nas::IOAuthProcedureForGuestLogin#ApplyResponse") }
+	override func applyResponseAsync(_ _0: Buffer<UInt8>) throws -> NnAccountDetail_IAsyncContext { throw IpcError.unimplemented(name: "nn::account::nas::nn::account::nas::IOAuthProcedureForGuestLogin#ApplyResponseAsync") }
+	override func suspend() throws -> NnAccountDetail_Uuid { throw IpcError.unimplemented(name: "nn::account::nas::nn::account::nas::IOAuthProcedureForGuestLogin#Suspend") }
+	override func getAccountId() throws -> NnAccount_NetworkServiceAccountId { throw IpcError.unimplemented(name: "nn::account::nas::nn::account::nas::IOAuthProcedureForGuestLogin#GetAccountId") }
+	override func getLinkedNintendoAccountId() throws -> NnAccount_NintendoAccountId { throw IpcError.unimplemented(name: "nn::account::nas::nn::account::nas::IOAuthProcedureForGuestLogin#GetLinkedNintendoAccountId") }
+	override func getNickname(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::account::nas::nn::account::nas::IOAuthProcedureForGuestLogin#GetNickname") }
+	override func getProfileImage(_ _0: Buffer<UInt8>) throws -> UInt32 { throw IpcError.unimplemented(name: "nn::account::nas::nn::account::nas::IOAuthProcedureForGuestLogin#GetProfileImage") }
+}
+*/
+
 class NnAccountNas_IAuthorizationRequest: IpcService {
 	func getSessionId() throws -> NnAccountDetail_Uuid { throw IpcError.unimplemented(name: "nn::account::nas::nn::account::nas::IAuthorizationRequest#GetSessionId") }
 	func invokeWithoutInteractionAsync() throws -> NnAccountDetail_IAsyncContext { throw IpcError.unimplemented(name: "nn::account::nas::nn::account::nas::IAuthorizationRequest#InvokeWithoutInteractionAsync") }
@@ -112,6 +126,17 @@ class NnAccountNas_IAuthorizationRequest: IpcService {
 		}
 	}
 }
+
+/*
+class NnAccountNas_IAuthorizationRequest_Impl: NnAccountNas_IAuthorizationRequest {
+	override func getSessionId() throws -> NnAccountDetail_Uuid { throw IpcError.unimplemented(name: "nn::account::nas::nn::account::nas::IAuthorizationRequest#GetSessionId") }
+	override func invokeWithoutInteractionAsync() throws -> NnAccountDetail_IAsyncContext { throw IpcError.unimplemented(name: "nn::account::nas::nn::account::nas::IAuthorizationRequest#InvokeWithoutInteractionAsync") }
+	override func isAuthorized() throws -> UInt8 { throw IpcError.unimplemented(name: "nn::account::nas::nn::account::nas::IAuthorizationRequest#IsAuthorized") }
+	override func getAuthorizationCode(_ _0: Buffer<UInt8>) throws -> UInt32 { throw IpcError.unimplemented(name: "nn::account::nas::nn::account::nas::IAuthorizationRequest#GetAuthorizationCode") }
+	override func getIdToken(_ _0: Buffer<UInt8>) throws -> UInt32 { throw IpcError.unimplemented(name: "nn::account::nas::nn::account::nas::IAuthorizationRequest#GetIdToken") }
+	override func getState(_ _0: Buffer<NnAccountNas_State>) throws { throw IpcError.unimplemented(name: "nn::account::nas::nn::account::nas::IAuthorizationRequest#GetState") }
+}
+*/
 
 class NnAccountNas_IOAuthProcedureForNintendoAccountLinkage: IpcService {
 	func prepareAsync() throws -> NnAccountDetail_IAsyncContext { throw IpcError.unimplemented(name: "nn::account::nas::nn::account::nas::IOAuthProcedureForNintendoAccountLinkage#PrepareAsync") }
@@ -168,6 +193,19 @@ class NnAccountNas_IOAuthProcedureForNintendoAccountLinkage: IpcService {
 		}
 	}
 }
+
+/*
+class NnAccountNas_IOAuthProcedureForNintendoAccountLinkage_Impl: NnAccountNas_IOAuthProcedureForNintendoAccountLinkage {
+	override func prepareAsync() throws -> NnAccountDetail_IAsyncContext { throw IpcError.unimplemented(name: "nn::account::nas::nn::account::nas::IOAuthProcedureForNintendoAccountLinkage#PrepareAsync") }
+	override func getRequest(_ _0: Buffer<NnAccount_RequestUrl>, _ _1: Buffer<NnAccount_CallbackUri>) throws { throw IpcError.unimplemented(name: "nn::account::nas::nn::account::nas::IOAuthProcedureForNintendoAccountLinkage#GetRequest") }
+	override func applyResponse(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::account::nas::nn::account::nas::IOAuthProcedureForNintendoAccountLinkage#ApplyResponse") }
+	override func applyResponseAsync(_ _0: Buffer<UInt8>) throws -> NnAccountDetail_IAsyncContext { throw IpcError.unimplemented(name: "nn::account::nas::nn::account::nas::IOAuthProcedureForNintendoAccountLinkage#ApplyResponseAsync") }
+	override func suspend() throws -> NnAccountDetail_Uuid { throw IpcError.unimplemented(name: "nn::account::nas::nn::account::nas::IOAuthProcedureForNintendoAccountLinkage#Suspend") }
+	override func getRequestWithTheme(_ _0: UInt32, _ _1: Buffer<NnAccount_RequestUrl>, _ _2: Buffer<NnAccount_CallbackUri>) throws { throw IpcError.unimplemented(name: "nn::account::nas::nn::account::nas::IOAuthProcedureForNintendoAccountLinkage#GetRequestWithTheme") }
+	override func isNetworkServiceAccountReplaced() throws -> UInt8 { throw IpcError.unimplemented(name: "nn::account::nas::nn::account::nas::IOAuthProcedureForNintendoAccountLinkage#IsNetworkServiceAccountReplaced") }
+	override func getUrlForIntroductionOfExtraMembership(_ _0: Buffer<NnAccount_RequestUrl>) throws { throw IpcError.unimplemented(name: "nn::account::nas::nn::account::nas::IOAuthProcedureForNintendoAccountLinkage#GetUrlForIntroductionOfExtraMembership") }
+}
+*/
 
 class NnAccountNas_IOAuthProcedureForExternalNsa: IpcService {
 	func prepareAsync() throws -> NnAccountDetail_IAsyncContext { throw IpcError.unimplemented(name: "nn::account::nas::nn::account::nas::IOAuthProcedureForExternalNsa#PrepareAsync") }
@@ -231,3 +269,17 @@ class NnAccountNas_IOAuthProcedureForExternalNsa: IpcService {
 		}
 	}
 }
+
+/*
+class NnAccountNas_IOAuthProcedureForExternalNsa_Impl: NnAccountNas_IOAuthProcedureForExternalNsa {
+	override func prepareAsync() throws -> NnAccountDetail_IAsyncContext { throw IpcError.unimplemented(name: "nn::account::nas::nn::account::nas::IOAuthProcedureForExternalNsa#PrepareAsync") }
+	override func getRequest(_ _0: Buffer<NnAccount_RequestUrl>, _ _1: Buffer<NnAccount_CallbackUri>) throws { throw IpcError.unimplemented(name: "nn::account::nas::nn::account::nas::IOAuthProcedureForExternalNsa#GetRequest") }
+	override func applyResponse(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::account::nas::nn::account::nas::IOAuthProcedureForExternalNsa#ApplyResponse") }
+	override func applyResponseAsync(_ _0: Buffer<UInt8>) throws -> NnAccountDetail_IAsyncContext { throw IpcError.unimplemented(name: "nn::account::nas::nn::account::nas::IOAuthProcedureForExternalNsa#ApplyResponseAsync") }
+	override func suspend() throws -> NnAccountDetail_Uuid { throw IpcError.unimplemented(name: "nn::account::nas::nn::account::nas::IOAuthProcedureForExternalNsa#Suspend") }
+	override func getAccountId() throws -> NnAccount_NetworkServiceAccountId { throw IpcError.unimplemented(name: "nn::account::nas::nn::account::nas::IOAuthProcedureForExternalNsa#GetAccountId") }
+	override func getLinkedNintendoAccountId() throws -> NnAccount_NintendoAccountId { throw IpcError.unimplemented(name: "nn::account::nas::nn::account::nas::IOAuthProcedureForExternalNsa#GetLinkedNintendoAccountId") }
+	override func getNickname(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::account::nas::nn::account::nas::IOAuthProcedureForExternalNsa#GetNickname") }
+	override func getProfileImage(_ _0: Buffer<UInt8>) throws -> UInt32 { throw IpcError.unimplemented(name: "nn::account::nas::nn::account::nas::IOAuthProcedureForExternalNsa#GetProfileImage") }
+}
+*/

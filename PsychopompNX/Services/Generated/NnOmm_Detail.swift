@@ -132,3 +132,32 @@ class NnOmmDetail_IOperationModeManager: IpcService {
 		}
 	}
 }
+
+/*
+class NnOmmDetail_IOperationModeManager_Impl: NnOmmDetail_IOperationModeManager {
+	override func getOperationMode() throws -> Any? { throw IpcError.unimplemented(name: "nn::omm::detail::nn::omm::detail::IOperationModeManager#GetOperationMode") }
+	override func getOperationModeChangeEvent() throws -> KObject { throw IpcError.unimplemented(name: "nn::omm::detail::nn::omm::detail::IOperationModeManager#GetOperationModeChangeEvent") }
+	override func enableAudioVisual() throws { throw IpcError.unimplemented(name: "nn::omm::detail::nn::omm::detail::IOperationModeManager#EnableAudioVisual") }
+	override func disableAudioVisual() throws { throw IpcError.unimplemented(name: "nn::omm::detail::nn::omm::detail::IOperationModeManager#DisableAudioVisual") }
+	override func enterSleepAndWait(_ _0: KObject) throws { throw IpcError.unimplemented(name: "nn::omm::detail::nn::omm::detail::IOperationModeManager#EnterSleepAndWait") }
+	override func getCradleStatus() throws -> Any? { throw IpcError.unimplemented(name: "nn::omm::detail::nn::omm::detail::IOperationModeManager#GetCradleStatus") }
+	override func fadeInDisplay() throws { throw IpcError.unimplemented(name: "nn::omm::detail::nn::omm::detail::IOperationModeManager#FadeInDisplay") }
+	override func fadeOutDisplay() throws { throw IpcError.unimplemented(name: "nn::omm::detail::nn::omm::detail::IOperationModeManager#FadeOutDisplay") }
+	override func unknown8() throws -> Any? { throw IpcError.unimplemented(name: "nn::omm::detail::nn::omm::detail::IOperationModeManager#Unknown8") }
+	override func unknown9() throws { throw IpcError.unimplemented(name: "nn::omm::detail::nn::omm::detail::IOperationModeManager#Unknown9") }
+	override func unknown10(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::omm::detail::nn::omm::detail::IOperationModeManager#Unknown10") }
+	override func unknown11() throws -> Any? { throw IpcError.unimplemented(name: "nn::omm::detail::nn::omm::detail::IOperationModeManager#Unknown11") }
+	override func unknown12() throws -> KObject { throw IpcError.unimplemented(name: "nn::omm::detail::nn::omm::detail::IOperationModeManager#Unknown12") }
+	override func unknown13() throws { throw IpcError.unimplemented(name: "nn::omm::detail::nn::omm::detail::IOperationModeManager#Unknown13") }
+	override func unknown14() throws -> Any? { throw IpcError.unimplemented(name: "nn::omm::detail::nn::omm::detail::IOperationModeManager#Unknown14") }
+	override func unknown15() throws { throw IpcError.unimplemented(name: "nn::omm::detail::nn::omm::detail::IOperationModeManager#Unknown15") }
+	override func unknown16() throws { throw IpcError.unimplemented(name: "nn::omm::detail::nn::omm::detail::IOperationModeManager#Unknown16") }
+	override func unknown17() throws { throw IpcError.unimplemented(name: "nn::omm::detail::nn::omm::detail::IOperationModeManager#Unknown17") }
+	override func unknown18() throws { throw IpcError.unimplemented(name: "nn::omm::detail::nn::omm::detail::IOperationModeManager#Unknown18") }
+	override func unknown19() throws -> KObject { throw IpcError.unimplemented(name: "nn::omm::detail::nn::omm::detail::IOperationModeManager#Unknown19") }
+	override func unknown20() throws -> Any? { throw IpcError.unimplemented(name: "nn::omm::detail::nn::omm::detail::IOperationModeManager#Unknown20") }
+	override func unknown21(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::omm::detail::nn::omm::detail::IOperationModeManager#Unknown21") }
+	override func unknown22() throws -> KObject { throw IpcError.unimplemented(name: "nn::omm::detail::nn::omm::detail::IOperationModeManager#Unknown22") }
+	override func unknown23() throws -> Any? { throw IpcError.unimplemented(name: "nn::omm::detail::nn::omm::detail::IOperationModeManager#Unknown23") }
+}
+*/

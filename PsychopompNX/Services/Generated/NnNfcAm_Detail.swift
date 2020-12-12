@@ -24,6 +24,14 @@ class NnNfcAmDetail_IAm: IpcService {
 	}
 }
 
+/*
+class NnNfcAmDetail_IAm_Impl: NnNfcAmDetail_IAm {
+	override func initialize() throws { throw IpcError.unimplemented(name: "nn::nfc::am::detail::nn::nfc::am::detail::IAm#Initialize") }
+	override func finalize() throws { throw IpcError.unimplemented(name: "nn::nfc::am::detail::nn::nfc::am::detail::IAm#Finalize") }
+	override func notifyForegroundApplet(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::nfc::am::detail::nn::nfc::am::detail::IAm#NotifyForegroundApplet") }
+}
+*/
+
 class NnNfcAmDetail_IAmManager: IpcService {
 	func createAmInterface() throws -> NnNfcAmDetail_IAm { throw IpcError.unimplemented(name: "nn::nfc::am::detail::nn::nfc::am::detail::IAmManager#CreateAmInterface") }
 	
@@ -40,3 +48,9 @@ class NnNfcAmDetail_IAmManager: IpcService {
 		}
 	}
 }
+
+/*
+class NnNfcAmDetail_IAmManager_Impl: NnNfcAmDetail_IAmManager {
+	override func createAmInterface() throws -> NnNfcAmDetail_IAm { throw IpcError.unimplemented(name: "nn::nfc::am::detail::nn::nfc::am::detail::IAmManager#CreateAmInterface") }
+}
+*/

@@ -44,6 +44,18 @@ class NnPdmDetail_INotifyService: IpcService {
 	}
 }
 
+/*
+class NnPdmDetail_INotifyService_Impl: NnPdmDetail_INotifyService {
+	override func unknown0(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::pdm::detail::nn::pdm::detail::INotifyService#Unknown0") }
+	override func unknown2(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::pdm::detail::nn::pdm::detail::INotifyService#Unknown2") }
+	override func unknown3(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::pdm::detail::nn::pdm::detail::INotifyService#Unknown3") }
+	override func unknown4() throws { throw IpcError.unimplemented(name: "nn::pdm::detail::nn::pdm::detail::INotifyService#Unknown4") }
+	override func unknown5(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::pdm::detail::nn::pdm::detail::INotifyService#Unknown5") }
+	override func unknown6(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::pdm::detail::nn::pdm::detail::INotifyService#Unknown6") }
+	override func unknown7(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::pdm::detail::nn::pdm::detail::INotifyService#Unknown7") }
+}
+*/
+
 class NnPdmDetail_IQueryService: IpcService {
 	func unknown0(_ _0: Any?, _ _1: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented(name: "nn::pdm::detail::nn::pdm::detail::IQueryService#Unknown0") }
 	func unknown1(_ _0: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented(name: "nn::pdm::detail::nn::pdm::detail::IQueryService#Unknown1") }
@@ -119,3 +131,21 @@ class NnPdmDetail_IQueryService: IpcService {
 		}
 	}
 }
+
+/*
+class NnPdmDetail_IQueryService_Impl: NnPdmDetail_IQueryService {
+	override func unknown0(_ _0: Any?, _ _1: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented(name: "nn::pdm::detail::nn::pdm::detail::IQueryService#Unknown0") }
+	override func unknown1(_ _0: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented(name: "nn::pdm::detail::nn::pdm::detail::IQueryService#Unknown1") }
+	override func unknown2(_ _0: Any?, _ _1: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented(name: "nn::pdm::detail::nn::pdm::detail::IQueryService#Unknown2") }
+	override func unknown3(_ _0: Any?, _ _1: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented(name: "nn::pdm::detail::nn::pdm::detail::IQueryService#Unknown3") }
+	override func unknown4(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::pdm::detail::nn::pdm::detail::IQueryService#Unknown4") }
+	override func unknown5(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::pdm::detail::nn::pdm::detail::IQueryService#Unknown5") }
+	override func unknown6(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::pdm::detail::nn::pdm::detail::IQueryService#Unknown6") }
+	override func unknown7(_ _0: Buffer<UInt8>, _ _1: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented(name: "nn::pdm::detail::nn::pdm::detail::IQueryService#Unknown7") }
+	override func unknown8(_ _0: Any?, _ _1: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented(name: "nn::pdm::detail::nn::pdm::detail::IQueryService#Unknown8") }
+	override func unknown9() throws -> Any? { throw IpcError.unimplemented(name: "nn::pdm::detail::nn::pdm::detail::IQueryService#Unknown9") }
+	override func unknown10(_ _0: Any?, _ _1: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented(name: "nn::pdm::detail::nn::pdm::detail::IQueryService#Unknown10") }
+	override func unknown11(_ _0: Any?, _ _1: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented(name: "nn::pdm::detail::nn::pdm::detail::IQueryService#Unknown11") }
+	override func unknown12(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::pdm::detail::nn::pdm::detail::IQueryService#Unknown12") }
+}
+*/

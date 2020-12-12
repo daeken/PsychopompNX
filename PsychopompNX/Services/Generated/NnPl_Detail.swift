@@ -44,3 +44,14 @@ class NnPlDetail_ISharedFontManager: IpcService {
 		}
 	}
 }
+
+/*
+class NnPlDetail_ISharedFontManager_Impl: NnPlDetail_ISharedFontManager {
+	override func requestLoad(_ _0: UInt32) throws { throw IpcError.unimplemented(name: "nn::pl::detail::nn::pl::detail::ISharedFontManager#RequestLoad") }
+	override func getLoadState(_ _0: UInt32) throws -> UInt32 { throw IpcError.unimplemented(name: "nn::pl::detail::nn::pl::detail::ISharedFontManager#GetLoadState") }
+	override func getSize(_ _0: UInt32) throws -> UInt32 { throw IpcError.unimplemented(name: "nn::pl::detail::nn::pl::detail::ISharedFontManager#GetSize") }
+	override func getSharedMemoryAddressOffset(_ _0: UInt32) throws -> UInt32 { throw IpcError.unimplemented(name: "nn::pl::detail::nn::pl::detail::ISharedFontManager#GetSharedMemoryAddressOffset") }
+	override func getSharedMemoryNativeHandle() throws -> KObject { throw IpcError.unimplemented(name: "nn::pl::detail::nn::pl::detail::ISharedFontManager#GetSharedMemoryNativeHandle") }
+	override func getSharedFontInOrderOfPriority(_ _0: [UInt8], _ _1: Buffer<UInt8>, _ _2: Buffer<UInt8>, _ _3: Buffer<UInt8>) throws -> (UInt8, UInt32) { throw IpcError.unimplemented(name: "nn::pl::detail::nn::pl::detail::ISharedFontManager#GetSharedFontInOrderOfPriority") }
+}
+*/

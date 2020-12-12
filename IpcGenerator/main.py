@@ -435,6 +435,25 @@ let ipcServiceMappings: [String: () -> IpcService] =
 				cb += '}'
 				cb += ''
 
+				cb += '/*'
+				rn = renameType(ns + '::' + iname if ns != 'Root' else iname)
+				cb += 'class %s_Impl: %s {' % (rn, rn)
+				cb.indent()
+
+				for cmd in iface.commands:
+					outBufs = [(name, type) for name, type in cmd.outputs if isBuffer(type)]
+					outputs = [(name, type) for name, type in cmd.outputs if not isBuffer(type)]
+					rettype = ''
+					if len(outputs) == 1:
+						rettype = ' -> ' + genType(outputs[0][1])
+					elif len(outputs) > 1:
+						rettype = ' -> (%s)' % ', '.join('%s: %s' % (rename(name), genType(type)) if name else genType(type) for name, type in outputs)
+					cb += 'override func %s(%s) throws%s { throw IpcError.unimplemented(name: "%s") }' % (rename(cmd.name), ', '.join('_ %s: %s' % (name if name else '_%i' % i, genType(type)) for i, (name, type) in enumerate(cmd.inputs + outBufs)), rettype, ns + '::' + iface.name + '#' + cmd.name)
+
+				cb.dedent()
+				cb += '}'
+				cb += '*/'
+				cb += ''
 
 			with file('../PsychopompNX/Services/Generated/%s.swift' % renameType(ns), 'w') as fp:
 				print >>fp, cb.buf.rstrip()

@@ -16,6 +16,12 @@ class NnAccountDetail_ISessionObject: IpcService {
 	}
 }
 
+/*
+class NnAccountDetail_ISessionObject_Impl: NnAccountDetail_ISessionObject {
+	override func dummy() throws { throw IpcError.unimplemented(name: "nn::account::detail::nn::account::detail::ISessionObject#Dummy") }
+}
+*/
+
 class NnAccountDetail_IAsyncContext: IpcService {
 	func getSystemEvent() throws -> KObject { throw IpcError.unimplemented(name: "nn::account::detail::nn::account::detail::IAsyncContext#GetSystemEvent") }
 	func cancel() throws { throw IpcError.unimplemented(name: "nn::account::detail::nn::account::detail::IAsyncContext#Cancel") }
@@ -49,6 +55,15 @@ class NnAccountDetail_IAsyncContext: IpcService {
 	}
 }
 
+/*
+class NnAccountDetail_IAsyncContext_Impl: NnAccountDetail_IAsyncContext {
+	override func getSystemEvent() throws -> KObject { throw IpcError.unimplemented(name: "nn::account::detail::nn::account::detail::IAsyncContext#GetSystemEvent") }
+	override func cancel() throws { throw IpcError.unimplemented(name: "nn::account::detail::nn::account::detail::IAsyncContext#Cancel") }
+	override func hasDone() throws -> UInt8 { throw IpcError.unimplemented(name: "nn::account::detail::nn::account::detail::IAsyncContext#HasDone") }
+	override func getResult() throws { throw IpcError.unimplemented(name: "nn::account::detail::nn::account::detail::IAsyncContext#GetResult") }
+}
+*/
+
 class NnAccountDetail_INotifier: IpcService {
 	func getSystemEvent() throws -> KObject { throw IpcError.unimplemented(name: "nn::account::detail::nn::account::detail::INotifier#GetSystemEvent") }
 	
@@ -65,3 +80,9 @@ class NnAccountDetail_INotifier: IpcService {
 		}
 	}
 }
+
+/*
+class NnAccountDetail_INotifier_Impl: NnAccountDetail_INotifier {
+	override func getSystemEvent() throws -> KObject { throw IpcError.unimplemented(name: "nn::account::detail::nn::account::detail::INotifier#GetSystemEvent") }
+}
+*/

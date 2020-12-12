@@ -28,6 +28,13 @@ class NnAmService_IStorage: IpcService {
 	}
 }
 
+/*
+class NnAmService_IStorage_Impl: NnAmService_IStorage {
+	override func unknown0() throws -> NnAmService_IStorageAccessor { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IStorage#Unknown0") }
+	override func unknown1() throws -> NnAmService_ITransferStorageAccessor { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IStorage#Unknown1") }
+}
+*/
+
 class NnAmService_IOverlayFunctions: IpcService {
 	func beginToWatchShortHomeButtonMessage() throws { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IOverlayFunctions#BeginToWatchShortHomeButtonMessage") }
 	func endToWatchShortHomeButtonMessage() throws { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IOverlayFunctions#EndToWatchShortHomeButtonMessage") }
@@ -74,6 +81,18 @@ class NnAmService_IOverlayFunctions: IpcService {
 		}
 	}
 }
+
+/*
+class NnAmService_IOverlayFunctions_Impl: NnAmService_IOverlayFunctions {
+	override func beginToWatchShortHomeButtonMessage() throws { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IOverlayFunctions#BeginToWatchShortHomeButtonMessage") }
+	override func endToWatchShortHomeButtonMessage() throws { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IOverlayFunctions#EndToWatchShortHomeButtonMessage") }
+	override func getApplicationIdForLogo() throws -> NnNcm_ApplicationId { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IOverlayFunctions#GetApplicationIdForLogo") }
+	override func setGpuTimeSliceBoost(_ _0: UInt64) throws { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IOverlayFunctions#SetGpuTimeSliceBoost") }
+	override func setAutoSleepTimeAndDimmingTimeEnabled(_ _0: UInt8) throws { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IOverlayFunctions#SetAutoSleepTimeAndDimmingTimeEnabled") }
+	override func terminateApplicationAndSetReason(_ _0: UInt32) throws { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IOverlayFunctions#TerminateApplicationAndSetReason") }
+	override func setScreenShotPermissionGlobally(_ _0: UInt8) throws { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IOverlayFunctions#SetScreenShotPermissionGlobally") }
+}
+*/
 
 class NnAmService_ILibraryAppletSelfAccessor: IpcService {
 	func popInData() throws -> NnAmService_IStorage { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::ILibraryAppletSelfAccessor#PopInData") }
@@ -226,6 +245,36 @@ class NnAmService_ILibraryAppletSelfAccessor: IpcService {
 		}
 	}
 }
+
+/*
+class NnAmService_ILibraryAppletSelfAccessor_Impl: NnAmService_ILibraryAppletSelfAccessor {
+	override func popInData() throws -> NnAmService_IStorage { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::ILibraryAppletSelfAccessor#PopInData") }
+	override func pushOutData(_ _0: NnAmService_IStorage) throws { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::ILibraryAppletSelfAccessor#PushOutData") }
+	override func popInteractiveInData() throws -> NnAmService_IStorage { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::ILibraryAppletSelfAccessor#PopInteractiveInData") }
+	override func pushInteractiveOutData(_ _0: NnAmService_IStorage) throws { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::ILibraryAppletSelfAccessor#PushInteractiveOutData") }
+	override func getPopInDataEvent() throws -> KObject { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::ILibraryAppletSelfAccessor#GetPopInDataEvent") }
+	override func getPopInteractiveInDataEvent() throws -> KObject { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::ILibraryAppletSelfAccessor#GetPopInteractiveInDataEvent") }
+	override func exitProcessAndReturn() throws { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::ILibraryAppletSelfAccessor#ExitProcessAndReturn") }
+	override func getLibraryAppletInfo() throws -> NnAmService_LibraryAppletInfo { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::ILibraryAppletSelfAccessor#GetLibraryAppletInfo") }
+	override func getMainAppletIdentityInfo() throws -> NnAmService_AppletIdentityInfo { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::ILibraryAppletSelfAccessor#GetMainAppletIdentityInfo") }
+	override func canUseApplicationCore() throws -> UInt8 { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::ILibraryAppletSelfAccessor#CanUseApplicationCore") }
+	override func getCallerAppletIdentityInfo() throws -> NnAmService_AppletIdentityInfo { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::ILibraryAppletSelfAccessor#GetCallerAppletIdentityInfo") }
+	override func getMainAppletApplicationControlProperty(_ _0: Buffer<NnNs_ApplicationControlProperty>) throws { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::ILibraryAppletSelfAccessor#GetMainAppletApplicationControlProperty") }
+	override func getMainAppletStorageId() throws -> NnNcm_StorageId { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::ILibraryAppletSelfAccessor#GetMainAppletStorageId") }
+	override func getCallerAppletIdentityInfoStack(_ _0: Buffer<NnAmService_AppletIdentityInfo>) throws -> UInt32 { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::ILibraryAppletSelfAccessor#GetCallerAppletIdentityInfoStack") }
+	override func getNextReturnDestinationAppletIdentityInfo() throws -> NnAmService_AppletIdentityInfo { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::ILibraryAppletSelfAccessor#GetNextReturnDestinationAppletIdentityInfo") }
+	override func getDesirableKeyboardLayout() throws -> UInt32 { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::ILibraryAppletSelfAccessor#GetDesirableKeyboardLayout") }
+	override func popExtraStorage() throws -> NnAmService_IStorage { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::ILibraryAppletSelfAccessor#PopExtraStorage") }
+	override func getPopExtraStorageEvent() throws -> KObject { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::ILibraryAppletSelfAccessor#GetPopExtraStorageEvent") }
+	override func unpopInData(_ _0: NnAmService_IStorage) throws { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::ILibraryAppletSelfAccessor#UnpopInData") }
+	override func unpopExtraStorage(_ _0: NnAmService_IStorage) throws { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::ILibraryAppletSelfAccessor#UnpopExtraStorage") }
+	override func getIndirectLayerProducerHandle() throws -> UInt64 { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::ILibraryAppletSelfAccessor#GetIndirectLayerProducerHandle") }
+	override func reportVisibleError(_ _0: NnErr_ErrorCode) throws { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::ILibraryAppletSelfAccessor#ReportVisibleError") }
+	override func reportVisibleErrorWithErrorContext(_ _0: NnErr_ErrorCode, _ _1: Buffer<NnErr_ErrorContext>) throws { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::ILibraryAppletSelfAccessor#ReportVisibleErrorWithErrorContext") }
+	override func getMainAppletApplicationDesiredLanguage() throws -> NnSettings_LanguageCode { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::ILibraryAppletSelfAccessor#GetMainAppletApplicationDesiredLanguage") }
+	override func createGameMovieTrimmer(_ _0: UInt64, _ _1: KObject) throws -> NnGrcsrv_IGameMovieTrimmer { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::ILibraryAppletSelfAccessor#CreateGameMovieTrimmer") }
+}
+*/
 
 class NnAmService_ICommonStateGetter: IpcService {
 	func getEventHandle() throws -> KObject { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::ICommonStateGetter#GetEventHandle") }
@@ -391,6 +440,37 @@ class NnAmService_ICommonStateGetter: IpcService {
 	}
 }
 
+/*
+class NnAmService_ICommonStateGetter_Impl: NnAmService_ICommonStateGetter {
+	override func getEventHandle() throws -> KObject { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::ICommonStateGetter#GetEventHandle") }
+	override func receiveMessage() throws -> NnAm_AppletMessage { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::ICommonStateGetter#ReceiveMessage") }
+	override func getThisAppletKind() throws -> NnAmService_AppletKind { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::ICommonStateGetter#GetThisAppletKind") }
+	override func allowToEnterSleep() throws { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::ICommonStateGetter#AllowToEnterSleep") }
+	override func disallowToEnterSleep() throws { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::ICommonStateGetter#DisallowToEnterSleep") }
+	override func getOperationMode() throws -> UInt8 { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::ICommonStateGetter#GetOperationMode") }
+	override func getPerformanceMode() throws -> UInt32 { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::ICommonStateGetter#GetPerformanceMode") }
+	override func getCradleStatus() throws -> UInt8 { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::ICommonStateGetter#GetCradleStatus") }
+	override func getBootMode() throws -> UInt8 { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::ICommonStateGetter#GetBootMode") }
+	override func getCurrentFocusState() throws -> UInt8 { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::ICommonStateGetter#GetCurrentFocusState") }
+	override func requestToAcquireSleepLock() throws { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::ICommonStateGetter#RequestToAcquireSleepLock") }
+	override func releaseSleepLock() throws { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::ICommonStateGetter#ReleaseSleepLock") }
+	override func releaseSleepLockTransiently() throws { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::ICommonStateGetter#ReleaseSleepLockTransiently") }
+	override func getAcquiredSleepLockEvent() throws -> KObject { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::ICommonStateGetter#GetAcquiredSleepLockEvent") }
+	override func pushToGeneralChannel(_ _0: NnAmService_IStorage) throws { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::ICommonStateGetter#PushToGeneralChannel") }
+	override func getHomeButtonReaderLockAccessor() throws -> NnAmService_ILockAccessor { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::ICommonStateGetter#GetHomeButtonReaderLockAccessor") }
+	override func getReaderLockAccessorEx(_ _0: UInt32) throws -> NnAmService_ILockAccessor { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::ICommonStateGetter#GetReaderLockAccessorEx") }
+	override func getCradleFwVersion() throws -> (UInt32, UInt32, UInt32, UInt32) { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::ICommonStateGetter#GetCradleFwVersion") }
+	override func isVrModeEnabled() throws -> UInt8 { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::ICommonStateGetter#IsVrModeEnabled") }
+	override func setVrModeEnabled(_ _0: UInt8) throws { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::ICommonStateGetter#SetVrModeEnabled") }
+	override func setLcdBacklighOffEnabled(_ _0: UInt8) throws { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::ICommonStateGetter#SetLcdBacklighOffEnabled") }
+	override func isInControllerFirmwareUpdateSection() throws -> UInt8 { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::ICommonStateGetter#IsInControllerFirmwareUpdateSection") }
+	override func getDefaultDisplayResolution() throws -> (UInt32, UInt32) { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::ICommonStateGetter#GetDefaultDisplayResolution") }
+	override func getDefaultDisplayResolutionChangeEvent() throws -> KObject { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::ICommonStateGetter#GetDefaultDisplayResolutionChangeEvent") }
+	override func getHdcpAuthenticationState() throws -> UInt32 { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::ICommonStateGetter#GetHdcpAuthenticationState") }
+	override func getHdcpAuthenticationStateChangeEvent() throws -> KObject { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::ICommonStateGetter#GetHdcpAuthenticationStateChangeEvent") }
+}
+*/
+
 class NnAmService_IApplicationFunctions: IpcService {
 	func popLaunchParameter(_ _0: UInt32) throws -> NnAmService_IStorage { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IApplicationFunctions#PopLaunchParameter") }
 	func createApplicationAndPushAndRequestToStart(_ _0: NnNcm_ApplicationId, _ _1: NnAmService_IStorage) throws { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IApplicationFunctions#CreateApplicationAndPushAndRequestToStart") }
@@ -552,6 +632,38 @@ class NnAmService_IApplicationFunctions: IpcService {
 	}
 }
 
+/*
+class NnAmService_IApplicationFunctions_Impl: NnAmService_IApplicationFunctions {
+	override func popLaunchParameter(_ _0: UInt32) throws -> NnAmService_IStorage { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IApplicationFunctions#PopLaunchParameter") }
+	override func createApplicationAndPushAndRequestToStart(_ _0: NnNcm_ApplicationId, _ _1: NnAmService_IStorage) throws { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IApplicationFunctions#CreateApplicationAndPushAndRequestToStart") }
+	override func createApplicationAndPushAndRequestToStartForQuest(_ _0: UInt32, _ _1: UInt32, _ _2: NnNcm_ApplicationId, _ _3: NnAmService_IStorage) throws { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IApplicationFunctions#CreateApplicationAndPushAndRequestToStartForQuest") }
+	override func createApplicationAndRequestToStart(_ _0: NnNcm_ApplicationId) throws { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IApplicationFunctions#CreateApplicationAndRequestToStart") }
+	override func createApplicationAndRequestToStartForQuest(_ _0: UInt32, _ _1: UInt32, _ _2: NnNcm_ApplicationId) throws { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IApplicationFunctions#CreateApplicationAndRequestToStartForQuest") }
+	override func ensureSaveData(_ _0: NnAccount_Uid) throws -> UInt64 { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IApplicationFunctions#EnsureSaveData") }
+	override func getDesiredLanguage() throws -> NnSettings_LanguageCode { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IApplicationFunctions#GetDesiredLanguage") }
+	override func setTerminateResult(_ _0: UInt32) throws { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IApplicationFunctions#SetTerminateResult") }
+	override func getDisplayVersion() throws -> NnOe_DisplayVersion { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IApplicationFunctions#GetDisplayVersion") }
+	override func getLaunchStorageInfoForDebug() throws -> (NnNcm_StorageId, NnNcm_StorageId) { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IApplicationFunctions#GetLaunchStorageInfoForDebug") }
+	override func extendSaveData(_ _0: UInt8, _ _1: NnAccount_Uid, _ _2: UInt64, _ _3: UInt64) throws -> UInt64 { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IApplicationFunctions#ExtendSaveData") }
+	override func getSaveDataSize(_ _0: UInt8, _ _1: NnAccount_Uid) throws -> (UInt64, UInt64) { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IApplicationFunctions#GetSaveDataSize") }
+	override func beginBlockingHomeButtonShortAndLongPressed(_ _0: UInt64) throws { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IApplicationFunctions#BeginBlockingHomeButtonShortAndLongPressed") }
+	override func endBlockingHomeButtonShortAndLongPressed() throws { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IApplicationFunctions#EndBlockingHomeButtonShortAndLongPressed") }
+	override func beginBlockingHomeButton(_ _0: UInt64) throws { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IApplicationFunctions#BeginBlockingHomeButton") }
+	override func endBlockingHomeButton() throws { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IApplicationFunctions#EndBlockingHomeButton") }
+	override func notifyRunning() throws -> UInt8 { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IApplicationFunctions#NotifyRunning") }
+	override func getPseudoDeviceId() throws -> NnUtil_Uuid { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IApplicationFunctions#GetPseudoDeviceId") }
+	override func setMediaPlaybackStateForApplication(_ _0: UInt8) throws { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IApplicationFunctions#SetMediaPlaybackStateForApplication") }
+	override func isGamePlayRecordingSupported() throws -> UInt8 { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IApplicationFunctions#IsGamePlayRecordingSupported") }
+	override func initializeGamePlayRecording(_ _0: UInt64, _ _1: KObject) throws { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IApplicationFunctions#InitializeGamePlayRecording") }
+	override func setGamePlayRecordingState(_ _0: UInt32) throws { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IApplicationFunctions#SetGamePlayRecordingState") }
+	override func requestFlushGamePlayingMovieForDebug() throws { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IApplicationFunctions#RequestFlushGamePlayingMovieForDebug") }
+	override func requestToShutdown() throws { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IApplicationFunctions#RequestToShutdown") }
+	override func requestToReboot() throws { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IApplicationFunctions#RequestToReboot") }
+	override func exitAndRequestToShowThanksMessage() throws { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IApplicationFunctions#ExitAndRequestToShowThanksMessage") }
+	override func enableApplicationCrashReport(_ _0: UInt8) throws { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IApplicationFunctions#EnableApplicationCrashReport") }
+}
+*/
+
 class NnAmService_IAppletAccessor: IpcService {
 	func getAppletStateChangedEvent() throws -> KObject { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IAppletAccessor#GetAppletStateChangedEvent") }
 	func isCompleted() throws -> UInt8 { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IAppletAccessor#IsCompleted") }
@@ -594,6 +706,17 @@ class NnAmService_IAppletAccessor: IpcService {
 		}
 	}
 }
+
+/*
+class NnAmService_IAppletAccessor_Impl: NnAmService_IAppletAccessor {
+	override func getAppletStateChangedEvent() throws -> KObject { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IAppletAccessor#GetAppletStateChangedEvent") }
+	override func isCompleted() throws -> UInt8 { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IAppletAccessor#IsCompleted") }
+	override func start() throws { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IAppletAccessor#Start") }
+	override func requestExit() throws { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IAppletAccessor#RequestExit") }
+	override func terminate() throws { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IAppletAccessor#Terminate") }
+	override func getResult() throws { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IAppletAccessor#GetResult") }
+}
+*/
 
 class NnAmService_ISystemAppletProxy: IpcService {
 	func getCommonStateGetter() throws -> NnAmService_ICommonStateGetter { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::ISystemAppletProxy#GetCommonStateGetter") }
@@ -672,6 +795,22 @@ class NnAmService_ISystemAppletProxy: IpcService {
 	}
 }
 
+/*
+class NnAmService_ISystemAppletProxy_Impl: NnAmService_ISystemAppletProxy {
+	override func getCommonStateGetter() throws -> NnAmService_ICommonStateGetter { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::ISystemAppletProxy#GetCommonStateGetter") }
+	override func getSelfController() throws -> NnAmService_ISelfController { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::ISystemAppletProxy#GetSelfController") }
+	override func getWindowController() throws -> NnAmService_IWindowController { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::ISystemAppletProxy#GetWindowController") }
+	override func getAudioController() throws -> NnAmService_IAudioController { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::ISystemAppletProxy#GetAudioController") }
+	override func getDisplayController() throws -> NnAmService_IDisplayController { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::ISystemAppletProxy#GetDisplayController") }
+	override func getProcessWindingController() throws -> NnAmService_IProcessWindingController { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::ISystemAppletProxy#GetProcessWindingController") }
+	override func getLibraryAppletCreator() throws -> NnAmService_ILibraryAppletCreator { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::ISystemAppletProxy#GetLibraryAppletCreator") }
+	override func getHomeMenuFunctions() throws -> NnAmService_IHomeMenuFunctions { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::ISystemAppletProxy#GetHomeMenuFunctions") }
+	override func getGlobalStateController() throws -> NnAmService_IGlobalStateController { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::ISystemAppletProxy#GetGlobalStateController") }
+	override func getApplicationCreator() throws -> NnAmService_IApplicationCreator { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::ISystemAppletProxy#GetApplicationCreator") }
+	override func getDebugFunctions() throws -> NnAmService_IDebugFunctions { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::ISystemAppletProxy#GetDebugFunctions") }
+}
+*/
+
 class NnAmService_ILibraryAppletCreator: IpcService {
 	func createLibraryApplet(_ _0: UInt32, _ _1: UInt32) throws -> NnAmService_ILibraryAppletAccessor { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::ILibraryAppletCreator#CreateLibraryApplet") }
 	func terminateAllLibraryApplets() throws { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::ILibraryAppletCreator#TerminateAllLibraryApplets") }
@@ -718,6 +857,17 @@ class NnAmService_ILibraryAppletCreator: IpcService {
 	}
 }
 
+/*
+class NnAmService_ILibraryAppletCreator_Impl: NnAmService_ILibraryAppletCreator {
+	override func createLibraryApplet(_ _0: UInt32, _ _1: UInt32) throws -> NnAmService_ILibraryAppletAccessor { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::ILibraryAppletCreator#CreateLibraryApplet") }
+	override func terminateAllLibraryApplets() throws { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::ILibraryAppletCreator#TerminateAllLibraryApplets") }
+	override func areAnyLibraryAppletsLeft() throws -> UInt8 { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::ILibraryAppletCreator#AreAnyLibraryAppletsLeft") }
+	override func createStorage(_ _0: UInt64) throws -> NnAmService_IStorage { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::ILibraryAppletCreator#CreateStorage") }
+	override func createTransferMemoryStorage(_ _0: UInt8, _ _1: UInt64, _ _2: KObject) throws -> NnAmService_IStorage { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::ILibraryAppletCreator#CreateTransferMemoryStorage") }
+	override func createHandleStorage(_ _0: UInt64, _ _1: KObject) throws -> NnAmService_IStorage { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::ILibraryAppletCreator#CreateHandleStorage") }
+}
+*/
+
 class NnAmService_IDebugFunctions: IpcService {
 	func notifyMessageToHomeMenuForDebug(_ _0: NnAm_AppletMessage) throws { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IDebugFunctions#NotifyMessageToHomeMenuForDebug") }
 	func openMainApplication() throws -> NnAmService_IApplicationAccessor { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IDebugFunctions#OpenMainApplication") }
@@ -749,6 +899,15 @@ class NnAmService_IDebugFunctions: IpcService {
 		}
 	}
 }
+
+/*
+class NnAmService_IDebugFunctions_Impl: NnAmService_IDebugFunctions {
+	override func notifyMessageToHomeMenuForDebug(_ _0: NnAm_AppletMessage) throws { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IDebugFunctions#NotifyMessageToHomeMenuForDebug") }
+	override func openMainApplication() throws -> NnAmService_IApplicationAccessor { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IDebugFunctions#OpenMainApplication") }
+	override func emulateButtonEvent(_ _0: NnAmService_EmulatedButtonEvent) throws { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IDebugFunctions#EmulateButtonEvent") }
+	override func invalidateTransitionLayer() throws { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IDebugFunctions#InvalidateTransitionLayer") }
+}
+*/
 
 class NnAmService_IAllSystemAppletProxiesService: IpcService {
 	func openSystemAppletProxy(_ _0: UInt64, _ _1: Pid, _ _2: KObject) throws -> NnAmService_ISystemAppletProxy { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IAllSystemAppletProxiesService#OpenSystemAppletProxy") }
@@ -796,6 +955,17 @@ class NnAmService_IAllSystemAppletProxiesService: IpcService {
 		}
 	}
 }
+
+/*
+class NnAmService_IAllSystemAppletProxiesService_Impl: NnAmService_IAllSystemAppletProxiesService {
+	override func openSystemAppletProxy(_ _0: UInt64, _ _1: Pid, _ _2: KObject) throws -> NnAmService_ISystemAppletProxy { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IAllSystemAppletProxiesService#OpenSystemAppletProxy") }
+	override func openLibraryAppletProxyOld(_ _0: UInt64, _ _1: Pid, _ _2: KObject) throws -> NnAmService_ILibraryAppletProxy { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IAllSystemAppletProxiesService#OpenLibraryAppletProxyOld") }
+	override func openLibraryAppletProxy(_ _0: UInt64, _ _1: Pid, _ _2: KObject, _ _3: Buffer<NnAm_AppletAttribute>) throws -> NnAmService_ILibraryAppletProxy { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IAllSystemAppletProxiesService#OpenLibraryAppletProxy") }
+	override func openOverlayAppletProxy(_ _0: UInt64, _ _1: Pid, _ _2: KObject) throws -> NnAmService_IOverlayAppletProxy { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IAllSystemAppletProxiesService#OpenOverlayAppletProxy") }
+	override func openSystemApplicationProxy(_ _0: UInt64, _ _1: Pid, _ _2: KObject) throws -> NnAmService_IApplicationProxy { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IAllSystemAppletProxiesService#OpenSystemApplicationProxy") }
+	override func createSelfLibraryAppletCreatorForDevelop(_ _0: UInt64, _ _1: Pid) throws -> NnAmService_ILibraryAppletCreator { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IAllSystemAppletProxiesService#CreateSelfLibraryAppletCreatorForDevelop") }
+}
+*/
 
 class NnAmService_ILibraryAppletAccessor: IpcService {
 	func getAppletStateChangedEvent() throws -> KObject { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::ILibraryAppletAccessor#GetAppletStateChangedEvent") }
@@ -908,6 +1078,29 @@ class NnAmService_ILibraryAppletAccessor: IpcService {
 	}
 }
 
+/*
+class NnAmService_ILibraryAppletAccessor_Impl: NnAmService_ILibraryAppletAccessor {
+	override func getAppletStateChangedEvent() throws -> KObject { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::ILibraryAppletAccessor#GetAppletStateChangedEvent") }
+	override func isCompleted() throws -> UInt8 { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::ILibraryAppletAccessor#IsCompleted") }
+	override func start() throws { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::ILibraryAppletAccessor#Start") }
+	override func requestExit() throws { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::ILibraryAppletAccessor#RequestExit") }
+	override func terminate() throws { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::ILibraryAppletAccessor#Terminate") }
+	override func getResult() throws { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::ILibraryAppletAccessor#GetResult") }
+	override func setOutOfFocusApplicationSuspendingEnabled(_ _0: UInt8) throws { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::ILibraryAppletAccessor#SetOutOfFocusApplicationSuspendingEnabled") }
+	override func pushInData(_ _0: NnAmService_IStorage) throws { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::ILibraryAppletAccessor#PushInData") }
+	override func popOutData() throws -> NnAmService_IStorage { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::ILibraryAppletAccessor#PopOutData") }
+	override func pushExtraStorage(_ _0: NnAmService_IStorage) throws { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::ILibraryAppletAccessor#PushExtraStorage") }
+	override func pushInteractiveInData(_ _0: NnAmService_IStorage) throws { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::ILibraryAppletAccessor#PushInteractiveInData") }
+	override func popInteractiveOutData() throws -> NnAmService_IStorage { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::ILibraryAppletAccessor#PopInteractiveOutData") }
+	override func getPopOutDataEvent() throws -> KObject { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::ILibraryAppletAccessor#GetPopOutDataEvent") }
+	override func getPopInteractiveOutDataEvent() throws -> KObject { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::ILibraryAppletAccessor#GetPopInteractiveOutDataEvent") }
+	override func needsToExitProcess() throws -> UInt8 { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::ILibraryAppletAccessor#NeedsToExitProcess") }
+	override func getLibraryAppletInfo() throws -> NnAmService_LibraryAppletInfo { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::ILibraryAppletAccessor#GetLibraryAppletInfo") }
+	override func requestForAppletToGetForeground() throws { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::ILibraryAppletAccessor#RequestForAppletToGetForeground") }
+	override func getIndirectLayerConsumerHandle(_ _0: NnApplet_AppletResourceUserId, _ _1: Pid) throws -> UInt64 { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::ILibraryAppletAccessor#GetIndirectLayerConsumerHandle") }
+}
+*/
+
 class NnAmService_ILibraryAppletProxy: IpcService {
 	func getCommonStateGetter() throws -> NnAmService_ICommonStateGetter { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::ILibraryAppletProxy#GetCommonStateGetter") }
 	func getSelfController() throws -> NnAmService_ISelfController { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::ILibraryAppletProxy#GetSelfController") }
@@ -973,6 +1166,20 @@ class NnAmService_ILibraryAppletProxy: IpcService {
 	}
 }
 
+/*
+class NnAmService_ILibraryAppletProxy_Impl: NnAmService_ILibraryAppletProxy {
+	override func getCommonStateGetter() throws -> NnAmService_ICommonStateGetter { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::ILibraryAppletProxy#GetCommonStateGetter") }
+	override func getSelfController() throws -> NnAmService_ISelfController { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::ILibraryAppletProxy#GetSelfController") }
+	override func getWindowController() throws -> NnAmService_IWindowController { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::ILibraryAppletProxy#GetWindowController") }
+	override func getAudioController() throws -> NnAmService_IAudioController { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::ILibraryAppletProxy#GetAudioController") }
+	override func getDisplayController() throws -> NnAmService_IDisplayController { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::ILibraryAppletProxy#GetDisplayController") }
+	override func getProcessWindingController() throws -> NnAmService_IProcessWindingController { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::ILibraryAppletProxy#GetProcessWindingController") }
+	override func getLibraryAppletCreator() throws -> NnAmService_ILibraryAppletCreator { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::ILibraryAppletProxy#GetLibraryAppletCreator") }
+	override func openLibraryAppletSelfAccessor() throws -> NnAmService_ILibraryAppletSelfAccessor { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::ILibraryAppletProxy#OpenLibraryAppletSelfAccessor") }
+	override func getDebugFunctions() throws -> NnAmService_IDebugFunctions { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::ILibraryAppletProxy#GetDebugFunctions") }
+}
+*/
+
 class NnAmService_IWindowController: IpcService {
 	func createWindow(_ _0: NnAmService_WindowCreationOption) throws -> NnAmService_IWindow { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IWindowController#CreateWindow") }
 	func getAppletResourceUserId() throws -> NnApplet_AppletResourceUserId { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IWindowController#GetAppletResourceUserId") }
@@ -1010,6 +1217,16 @@ class NnAmService_IWindowController: IpcService {
 		}
 	}
 }
+
+/*
+class NnAmService_IWindowController_Impl: NnAmService_IWindowController {
+	override func createWindow(_ _0: NnAmService_WindowCreationOption) throws -> NnAmService_IWindow { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IWindowController#CreateWindow") }
+	override func getAppletResourceUserId() throws -> NnApplet_AppletResourceUserId { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IWindowController#GetAppletResourceUserId") }
+	override func acquireForegroundRights() throws { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IWindowController#AcquireForegroundRights") }
+	override func releaseForegroundRights() throws { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IWindowController#ReleaseForegroundRights") }
+	override func rejectToChangeIntoBackground() throws { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IWindowController#RejectToChangeIntoBackground") }
+}
+*/
 
 class NnAmService_IApplicationProxy: IpcService {
 	func getCommonStateGetter() throws -> NnAmService_ICommonStateGetter { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IApplicationProxy#GetCommonStateGetter") }
@@ -1076,6 +1293,20 @@ class NnAmService_IApplicationProxy: IpcService {
 	}
 }
 
+/*
+class NnAmService_IApplicationProxy_Impl: NnAmService_IApplicationProxy {
+	override func getCommonStateGetter() throws -> NnAmService_ICommonStateGetter { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IApplicationProxy#GetCommonStateGetter") }
+	override func getSelfController() throws -> NnAmService_ISelfController { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IApplicationProxy#GetSelfController") }
+	override func getWindowController() throws -> NnAmService_IWindowController { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IApplicationProxy#GetWindowController") }
+	override func getAudioController() throws -> NnAmService_IAudioController { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IApplicationProxy#GetAudioController") }
+	override func getDisplayController() throws -> NnAmService_IDisplayController { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IApplicationProxy#GetDisplayController") }
+	override func getProcessWindingController() throws -> NnAmService_IProcessWindingController { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IApplicationProxy#GetProcessWindingController") }
+	override func getLibraryAppletCreator() throws -> NnAmService_ILibraryAppletCreator { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IApplicationProxy#GetLibraryAppletCreator") }
+	override func getApplicationFunctions() throws -> NnAmService_IApplicationFunctions { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IApplicationProxy#GetApplicationFunctions") }
+	override func getDebugFunctions() throws -> NnAmService_IDebugFunctions { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IApplicationProxy#GetDebugFunctions") }
+}
+*/
+
 class NnAmService_IProcessWindingController: IpcService {
 	func getLaunchReason() throws -> NnAmService_AppletProcessLaunchReason { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IProcessWindingController#GetLaunchReason") }
 	func openCallingLibraryApplet() throws -> NnAmService_ILibraryAppletAccessor { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IProcessWindingController#OpenCallingLibraryApplet") }
@@ -1130,6 +1361,19 @@ class NnAmService_IProcessWindingController: IpcService {
 		}
 	}
 }
+
+/*
+class NnAmService_IProcessWindingController_Impl: NnAmService_IProcessWindingController {
+	override func getLaunchReason() throws -> NnAmService_AppletProcessLaunchReason { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IProcessWindingController#GetLaunchReason") }
+	override func openCallingLibraryApplet() throws -> NnAmService_ILibraryAppletAccessor { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IProcessWindingController#OpenCallingLibraryApplet") }
+	override func pushContext(_ _0: NnAmService_IStorage) throws { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IProcessWindingController#PushContext") }
+	override func popContext() throws -> NnAmService_IStorage { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IProcessWindingController#PopContext") }
+	override func cancelWindingReservation() throws { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IProcessWindingController#CancelWindingReservation") }
+	override func windAndDoReserved() throws { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IProcessWindingController#WindAndDoReserved") }
+	override func reserveToStartAndWaitAndUnwindThis(_ _0: NnAmService_ILibraryAppletAccessor) throws { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IProcessWindingController#ReserveToStartAndWaitAndUnwindThis") }
+	override func reserveToStartAndWait(_ _0: NnAmService_ILibraryAppletAccessor) throws { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IProcessWindingController#ReserveToStartAndWait") }
+}
+*/
 
 class NnAmService_IGlobalStateController: IpcService {
 	func requestToEnterSleep() throws { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IGlobalStateController#RequestToEnterSleep") }
@@ -1199,6 +1443,22 @@ class NnAmService_IGlobalStateController: IpcService {
 	}
 }
 
+/*
+class NnAmService_IGlobalStateController_Impl: NnAmService_IGlobalStateController {
+	override func requestToEnterSleep() throws { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IGlobalStateController#RequestToEnterSleep") }
+	override func enterSleep() throws { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IGlobalStateController#EnterSleep") }
+	override func startSleepSequence(_ _0: UInt8) throws { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IGlobalStateController#StartSleepSequence") }
+	override func startShutdownSequence() throws { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IGlobalStateController#StartShutdownSequence") }
+	override func startRebootSequence() throws { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IGlobalStateController#StartRebootSequence") }
+	override func loadAndApplyIdlePolicySettings() throws { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IGlobalStateController#LoadAndApplyIdlePolicySettings") }
+	override func notifyCecSettingsChanged() throws { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IGlobalStateController#NotifyCecSettingsChanged") }
+	override func setDefaultHomeButtonLongPressTime(_ _0: UInt64) throws { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IGlobalStateController#SetDefaultHomeButtonLongPressTime") }
+	override func updateDefaultDisplayResolution() throws { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IGlobalStateController#UpdateDefaultDisplayResolution") }
+	override func shouldSleepOnBoot() throws -> UInt8 { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IGlobalStateController#ShouldSleepOnBoot") }
+	override func getHdcpAuthenticationFailedEvent() throws -> KObject { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IGlobalStateController#GetHdcpAuthenticationFailedEvent") }
+}
+*/
+
 class NnAmService_IApplicationProxyService: IpcService {
 	func openApplicationProxy(_ _0: UInt64, _ _1: Pid, _ _2: KObject) throws -> NnAmService_IApplicationProxy { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IApplicationProxyService#OpenApplicationProxy") }
 	
@@ -1216,6 +1476,12 @@ class NnAmService_IApplicationProxyService: IpcService {
 	}
 }
 
+/*
+class NnAmService_IApplicationProxyService_Impl: NnAmService_IApplicationProxyService {
+	override func openApplicationProxy(_ _0: UInt64, _ _1: Pid, _ _2: KObject) throws -> NnAmService_IApplicationProxy { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IApplicationProxyService#OpenApplicationProxy") }
+}
+*/
+
 class NnAmService_IWindow: IpcService {
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
@@ -1225,6 +1491,11 @@ class NnAmService_IWindow: IpcService {
 		}
 	}
 }
+
+/*
+class NnAmService_IWindow_Impl: NnAmService_IWindow {
+}
+*/
 
 class NnAmService_IApplicationCreator: IpcService {
 	func createApplication(_ _0: NnNcm_ApplicationId) throws -> NnAmService_IApplicationAccessor { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IApplicationCreator#CreateApplication") }
@@ -1261,6 +1532,15 @@ class NnAmService_IApplicationCreator: IpcService {
 	}
 }
 
+/*
+class NnAmService_IApplicationCreator_Impl: NnAmService_IApplicationCreator {
+	override func createApplication(_ _0: NnNcm_ApplicationId) throws -> NnAmService_IApplicationAccessor { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IApplicationCreator#CreateApplication") }
+	override func popLaunchRequestedApplication() throws -> NnAmService_IApplicationAccessor { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IApplicationCreator#PopLaunchRequestedApplication") }
+	override func createSystemApplication(_ _0: NnNcm_SystemApplicationId) throws -> NnAmService_IApplicationAccessor { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IApplicationCreator#CreateSystemApplication") }
+	override func popFloatingApplicationForDevelopment() throws -> NnAmService_IApplicationAccessor { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IApplicationCreator#PopFloatingApplicationForDevelopment") }
+}
+*/
+
 class NnAmService_ITransferStorageAccessor: IpcService {
 	func getSize() throws -> UInt64 { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::ITransferStorageAccessor#GetSize") }
 	func getHandle() throws -> (UInt64, KObject) { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::ITransferStorageAccessor#GetHandle") }
@@ -1284,6 +1564,13 @@ class NnAmService_ITransferStorageAccessor: IpcService {
 		}
 	}
 }
+
+/*
+class NnAmService_ITransferStorageAccessor_Impl: NnAmService_ITransferStorageAccessor {
+	override func getSize() throws -> UInt64 { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::ITransferStorageAccessor#GetSize") }
+	override func getHandle() throws -> (UInt64, KObject) { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::ITransferStorageAccessor#GetHandle") }
+}
+*/
 
 class NnAmService_IHomeMenuFunctions: IpcService {
 	func requestToGetForeground() throws { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IHomeMenuFunctions#RequestToGetForeground") }
@@ -1334,6 +1621,18 @@ class NnAmService_IHomeMenuFunctions: IpcService {
 		}
 	}
 }
+
+/*
+class NnAmService_IHomeMenuFunctions_Impl: NnAmService_IHomeMenuFunctions {
+	override func requestToGetForeground() throws { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IHomeMenuFunctions#RequestToGetForeground") }
+	override func lockForeground() throws { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IHomeMenuFunctions#LockForeground") }
+	override func unlockForeground() throws { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IHomeMenuFunctions#UnlockForeground") }
+	override func popFromGeneralChannel() throws -> NnAmService_IStorage { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IHomeMenuFunctions#PopFromGeneralChannel") }
+	override func getPopFromGeneralChannelEvent() throws -> KObject { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IHomeMenuFunctions#GetPopFromGeneralChannelEvent") }
+	override func getHomeButtonWriterLockAccessor() throws -> NnAmService_ILockAccessor { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IHomeMenuFunctions#GetHomeButtonWriterLockAccessor") }
+	override func getWriterLockAccessorEx(_ _0: UInt32) throws -> NnAmService_ILockAccessor { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IHomeMenuFunctions#GetWriterLockAccessorEx") }
+}
+*/
 
 class NnAmService_IDisplayController: IpcService {
 	func getLastForegroundCaptureImage(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IDisplayController#GetLastForegroundCaptureImage") }
@@ -1494,6 +1793,37 @@ class NnAmService_IDisplayController: IpcService {
 	}
 }
 
+/*
+class NnAmService_IDisplayController_Impl: NnAmService_IDisplayController {
+	override func getLastForegroundCaptureImage(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IDisplayController#GetLastForegroundCaptureImage") }
+	override func updateLastForegroundCaptureImage() throws { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IDisplayController#UpdateLastForegroundCaptureImage") }
+	override func getLastApplicationCaptureImage(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IDisplayController#GetLastApplicationCaptureImage") }
+	override func getCallerAppletCaptureImage(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IDisplayController#GetCallerAppletCaptureImage") }
+	override func updateCallerAppletCaptureImage() throws { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IDisplayController#UpdateCallerAppletCaptureImage") }
+	override func getLastForegroundCaptureImageEx(_ _0: Buffer<UInt8>) throws -> UInt8 { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IDisplayController#GetLastForegroundCaptureImageEx") }
+	override func getLastApplicationCaptureImageEx(_ _0: Buffer<UInt8>) throws -> UInt8 { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IDisplayController#GetLastApplicationCaptureImageEx") }
+	override func getCallerAppletCaptureImageEx(_ _0: Buffer<UInt8>) throws -> UInt8 { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IDisplayController#GetCallerAppletCaptureImageEx") }
+	override func takeScreenShotOfOwnLayer(_ _0: UInt8, _ _1: UInt32) throws { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IDisplayController#TakeScreenShotOfOwnLayer") }
+	override func acquireLastApplicationCaptureBuffer() throws -> KObject { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IDisplayController#AcquireLastApplicationCaptureBuffer") }
+	override func releaseLastApplicationCaptureBuffer() throws { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IDisplayController#ReleaseLastApplicationCaptureBuffer") }
+	override func acquireLastForegroundCaptureBuffer() throws -> KObject { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IDisplayController#AcquireLastForegroundCaptureBuffer") }
+	override func releaseLastForegroundCaptureBuffer() throws { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IDisplayController#ReleaseLastForegroundCaptureBuffer") }
+	override func acquireCallerAppletCaptureBuffer() throws -> KObject { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IDisplayController#AcquireCallerAppletCaptureBuffer") }
+	override func releaseCallerAppletCaptureBuffer() throws { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IDisplayController#ReleaseCallerAppletCaptureBuffer") }
+	override func acquireLastApplicationCaptureBufferEx() throws -> (UInt8, KObject) { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IDisplayController#AcquireLastApplicationCaptureBufferEx") }
+	override func acquireLastForegroundCaptureBufferEx() throws -> (UInt8, KObject) { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IDisplayController#AcquireLastForegroundCaptureBufferEx") }
+	override func acquireCallerAppletCaptureBufferEx() throws -> (UInt8, KObject) { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IDisplayController#AcquireCallerAppletCaptureBufferEx") }
+	override func clearCaptureBuffer(_ _0: UInt8, _ _1: UInt32, _ _2: UInt32) throws { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IDisplayController#ClearCaptureBuffer") }
+	override func clearAppletTransitionBuffer(_ _0: UInt32) throws { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IDisplayController#ClearAppletTransitionBuffer") }
+	override func acquireLastApplicationCaptureSharedBuffer() throws -> (UInt8, UInt32) { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IDisplayController#AcquireLastApplicationCaptureSharedBuffer") }
+	override func releaseLastApplicationCaptureSharedBuffer() throws { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IDisplayController#ReleaseLastApplicationCaptureSharedBuffer") }
+	override func acquireLastForegroundCaptureSharedBuffer() throws -> (UInt8, UInt32) { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IDisplayController#AcquireLastForegroundCaptureSharedBuffer") }
+	override func releaseLastForegroundCaptureSharedBuffer() throws { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IDisplayController#ReleaseLastForegroundCaptureSharedBuffer") }
+	override func acquireCallerAppletCaptureSharedBuffer() throws -> (UInt8, UInt32) { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IDisplayController#AcquireCallerAppletCaptureSharedBuffer") }
+	override func releaseCallerAppletCaptureSharedBuffer() throws { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IDisplayController#ReleaseCallerAppletCaptureSharedBuffer") }
+}
+*/
+
 class NnAmService_IAudioController: IpcService {
 	func setExpectedMasterVolume(_ _0: Float32, _ _1: Float32) throws { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IAudioController#SetExpectedMasterVolume") }
 	func getMainAppletExpectedMasterVolume() throws -> Float32 { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IAudioController#GetMainAppletExpectedMasterVolume") }
@@ -1532,6 +1862,16 @@ class NnAmService_IAudioController: IpcService {
 	}
 }
 
+/*
+class NnAmService_IAudioController_Impl: NnAmService_IAudioController {
+	override func setExpectedMasterVolume(_ _0: Float32, _ _1: Float32) throws { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IAudioController#SetExpectedMasterVolume") }
+	override func getMainAppletExpectedMasterVolume() throws -> Float32 { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IAudioController#GetMainAppletExpectedMasterVolume") }
+	override func getLibraryAppletExpectedMasterVolume() throws -> Float32 { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IAudioController#GetLibraryAppletExpectedMasterVolume") }
+	override func changeMainAppletMasterVolume(_ _0: Float32, _ _1: UInt64) throws { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IAudioController#ChangeMainAppletMasterVolume") }
+	override func setTransparentVolumeRate(_ _0: Float32) throws { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IAudioController#SetTransparentVolumeRate") }
+}
+*/
+
 class NnAmService_IStorageAccessor: IpcService {
 	func getSize() throws -> UInt64 { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IStorageAccessor#GetSize") }
 	func write(_ _0: UInt64, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IStorageAccessor#Write") }
@@ -1558,6 +1898,14 @@ class NnAmService_IStorageAccessor: IpcService {
 		}
 	}
 }
+
+/*
+class NnAmService_IStorageAccessor_Impl: NnAmService_IStorageAccessor {
+	override func getSize() throws -> UInt64 { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IStorageAccessor#GetSize") }
+	override func write(_ _0: UInt64, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IStorageAccessor#Write") }
+	override func read(_ _0: UInt64, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IStorageAccessor#Read") }
+}
+*/
 
 class NnAmService_IOverlayAppletProxy: IpcService {
 	func getCommonStateGetter() throws -> NnAmService_ICommonStateGetter { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IOverlayAppletProxy#GetCommonStateGetter") }
@@ -1623,6 +1971,20 @@ class NnAmService_IOverlayAppletProxy: IpcService {
 		}
 	}
 }
+
+/*
+class NnAmService_IOverlayAppletProxy_Impl: NnAmService_IOverlayAppletProxy {
+	override func getCommonStateGetter() throws -> NnAmService_ICommonStateGetter { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IOverlayAppletProxy#GetCommonStateGetter") }
+	override func getSelfController() throws -> NnAmService_ISelfController { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IOverlayAppletProxy#GetSelfController") }
+	override func getWindowController() throws -> NnAmService_IWindowController { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IOverlayAppletProxy#GetWindowController") }
+	override func getAudioController() throws -> NnAmService_IAudioController { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IOverlayAppletProxy#GetAudioController") }
+	override func getDisplayController() throws -> NnAmService_IDisplayController { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IOverlayAppletProxy#GetDisplayController") }
+	override func getProcessWindingController() throws -> NnAmService_IProcessWindingController { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IOverlayAppletProxy#GetProcessWindingController") }
+	override func getLibraryAppletCreator() throws -> NnAmService_ILibraryAppletCreator { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IOverlayAppletProxy#GetLibraryAppletCreator") }
+	override func getOverlayFunctions() throws -> NnAmService_IOverlayFunctions { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IOverlayAppletProxy#GetOverlayFunctions") }
+	override func getDebugFunctions() throws -> NnAmService_IDebugFunctions { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IOverlayAppletProxy#GetDebugFunctions") }
+}
+*/
 
 class NnAmService_ISelfController: IpcService {
 	func exit() throws { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::ISelfController#Exit") }
@@ -1802,6 +2164,43 @@ class NnAmService_ISelfController: IpcService {
 	}
 }
 
+/*
+class NnAmService_ISelfController_Impl: NnAmService_ISelfController {
+	override func exit() throws { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::ISelfController#Exit") }
+	override func lockExit() throws { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::ISelfController#LockExit") }
+	override func unlockExit() throws { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::ISelfController#UnlockExit") }
+	override func enterFatalSection() throws { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::ISelfController#EnterFatalSection") }
+	override func leaveFatalSection() throws { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::ISelfController#LeaveFatalSection") }
+	override func getLibraryAppletLaunchableEvent() throws -> KObject { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::ISelfController#GetLibraryAppletLaunchableEvent") }
+	override func setScreenShotPermission(_ _0: UInt32) throws { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::ISelfController#SetScreenShotPermission") }
+	override func setOperationModeChangedNotification(_ _0: UInt8) throws { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::ISelfController#SetOperationModeChangedNotification") }
+	override func setPerformanceModeChangedNotification(_ _0: UInt8) throws { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::ISelfController#SetPerformanceModeChangedNotification") }
+	override func setFocusHandlingMode(_ _0: UInt8, _ _1: UInt8, _ _2: UInt8) throws { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::ISelfController#SetFocusHandlingMode") }
+	override func setRestartMessageEnabled(_ _0: UInt8) throws { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::ISelfController#SetRestartMessageEnabled") }
+	override func setScreenShotAppletIdentityInfo(_ _0: NnAmService_AppletIdentityInfo) throws { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::ISelfController#SetScreenShotAppletIdentityInfo") }
+	override func setOutOfFocusSuspendingEnabled(_ _0: UInt8) throws { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::ISelfController#SetOutOfFocusSuspendingEnabled") }
+	override func setControllerFirmwareUpdateSection(_ _0: UInt8) throws { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::ISelfController#SetControllerFirmwareUpdateSection") }
+	override func setRequiresCaptureButtonShortPressedMessage(_ _0: UInt8) throws { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::ISelfController#SetRequiresCaptureButtonShortPressedMessage") }
+	override func setScreenShotImageOrientation(_ _0: UInt32) throws { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::ISelfController#SetScreenShotImageOrientation") }
+	override func setDesirableKeyboardLayout(_ _0: UInt32) throws { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::ISelfController#SetDesirableKeyboardLayout") }
+	override func createManagedDisplayLayer() throws -> UInt64 { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::ISelfController#CreateManagedDisplayLayer") }
+	override func isSystemBufferSharingEnabled() throws { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::ISelfController#IsSystemBufferSharingEnabled") }
+	override func getSystemSharedLayerHandle() throws -> (NnViFbshare_SharedBufferHandle, NnViFbshare_SharedLayerHandle) { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::ISelfController#GetSystemSharedLayerHandle") }
+	override func setHandlesRequestToDisplay(_ _0: UInt8) throws { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::ISelfController#SetHandlesRequestToDisplay") }
+	override func approveToDisplay() throws { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::ISelfController#ApproveToDisplay") }
+	override func overrideAutoSleepTimeAndDimmingTime(_ _0: UInt32, _ _1: UInt32, _ _2: UInt32, _ _3: UInt32) throws { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::ISelfController#OverrideAutoSleepTimeAndDimmingTime") }
+	override func setMediaPlaybackState(_ _0: UInt8) throws { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::ISelfController#SetMediaPlaybackState") }
+	override func setIdleTimeDetectionExtension(_ _0: UInt32) throws { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::ISelfController#SetIdleTimeDetectionExtension") }
+	override func getIdleTimeDetectionExtension() throws -> UInt32 { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::ISelfController#GetIdleTimeDetectionExtension") }
+	override func setInputDetectionSourceSet(_ _0: UInt32) throws { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::ISelfController#SetInputDetectionSourceSet") }
+	override func reportUserIsActive() throws { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::ISelfController#ReportUserIsActive") }
+	override func getCurrentIlluminance() throws -> Float32 { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::ISelfController#GetCurrentIlluminance") }
+	override func isIlluminanceAvailable() throws -> UInt8 { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::ISelfController#IsIlluminanceAvailable") }
+	override func reportMultimediaError(_ _0: UInt32, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::ISelfController#ReportMultimediaError") }
+	override func setWirelessPriorityMode(_ _0: UInt32) throws { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::ISelfController#SetWirelessPriorityMode") }
+}
+*/
+
 class NnAmService_ILockAccessor: IpcService {
 	func tryLock(_ _0: UInt8) throws -> (UInt8, KObject) { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::ILockAccessor#TryLock") }
 	func unlock() throws { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::ILockAccessor#Unlock") }
@@ -1830,6 +2229,14 @@ class NnAmService_ILockAccessor: IpcService {
 		}
 	}
 }
+
+/*
+class NnAmService_ILockAccessor_Impl: NnAmService_ILockAccessor {
+	override func tryLock(_ _0: UInt8) throws -> (UInt8, KObject) { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::ILockAccessor#TryLock") }
+	override func unlock() throws { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::ILockAccessor#Unlock") }
+	override func getEvent() throws -> KObject { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::ILockAccessor#GetEvent") }
+}
+*/
 
 class NnAmService_IApplicationAccessor: IpcService {
 	func getAppletStateChangedEvent() throws -> KObject { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IApplicationAccessor#GetAppletStateChangedEvent") }
@@ -1916,3 +2323,22 @@ class NnAmService_IApplicationAccessor: IpcService {
 		}
 	}
 }
+
+/*
+class NnAmService_IApplicationAccessor_Impl: NnAmService_IApplicationAccessor {
+	override func getAppletStateChangedEvent() throws -> KObject { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IApplicationAccessor#GetAppletStateChangedEvent") }
+	override func isCompleted() throws -> UInt8 { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IApplicationAccessor#IsCompleted") }
+	override func start() throws { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IApplicationAccessor#Start") }
+	override func requestExit() throws { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IApplicationAccessor#RequestExit") }
+	override func terminate() throws { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IApplicationAccessor#Terminate") }
+	override func getResult() throws { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IApplicationAccessor#GetResult") }
+	override func requestForApplicationToGetForeground() throws { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IApplicationAccessor#RequestForApplicationToGetForeground") }
+	override func terminateAllLibraryApplets() throws { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IApplicationAccessor#TerminateAllLibraryApplets") }
+	override func areAnyLibraryAppletsLeft() throws -> UInt8 { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IApplicationAccessor#AreAnyLibraryAppletsLeft") }
+	override func getCurrentLibraryApplet() throws -> NnAmService_IAppletAccessor { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IApplicationAccessor#GetCurrentLibraryApplet") }
+	override func getApplicationId() throws -> NnNcm_ApplicationId { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IApplicationAccessor#GetApplicationId") }
+	override func pushLaunchParameter(_ _0: UInt32, _ _1: NnAmService_IStorage) throws { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IApplicationAccessor#PushLaunchParameter") }
+	override func getApplicationControlProperty(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IApplicationAccessor#GetApplicationControlProperty") }
+	override func getApplicationLaunchProperty(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::IApplicationAccessor#GetApplicationLaunchProperty") }
+}
+*/

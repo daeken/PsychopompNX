@@ -15,6 +15,12 @@ class NnUsbPdDetail_IPdCradleManager: IpcService {
 	}
 }
 
+/*
+class NnUsbPdDetail_IPdCradleManager_Impl: NnUsbPdDetail_IPdCradleManager {
+	override func getPdCradleSession() throws -> NnUsbPdDetail_IPdCradleSession { throw IpcError.unimplemented(name: "nn::usb::pd::detail::nn::usb::pd::detail::IPdCradleManager#GetPdCradleSession") }
+}
+*/
+
 class NnUsbPdDetail_IPdManufactureManager: IpcService {
 	func unknown0() throws -> NnUsbPdDetail_IPdManufactureSession { throw IpcError.unimplemented(name: "nn::usb::pd::detail::nn::usb::pd::detail::IPdManufactureManager#Unknown0") }
 	
@@ -31,6 +37,12 @@ class NnUsbPdDetail_IPdManufactureManager: IpcService {
 		}
 	}
 }
+
+/*
+class NnUsbPdDetail_IPdManufactureManager_Impl: NnUsbPdDetail_IPdManufactureManager {
+	override func unknown0() throws -> NnUsbPdDetail_IPdManufactureSession { throw IpcError.unimplemented(name: "nn::usb::pd::detail::nn::usb::pd::detail::IPdManufactureManager#Unknown0") }
+}
+*/
 
 class NnUsbPdDetail_IPdManufactureSession: IpcService {
 	func unknown0() throws -> Any? { throw IpcError.unimplemented(name: "nn::usb::pd::detail::nn::usb::pd::detail::IPdManufactureSession#Unknown0") }
@@ -62,6 +74,15 @@ class NnUsbPdDetail_IPdManufactureSession: IpcService {
 		}
 	}
 }
+
+/*
+class NnUsbPdDetail_IPdManufactureSession_Impl: NnUsbPdDetail_IPdManufactureSession {
+	override func unknown0() throws -> Any? { throw IpcError.unimplemented(name: "nn::usb::pd::detail::nn::usb::pd::detail::IPdManufactureSession#Unknown0") }
+	override func unknown1() throws -> Any? { throw IpcError.unimplemented(name: "nn::usb::pd::detail::nn::usb::pd::detail::IPdManufactureSession#Unknown1") }
+	override func unknown2() throws -> Any? { throw IpcError.unimplemented(name: "nn::usb::pd::detail::nn::usb::pd::detail::IPdManufactureSession#Unknown2") }
+	override func unknown3() throws -> Any? { throw IpcError.unimplemented(name: "nn::usb::pd::detail::nn::usb::pd::detail::IPdManufactureSession#Unknown3") }
+}
+*/
 
 class NnUsbPdDetail_IPdCradleSession: IpcService {
 	func vdmUserWrite(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::usb::pd::detail::nn::usb::pd::detail::IPdCradleSession#VdmUserWrite") }
@@ -119,6 +140,20 @@ class NnUsbPdDetail_IPdCradleSession: IpcService {
 	}
 }
 
+/*
+class NnUsbPdDetail_IPdCradleSession_Impl: NnUsbPdDetail_IPdCradleSession {
+	override func vdmUserWrite(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::usb::pd::detail::nn::usb::pd::detail::IPdCradleSession#VdmUserWrite") }
+	override func vdmUserRead(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::usb::pd::detail::nn::usb::pd::detail::IPdCradleSession#VdmUserRead") }
+	override func vdm20Init() throws { throw IpcError.unimplemented(name: "nn::usb::pd::detail::nn::usb::pd::detail::IPdCradleSession#Vdm20Init") }
+	override func getFwType() throws -> Any? { throw IpcError.unimplemented(name: "nn::usb::pd::detail::nn::usb::pd::detail::IPdCradleSession#GetFwType") }
+	override func getFwRevision() throws -> Any? { throw IpcError.unimplemented(name: "nn::usb::pd::detail::nn::usb::pd::detail::IPdCradleSession#GetFwRevision") }
+	override func getManufacturerId() throws -> Any? { throw IpcError.unimplemented(name: "nn::usb::pd::detail::nn::usb::pd::detail::IPdCradleSession#GetManufacturerId") }
+	override func getDeviceId() throws -> Any? { throw IpcError.unimplemented(name: "nn::usb::pd::detail::nn::usb::pd::detail::IPdCradleSession#GetDeviceId") }
+	override func unknown7() throws -> Any? { throw IpcError.unimplemented(name: "nn::usb::pd::detail::nn::usb::pd::detail::IPdCradleSession#Unknown7") }
+	override func unknown8() throws -> Any? { throw IpcError.unimplemented(name: "nn::usb::pd::detail::nn::usb::pd::detail::IPdCradleSession#Unknown8") }
+}
+*/
+
 class NnUsbPdDetail_IPdManager: IpcService {
 	func getPdSession() throws -> NnUsbPdDetail_IPdSession { throw IpcError.unimplemented(name: "nn::usb::pd::detail::nn::usb::pd::detail::IPdManager#GetPdSession") }
 	
@@ -135,6 +170,12 @@ class NnUsbPdDetail_IPdManager: IpcService {
 		}
 	}
 }
+
+/*
+class NnUsbPdDetail_IPdManager_Impl: NnUsbPdDetail_IPdManager {
+	override func getPdSession() throws -> NnUsbPdDetail_IPdSession { throw IpcError.unimplemented(name: "nn::usb::pd::detail::nn::usb::pd::detail::IPdManager#GetPdSession") }
+}
+*/
 
 class NnUsbPdDetail_IPdSession: IpcService {
 	func bindNoticeEvent() throws -> KObject { throw IpcError.unimplemented(name: "nn::usb::pd::detail::nn::usb::pd::detail::IPdSession#BindNoticeEvent") }
@@ -182,3 +223,15 @@ class NnUsbPdDetail_IPdSession: IpcService {
 		}
 	}
 }
+
+/*
+class NnUsbPdDetail_IPdSession_Impl: NnUsbPdDetail_IPdSession {
+	override func bindNoticeEvent() throws -> KObject { throw IpcError.unimplemented(name: "nn::usb::pd::detail::nn::usb::pd::detail::IPdSession#BindNoticeEvent") }
+	override func unknown1() throws { throw IpcError.unimplemented(name: "nn::usb::pd::detail::nn::usb::pd::detail::IPdSession#Unknown1") }
+	override func getStatus() throws -> Any? { throw IpcError.unimplemented(name: "nn::usb::pd::detail::nn::usb::pd::detail::IPdSession#GetStatus") }
+	override func getNotice() throws -> Any? { throw IpcError.unimplemented(name: "nn::usb::pd::detail::nn::usb::pd::detail::IPdSession#GetNotice") }
+	override func unknown4() throws { throw IpcError.unimplemented(name: "nn::usb::pd::detail::nn::usb::pd::detail::IPdSession#Unknown4") }
+	override func unknown5() throws { throw IpcError.unimplemented(name: "nn::usb::pd::detail::nn::usb::pd::detail::IPdSession#Unknown5") }
+	override func replyPowerRequest(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::usb::pd::detail::nn::usb::pd::detail::IPdSession#ReplyPowerRequest") }
+}
+*/

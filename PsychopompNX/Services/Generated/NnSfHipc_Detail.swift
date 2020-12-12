@@ -36,3 +36,13 @@ class NnSfHipcDetail_IHipcManager: IpcService {
 		}
 	}
 }
+
+/*
+class NnSfHipcDetail_IHipcManager_Impl: NnSfHipcDetail_IHipcManager {
+	override func unknown0() throws -> Any? { throw IpcError.unimplemented(name: "nn::sf::hipc::detail::nn::sf::hipc::detail::IHipcManager#Unknown0") }
+	override func unknown1(_ _0: Any?) throws -> IpcService { throw IpcError.unimplemented(name: "nn::sf::hipc::detail::nn::sf::hipc::detail::IHipcManager#Unknown1") }
+	override func unknown2() throws -> IpcService { throw IpcError.unimplemented(name: "nn::sf::hipc::detail::nn::sf::hipc::detail::IHipcManager#Unknown2") }
+	override func unknown3() throws -> Any? { throw IpcError.unimplemented(name: "nn::sf::hipc::detail::nn::sf::hipc::detail::IHipcManager#Unknown3") }
+	override func unknown4(_ _0: Any?) throws -> IpcService { throw IpcError.unimplemented(name: "nn::sf::hipc::detail::nn::sf::hipc::detail::IHipcManager#Unknown4") }
+}
+*/

@@ -153,3 +153,37 @@ class NnLblDetail_ILblController: IpcService {
 		}
 	}
 }
+
+/*
+class NnLblDetail_ILblController_Impl: NnLblDetail_ILblController {
+	override func unknown0() throws { throw IpcError.unimplemented(name: "nn::lbl::detail::nn::lbl::detail::ILblController#Unknown0") }
+	override func unknown1() throws { throw IpcError.unimplemented(name: "nn::lbl::detail::nn::lbl::detail::ILblController#Unknown1") }
+	override func unknown2(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::lbl::detail::nn::lbl::detail::ILblController#Unknown2") }
+	override func unknown3() throws -> Any? { throw IpcError.unimplemented(name: "nn::lbl::detail::nn::lbl::detail::ILblController#Unknown3") }
+	override func unknown4() throws { throw IpcError.unimplemented(name: "nn::lbl::detail::nn::lbl::detail::ILblController#Unknown4") }
+	override func unknown5() throws -> Any? { throw IpcError.unimplemented(name: "nn::lbl::detail::nn::lbl::detail::ILblController#Unknown5") }
+	override func turnOnBacklight(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::lbl::detail::nn::lbl::detail::ILblController#TurnOnBacklight") }
+	override func turnOffBacklight(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::lbl::detail::nn::lbl::detail::ILblController#TurnOffBacklight") }
+	override func getBacklightStatus() throws -> Any? { throw IpcError.unimplemented(name: "nn::lbl::detail::nn::lbl::detail::ILblController#GetBacklightStatus") }
+	override func unknown9() throws { throw IpcError.unimplemented(name: "nn::lbl::detail::nn::lbl::detail::ILblController#Unknown9") }
+	override func unknown10() throws { throw IpcError.unimplemented(name: "nn::lbl::detail::nn::lbl::detail::ILblController#Unknown10") }
+	override func unknown11() throws -> Any? { throw IpcError.unimplemented(name: "nn::lbl::detail::nn::lbl::detail::ILblController#Unknown11") }
+	override func unknown12() throws { throw IpcError.unimplemented(name: "nn::lbl::detail::nn::lbl::detail::ILblController#Unknown12") }
+	override func unknown13() throws { throw IpcError.unimplemented(name: "nn::lbl::detail::nn::lbl::detail::ILblController#Unknown13") }
+	override func unknown14() throws -> Any? { throw IpcError.unimplemented(name: "nn::lbl::detail::nn::lbl::detail::ILblController#Unknown14") }
+	override func unknown15(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::lbl::detail::nn::lbl::detail::ILblController#Unknown15") }
+	override func readRawLightSensor() throws -> Any? { throw IpcError.unimplemented(name: "nn::lbl::detail::nn::lbl::detail::ILblController#ReadRawLightSensor") }
+	override func unknown17(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::lbl::detail::nn::lbl::detail::ILblController#Unknown17") }
+	override func unknown18(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::lbl::detail::nn::lbl::detail::ILblController#Unknown18") }
+	override func unknown19(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::lbl::detail::nn::lbl::detail::ILblController#Unknown19") }
+	override func unknown20() throws -> Any? { throw IpcError.unimplemented(name: "nn::lbl::detail::nn::lbl::detail::ILblController#Unknown20") }
+	override func unknown21(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::lbl::detail::nn::lbl::detail::ILblController#Unknown21") }
+	override func unknown22() throws -> Any? { throw IpcError.unimplemented(name: "nn::lbl::detail::nn::lbl::detail::ILblController#Unknown22") }
+	override func unknown23() throws -> Any? { throw IpcError.unimplemented(name: "nn::lbl::detail::nn::lbl::detail::ILblController#Unknown23") }
+	override func unknown24(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::lbl::detail::nn::lbl::detail::ILblController#Unknown24") }
+	override func unknown25() throws -> Any? { throw IpcError.unimplemented(name: "nn::lbl::detail::nn::lbl::detail::ILblController#Unknown25") }
+	override func enableVrMode() throws { throw IpcError.unimplemented(name: "nn::lbl::detail::nn::lbl::detail::ILblController#EnableVrMode") }
+	override func disableVrMode() throws { throw IpcError.unimplemented(name: "nn::lbl::detail::nn::lbl::detail::ILblController#DisableVrMode") }
+	override func getVrMode() throws -> Any? { throw IpcError.unimplemented(name: "nn::lbl::detail::nn::lbl::detail::ILblController#GetVrMode") }
+}
+*/

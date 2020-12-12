@@ -70,3 +70,20 @@ class NnSpsmDetail_IPowerStateInterface: IpcService {
 		}
 	}
 }
+
+/*
+class NnSpsmDetail_IPowerStateInterface_Impl: NnSpsmDetail_IPowerStateInterface {
+	override func getState() throws -> Any? { throw IpcError.unimplemented(name: "nn::spsm::detail::nn::spsm::detail::IPowerStateInterface#GetState") }
+	override func sleepSystemAndWaitAwake() throws -> KObject { throw IpcError.unimplemented(name: "nn::spsm::detail::nn::spsm::detail::IPowerStateInterface#SleepSystemAndWaitAwake") }
+	override func unknown2() throws -> Any? { throw IpcError.unimplemented(name: "nn::spsm::detail::nn::spsm::detail::IPowerStateInterface#Unknown2") }
+	override func unknown3(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::spsm::detail::nn::spsm::detail::IPowerStateInterface#Unknown3") }
+	override func getNotificationMessageEventHandle() throws -> KObject { throw IpcError.unimplemented(name: "nn::spsm::detail::nn::spsm::detail::IPowerStateInterface#GetNotificationMessageEventHandle") }
+	override func unknown5() throws -> Any? { throw IpcError.unimplemented(name: "nn::spsm::detail::nn::spsm::detail::IPowerStateInterface#Unknown5") }
+	override func unknown6() throws -> Any? { throw IpcError.unimplemented(name: "nn::spsm::detail::nn::spsm::detail::IPowerStateInterface#Unknown6") }
+	override func unknown7() throws { throw IpcError.unimplemented(name: "nn::spsm::detail::nn::spsm::detail::IPowerStateInterface#Unknown7") }
+	override func analyzePerformanceLogForLastSleepWakeSequence(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::spsm::detail::nn::spsm::detail::IPowerStateInterface#AnalyzePerformanceLogForLastSleepWakeSequence") }
+	override func changeHomeButtonLongPressingTime(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::spsm::detail::nn::spsm::detail::IPowerStateInterface#ChangeHomeButtonLongPressingTime") }
+	override func unknown10() throws { throw IpcError.unimplemented(name: "nn::spsm::detail::nn::spsm::detail::IPowerStateInterface#Unknown10") }
+	override func unknown11(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::spsm::detail::nn::spsm::detail::IPowerStateInterface#Unknown11") }
+}
+*/

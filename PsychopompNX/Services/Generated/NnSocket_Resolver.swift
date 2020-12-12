@@ -70,3 +70,18 @@ class NnSocketResolver_IResolver: IpcService {
 		}
 	}
 }
+
+/*
+class NnSocketResolver_IResolver_Impl: NnSocketResolver_IResolver {
+	override func setDnsAddressesPrivate(_ _0: UInt32, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::socket::resolver::nn::socket::resolver::IResolver#SetDnsAddressesPrivate") }
+	override func getDnsAddressPrivate(_ _0: UInt32, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::socket::resolver::nn::socket::resolver::IResolver#GetDnsAddressPrivate") }
+	override func getHostByName(_ _0: UInt8, _ _1: UInt32, _ _2: UInt64, _ _3: Pid, _ _4: Buffer<UInt8>, _ _5: Buffer<UInt8>) throws -> (UInt32, UInt32, UInt32) { throw IpcError.unimplemented(name: "nn::socket::resolver::nn::socket::resolver::IResolver#GetHostByName") }
+	override func getHostByAddr(_ _0: UInt32, _ _1: UInt32, _ _2: UInt32, _ _3: UInt64, _ _4: Pid, _ _5: Buffer<UInt8>, _ _6: Buffer<UInt8>) throws -> (UInt32, UInt32, UInt32) { throw IpcError.unimplemented(name: "nn::socket::resolver::nn::socket::resolver::IResolver#GetHostByAddr") }
+	override func getHostStringError(_ _0: UInt32, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::socket::resolver::nn::socket::resolver::IResolver#GetHostStringError") }
+	override func getGaiStringError(_ _0: UInt32, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::socket::resolver::nn::socket::resolver::IResolver#GetGaiStringError") }
+	override func getAddrInfo(_ enable_nsd_resolve: Bool, _ _1: UInt32, _ pid_placeholder: UInt64, _ _3: Pid, _ host: Buffer<Int8>, _ service: Buffer<Int8>, _ hints: Buffer<Packed_Addrinfo>, _ response: Buffer<Packed_Addrinfo>) throws -> (ret: Int32, bsd_errno: UInt32, packed_addrinfo_size: UInt32) { throw IpcError.unimplemented(name: "nn::socket::resolver::nn::socket::resolver::IResolver#GetAddrInfo") }
+	override func getNameInfo(_ _0: UInt32, _ _1: UInt32, _ _2: UInt64, _ _3: Pid, _ _4: Buffer<UInt8>, _ _5: Buffer<UInt8>, _ _6: Buffer<UInt8>) throws -> (UInt32, UInt32) { throw IpcError.unimplemented(name: "nn::socket::resolver::nn::socket::resolver::IResolver#GetNameInfo") }
+	override func requestCancelHandle(_ _0: UInt64, _ _1: Pid) throws -> UInt32 { throw IpcError.unimplemented(name: "nn::socket::resolver::nn::socket::resolver::IResolver#RequestCancelHandle") }
+	override func cancelSocketCall(_ _0: UInt32, _ _1: UInt64, _ _2: Pid) throws { throw IpcError.unimplemented(name: "nn::socket::resolver::nn::socket::resolver::IResolver#CancelSocketCall") }
+}
+*/

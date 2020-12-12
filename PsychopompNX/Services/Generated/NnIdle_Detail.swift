@@ -39,3 +39,14 @@ class NnIdleDetail_IPolicyManagerSystem: IpcService {
 		}
 	}
 }
+
+/*
+class NnIdleDetail_IPolicyManagerSystem_Impl: NnIdleDetail_IPolicyManagerSystem {
+	override func getAutoPowerDownEvent() throws -> KObject { throw IpcError.unimplemented(name: "nn::idle::detail::nn::idle::detail::IPolicyManagerSystem#GetAutoPowerDownEvent") }
+	override func unknown1() throws { throw IpcError.unimplemented(name: "nn::idle::detail::nn::idle::detail::IPolicyManagerSystem#Unknown1") }
+	override func unknown2() throws { throw IpcError.unimplemented(name: "nn::idle::detail::nn::idle::detail::IPolicyManagerSystem#Unknown2") }
+	override func unknown3(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::idle::detail::nn::idle::detail::IPolicyManagerSystem#Unknown3") }
+	override func unknown4() throws { throw IpcError.unimplemented(name: "nn::idle::detail::nn::idle::detail::IPolicyManagerSystem#Unknown4") }
+	override func unknown5() throws { throw IpcError.unimplemented(name: "nn::idle::detail::nn::idle::detail::IPolicyManagerSystem#Unknown5") }
+}
+*/

@@ -27,6 +27,14 @@ class NnBcatDetailIpc_IServiceCreator: IpcService {
 	}
 }
 
+/*
+class NnBcatDetailIpc_IServiceCreator_Impl: NnBcatDetailIpc_IServiceCreator {
+	override func createBcatService(_ _0: UInt64, _ _1: Pid) throws -> NnBcatDetailIpc_IBcatService { throw IpcError.unimplemented(name: "nn::bcat::detail::ipc::nn::bcat::detail::ipc::IServiceCreator#CreateBcatService") }
+	override func createDeliveryCacheStorageService(_ _0: UInt64, _ _1: Pid) throws -> NnBcatDetailIpc_IDeliveryCacheStorageService { throw IpcError.unimplemented(name: "nn::bcat::detail::ipc::nn::bcat::detail::ipc::IServiceCreator#CreateDeliveryCacheStorageService") }
+	override func createDeliveryCacheStorageServiceWithApplicationId(_ _0: Nn_ApplicationId) throws -> NnBcatDetailIpc_IDeliveryCacheStorageService { throw IpcError.unimplemented(name: "nn::bcat::detail::ipc::nn::bcat::detail::ipc::IServiceCreator#CreateDeliveryCacheStorageServiceWithApplicationId") }
+}
+*/
+
 class NnBcatDetailIpc_IDeliveryCacheProgressService: IpcService {
 	func getEvent() throws -> KObject { throw IpcError.unimplemented(name: "nn::bcat::detail::ipc::nn::bcat::detail::ipc::IDeliveryCacheProgressService#GetEvent") }
 	func getImpl(_ _0: Buffer<NnBcatDetail_DeliveryCacheProgressImpl>) throws { throw IpcError.unimplemented(name: "nn::bcat::detail::ipc::nn::bcat::detail::ipc::IDeliveryCacheProgressService#GetImpl") }
@@ -48,6 +56,13 @@ class NnBcatDetailIpc_IDeliveryCacheProgressService: IpcService {
 		}
 	}
 }
+
+/*
+class NnBcatDetailIpc_IDeliveryCacheProgressService_Impl: NnBcatDetailIpc_IDeliveryCacheProgressService {
+	override func getEvent() throws -> KObject { throw IpcError.unimplemented(name: "nn::bcat::detail::ipc::nn::bcat::detail::ipc::IDeliveryCacheProgressService#GetEvent") }
+	override func getImpl(_ _0: Buffer<NnBcatDetail_DeliveryCacheProgressImpl>) throws { throw IpcError.unimplemented(name: "nn::bcat::detail::ipc::nn::bcat::detail::ipc::IDeliveryCacheProgressService#GetImpl") }
+}
+*/
 
 class NnBcatDetailIpc_IDeliveryCacheFileService: IpcService {
 	func open(_ _0: NnBcat_DirectoryName, _ _1: NnBcat_FileName) throws { throw IpcError.unimplemented(name: "nn::bcat::detail::ipc::nn::bcat::detail::ipc::IDeliveryCacheFileService#Open") }
@@ -84,6 +99,15 @@ class NnBcatDetailIpc_IDeliveryCacheFileService: IpcService {
 	}
 }
 
+/*
+class NnBcatDetailIpc_IDeliveryCacheFileService_Impl: NnBcatDetailIpc_IDeliveryCacheFileService {
+	override func open(_ _0: NnBcat_DirectoryName, _ _1: NnBcat_FileName) throws { throw IpcError.unimplemented(name: "nn::bcat::detail::ipc::nn::bcat::detail::ipc::IDeliveryCacheFileService#Open") }
+	override func read(_ _0: UInt64, _ _1: Buffer<UInt8>) throws -> UInt64 { throw IpcError.unimplemented(name: "nn::bcat::detail::ipc::nn::bcat::detail::ipc::IDeliveryCacheFileService#Read") }
+	override func getSize() throws -> UInt64 { throw IpcError.unimplemented(name: "nn::bcat::detail::ipc::nn::bcat::detail::ipc::IDeliveryCacheFileService#GetSize") }
+	override func getDigest() throws -> NnBcat_Digest { throw IpcError.unimplemented(name: "nn::bcat::detail::ipc::nn::bcat::detail::ipc::IDeliveryCacheFileService#GetDigest") }
+}
+*/
+
 class NnBcatDetailIpc_IDeliveryCacheDirectoryService: IpcService {
 	func open(_ _0: NnBcat_DirectoryName) throws { throw IpcError.unimplemented(name: "nn::bcat::detail::ipc::nn::bcat::detail::ipc::IDeliveryCacheDirectoryService#Open") }
 	func read(_ _0: Buffer<NnBcat_DeliveryCacheDirectoryEntry>) throws -> UInt32 { throw IpcError.unimplemented(name: "nn::bcat::detail::ipc::nn::bcat::detail::ipc::IDeliveryCacheDirectoryService#Read") }
@@ -111,6 +135,14 @@ class NnBcatDetailIpc_IDeliveryCacheDirectoryService: IpcService {
 		}
 	}
 }
+
+/*
+class NnBcatDetailIpc_IDeliveryCacheDirectoryService_Impl: NnBcatDetailIpc_IDeliveryCacheDirectoryService {
+	override func open(_ _0: NnBcat_DirectoryName) throws { throw IpcError.unimplemented(name: "nn::bcat::detail::ipc::nn::bcat::detail::ipc::IDeliveryCacheDirectoryService#Open") }
+	override func read(_ _0: Buffer<NnBcat_DeliveryCacheDirectoryEntry>) throws -> UInt32 { throw IpcError.unimplemented(name: "nn::bcat::detail::ipc::nn::bcat::detail::ipc::IDeliveryCacheDirectoryService#Read") }
+	override func getCount() throws -> UInt32 { throw IpcError.unimplemented(name: "nn::bcat::detail::ipc::nn::bcat::detail::ipc::IDeliveryCacheDirectoryService#GetCount") }
+}
+*/
 
 class NnBcatDetailIpc_IBcatService: IpcService {
 	func requestSyncDeliveryCache() throws -> NnBcatDetailIpc_IDeliveryCacheProgressService { throw IpcError.unimplemented(name: "nn::bcat::detail::ipc::nn::bcat::detail::ipc::IBcatService#RequestSyncDeliveryCache") }
@@ -198,6 +230,25 @@ class NnBcatDetailIpc_IBcatService: IpcService {
 	}
 }
 
+/*
+class NnBcatDetailIpc_IBcatService_Impl: NnBcatDetailIpc_IBcatService {
+	override func requestSyncDeliveryCache() throws -> NnBcatDetailIpc_IDeliveryCacheProgressService { throw IpcError.unimplemented(name: "nn::bcat::detail::ipc::nn::bcat::detail::ipc::IBcatService#RequestSyncDeliveryCache") }
+	override func requestSyncDeliveryCacheWithDirectoryName(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::bcat::detail::ipc::nn::bcat::detail::ipc::IBcatService#RequestSyncDeliveryCacheWithDirectoryName") }
+	override func cancelSyncDeliveryCacheRequest(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::bcat::detail::ipc::nn::bcat::detail::ipc::IBcatService#CancelSyncDeliveryCacheRequest") }
+	override func requestSyncDeliveryCacheWithApplicationId(_ _0: UInt32, _ _1: Nn_ApplicationId) throws -> NnBcatDetailIpc_IDeliveryCacheProgressService { throw IpcError.unimplemented(name: "nn::bcat::detail::ipc::nn::bcat::detail::ipc::IBcatService#RequestSyncDeliveryCacheWithApplicationId") }
+	override func requestSyncDeliveryCacheWithApplicationIdAndDirectoryName(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::bcat::detail::ipc::nn::bcat::detail::ipc::IBcatService#RequestSyncDeliveryCacheWithApplicationIdAndDirectoryName") }
+	override func setPassphrase(_ _0: Nn_ApplicationId, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::bcat::detail::ipc::nn::bcat::detail::ipc::IBcatService#SetPassphrase") }
+	override func registerBackgroundDeliveryTask(_ _0: UInt32, _ _1: Nn_ApplicationId) throws { throw IpcError.unimplemented(name: "nn::bcat::detail::ipc::nn::bcat::detail::ipc::IBcatService#RegisterBackgroundDeliveryTask") }
+	override func unregisterBackgroundDeliveryTask(_ _0: Nn_ApplicationId) throws { throw IpcError.unimplemented(name: "nn::bcat::detail::ipc::nn::bcat::detail::ipc::IBcatService#UnregisterBackgroundDeliveryTask") }
+	override func blockDeliveryTask(_ _0: Nn_ApplicationId) throws { throw IpcError.unimplemented(name: "nn::bcat::detail::ipc::nn::bcat::detail::ipc::IBcatService#BlockDeliveryTask") }
+	override func unblockDeliveryTask(_ _0: Nn_ApplicationId) throws { throw IpcError.unimplemented(name: "nn::bcat::detail::ipc::nn::bcat::detail::ipc::IBcatService#UnblockDeliveryTask") }
+	override func enumerateBackgroundDeliveryTask(_ _0: Buffer<NnBcat_TaskInfo>) throws -> UInt32 { throw IpcError.unimplemented(name: "nn::bcat::detail::ipc::nn::bcat::detail::ipc::IBcatService#EnumerateBackgroundDeliveryTask") }
+	override func getDeliveryList(_ _0: Nn_ApplicationId, _ _1: Buffer<UInt8>) throws -> UInt64 { throw IpcError.unimplemented(name: "nn::bcat::detail::ipc::nn::bcat::detail::ipc::IBcatService#GetDeliveryList") }
+	override func clearDeliveryCacheStorage(_ _0: Nn_ApplicationId) throws { throw IpcError.unimplemented(name: "nn::bcat::detail::ipc::nn::bcat::detail::ipc::IBcatService#ClearDeliveryCacheStorage") }
+	override func getPushNotificationLog(_ _0: Buffer<NnBcat_PushNotificationLog>) throws -> UInt32 { throw IpcError.unimplemented(name: "nn::bcat::detail::ipc::nn::bcat::detail::ipc::IBcatService#GetPushNotificationLog") }
+}
+*/
+
 class NnBcatDetailIpc_IDeliveryCacheStorageService: IpcService {
 	func createFileService() throws -> NnBcatDetailIpc_IDeliveryCacheFileService { throw IpcError.unimplemented(name: "nn::bcat::detail::ipc::nn::bcat::detail::ipc::IDeliveryCacheStorageService#CreateFileService") }
 	func createDirectoryService() throws -> NnBcatDetailIpc_IDeliveryCacheDirectoryService { throw IpcError.unimplemented(name: "nn::bcat::detail::ipc::nn::bcat::detail::ipc::IDeliveryCacheStorageService#CreateDirectoryService") }
@@ -226,3 +277,11 @@ class NnBcatDetailIpc_IDeliveryCacheStorageService: IpcService {
 		}
 	}
 }
+
+/*
+class NnBcatDetailIpc_IDeliveryCacheStorageService_Impl: NnBcatDetailIpc_IDeliveryCacheStorageService {
+	override func createFileService() throws -> NnBcatDetailIpc_IDeliveryCacheFileService { throw IpcError.unimplemented(name: "nn::bcat::detail::ipc::nn::bcat::detail::ipc::IDeliveryCacheStorageService#CreateFileService") }
+	override func createDirectoryService() throws -> NnBcatDetailIpc_IDeliveryCacheDirectoryService { throw IpcError.unimplemented(name: "nn::bcat::detail::ipc::nn::bcat::detail::ipc::IDeliveryCacheStorageService#CreateDirectoryService") }
+	override func enumerateDeliveryCacheDirectory(_ _0: Buffer<NnBcat_DirectoryName>) throws -> UInt32 { throw IpcError.unimplemented(name: "nn::bcat::detail::ipc::nn::bcat::detail::ipc::IDeliveryCacheStorageService#EnumerateDeliveryCacheDirectory") }
+}
+*/

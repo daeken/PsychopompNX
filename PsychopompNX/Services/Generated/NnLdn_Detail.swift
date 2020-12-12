@@ -57,6 +57,19 @@ class NnLdnDetail_IMonitorService: IpcService {
 	}
 }
 
+/*
+class NnLdnDetail_IMonitorService_Impl: NnLdnDetail_IMonitorService {
+	override func getStateForMonitor() throws -> UInt32 { throw IpcError.unimplemented(name: "nn::ldn::detail::nn::ldn::detail::IMonitorService#GetStateForMonitor") }
+	override func getNetworkInfoForMonitor(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::ldn::detail::nn::ldn::detail::IMonitorService#GetNetworkInfoForMonitor") }
+	override func getIpv4AddressForMonitor() throws -> (UInt32, UInt32) { throw IpcError.unimplemented(name: "nn::ldn::detail::nn::ldn::detail::IMonitorService#GetIpv4AddressForMonitor") }
+	override func getDisconnectReasonForMonitor() throws -> UInt16 { throw IpcError.unimplemented(name: "nn::ldn::detail::nn::ldn::detail::IMonitorService#GetDisconnectReasonForMonitor") }
+	override func getSecurityParameterForMonitor() throws -> [UInt8] { throw IpcError.unimplemented(name: "nn::ldn::detail::nn::ldn::detail::IMonitorService#GetSecurityParameterForMonitor") }
+	override func getNetworkConfigForMonitor() throws -> [UInt8] { throw IpcError.unimplemented(name: "nn::ldn::detail::nn::ldn::detail::IMonitorService#GetNetworkConfigForMonitor") }
+	override func initializeMonitor() throws { throw IpcError.unimplemented(name: "nn::ldn::detail::nn::ldn::detail::IMonitorService#InitializeMonitor") }
+	override func finalizeMonitor() throws { throw IpcError.unimplemented(name: "nn::ldn::detail::nn::ldn::detail::IMonitorService#FinalizeMonitor") }
+}
+*/
+
 class NnLdnDetail_IUserServiceCreator: IpcService {
 	func createUserLocalCommunicationService() throws -> NnLdnDetail_IUserLocalCommunicationService { throw IpcError.unimplemented(name: "nn::ldn::detail::nn::ldn::detail::IUserServiceCreator#CreateUserLocalCommunicationService") }
 	
@@ -73,6 +86,12 @@ class NnLdnDetail_IUserServiceCreator: IpcService {
 		}
 	}
 }
+
+/*
+class NnLdnDetail_IUserServiceCreator_Impl: NnLdnDetail_IUserServiceCreator {
+	override func createUserLocalCommunicationService() throws -> NnLdnDetail_IUserLocalCommunicationService { throw IpcError.unimplemented(name: "nn::ldn::detail::nn::ldn::detail::IUserServiceCreator#CreateUserLocalCommunicationService") }
+}
+*/
 
 class NnLdnDetail_IUserLocalCommunicationService: IpcService {
 	func getState() throws -> UInt32 { throw IpcError.unimplemented(name: "nn::ldn::detail::nn::ldn::detail::IUserLocalCommunicationService#GetState") }
@@ -231,6 +250,38 @@ class NnLdnDetail_IUserLocalCommunicationService: IpcService {
 	}
 }
 
+/*
+class NnLdnDetail_IUserLocalCommunicationService_Impl: NnLdnDetail_IUserLocalCommunicationService {
+	override func getState() throws -> UInt32 { throw IpcError.unimplemented(name: "nn::ldn::detail::nn::ldn::detail::IUserLocalCommunicationService#GetState") }
+	override func getNetworkInfo(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::ldn::detail::nn::ldn::detail::IUserLocalCommunicationService#GetNetworkInfo") }
+	override func getIpv4Address() throws -> (UInt32, UInt32) { throw IpcError.unimplemented(name: "nn::ldn::detail::nn::ldn::detail::IUserLocalCommunicationService#GetIpv4Address") }
+	override func getDisconnectReason() throws -> UInt16 { throw IpcError.unimplemented(name: "nn::ldn::detail::nn::ldn::detail::IUserLocalCommunicationService#GetDisconnectReason") }
+	override func getSecurityParameter() throws -> [UInt8] { throw IpcError.unimplemented(name: "nn::ldn::detail::nn::ldn::detail::IUserLocalCommunicationService#GetSecurityParameter") }
+	override func getNetworkConfig() throws -> [UInt8] { throw IpcError.unimplemented(name: "nn::ldn::detail::nn::ldn::detail::IUserLocalCommunicationService#GetNetworkConfig") }
+	override func attachStateChangeEvent() throws -> KObject { throw IpcError.unimplemented(name: "nn::ldn::detail::nn::ldn::detail::IUserLocalCommunicationService#AttachStateChangeEvent") }
+	override func getNetworkInfoLatestUpdate(_ _0: Buffer<UInt8>, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::ldn::detail::nn::ldn::detail::IUserLocalCommunicationService#GetNetworkInfoLatestUpdate") }
+	override func scan(_ _0: UInt16, _ _1: [UInt8], _ _2: Buffer<UInt8>) throws -> UInt16 { throw IpcError.unimplemented(name: "nn::ldn::detail::nn::ldn::detail::IUserLocalCommunicationService#Scan") }
+	override func scanPrivate(_ _0: UInt16, _ _1: [UInt8], _ _2: Buffer<UInt8>) throws -> UInt16 { throw IpcError.unimplemented(name: "nn::ldn::detail::nn::ldn::detail::IUserLocalCommunicationService#ScanPrivate") }
+	override func openAccessPoint() throws { throw IpcError.unimplemented(name: "nn::ldn::detail::nn::ldn::detail::IUserLocalCommunicationService#OpenAccessPoint") }
+	override func closeAccessPoint() throws { throw IpcError.unimplemented(name: "nn::ldn::detail::nn::ldn::detail::IUserLocalCommunicationService#CloseAccessPoint") }
+	override func createNetwork(_ _0: [UInt8], _ _1: [UInt8], _ _2: [UInt8]) throws { throw IpcError.unimplemented(name: "nn::ldn::detail::nn::ldn::detail::IUserLocalCommunicationService#CreateNetwork") }
+	override func createNetworkPrivate(_ _0: [UInt8], _ _1: [UInt8], _ _2: [UInt8], _ _3: [UInt8], _ _4: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::ldn::detail::nn::ldn::detail::IUserLocalCommunicationService#CreateNetworkPrivate") }
+	override func destroyNetwork() throws { throw IpcError.unimplemented(name: "nn::ldn::detail::nn::ldn::detail::IUserLocalCommunicationService#DestroyNetwork") }
+	override func reject(_ _0: UInt32) throws { throw IpcError.unimplemented(name: "nn::ldn::detail::nn::ldn::detail::IUserLocalCommunicationService#Reject") }
+	override func setAdvertiseData(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::ldn::detail::nn::ldn::detail::IUserLocalCommunicationService#SetAdvertiseData") }
+	override func setStationAcceptPolicy(_ _0: UInt8) throws { throw IpcError.unimplemented(name: "nn::ldn::detail::nn::ldn::detail::IUserLocalCommunicationService#SetStationAcceptPolicy") }
+	override func addAcceptFilterEntry(_ _0: [UInt8]) throws { throw IpcError.unimplemented(name: "nn::ldn::detail::nn::ldn::detail::IUserLocalCommunicationService#AddAcceptFilterEntry") }
+	override func clearAcceptFilter() throws { throw IpcError.unimplemented(name: "nn::ldn::detail::nn::ldn::detail::IUserLocalCommunicationService#ClearAcceptFilter") }
+	override func openStation() throws { throw IpcError.unimplemented(name: "nn::ldn::detail::nn::ldn::detail::IUserLocalCommunicationService#OpenStation") }
+	override func closeStation() throws { throw IpcError.unimplemented(name: "nn::ldn::detail::nn::ldn::detail::IUserLocalCommunicationService#CloseStation") }
+	override func connect(_ _0: [UInt8], _ _1: [UInt8], _ _2: UInt32, _ _3: UInt32, _ _4: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::ldn::detail::nn::ldn::detail::IUserLocalCommunicationService#Connect") }
+	override func connectPrivate(_ _0: [UInt8], _ _1: [UInt8], _ _2: [UInt8], _ _3: UInt32, _ _4: UInt32, _ _5: [UInt8]) throws { throw IpcError.unimplemented(name: "nn::ldn::detail::nn::ldn::detail::IUserLocalCommunicationService#ConnectPrivate") }
+	override func disconnect() throws { throw IpcError.unimplemented(name: "nn::ldn::detail::nn::ldn::detail::IUserLocalCommunicationService#Disconnect") }
+	override func initialize(_ _0: UInt64, _ _1: Pid) throws { throw IpcError.unimplemented(name: "nn::ldn::detail::nn::ldn::detail::IUserLocalCommunicationService#Initialize") }
+	override func finalize() throws { throw IpcError.unimplemented(name: "nn::ldn::detail::nn::ldn::detail::IUserLocalCommunicationService#Finalize") }
+}
+*/
+
 class NnLdnDetail_ISystemLocalCommunicationService: IpcService {
 	func getState() throws -> UInt32 { throw IpcError.unimplemented(name: "nn::ldn::detail::nn::ldn::detail::ISystemLocalCommunicationService#GetState") }
 	func getNetworkInfo(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::ldn::detail::nn::ldn::detail::ISystemLocalCommunicationService#GetNetworkInfo") }
@@ -388,6 +439,38 @@ class NnLdnDetail_ISystemLocalCommunicationService: IpcService {
 	}
 }
 
+/*
+class NnLdnDetail_ISystemLocalCommunicationService_Impl: NnLdnDetail_ISystemLocalCommunicationService {
+	override func getState() throws -> UInt32 { throw IpcError.unimplemented(name: "nn::ldn::detail::nn::ldn::detail::ISystemLocalCommunicationService#GetState") }
+	override func getNetworkInfo(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::ldn::detail::nn::ldn::detail::ISystemLocalCommunicationService#GetNetworkInfo") }
+	override func getIpv4Address() throws -> (UInt32, UInt32) { throw IpcError.unimplemented(name: "nn::ldn::detail::nn::ldn::detail::ISystemLocalCommunicationService#GetIpv4Address") }
+	override func getDisconnectReason() throws -> UInt16 { throw IpcError.unimplemented(name: "nn::ldn::detail::nn::ldn::detail::ISystemLocalCommunicationService#GetDisconnectReason") }
+	override func getSecurityParameter() throws -> [UInt8] { throw IpcError.unimplemented(name: "nn::ldn::detail::nn::ldn::detail::ISystemLocalCommunicationService#GetSecurityParameter") }
+	override func getNetworkConfig() throws -> [UInt8] { throw IpcError.unimplemented(name: "nn::ldn::detail::nn::ldn::detail::ISystemLocalCommunicationService#GetNetworkConfig") }
+	override func attachStateChangeEvent() throws -> KObject { throw IpcError.unimplemented(name: "nn::ldn::detail::nn::ldn::detail::ISystemLocalCommunicationService#AttachStateChangeEvent") }
+	override func getNetworkInfoLatestUpdate(_ _0: Buffer<UInt8>, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::ldn::detail::nn::ldn::detail::ISystemLocalCommunicationService#GetNetworkInfoLatestUpdate") }
+	override func scan(_ _0: UInt16, _ _1: [UInt8], _ _2: Buffer<UInt8>) throws -> UInt16 { throw IpcError.unimplemented(name: "nn::ldn::detail::nn::ldn::detail::ISystemLocalCommunicationService#Scan") }
+	override func scanPrivate(_ _0: UInt16, _ _1: [UInt8], _ _2: Buffer<UInt8>) throws -> UInt16 { throw IpcError.unimplemented(name: "nn::ldn::detail::nn::ldn::detail::ISystemLocalCommunicationService#ScanPrivate") }
+	override func openAccessPoint() throws { throw IpcError.unimplemented(name: "nn::ldn::detail::nn::ldn::detail::ISystemLocalCommunicationService#OpenAccessPoint") }
+	override func closeAccessPoint() throws { throw IpcError.unimplemented(name: "nn::ldn::detail::nn::ldn::detail::ISystemLocalCommunicationService#CloseAccessPoint") }
+	override func createNetwork(_ _0: [UInt8], _ _1: [UInt8], _ _2: [UInt8]) throws { throw IpcError.unimplemented(name: "nn::ldn::detail::nn::ldn::detail::ISystemLocalCommunicationService#CreateNetwork") }
+	override func createNetworkPrivate(_ _0: [UInt8], _ _1: [UInt8], _ _2: [UInt8], _ _3: [UInt8], _ _4: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::ldn::detail::nn::ldn::detail::ISystemLocalCommunicationService#CreateNetworkPrivate") }
+	override func destroyNetwork() throws { throw IpcError.unimplemented(name: "nn::ldn::detail::nn::ldn::detail::ISystemLocalCommunicationService#DestroyNetwork") }
+	override func reject(_ _0: UInt32) throws { throw IpcError.unimplemented(name: "nn::ldn::detail::nn::ldn::detail::ISystemLocalCommunicationService#Reject") }
+	override func setAdvertiseData(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::ldn::detail::nn::ldn::detail::ISystemLocalCommunicationService#SetAdvertiseData") }
+	override func setStationAcceptPolicy(_ _0: UInt8) throws { throw IpcError.unimplemented(name: "nn::ldn::detail::nn::ldn::detail::ISystemLocalCommunicationService#SetStationAcceptPolicy") }
+	override func addAcceptFilterEntry(_ _0: [UInt8]) throws { throw IpcError.unimplemented(name: "nn::ldn::detail::nn::ldn::detail::ISystemLocalCommunicationService#AddAcceptFilterEntry") }
+	override func clearAcceptFilter() throws { throw IpcError.unimplemented(name: "nn::ldn::detail::nn::ldn::detail::ISystemLocalCommunicationService#ClearAcceptFilter") }
+	override func openStation() throws { throw IpcError.unimplemented(name: "nn::ldn::detail::nn::ldn::detail::ISystemLocalCommunicationService#OpenStation") }
+	override func closeStation() throws { throw IpcError.unimplemented(name: "nn::ldn::detail::nn::ldn::detail::ISystemLocalCommunicationService#CloseStation") }
+	override func connect(_ _0: [UInt8], _ _1: [UInt8], _ _2: UInt32, _ _3: UInt32, _ _4: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::ldn::detail::nn::ldn::detail::ISystemLocalCommunicationService#Connect") }
+	override func connectPrivate(_ _0: [UInt8], _ _1: [UInt8], _ _2: [UInt8], _ _3: UInt32, _ _4: UInt32, _ _5: [UInt8]) throws { throw IpcError.unimplemented(name: "nn::ldn::detail::nn::ldn::detail::ISystemLocalCommunicationService#ConnectPrivate") }
+	override func disconnect() throws { throw IpcError.unimplemented(name: "nn::ldn::detail::nn::ldn::detail::ISystemLocalCommunicationService#Disconnect") }
+	override func initializeSystem(_ _0: UInt64, _ _1: Pid) throws { throw IpcError.unimplemented(name: "nn::ldn::detail::nn::ldn::detail::ISystemLocalCommunicationService#InitializeSystem") }
+	override func finalizeSystem() throws { throw IpcError.unimplemented(name: "nn::ldn::detail::nn::ldn::detail::ISystemLocalCommunicationService#FinalizeSystem") }
+}
+*/
+
 class NnLdnDetail_IMonitorServiceCreator: IpcService {
 	func createMonitorService() throws -> NnLdnDetail_IMonitorService { throw IpcError.unimplemented(name: "nn::ldn::detail::nn::ldn::detail::IMonitorServiceCreator#CreateMonitorService") }
 	
@@ -405,6 +488,12 @@ class NnLdnDetail_IMonitorServiceCreator: IpcService {
 	}
 }
 
+/*
+class NnLdnDetail_IMonitorServiceCreator_Impl: NnLdnDetail_IMonitorServiceCreator {
+	override func createMonitorService() throws -> NnLdnDetail_IMonitorService { throw IpcError.unimplemented(name: "nn::ldn::detail::nn::ldn::detail::IMonitorServiceCreator#CreateMonitorService") }
+}
+*/
+
 class NnLdnDetail_ISystemServiceCreator: IpcService {
 	func createSystemLocalCommunicationService() throws -> NnLdnDetail_ISystemLocalCommunicationService { throw IpcError.unimplemented(name: "nn::ldn::detail::nn::ldn::detail::ISystemServiceCreator#CreateSystemLocalCommunicationService") }
 	
@@ -421,3 +510,9 @@ class NnLdnDetail_ISystemServiceCreator: IpcService {
 		}
 	}
 }
+
+/*
+class NnLdnDetail_ISystemServiceCreator_Impl: NnLdnDetail_ISystemServiceCreator {
+	override func createSystemLocalCommunicationService() throws -> NnLdnDetail_ISystemLocalCommunicationService { throw IpcError.unimplemented(name: "nn::ldn::detail::nn::ldn::detail::ISystemServiceCreator#CreateSystemLocalCommunicationService") }
+}
+*/

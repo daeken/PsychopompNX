@@ -105,3 +105,27 @@ class NnXcdDetail_ISystemServer: IpcService {
 		}
 	}
 }
+
+/*
+class NnXcdDetail_ISystemServer_Impl: NnXcdDetail_ISystemServer {
+	override func getDataFormat(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::xcd::detail::nn::xcd::detail::ISystemServer#GetDataFormat") }
+	override func setDataFormat(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::xcd::detail::nn::xcd::detail::ISystemServer#SetDataFormat") }
+	override func getMcuState(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::xcd::detail::nn::xcd::detail::ISystemServer#GetMcuState") }
+	override func setMcuState(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::xcd::detail::nn::xcd::detail::ISystemServer#SetMcuState") }
+	override func getMcuVersionForNfc(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::xcd::detail::nn::xcd::detail::ISystemServer#GetMcuVersionForNfc") }
+	override func checkNfcDevicePower(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::xcd::detail::nn::xcd::detail::ISystemServer#CheckNfcDevicePower") }
+	override func setNfcEvent(_ _0: Any?) throws -> (KObject, KObject) { throw IpcError.unimplemented(name: "nn::xcd::detail::nn::xcd::detail::ISystemServer#SetNfcEvent") }
+	override func getNfcInfo(_ _0: Any?, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::xcd::detail::nn::xcd::detail::ISystemServer#GetNfcInfo") }
+	override func startNfcDiscovery(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::xcd::detail::nn::xcd::detail::ISystemServer#StartNfcDiscovery") }
+	override func stopNfcDiscovery(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::xcd::detail::nn::xcd::detail::ISystemServer#StopNfcDiscovery") }
+	override func startNtagRead(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::xcd::detail::nn::xcd::detail::ISystemServer#StartNtagRead") }
+	override func startNtagWrite(_ _0: Any?, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::xcd::detail::nn::xcd::detail::ISystemServer#StartNtagWrite") }
+	override func sendNfcRawData(_ _0: Any?, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::xcd::detail::nn::xcd::detail::ISystemServer#SendNfcRawData") }
+	override func registerMifareKey(_ _0: Any?, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::xcd::detail::nn::xcd::detail::ISystemServer#RegisterMifareKey") }
+	override func clearMifareKey(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::xcd::detail::nn::xcd::detail::ISystemServer#ClearMifareKey") }
+	override func startMifareRead(_ _0: Any?, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::xcd::detail::nn::xcd::detail::ISystemServer#StartMifareRead") }
+	override func startMifareWrite(_ _0: Any?, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::xcd::detail::nn::xcd::detail::ISystemServer#StartMifareWrite") }
+	override func getAwakeTriggerReasonForLeftRail() throws -> Any? { throw IpcError.unimplemented(name: "nn::xcd::detail::nn::xcd::detail::ISystemServer#GetAwakeTriggerReasonForLeftRail") }
+	override func getAwakeTriggerReasonForRightRail() throws -> Any? { throw IpcError.unimplemented(name: "nn::xcd::detail::nn::xcd::detail::ISystemServer#GetAwakeTriggerReasonForRightRail") }
+}
+*/

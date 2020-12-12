@@ -159,3 +159,35 @@ class NnPcvDetail_IPcvService: IpcService {
 		}
 	}
 }
+
+/*
+class NnPcvDetail_IPcvService_Impl: NnPcvDetail_IPcvService {
+	override func setPowerEnabled(_ _0: UInt8, _ _1: UInt32) throws { throw IpcError.unimplemented(name: "nn::pcv::detail::nn::pcv::detail::IPcvService#SetPowerEnabled") }
+	override func setClockEnabled(_ _0: UInt8, _ _1: UInt32) throws { throw IpcError.unimplemented(name: "nn::pcv::detail::nn::pcv::detail::IPcvService#SetClockEnabled") }
+	override func setClockRate(_ _0: UInt32, _ _1: UInt32) throws { throw IpcError.unimplemented(name: "nn::pcv::detail::nn::pcv::detail::IPcvService#SetClockRate") }
+	override func getClockRate(_ _0: UInt32) throws -> UInt32 { throw IpcError.unimplemented(name: "nn::pcv::detail::nn::pcv::detail::IPcvService#GetClockRate") }
+	override func getState(_ _0: UInt32) throws -> NnPcv_ModuleState { throw IpcError.unimplemented(name: "nn::pcv::detail::nn::pcv::detail::IPcvService#GetState") }
+	override func getPossibleClockRates(_ _0: UInt32, _ _1: UInt32, _ _2: Buffer<UInt32>) throws -> (UInt32, UInt32) { throw IpcError.unimplemented(name: "nn::pcv::detail::nn::pcv::detail::IPcvService#GetPossibleClockRates") }
+	override func setMinVClockRate(_ _0: UInt32, _ _1: UInt32) throws { throw IpcError.unimplemented(name: "nn::pcv::detail::nn::pcv::detail::IPcvService#SetMinVClockRate") }
+	override func setReset(_ _0: UInt8, _ _1: UInt32) throws { throw IpcError.unimplemented(name: "nn::pcv::detail::nn::pcv::detail::IPcvService#SetReset") }
+	override func setVoltageEnabled(_ _0: UInt8, _ _1: UInt32) throws { throw IpcError.unimplemented(name: "nn::pcv::detail::nn::pcv::detail::IPcvService#SetVoltageEnabled") }
+	override func getVoltageEnabled(_ _0: UInt32) throws -> UInt8 { throw IpcError.unimplemented(name: "nn::pcv::detail::nn::pcv::detail::IPcvService#GetVoltageEnabled") }
+	override func getVoltageRange(_ _0: UInt32) throws -> (UInt32, UInt32, UInt32) { throw IpcError.unimplemented(name: "nn::pcv::detail::nn::pcv::detail::IPcvService#GetVoltageRange") }
+	override func setVoltageValue(_ _0: UInt32, _ _1: UInt32) throws { throw IpcError.unimplemented(name: "nn::pcv::detail::nn::pcv::detail::IPcvService#SetVoltageValue") }
+	override func getVoltageValue(_ _0: UInt32) throws -> UInt32 { throw IpcError.unimplemented(name: "nn::pcv::detail::nn::pcv::detail::IPcvService#GetVoltageValue") }
+	override func getTemperatureThresholds(_ _0: UInt32, _ _1: Buffer<NnPcv_TemperatureThreshold>) throws -> UInt32 { throw IpcError.unimplemented(name: "nn::pcv::detail::nn::pcv::detail::IPcvService#GetTemperatureThresholds") }
+	override func setTemperature(_ _0: UInt32) throws { throw IpcError.unimplemented(name: "nn::pcv::detail::nn::pcv::detail::IPcvService#SetTemperature") }
+	override func initialize() throws { throw IpcError.unimplemented(name: "nn::pcv::detail::nn::pcv::detail::IPcvService#Initialize") }
+	override func isInitialized() throws -> UInt8 { throw IpcError.unimplemented(name: "nn::pcv::detail::nn::pcv::detail::IPcvService#IsInitialized") }
+	override func finalize() throws { throw IpcError.unimplemented(name: "nn::pcv::detail::nn::pcv::detail::IPcvService#Finalize") }
+	override func powerOn(_ _0: NnPcv_PowerControlTarget, _ _1: UInt32) throws { throw IpcError.unimplemented(name: "nn::pcv::detail::nn::pcv::detail::IPcvService#PowerOn") }
+	override func powerOff(_ _0: NnPcv_PowerControlTarget) throws { throw IpcError.unimplemented(name: "nn::pcv::detail::nn::pcv::detail::IPcvService#PowerOff") }
+	override func changeVoltage(_ _0: NnPcv_PowerControlTarget, _ _1: UInt32) throws { throw IpcError.unimplemented(name: "nn::pcv::detail::nn::pcv::detail::IPcvService#ChangeVoltage") }
+	override func getPowerClockInfoEvent() throws -> KObject { throw IpcError.unimplemented(name: "nn::pcv::detail::nn::pcv::detail::IPcvService#GetPowerClockInfoEvent") }
+	override func getOscillatorClock() throws -> UInt32 { throw IpcError.unimplemented(name: "nn::pcv::detail::nn::pcv::detail::IPcvService#GetOscillatorClock") }
+	override func getDvfsTable(_ _0: UInt32, _ _1: UInt32, _ _2: Buffer<UInt32>, _ _3: Buffer<UInt32>) throws -> UInt32 { throw IpcError.unimplemented(name: "nn::pcv::detail::nn::pcv::detail::IPcvService#GetDvfsTable") }
+	override func getModuleStateTable(_ _0: UInt32, _ _1: Buffer<NnPcv_ModuleState>) throws -> UInt32 { throw IpcError.unimplemented(name: "nn::pcv::detail::nn::pcv::detail::IPcvService#GetModuleStateTable") }
+	override func getPowerDomainStateTable(_ _0: UInt32, _ _1: Buffer<NnPcv_PowerDomainState>) throws -> UInt32 { throw IpcError.unimplemented(name: "nn::pcv::detail::nn::pcv::detail::IPcvService#GetPowerDomainStateTable") }
+	override func getFuseInfo(_ _0: UInt32, _ _1: Buffer<UInt32>) throws -> UInt32 { throw IpcError.unimplemented(name: "nn::pcv::detail::nn::pcv::detail::IPcvService#GetFuseInfo") }
+}
+*/

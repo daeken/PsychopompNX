@@ -263,3 +263,59 @@ class NnDmnt_IInterface: IpcService {
 		}
 	}
 }
+
+/*
+class NnDmnt_IInterface_Impl: NnDmnt_IInterface {
+	override func breakDebugProcess(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::dmnt::nn::dmnt::IInterface#BreakDebugProcess") }
+	override func terminateDebugProcess(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::dmnt::nn::dmnt::IInterface#TerminateDebugProcess") }
+	override func closeHandle(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::dmnt::nn::dmnt::IInterface#CloseHandle") }
+	override func loadImage(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::dmnt::nn::dmnt::IInterface#LoadImage") }
+	override func getProcessId(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::dmnt::nn::dmnt::IInterface#GetProcessId") }
+	override func getProcessHandle(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::dmnt::nn::dmnt::IInterface#GetProcessHandle") }
+	override func waitSynchronization(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::dmnt::nn::dmnt::IInterface#WaitSynchronization") }
+	override func getDebugEvent(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::dmnt::nn::dmnt::IInterface#GetDebugEvent") }
+	override func getProcessModuleInfo(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::dmnt::nn::dmnt::IInterface#GetProcessModuleInfo") }
+	override func getProcessList(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::dmnt::nn::dmnt::IInterface#GetProcessList") }
+	override func getThreadList(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::dmnt::nn::dmnt::IInterface#GetThreadList") }
+	override func getDebugThreadContext(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::dmnt::nn::dmnt::IInterface#GetDebugThreadContext") }
+	override func continueDebugEvent(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::dmnt::nn::dmnt::IInterface#ContinueDebugEvent") }
+	override func readDebugProcessMemory(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::dmnt::nn::dmnt::IInterface#ReadDebugProcessMemory") }
+	override func writeDebugProcessMemory(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::dmnt::nn::dmnt::IInterface#WriteDebugProcessMemory") }
+	override func setDebugThreadContext(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::dmnt::nn::dmnt::IInterface#SetDebugThreadContext") }
+	override func getDebugThreadParam(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::dmnt::nn::dmnt::IInterface#GetDebugThreadParam") }
+	override func initializeThreadInfo(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::dmnt::nn::dmnt::IInterface#InitializeThreadInfo") }
+	override func setHardwareBreakPoint(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::dmnt::nn::dmnt::IInterface#SetHardwareBreakPoint") }
+	override func queryDebugProcessMemory(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::dmnt::nn::dmnt::IInterface#QueryDebugProcessMemory") }
+	override func getProcessMemoryDetails(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::dmnt::nn::dmnt::IInterface#GetProcessMemoryDetails") }
+	override func attachByProgramId(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::dmnt::nn::dmnt::IInterface#AttachByProgramId") }
+	override func attachOnLaunch(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::dmnt::nn::dmnt::IInterface#AttachOnLaunch") }
+	override func getDebugMonitorProcessId(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::dmnt::nn::dmnt::IInterface#GetDebugMonitorProcessId") }
+	override func getJitDebugProcessList(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::dmnt::nn::dmnt::IInterface#GetJitDebugProcessList") }
+	override func createCoreDump(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::dmnt::nn::dmnt::IInterface#CreateCoreDump") }
+	override func getAllDebugThreadInfo(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::dmnt::nn::dmnt::IInterface#GetAllDebugThreadInfo") }
+	override func targetIO_FileOpen(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::dmnt::nn::dmnt::IInterface#TargetIO_FileOpen") }
+	override func targetIO_FileClose(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::dmnt::nn::dmnt::IInterface#TargetIO_FileClose") }
+	override func targetIO_FileRead(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::dmnt::nn::dmnt::IInterface#TargetIO_FileRead") }
+	override func targetIO_FileWrite(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::dmnt::nn::dmnt::IInterface#TargetIO_FileWrite") }
+	override func targetIO_FileSetAttributes(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::dmnt::nn::dmnt::IInterface#TargetIO_FileSetAttributes") }
+	override func targetIO_FileGetInformation(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::dmnt::nn::dmnt::IInterface#TargetIO_FileGetInformation") }
+	override func targetIO_FileSetTime(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::dmnt::nn::dmnt::IInterface#TargetIO_FileSetTime") }
+	override func targetIO_FileSetSize(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::dmnt::nn::dmnt::IInterface#TargetIO_FileSetSize") }
+	override func targetIO_FileDelete(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::dmnt::nn::dmnt::IInterface#TargetIO_FileDelete") }
+	override func targetIO_FileMove(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::dmnt::nn::dmnt::IInterface#TargetIO_FileMove") }
+	override func targetIO_DirectoryCreate(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::dmnt::nn::dmnt::IInterface#TargetIO_DirectoryCreate") }
+	override func targetIO_DirectoryDelete(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::dmnt::nn::dmnt::IInterface#TargetIO_DirectoryDelete") }
+	override func targetIO_DirectoryRename(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::dmnt::nn::dmnt::IInterface#TargetIO_DirectoryRename") }
+	override func targetIO_DirectoryGetCount(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::dmnt::nn::dmnt::IInterface#TargetIO_DirectoryGetCount") }
+	override func targetIO_DirectoryOpen(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::dmnt::nn::dmnt::IInterface#TargetIO_DirectoryOpen") }
+	override func targetIO_DirectoryGetNext(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::dmnt::nn::dmnt::IInterface#TargetIO_DirectoryGetNext") }
+	override func targetIO_DirectoryClose(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::dmnt::nn::dmnt::IInterface#TargetIO_DirectoryClose") }
+	override func targetIO_GetFreeSpace(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::dmnt::nn::dmnt::IInterface#TargetIO_GetFreeSpace") }
+	override func targetIO_GetVolumeInformation(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::dmnt::nn::dmnt::IInterface#TargetIO_GetVolumeInformation") }
+	override func initiateCoreDump(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::dmnt::nn::dmnt::IInterface#InitiateCoreDump") }
+	override func continueCoreDump(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::dmnt::nn::dmnt::IInterface#ContinueCoreDump") }
+	override func addTTYToCoreDump(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::dmnt::nn::dmnt::IInterface#AddTTYToCoreDump") }
+	override func addImageToCoreDump(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::dmnt::nn::dmnt::IInterface#AddImageToCoreDump") }
+	override func closeCoreDump(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::dmnt::nn::dmnt::IInterface#CloseCoreDump") }
+}
+*/

@@ -102,6 +102,28 @@ class NnGpio_IPadSession: IpcService {
 	}
 }
 
+/*
+class NnGpio_IPadSession_Impl: NnGpio_IPadSession {
+	override func setDirection(_ _0: UInt32) throws { throw IpcError.unimplemented(name: "nn::gpio::nn::gpio::IPadSession#SetDirection") }
+	override func getDirection() throws -> UInt32 { throw IpcError.unimplemented(name: "nn::gpio::nn::gpio::IPadSession#GetDirection") }
+	override func setInterruptMode(_ _0: UInt32) throws { throw IpcError.unimplemented(name: "nn::gpio::nn::gpio::IPadSession#SetInterruptMode") }
+	override func getInterruptMode() throws -> UInt32 { throw IpcError.unimplemented(name: "nn::gpio::nn::gpio::IPadSession#GetInterruptMode") }
+	override func setInterruptEnable(_ _0: UInt8) throws { throw IpcError.unimplemented(name: "nn::gpio::nn::gpio::IPadSession#SetInterruptEnable") }
+	override func getInterruptEnable() throws -> UInt8 { throw IpcError.unimplemented(name: "nn::gpio::nn::gpio::IPadSession#GetInterruptEnable") }
+	override func getInterruptStatus() throws -> UInt32 { throw IpcError.unimplemented(name: "nn::gpio::nn::gpio::IPadSession#GetInterruptStatus") }
+	override func clearInterruptStatus() throws { throw IpcError.unimplemented(name: "nn::gpio::nn::gpio::IPadSession#ClearInterruptStatus") }
+	override func setValue(_ _0: UInt32) throws { throw IpcError.unimplemented(name: "nn::gpio::nn::gpio::IPadSession#SetValue") }
+	override func getValue() throws -> UInt32 { throw IpcError.unimplemented(name: "nn::gpio::nn::gpio::IPadSession#GetValue") }
+	override func bindInterrupt() throws -> KObject { throw IpcError.unimplemented(name: "nn::gpio::nn::gpio::IPadSession#BindInterrupt") }
+	override func unbindInterrupt() throws { throw IpcError.unimplemented(name: "nn::gpio::nn::gpio::IPadSession#UnbindInterrupt") }
+	override func setDebounceEnabled(_ _0: UInt8) throws { throw IpcError.unimplemented(name: "nn::gpio::nn::gpio::IPadSession#SetDebounceEnabled") }
+	override func getDebounceEnabled() throws -> UInt8 { throw IpcError.unimplemented(name: "nn::gpio::nn::gpio::IPadSession#GetDebounceEnabled") }
+	override func setDebounceTime(_ _0: UInt32) throws { throw IpcError.unimplemented(name: "nn::gpio::nn::gpio::IPadSession#SetDebounceTime") }
+	override func getDebounceTime() throws -> UInt32 { throw IpcError.unimplemented(name: "nn::gpio::nn::gpio::IPadSession#GetDebounceTime") }
+	override func setValueForSleepState(_ _0: UInt32) throws { throw IpcError.unimplemented(name: "nn::gpio::nn::gpio::IPadSession#SetValueForSleepState") }
+}
+*/
+
 class NnGpio_IManager: IpcService {
 	func unknown0(_ _0: UInt32) throws -> NnGpio_IPadSession { throw IpcError.unimplemented(name: "nn::gpio::nn::gpio::IManager#Unknown0") }
 	func getPadSession(_ _0: UInt32) throws -> NnGpio_IPadSession { throw IpcError.unimplemented(name: "nn::gpio::nn::gpio::IManager#GetPadSession") }
@@ -153,3 +175,15 @@ class NnGpio_IManager: IpcService {
 		}
 	}
 }
+
+/*
+class NnGpio_IManager_Impl: NnGpio_IManager {
+	override func unknown0(_ _0: UInt32) throws -> NnGpio_IPadSession { throw IpcError.unimplemented(name: "nn::gpio::nn::gpio::IManager#Unknown0") }
+	override func getPadSession(_ _0: UInt32) throws -> NnGpio_IPadSession { throw IpcError.unimplemented(name: "nn::gpio::nn::gpio::IManager#GetPadSession") }
+	override func unknown2(_ _0: UInt32) throws -> NnGpio_IPadSession { throw IpcError.unimplemented(name: "nn::gpio::nn::gpio::IManager#Unknown2") }
+	override func unknown3(_ _0: UInt32) throws -> UInt8 { throw IpcError.unimplemented(name: "nn::gpio::nn::gpio::IManager#Unknown3") }
+	override func unknown4() throws -> [UInt8] { throw IpcError.unimplemented(name: "nn::gpio::nn::gpio::IManager#Unknown4") }
+	override func unknown5(_ _0: UInt8, _ _1: UInt32) throws { throw IpcError.unimplemented(name: "nn::gpio::nn::gpio::IManager#Unknown5") }
+	override func unknown6(_ _0: UInt32) throws { throw IpcError.unimplemented(name: "nn::gpio::nn::gpio::IManager#Unknown6") }
+}
+*/

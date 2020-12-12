@@ -18,3 +18,10 @@ class NnPcm_IManager: IpcService {
 		}
 	}
 }
+
+/*
+class NnPcm_IManager_Impl: NnPcm_IManager {
+	override func unknown0(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::pcm::nn::pcm::IManager#Unknown0") }
+	override func unknown1(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::pcm::nn::pcm::IManager#Unknown1") }
+}
+*/

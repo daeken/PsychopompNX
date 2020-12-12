@@ -35,6 +35,16 @@ class NnLdrDetail_IRoInterface: IpcService {
 	}
 }
 
+/*
+class NnLdrDetail_IRoInterface_Impl: NnLdrDetail_IRoInterface {
+	override func loadNro(_ _0: UInt64, _ _1: UInt64, _ _2: UInt64, _ _3: UInt64, _ _4: UInt64, _ _5: Pid) throws -> UInt64 { throw IpcError.unimplemented(name: "nn::ldr::detail::nn::ldr::detail::IRoInterface#LoadNro") }
+	override func unloadNro(_ _0: UInt64, _ _1: UInt64, _ _2: Pid) throws { throw IpcError.unimplemented(name: "nn::ldr::detail::nn::ldr::detail::IRoInterface#UnloadNro") }
+	override func loadNrr(_ _0: UInt64, _ _1: UInt64, _ _2: UInt64, _ _3: Pid) throws { throw IpcError.unimplemented(name: "nn::ldr::detail::nn::ldr::detail::IRoInterface#LoadNrr") }
+	override func unloadNrr(_ _0: UInt64, _ _1: UInt64, _ _2: Pid) throws { throw IpcError.unimplemented(name: "nn::ldr::detail::nn::ldr::detail::IRoInterface#UnloadNrr") }
+	override func initialize(_ _0: UInt64, _ _1: Pid, _ _2: KObject) throws { throw IpcError.unimplemented(name: "nn::ldr::detail::nn::ldr::detail::IRoInterface#Initialize") }
+}
+*/
+
 class NnLdrDetail_IProcessManagerInterface: IpcService {
 	func createProcess(_ _0: Any?, _ _1: KObject) throws -> IpcService { throw IpcError.unimplemented(name: "nn::ldr::detail::nn::ldr::detail::IProcessManagerInterface#CreateProcess") }
 	func getProgramInfo(_ _0: Any?, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::ldr::detail::nn::ldr::detail::IProcessManagerInterface#GetProgramInfo") }
@@ -67,6 +77,15 @@ class NnLdrDetail_IProcessManagerInterface: IpcService {
 	}
 }
 
+/*
+class NnLdrDetail_IProcessManagerInterface_Impl: NnLdrDetail_IProcessManagerInterface {
+	override func createProcess(_ _0: Any?, _ _1: KObject) throws -> IpcService { throw IpcError.unimplemented(name: "nn::ldr::detail::nn::ldr::detail::IProcessManagerInterface#CreateProcess") }
+	override func getProgramInfo(_ _0: Any?, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::ldr::detail::nn::ldr::detail::IProcessManagerInterface#GetProgramInfo") }
+	override func registerTitle(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::ldr::detail::nn::ldr::detail::IProcessManagerInterface#RegisterTitle") }
+	override func unregisterTitle(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::ldr::detail::nn::ldr::detail::IProcessManagerInterface#UnregisterTitle") }
+}
+*/
+
 class NnLdrDetail_IDebugMonitorInterface: IpcService {
 	func addProcessToDebugLaunchQueue(_ _0: Any?, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::ldr::detail::nn::ldr::detail::IDebugMonitorInterface#AddProcessToDebugLaunchQueue") }
 	func clearDebugLaunchQueue() throws { throw IpcError.unimplemented(name: "nn::ldr::detail::nn::ldr::detail::IDebugMonitorInterface#ClearDebugLaunchQueue") }
@@ -93,6 +112,14 @@ class NnLdrDetail_IDebugMonitorInterface: IpcService {
 	}
 }
 
+/*
+class NnLdrDetail_IDebugMonitorInterface_Impl: NnLdrDetail_IDebugMonitorInterface {
+	override func addProcessToDebugLaunchQueue(_ _0: Any?, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::ldr::detail::nn::ldr::detail::IDebugMonitorInterface#AddProcessToDebugLaunchQueue") }
+	override func clearDebugLaunchQueue() throws { throw IpcError.unimplemented(name: "nn::ldr::detail::nn::ldr::detail::IDebugMonitorInterface#ClearDebugLaunchQueue") }
+	override func getNsoInfos(_ _0: Any?, _ _1: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented(name: "nn::ldr::detail::nn::ldr::detail::IDebugMonitorInterface#GetNsoInfos") }
+}
+*/
+
 class NnLdrDetail_IShellInterface: IpcService {
 	func addProcessToLaunchQueue(_ _0: Buffer<UInt8>, _ size: UInt32, _ appID: NnNcm_ApplicationId) throws { throw IpcError.unimplemented(name: "nn::ldr::detail::nn::ldr::detail::IShellInterface#AddProcessToLaunchQueue") }
 	func clearLaunchQueue() throws { throw IpcError.unimplemented(name: "nn::ldr::detail::nn::ldr::detail::IShellInterface#ClearLaunchQueue") }
@@ -113,3 +140,10 @@ class NnLdrDetail_IShellInterface: IpcService {
 		}
 	}
 }
+
+/*
+class NnLdrDetail_IShellInterface_Impl: NnLdrDetail_IShellInterface {
+	override func addProcessToLaunchQueue(_ _0: Buffer<UInt8>, _ size: UInt32, _ appID: NnNcm_ApplicationId) throws { throw IpcError.unimplemented(name: "nn::ldr::detail::nn::ldr::detail::IShellInterface#AddProcessToLaunchQueue") }
+	override func clearLaunchQueue() throws { throw IpcError.unimplemented(name: "nn::ldr::detail::nn::ldr::detail::IShellInterface#ClearLaunchQueue") }
+}
+*/

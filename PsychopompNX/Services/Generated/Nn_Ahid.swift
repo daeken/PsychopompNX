@@ -31,6 +31,15 @@ class NnAhid_IServerSession: IpcService {
 	}
 }
 
+/*
+class NnAhid_IServerSession_Impl: NnAhid_IServerSession {
+	override func unknown0(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::ahid::nn::ahid::IServerSession#Unknown0") }
+	override func unknown1(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::ahid::nn::ahid::IServerSession#Unknown1") }
+	override func unknown2(_ _0: Any?) throws -> NnAhid_ICtrlSession { throw IpcError.unimplemented(name: "nn::ahid::nn::ahid::IServerSession#Unknown2") }
+	override func unknown3(_ _0: Any?) throws -> NnAhid_IReadSession { throw IpcError.unimplemented(name: "nn::ahid::nn::ahid::IServerSession#Unknown3") }
+}
+*/
+
 class NnAhid_IWriteSession: IpcService {
 	func unknown0(_ _0: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented(name: "nn::ahid::nn::ahid::IWriteSession#Unknown0") }
 	
@@ -46,6 +55,12 @@ class NnAhid_IWriteSession: IpcService {
 		}
 	}
 }
+
+/*
+class NnAhid_IWriteSession_Impl: NnAhid_IWriteSession {
+	override func unknown0(_ _0: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented(name: "nn::ahid::nn::ahid::IWriteSession#Unknown0") }
+}
+*/
 
 class NnAhid_ICtrlSession: IpcService {
 	func unknown0(_ _0: Any?, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::ahid::nn::ahid::ICtrlSession#Unknown0") }
@@ -124,6 +139,24 @@ class NnAhid_ICtrlSession: IpcService {
 	}
 }
 
+/*
+class NnAhid_ICtrlSession_Impl: NnAhid_ICtrlSession {
+	override func unknown0(_ _0: Any?, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::ahid::nn::ahid::ICtrlSession#Unknown0") }
+	override func unknown1(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::ahid::nn::ahid::ICtrlSession#Unknown1") }
+	override func unknown2(_ _0: Any?, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::ahid::nn::ahid::ICtrlSession#Unknown2") }
+	override func unknown3(_ _0: Any?, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::ahid::nn::ahid::ICtrlSession#Unknown3") }
+	override func unknown4(_ _0: Any?, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::ahid::nn::ahid::ICtrlSession#Unknown4") }
+	override func unknown5(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::ahid::nn::ahid::ICtrlSession#Unknown5") }
+	override func unknown6(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::ahid::nn::ahid::ICtrlSession#Unknown6") }
+	override func unknown7(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::ahid::nn::ahid::ICtrlSession#Unknown7") }
+	override func unknown8(_ _0: Any?, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::ahid::nn::ahid::ICtrlSession#Unknown8") }
+	override func unknown9(_ _0: Any?, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::ahid::nn::ahid::ICtrlSession#Unknown9") }
+	override func unknown10() throws -> KObject { throw IpcError.unimplemented(name: "nn::ahid::nn::ahid::ICtrlSession#Unknown10") }
+	override func unknown11() throws { throw IpcError.unimplemented(name: "nn::ahid::nn::ahid::ICtrlSession#Unknown11") }
+	override func unknown12(_ _0: Any?, _ _1: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented(name: "nn::ahid::nn::ahid::ICtrlSession#Unknown12") }
+}
+*/
+
 class NnAhid_IReadSession: IpcService {
 	func unknown0(_ _0: Any?, _ _1: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented(name: "nn::ahid::nn::ahid::IReadSession#Unknown0") }
 	
@@ -139,3 +172,9 @@ class NnAhid_IReadSession: IpcService {
 		}
 	}
 }
+
+/*
+class NnAhid_IReadSession_Impl: NnAhid_IReadSession {
+	override func unknown0(_ _0: Any?, _ _1: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented(name: "nn::ahid::nn::ahid::IReadSession#Unknown0") }
+}
+*/

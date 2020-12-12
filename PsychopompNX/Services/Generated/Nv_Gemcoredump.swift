@@ -23,3 +23,11 @@ class NvGemcoredump_INvGemCoreDump: IpcService {
 		}
 	}
 }
+
+/*
+class NvGemcoredump_INvGemCoreDump_Impl: NvGemcoredump_INvGemCoreDump {
+	override func unknown0() throws -> Any? { throw IpcError.unimplemented(name: "nv::gemcoredump::nv::gemcoredump::INvGemCoreDump#Unknown0") }
+	override func unknown1() throws -> Any? { throw IpcError.unimplemented(name: "nv::gemcoredump::nv::gemcoredump::INvGemCoreDump#Unknown1") }
+	override func unknown2(_ _0: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented(name: "nv::gemcoredump::nv::gemcoredump::INvGemCoreDump#Unknown2") }
+}
+*/

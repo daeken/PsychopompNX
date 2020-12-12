@@ -28,3 +28,12 @@ class NnTsServer_IMeasurementServer: IpcService {
 		}
 	}
 }
+
+/*
+class NnTsServer_IMeasurementServer_Impl: NnTsServer_IMeasurementServer {
+	override func unknown0(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::ts::server::nn::ts::server::IMeasurementServer#Unknown0") }
+	override func unknown1(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::ts::server::nn::ts::server::IMeasurementServer#Unknown1") }
+	override func unknown2(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::ts::server::nn::ts::server::IMeasurementServer#Unknown2") }
+	override func unknown3(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::ts::server::nn::ts::server::IMeasurementServer#Unknown3") }
+}
+*/

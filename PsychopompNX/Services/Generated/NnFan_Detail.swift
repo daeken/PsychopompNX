@@ -49,6 +49,19 @@ class NnFanDetail_IController: IpcService {
 	}
 }
 
+/*
+class NnFanDetail_IController_Impl: NnFanDetail_IController {
+	override func unknown0(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::fan::detail::nn::fan::detail::IController#Unknown0") }
+	override func unknown1(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::fan::detail::nn::fan::detail::IController#Unknown1") }
+	override func unknown2() throws -> Any? { throw IpcError.unimplemented(name: "nn::fan::detail::nn::fan::detail::IController#Unknown2") }
+	override func unknown3(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::fan::detail::nn::fan::detail::IController#Unknown3") }
+	override func unknown4() throws -> Any? { throw IpcError.unimplemented(name: "nn::fan::detail::nn::fan::detail::IController#Unknown4") }
+	override func unknown5() throws { throw IpcError.unimplemented(name: "nn::fan::detail::nn::fan::detail::IController#Unknown5") }
+	override func unknown6() throws { throw IpcError.unimplemented(name: "nn::fan::detail::nn::fan::detail::IController#Unknown6") }
+	override func unknown7() throws -> Any? { throw IpcError.unimplemented(name: "nn::fan::detail::nn::fan::detail::IController#Unknown7") }
+}
+*/
+
 class NnFanDetail_IManager: IpcService {
 	func unknown0(_ _0: Any?) throws -> NnFanDetail_IController { throw IpcError.unimplemented(name: "nn::fan::detail::nn::fan::detail::IManager#Unknown0") }
 	func unknown1(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::fan::detail::nn::fan::detail::IManager#Unknown1") }
@@ -100,3 +113,16 @@ class NnFanDetail_IManager: IpcService {
 		}
 	}
 }
+
+/*
+class NnFanDetail_IManager_Impl: NnFanDetail_IManager {
+	override func unknown0(_ _0: Any?) throws -> NnFanDetail_IController { throw IpcError.unimplemented(name: "nn::fan::detail::nn::fan::detail::IManager#Unknown0") }
+	override func unknown1(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::fan::detail::nn::fan::detail::IManager#Unknown1") }
+	override func unknown2(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::fan::detail::nn::fan::detail::IManager#Unknown2") }
+	override func unknown3(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::fan::detail::nn::fan::detail::IManager#Unknown3") }
+	override func unknown4(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::fan::detail::nn::fan::detail::IManager#Unknown4") }
+	override func unknown5(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::fan::detail::nn::fan::detail::IManager#Unknown5") }
+	override func unknown6(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::fan::detail::nn::fan::detail::IManager#Unknown6") }
+	override func unknown7(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::fan::detail::nn::fan::detail::IManager#Unknown7") }
+}
+*/

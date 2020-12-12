@@ -87,6 +87,23 @@ class NnSslSf_ISslContext: IpcService {
 	}
 }
 
+/*
+class NnSslSf_ISslContext_Impl: NnSslSf_ISslContext {
+	override func setOption(_ _0: NnSslSf_ContextOption, _ _1: UInt32) throws { throw IpcError.unimplemented(name: "nn::ssl::sf::nn::ssl::sf::ISslContext#SetOption") }
+	override func getOption(_ _0: NnSslSf_ContextOption) throws -> UInt32 { throw IpcError.unimplemented(name: "nn::ssl::sf::nn::ssl::sf::ISslContext#GetOption") }
+	override func createConnection() throws -> NnSslSf_ISslConnection { throw IpcError.unimplemented(name: "nn::ssl::sf::nn::ssl::sf::ISslContext#CreateConnection") }
+	override func getConnectionCount() throws -> UInt32 { throw IpcError.unimplemented(name: "nn::ssl::sf::nn::ssl::sf::ISslContext#GetConnectionCount") }
+	override func importServerPki(_ _0: NnSslSf_CertificateFormat, _ _1: Buffer<UInt8>) throws -> UInt64 { throw IpcError.unimplemented(name: "nn::ssl::sf::nn::ssl::sf::ISslContext#ImportServerPki") }
+	override func importClientPki(_ _0: Buffer<UInt8>, _ _1: Buffer<UInt8>) throws -> UInt64 { throw IpcError.unimplemented(name: "nn::ssl::sf::nn::ssl::sf::ISslContext#ImportClientPki") }
+	override func removeServerPki(_ _0: UInt64) throws { throw IpcError.unimplemented(name: "nn::ssl::sf::nn::ssl::sf::ISslContext#RemoveServerPki") }
+	override func removeClientPki(_ _0: UInt64) throws { throw IpcError.unimplemented(name: "nn::ssl::sf::nn::ssl::sf::ISslContext#RemoveClientPki") }
+	override func registerInternalPki(_ _0: NnSslSf_InternalPki) throws -> UInt64 { throw IpcError.unimplemented(name: "nn::ssl::sf::nn::ssl::sf::ISslContext#RegisterInternalPki") }
+	override func addPolicyOid(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::ssl::sf::nn::ssl::sf::ISslContext#AddPolicyOid") }
+	override func importCrl(_ _0: Buffer<UInt8>) throws -> UInt64 { throw IpcError.unimplemented(name: "nn::ssl::sf::nn::ssl::sf::ISslContext#ImportCrl") }
+	override func removeCrl(_ _0: UInt64) throws { throw IpcError.unimplemented(name: "nn::ssl::sf::nn::ssl::sf::ISslContext#RemoveCrl") }
+}
+*/
+
 class NnSslSf_ISslConnection: IpcService {
 	func setSocketDescriptor(_ _0: UInt32) throws -> UInt32 { throw IpcError.unimplemented(name: "nn::ssl::sf::nn::ssl::sf::ISslConnection#SetSocketDescriptor") }
 	func setHostName(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::ssl::sf::nn::ssl::sf::ISslConnection#SetHostName") }
@@ -246,6 +263,37 @@ class NnSslSf_ISslConnection: IpcService {
 	}
 }
 
+/*
+class NnSslSf_ISslConnection_Impl: NnSslSf_ISslConnection {
+	override func setSocketDescriptor(_ _0: UInt32) throws -> UInt32 { throw IpcError.unimplemented(name: "nn::ssl::sf::nn::ssl::sf::ISslConnection#SetSocketDescriptor") }
+	override func setHostName(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::ssl::sf::nn::ssl::sf::ISslConnection#SetHostName") }
+	override func setVerifyOption(_ _0: NnSslSf_VerifyOption) throws { throw IpcError.unimplemented(name: "nn::ssl::sf::nn::ssl::sf::ISslConnection#SetVerifyOption") }
+	override func setIoMode(_ _0: NnSslSf_IoMode) throws { throw IpcError.unimplemented(name: "nn::ssl::sf::nn::ssl::sf::ISslConnection#SetIoMode") }
+	override func getSocketDescriptor() throws -> UInt32 { throw IpcError.unimplemented(name: "nn::ssl::sf::nn::ssl::sf::ISslConnection#GetSocketDescriptor") }
+	override func getHostName(_ _0: Buffer<UInt8>) throws -> UInt32 { throw IpcError.unimplemented(name: "nn::ssl::sf::nn::ssl::sf::ISslConnection#GetHostName") }
+	override func getVerifyOption() throws -> NnSslSf_VerifyOption { throw IpcError.unimplemented(name: "nn::ssl::sf::nn::ssl::sf::ISslConnection#GetVerifyOption") }
+	override func getIoMode() throws -> NnSslSf_IoMode { throw IpcError.unimplemented(name: "nn::ssl::sf::nn::ssl::sf::ISslConnection#GetIoMode") }
+	override func doHandshake() throws { throw IpcError.unimplemented(name: "nn::ssl::sf::nn::ssl::sf::ISslConnection#DoHandshake") }
+	override func doHandshakeGetServerCert(_ _0: Buffer<UInt8>) throws -> (UInt32, UInt32) { throw IpcError.unimplemented(name: "nn::ssl::sf::nn::ssl::sf::ISslConnection#DoHandshakeGetServerCert") }
+	override func read(_ _0: Buffer<UInt8>) throws -> UInt32 { throw IpcError.unimplemented(name: "nn::ssl::sf::nn::ssl::sf::ISslConnection#Read") }
+	override func write(_ _0: Buffer<UInt8>) throws -> UInt32 { throw IpcError.unimplemented(name: "nn::ssl::sf::nn::ssl::sf::ISslConnection#Write") }
+	override func pending() throws -> UInt32 { throw IpcError.unimplemented(name: "nn::ssl::sf::nn::ssl::sf::ISslConnection#Pending") }
+	override func peek(_ _0: Buffer<UInt8>) throws -> UInt32 { throw IpcError.unimplemented(name: "nn::ssl::sf::nn::ssl::sf::ISslConnection#Peek") }
+	override func poll(_ _0: NnSslSf_PollEvent, _ _1: UInt32) throws -> NnSslSf_PollEvent { throw IpcError.unimplemented(name: "nn::ssl::sf::nn::ssl::sf::ISslConnection#Poll") }
+	override func getVerifyCertError() throws { throw IpcError.unimplemented(name: "nn::ssl::sf::nn::ssl::sf::ISslConnection#GetVerifyCertError") }
+	override func getNeededServerCertBufferSize() throws -> UInt32 { throw IpcError.unimplemented(name: "nn::ssl::sf::nn::ssl::sf::ISslConnection#GetNeededServerCertBufferSize") }
+	override func setSessionCacheMode(_ _0: NnSslSf_SessionCacheMode) throws { throw IpcError.unimplemented(name: "nn::ssl::sf::nn::ssl::sf::ISslConnection#SetSessionCacheMode") }
+	override func getSessionCacheMode() throws -> NnSslSf_SessionCacheMode { throw IpcError.unimplemented(name: "nn::ssl::sf::nn::ssl::sf::ISslConnection#GetSessionCacheMode") }
+	override func flushSessionCache() throws { throw IpcError.unimplemented(name: "nn::ssl::sf::nn::ssl::sf::ISslConnection#FlushSessionCache") }
+	override func setRenegotiationMode(_ _0: NnSslSf_RenegotiationMode) throws { throw IpcError.unimplemented(name: "nn::ssl::sf::nn::ssl::sf::ISslConnection#SetRenegotiationMode") }
+	override func getRenegotiationMode() throws -> NnSslSf_RenegotiationMode { throw IpcError.unimplemented(name: "nn::ssl::sf::nn::ssl::sf::ISslConnection#GetRenegotiationMode") }
+	override func setOption(_ _0: UInt8, _ _1: NnSslSf_OptionType) throws { throw IpcError.unimplemented(name: "nn::ssl::sf::nn::ssl::sf::ISslConnection#SetOption") }
+	override func getOption(_ _0: NnSslSf_OptionType) throws -> UInt8 { throw IpcError.unimplemented(name: "nn::ssl::sf::nn::ssl::sf::ISslConnection#GetOption") }
+	override func getVerifyCertErrors(_ _0: Buffer<UInt8>) throws -> (UInt32, UInt32) { throw IpcError.unimplemented(name: "nn::ssl::sf::nn::ssl::sf::ISslConnection#GetVerifyCertErrors") }
+	override func getCipherInfo(_ _0: UInt32, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::ssl::sf::nn::ssl::sf::ISslConnection#GetCipherInfo") }
+}
+*/
+
 class NnSslSf_ISslService: IpcService {
 	func createContext(_ _0: NnSslSf_SslVersion, _ _1: UInt64, _ _2: Pid) throws -> NnSslSf_ISslContext { throw IpcError.unimplemented(name: "nn::ssl::sf::nn::ssl::sf::ISslService#CreateContext") }
 	func getContextCount() throws -> UInt32 { throw IpcError.unimplemented(name: "nn::ssl::sf::nn::ssl::sf::ISslService#GetContextCount") }
@@ -295,3 +343,15 @@ class NnSslSf_ISslService: IpcService {
 		}
 	}
 }
+
+/*
+class NnSslSf_ISslService_Impl: NnSslSf_ISslService {
+	override func createContext(_ _0: NnSslSf_SslVersion, _ _1: UInt64, _ _2: Pid) throws -> NnSslSf_ISslContext { throw IpcError.unimplemented(name: "nn::ssl::sf::nn::ssl::sf::ISslService#CreateContext") }
+	override func getContextCount() throws -> UInt32 { throw IpcError.unimplemented(name: "nn::ssl::sf::nn::ssl::sf::ISslService#GetContextCount") }
+	override func getCertificates(_ _0: Buffer<UInt8>, _ _1: Buffer<UInt8>) throws -> UInt32 { throw IpcError.unimplemented(name: "nn::ssl::sf::nn::ssl::sf::ISslService#GetCertificates") }
+	override func getCertificateBufSize(_ _0: Buffer<UInt8>) throws -> UInt32 { throw IpcError.unimplemented(name: "nn::ssl::sf::nn::ssl::sf::ISslService#GetCertificateBufSize") }
+	override func debugIoctl(_ _0: UInt64, _ _1: Buffer<UInt8>, _ _2: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::ssl::sf::nn::ssl::sf::ISslService#DebugIoctl") }
+	override func setInterfaceVersion(_ _0: UInt32) throws { throw IpcError.unimplemented(name: "nn::ssl::sf::nn::ssl::sf::ISslService#SetInterfaceVersion") }
+	override func flushSessionCache(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::ssl::sf::nn::ssl::sf::ISslService#FlushSessionCache") }
+}
+*/

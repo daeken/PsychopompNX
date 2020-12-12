@@ -146,6 +146,23 @@ class NnAudioDetail_IAudioDevice: IpcService {
 	}
 }
 
+/*
+class NnAudioDetail_IAudioDevice_Impl: NnAudioDetail_IAudioDevice {
+	override func listAudioDeviceName(_ _0: Buffer<UInt8>) throws -> UInt32 { throw IpcError.unimplemented(name: "nn::audio::detail::nn::audio::detail::IAudioDevice#ListAudioDeviceName") }
+	override func setAudioDeviceOutputVolume(_ _0: UInt32, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::audio::detail::nn::audio::detail::IAudioDevice#SetAudioDeviceOutputVolume") }
+	override func getAudioDeviceOutputVolume(_ _0: Buffer<UInt8>) throws -> UInt32 { throw IpcError.unimplemented(name: "nn::audio::detail::nn::audio::detail::IAudioDevice#GetAudioDeviceOutputVolume") }
+	override func getActiveAudioDeviceName(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::audio::detail::nn::audio::detail::IAudioDevice#GetActiveAudioDeviceName") }
+	override func queryAudioDeviceSystemEvent() throws -> KObject { throw IpcError.unimplemented(name: "nn::audio::detail::nn::audio::detail::IAudioDevice#QueryAudioDeviceSystemEvent") }
+	override func getActiveChannelCount() throws -> UInt32 { throw IpcError.unimplemented(name: "nn::audio::detail::nn::audio::detail::IAudioDevice#GetActiveChannelCount") }
+	override func listAudioDeviceNameAuto(_ _0: Buffer<UInt8>) throws -> UInt32 { throw IpcError.unimplemented(name: "nn::audio::detail::nn::audio::detail::IAudioDevice#ListAudioDeviceNameAuto") }
+	override func setAudioDeviceOutputVolumeAuto(_ _0: UInt32, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::audio::detail::nn::audio::detail::IAudioDevice#SetAudioDeviceOutputVolumeAuto") }
+	override func getAudioDeviceOutputVolumeAuto(_ _0: Buffer<UInt8>) throws -> Float32 { throw IpcError.unimplemented(name: "nn::audio::detail::nn::audio::detail::IAudioDevice#GetAudioDeviceOutputVolumeAuto") }
+	override func getActiveAudioDeviceNameAuto(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::audio::detail::nn::audio::detail::IAudioDevice#GetActiveAudioDeviceNameAuto") }
+	override func queryAudioDeviceInputEvent() throws -> KObject { throw IpcError.unimplemented(name: "nn::audio::detail::nn::audio::detail::IAudioDevice#QueryAudioDeviceInputEvent") }
+	override func queryAudioDeviceOutputEvent() throws -> KObject { throw IpcError.unimplemented(name: "nn::audio::detail::nn::audio::detail::IAudioDevice#QueryAudioDeviceOutputEvent") }
+}
+*/
+
 class NnAudioDetail_IFinalOutputRecorderManager: IpcService {
 	func openFinalOutputRecorder(_ _0: [UInt8], _ _1: UInt64, _ _2: KObject) throws -> ([UInt8], NnAudioDetail_IFinalOutputRecorder) { throw IpcError.unimplemented(name: "nn::audio::detail::nn::audio::detail::IFinalOutputRecorderManager#OpenFinalOutputRecorder") }
 	
@@ -164,6 +181,12 @@ class NnAudioDetail_IFinalOutputRecorderManager: IpcService {
 		}
 	}
 }
+
+/*
+class NnAudioDetail_IFinalOutputRecorderManager_Impl: NnAudioDetail_IFinalOutputRecorderManager {
+	override func openFinalOutputRecorder(_ _0: [UInt8], _ _1: UInt64, _ _2: KObject) throws -> ([UInt8], NnAudioDetail_IFinalOutputRecorder) { throw IpcError.unimplemented(name: "nn::audio::detail::nn::audio::detail::IFinalOutputRecorderManager#OpenFinalOutputRecorder") }
+}
+*/
 
 class NnAudioDetail_IAudioRenderer: IpcService {
 	func getSampleRate() throws -> UInt32 { throw IpcError.unimplemented(name: "nn::audio::detail::nn::audio::detail::IAudioRenderer#GetSampleRate") }
@@ -242,6 +265,23 @@ class NnAudioDetail_IAudioRenderer: IpcService {
 	}
 }
 
+/*
+class NnAudioDetail_IAudioRenderer_Impl: NnAudioDetail_IAudioRenderer {
+	override func getSampleRate() throws -> UInt32 { throw IpcError.unimplemented(name: "nn::audio::detail::nn::audio::detail::IAudioRenderer#GetSampleRate") }
+	override func getSampleCount() throws -> UInt32 { throw IpcError.unimplemented(name: "nn::audio::detail::nn::audio::detail::IAudioRenderer#GetSampleCount") }
+	override func getMixBufferCount() throws -> UInt32 { throw IpcError.unimplemented(name: "nn::audio::detail::nn::audio::detail::IAudioRenderer#GetMixBufferCount") }
+	override func getState() throws -> UInt32 { throw IpcError.unimplemented(name: "nn::audio::detail::nn::audio::detail::IAudioRenderer#GetState") }
+	override func requestUpdateAudioRenderer(_ _0: Buffer<NnAudioDetail_AudioRendererUpdateDataHeader>, _ _1: Buffer<NnAudioDetail_AudioRendererUpdateDataHeader>, _ _2: Buffer<NnAudioDetail_AudioRendererUpdateDataHeader>) throws { throw IpcError.unimplemented(name: "nn::audio::detail::nn::audio::detail::IAudioRenderer#RequestUpdateAudioRenderer") }
+	override func start() throws { throw IpcError.unimplemented(name: "nn::audio::detail::nn::audio::detail::IAudioRenderer#Start") }
+	override func stop() throws { throw IpcError.unimplemented(name: "nn::audio::detail::nn::audio::detail::IAudioRenderer#Stop") }
+	override func querySystemEvent() throws -> KObject { throw IpcError.unimplemented(name: "nn::audio::detail::nn::audio::detail::IAudioRenderer#QuerySystemEvent") }
+	override func setAudioRendererRenderingTimeLimit(_ limit: UInt32) throws { throw IpcError.unimplemented(name: "nn::audio::detail::nn::audio::detail::IAudioRenderer#SetAudioRendererRenderingTimeLimit") }
+	override func getAudioRendererRenderingTimeLimit() throws -> UInt32 { throw IpcError.unimplemented(name: "nn::audio::detail::nn::audio::detail::IAudioRenderer#GetAudioRendererRenderingTimeLimit") }
+	override func requestUpdateAudioRendererAuto(_ _0: Buffer<NnAudioDetail_AudioRendererUpdateDataHeader>, _ _1: Buffer<NnAudioDetail_AudioRendererUpdateDataHeader>, _ _2: Buffer<NnAudioDetail_AudioRendererUpdateDataHeader>) throws { throw IpcError.unimplemented(name: "nn::audio::detail::nn::audio::detail::IAudioRenderer#RequestUpdateAudioRendererAuto") }
+	override func executeAudioRendererRendering() throws { throw IpcError.unimplemented(name: "nn::audio::detail::nn::audio::detail::IAudioRenderer#ExecuteAudioRendererRendering") }
+}
+*/
+
 class NnAudioDetail_IAudioOutManager: IpcService {
 	func listAudioOuts(_ _0: Buffer<UInt8>) throws -> UInt32 { throw IpcError.unimplemented(name: "nn::audio::detail::nn::audio::detail::IAudioOutManager#ListAudioOuts") }
 	func openAudioOut(_ sample_rate: UInt32, _ unused: UInt16, _ channel_count: UInt16, _ _3: NnApplet_AppletResourceUserId, _ _4: Pid, _ _5: KObject, _ name_in: Buffer<UInt8>, _ name_out: Buffer<UInt8>) throws -> (sample_rate: UInt32, channel_count: UInt32, pcm_format: UInt32, UInt32, NnAudioDetail_IAudioOut) { throw IpcError.unimplemented(name: "nn::audio::detail::nn::audio::detail::IAudioOutManager#OpenAudioOut") }
@@ -285,6 +325,15 @@ class NnAudioDetail_IAudioOutManager: IpcService {
 	}
 }
 
+/*
+class NnAudioDetail_IAudioOutManager_Impl: NnAudioDetail_IAudioOutManager {
+	override func listAudioOuts(_ _0: Buffer<UInt8>) throws -> UInt32 { throw IpcError.unimplemented(name: "nn::audio::detail::nn::audio::detail::IAudioOutManager#ListAudioOuts") }
+	override func openAudioOut(_ sample_rate: UInt32, _ unused: UInt16, _ channel_count: UInt16, _ _3: NnApplet_AppletResourceUserId, _ _4: Pid, _ _5: KObject, _ name_in: Buffer<UInt8>, _ name_out: Buffer<UInt8>) throws -> (sample_rate: UInt32, channel_count: UInt32, pcm_format: UInt32, UInt32, NnAudioDetail_IAudioOut) { throw IpcError.unimplemented(name: "nn::audio::detail::nn::audio::detail::IAudioOutManager#OpenAudioOut") }
+	override func listAudioOutsAuto(_ _0: Buffer<UInt8>) throws -> UInt32 { throw IpcError.unimplemented(name: "nn::audio::detail::nn::audio::detail::IAudioOutManager#ListAudioOutsAuto") }
+	override func openAudioOutAuto(_ sample_rate: UInt32, _ unused: UInt16, _ channel_count: UInt16, _ _3: NnApplet_AppletResourceUserId, _ _4: Pid, _ _5: KObject, _ _6: Buffer<UInt8>, _ name_out: Buffer<UInt8>) throws -> (sample_rate: UInt32, channel_count: UInt32, pcm_format: UInt32, UInt32, NnAudioDetail_IAudioOut) { throw IpcError.unimplemented(name: "nn::audio::detail::nn::audio::detail::IAudioOutManager#OpenAudioOutAuto") }
+}
+*/
+
 class NnAudioDetail_IAudioRendererManagerForDebugger: IpcService {
 	func requestSuspendForDebug(_ _0: UInt64) throws { throw IpcError.unimplemented(name: "nn::audio::detail::nn::audio::detail::IAudioRendererManagerForDebugger#RequestSuspendForDebug") }
 	func requestResumeForDebug(_ _0: UInt64) throws { throw IpcError.unimplemented(name: "nn::audio::detail::nn::audio::detail::IAudioRendererManagerForDebugger#RequestResumeForDebug") }
@@ -305,6 +354,13 @@ class NnAudioDetail_IAudioRendererManagerForDebugger: IpcService {
 		}
 	}
 }
+
+/*
+class NnAudioDetail_IAudioRendererManagerForDebugger_Impl: NnAudioDetail_IAudioRendererManagerForDebugger {
+	override func requestSuspendForDebug(_ _0: UInt64) throws { throw IpcError.unimplemented(name: "nn::audio::detail::nn::audio::detail::IAudioRendererManagerForDebugger#RequestSuspendForDebug") }
+	override func requestResumeForDebug(_ _0: UInt64) throws { throw IpcError.unimplemented(name: "nn::audio::detail::nn::audio::detail::IAudioRendererManagerForDebugger#RequestResumeForDebug") }
+}
+*/
 
 class NnAudioDetail_IAudioIn: IpcService {
 	func getAudioInState() throws -> UInt32 { throw IpcError.unimplemented(name: "nn::audio::detail::nn::audio::detail::IAudioIn#GetAudioInState") }
@@ -394,6 +450,25 @@ class NnAudioDetail_IAudioIn: IpcService {
 	}
 }
 
+/*
+class NnAudioDetail_IAudioIn_Impl: NnAudioDetail_IAudioIn {
+	override func getAudioInState() throws -> UInt32 { throw IpcError.unimplemented(name: "nn::audio::detail::nn::audio::detail::IAudioIn#GetAudioInState") }
+	override func startAudioIn() throws { throw IpcError.unimplemented(name: "nn::audio::detail::nn::audio::detail::IAudioIn#StartAudioIn") }
+	override func stopAudioIn() throws { throw IpcError.unimplemented(name: "nn::audio::detail::nn::audio::detail::IAudioIn#StopAudioIn") }
+	override func appendAudioInBuffer(_ tag: UInt64, _ _1: Buffer<NnAudio_AudioInBuffer>) throws { throw IpcError.unimplemented(name: "nn::audio::detail::nn::audio::detail::IAudioIn#AppendAudioInBuffer") }
+	override func registerBufferEvent() throws -> KObject { throw IpcError.unimplemented(name: "nn::audio::detail::nn::audio::detail::IAudioIn#RegisterBufferEvent") }
+	override func getReleasedAudioInBuffer(_ _0: Buffer<NnAudio_AudioInBuffer>) throws -> UInt32 { throw IpcError.unimplemented(name: "nn::audio::detail::nn::audio::detail::IAudioIn#GetReleasedAudioInBuffer") }
+	override func containsAudioInBuffer(_ tag: UInt64) throws -> UInt8 { throw IpcError.unimplemented(name: "nn::audio::detail::nn::audio::detail::IAudioIn#ContainsAudioInBuffer") }
+	override func appendAudioInBufferWithUserEvent(_ tag: UInt64, _ _1: KObject, _ _2: Buffer<NnAudio_AudioInBuffer>) throws { throw IpcError.unimplemented(name: "nn::audio::detail::nn::audio::detail::IAudioIn#AppendAudioInBufferWithUserEvent") }
+	override func appendAudioInBufferAuto(_ tag: UInt64, _ _1: Buffer<NnAudio_AudioInBuffer>) throws { throw IpcError.unimplemented(name: "nn::audio::detail::nn::audio::detail::IAudioIn#AppendAudioInBufferAuto") }
+	override func getReleasedAudioInBufferAuto(_ _0: Buffer<NnAudio_AudioInBuffer>) throws -> UInt32 { throw IpcError.unimplemented(name: "nn::audio::detail::nn::audio::detail::IAudioIn#GetReleasedAudioInBufferAuto") }
+	override func appendAudioInBufferWithUserEventAuto(_ tag: UInt64, _ _1: KObject, _ _2: Buffer<NnAudio_AudioInBuffer>) throws { throw IpcError.unimplemented(name: "nn::audio::detail::nn::audio::detail::IAudioIn#AppendAudioInBufferWithUserEventAuto") }
+	override func getAudioInBufferCount() throws -> UInt32 { throw IpcError.unimplemented(name: "nn::audio::detail::nn::audio::detail::IAudioIn#GetAudioInBufferCount") }
+	override func setAudioInDeviceGain(_ gain: UInt32) throws { throw IpcError.unimplemented(name: "nn::audio::detail::nn::audio::detail::IAudioIn#SetAudioInDeviceGain") }
+	override func getAudioInDeviceGain() throws -> UInt32 { throw IpcError.unimplemented(name: "nn::audio::detail::nn::audio::detail::IAudioIn#GetAudioInDeviceGain") }
+}
+*/
+
 class NnAudioDetail_IAudioInManagerForApplet: IpcService {
 	func requestSuspendAudioIns(_ _0: UInt64, _ _1: UInt64) throws { throw IpcError.unimplemented(name: "nn::audio::detail::nn::audio::detail::IAudioInManagerForApplet#RequestSuspendAudioIns") }
 	func requestResumeAudioIns(_ _0: UInt64, _ _1: UInt64) throws { throw IpcError.unimplemented(name: "nn::audio::detail::nn::audio::detail::IAudioInManagerForApplet#RequestResumeAudioIns") }
@@ -425,6 +500,15 @@ class NnAudioDetail_IAudioInManagerForApplet: IpcService {
 		}
 	}
 }
+
+/*
+class NnAudioDetail_IAudioInManagerForApplet_Impl: NnAudioDetail_IAudioInManagerForApplet {
+	override func requestSuspendAudioIns(_ _0: UInt64, _ _1: UInt64) throws { throw IpcError.unimplemented(name: "nn::audio::detail::nn::audio::detail::IAudioInManagerForApplet#RequestSuspendAudioIns") }
+	override func requestResumeAudioIns(_ _0: UInt64, _ _1: UInt64) throws { throw IpcError.unimplemented(name: "nn::audio::detail::nn::audio::detail::IAudioInManagerForApplet#RequestResumeAudioIns") }
+	override func getAudioInsProcessMasterVolume(_ _0: UInt64) throws -> UInt32 { throw IpcError.unimplemented(name: "nn::audio::detail::nn::audio::detail::IAudioInManagerForApplet#GetAudioInsProcessMasterVolume") }
+	override func setAudioInsProcessMasterVolume(_ _0: UInt32, _ _1: UInt64, _ _2: UInt64) throws { throw IpcError.unimplemented(name: "nn::audio::detail::nn::audio::detail::IAudioInManagerForApplet#SetAudioInsProcessMasterVolume") }
+}
+*/
 
 class NnAudioDetail_IFinalOutputRecorder: IpcService {
 	func getFinalOutputRecorderState() throws -> UInt32 { throw IpcError.unimplemented(name: "nn::audio::detail::nn::audio::detail::IFinalOutputRecorder#GetFinalOutputRecorderState") }
@@ -495,6 +579,21 @@ class NnAudioDetail_IFinalOutputRecorder: IpcService {
 	}
 }
 
+/*
+class NnAudioDetail_IFinalOutputRecorder_Impl: NnAudioDetail_IFinalOutputRecorder {
+	override func getFinalOutputRecorderState() throws -> UInt32 { throw IpcError.unimplemented(name: "nn::audio::detail::nn::audio::detail::IFinalOutputRecorder#GetFinalOutputRecorderState") }
+	override func startFinalOutputRecorder() throws { throw IpcError.unimplemented(name: "nn::audio::detail::nn::audio::detail::IFinalOutputRecorder#StartFinalOutputRecorder") }
+	override func stopFinalOutputRecorder() throws { throw IpcError.unimplemented(name: "nn::audio::detail::nn::audio::detail::IFinalOutputRecorder#StopFinalOutputRecorder") }
+	override func appendFinalOutputRecorderBuffer(_ _0: UInt64, _ _1: Buffer<NnAudio_AudioInBuffer>) throws { throw IpcError.unimplemented(name: "nn::audio::detail::nn::audio::detail::IFinalOutputRecorder#AppendFinalOutputRecorderBuffer") }
+	override func registerBufferEvent() throws -> KObject { throw IpcError.unimplemented(name: "nn::audio::detail::nn::audio::detail::IFinalOutputRecorder#RegisterBufferEvent") }
+	override func getReleasedFinalOutputRecorderBuffer(_ _0: Buffer<NnAudio_AudioInBuffer>) throws -> (UInt32, UInt64) { throw IpcError.unimplemented(name: "nn::audio::detail::nn::audio::detail::IFinalOutputRecorder#GetReleasedFinalOutputRecorderBuffer") }
+	override func containsFinalOutputRecorderBuffer(_ _0: UInt64) throws -> UInt8 { throw IpcError.unimplemented(name: "nn::audio::detail::nn::audio::detail::IFinalOutputRecorder#ContainsFinalOutputRecorderBuffer") }
+	override func unknown7(_ _0: UInt64) throws -> UInt64 { throw IpcError.unimplemented(name: "nn::audio::detail::nn::audio::detail::IFinalOutputRecorder#Unknown7") }
+	override func appendFinalOutputRecorderBufferAuto(_ _0: UInt64, _ _1: Buffer<NnAudio_AudioInBuffer>) throws { throw IpcError.unimplemented(name: "nn::audio::detail::nn::audio::detail::IFinalOutputRecorder#AppendFinalOutputRecorderBufferAuto") }
+	override func getReleasedFinalOutputRecorderBufferAuto(_ _0: Buffer<NnAudio_AudioInBuffer>) throws -> (UInt32, UInt64) { throw IpcError.unimplemented(name: "nn::audio::detail::nn::audio::detail::IFinalOutputRecorder#GetReleasedFinalOutputRecorderBufferAuto") }
+}
+*/
+
 class NnAudioDetail_IAudioOutManagerForApplet: IpcService {
 	func requestSuspendAudioOuts(_ _0: UInt64, _ _1: UInt64) throws { throw IpcError.unimplemented(name: "nn::audio::detail::nn::audio::detail::IAudioOutManagerForApplet#RequestSuspendAudioOuts") }
 	func requestResumeAudioOuts(_ _0: UInt64, _ _1: UInt64) throws { throw IpcError.unimplemented(name: "nn::audio::detail::nn::audio::detail::IAudioOutManagerForApplet#RequestResumeAudioOuts") }
@@ -538,6 +637,17 @@ class NnAudioDetail_IAudioOutManagerForApplet: IpcService {
 	}
 }
 
+/*
+class NnAudioDetail_IAudioOutManagerForApplet_Impl: NnAudioDetail_IAudioOutManagerForApplet {
+	override func requestSuspendAudioOuts(_ _0: UInt64, _ _1: UInt64) throws { throw IpcError.unimplemented(name: "nn::audio::detail::nn::audio::detail::IAudioOutManagerForApplet#RequestSuspendAudioOuts") }
+	override func requestResumeAudioOuts(_ _0: UInt64, _ _1: UInt64) throws { throw IpcError.unimplemented(name: "nn::audio::detail::nn::audio::detail::IAudioOutManagerForApplet#RequestResumeAudioOuts") }
+	override func getAudioOutsProcessMasterVolume(_ _0: UInt64) throws -> UInt32 { throw IpcError.unimplemented(name: "nn::audio::detail::nn::audio::detail::IAudioOutManagerForApplet#GetAudioOutsProcessMasterVolume") }
+	override func setAudioOutsProcessMasterVolume(_ _0: UInt32, _ _1: UInt64, _ _2: UInt64) throws { throw IpcError.unimplemented(name: "nn::audio::detail::nn::audio::detail::IAudioOutManagerForApplet#SetAudioOutsProcessMasterVolume") }
+	override func getAudioOutsProcessRecordVolume(_ _0: UInt64) throws -> UInt32 { throw IpcError.unimplemented(name: "nn::audio::detail::nn::audio::detail::IAudioOutManagerForApplet#GetAudioOutsProcessRecordVolume") }
+	override func setAudioOutsProcessRecordVolume(_ _0: UInt32, _ _1: UInt64, _ _2: UInt64) throws { throw IpcError.unimplemented(name: "nn::audio::detail::nn::audio::detail::IAudioOutManagerForApplet#SetAudioOutsProcessRecordVolume") }
+}
+*/
+
 class NnAudioDetail_IFinalOutputRecorderManagerForApplet: IpcService {
 	func requestSuspendFinalOutputRecorders(_ _0: UInt64, _ _1: UInt64) throws { throw IpcError.unimplemented(name: "nn::audio::detail::nn::audio::detail::IFinalOutputRecorderManagerForApplet#RequestSuspendFinalOutputRecorders") }
 	func requestResumeFinalOutputRecorders(_ _0: UInt64, _ _1: UInt64) throws { throw IpcError.unimplemented(name: "nn::audio::detail::nn::audio::detail::IFinalOutputRecorderManagerForApplet#RequestResumeFinalOutputRecorders") }
@@ -559,6 +669,13 @@ class NnAudioDetail_IFinalOutputRecorderManagerForApplet: IpcService {
 	}
 }
 
+/*
+class NnAudioDetail_IFinalOutputRecorderManagerForApplet_Impl: NnAudioDetail_IFinalOutputRecorderManagerForApplet {
+	override func requestSuspendFinalOutputRecorders(_ _0: UInt64, _ _1: UInt64) throws { throw IpcError.unimplemented(name: "nn::audio::detail::nn::audio::detail::IFinalOutputRecorderManagerForApplet#RequestSuspendFinalOutputRecorders") }
+	override func requestResumeFinalOutputRecorders(_ _0: UInt64, _ _1: UInt64) throws { throw IpcError.unimplemented(name: "nn::audio::detail::nn::audio::detail::IFinalOutputRecorderManagerForApplet#RequestResumeFinalOutputRecorders") }
+}
+*/
+
 class NnAudioDetail_IFinalOutputRecorderManagerForDebugger: IpcService {
 	func requestSuspendForDebug(_ _0: UInt64) throws { throw IpcError.unimplemented(name: "nn::audio::detail::nn::audio::detail::IFinalOutputRecorderManagerForDebugger#RequestSuspendForDebug") }
 	func requestResumeForDebug(_ _0: UInt64) throws { throw IpcError.unimplemented(name: "nn::audio::detail::nn::audio::detail::IFinalOutputRecorderManagerForDebugger#RequestResumeForDebug") }
@@ -579,6 +696,13 @@ class NnAudioDetail_IFinalOutputRecorderManagerForDebugger: IpcService {
 		}
 	}
 }
+
+/*
+class NnAudioDetail_IFinalOutputRecorderManagerForDebugger_Impl: NnAudioDetail_IFinalOutputRecorderManagerForDebugger {
+	override func requestSuspendForDebug(_ _0: UInt64) throws { throw IpcError.unimplemented(name: "nn::audio::detail::nn::audio::detail::IFinalOutputRecorderManagerForDebugger#RequestSuspendForDebug") }
+	override func requestResumeForDebug(_ _0: UInt64) throws { throw IpcError.unimplemented(name: "nn::audio::detail::nn::audio::detail::IFinalOutputRecorderManagerForDebugger#RequestResumeForDebug") }
+}
+*/
 
 class NnAudioDetail_IAudioDebugManager: IpcService {
 	func unknown0(_ _0: UInt32, _ _1: UInt64, _ _2: KObject) throws { throw IpcError.unimplemented(name: "nn::audio::detail::nn::audio::detail::IAudioDebugManager#Unknown0") }
@@ -610,6 +734,15 @@ class NnAudioDetail_IAudioDebugManager: IpcService {
 		}
 	}
 }
+
+/*
+class NnAudioDetail_IAudioDebugManager_Impl: NnAudioDetail_IAudioDebugManager {
+	override func unknown0(_ _0: UInt32, _ _1: UInt64, _ _2: KObject) throws { throw IpcError.unimplemented(name: "nn::audio::detail::nn::audio::detail::IAudioDebugManager#Unknown0") }
+	override func unknown1() throws { throw IpcError.unimplemented(name: "nn::audio::detail::nn::audio::detail::IAudioDebugManager#Unknown1") }
+	override func unknown2() throws { throw IpcError.unimplemented(name: "nn::audio::detail::nn::audio::detail::IAudioDebugManager#Unknown2") }
+	override func unknown3() throws { throw IpcError.unimplemented(name: "nn::audio::detail::nn::audio::detail::IAudioDebugManager#Unknown3") }
+}
+*/
 
 class NnAudioDetail_IAudioRendererManager: IpcService {
 	func openAudioRenderer(_ _0: NnAudioDetail_AudioRendererParameterInternal, _ _1: UInt64, _ _2: NnApplet_AppletResourceUserId, _ _3: Pid, _ _4: KObject, _ _5: KObject) throws -> NnAudioDetail_IAudioRenderer { throw IpcError.unimplemented(name: "nn::audio::detail::nn::audio::detail::IAudioRendererManager#OpenAudioRenderer") }
@@ -651,6 +784,16 @@ class NnAudioDetail_IAudioRendererManager: IpcService {
 		}
 	}
 }
+
+/*
+class NnAudioDetail_IAudioRendererManager_Impl: NnAudioDetail_IAudioRendererManager {
+	override func openAudioRenderer(_ _0: NnAudioDetail_AudioRendererParameterInternal, _ _1: UInt64, _ _2: NnApplet_AppletResourceUserId, _ _3: Pid, _ _4: KObject, _ _5: KObject) throws -> NnAudioDetail_IAudioRenderer { throw IpcError.unimplemented(name: "nn::audio::detail::nn::audio::detail::IAudioRendererManager#OpenAudioRenderer") }
+	override func getWorkBufferSize(_ _0: NnAudioDetail_AudioRendererParameterInternal) throws -> UInt64 { throw IpcError.unimplemented(name: "nn::audio::detail::nn::audio::detail::IAudioRendererManager#GetWorkBufferSize") }
+	override func getAudioDeviceService(_ _0: NnApplet_AppletResourceUserId) throws -> NnAudioDetail_IAudioDevice { throw IpcError.unimplemented(name: "nn::audio::detail::nn::audio::detail::IAudioRendererManager#GetAudioDeviceService") }
+	override func openAudioRendererAuto(_ _0: NnAudioDetail_AudioRendererParameterInternal, _ _1: UInt64, _ _2: UInt64, _ _3: UInt64, _ _4: Pid, _ _5: KObject) throws -> NnAudioDetail_IAudioRenderer { throw IpcError.unimplemented(name: "nn::audio::detail::nn::audio::detail::IAudioRendererManager#OpenAudioRendererAuto") }
+	override func getAudioDeviceServiceWithRevisionInfo(_ _0: NnApplet_AppletResourceUserId, _ _1: UInt32) throws -> NnAudioDetail_IAudioDevice { throw IpcError.unimplemented(name: "nn::audio::detail::nn::audio::detail::IAudioRendererManager#GetAudioDeviceServiceWithRevisionInfo") }
+}
+*/
 
 class NnAudioDetail_IAudioOut: IpcService {
 	func getAudioOutState() throws -> UInt32 { throw IpcError.unimplemented(name: "nn::audio::detail::nn::audio::detail::IAudioOut#GetAudioOutState") }
@@ -731,6 +874,23 @@ class NnAudioDetail_IAudioOut: IpcService {
 	}
 }
 
+/*
+class NnAudioDetail_IAudioOut_Impl: NnAudioDetail_IAudioOut {
+	override func getAudioOutState() throws -> UInt32 { throw IpcError.unimplemented(name: "nn::audio::detail::nn::audio::detail::IAudioOut#GetAudioOutState") }
+	override func startAudioOut() throws { throw IpcError.unimplemented(name: "nn::audio::detail::nn::audio::detail::IAudioOut#StartAudioOut") }
+	override func stopAudioOut() throws { throw IpcError.unimplemented(name: "nn::audio::detail::nn::audio::detail::IAudioOut#StopAudioOut") }
+	override func appendAudioOutBuffer(_ tag: UInt64, _ _1: Buffer<NnAudio_AudioOutBuffer>) throws { throw IpcError.unimplemented(name: "nn::audio::detail::nn::audio::detail::IAudioOut#AppendAudioOutBuffer") }
+	override func registerBufferEvent() throws -> KObject { throw IpcError.unimplemented(name: "nn::audio::detail::nn::audio::detail::IAudioOut#RegisterBufferEvent") }
+	override func getReleasedAudioOutBuffer(_ _0: Buffer<NnAudio_AudioOutBuffer>) throws -> UInt32 { throw IpcError.unimplemented(name: "nn::audio::detail::nn::audio::detail::IAudioOut#GetReleasedAudioOutBuffer") }
+	override func containsAudioOutBuffer(_ tag: UInt64) throws -> UInt8 { throw IpcError.unimplemented(name: "nn::audio::detail::nn::audio::detail::IAudioOut#ContainsAudioOutBuffer") }
+	override func appendAudioOutBufferAuto(_ tag: UInt64, _ _1: Buffer<NnAudio_AudioOutBuffer>) throws { throw IpcError.unimplemented(name: "nn::audio::detail::nn::audio::detail::IAudioOut#AppendAudioOutBufferAuto") }
+	override func getReleasedAudioOutBufferAuto(_ _0: Buffer<NnAudio_AudioOutBuffer>) throws -> UInt32 { throw IpcError.unimplemented(name: "nn::audio::detail::nn::audio::detail::IAudioOut#GetReleasedAudioOutBufferAuto") }
+	override func getAudioOutBufferCount() throws -> UInt32 { throw IpcError.unimplemented(name: "nn::audio::detail::nn::audio::detail::IAudioOut#GetAudioOutBufferCount") }
+	override func getAudioOutPlayedSampleCount() throws -> UInt64 { throw IpcError.unimplemented(name: "nn::audio::detail::nn::audio::detail::IAudioOut#GetAudioOutPlayedSampleCount") }
+	override func flushAudioOutBuffers() throws -> UInt8 { throw IpcError.unimplemented(name: "nn::audio::detail::nn::audio::detail::IAudioOut#FlushAudioOutBuffers") }
+}
+*/
+
 class NnAudioDetail_IAudioOutManagerForDebugger: IpcService {
 	func requestSuspendAudioOutsForDebug(_ _0: UInt64) throws { throw IpcError.unimplemented(name: "nn::audio::detail::nn::audio::detail::IAudioOutManagerForDebugger#RequestSuspendAudioOutsForDebug") }
 	func requestResumeAudioOutsForDebug(_ _0: UInt64) throws { throw IpcError.unimplemented(name: "nn::audio::detail::nn::audio::detail::IAudioOutManagerForDebugger#RequestResumeAudioOutsForDebug") }
@@ -751,6 +911,13 @@ class NnAudioDetail_IAudioOutManagerForDebugger: IpcService {
 		}
 	}
 }
+
+/*
+class NnAudioDetail_IAudioOutManagerForDebugger_Impl: NnAudioDetail_IAudioOutManagerForDebugger {
+	override func requestSuspendAudioOutsForDebug(_ _0: UInt64) throws { throw IpcError.unimplemented(name: "nn::audio::detail::nn::audio::detail::IAudioOutManagerForDebugger#RequestSuspendAudioOutsForDebug") }
+	override func requestResumeAudioOutsForDebug(_ _0: UInt64) throws { throw IpcError.unimplemented(name: "nn::audio::detail::nn::audio::detail::IAudioOutManagerForDebugger#RequestResumeAudioOutsForDebug") }
+}
+*/
 
 class NnAudioDetail_IAudioRendererManagerForApplet: IpcService {
 	func requestSuspendAudioRenderers(_ _0: UInt64, _ _1: UInt64) throws { throw IpcError.unimplemented(name: "nn::audio::detail::nn::audio::detail::IAudioRendererManagerForApplet#RequestSuspendAudioRenderers") }
@@ -805,6 +972,19 @@ class NnAudioDetail_IAudioRendererManagerForApplet: IpcService {
 	}
 }
 
+/*
+class NnAudioDetail_IAudioRendererManagerForApplet_Impl: NnAudioDetail_IAudioRendererManagerForApplet {
+	override func requestSuspendAudioRenderers(_ _0: UInt64, _ _1: UInt64) throws { throw IpcError.unimplemented(name: "nn::audio::detail::nn::audio::detail::IAudioRendererManagerForApplet#RequestSuspendAudioRenderers") }
+	override func requestResumeAudioRenderers(_ _0: UInt64, _ _1: UInt64) throws { throw IpcError.unimplemented(name: "nn::audio::detail::nn::audio::detail::IAudioRendererManagerForApplet#RequestResumeAudioRenderers") }
+	override func getAudioRenderersProcessMasterVolume(_ _0: UInt64) throws -> UInt32 { throw IpcError.unimplemented(name: "nn::audio::detail::nn::audio::detail::IAudioRendererManagerForApplet#GetAudioRenderersProcessMasterVolume") }
+	override func setAudioRenderersProcessMasterVolume(_ _0: UInt32, _ _1: UInt64, _ _2: UInt64) throws { throw IpcError.unimplemented(name: "nn::audio::detail::nn::audio::detail::IAudioRendererManagerForApplet#SetAudioRenderersProcessMasterVolume") }
+	override func registerAppletResourceUserId(_ _0: UInt64) throws { throw IpcError.unimplemented(name: "nn::audio::detail::nn::audio::detail::IAudioRendererManagerForApplet#RegisterAppletResourceUserId") }
+	override func unregisterAppletResourceUserId(_ _0: UInt64) throws { throw IpcError.unimplemented(name: "nn::audio::detail::nn::audio::detail::IAudioRendererManagerForApplet#UnregisterAppletResourceUserId") }
+	override func getAudioRenderersProcessRecordVolume(_ _0: UInt64) throws -> UInt32 { throw IpcError.unimplemented(name: "nn::audio::detail::nn::audio::detail::IAudioRendererManagerForApplet#GetAudioRenderersProcessRecordVolume") }
+	override func setAudioRenderersProcessRecordVolume(_ _0: UInt32, _ _1: UInt64, _ _2: UInt64) throws { throw IpcError.unimplemented(name: "nn::audio::detail::nn::audio::detail::IAudioRendererManagerForApplet#SetAudioRenderersProcessRecordVolume") }
+}
+*/
+
 class NnAudioDetail_IAudioInManagerForDebugger: IpcService {
 	func requestSuspendAudioInsForDebug(_ _0: UInt64) throws { throw IpcError.unimplemented(name: "nn::audio::detail::nn::audio::detail::IAudioInManagerForDebugger#RequestSuspendAudioInsForDebug") }
 	func requestResumeAudioInsForDebug(_ _0: UInt64) throws { throw IpcError.unimplemented(name: "nn::audio::detail::nn::audio::detail::IAudioInManagerForDebugger#RequestResumeAudioInsForDebug") }
@@ -825,6 +1005,13 @@ class NnAudioDetail_IAudioInManagerForDebugger: IpcService {
 		}
 	}
 }
+
+/*
+class NnAudioDetail_IAudioInManagerForDebugger_Impl: NnAudioDetail_IAudioInManagerForDebugger {
+	override func requestSuspendAudioInsForDebug(_ _0: UInt64) throws { throw IpcError.unimplemented(name: "nn::audio::detail::nn::audio::detail::IAudioInManagerForDebugger#RequestSuspendAudioInsForDebug") }
+	override func requestResumeAudioInsForDebug(_ _0: UInt64) throws { throw IpcError.unimplemented(name: "nn::audio::detail::nn::audio::detail::IAudioInManagerForDebugger#RequestResumeAudioInsForDebug") }
+}
+*/
 
 class NnAudioDetail_IAudioInManager: IpcService {
 	func listAudioIns(_ names: Buffer<UInt8>) throws -> UInt32 { throw IpcError.unimplemented(name: "nn::audio::detail::nn::audio::detail::IAudioInManager#ListAudioIns") }
@@ -874,6 +1061,16 @@ class NnAudioDetail_IAudioInManager: IpcService {
 		}
 	}
 }
+
+/*
+class NnAudioDetail_IAudioInManager_Impl: NnAudioDetail_IAudioInManager {
+	override func listAudioIns(_ names: Buffer<UInt8>) throws -> UInt32 { throw IpcError.unimplemented(name: "nn::audio::detail::nn::audio::detail::IAudioInManager#ListAudioIns") }
+	override func openAudioIn(_ _0: UInt64, _ pid_copy: UInt64, _ _2: Pid, _ _3: KObject, _ nameIn: Buffer<UInt8>, _ nameOut: Buffer<UInt8>) throws -> (sample_rate: UInt32, channel_count: UInt32, pcm_format: UInt32, UInt32, NnAudioDetail_IAudioIn) { throw IpcError.unimplemented(name: "nn::audio::detail::nn::audio::detail::IAudioInManager#OpenAudioIn") }
+	override func unknown2(_ _0: Buffer<UInt8>) throws -> UInt32 { throw IpcError.unimplemented(name: "nn::audio::detail::nn::audio::detail::IAudioInManager#Unknown2") }
+	override func openAudioInAuto(_ _0: UInt64, _ pid_copy: UInt64, _ _2: Pid, _ _3: KObject, _ _4: Buffer<UInt8>, _ name: Buffer<UInt8>) throws -> (sample_rate: UInt32, channel_count: UInt32, pcm_format: UInt32, UInt32, NnAudioDetail_IAudioIn) { throw IpcError.unimplemented(name: "nn::audio::detail::nn::audio::detail::IAudioInManager#OpenAudioInAuto") }
+	override func listAudioInsAuto(_ names: Buffer<UInt8>) throws -> UInt32 { throw IpcError.unimplemented(name: "nn::audio::detail::nn::audio::detail::IAudioInManager#ListAudioInsAuto") }
+}
+*/
 
 class NnAudioDetail_ICodecController: IpcService {
 	func initializeCodecController() throws { throw IpcError.unimplemented(name: "nn::audio::detail::nn::audio::detail::ICodecController#InitializeCodecController") }
@@ -956,3 +1153,21 @@ class NnAudioDetail_ICodecController: IpcService {
 		}
 	}
 }
+
+/*
+class NnAudioDetail_ICodecController_Impl: NnAudioDetail_ICodecController {
+	override func initializeCodecController() throws { throw IpcError.unimplemented(name: "nn::audio::detail::nn::audio::detail::ICodecController#InitializeCodecController") }
+	override func finalizeCodecController() throws { throw IpcError.unimplemented(name: "nn::audio::detail::nn::audio::detail::ICodecController#FinalizeCodecController") }
+	override func sleepCodecController() throws { throw IpcError.unimplemented(name: "nn::audio::detail::nn::audio::detail::ICodecController#SleepCodecController") }
+	override func wakeCodecController() throws { throw IpcError.unimplemented(name: "nn::audio::detail::nn::audio::detail::ICodecController#WakeCodecController") }
+	override func setCodecVolume(_ _0: UInt32) throws { throw IpcError.unimplemented(name: "nn::audio::detail::nn::audio::detail::ICodecController#SetCodecVolume") }
+	override func getCodecVolumeMax() throws -> UInt32 { throw IpcError.unimplemented(name: "nn::audio::detail::nn::audio::detail::ICodecController#GetCodecVolumeMax") }
+	override func getCodecVolumeMin() throws -> UInt32 { throw IpcError.unimplemented(name: "nn::audio::detail::nn::audio::detail::ICodecController#GetCodecVolumeMin") }
+	override func setCodecActiveTarget(_ _0: UInt32) throws { throw IpcError.unimplemented(name: "nn::audio::detail::nn::audio::detail::ICodecController#SetCodecActiveTarget") }
+	override func getCodecActiveTarget() throws -> UInt32 { throw IpcError.unimplemented(name: "nn::audio::detail::nn::audio::detail::ICodecController#GetCodecActiveTarget") }
+	override func bindCodecHeadphoneMicJackInterrupt() throws -> KObject { throw IpcError.unimplemented(name: "nn::audio::detail::nn::audio::detail::ICodecController#BindCodecHeadphoneMicJackInterrupt") }
+	override func isCodecHeadphoneMicJackInserted() throws -> UInt8 { throw IpcError.unimplemented(name: "nn::audio::detail::nn::audio::detail::ICodecController#IsCodecHeadphoneMicJackInserted") }
+	override func clearCodecHeadphoneMicJackInterrupt() throws { throw IpcError.unimplemented(name: "nn::audio::detail::nn::audio::detail::ICodecController#ClearCodecHeadphoneMicJackInterrupt") }
+	override func isCodecDeviceRequested() throws -> UInt8 { throw IpcError.unimplemented(name: "nn::audio::detail::nn::audio::detail::ICodecController#IsCodecDeviceRequested") }
+}
+*/

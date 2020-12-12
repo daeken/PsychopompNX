@@ -37,3 +37,13 @@ class NnAccountHttp_IOAuthProcedure: IpcService {
 		}
 	}
 }
+
+/*
+class NnAccountHttp_IOAuthProcedure_Impl: NnAccountHttp_IOAuthProcedure {
+	override func prepareAsync() throws -> NnAccountDetail_IAsyncContext { throw IpcError.unimplemented(name: "nn::account::http::nn::account::http::IOAuthProcedure#PrepareAsync") }
+	override func getRequest(_ _0: Buffer<NnAccount_RequestUrl>, _ _1: Buffer<NnAccount_CallbackUri>) throws { throw IpcError.unimplemented(name: "nn::account::http::nn::account::http::IOAuthProcedure#GetRequest") }
+	override func applyResponse(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::account::http::nn::account::http::IOAuthProcedure#ApplyResponse") }
+	override func applyResponseAsync(_ _0: Buffer<UInt8>) throws -> NnAccountDetail_IAsyncContext { throw IpcError.unimplemented(name: "nn::account::http::nn::account::http::IOAuthProcedure#ApplyResponseAsync") }
+	override func suspend() throws -> NnAccountDetail_Uuid { throw IpcError.unimplemented(name: "nn::account::http::nn::account::http::IOAuthProcedure#Suspend") }
+}
+*/

@@ -14,6 +14,12 @@ class NnJitsrv_IJitService: IpcService {
 	}
 }
 
+/*
+class NnJitsrv_IJitService_Impl: NnJitsrv_IJitService {
+	override func createJitEnvironment(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::jitsrv::nn::jitsrv::IJitService#CreateJitEnvironment") }
+}
+*/
+
 class NnJitsrv_IJitEnvironment: IpcService {
 	func control(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::jitsrv::nn::jitsrv::IJitEnvironment#Control") }
 	func generateCode(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::jitsrv::nn::jitsrv::IJitEnvironment#GenerateCode") }
@@ -44,3 +50,12 @@ class NnJitsrv_IJitEnvironment: IpcService {
 		}
 	}
 }
+
+/*
+class NnJitsrv_IJitEnvironment_Impl: NnJitsrv_IJitEnvironment {
+	override func control(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::jitsrv::nn::jitsrv::IJitEnvironment#Control") }
+	override func generateCode(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::jitsrv::nn::jitsrv::IJitEnvironment#GenerateCode") }
+	override func loadPlugin(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::jitsrv::nn::jitsrv::IJitEnvironment#LoadPlugin") }
+	override func getCodeAddress(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::jitsrv::nn::jitsrv::IJitEnvironment#GetCodeAddress") }
+}
+*/

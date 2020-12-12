@@ -31,6 +31,15 @@ class NnFgmSf_IRequest: IpcService {
 	}
 }
 
+/*
+class NnFgmSf_IRequest_Impl: NnFgmSf_IRequest {
+	override func initialize(_ _0: NnFgm_Module, _ _1: UInt64, _ _2: Pid) throws -> KObject { throw IpcError.unimplemented(name: "nn::fgm::sf::nn::fgm::sf::IRequest#Initialize") }
+	override func set(_ _0: UInt32, _ _1: UInt32) throws { throw IpcError.unimplemented(name: "nn::fgm::sf::nn::fgm::sf::IRequest#Set") }
+	override func get() throws -> UInt32 { throw IpcError.unimplemented(name: "nn::fgm::sf::nn::fgm::sf::IRequest#Get") }
+	override func cancel() throws { throw IpcError.unimplemented(name: "nn::fgm::sf::nn::fgm::sf::IRequest#Cancel") }
+}
+*/
+
 class NnFgmSf_IDebugger: IpcService {
 	func initialize(_ _0: UInt64, _ _1: KObject) throws -> KObject { throw IpcError.unimplemented(name: "nn::fgm::sf::nn::fgm::sf::IDebugger#Initialize") }
 	func read(_ _0: Buffer<UInt8>) throws -> (UInt32, UInt32, UInt32) { throw IpcError.unimplemented(name: "nn::fgm::sf::nn::fgm::sf::IDebugger#Read") }
@@ -61,6 +70,14 @@ class NnFgmSf_IDebugger: IpcService {
 	}
 }
 
+/*
+class NnFgmSf_IDebugger_Impl: NnFgmSf_IDebugger {
+	override func initialize(_ _0: UInt64, _ _1: KObject) throws -> KObject { throw IpcError.unimplemented(name: "nn::fgm::sf::nn::fgm::sf::IDebugger#Initialize") }
+	override func read(_ _0: Buffer<UInt8>) throws -> (UInt32, UInt32, UInt32) { throw IpcError.unimplemented(name: "nn::fgm::sf::nn::fgm::sf::IDebugger#Read") }
+	override func cancel() throws { throw IpcError.unimplemented(name: "nn::fgm::sf::nn::fgm::sf::IDebugger#Cancel") }
+}
+*/
+
 class NnFgmSf_ISession: IpcService {
 	func initialize() throws -> NnFgmSf_IRequest { throw IpcError.unimplemented(name: "nn::fgm::sf::nn::fgm::sf::ISession#Initialize") }
 	
@@ -77,3 +94,9 @@ class NnFgmSf_ISession: IpcService {
 		}
 	}
 }
+
+/*
+class NnFgmSf_ISession_Impl: NnFgmSf_ISession {
+	override func initialize() throws -> NnFgmSf_IRequest { throw IpcError.unimplemented(name: "nn::fgm::sf::nn::fgm::sf::ISession#Initialize") }
+}
+*/

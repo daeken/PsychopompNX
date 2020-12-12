@@ -50,6 +50,19 @@ class NnUart_IPortSession: IpcService {
 	}
 }
 
+/*
+class NnUart_IPortSession_Impl: NnUart_IPortSession {
+	override func openSession(_ _0: Any?, _ _1: KObject, _ _2: KObject) throws -> Any? { throw IpcError.unimplemented(name: "nn::uart::nn::uart::IPortSession#OpenSession") }
+	override func openSessionForTest(_ _0: Any?, _ _1: KObject, _ _2: KObject) throws -> Any? { throw IpcError.unimplemented(name: "nn::uart::nn::uart::IPortSession#OpenSessionForTest") }
+	override func unknown2() throws -> Any? { throw IpcError.unimplemented(name: "nn::uart::nn::uart::IPortSession#Unknown2") }
+	override func unknown3(_ _0: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented(name: "nn::uart::nn::uart::IPortSession#Unknown3") }
+	override func unknown4() throws -> Any? { throw IpcError.unimplemented(name: "nn::uart::nn::uart::IPortSession#Unknown4") }
+	override func unknown5(_ _0: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented(name: "nn::uart::nn::uart::IPortSession#Unknown5") }
+	override func unknown6(_ _0: Any?) throws -> (Any?, KObject) { throw IpcError.unimplemented(name: "nn::uart::nn::uart::IPortSession#Unknown6") }
+	override func unknown7(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::uart::nn::uart::IPortSession#Unknown7") }
+}
+*/
+
 class NnUart_IManager: IpcService {
 	func doesUartExist(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::uart::nn::uart::IManager#DoesUartExist") }
 	func doesUartExistForTest(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::uart::nn::uart::IManager#DoesUartExistForTest") }
@@ -106,3 +119,17 @@ class NnUart_IManager: IpcService {
 		}
 	}
 }
+
+/*
+class NnUart_IManager_Impl: NnUart_IManager {
+	override func doesUartExist(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::uart::nn::uart::IManager#DoesUartExist") }
+	override func doesUartExistForTest(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::uart::nn::uart::IManager#DoesUartExistForTest") }
+	override func setUartBaudrate(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::uart::nn::uart::IManager#SetUartBaudrate") }
+	override func setUartBaudrateForTest(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::uart::nn::uart::IManager#SetUartBaudrateForTest") }
+	override func isSomethingUartValid(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::uart::nn::uart::IManager#IsSomethingUartValid") }
+	override func isSomethingUartValidForTest(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::uart::nn::uart::IManager#IsSomethingUartValidForTest") }
+	override func getSession() throws -> NnUart_IPortSession { throw IpcError.unimplemented(name: "nn::uart::nn::uart::IManager#GetSession") }
+	override func isSomethingUartValid2(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::uart::nn::uart::IManager#IsSomethingUartValid2") }
+	override func isSomethingUartValid2ForTest(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::uart::nn::uart::IManager#IsSomethingUartValid2ForTest") }
+}
+*/

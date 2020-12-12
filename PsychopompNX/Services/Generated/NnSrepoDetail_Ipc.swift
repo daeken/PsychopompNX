@@ -23,3 +23,11 @@ class NnSrepoDetailIpc_ISrepoService: IpcService {
 		}
 	}
 }
+
+/*
+class NnSrepoDetailIpc_ISrepoService_Impl: NnSrepoDetailIpc_ISrepoService {
+	override func unknown0(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::srepo::detail::ipc::nn::srepo::detail::ipc::ISrepoService#Unknown0") }
+	override func unknown1(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::srepo::detail::ipc::nn::srepo::detail::ipc::ISrepoService#Unknown1") }
+	override func unknown2(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::srepo::detail::ipc::nn::srepo::detail::ipc::ISrepoService#Unknown2") }
+}
+*/

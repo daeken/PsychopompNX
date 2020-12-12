@@ -28,6 +28,12 @@ class NnHid_IActiveVibrationDeviceList: IpcService {
 	}
 }
 
+/*
+class NnHid_IActiveVibrationDeviceList_Impl: NnHid_IActiveVibrationDeviceList {
+	override func activateVibrationDevice(_ _0: NnHid_VibrationDeviceHandle) throws { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IActiveVibrationDeviceList#ActivateVibrationDevice") }
+}
+*/
+
 class NnHid_IAppletResource: IpcService {
 	func getSharedMemoryHandle() throws -> KObject { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IAppletResource#GetSharedMemoryHandle") }
 	
@@ -44,6 +50,12 @@ class NnHid_IAppletResource: IpcService {
 		}
 	}
 }
+
+/*
+class NnHid_IAppletResource_Impl: NnHid_IAppletResource {
+	override func getSharedMemoryHandle() throws -> KObject { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IAppletResource#GetSharedMemoryHandle") }
+}
+*/
 
 class NnHid_IHidServer: IpcService {
 	func createAppletResource(_ _0: NnApplet_AppletResourceUserId, _ _1: Pid) throws -> NnHid_IAppletResource { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidServer#CreateAppletResource") }
@@ -682,6 +694,128 @@ class NnHid_IHidServer: IpcService {
 	}
 }
 
+/*
+class NnHid_IHidServer_Impl: NnHid_IHidServer {
+	override func createAppletResource(_ _0: NnApplet_AppletResourceUserId, _ _1: Pid) throws -> NnHid_IAppletResource { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidServer#CreateAppletResource") }
+	override func activateDebugPad(_ _0: NnApplet_AppletResourceUserId, _ _1: Pid) throws { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidServer#ActivateDebugPad") }
+	override func activateTouchScreen(_ _0: NnApplet_AppletResourceUserId, _ _1: Pid) throws { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidServer#ActivateTouchScreen") }
+	override func activateMouse(_ _0: NnApplet_AppletResourceUserId, _ _1: Pid) throws { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidServer#ActivateMouse") }
+	override func activateKeyboard(_ _0: NnApplet_AppletResourceUserId, _ _1: Pid) throws { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidServer#ActivateKeyboard") }
+	override func unknown32(_ _0: UInt64, _ _1: NnApplet_AppletResourceUserId, _ _2: Pid) throws { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidServer#Unknown32") }
+	override func acquireXpadIdEventHandle(_ _0: UInt64) throws -> KObject { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidServer#AcquireXpadIdEventHandle") }
+	override func releaseXpadIdEventHandle(_ _0: UInt64) throws { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidServer#ReleaseXpadIdEventHandle") }
+	override func activateXpad(_ _0: NnHid_BasicXpadId, _ _1: NnApplet_AppletResourceUserId, _ _2: Pid) throws { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidServer#ActivateXpad") }
+	override func getXpadIds(_ _0: Buffer<NnHid_BasicXpadId>) throws -> Int64 { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidServer#GetXpadIds") }
+	override func activateJoyXpad(_ _0: NnHid_JoyXpadId) throws { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidServer#ActivateJoyXpad") }
+	override func getJoyXpadLifoHandle(_ _0: NnHid_JoyXpadId) throws -> KObject { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidServer#GetJoyXpadLifoHandle") }
+	override func getJoyXpadIds(_ _0: Buffer<NnHid_JoyXpadId>) throws -> Int64 { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidServer#GetJoyXpadIds") }
+	override func activateSixAxisSensor(_ _0: NnHid_BasicXpadId) throws { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidServer#ActivateSixAxisSensor") }
+	override func deactivateSixAxisSensor(_ _0: NnHid_BasicXpadId) throws { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidServer#DeactivateSixAxisSensor") }
+	override func getSixAxisSensorLifoHandle(_ _0: NnHid_BasicXpadId) throws -> KObject { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidServer#GetSixAxisSensorLifoHandle") }
+	override func activateJoySixAxisSensor(_ _0: NnHid_JoyXpadId) throws { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidServer#ActivateJoySixAxisSensor") }
+	override func deactivateJoySixAxisSensor(_ _0: NnHid_JoyXpadId) throws { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidServer#DeactivateJoySixAxisSensor") }
+	override func getJoySixAxisSensorLifoHandle(_ _0: NnHid_JoyXpadId) throws -> KObject { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidServer#GetJoySixAxisSensorLifoHandle") }
+	override func startSixAxisSensor(_ _0: NnHid_SixAxisSensorHandle, _ _1: NnApplet_AppletResourceUserId, _ _2: Pid) throws { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidServer#StartSixAxisSensor") }
+	override func stopSixAxisSensor(_ _0: NnHid_SixAxisSensorHandle, _ _1: NnApplet_AppletResourceUserId, _ _2: Pid) throws { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidServer#StopSixAxisSensor") }
+	override func isSixAxisSensorFusionEnabled(_ _0: NnHid_SixAxisSensorHandle, _ _1: NnApplet_AppletResourceUserId, _ _2: Pid) throws -> Bool { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidServer#IsSixAxisSensorFusionEnabled") }
+	override func enableSixAxisSensorFusion(_ _0: Bool, _ _1: NnHid_SixAxisSensorHandle, _ _2: NnApplet_AppletResourceUserId, _ _3: Pid) throws { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidServer#EnableSixAxisSensorFusion") }
+	override func setSixAxisSensorFusionParameters(_ _0: NnHid_SixAxisSensorHandle, _ _1: Float32, _ _2: Float32, _ _3: NnApplet_AppletResourceUserId, _ _4: Pid) throws { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidServer#SetSixAxisSensorFusionParameters") }
+	override func getSixAxisSensorFusionParameters(_ _0: NnHid_SixAxisSensorHandle, _ _1: NnApplet_AppletResourceUserId, _ _2: Pid) throws -> (Float32, Float32) { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidServer#GetSixAxisSensorFusionParameters") }
+	override func resetSixAxisSensorFusionParameters(_ _0: NnHid_SixAxisSensorHandle, _ _1: NnApplet_AppletResourceUserId, _ _2: Pid) throws { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidServer#ResetSixAxisSensorFusionParameters") }
+	override func setAccelerometerParameters(_ _0: NnHid_SixAxisSensorHandle, _ _1: Float32, _ _2: Float32, _ _3: NnApplet_AppletResourceUserId, _ _4: Pid) throws { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidServer#SetAccelerometerParameters") }
+	override func getAccelerometerParameters(_ _0: NnHid_SixAxisSensorHandle, _ _1: NnApplet_AppletResourceUserId, _ _2: Pid) throws -> (Float32, Float32) { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidServer#GetAccelerometerParameters") }
+	override func resetAccelerometerParameters(_ _0: NnHid_SixAxisSensorHandle, _ _1: NnApplet_AppletResourceUserId, _ _2: Pid) throws { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidServer#ResetAccelerometerParameters") }
+	override func setAccelerometerPlayMode(_ _0: NnHid_SixAxisSensorHandle, _ _1: UInt32, _ _2: NnApplet_AppletResourceUserId, _ _3: Pid) throws { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidServer#SetAccelerometerPlayMode") }
+	override func getAccelerometerPlayMode(_ _0: NnHid_SixAxisSensorHandle, _ _1: NnApplet_AppletResourceUserId, _ _2: Pid) throws -> UInt32 { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidServer#GetAccelerometerPlayMode") }
+	override func resetAccelerometerPlayMode(_ _0: NnHid_SixAxisSensorHandle, _ _1: NnApplet_AppletResourceUserId, _ _2: Pid) throws { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidServer#ResetAccelerometerPlayMode") }
+	override func setGyroscopeZeroDriftMode(_ _0: NnHid_SixAxisSensorHandle, _ _1: UInt32, _ _2: NnApplet_AppletResourceUserId, _ _3: Pid) throws { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidServer#SetGyroscopeZeroDriftMode") }
+	override func getGyroscopeZeroDriftMode(_ _0: NnHid_SixAxisSensorHandle, _ _1: NnApplet_AppletResourceUserId, _ _2: Pid) throws -> UInt32 { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidServer#GetGyroscopeZeroDriftMode") }
+	override func resetGyroscopeZeroDriftMode(_ _0: NnHid_SixAxisSensorHandle, _ _1: NnApplet_AppletResourceUserId, _ _2: Pid) throws { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidServer#ResetGyroscopeZeroDriftMode") }
+	override func isSixAxisSensorAtRest(_ _0: NnHid_SixAxisSensorHandle, _ _1: NnApplet_AppletResourceUserId, _ _2: Pid) throws -> Bool { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidServer#IsSixAxisSensorAtRest") }
+	override func unknown83(_ _0: UInt64, _ _1: NnApplet_AppletResourceUserId, _ _2: Pid) throws -> Bool { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidServer#Unknown83") }
+	override func activateGesture(_ _0: Int32, _ _1: NnApplet_AppletResourceUserId, _ _2: Pid) throws { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidServer#ActivateGesture") }
+	override func setSupportedNpadStyleSet(_ _0: NnHid_NpadStyleTag, _ _1: NnApplet_AppletResourceUserId, _ _2: Pid) throws { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidServer#SetSupportedNpadStyleSet") }
+	override func getSupportedNpadStyleSet(_ _0: NnApplet_AppletResourceUserId, _ _1: Pid) throws -> NnHid_NpadStyleTag { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidServer#GetSupportedNpadStyleSet") }
+	override func setSupportedNpadIdType(_ _0: NnApplet_AppletResourceUserId, _ _1: Pid, _ _2: Buffer<UInt32>) throws { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidServer#SetSupportedNpadIdType") }
+	override func activateNpad(_ _0: NnApplet_AppletResourceUserId, _ _1: Pid) throws { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidServer#ActivateNpad") }
+	override func deactivateNpad(_ _0: NnApplet_AppletResourceUserId, _ _1: Pid) throws { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidServer#DeactivateNpad") }
+	override func acquireNpadStyleSetUpdateEventHandle(_ _0: UInt32, _ _1: NnApplet_AppletResourceUserId, _ _2: UInt64, _ _3: Pid) throws -> KObject { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidServer#AcquireNpadStyleSetUpdateEventHandle") }
+	override func disconnectNpad(_ _0: UInt32, _ _1: NnApplet_AppletResourceUserId, _ _2: Pid) throws { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidServer#DisconnectNpad") }
+	override func activateNpadWithRevision(_ _0: UInt32, _ _1: NnApplet_AppletResourceUserId, _ _2: Pid) throws { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidServer#ActivateNpadWithRevision") }
+	override func setNpadJoyHoldType(_ _0: NnApplet_AppletResourceUserId, _ _1: Int64, _ _2: Pid) throws { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidServer#SetNpadJoyHoldType") }
+	override func getNpadJoyHoldType(_ _0: NnApplet_AppletResourceUserId, _ _1: Pid) throws -> Int64 { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidServer#GetNpadJoyHoldType") }
+	override func setNpadJoyAssignmentModeSingleByDefault(_ _0: UInt32, _ _1: NnApplet_AppletResourceUserId, _ _2: Pid) throws { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidServer#SetNpadJoyAssignmentModeSingleByDefault") }
+	override func setNpadJoyAssignmentModeSingle(_ _0: UInt32, _ _1: NnApplet_AppletResourceUserId, _ _2: Int64, _ _3: Pid) throws { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidServer#SetNpadJoyAssignmentModeSingle") }
+	override func setNpadJoyAssignmentModeDual(_ _0: UInt32, _ _1: NnApplet_AppletResourceUserId, _ _2: Pid) throws { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidServer#SetNpadJoyAssignmentModeDual") }
+	override func mergeSingleJoyAsDualJoy(_ _0: UInt32, _ _1: UInt32, _ _2: NnApplet_AppletResourceUserId, _ _3: Pid) throws { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidServer#MergeSingleJoyAsDualJoy") }
+	override func startLrAssignmentMode(_ _0: NnApplet_AppletResourceUserId, _ _1: Pid) throws { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidServer#StartLrAssignmentMode") }
+	override func stopLrAssignmentMode(_ _0: NnApplet_AppletResourceUserId, _ _1: Pid) throws { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidServer#StopLrAssignmentMode") }
+	override func setNpadHandheldActivationMode(_ _0: NnApplet_AppletResourceUserId, _ _1: Int64, _ _2: Pid) throws { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidServer#SetNpadHandheldActivationMode") }
+	override func getNpadHandheldActivationMode(_ _0: NnApplet_AppletResourceUserId, _ _1: Pid) throws -> Int64 { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidServer#GetNpadHandheldActivationMode") }
+	override func swapNpadAssignment(_ _0: UInt32, _ _1: UInt32, _ _2: NnApplet_AppletResourceUserId, _ _3: Pid) throws { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidServer#SwapNpadAssignment") }
+	override func isUnintendedHomeButtonInputProtectionEnabled(_ _0: UInt32, _ _1: NnApplet_AppletResourceUserId, _ _2: Pid) throws -> Bool { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidServer#IsUnintendedHomeButtonInputProtectionEnabled") }
+	override func enableUnintendedHomeButtonInputProtection(_ _0: Bool, _ _1: UInt32, _ _2: NnApplet_AppletResourceUserId, _ _3: Pid) throws { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidServer#EnableUnintendedHomeButtonInputProtection") }
+	override func setNpadJoyAssignmentModeSingleWithDestination(_ _0: UInt32, _ _1: UInt64, _ _2: NnApplet_AppletResourceUserId, _ _3: Pid) throws -> (Bool, UInt32) { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidServer#SetNpadJoyAssignmentModeSingleWithDestination") }
+	override func getVibrationDeviceInfo(_ _0: NnHid_VibrationDeviceHandle) throws -> NnHid_VibrationDeviceInfoForIpc { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidServer#GetVibrationDeviceInfo") }
+	override func sendVibrationValue(_ _0: NnHid_VibrationDeviceHandle, _ _1: NnHid_VibrationValue, _ _2: NnApplet_AppletResourceUserId, _ _3: Pid) throws { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidServer#SendVibrationValue") }
+	override func getActualVibrationValue(_ _0: NnHid_VibrationDeviceHandle, _ _1: NnApplet_AppletResourceUserId, _ _2: Pid) throws -> NnHid_VibrationValue { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidServer#GetActualVibrationValue") }
+	override func createActiveVibrationDeviceList() throws -> NnHid_IActiveVibrationDeviceList { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidServer#CreateActiveVibrationDeviceList") }
+	override func permitVibration(_ _0: Bool) throws { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidServer#PermitVibration") }
+	override func isVibrationPermitted() throws -> Bool { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidServer#IsVibrationPermitted") }
+	override func sendVibrationValues(_ _0: NnApplet_AppletResourceUserId, _ _1: Buffer<NnHid_VibrationDeviceHandle>, _ _2: Buffer<NnHid_VibrationValue>) throws { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidServer#SendVibrationValues") }
+	override func sendVibrationGcErmCommand(_ _0: NnHid_VibrationDeviceHandle, _ _1: NnHid_VibrationGcErmCommand, _ _2: NnApplet_AppletResourceUserId, _ _3: Pid) throws { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidServer#SendVibrationGcErmCommand") }
+	override func getActualVibrationGcErmCommand(_ _0: NnHid_VibrationDeviceHandle, _ _1: NnApplet_AppletResourceUserId, _ _2: Pid) throws -> NnHid_VibrationGcErmCommand { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidServer#GetActualVibrationGcErmCommand") }
+	override func beginPermitVibrationSession(_ _0: NnApplet_AppletResourceUserId) throws { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidServer#BeginPermitVibrationSession") }
+	override func endPermitVibrationSession() throws { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidServer#EndPermitVibrationSession") }
+	override func activateConsoleSixAxisSensor(_ _0: NnApplet_AppletResourceUserId, _ _1: Pid) throws { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidServer#ActivateConsoleSixAxisSensor") }
+	override func startConsoleSixAxisSensor(_ _0: NnHid_ConsoleSixAxisSensorHandle, _ _1: NnApplet_AppletResourceUserId, _ _2: Pid) throws { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidServer#StartConsoleSixAxisSensor") }
+	override func stopConsoleSixAxisSensor(_ _0: NnHid_ConsoleSixAxisSensorHandle, _ _1: NnApplet_AppletResourceUserId, _ _2: Pid) throws { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidServer#StopConsoleSixAxisSensor") }
+	override func activateSevenSixAxisSensor(_ _0: NnApplet_AppletResourceUserId, _ _1: Pid) throws { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidServer#ActivateSevenSixAxisSensor") }
+	override func startSevenSixAxisSensor(_ _0: NnApplet_AppletResourceUserId, _ _1: Pid) throws { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidServer#StartSevenSixAxisSensor") }
+	override func stopSevenSixAxisSensor(_ _0: NnApplet_AppletResourceUserId, _ _1: Pid) throws { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidServer#StopSevenSixAxisSensor") }
+	override func initializeSevenSixAxisSensor(_ _0: UInt32, _ _1: UInt64, _ _2: UInt32, _ _3: UInt64, _ _4: NnApplet_AppletResourceUserId, _ _5: Pid) throws { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidServer#InitializeSevenSixAxisSensor") }
+	override func finalizeSevenSixAxisSensor(_ _0: NnApplet_AppletResourceUserId, _ _1: Pid) throws { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidServer#FinalizeSevenSixAxisSensor") }
+	override func setSevenSixAxisSensorFusionStrength(_ _0: Float32, _ _1: NnApplet_AppletResourceUserId, _ _2: Pid) throws { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidServer#SetSevenSixAxisSensorFusionStrength") }
+	override func getSevenSixAxisSensorFusionStrength(_ _0: NnApplet_AppletResourceUserId, _ _1: Pid) throws -> Float32 { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidServer#GetSevenSixAxisSensorFusionStrength") }
+	override func unknown310(_ _0: NnApplet_AppletResourceUserId, _ _1: Pid) throws { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidServer#Unknown310") }
+	override func isUsbFullKeyControllerEnabled() throws -> Bool { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidServer#IsUsbFullKeyControllerEnabled") }
+	override func enableUsbFullKeyController(_ _0: Bool) throws { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidServer#EnableUsbFullKeyController") }
+	override func isUsbFullKeyControllerConnected(_ _0: UInt32) throws -> Bool { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidServer#IsUsbFullKeyControllerConnected") }
+	override func hasBattery(_ _0: UInt32) throws -> Bool { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidServer#HasBattery") }
+	override func hasLeftRightBattery(_ _0: UInt32) throws -> (Bool, Bool) { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidServer#HasLeftRightBattery") }
+	override func getNpadInterfaceType(_ _0: UInt32) throws -> UInt8 { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidServer#GetNpadInterfaceType") }
+	override func getNpadLeftRightInterfaceType(_ _0: UInt32) throws -> (UInt8, UInt8) { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidServer#GetNpadLeftRightInterfaceType") }
+	override func getPalmaConnectionHandle(_ _0: UInt32, _ _1: NnApplet_AppletResourceUserId, _ _2: Pid) throws -> NnHid_PalmaConnectionHandle { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidServer#GetPalmaConnectionHandle") }
+	override func initializePalma(_ _0: NnHid_PalmaConnectionHandle) throws { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidServer#InitializePalma") }
+	override func acquirePalmaOperationCompleteEvent(_ _0: NnHid_PalmaConnectionHandle) throws -> KObject { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidServer#AcquirePalmaOperationCompleteEvent") }
+	override func getPalmaOperationInfo(_ _0: NnHid_PalmaConnectionHandle, _ _1: Buffer<UInt8>) throws -> UInt64 { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidServer#GetPalmaOperationInfo") }
+	override func playPalmaActivity(_ _0: UInt64, _ _1: NnHid_PalmaConnectionHandle) throws { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidServer#PlayPalmaActivity") }
+	override func setPalmaFrModeType(_ _0: UInt64, _ _1: NnHid_PalmaConnectionHandle) throws { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidServer#SetPalmaFrModeType") }
+	override func readPalmaStep(_ _0: NnHid_PalmaConnectionHandle) throws { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidServer#ReadPalmaStep") }
+	override func enablePalmaStep(_ _0: Bool, _ _1: NnHid_PalmaConnectionHandle) throws { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidServer#EnablePalmaStep") }
+	override func resetPalmaStep(_ _0: NnHid_PalmaConnectionHandle) throws { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidServer#ResetPalmaStep") }
+	override func readPalmaApplicationSection(_ _0: UInt64, _ _1: UInt64, _ _2: NnHid_PalmaConnectionHandle) throws { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidServer#ReadPalmaApplicationSection") }
+	override func writePalmaApplicationSection(_ _0: UInt64, _ _1: UInt64, _ _2: Buffer<NnHid_PalmaApplicationSectionAccessBuffer>, _ _3: NnHid_PalmaConnectionHandle) throws { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidServer#WritePalmaApplicationSection") }
+	override func readPalmaUniqueCode(_ _0: NnHid_PalmaConnectionHandle) throws { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidServer#ReadPalmaUniqueCode") }
+	override func setPalmaUniqueCodeInvalid(_ _0: NnHid_PalmaConnectionHandle) throws { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidServer#SetPalmaUniqueCodeInvalid") }
+	override func writePalmaActivityEntry(_ _0: UInt64, _ _1: UInt64, _ _2: UInt64, _ _3: UInt64, _ _4: NnHid_PalmaConnectionHandle) throws { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidServer#WritePalmaActivityEntry") }
+	override func writePalmaRgbLedPatternEntry(_ _0: UInt64, _ _1: Buffer<UInt8>, _ _2: NnHid_PalmaConnectionHandle) throws { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidServer#WritePalmaRgbLedPatternEntry") }
+	override func writePalmaWaveEntry(_ _0: UInt64, _ _1: UInt64, _ _2: KObject, _ _3: UInt64, _ _4: UInt64, _ _5: NnHid_PalmaConnectionHandle) throws { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidServer#WritePalmaWaveEntry") }
+	override func setPalmaDataBaseIdentificationVersion(_ _0: UInt32, _ _1: NnHid_PalmaConnectionHandle, _ _2: Int32) throws { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidServer#SetPalmaDataBaseIdentificationVersion") }
+	override func getPalmaDataBaseIdentificationVersion(_ _0: NnHid_PalmaConnectionHandle) throws { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidServer#GetPalmaDataBaseIdentificationVersion") }
+	override func suspendPalmaFeature(_ _0: NnHid_PalmaConnectionHandle, _ _1: NnHid_PalmaFeature) throws { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidServer#SuspendPalmaFeature") }
+	override func getPalmaOperationResult(_ _0: NnHid_PalmaConnectionHandle) throws { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidServer#GetPalmaOperationResult") }
+	override func readPalmaPlayLog(_ _0: NnHid_PalmaConnectionHandle, _ _1: UInt16) throws { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidServer#ReadPalmaPlayLog") }
+	override func resetPalmaPlayLog(_ _0: NnHid_PalmaConnectionHandle, _ _1: UInt16) throws { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidServer#ResetPalmaPlayLog") }
+	override func setIsPalmaAllConnectable(_ _0: NnApplet_AppletResourceUserId, _ _1: Bool, _ _2: Pid) throws { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidServer#SetIsPalmaAllConnectable") }
+	override func setIsPalmaPairedConnectable(_ _0: NnApplet_AppletResourceUserId, _ _1: Bool, _ _2: Pid) throws { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidServer#SetIsPalmaPairedConnectable") }
+	override func pairPalma(_ _0: NnHid_PalmaConnectionHandle) throws { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidServer#PairPalma") }
+	override func setPalmaBoostMode(_ _0: Bool) throws { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidServer#SetPalmaBoostMode") }
+	override func setNpadCommunicationMode(_ _0: NnApplet_AppletResourceUserId, _ _1: Int64, _ _2: Pid) throws { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidServer#SetNpadCommunicationMode") }
+	override func getNpadCommunicationMode() throws -> Int64 { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidServer#GetNpadCommunicationMode") }
+}
+*/
+
 class NnHid_IHidSystemServer: IpcService {
 	func sendKeyboardLockKeyEvent(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidSystemServer#SendKeyboardLockKeyEvent") }
 	func acquireHomeButtonEventHandle(_ _0: NnApplet_AppletResourceUserId, _ _1: Pid) throws -> KObject { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidSystemServer#AcquireHomeButtonEventHandle") }
@@ -1211,6 +1345,106 @@ class NnHid_IHidSystemServer: IpcService {
 	}
 }
 
+/*
+class NnHid_IHidSystemServer_Impl: NnHid_IHidSystemServer {
+	override func sendKeyboardLockKeyEvent(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidSystemServer#SendKeyboardLockKeyEvent") }
+	override func acquireHomeButtonEventHandle(_ _0: NnApplet_AppletResourceUserId, _ _1: Pid) throws -> KObject { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidSystemServer#AcquireHomeButtonEventHandle") }
+	override func activateHomeButton(_ _0: NnApplet_AppletResourceUserId, _ _1: Pid) throws { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidSystemServer#ActivateHomeButton") }
+	override func acquireSleepButtonEventHandle(_ _0: NnApplet_AppletResourceUserId, _ _1: Pid) throws -> KObject { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidSystemServer#AcquireSleepButtonEventHandle") }
+	override func activateSleepButton(_ _0: NnApplet_AppletResourceUserId, _ _1: Pid) throws { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidSystemServer#ActivateSleepButton") }
+	override func acquireCaptureButtonEventHandle(_ _0: NnApplet_AppletResourceUserId, _ _1: Pid) throws -> KObject { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidSystemServer#AcquireCaptureButtonEventHandle") }
+	override func activateCaptureButton(_ _0: NnApplet_AppletResourceUserId, _ _1: Pid) throws { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidSystemServer#ActivateCaptureButton") }
+	override func acquireNfcDeviceUpdateEventHandle() throws -> KObject { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidSystemServer#AcquireNfcDeviceUpdateEventHandle") }
+	override func getNpadsWithNfc(_ _0: Buffer<UInt32>) throws -> UInt64 { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidSystemServer#GetNpadsWithNfc") }
+	override func acquireNfcActivateEventHandle(_ _0: UInt32) throws -> KObject { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidSystemServer#AcquireNfcActivateEventHandle") }
+	override func activateNfc(_ _0: UInt8, _ _1: UInt32, _ _2: NnApplet_AppletResourceUserId, _ _3: Pid) throws { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidSystemServer#ActivateNfc") }
+	override func getXcdHandleForNpadWithNfc(_ _0: UInt32, _ _1: NnApplet_AppletResourceUserId) throws -> UInt64 { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidSystemServer#GetXcdHandleForNpadWithNfc") }
+	override func isNfcActivated(_ _0: UInt32) throws -> UInt8 { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidSystemServer#IsNfcActivated") }
+	override func acquireIrSensorEventHandle(_ _0: UInt32) throws -> KObject { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidSystemServer#AcquireIrSensorEventHandle") }
+	override func activateIrSensor(_ _0: UInt8, _ _1: UInt32, _ _2: NnApplet_AppletResourceUserId, _ _3: Pid) throws { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidSystemServer#ActivateIrSensor") }
+	override func activateNpadSystem(_ _0: UInt32) throws { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidSystemServer#ActivateNpadSystem") }
+	override func applyNpadSystemCommonPolicy(_ _0: NnApplet_AppletResourceUserId, _ _1: Pid) throws { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidSystemServer#ApplyNpadSystemCommonPolicy") }
+	override func enableAssigningSingleOnSlSrPress(_ _0: NnApplet_AppletResourceUserId, _ _1: Pid) throws { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidSystemServer#EnableAssigningSingleOnSlSrPress") }
+	override func disableAssigningSingleOnSlSrPress(_ _0: NnApplet_AppletResourceUserId, _ _1: Pid) throws { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidSystemServer#DisableAssigningSingleOnSlSrPress") }
+	override func getLastActiveNpad() throws -> UInt32 { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidSystemServer#GetLastActiveNpad") }
+	override func getNpadSystemExtStyle(_ _0: UInt32) throws -> (UInt64, UInt64) { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidSystemServer#GetNpadSystemExtStyle") }
+	override func applyNpadSystemCommonPolicyFull(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidSystemServer#ApplyNpadSystemCommonPolicyFull") }
+	override func getNpadFullKeyGripColor(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidSystemServer#GetNpadFullKeyGripColor") }
+	override func setNpadPlayerLedBlinkingDevice(_ _0: UInt32, _ _1: Any?, _ _2: NnApplet_AppletResourceUserId, _ _3: Pid) throws { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidSystemServer#SetNpadPlayerLedBlinkingDevice") }
+	override func getUniquePadsFromNpad(_ _0: UInt32, _ _1: Buffer<NnHidSystem_UniquePadId>) throws -> UInt64 { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidSystemServer#GetUniquePadsFromNpad") }
+	override func getIrSensorState(_ _0: UInt32, _ _1: NnApplet_AppletResourceUserId, _ _2: Pid) throws -> UInt64 { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidSystemServer#GetIrSensorState") }
+	override func getXcdHandleForNpadWithIrSensor(_ _0: UInt32, _ _1: NnApplet_AppletResourceUserId, _ _2: Pid) throws -> UInt64 { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidSystemServer#GetXcdHandleForNpadWithIrSensor") }
+	override func setAppletResourceUserId(_ _0: NnApplet_AppletResourceUserId) throws { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidSystemServer#SetAppletResourceUserId") }
+	override func registerAppletResourceUserId(_ _0: UInt8, _ _1: NnApplet_AppletResourceUserId) throws { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidSystemServer#RegisterAppletResourceUserId") }
+	override func unregisterAppletResourceUserId(_ _0: NnApplet_AppletResourceUserId) throws { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidSystemServer#UnregisterAppletResourceUserId") }
+	override func enableAppletToGetInput(_ _0: UInt8, _ _1: NnApplet_AppletResourceUserId) throws { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidSystemServer#EnableAppletToGetInput") }
+	override func setAruidValidForVibration(_ _0: UInt8, _ _1: NnApplet_AppletResourceUserId) throws { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidSystemServer#SetAruidValidForVibration") }
+	override func enableAppletToGetSixAxisSensor(_ _0: UInt8, _ _1: NnApplet_AppletResourceUserId) throws { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidSystemServer#EnableAppletToGetSixAxisSensor") }
+	override func setVibrationMasterVolume(_ _0: Float32) throws { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidSystemServer#SetVibrationMasterVolume") }
+	override func getVibrationMasterVolume() throws -> Float32 { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidSystemServer#GetVibrationMasterVolume") }
+	override func beginPermitVibrationSession(_ _0: NnApplet_AppletResourceUserId) throws { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidSystemServer#BeginPermitVibrationSession") }
+	override func endPermitVibrationSession() throws { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidSystemServer#EndPermitVibrationSession") }
+	override func enableHandheldHids() throws { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidSystemServer#EnableHandheldHids") }
+	override func disableHandheldHids() throws { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidSystemServer#DisableHandheldHids") }
+	override func acquirePlayReportControllerUsageUpdateEvent() throws -> KObject { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidSystemServer#AcquirePlayReportControllerUsageUpdateEvent") }
+	override func getPlayReportControllerUsages(_ _0: Buffer<NnHidSystem_PlayReportControllerUsage>) throws -> UInt64 { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidSystemServer#GetPlayReportControllerUsages") }
+	override func acquirePlayReportRegisteredDeviceUpdateEvent() throws -> KObject { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidSystemServer#AcquirePlayReportRegisteredDeviceUpdateEvent") }
+	override func getRegisteredDevicesOld(_ _0: Buffer<NnHidSystem_RegisteredDevice>) throws -> UInt64 { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidSystemServer#GetRegisteredDevicesOld") }
+	override func acquireConnectionTriggerTimeoutEvent() throws -> KObject { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidSystemServer#AcquireConnectionTriggerTimeoutEvent") }
+	override func sendConnectionTrigger(_ _0: NnBluetooth_Address) throws { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidSystemServer#SendConnectionTrigger") }
+	override func acquireDeviceRegisteredEventForControllerSupport() throws -> KObject { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidSystemServer#AcquireDeviceRegisteredEventForControllerSupport") }
+	override func getAllowedBluetoothLinksCount() throws -> UInt64 { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidSystemServer#GetAllowedBluetoothLinksCount") }
+	override func getRegisteredDevices(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidSystemServer#GetRegisteredDevices") }
+	override func activateUniquePad(_ _0: NnApplet_AppletResourceUserId, _ _1: NnHidSystem_UniquePadId, _ _2: Pid) throws { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidSystemServer#ActivateUniquePad") }
+	override func acquireUniquePadConnectionEventHandle() throws -> KObject { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidSystemServer#AcquireUniquePadConnectionEventHandle") }
+	override func getUniquePadIds(_ _0: Buffer<NnHidSystem_UniquePadId>) throws -> UInt64 { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidSystemServer#GetUniquePadIds") }
+	override func acquireJoyDetachOnBluetoothOffEventHandle(_ _0: NnApplet_AppletResourceUserId, _ _1: Pid) throws -> KObject { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidSystemServer#AcquireJoyDetachOnBluetoothOffEventHandle") }
+	override func listSixAxisSensorHandles(_ _0: NnHidSystem_UniquePadId, _ _1: Buffer<NnHidSystem_UniqueSixAxisSensorHandle>) throws -> UInt64 { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidSystemServer#ListSixAxisSensorHandles") }
+	override func isSixAxisSensorUserCalibrationSupported(_ _0: NnHidSystem_UniqueSixAxisSensorHandle) throws -> UInt8 { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidSystemServer#IsSixAxisSensorUserCalibrationSupported") }
+	override func resetSixAxisSensorCalibrationValues(_ _0: NnHidSystem_UniqueSixAxisSensorHandle) throws { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidSystemServer#ResetSixAxisSensorCalibrationValues") }
+	override func startSixAxisSensorUserCalibration(_ _0: NnHidSystem_UniqueSixAxisSensorHandle) throws { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidSystemServer#StartSixAxisSensorUserCalibration") }
+	override func cancelSixAxisSensorUserCalibration(_ _0: NnHidSystem_UniqueSixAxisSensorHandle) throws { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidSystemServer#CancelSixAxisSensorUserCalibration") }
+	override func getUniquePadBluetoothAddress(_ _0: NnHidSystem_UniquePadId) throws -> NnBluetooth_Address { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidSystemServer#GetUniquePadBluetoothAddress") }
+	override func disconnectUniquePad(_ _0: NnHidSystem_UniquePadId) throws { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidSystemServer#DisconnectUniquePad") }
+	override func getUniquePadType(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidSystemServer#GetUniquePadType") }
+	override func getUniquePadInterface(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidSystemServer#GetUniquePadInterface") }
+	override func getUniquePadSerialNumber(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidSystemServer#GetUniquePadSerialNumber") }
+	override func getUniquePadControllerNumber(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidSystemServer#GetUniquePadControllerNumber") }
+	override func getSixAxisSensorUserCalibrationStage(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidSystemServer#GetSixAxisSensorUserCalibrationStage") }
+	override func startAnalogStickManualCalibration(_ _0: NnHidSystem_UniquePadId, _ _1: UInt64) throws { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidSystemServer#StartAnalogStickManualCalibration") }
+	override func retryCurrentAnalogStickManualCalibrationStage(_ _0: NnHidSystem_UniquePadId, _ _1: UInt64) throws { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidSystemServer#RetryCurrentAnalogStickManualCalibrationStage") }
+	override func cancelAnalogStickManualCalibration(_ _0: NnHidSystem_UniquePadId, _ _1: UInt64) throws { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidSystemServer#CancelAnalogStickManualCalibration") }
+	override func resetAnalogStickManualCalibration(_ _0: NnHidSystem_UniquePadId, _ _1: UInt64) throws { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidSystemServer#ResetAnalogStickManualCalibration") }
+	override func getAnalogStickState(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidSystemServer#GetAnalogStickState") }
+	override func getAnalogStickManualCalibrationStage(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidSystemServer#GetAnalogStickManualCalibrationStage") }
+	override func isAnalogStickButtonPressed(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidSystemServer#IsAnalogStickButtonPressed") }
+	override func isAnalogStickInReleasePosition(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidSystemServer#IsAnalogStickInReleasePosition") }
+	override func isAnalogStickInCircumference(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidSystemServer#IsAnalogStickInCircumference") }
+	override func isUsbFullKeyControllerEnabled() throws -> UInt8 { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidSystemServer#IsUsbFullKeyControllerEnabled") }
+	override func enableUsbFullKeyController(_ _0: UInt8) throws { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidSystemServer#EnableUsbFullKeyController") }
+	override func isUsbConnected(_ _0: NnHidSystem_UniquePadId) throws -> UInt8 { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidSystemServer#IsUsbConnected") }
+	override func activateInputDetector(_ _0: NnApplet_AppletResourceUserId, _ _1: Pid) throws { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidSystemServer#ActivateInputDetector") }
+	override func notifyInputDetector(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidSystemServer#NotifyInputDetector") }
+	override func initializeFirmwareUpdate() throws { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidSystemServer#InitializeFirmwareUpdate") }
+	override func getFirmwareVersion(_ _0: NnHidSystem_UniquePadId) throws -> NnHidSystem_FirmwareVersion { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidSystemServer#GetFirmwareVersion") }
+	override func getAvailableFirmwareVersion(_ _0: NnHidSystem_UniquePadId) throws -> NnHidSystem_FirmwareVersion { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidSystemServer#GetAvailableFirmwareVersion") }
+	override func isFirmwareUpdateAvailable(_ _0: NnHidSystem_UniquePadId) throws -> UInt8 { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidSystemServer#IsFirmwareUpdateAvailable") }
+	override func checkFirmwareUpdateRequired(_ _0: NnHidSystem_UniquePadId) throws -> UInt64 { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidSystemServer#CheckFirmwareUpdateRequired") }
+	override func startFirmwareUpdate(_ _0: NnHidSystem_UniquePadId) throws -> NnHidSystem_FirmwareUpdateDeviceHandle { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidSystemServer#StartFirmwareUpdate") }
+	override func abortFirmwareUpdate() throws { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidSystemServer#AbortFirmwareUpdate") }
+	override func getFirmwareUpdateState(_ _0: NnHidSystem_FirmwareUpdateDeviceHandle) throws -> NnHidSystem_FirmwareUpdateState { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidSystemServer#GetFirmwareUpdateState") }
+	override func activateAudioControl() throws { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidSystemServer#ActivateAudioControl") }
+	override func acquireAudioControlEventHandle() throws -> KObject { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidSystemServer#AcquireAudioControlEventHandle") }
+	override func getAudioControlStates(_ _0: Buffer<NnHidSystem_AudioControlState>) throws -> UInt64 { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidSystemServer#GetAudioControlStates") }
+	override func deactivateAudioControl() throws { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidSystemServer#DeactivateAudioControl") }
+	override func isSixAxisSensorAccurateUserCalibrationSupported(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidSystemServer#IsSixAxisSensorAccurateUserCalibrationSupported") }
+	override func startSixAxisSensorAccurateUserCalibration(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidSystemServer#StartSixAxisSensorAccurateUserCalibration") }
+	override func cancelSixAxisSensorAccurateUserCalibration(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidSystemServer#CancelSixAxisSensorAccurateUserCalibration") }
+	override func getSixAxisSensorAccurateUserCalibrationState(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidSystemServer#GetSixAxisSensorAccurateUserCalibrationState") }
+	override func getHidbusSystemServiceObject(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidSystemServer#GetHidbusSystemServiceObject") }
+}
+*/
+
 class NnHid_IHidDebugServer: IpcService {
 	func deactivateDebugPad() throws { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidDebugServer#DeactivateDebugPad") }
 	func setDebugPadAutoPilotState(_ _0: NnHidDebug_DebugPadAutoPilotState) throws { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidDebugServer#SetDebugPadAutoPilotState") }
@@ -1520,6 +1754,68 @@ class NnHid_IHidDebugServer: IpcService {
 	}
 }
 
+/*
+class NnHid_IHidDebugServer_Impl: NnHid_IHidDebugServer {
+	override func deactivateDebugPad() throws { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidDebugServer#DeactivateDebugPad") }
+	override func setDebugPadAutoPilotState(_ _0: NnHidDebug_DebugPadAutoPilotState) throws { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidDebugServer#SetDebugPadAutoPilotState") }
+	override func unsetDebugPadAutoPilotState() throws { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidDebugServer#UnsetDebugPadAutoPilotState") }
+	override func deactivateTouchScreen() throws { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidDebugServer#DeactivateTouchScreen") }
+	override func setTouchScreenAutoPilotState(_ _0: Buffer<NnHid_TouchState>) throws { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidDebugServer#SetTouchScreenAutoPilotState") }
+	override func unsetTouchScreenAutoPilotState() throws { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidDebugServer#UnsetTouchScreenAutoPilotState") }
+	override func deactivateMouse() throws { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidDebugServer#DeactivateMouse") }
+	override func setMouseAutoPilotState(_ _0: NnHidDebug_MouseAutoPilotState) throws { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidDebugServer#SetMouseAutoPilotState") }
+	override func unsetMouseAutoPilotState() throws { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidDebugServer#UnsetMouseAutoPilotState") }
+	override func deactivateKeyboard() throws { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidDebugServer#DeactivateKeyboard") }
+	override func setKeyboardAutoPilotState(_ _0: NnHidDebug_KeyboardAutoPilotState) throws { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidDebugServer#SetKeyboardAutoPilotState") }
+	override func unsetKeyboardAutoPilotState() throws { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidDebugServer#UnsetKeyboardAutoPilotState") }
+	override func deactivateXpad(_ _0: NnHid_BasicXpadId) throws { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidDebugServer#DeactivateXpad") }
+	override func setXpadAutoPilotState(_ _0: NnHid_BasicXpadId, _ _1: NnHidDebug_BasicXpadAutoPilotState) throws { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidDebugServer#SetXpadAutoPilotState") }
+	override func unsetXpadAutoPilotState(_ _0: NnHid_BasicXpadId) throws { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidDebugServer#UnsetXpadAutoPilotState") }
+	override func deactivateJoyXpad(_ _0: NnHid_JoyXpadId) throws { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidDebugServer#DeactivateJoyXpad") }
+	override func deactivateGesture() throws { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidDebugServer#DeactivateGesture") }
+	override func deactivateHomeButton() throws { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidDebugServer#DeactivateHomeButton") }
+	override func setHomeButtonAutoPilotState(_ _0: NnHidDebug_HomeButtonAutoPilotState) throws { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidDebugServer#SetHomeButtonAutoPilotState") }
+	override func unsetHomeButtonAutoPilotState() throws { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidDebugServer#UnsetHomeButtonAutoPilotState") }
+	override func deactivateSleepButton() throws { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidDebugServer#DeactivateSleepButton") }
+	override func setSleepButtonAutoPilotState(_ _0: NnHidDebug_SleepButtonAutoPilotState) throws { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidDebugServer#SetSleepButtonAutoPilotState") }
+	override func unsetSleepButtonAutoPilotState() throws { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidDebugServer#UnsetSleepButtonAutoPilotState") }
+	override func deactivateInputDetector() throws { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidDebugServer#DeactivateInputDetector") }
+	override func deactivateCaptureButton() throws { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidDebugServer#DeactivateCaptureButton") }
+	override func setCaptureButtonAutoPilotState(_ _0: NnHidDebug_CaptureButtonAutoPilotState) throws { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidDebugServer#SetCaptureButtonAutoPilotState") }
+	override func unsetCaptureButtonAutoPilotState() throws { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidDebugServer#UnsetCaptureButtonAutoPilotState") }
+	override func setShiftAccelerometerCalibrationValue(_ _0: NnHid_SixAxisSensorHandle, _ _1: Float32, _ _2: Float32, _ _3: NnApplet_AppletResourceUserId, _ _4: Pid) throws { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidDebugServer#SetShiftAccelerometerCalibrationValue") }
+	override func getShiftAccelerometerCalibrationValue(_ _0: NnHid_SixAxisSensorHandle, _ _1: NnApplet_AppletResourceUserId, _ _2: Pid) throws -> (Float32, Float32) { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidDebugServer#GetShiftAccelerometerCalibrationValue") }
+	override func setShiftGyroscopeCalibrationValue(_ _0: NnHid_SixAxisSensorHandle, _ _1: Float32, _ _2: Float32, _ _3: NnApplet_AppletResourceUserId, _ _4: Pid) throws { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidDebugServer#SetShiftGyroscopeCalibrationValue") }
+	override func getShiftGyroscopeCalibrationValue(_ _0: NnHid_SixAxisSensorHandle, _ _1: NnApplet_AppletResourceUserId, _ _2: Pid) throws -> (Float32, Float32) { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidDebugServer#GetShiftGyroscopeCalibrationValue") }
+	override func deactivateConsoleSixAxisSensor() throws { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidDebugServer#DeactivateConsoleSixAxisSensor") }
+	override func getConsoleSixAxisSensorSamplingFrequency(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidDebugServer#GetConsoleSixAxisSensorSamplingFrequency") }
+	override func deactivateSevenSixAxisSensor(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidDebugServer#DeactivateSevenSixAxisSensor") }
+	override func activateFirmwareUpdate() throws { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidDebugServer#ActivateFirmwareUpdate") }
+	override func deactivateFirmwareUpdate() throws { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidDebugServer#DeactivateFirmwareUpdate") }
+	override func startFirmwareUpdate(_ _0: NnHidSystem_UniquePadId) throws { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidDebugServer#StartFirmwareUpdate") }
+	override func getFirmwareUpdateStage() throws -> (UInt64, UInt64) { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidDebugServer#GetFirmwareUpdateStage") }
+	override func getFirmwareVersion(_ _0: UInt32, _ _1: Any?) throws -> NnHidSystem_FirmwareVersion { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidDebugServer#GetFirmwareVersion") }
+	override func getDestinationFirmwareVersion(_ _0: UInt32, _ _1: Any?) throws -> NnHidSystem_FirmwareVersion { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidDebugServer#GetDestinationFirmwareVersion") }
+	override func discardFirmwareInfoCacheForRevert() throws { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidDebugServer#DiscardFirmwareInfoCacheForRevert") }
+	override func startFirmwareUpdateForRevert(_ _0: NnHidSystem_UniquePadId) throws { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidDebugServer#StartFirmwareUpdateForRevert") }
+	override func getAvailableFirmwareVersionForRevert(_ _0: NnHidSystem_UniquePadId) throws -> NnHidSystem_FirmwareVersion { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidDebugServer#GetAvailableFirmwareVersionForRevert") }
+	override func isFirmwareUpdatingDevice(_ _0: NnHidSystem_UniquePadId) throws -> UInt8 { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidDebugServer#IsFirmwareUpdatingDevice") }
+	override func updateControllerColor(_ _0: NnUtil_Unorm8x4, _ _1: NnUtil_Unorm8x4, _ _2: NnHidSystem_UniquePadId) throws { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidDebugServer#UpdateControllerColor") }
+	override func connectUsbPadsAsync() throws { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidDebugServer#ConnectUsbPadsAsync") }
+	override func disconnectUsbPadsAsync() throws { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidDebugServer#DisconnectUsbPadsAsync") }
+	override func updateDesignInfo(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidDebugServer#UpdateDesignInfo") }
+	override func getUniquePadDriverState(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidDebugServer#GetUniquePadDriverState") }
+	override func getSixAxisSensorDriverStates(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidDebugServer#GetSixAxisSensorDriverStates") }
+	override func getAbstractedPadHandles(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidDebugServer#GetAbstractedPadHandles") }
+	override func getAbstractedPadState(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidDebugServer#GetAbstractedPadState") }
+	override func getAbstractedPadsState(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidDebugServer#GetAbstractedPadsState") }
+	override func setAutoPilotVirtualPadState(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidDebugServer#SetAutoPilotVirtualPadState") }
+	override func unsetAutoPilotVirtualPadState(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidDebugServer#UnsetAutoPilotVirtualPadState") }
+	override func unsetAllAutoPilotVirtualPadState(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidDebugServer#UnsetAllAutoPilotVirtualPadState") }
+	override func addRegisteredDevice(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidDebugServer#AddRegisteredDevice") }
+}
+*/
+
 class NnHid_IHidTemporaryServer: IpcService {
 	func getConsoleSixAxisSensorCalibrationValues(_ _0: NnHid_ConsoleSixAxisSensorHandle, _ _1: NnApplet_AppletResourceUserId, _ _2: Pid) throws -> NnHidTmp_ConsoleSixAxisSensorCalibrationValues { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidTemporaryServer#GetConsoleSixAxisSensorCalibrationValues") }
 	
@@ -1537,3 +1833,9 @@ class NnHid_IHidTemporaryServer: IpcService {
 		}
 	}
 }
+
+/*
+class NnHid_IHidTemporaryServer_Impl: NnHid_IHidTemporaryServer {
+	override func getConsoleSixAxisSensorCalibrationValues(_ _0: NnHid_ConsoleSixAxisSensorHandle, _ _1: NnApplet_AppletResourceUserId, _ _2: Pid) throws -> NnHidTmp_ConsoleSixAxisSensorCalibrationValues { throw IpcError.unimplemented(name: "nn::hid::nn::hid::IHidTemporaryServer#GetConsoleSixAxisSensorCalibrationValues") }
+}
+*/

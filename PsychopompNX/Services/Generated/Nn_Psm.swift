@@ -101,6 +101,29 @@ class NnPsm_IPsmServer: IpcService {
 	}
 }
 
+/*
+class NnPsm_IPsmServer_Impl: NnPsm_IPsmServer {
+	override func getBatteryChargePercentage() throws -> Any? { throw IpcError.unimplemented(name: "nn::psm::nn::psm::IPsmServer#GetBatteryChargePercentage") }
+	override func getChargerType() throws -> Any? { throw IpcError.unimplemented(name: "nn::psm::nn::psm::IPsmServer#GetChargerType") }
+	override func enableBatteryCharging() throws { throw IpcError.unimplemented(name: "nn::psm::nn::psm::IPsmServer#EnableBatteryCharging") }
+	override func disableBatteryCharging() throws { throw IpcError.unimplemented(name: "nn::psm::nn::psm::IPsmServer#DisableBatteryCharging") }
+	override func isBatteryChargingEnabled() throws -> Any? { throw IpcError.unimplemented(name: "nn::psm::nn::psm::IPsmServer#IsBatteryChargingEnabled") }
+	override func acquireControllerPowerSupply() throws { throw IpcError.unimplemented(name: "nn::psm::nn::psm::IPsmServer#AcquireControllerPowerSupply") }
+	override func releaseControllerPowerSupply() throws { throw IpcError.unimplemented(name: "nn::psm::nn::psm::IPsmServer#ReleaseControllerPowerSupply") }
+	override func openSession() throws -> NnPsm_IPsmSession { throw IpcError.unimplemented(name: "nn::psm::nn::psm::IPsmServer#OpenSession") }
+	override func enableEnoughPowerChargeEmulation() throws { throw IpcError.unimplemented(name: "nn::psm::nn::psm::IPsmServer#EnableEnoughPowerChargeEmulation") }
+	override func disableEnoughPowerChargeEmulation() throws { throw IpcError.unimplemented(name: "nn::psm::nn::psm::IPsmServer#DisableEnoughPowerChargeEmulation") }
+	override func enableFastBatteryCharging() throws { throw IpcError.unimplemented(name: "nn::psm::nn::psm::IPsmServer#EnableFastBatteryCharging") }
+	override func disableFastBatteryCharging() throws { throw IpcError.unimplemented(name: "nn::psm::nn::psm::IPsmServer#DisableFastBatteryCharging") }
+	override func getBatteryVoltageState() throws -> Any? { throw IpcError.unimplemented(name: "nn::psm::nn::psm::IPsmServer#GetBatteryVoltageState") }
+	override func getRawBatteryChargePercentage() throws -> Any? { throw IpcError.unimplemented(name: "nn::psm::nn::psm::IPsmServer#GetRawBatteryChargePercentage") }
+	override func isEnoughPowerSupplied() throws -> Any? { throw IpcError.unimplemented(name: "nn::psm::nn::psm::IPsmServer#IsEnoughPowerSupplied") }
+	override func getBatteryAgePercentage() throws -> Any? { throw IpcError.unimplemented(name: "nn::psm::nn::psm::IPsmServer#GetBatteryAgePercentage") }
+	override func getBatteryChargeInfoEvent() throws -> KObject { throw IpcError.unimplemented(name: "nn::psm::nn::psm::IPsmServer#GetBatteryChargeInfoEvent") }
+	override func getBatteryChargeInfoFields() throws -> Any? { throw IpcError.unimplemented(name: "nn::psm::nn::psm::IPsmServer#GetBatteryChargeInfoFields") }
+}
+*/
+
 class NnPsm_IPsmSession: IpcService {
 	func bindStateChangeEvent() throws -> KObject { throw IpcError.unimplemented(name: "nn::psm::nn::psm::IPsmSession#BindStateChangeEvent") }
 	func unbindStateChangeEvent() throws { throw IpcError.unimplemented(name: "nn::psm::nn::psm::IPsmSession#UnbindStateChangeEvent") }
@@ -137,3 +160,13 @@ class NnPsm_IPsmSession: IpcService {
 		}
 	}
 }
+
+/*
+class NnPsm_IPsmSession_Impl: NnPsm_IPsmSession {
+	override func bindStateChangeEvent() throws -> KObject { throw IpcError.unimplemented(name: "nn::psm::nn::psm::IPsmSession#BindStateChangeEvent") }
+	override func unbindStateChangeEvent() throws { throw IpcError.unimplemented(name: "nn::psm::nn::psm::IPsmSession#UnbindStateChangeEvent") }
+	override func setChargerTypeChangeEventEnabled(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::psm::nn::psm::IPsmSession#SetChargerTypeChangeEventEnabled") }
+	override func setPowerSupplyChangeEventEnabled(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::psm::nn::psm::IPsmSession#SetPowerSupplyChangeEventEnabled") }
+	override func setBatteryVoltageStateChangeEventEnabled(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::psm::nn::psm::IPsmSession#SetBatteryVoltageStateChangeEventEnabled") }
+}
+*/

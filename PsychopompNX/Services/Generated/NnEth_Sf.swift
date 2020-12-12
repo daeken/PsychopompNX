@@ -40,6 +40,17 @@ class NnEthSf_IEthInterface: IpcService {
 	}
 }
 
+/*
+class NnEthSf_IEthInterface_Impl: NnEthSf_IEthInterface {
+	override func initialize(_ _0: Buffer<UInt8>) throws -> KObject { throw IpcError.unimplemented(name: "nn::eth::sf::nn::eth::sf::IEthInterface#Initialize") }
+	override func cancel() throws { throw IpcError.unimplemented(name: "nn::eth::sf::nn::eth::sf::IEthInterface#Cancel") }
+	override func getResult() throws { throw IpcError.unimplemented(name: "nn::eth::sf::nn::eth::sf::IEthInterface#GetResult") }
+	override func getMediaList(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::eth::sf::nn::eth::sf::IEthInterface#GetMediaList") }
+	override func setMediaType(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::eth::sf::nn::eth::sf::IEthInterface#SetMediaType") }
+	override func getMediaType() throws -> Any? { throw IpcError.unimplemented(name: "nn::eth::sf::nn::eth::sf::IEthInterface#GetMediaType") }
+}
+*/
+
 class NnEthSf_IEthInterfaceGroup: IpcService {
 	func getReadableHandle() throws -> KObject { throw IpcError.unimplemented(name: "nn::eth::sf::nn::eth::sf::IEthInterfaceGroup#GetReadableHandle") }
 	func cancel() throws { throw IpcError.unimplemented(name: "nn::eth::sf::nn::eth::sf::IEthInterfaceGroup#Cancel") }
@@ -76,3 +87,13 @@ class NnEthSf_IEthInterfaceGroup: IpcService {
 		}
 	}
 }
+
+/*
+class NnEthSf_IEthInterfaceGroup_Impl: NnEthSf_IEthInterfaceGroup {
+	override func getReadableHandle() throws -> KObject { throw IpcError.unimplemented(name: "nn::eth::sf::nn::eth::sf::IEthInterfaceGroup#GetReadableHandle") }
+	override func cancel() throws { throw IpcError.unimplemented(name: "nn::eth::sf::nn::eth::sf::IEthInterfaceGroup#Cancel") }
+	override func getResult() throws { throw IpcError.unimplemented(name: "nn::eth::sf::nn::eth::sf::IEthInterfaceGroup#GetResult") }
+	override func getInterfaceList(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::eth::sf::nn::eth::sf::IEthInterfaceGroup#GetInterfaceList") }
+	override func getInterfaceCount() throws -> Any? { throw IpcError.unimplemented(name: "nn::eth::sf::nn::eth::sf::IEthInterfaceGroup#GetInterfaceCount") }
+}
+*/

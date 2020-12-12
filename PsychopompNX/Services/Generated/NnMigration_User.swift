@@ -29,6 +29,15 @@ class NnMigrationUser_IAsyncContext: IpcService {
 	}
 }
 
+/*
+class NnMigrationUser_IAsyncContext_Impl: NnMigrationUser_IAsyncContext {
+	override func getSystemEvent(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::migration::user::nn::migration::user::IAsyncContext#GetSystemEvent") }
+	override func cancel(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::migration::user::nn::migration::user::IAsyncContext#Cancel") }
+	override func hasDone(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::migration::user::nn::migration::user::IAsyncContext#HasDone") }
+	override func getResult(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::migration::user::nn::migration::user::IAsyncContext#GetResult") }
+}
+*/
+
 class NnMigrationUser_IService: IpcService {
 	func tryGetLastMigrationInfo() throws -> Any? { throw IpcError.unimplemented(name: "nn::migration::user::nn::migration::user::IService#TryGetLastMigrationInfo") }
 	func createServer(_ _0: Any?, _ _1: KObject, _ _2: Buffer<UInt8>) throws -> NnMigrationUser_IServer { throw IpcError.unimplemented(name: "nn::migration::user::nn::migration::user::IService#CreateServer") }
@@ -68,6 +77,16 @@ class NnMigrationUser_IService: IpcService {
 		}
 	}
 }
+
+/*
+class NnMigrationUser_IService_Impl: NnMigrationUser_IService {
+	override func tryGetLastMigrationInfo() throws -> Any? { throw IpcError.unimplemented(name: "nn::migration::user::nn::migration::user::IService#TryGetLastMigrationInfo") }
+	override func createServer(_ _0: Any?, _ _1: KObject, _ _2: Buffer<UInt8>) throws -> NnMigrationUser_IServer { throw IpcError.unimplemented(name: "nn::migration::user::nn::migration::user::IService#CreateServer") }
+	override func resumeServer(_ _0: Any?, _ _1: KObject) throws -> NnMigrationUser_IServer { throw IpcError.unimplemented(name: "nn::migration::user::nn::migration::user::IService#ResumeServer") }
+	override func createClient(_ _0: Any?, _ _1: KObject, _ _2: Buffer<UInt8>) throws -> NnMigrationUser_IClient { throw IpcError.unimplemented(name: "nn::migration::user::nn::migration::user::IService#CreateClient") }
+	override func resumeClient(_ _0: Any?, _ _1: KObject) throws -> NnMigrationUser_IClient { throw IpcError.unimplemented(name: "nn::migration::user::nn::migration::user::IService#ResumeClient") }
+}
+*/
 
 class NnMigrationUser_IClient: IpcService {
 	func getClientProfile(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::migration::user::nn::migration::user::IClient#GetClientProfile") }
@@ -187,6 +206,31 @@ class NnMigrationUser_IClient: IpcService {
 	}
 }
 
+/*
+class NnMigrationUser_IClient_Impl: NnMigrationUser_IClient {
+	override func getClientProfile(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::migration::user::nn::migration::user::IClient#GetClientProfile") }
+	override func createLoginSession() throws -> Any? { throw IpcError.unimplemented(name: "nn::migration::user::nn::migration::user::IClient#CreateLoginSession") }
+	override func getNetworkServiceAccountId() throws -> Any? { throw IpcError.unimplemented(name: "nn::migration::user::nn::migration::user::IClient#GetNetworkServiceAccountId") }
+	override func getUserNickname() throws -> Any? { throw IpcError.unimplemented(name: "nn::migration::user::nn::migration::user::IClient#GetUserNickname") }
+	override func getUserProfileImage(_ _0: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented(name: "nn::migration::user::nn::migration::user::IClient#GetUserProfileImage") }
+	override func prepareAsync() throws -> NnMigrationDetail_IAsyncContext { throw IpcError.unimplemented(name: "nn::migration::user::nn::migration::user::IClient#PrepareAsync") }
+	override func getConnectionRequirement() throws -> Any? { throw IpcError.unimplemented(name: "nn::migration::user::nn::migration::user::IClient#GetConnectionRequirement") }
+	override func scanServersAsync() throws -> NnMigrationDetail_IAsyncContext { throw IpcError.unimplemented(name: "nn::migration::user::nn::migration::user::IClient#ScanServersAsync") }
+	override func listServers(_ _0: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented(name: "nn::migration::user::nn::migration::user::IClient#ListServers") }
+	override func connectByServerIdAsync(_ _0: Any?) throws -> NnMigrationDetail_IAsyncContext { throw IpcError.unimplemented(name: "nn::migration::user::nn::migration::user::IClient#ConnectByServerIdAsync") }
+	override func getStorageShortfall() throws -> Any? { throw IpcError.unimplemented(name: "nn::migration::user::nn::migration::user::IClient#GetStorageShortfall") }
+	override func getTotalTransferInfo() throws -> Any? { throw IpcError.unimplemented(name: "nn::migration::user::nn::migration::user::IClient#GetTotalTransferInfo") }
+	override func getImmigrantUid() throws -> Any? { throw IpcError.unimplemented(name: "nn::migration::user::nn::migration::user::IClient#GetImmigrantUid") }
+	override func getCurrentTransferInfo() throws -> Any? { throw IpcError.unimplemented(name: "nn::migration::user::nn::migration::user::IClient#GetCurrentTransferInfo") }
+	override func getCurrentRelatedApplications(_ _0: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented(name: "nn::migration::user::nn::migration::user::IClient#GetCurrentRelatedApplications") }
+	override func transferNextAsync() throws -> NnMigrationDetail_IAsyncContext { throw IpcError.unimplemented(name: "nn::migration::user::nn::migration::user::IClient#TransferNextAsync") }
+	override func suspendAsync() throws -> NnMigrationDetail_IAsyncContext { throw IpcError.unimplemented(name: "nn::migration::user::nn::migration::user::IClient#SuspendAsync") }
+	override func completeAsync() throws -> NnMigrationDetail_IAsyncContext { throw IpcError.unimplemented(name: "nn::migration::user::nn::migration::user::IClient#CompleteAsync") }
+	override func abort() throws { throw IpcError.unimplemented(name: "nn::migration::user::nn::migration::user::IClient#Abort") }
+	override func debugSynchronizeStateInFinalizationAsync() throws -> NnMigrationDetail_IAsyncContext { throw IpcError.unimplemented(name: "nn::migration::user::nn::migration::user::IClient#DebugSynchronizeStateInFinalizationAsync") }
+}
+*/
+
 class NnMigrationUser_IServer: IpcService {
 	func getUid() throws -> Any? { throw IpcError.unimplemented(name: "nn::migration::user::nn::migration::user::IServer#GetUid") }
 	func getServerProfile(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::migration::user::nn::migration::user::IServer#GetServerProfile") }
@@ -258,3 +302,19 @@ class NnMigrationUser_IServer: IpcService {
 		}
 	}
 }
+
+/*
+class NnMigrationUser_IServer_Impl: NnMigrationUser_IServer {
+	override func getUid() throws -> Any? { throw IpcError.unimplemented(name: "nn::migration::user::nn::migration::user::IServer#GetUid") }
+	override func getServerProfile(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::migration::user::nn::migration::user::IServer#GetServerProfile") }
+	override func prepareAsync() throws -> NnMigrationDetail_IAsyncContext { throw IpcError.unimplemented(name: "nn::migration::user::nn::migration::user::IServer#PrepareAsync") }
+	override func getConnectionRequirement() throws -> Any? { throw IpcError.unimplemented(name: "nn::migration::user::nn::migration::user::IServer#GetConnectionRequirement") }
+	override func waitConnectionAsync() throws -> NnMigrationDetail_IAsyncContext { throw IpcError.unimplemented(name: "nn::migration::user::nn::migration::user::IServer#WaitConnectionAsync") }
+	override func getClientProfile(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::migration::user::nn::migration::user::IServer#GetClientProfile") }
+	override func acceptConnectionAsync() throws -> NnMigrationDetail_IAsyncContext { throw IpcError.unimplemented(name: "nn::migration::user::nn::migration::user::IServer#AcceptConnectionAsync") }
+	override func declineConnectionAsync() throws -> NnMigrationDetail_IAsyncContext { throw IpcError.unimplemented(name: "nn::migration::user::nn::migration::user::IServer#DeclineConnectionAsync") }
+	override func processTransferAsync() throws -> NnMigrationDetail_IAsyncContext { throw IpcError.unimplemented(name: "nn::migration::user::nn::migration::user::IServer#ProcessTransferAsync") }
+	override func completeAsync() throws -> NnMigrationDetail_IAsyncContext { throw IpcError.unimplemented(name: "nn::migration::user::nn::migration::user::IServer#CompleteAsync") }
+	override func abort() throws { throw IpcError.unimplemented(name: "nn::migration::user::nn::migration::user::IServer#Abort") }
+}
+*/

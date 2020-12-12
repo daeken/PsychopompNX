@@ -18,3 +18,10 @@ class NvMemoryProfiler_IMemoryProfiler: IpcService {
 		}
 	}
 }
+
+/*
+class NvMemoryProfiler_IMemoryProfiler_Impl: NvMemoryProfiler_IMemoryProfiler {
+	override func unknown0(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nv::MemoryProfiler::nv::MemoryProfiler::IMemoryProfiler#Unknown0") }
+	override func unknown1(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nv::MemoryProfiler::nv::MemoryProfiler::IMemoryProfiler#Unknown1") }
+}
+*/

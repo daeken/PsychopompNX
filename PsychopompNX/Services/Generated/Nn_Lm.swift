@@ -15,6 +15,12 @@ class NnLm_ILogService: IpcService {
 	}
 }
 
+/*
+class NnLm_ILogService_Impl: NnLm_ILogService {
+	override func initialize(_ _0: UInt64, _ _1: Pid) throws -> NnLm_ILogger { throw IpcError.unimplemented(name: "nn::lm::nn::lm::ILogService#Initialize") }
+}
+*/
+
 class NnLm_ILogGetter: IpcService {
 	func startLogging(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::lm::nn::lm::ILogGetter#StartLogging") }
 	func stopLogging(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::lm::nn::lm::ILogGetter#StopLogging") }
@@ -41,6 +47,14 @@ class NnLm_ILogGetter: IpcService {
 	}
 }
 
+/*
+class NnLm_ILogGetter_Impl: NnLm_ILogGetter {
+	override func startLogging(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::lm::nn::lm::ILogGetter#StartLogging") }
+	override func stopLogging(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::lm::nn::lm::ILogGetter#StopLogging") }
+	override func getLog(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::lm::nn::lm::ILogGetter#GetLog") }
+}
+*/
+
 class NnLm_ILogger: IpcService {
 	func initialize(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::lm::nn::lm::ILogger#Initialize") }
 	func setDestination(_ _0: UInt32) throws { throw IpcError.unimplemented(name: "nn::lm::nn::lm::ILogger#SetDestination") }
@@ -61,3 +75,10 @@ class NnLm_ILogger: IpcService {
 		}
 	}
 }
+
+/*
+class NnLm_ILogger_Impl: NnLm_ILogger {
+	override func initialize(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::lm::nn::lm::ILogger#Initialize") }
+	override func setDestination(_ _0: UInt32) throws { throw IpcError.unimplemented(name: "nn::lm::nn::lm::ILogger#SetDestination") }
+}
+*/
