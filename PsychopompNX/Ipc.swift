@@ -163,9 +163,15 @@ class OutgoingMessage {
     }
     
     func copy(_ number: Int, _ obj: KObject) {
+        buf[3 + number] = obj.handle
     }
     
     func move(_ number: Int, _ obj: KObject) {
+        if isDomainObject {
+            try! bailout()
+        } else {
+            buf[3 + copyCount + number] = obj.handle
+        }
     }
 }
 

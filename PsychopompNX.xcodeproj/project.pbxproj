@@ -166,6 +166,7 @@
 		4C9622CB2584AD270096E007 /* Nns_Nvdrv.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C96223E2584AD270096E007 /* Nns_Nvdrv.swift */; };
 		4C9622CC2584AD270096E007 /* NnAudioctrl_Detail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C96223F2584AD270096E007 /* NnAudioctrl_Detail.swift */; };
 		4C9622CF2584B02F0096E007 /* UInt128.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9622CE2584B02F0096E007 /* UInt128.swift */; };
+		4C9622D22584B0FE0096E007 /* NnSm_Detail_Impl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9622D12584B0FE0096E007 /* NnSm_Detail_Impl.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -331,6 +332,7 @@
 		4C96223E2584AD270096E007 /* Nns_Nvdrv.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Nns_Nvdrv.swift; path = Generated/Nns_Nvdrv.swift; sourceTree = "<group>"; };
 		4C96223F2584AD270096E007 /* NnAudioctrl_Detail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NnAudioctrl_Detail.swift; path = Generated/NnAudioctrl_Detail.swift; sourceTree = "<group>"; };
 		4C9622CE2584B02F0096E007 /* UInt128.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UInt128.swift; sourceTree = "<group>"; };
+		4C9622D12584B0FE0096E007 /* NnSm_Detail_Impl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NnSm_Detail_Impl.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -349,6 +351,7 @@
 			children = (
 				4C9620962584AAC50096E007 /* Generated */,
 				4C961F12258499B00096E007 /* ServiceMappings.swift */,
+				4C9622D12584B0FE0096E007 /* NnSm_Detail_Impl.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -727,6 +730,7 @@
 				4C9622C72584AD270096E007 /* NnAm_Service.swift in Sources */,
 				4C9622CA2584AD270096E007 /* NnPctl_Detail.swift in Sources */,
 				4C9622492584AD270096E007 /* NnSm_Detail.swift in Sources */,
+				4C9622D22584B0FE0096E007 /* NnSm_Detail_Impl.swift in Sources */,
 				4C21AC3F257F4E250023284C /* NxoReader.swift in Sources */,
 				4C21AC542580A7BF0023284C /* KObject.swift in Sources */,
 				4C96227D2584AD270096E007 /* NnNfcAm_Detail.swift in Sources */,
