@@ -168,6 +168,8 @@
 		4C9622CF2584B02F0096E007 /* UInt128.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9622CE2584B02F0096E007 /* UInt128.swift */; };
 		4C9622D22584B0FE0096E007 /* NnSm_Detail_Impl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9622D12584B0FE0096E007 /* NnSm_Detail_Impl.swift */; };
 		4C9622D62584B8440096E007 /* Nn_Lm_Impl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9622D52584B8440096E007 /* Nn_Lm_Impl.swift */; };
+		4C9622D9258547020096E007 /* NnAm_Service_Impl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9622D8258547020096E007 /* NnAm_Service_Impl.swift */; };
+		4C9622DC258549010096E007 /* KEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9622DB258549010096E007 /* KEvent.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -335,6 +337,8 @@
 		4C9622CE2584B02F0096E007 /* UInt128.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UInt128.swift; sourceTree = "<group>"; };
 		4C9622D12584B0FE0096E007 /* NnSm_Detail_Impl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NnSm_Detail_Impl.swift; sourceTree = "<group>"; };
 		4C9622D52584B8440096E007 /* Nn_Lm_Impl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nn_Lm_Impl.swift; sourceTree = "<group>"; };
+		4C9622D8258547020096E007 /* NnAm_Service_Impl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NnAm_Service_Impl.swift; sourceTree = "<group>"; };
+		4C9622DB258549010096E007 /* KEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KEvent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -355,6 +359,7 @@
 				4C961F12258499B00096E007 /* ServiceMappings.swift */,
 				4C9622D12584B0FE0096E007 /* NnSm_Detail_Impl.swift */,
 				4C9622D52584B8440096E007 /* Nn_Lm_Impl.swift */,
+				4C9622D8258547020096E007 /* NnAm_Service_Impl.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -398,6 +403,7 @@
 				4C21AC4D25809DBA0023284C /* Ipc.swift */,
 				4C21AC532580A7BF0023284C /* KObject.swift */,
 				4C9622CE2584B02F0096E007 /* UInt128.swift */,
+				4C9622DB258549010096E007 /* KEvent.swift */,
 			);
 			path = PsychopompNX;
 			sourceTree = "<group>";
@@ -657,6 +663,7 @@
 				4C9622CF2584B02F0096E007 /* UInt128.swift in Sources */,
 				4C9622AC2584AD270096E007 /* Nn_Oe.swift in Sources */,
 				4C96227E2584AD270096E007 /* Nn_Npns.swift in Sources */,
+				4C9622DC258549010096E007 /* KEvent.swift in Sources */,
 				4C9622882584AD270096E007 /* Root.swift in Sources */,
 				4C9622962584AD270096E007 /* Nn_Ahid.swift in Sources */,
 				4C9622972584AD270096E007 /* NnBcatDetail_Ipc.swift in Sources */,
@@ -688,6 +695,7 @@
 				4C9622602584AD270096E007 /* NnFan_Detail.swift in Sources */,
 				4C21AC42257F4EEC0023284C /* BinaryReader.swift in Sources */,
 				4C9622412584AD270096E007 /* Nn_Uart.swift in Sources */,
+				4C9622D9258547020096E007 /* NnAm_Service_Impl.swift in Sources */,
 				4C9622872584AD270096E007 /* Nn_Socket.swift in Sources */,
 				4C96226C2584AD270096E007 /* NnPcv_Detail.swift in Sources */,
 				4C8379942579AA64006FF416 /* ContentView.swift in Sources */,

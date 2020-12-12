@@ -115,16 +115,18 @@ class OutgoingMessage {
     var buf = [UInt32](repeating: 0, count: 0x100 >> 2)
     let inBuf: [UInt32]
     let isDomainObject: Bool
+    let domainOwner: IpcService?
     let incomingMessage: IncomingMessage
 
     var sfcoOffset = 0, realDataOffset = 0, copyCount = 0
     var errCode: UInt32 = 0
 
-    init(_ buffer: [UInt8], _ isDomainObject: Bool, _ incomingMessage: IncomingMessage) {
+    init(_ buffer: [UInt8], _ domainOwner: IpcService?, _ incomingMessage: IncomingMessage) {
         inBuf = buffer.withUnsafeBufferPointer(of: UInt32.self) {
             Array($0)
         }
-        self.isDomainObject = isDomainObject
+        self.isDomainObject = domainOwner != nil
+        self.domainOwner = domainOwner
         self.incomingMessage = incomingMessage
     }
 
@@ -170,7 +172,7 @@ class OutgoingMessage {
     
     func move(_ number: Int, _ obj: KObject) {
         if isDomainObject {
-            try! bailout()
+            buf[(sfcoOffset >> 2) + 4 + number] = domainOwner!.assignHandle(obj)
         } else {
             buf[3 + copyCount + number] = obj.handle
         }
@@ -187,6 +189,13 @@ class IpcService: KObject {
     let thisHandle: UInt32 = 0xf000
     var domainHandles = [UInt32: KObject]()
     var domainHandleMap = [UInt32: UInt32]()
+    
+    func assignHandle(_ object: KObject) -> UInt32 {
+        let handle = domainHandleIter
+        domainHandleIter += 1
+        domainHandles[handle] = object
+        return handle
+    }
 
     func handleMessage(_ bufAddr: UInt64) throws -> (ret: UInt32, closeHandle: Bool) {
         let tptr = GuestPointer<UInt8>(bufAddr)
@@ -194,7 +203,7 @@ class IpcService: KObject {
         hexdump(buffer)
 
         let im = IncomingMessage(buffer, isDomainObject)
-        let om = OutgoingMessage(buffer, isDomainObject, im)
+        let om = OutgoingMessage(buffer, isDomainObject ? self : nil, im)
         var ret: UInt32 = 0xf601
         var closeHandle = false
         var target = self

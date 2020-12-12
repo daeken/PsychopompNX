@@ -43,7 +43,7 @@ let ipcServiceMappings: [String: () -> IpcService] =
             "npns:s": { NnNpns_INpnsSystem() }, 
             "xcd:sys": { NnXcdDetail_ISystemServer() }, 
             "appletAE": { NnAmService_IAllSystemAppletProxiesService() }, 
-            "appletOE": { NnAmService_IApplicationProxyService() }, 
+            "appletOE": { NnAmService_IApplicationProxyService_Impl() }, 
             "pm:info": { NnPmDetail_IInformationInterface() }, 
             "pm:bm": { NnPmDetail_IBootModeInterface() }, 
             "pm:shell": { NnPmDetail_IShellInterface() }, 
