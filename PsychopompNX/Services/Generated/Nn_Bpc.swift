@@ -1,8 +1,8 @@
 class NnBpc_IRtcManager: IpcService {
-	func getExternalRtcValue() throws -> Any? { throw IpcError.unimplemented }
-	func setExternalRtcValue(_ _0: Any?) throws { throw IpcError.unimplemented }
-	func readExternalRtcResetFlag() throws -> Any? { throw IpcError.unimplemented }
-	func clearExternalRtcResetFlag() throws { throw IpcError.unimplemented }
+	func getExternalRtcValue() throws -> Any? { throw IpcError.unimplemented(name: "nn::bpc::nn::bpc::IRtcManager#GetExternalRtcValue") }
+	func setExternalRtcValue(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::bpc::nn::bpc::IRtcManager#SetExternalRtcValue") }
+	func readExternalRtcResetFlag() throws -> Any? { throw IpcError.unimplemented(name: "nn::bpc::nn::bpc::IRtcManager#ReadExternalRtcResetFlag") }
+	func clearExternalRtcResetFlag() throws { throw IpcError.unimplemented(name: "nn::bpc::nn::bpc::IRtcManager#ClearExternalRtcResetFlag") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
@@ -30,9 +30,9 @@ class NnBpc_IRtcManager: IpcService {
 }
 
 class NnBpc_IWakeupConfigManager: IpcService {
-	func unknown0(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func unknown1(_ _0: Any?) throws { throw IpcError.unimplemented }
-	func unknown2() throws -> Any? { throw IpcError.unimplemented }
+	func unknown0(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::bpc::nn::bpc::IWakeupConfigManager#Unknown0") }
+	func unknown1(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::bpc::nn::bpc::IWakeupConfigManager#Unknown1") }
+	func unknown2() throws -> Any? { throw IpcError.unimplemented(name: "nn::bpc::nn::bpc::IWakeupConfigManager#Unknown2") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
@@ -56,17 +56,17 @@ class NnBpc_IWakeupConfigManager: IpcService {
 }
 
 class NnBpc_IBoardPowerControlManager: IpcService {
-	func shutdownSystem() throws { throw IpcError.unimplemented }
-	func rebootSystem() throws { throw IpcError.unimplemented }
-	func getWakeupReason() throws -> Any? { throw IpcError.unimplemented }
-	func getShutdownReason() throws -> Any? { throw IpcError.unimplemented }
-	func getAcOk() throws -> Any? { throw IpcError.unimplemented }
-	func getBoardPowerControlEvent(_ _0: Any?) throws -> KObject { throw IpcError.unimplemented }
-	func getSleepButtonState() throws -> Any? { throw IpcError.unimplemented }
-	func getPowerEvent(_ _0: Any?) throws -> KObject { throw IpcError.unimplemented }
-	func unknown8(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func unknown9(_ _0: Any?) throws { throw IpcError.unimplemented }
-	func unknown10() throws -> Any? { throw IpcError.unimplemented }
+	func shutdownSystem() throws { throw IpcError.unimplemented(name: "nn::bpc::nn::bpc::IBoardPowerControlManager#ShutdownSystem") }
+	func rebootSystem() throws { throw IpcError.unimplemented(name: "nn::bpc::nn::bpc::IBoardPowerControlManager#RebootSystem") }
+	func getWakeupReason() throws -> Any? { throw IpcError.unimplemented(name: "nn::bpc::nn::bpc::IBoardPowerControlManager#GetWakeupReason") }
+	func getShutdownReason() throws -> Any? { throw IpcError.unimplemented(name: "nn::bpc::nn::bpc::IBoardPowerControlManager#GetShutdownReason") }
+	func getAcOk() throws -> Any? { throw IpcError.unimplemented(name: "nn::bpc::nn::bpc::IBoardPowerControlManager#GetAcOk") }
+	func getBoardPowerControlEvent(_ _0: Any?) throws -> KObject { throw IpcError.unimplemented(name: "nn::bpc::nn::bpc::IBoardPowerControlManager#GetBoardPowerControlEvent") }
+	func getSleepButtonState() throws -> Any? { throw IpcError.unimplemented(name: "nn::bpc::nn::bpc::IBoardPowerControlManager#GetSleepButtonState") }
+	func getPowerEvent(_ _0: Any?) throws -> KObject { throw IpcError.unimplemented(name: "nn::bpc::nn::bpc::IBoardPowerControlManager#GetPowerEvent") }
+	func unknown8(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::bpc::nn::bpc::IBoardPowerControlManager#Unknown8") }
+	func unknown9(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::bpc::nn::bpc::IBoardPowerControlManager#Unknown9") }
+	func unknown10() throws -> Any? { throw IpcError.unimplemented(name: "nn::bpc::nn::bpc::IBoardPowerControlManager#Unknown10") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
@@ -124,8 +124,8 @@ class NnBpc_IBoardPowerControlManager: IpcService {
 }
 
 class NnBpc_IPowerButtonManager: IpcService {
-	func unknown0() throws -> Any? { throw IpcError.unimplemented }
-	func unknown1(_ _0: Any?) throws -> KObject { throw IpcError.unimplemented }
+	func unknown0() throws -> Any? { throw IpcError.unimplemented(name: "nn::bpc::nn::bpc::IPowerButtonManager#Unknown0") }
+	func unknown1(_ _0: Any?) throws -> KObject { throw IpcError.unimplemented(name: "nn::bpc::nn::bpc::IPowerButtonManager#Unknown1") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {

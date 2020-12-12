@@ -45,12 +45,12 @@ enum NnFssrvSf_DirectoryEntryType: UInt8 {
 }
 
 class NnFssrvSf_IStorage: IpcService {
-	func read(_ offset: UInt64, _ length: UInt64, _ data: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func write(_ offset: UInt64, _ length: UInt64, _ data: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func flush() throws { throw IpcError.unimplemented }
-	func setSize(_ size: UInt64) throws { throw IpcError.unimplemented }
-	func getSize() throws -> UInt64 { throw IpcError.unimplemented }
-	func operateRange(_ _0: UInt32, _ _1: UInt64, _ _2: UInt64) throws -> [UInt8] { throw IpcError.unimplemented }
+	func read(_ offset: UInt64, _ length: UInt64, _ data: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::IStorage#Read") }
+	func write(_ offset: UInt64, _ length: UInt64, _ data: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::IStorage#Write") }
+	func flush() throws { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::IStorage#Flush") }
+	func setSize(_ size: UInt64) throws { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::IStorage#SetSize") }
+	func getSize() throws -> UInt64 { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::IStorage#GetSize") }
+	func operateRange(_ _0: UInt32, _ _1: UInt64, _ _2: UInt64) throws -> [UInt8] { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::IStorage#OperateRange") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
@@ -88,141 +88,119 @@ class NnFssrvSf_IStorage: IpcService {
 	}
 }
 
-class NnFssrvSf_IFile: IpcService {
-	func read(_ _0: UInt32, _ offset: UInt64, _ size: UInt64, _ out_buf: Buffer<UInt8>) throws -> UInt64 { throw IpcError.unimplemented }
-	func write(_ _0: UInt32, _ offset: UInt64, _ size: UInt64, _ in_buf: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func flush() throws { throw IpcError.unimplemented }
-	func setSize(_ size: UInt64) throws { throw IpcError.unimplemented }
-	func getSize() throws -> UInt64 { throw IpcError.unimplemented }
-	func operateRange(_ _0: UInt32, _ _1: UInt64, _ _2: UInt64) throws -> [UInt8] { throw IpcError.unimplemented }
+class NnFssrvSf_IDirectory: IpcService {
+	func read(_ _0: Buffer<UInt8>) throws -> UInt64 { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::IDirectory#Read") }
+	func getEntryCount() throws -> UInt64 { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::IDirectory#GetEntryCount") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
 		case 0:
-			let ret = try read(im.getData(8) as UInt32, im.getData(16) as UInt64, im.getData(24) as UInt64, im.getBuffer(0x46, 0) as Buffer<UInt8>)
+			let ret = try read(im.getBuffer(0x6, 0) as Buffer<UInt8>)
 			om.initialize(0, 0, 8)
 			om.setData(8, ret)
 		
 		case 1:
-			try write(im.getData(8) as UInt32, im.getData(16) as UInt64, im.getData(24) as UInt64, im.getBuffer(0x45, 0) as Buffer<UInt8>)
-			om.initialize(0, 0, 0)
-		
-		case 2:
-			try flush()
-			om.initialize(0, 0, 0)
-		
-		case 3:
-			try setSize(im.getData(8) as UInt64)
-			om.initialize(0, 0, 0)
-		
-		case 4:
-			let ret = try getSize()
+			let ret = try getEntryCount()
 			om.initialize(0, 0, 8)
 			om.setData(8, ret)
 		
-		case 5:
-			let ret = try operateRange(im.getData(8) as UInt32, im.getData(16) as UInt64, im.getData(24) as UInt64)
-			om.initialize(0, 0, 64)
-			if ret.count != 0x40 { throw IpcError.byteCountMismatch }
-			om.setBytes(8, ret)
-		
 		default:
-			print("Unhandled command to nn::fssrv::sf::IFile: \(im.commandId)")
+			print("Unhandled command to nn::fssrv::sf::IDirectory: \(im.commandId)")
 			try! bailout()
 		}
 	}
 }
 
 class NnFssrvSf_IFileSystemProxy: IpcService {
-	func openFileSystem(_ filesystem_type: NnFssrvSf_FileSystemType, _ _1: Buffer<UInt8>) throws -> NnFssrvSf_IFileSystem { throw IpcError.unimplemented }
-	func setCurrentProcess(_ _0: UInt64, _ _1: Pid) throws { throw IpcError.unimplemented }
-	func openDataFileSystemByCurrentProcess() throws -> NnFssrvSf_IFileSystem { throw IpcError.unimplemented }
-	func openFileSystemWithPatch(_ filesystem_type: NnFssrvSf_FileSystemType, _ id: Nn_ApplicationId) throws -> NnFssrvSf_IFileSystem { throw IpcError.unimplemented }
-	func openFileSystemWithId(_ filesystem_type: NnFssrvSf_FileSystemType, _ tid: Nn_ApplicationId, _ _2: Buffer<UInt8>) throws -> NnFssrvSf_IFileSystem { throw IpcError.unimplemented }
-	func openDataFileSystemByApplicationId(_ u64: Nn_ApplicationId) throws -> NnFssrvSf_IFileSystem { throw IpcError.unimplemented }
-	func openBisFileSystem(_ partitionId: NnFssrvSf_Partition, _ _1: Buffer<UInt8>) throws -> NnFssrvSf_IFileSystem { throw IpcError.unimplemented }
-	func openBisStorage(_ partitionId: NnFssrvSf_Partition) throws -> NnFssrvSf_IStorage { throw IpcError.unimplemented }
-	func invalidateBisCache() throws { throw IpcError.unimplemented }
-	func openHostFileSystem(_ _0: Buffer<UInt8>) throws -> NnFssrvSf_IFileSystem { throw IpcError.unimplemented }
-	func openSdCardFileSystem() throws -> NnFssrvSf_IFileSystem { throw IpcError.unimplemented }
-	func formatSdCardFileSystem() throws { throw IpcError.unimplemented }
-	func deleteSaveDataFileSystem(_ tid: Nn_ApplicationId) throws { throw IpcError.unimplemented }
-	func createSaveDataFileSystem(_ save_struct: NnFssrvSf_SaveStruct, _ ave_create_struct: NnFssrvSf_SaveCreateStruct, _ _2: [UInt8]) throws { throw IpcError.unimplemented }
-	func createSaveDataFileSystemBySystemSaveDataId(_ _0: NnFssrvSf_SaveStruct, _ _1: NnFssrvSf_SaveCreateStruct) throws { throw IpcError.unimplemented }
-	func registerSaveDataFileSystemAtomicDeletion(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func deleteSaveDataFileSystemBySaveDataSpaceId(_ _0: UInt8, _ _1: UInt64) throws { throw IpcError.unimplemented }
-	func formatSdCardDryRun() throws { throw IpcError.unimplemented }
-	func isExFatSupported() throws -> UInt8 { throw IpcError.unimplemented }
-	func deleteSaveDataFileSystemBySaveDataAttribute(_ _0: UInt8, _ _1: [UInt8]) throws { throw IpcError.unimplemented }
-	func openGameCardStorage(_ _0: UInt32, _ _1: UInt32) throws -> NnFssrvSf_IStorage { throw IpcError.unimplemented }
-	func openGameCardFileSystem(_ _0: UInt32, _ _1: UInt32) throws -> NnFssrvSf_IFileSystem { throw IpcError.unimplemented }
-	func extendSaveDataFileSystem(_ _0: UInt8, _ _1: UInt64, _ _2: UInt64, _ _3: UInt64) throws { throw IpcError.unimplemented }
-	func deleteCacheStorage(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func getCacheStorageSize(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func openSaveDataFileSystem(_ save_data_space_id: UInt8, _ save_struct: NnFssrvSf_SaveStruct) throws -> NnFssrvSf_IFileSystem { throw IpcError.unimplemented }
-	func openSaveDataFileSystemBySystemSaveDataId(_ save_data_space_id: UInt8, _ save_struct: NnFssrvSf_SaveStruct) throws -> NnFssrvSf_IFileSystem { throw IpcError.unimplemented }
-	func openReadOnlySaveDataFileSystem(_ save_data_space_id: UInt8, _ save_struct: NnFssrvSf_SaveStruct) throws -> NnFssrvSf_IFileSystem { throw IpcError.unimplemented }
-	func readSaveDataFileSystemExtraDataBySaveDataSpaceId(_ _0: UInt8, _ _1: UInt64, _ _2: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func readSaveDataFileSystemExtraData(_ _0: UInt64, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func writeSaveDataFileSystemExtraData(_ _0: UInt8, _ _1: UInt64, _ _2: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func openSaveDataInfoReader() throws -> NnFssrvSf_ISaveDataInfoReader { throw IpcError.unimplemented }
-	func openSaveDataInfoReaderBySaveDataSpaceId(_ _0: UInt8) throws -> NnFssrvSf_ISaveDataInfoReader { throw IpcError.unimplemented }
-	func openCacheStorageList(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func openSaveDataInternalStorageFileSystem(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func updateSaveDataMacForDebug(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func writeSaveDataFileSystemExtraData2(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func openSaveDataMetaFile(_ _0: UInt8, _ _1: UInt32, _ _2: [UInt8]) throws -> NnFssrvSf_IFile { throw IpcError.unimplemented }
-	func openSaveDataTransferManager() throws -> NnFssrvSf_ISaveDataTransferManager { throw IpcError.unimplemented }
-	func openSaveDataTransferManagerVersion2(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func openImageDirectoryFileSystem(_ _0: UInt32) throws -> NnFssrvSf_IFileSystem { throw IpcError.unimplemented }
-	func openContentStorageFileSystem(_ content_storage_id: UInt32) throws -> NnFssrvSf_IFileSystem { throw IpcError.unimplemented }
-	func openDataStorageByCurrentProcess() throws -> NnFssrvSf_IStorage { throw IpcError.unimplemented }
-	func openDataStorageByProgramId(_ tid: Nn_ApplicationId) throws -> NnFssrvSf_IStorage { throw IpcError.unimplemented }
-	func openDataStorageByDataId(_ storage_id: UInt8, _ tid: Nn_ApplicationId) throws -> NnFssrvSf_IStorage { throw IpcError.unimplemented }
-	func openPatchDataStorageByCurrentProcess() throws -> NnFssrvSf_IStorage { throw IpcError.unimplemented }
-	func openDeviceOperator() throws -> NnFssrvSf_IDeviceOperator { throw IpcError.unimplemented }
-	func openSdCardDetectionEventNotifier() throws -> NnFssrvSf_IEventNotifier { throw IpcError.unimplemented }
-	func openGameCardDetectionEventNotifier() throws -> NnFssrvSf_IEventNotifier { throw IpcError.unimplemented }
-	func openSystemDataUpdateEventNotifier(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func notifySystemDataUpdateEvent(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func setCurrentPosixTime(_ time: UInt64) throws { throw IpcError.unimplemented }
-	func querySaveDataTotalSize(_ _0: UInt64, _ _1: UInt64) throws -> UInt64 { throw IpcError.unimplemented }
-	func verifySaveDataFileSystem(_ _0: UInt64, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func corruptSaveDataFileSystem(_ _0: UInt64) throws { throw IpcError.unimplemented }
-	func createPaddingFile(_ _0: UInt64) throws { throw IpcError.unimplemented }
-	func deleteAllPaddingFiles() throws { throw IpcError.unimplemented }
-	func getRightsId(_ _0: UInt8, _ _1: UInt64) throws -> [UInt8] { throw IpcError.unimplemented }
-	func registerExternalKey(_ _0: [UInt8], _ _1: [UInt8]) throws { throw IpcError.unimplemented }
-	func unregisterAllExternalKey() throws { throw IpcError.unimplemented }
-	func getRightsIdByPath(_ _0: Buffer<UInt8>) throws -> [UInt8] { throw IpcError.unimplemented }
-	func getRightsIdAndKeyGenerationByPath(_ _0: Buffer<UInt8>) throws -> (UInt8, rights: [UInt8]) { throw IpcError.unimplemented }
-	func setCurrentPosixTimeWithTimeDifference(_ _0: UInt32, _ _1: UInt64) throws { throw IpcError.unimplemented }
-	func getFreeSpaceSizeForSaveData(_ _0: UInt8) throws -> UInt64 { throw IpcError.unimplemented }
-	func verifySaveDataFileSystemBySaveDataSpaceId(_ _0: UInt8, _ _1: UInt64, _ _2: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func corruptSaveDataFileSystemBySaveDataSpaceId(_ _0: UInt8, _ _1: UInt64) throws { throw IpcError.unimplemented }
-	func querySaveDataInternalStorageTotalSize(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func setSdCardEncryptionSeed(_ _0: [UInt8]) throws { throw IpcError.unimplemented }
-	func setSdCardAccessibility(_ _0: UInt8) throws { throw IpcError.unimplemented }
-	func isSdCardAccessible() throws -> UInt8 { throw IpcError.unimplemented }
-	func isSignedSystemPartitionOnSdCardValid() throws -> UInt8 { throw IpcError.unimplemented }
-	func openAccessFailureResolver(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func getAccessFailureDetectionEvent(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func isAccessFailureDetected(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func resolveAccessFailure(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func abandonAccessFailure(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func getAndClearFileSystemProxyErrorInfo() throws -> [UInt8] { throw IpcError.unimplemented }
-	func setBisRootForHost(_ _0: UInt32, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func setSaveDataSize(_ _0: UInt64, _ _1: UInt64) throws { throw IpcError.unimplemented }
-	func setSaveDataRootPath(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func disableAutoSaveDataCreation() throws { throw IpcError.unimplemented }
-	func setGlobalAccessLogMode(_ mode: UInt32) throws { throw IpcError.unimplemented }
-	func getGlobalAccessLogMode() throws -> UInt32 { throw IpcError.unimplemented }
-	func outputAccessLogToSdCard(_ log_text: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func registerUpdatePartition() throws { throw IpcError.unimplemented }
-	func openRegisteredUpdatePartition() throws -> NnFssrvSf_IFileSystem { throw IpcError.unimplemented }
-	func getAndClearMemoryReportInfo() throws -> [UInt8] { throw IpcError.unimplemented }
-	func unknown1010(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func overrideSaveDataTransferTokenSignVerificationKey(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented }
+	func openFileSystem(_ filesystem_type: NnFssrvSf_FileSystemType, _ _1: Buffer<UInt8>) throws -> NnFssrvSf_IFileSystem { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::IFileSystemProxy#OpenFileSystem") }
+	func setCurrentProcess(_ _0: UInt64, _ _1: Pid) throws { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::IFileSystemProxy#SetCurrentProcess") }
+	func openDataFileSystemByCurrentProcess() throws -> NnFssrvSf_IFileSystem { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::IFileSystemProxy#OpenDataFileSystemByCurrentProcess") }
+	func openFileSystemWithPatch(_ filesystem_type: NnFssrvSf_FileSystemType, _ id: Nn_ApplicationId) throws -> NnFssrvSf_IFileSystem { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::IFileSystemProxy#OpenFileSystemWithPatch") }
+	func openFileSystemWithId(_ filesystem_type: NnFssrvSf_FileSystemType, _ tid: Nn_ApplicationId, _ _2: Buffer<UInt8>) throws -> NnFssrvSf_IFileSystem { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::IFileSystemProxy#OpenFileSystemWithId") }
+	func openDataFileSystemByApplicationId(_ u64: Nn_ApplicationId) throws -> NnFssrvSf_IFileSystem { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::IFileSystemProxy#OpenDataFileSystemByApplicationId") }
+	func openBisFileSystem(_ partitionId: NnFssrvSf_Partition, _ _1: Buffer<UInt8>) throws -> NnFssrvSf_IFileSystem { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::IFileSystemProxy#OpenBisFileSystem") }
+	func openBisStorage(_ partitionId: NnFssrvSf_Partition) throws -> NnFssrvSf_IStorage { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::IFileSystemProxy#OpenBisStorage") }
+	func invalidateBisCache() throws { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::IFileSystemProxy#InvalidateBisCache") }
+	func openHostFileSystem(_ _0: Buffer<UInt8>) throws -> NnFssrvSf_IFileSystem { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::IFileSystemProxy#OpenHostFileSystem") }
+	func openSdCardFileSystem() throws -> NnFssrvSf_IFileSystem { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::IFileSystemProxy#OpenSdCardFileSystem") }
+	func formatSdCardFileSystem() throws { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::IFileSystemProxy#FormatSdCardFileSystem") }
+	func deleteSaveDataFileSystem(_ tid: Nn_ApplicationId) throws { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::IFileSystemProxy#DeleteSaveDataFileSystem") }
+	func createSaveDataFileSystem(_ save_struct: NnFssrvSf_SaveStruct, _ ave_create_struct: NnFssrvSf_SaveCreateStruct, _ _2: [UInt8]) throws { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::IFileSystemProxy#CreateSaveDataFileSystem") }
+	func createSaveDataFileSystemBySystemSaveDataId(_ _0: NnFssrvSf_SaveStruct, _ _1: NnFssrvSf_SaveCreateStruct) throws { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::IFileSystemProxy#CreateSaveDataFileSystemBySystemSaveDataId") }
+	func registerSaveDataFileSystemAtomicDeletion(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::IFileSystemProxy#RegisterSaveDataFileSystemAtomicDeletion") }
+	func deleteSaveDataFileSystemBySaveDataSpaceId(_ _0: UInt8, _ _1: UInt64) throws { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::IFileSystemProxy#DeleteSaveDataFileSystemBySaveDataSpaceId") }
+	func formatSdCardDryRun() throws { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::IFileSystemProxy#FormatSdCardDryRun") }
+	func isExFatSupported() throws -> UInt8 { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::IFileSystemProxy#IsExFatSupported") }
+	func deleteSaveDataFileSystemBySaveDataAttribute(_ _0: UInt8, _ _1: [UInt8]) throws { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::IFileSystemProxy#DeleteSaveDataFileSystemBySaveDataAttribute") }
+	func openGameCardStorage(_ _0: UInt32, _ _1: UInt32) throws -> NnFssrvSf_IStorage { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::IFileSystemProxy#OpenGameCardStorage") }
+	func openGameCardFileSystem(_ _0: UInt32, _ _1: UInt32) throws -> NnFssrvSf_IFileSystem { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::IFileSystemProxy#OpenGameCardFileSystem") }
+	func extendSaveDataFileSystem(_ _0: UInt8, _ _1: UInt64, _ _2: UInt64, _ _3: UInt64) throws { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::IFileSystemProxy#ExtendSaveDataFileSystem") }
+	func deleteCacheStorage(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::IFileSystemProxy#DeleteCacheStorage") }
+	func getCacheStorageSize(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::IFileSystemProxy#GetCacheStorageSize") }
+	func openSaveDataFileSystem(_ save_data_space_id: UInt8, _ save_struct: NnFssrvSf_SaveStruct) throws -> NnFssrvSf_IFileSystem { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::IFileSystemProxy#OpenSaveDataFileSystem") }
+	func openSaveDataFileSystemBySystemSaveDataId(_ save_data_space_id: UInt8, _ save_struct: NnFssrvSf_SaveStruct) throws -> NnFssrvSf_IFileSystem { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::IFileSystemProxy#OpenSaveDataFileSystemBySystemSaveDataId") }
+	func openReadOnlySaveDataFileSystem(_ save_data_space_id: UInt8, _ save_struct: NnFssrvSf_SaveStruct) throws -> NnFssrvSf_IFileSystem { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::IFileSystemProxy#OpenReadOnlySaveDataFileSystem") }
+	func readSaveDataFileSystemExtraDataBySaveDataSpaceId(_ _0: UInt8, _ _1: UInt64, _ _2: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::IFileSystemProxy#ReadSaveDataFileSystemExtraDataBySaveDataSpaceId") }
+	func readSaveDataFileSystemExtraData(_ _0: UInt64, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::IFileSystemProxy#ReadSaveDataFileSystemExtraData") }
+	func writeSaveDataFileSystemExtraData(_ _0: UInt8, _ _1: UInt64, _ _2: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::IFileSystemProxy#WriteSaveDataFileSystemExtraData") }
+	func openSaveDataInfoReader() throws -> NnFssrvSf_ISaveDataInfoReader { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::IFileSystemProxy#OpenSaveDataInfoReader") }
+	func openSaveDataInfoReaderBySaveDataSpaceId(_ _0: UInt8) throws -> NnFssrvSf_ISaveDataInfoReader { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::IFileSystemProxy#OpenSaveDataInfoReaderBySaveDataSpaceId") }
+	func openCacheStorageList(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::IFileSystemProxy#OpenCacheStorageList") }
+	func openSaveDataInternalStorageFileSystem(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::IFileSystemProxy#OpenSaveDataInternalStorageFileSystem") }
+	func updateSaveDataMacForDebug(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::IFileSystemProxy#UpdateSaveDataMacForDebug") }
+	func writeSaveDataFileSystemExtraData2(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::IFileSystemProxy#WriteSaveDataFileSystemExtraData2") }
+	func openSaveDataMetaFile(_ _0: UInt8, _ _1: UInt32, _ _2: [UInt8]) throws -> NnFssrvSf_IFile { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::IFileSystemProxy#OpenSaveDataMetaFile") }
+	func openSaveDataTransferManager() throws -> NnFssrvSf_ISaveDataTransferManager { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::IFileSystemProxy#OpenSaveDataTransferManager") }
+	func openSaveDataTransferManagerVersion2(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::IFileSystemProxy#OpenSaveDataTransferManagerVersion2") }
+	func openImageDirectoryFileSystem(_ _0: UInt32) throws -> NnFssrvSf_IFileSystem { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::IFileSystemProxy#OpenImageDirectoryFileSystem") }
+	func openContentStorageFileSystem(_ content_storage_id: UInt32) throws -> NnFssrvSf_IFileSystem { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::IFileSystemProxy#OpenContentStorageFileSystem") }
+	func openDataStorageByCurrentProcess() throws -> NnFssrvSf_IStorage { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::IFileSystemProxy#OpenDataStorageByCurrentProcess") }
+	func openDataStorageByProgramId(_ tid: Nn_ApplicationId) throws -> NnFssrvSf_IStorage { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::IFileSystemProxy#OpenDataStorageByProgramId") }
+	func openDataStorageByDataId(_ storage_id: UInt8, _ tid: Nn_ApplicationId) throws -> NnFssrvSf_IStorage { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::IFileSystemProxy#OpenDataStorageByDataId") }
+	func openPatchDataStorageByCurrentProcess() throws -> NnFssrvSf_IStorage { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::IFileSystemProxy#OpenPatchDataStorageByCurrentProcess") }
+	func openDeviceOperator() throws -> NnFssrvSf_IDeviceOperator { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::IFileSystemProxy#OpenDeviceOperator") }
+	func openSdCardDetectionEventNotifier() throws -> NnFssrvSf_IEventNotifier { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::IFileSystemProxy#OpenSdCardDetectionEventNotifier") }
+	func openGameCardDetectionEventNotifier() throws -> NnFssrvSf_IEventNotifier { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::IFileSystemProxy#OpenGameCardDetectionEventNotifier") }
+	func openSystemDataUpdateEventNotifier(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::IFileSystemProxy#OpenSystemDataUpdateEventNotifier") }
+	func notifySystemDataUpdateEvent(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::IFileSystemProxy#NotifySystemDataUpdateEvent") }
+	func setCurrentPosixTime(_ time: UInt64) throws { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::IFileSystemProxy#SetCurrentPosixTime") }
+	func querySaveDataTotalSize(_ _0: UInt64, _ _1: UInt64) throws -> UInt64 { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::IFileSystemProxy#QuerySaveDataTotalSize") }
+	func verifySaveDataFileSystem(_ _0: UInt64, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::IFileSystemProxy#VerifySaveDataFileSystem") }
+	func corruptSaveDataFileSystem(_ _0: UInt64) throws { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::IFileSystemProxy#CorruptSaveDataFileSystem") }
+	func createPaddingFile(_ _0: UInt64) throws { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::IFileSystemProxy#CreatePaddingFile") }
+	func deleteAllPaddingFiles() throws { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::IFileSystemProxy#DeleteAllPaddingFiles") }
+	func getRightsId(_ _0: UInt8, _ _1: UInt64) throws -> [UInt8] { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::IFileSystemProxy#GetRightsId") }
+	func registerExternalKey(_ _0: [UInt8], _ _1: [UInt8]) throws { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::IFileSystemProxy#RegisterExternalKey") }
+	func unregisterAllExternalKey() throws { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::IFileSystemProxy#UnregisterAllExternalKey") }
+	func getRightsIdByPath(_ _0: Buffer<UInt8>) throws -> [UInt8] { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::IFileSystemProxy#GetRightsIdByPath") }
+	func getRightsIdAndKeyGenerationByPath(_ _0: Buffer<UInt8>) throws -> (UInt8, rights: [UInt8]) { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::IFileSystemProxy#GetRightsIdAndKeyGenerationByPath") }
+	func setCurrentPosixTimeWithTimeDifference(_ _0: UInt32, _ _1: UInt64) throws { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::IFileSystemProxy#SetCurrentPosixTimeWithTimeDifference") }
+	func getFreeSpaceSizeForSaveData(_ _0: UInt8) throws -> UInt64 { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::IFileSystemProxy#GetFreeSpaceSizeForSaveData") }
+	func verifySaveDataFileSystemBySaveDataSpaceId(_ _0: UInt8, _ _1: UInt64, _ _2: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::IFileSystemProxy#VerifySaveDataFileSystemBySaveDataSpaceId") }
+	func corruptSaveDataFileSystemBySaveDataSpaceId(_ _0: UInt8, _ _1: UInt64) throws { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::IFileSystemProxy#CorruptSaveDataFileSystemBySaveDataSpaceId") }
+	func querySaveDataInternalStorageTotalSize(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::IFileSystemProxy#QuerySaveDataInternalStorageTotalSize") }
+	func setSdCardEncryptionSeed(_ _0: [UInt8]) throws { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::IFileSystemProxy#SetSdCardEncryptionSeed") }
+	func setSdCardAccessibility(_ _0: UInt8) throws { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::IFileSystemProxy#SetSdCardAccessibility") }
+	func isSdCardAccessible() throws -> UInt8 { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::IFileSystemProxy#IsSdCardAccessible") }
+	func isSignedSystemPartitionOnSdCardValid() throws -> UInt8 { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::IFileSystemProxy#IsSignedSystemPartitionOnSdCardValid") }
+	func openAccessFailureResolver(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::IFileSystemProxy#OpenAccessFailureResolver") }
+	func getAccessFailureDetectionEvent(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::IFileSystemProxy#GetAccessFailureDetectionEvent") }
+	func isAccessFailureDetected(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::IFileSystemProxy#IsAccessFailureDetected") }
+	func resolveAccessFailure(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::IFileSystemProxy#ResolveAccessFailure") }
+	func abandonAccessFailure(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::IFileSystemProxy#AbandonAccessFailure") }
+	func getAndClearFileSystemProxyErrorInfo() throws -> [UInt8] { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::IFileSystemProxy#GetAndClearFileSystemProxyErrorInfo") }
+	func setBisRootForHost(_ _0: UInt32, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::IFileSystemProxy#SetBisRootForHost") }
+	func setSaveDataSize(_ _0: UInt64, _ _1: UInt64) throws { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::IFileSystemProxy#SetSaveDataSize") }
+	func setSaveDataRootPath(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::IFileSystemProxy#SetSaveDataRootPath") }
+	func disableAutoSaveDataCreation() throws { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::IFileSystemProxy#DisableAutoSaveDataCreation") }
+	func setGlobalAccessLogMode(_ mode: UInt32) throws { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::IFileSystemProxy#SetGlobalAccessLogMode") }
+	func getGlobalAccessLogMode() throws -> UInt32 { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::IFileSystemProxy#GetGlobalAccessLogMode") }
+	func outputAccessLogToSdCard(_ log_text: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::IFileSystemProxy#OutputAccessLogToSdCard") }
+	func registerUpdatePartition() throws { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::IFileSystemProxy#RegisterUpdatePartition") }
+	func openRegisteredUpdatePartition() throws -> NnFssrvSf_IFileSystem { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::IFileSystemProxy#OpenRegisteredUpdatePartition") }
+	func getAndClearMemoryReportInfo() throws -> [UInt8] { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::IFileSystemProxy#GetAndClearMemoryReportInfo") }
+	func unknown1010(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::IFileSystemProxy#Unknown1010") }
+	func overrideSaveDataTransferTokenSignVerificationKey(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::IFileSystemProxy#OverrideSaveDataTransferTokenSignVerificationKey") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
@@ -634,77 +612,45 @@ class NnFssrvSf_IFileSystemProxy: IpcService {
 	}
 }
 
-class NnFssrvSf_ISaveDataImporter: IpcService {
-	func unknown0(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func unknown1() throws -> UInt64 { throw IpcError.unimplemented }
-	func unknown16(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func unknown17() throws { throw IpcError.unimplemented }
-	
-	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
-		switch im.commandId {
-		case 0:
-			try unknown0(im.getBuffer(0x1a, 0) as Buffer<UInt8>)
-			om.initialize(0, 0, 0)
-		
-		case 1:
-			let ret = try unknown1()
-			om.initialize(0, 0, 8)
-			om.setData(8, ret)
-		
-		case 16:
-			try unknown16(im.getBuffer(0x5, 0) as Buffer<UInt8>)
-			om.initialize(0, 0, 0)
-		
-		case 17:
-			try unknown17()
-			om.initialize(0, 0, 0)
-		
-		default:
-			print("Unhandled command to nn::fssrv::sf::ISaveDataImporter: \(im.commandId)")
-			try! bailout()
-		}
-	}
-}
-
 class NnFssrvSf_IDeviceOperator: IpcService {
-	func isSdCardInserted() throws -> UInt8 { throw IpcError.unimplemented }
-	func getSdCardSpeedMode() throws -> UInt64 { throw IpcError.unimplemented }
-	func getSdCardCid(_ _0: UInt64, _ cid: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func getSdCardUserAreaSize() throws -> UInt64 { throw IpcError.unimplemented }
-	func getSdCardProtectedAreaSize() throws -> UInt64 { throw IpcError.unimplemented }
-	func getAndClearSdCardErrorInfo(_ _0: UInt64, _ _1: Buffer<UInt8>) throws -> ([UInt8], UInt64) { throw IpcError.unimplemented }
-	func getMmcCid(_ _0: UInt64, _ cid: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func getMmcSpeedMode() throws -> UInt64 { throw IpcError.unimplemented }
-	func eraseMmc(_ _0: UInt32) throws { throw IpcError.unimplemented }
-	func getMmcPartitionSize(_ _0: UInt32) throws -> UInt64 { throw IpcError.unimplemented }
-	func getMmcPatrolCount() throws -> UInt32 { throw IpcError.unimplemented }
-	func getAndClearMmcErrorInfo(_ _0: UInt64, _ _1: Buffer<UInt8>) throws -> ([UInt8], UInt64) { throw IpcError.unimplemented }
-	func getMmcExtendedCsd(_ _0: UInt64, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func suspendMmcPatrol() throws { throw IpcError.unimplemented }
-	func resumeMmcPatrol() throws { throw IpcError.unimplemented }
-	func isGameCardInserted() throws -> UInt8 { throw IpcError.unimplemented }
-	func eraseGameCard(_ _0: UInt32, _ _1: UInt64) throws { throw IpcError.unimplemented }
-	func getGameCardHandle() throws -> UInt32 { throw IpcError.unimplemented }
-	func getGameCardUpdatePartitionInfo(_ _0: UInt32) throws -> (version: UInt32, tid: Nn_ApplicationId) { throw IpcError.unimplemented }
-	func finalizeGameCardDriver() throws { throw IpcError.unimplemented }
-	func getGameCardAttribute(_ _0: UInt32) throws -> UInt8 { throw IpcError.unimplemented }
-	func getGameCardDeviceCertificate(_ _0: UInt32, _ _1: UInt64, _ certificate: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func getGameCardAsicInfo(_ _0: UInt64, _ _1: UInt64, _ _2: Buffer<UInt8>, _ _3: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func getGameCardIdSet(_ _0: UInt64, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func writeToGameCard(_ _0: UInt64, _ _1: UInt64, _ _2: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func setVerifyWriteEnalbleFlag(_ flag: UInt8) throws { throw IpcError.unimplemented }
-	func getGameCardImageHash(_ _0: UInt32, _ _1: UInt64, _ image_hash: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func getGameCardErrorInfo(_ _0: UInt64, _ _1: UInt64, _ _2: Buffer<UInt8>, _ error_info: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func eraseAndWriteParamDirectly(_ _0: UInt64, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func readParamDirectly(_ _0: UInt64, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func forceEraseGameCard() throws { throw IpcError.unimplemented }
-	func getGameCardErrorInfo2() throws -> [UInt8] { throw IpcError.unimplemented }
-	func getGameCardErrorReportInfo() throws -> [UInt8] { throw IpcError.unimplemented }
-	func getGameCardDeviceId(_ _0: UInt64, _ device_id: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func setSpeedEmulationMode(_ emu_mode: UInt32) throws { throw IpcError.unimplemented }
-	func getSpeedEmulationMode() throws -> UInt32 { throw IpcError.unimplemented }
-	func suspendSdmmcControl(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func resumeSdmmcControl(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
+	func isSdCardInserted() throws -> UInt8 { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::IDeviceOperator#IsSdCardInserted") }
+	func getSdCardSpeedMode() throws -> UInt64 { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::IDeviceOperator#GetSdCardSpeedMode") }
+	func getSdCardCid(_ _0: UInt64, _ cid: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::IDeviceOperator#GetSdCardCid") }
+	func getSdCardUserAreaSize() throws -> UInt64 { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::IDeviceOperator#GetSdCardUserAreaSize") }
+	func getSdCardProtectedAreaSize() throws -> UInt64 { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::IDeviceOperator#GetSdCardProtectedAreaSize") }
+	func getAndClearSdCardErrorInfo(_ _0: UInt64, _ _1: Buffer<UInt8>) throws -> ([UInt8], UInt64) { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::IDeviceOperator#GetAndClearSdCardErrorInfo") }
+	func getMmcCid(_ _0: UInt64, _ cid: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::IDeviceOperator#GetMmcCid") }
+	func getMmcSpeedMode() throws -> UInt64 { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::IDeviceOperator#GetMmcSpeedMode") }
+	func eraseMmc(_ _0: UInt32) throws { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::IDeviceOperator#EraseMmc") }
+	func getMmcPartitionSize(_ _0: UInt32) throws -> UInt64 { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::IDeviceOperator#GetMmcPartitionSize") }
+	func getMmcPatrolCount() throws -> UInt32 { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::IDeviceOperator#GetMmcPatrolCount") }
+	func getAndClearMmcErrorInfo(_ _0: UInt64, _ _1: Buffer<UInt8>) throws -> ([UInt8], UInt64) { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::IDeviceOperator#GetAndClearMmcErrorInfo") }
+	func getMmcExtendedCsd(_ _0: UInt64, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::IDeviceOperator#GetMmcExtendedCsd") }
+	func suspendMmcPatrol() throws { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::IDeviceOperator#SuspendMmcPatrol") }
+	func resumeMmcPatrol() throws { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::IDeviceOperator#ResumeMmcPatrol") }
+	func isGameCardInserted() throws -> UInt8 { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::IDeviceOperator#IsGameCardInserted") }
+	func eraseGameCard(_ _0: UInt32, _ _1: UInt64) throws { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::IDeviceOperator#EraseGameCard") }
+	func getGameCardHandle() throws -> UInt32 { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::IDeviceOperator#GetGameCardHandle") }
+	func getGameCardUpdatePartitionInfo(_ _0: UInt32) throws -> (version: UInt32, tid: Nn_ApplicationId) { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::IDeviceOperator#GetGameCardUpdatePartitionInfo") }
+	func finalizeGameCardDriver() throws { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::IDeviceOperator#FinalizeGameCardDriver") }
+	func getGameCardAttribute(_ _0: UInt32) throws -> UInt8 { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::IDeviceOperator#GetGameCardAttribute") }
+	func getGameCardDeviceCertificate(_ _0: UInt32, _ _1: UInt64, _ certificate: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::IDeviceOperator#GetGameCardDeviceCertificate") }
+	func getGameCardAsicInfo(_ _0: UInt64, _ _1: UInt64, _ _2: Buffer<UInt8>, _ _3: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::IDeviceOperator#GetGameCardAsicInfo") }
+	func getGameCardIdSet(_ _0: UInt64, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::IDeviceOperator#GetGameCardIdSet") }
+	func writeToGameCard(_ _0: UInt64, _ _1: UInt64, _ _2: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::IDeviceOperator#WriteToGameCard") }
+	func setVerifyWriteEnalbleFlag(_ flag: UInt8) throws { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::IDeviceOperator#SetVerifyWriteEnalbleFlag") }
+	func getGameCardImageHash(_ _0: UInt32, _ _1: UInt64, _ image_hash: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::IDeviceOperator#GetGameCardImageHash") }
+	func getGameCardErrorInfo(_ _0: UInt64, _ _1: UInt64, _ _2: Buffer<UInt8>, _ error_info: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::IDeviceOperator#GetGameCardErrorInfo") }
+	func eraseAndWriteParamDirectly(_ _0: UInt64, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::IDeviceOperator#EraseAndWriteParamDirectly") }
+	func readParamDirectly(_ _0: UInt64, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::IDeviceOperator#ReadParamDirectly") }
+	func forceEraseGameCard() throws { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::IDeviceOperator#ForceEraseGameCard") }
+	func getGameCardErrorInfo2() throws -> [UInt8] { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::IDeviceOperator#GetGameCardErrorInfo2") }
+	func getGameCardErrorReportInfo() throws -> [UInt8] { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::IDeviceOperator#GetGameCardErrorReportInfo") }
+	func getGameCardDeviceId(_ _0: UInt64, _ device_id: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::IDeviceOperator#GetGameCardDeviceId") }
+	func setSpeedEmulationMode(_ emu_mode: UInt32) throws { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::IDeviceOperator#SetSpeedEmulationMode") }
+	func getSpeedEmulationMode() throws -> UInt32 { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::IDeviceOperator#GetSpeedEmulationMode") }
+	func suspendSdmmcControl(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::IDeviceOperator#SuspendSdmmcControl") }
+	func resumeSdmmcControl(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::IDeviceOperator#ResumeSdmmcControl") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
@@ -890,23 +836,68 @@ class NnFssrvSf_IDeviceOperator: IpcService {
 	}
 }
 
+class NnFssrvSf_IFile: IpcService {
+	func read(_ _0: UInt32, _ offset: UInt64, _ size: UInt64, _ out_buf: Buffer<UInt8>) throws -> UInt64 { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::IFile#Read") }
+	func write(_ _0: UInt32, _ offset: UInt64, _ size: UInt64, _ in_buf: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::IFile#Write") }
+	func flush() throws { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::IFile#Flush") }
+	func setSize(_ size: UInt64) throws { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::IFile#SetSize") }
+	func getSize() throws -> UInt64 { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::IFile#GetSize") }
+	func operateRange(_ _0: UInt32, _ _1: UInt64, _ _2: UInt64) throws -> [UInt8] { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::IFile#OperateRange") }
+	
+	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
+		switch im.commandId {
+		case 0:
+			let ret = try read(im.getData(8) as UInt32, im.getData(16) as UInt64, im.getData(24) as UInt64, im.getBuffer(0x46, 0) as Buffer<UInt8>)
+			om.initialize(0, 0, 8)
+			om.setData(8, ret)
+		
+		case 1:
+			try write(im.getData(8) as UInt32, im.getData(16) as UInt64, im.getData(24) as UInt64, im.getBuffer(0x45, 0) as Buffer<UInt8>)
+			om.initialize(0, 0, 0)
+		
+		case 2:
+			try flush()
+			om.initialize(0, 0, 0)
+		
+		case 3:
+			try setSize(im.getData(8) as UInt64)
+			om.initialize(0, 0, 0)
+		
+		case 4:
+			let ret = try getSize()
+			om.initialize(0, 0, 8)
+			om.setData(8, ret)
+		
+		case 5:
+			let ret = try operateRange(im.getData(8) as UInt32, im.getData(16) as UInt64, im.getData(24) as UInt64)
+			om.initialize(0, 0, 64)
+			if ret.count != 0x40 { throw IpcError.byteCountMismatch }
+			om.setBytes(8, ret)
+		
+		default:
+			print("Unhandled command to nn::fssrv::sf::IFile: \(im.commandId)")
+			try! bailout()
+		}
+	}
+}
+
 class NnFssrvSf_IFileSystem: IpcService {
-	func createFile(_ mode: UInt32, _ size: UInt64, _ path: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func deleteFile(_ path: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func createDirectory(_ path: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func deleteDirectory(_ path: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func deleteDirectoryRecursively(_ path: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func renameFile(_ old_path: Buffer<UInt8>, _ new_path: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func renameDirectory(_ old_path: Buffer<UInt8>, _ new_path: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func getEntryType(_ path: Buffer<UInt8>) throws -> NnFssrvSf_DirectoryEntryType { throw IpcError.unimplemented }
-	func openFile(_ mode: UInt32, _ path: Buffer<UInt8>) throws -> NnFssrvSf_IFile { throw IpcError.unimplemented }
-	func openDirectory(_ filter_flags: UInt32, _ path: Buffer<UInt8>) throws -> NnFssrvSf_IDirectory { throw IpcError.unimplemented }
-	func commit() throws { throw IpcError.unimplemented }
-	func getFreeSpaceSize(_ path: Buffer<UInt8>) throws -> UInt64 { throw IpcError.unimplemented }
-	func getTotalSpaceSize(_ path: Buffer<UInt8>) throws -> UInt64 { throw IpcError.unimplemented }
-	func cleanDirectoryRecursively(_ path: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func getFileTimeStampRaw(_ path: Buffer<UInt8>) throws -> [UInt8] { throw IpcError.unimplemented }
-	func queryEntry(_ _0: UInt32, _ path: Buffer<UInt8>, _ _2: Buffer<UInt8>, _ _3: Buffer<UInt8>) throws { throw IpcError.unimplemented }
+	func createFile(_ mode: UInt32, _ size: UInt64, _ path: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::IFileSystem#CreateFile") }
+	func deleteFile(_ path: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::IFileSystem#DeleteFile") }
+	func createDirectory(_ path: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::IFileSystem#CreateDirectory") }
+	func deleteDirectory(_ path: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::IFileSystem#DeleteDirectory") }
+	func deleteDirectoryRecursively(_ path: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::IFileSystem#DeleteDirectoryRecursively") }
+	func renameFile(_ old_path: Buffer<UInt8>, _ new_path: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::IFileSystem#RenameFile") }
+	func renameDirectory(_ old_path: Buffer<UInt8>, _ new_path: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::IFileSystem#RenameDirectory") }
+	func getEntryType(_ path: Buffer<UInt8>) throws -> NnFssrvSf_DirectoryEntryType { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::IFileSystem#GetEntryType") }
+	func openFile(_ mode: UInt32, _ path: Buffer<UInt8>) throws -> NnFssrvSf_IFile { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::IFileSystem#OpenFile") }
+	func openDirectory(_ filter_flags: UInt32, _ path: Buffer<UInt8>) throws -> NnFssrvSf_IDirectory { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::IFileSystem#OpenDirectory") }
+	func commit() throws { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::IFileSystem#Commit") }
+	func getFreeSpaceSize(_ path: Buffer<UInt8>) throws -> UInt64 { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::IFileSystem#GetFreeSpaceSize") }
+	func getTotalSpaceSize(_ path: Buffer<UInt8>) throws -> UInt64 { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::IFileSystem#GetTotalSpaceSize") }
+	func cleanDirectoryRecursively(_ path: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::IFileSystem#CleanDirectoryRecursively") }
+	func getFileTimeStampRaw(_ path: Buffer<UInt8>) throws -> [UInt8] { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::IFileSystem#GetFileTimeStampRaw") }
+	func queryEntry(_ _0: UInt32, _ path: Buffer<UInt8>, _ _2: Buffer<UInt8>, _ _3: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::IFileSystem#QueryEntry") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
@@ -989,7 +980,7 @@ class NnFssrvSf_IFileSystem: IpcService {
 }
 
 class NnFssrvSf_ISaveDataInfoReader: IpcService {
-	func readSaveDataInfo(_ _0: Buffer<UInt8>) throws -> UInt64 { throw IpcError.unimplemented }
+	func readSaveDataInfo(_ _0: Buffer<UInt8>) throws -> UInt64 { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::ISaveDataInfoReader#ReadSaveDataInfo") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
@@ -1006,10 +997,10 @@ class NnFssrvSf_ISaveDataInfoReader: IpcService {
 }
 
 class NnFssrvSf_IProgramRegistry: IpcService {
-	func registerProgram(_ _0: UInt8, _ _1: UInt64, _ _2: UInt64, _ _3: UInt64, _ _4: UInt64, _ _5: Buffer<UInt8>, _ _6: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func unregisterProgram(_ _0: UInt64) throws { throw IpcError.unimplemented }
-	func setCurrentProcess(_ _0: UInt64, _ _1: Pid) throws { throw IpcError.unimplemented }
-	func setEnabledProgramVerification(_ _0: UInt8) throws { throw IpcError.unimplemented }
+	func registerProgram(_ _0: UInt8, _ _1: UInt64, _ _2: UInt64, _ _3: UInt64, _ _4: UInt64, _ _5: Buffer<UInt8>, _ _6: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::IProgramRegistry#RegisterProgram") }
+	func unregisterProgram(_ _0: UInt64) throws { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::IProgramRegistry#UnregisterProgram") }
+	func setCurrentProcess(_ _0: UInt64, _ _1: Pid) throws { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::IProgramRegistry#SetCurrentProcess") }
+	func setEnabledProgramVerification(_ _0: UInt8) throws { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::IProgramRegistry#SetEnabledProgramVerification") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
@@ -1037,7 +1028,7 @@ class NnFssrvSf_IProgramRegistry: IpcService {
 }
 
 class NnFssrvSf_IEventNotifier: IpcService {
-	func getEventHandle() throws -> KObject { throw IpcError.unimplemented }
+	func getEventHandle() throws -> KObject { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::IEventNotifier#GetEventHandle") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
@@ -1054,10 +1045,10 @@ class NnFssrvSf_IEventNotifier: IpcService {
 }
 
 class NnFssrvSf_ISaveDataTransferManager: IpcService {
-	func unknown0(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func unknown16(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func unknown32(_ _0: UInt8, _ _1: UInt64) throws -> NnFssrvSf_ISaveDataExporter { throw IpcError.unimplemented }
-	func unknown64(_ _0: UInt8, _ _1: [UInt8], _ _2: Buffer<UInt8>) throws -> (UInt64, NnFssrvSf_ISaveDataImporter) { throw IpcError.unimplemented }
+	func unknown0(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::ISaveDataTransferManager#Unknown0") }
+	func unknown16(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::ISaveDataTransferManager#Unknown16") }
+	func unknown32(_ _0: UInt8, _ _1: UInt64) throws -> NnFssrvSf_ISaveDataExporter { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::ISaveDataTransferManager#Unknown32") }
+	func unknown64(_ _0: UInt8, _ _1: [UInt8], _ _2: Buffer<UInt8>) throws -> (UInt64, NnFssrvSf_ISaveDataImporter) { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::ISaveDataTransferManager#Unknown64") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
@@ -1087,39 +1078,43 @@ class NnFssrvSf_ISaveDataTransferManager: IpcService {
 	}
 }
 
-class NnFssrvSf_IFileSystemProxyForLoader: IpcService {
-	func openCodeFileSystem(_ Tid: Nn_ApplicationId, _ content_path: Buffer<UInt8>) throws -> NnFssrvSf_IFileSystem { throw IpcError.unimplemented }
-	func isArchivedProgram(_ _0: UInt64) throws -> UInt8 { throw IpcError.unimplemented }
-	func setCurrentProcess(_ _0: UInt64, _ _1: Pid) throws { throw IpcError.unimplemented }
+class NnFssrvSf_ISaveDataImporter: IpcService {
+	func unknown0(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::ISaveDataImporter#Unknown0") }
+	func unknown1() throws -> UInt64 { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::ISaveDataImporter#Unknown1") }
+	func unknown16(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::ISaveDataImporter#Unknown16") }
+	func unknown17() throws { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::ISaveDataImporter#Unknown17") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
 		case 0:
-			let ret = try openCodeFileSystem(im.getData(8) as UInt64, im.getBuffer(0x19, 0) as Buffer<UInt8>)
-			om.initialize(1, 0, 0)
-			om.move(0, ret)
+			try unknown0(im.getBuffer(0x1a, 0) as Buffer<UInt8>)
+			om.initialize(0, 0, 0)
 		
 		case 1:
-			let ret = try isArchivedProgram(im.getData(8) as UInt64)
-			om.initialize(0, 0, 1)
+			let ret = try unknown1()
+			om.initialize(0, 0, 8)
 			om.setData(8, ret)
 		
-		case 2:
-			try setCurrentProcess(im.getData(8) as UInt64, im.pid)
+		case 16:
+			try unknown16(im.getBuffer(0x5, 0) as Buffer<UInt8>)
+			om.initialize(0, 0, 0)
+		
+		case 17:
+			try unknown17()
 			om.initialize(0, 0, 0)
 		
 		default:
-			print("Unhandled command to nn::fssrv::sf::IFileSystemProxyForLoader: \(im.commandId)")
+			print("Unhandled command to nn::fssrv::sf::ISaveDataImporter: \(im.commandId)")
 			try! bailout()
 		}
 	}
 }
 
 class NnFssrvSf_ISaveDataExporter: IpcService {
-	func unknown0(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func unknown1() throws -> UInt64 { throw IpcError.unimplemented }
-	func unknown16(_ _0: Buffer<UInt8>) throws -> UInt64 { throw IpcError.unimplemented }
-	func unknown17(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented }
+	func unknown0(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::ISaveDataExporter#Unknown0") }
+	func unknown1() throws -> UInt64 { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::ISaveDataExporter#Unknown1") }
+	func unknown16(_ _0: Buffer<UInt8>) throws -> UInt64 { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::ISaveDataExporter#Unknown16") }
+	func unknown17(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::ISaveDataExporter#Unknown17") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
@@ -1148,24 +1143,29 @@ class NnFssrvSf_ISaveDataExporter: IpcService {
 	}
 }
 
-class NnFssrvSf_IDirectory: IpcService {
-	func read(_ _0: Buffer<UInt8>) throws -> UInt64 { throw IpcError.unimplemented }
-	func getEntryCount() throws -> UInt64 { throw IpcError.unimplemented }
+class NnFssrvSf_IFileSystemProxyForLoader: IpcService {
+	func openCodeFileSystem(_ Tid: Nn_ApplicationId, _ content_path: Buffer<UInt8>) throws -> NnFssrvSf_IFileSystem { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::IFileSystemProxyForLoader#OpenCodeFileSystem") }
+	func isArchivedProgram(_ _0: UInt64) throws -> UInt8 { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::IFileSystemProxyForLoader#IsArchivedProgram") }
+	func setCurrentProcess(_ _0: UInt64, _ _1: Pid) throws { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::IFileSystemProxyForLoader#SetCurrentProcess") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
 		case 0:
-			let ret = try read(im.getBuffer(0x6, 0) as Buffer<UInt8>)
-			om.initialize(0, 0, 8)
-			om.setData(8, ret)
+			let ret = try openCodeFileSystem(im.getData(8) as UInt64, im.getBuffer(0x19, 0) as Buffer<UInt8>)
+			om.initialize(1, 0, 0)
+			om.move(0, ret)
 		
 		case 1:
-			let ret = try getEntryCount()
-			om.initialize(0, 0, 8)
+			let ret = try isArchivedProgram(im.getData(8) as UInt64)
+			om.initialize(0, 0, 1)
 			om.setData(8, ret)
 		
+		case 2:
+			try setCurrentProcess(im.getData(8) as UInt64, im.pid)
+			om.initialize(0, 0, 0)
+		
 		default:
-			print("Unhandled command to nn::fssrv::sf::IDirectory: \(im.commandId)")
+			print("Unhandled command to nn::fssrv::sf::IFileSystemProxyForLoader: \(im.commandId)")
 			try! bailout()
 		}
 	}

@@ -1,5 +1,5 @@
 class NnFatalsrv_IPrivateService: IpcService {
-	func getFatalEvent() throws -> KObject { throw IpcError.unimplemented }
+	func getFatalEvent() throws -> KObject { throw IpcError.unimplemented(name: "nn::fatalsrv::nn::fatalsrv::IPrivateService#GetFatalEvent") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
@@ -16,9 +16,9 @@ class NnFatalsrv_IPrivateService: IpcService {
 }
 
 class NnFatalsrv_IService: IpcService {
-	func throwFatal(_ _0: UInt64, _ _1: UInt64, _ _2: Pid) throws { throw IpcError.unimplemented }
-	func throwFatalWithPolicy(_ _0: UInt64, _ _1: UInt64, _ _2: Pid) throws { throw IpcError.unimplemented }
-	func throwFatalWithCpuContext(_ errorCode: UInt64, _ _1: UInt64, _ errorBuf: Buffer<UInt8>, _ _3: Pid) throws { throw IpcError.unimplemented }
+	func throwFatal(_ _0: UInt64, _ _1: UInt64, _ _2: Pid) throws { throw IpcError.unimplemented(name: "nn::fatalsrv::nn::fatalsrv::IService#ThrowFatal") }
+	func throwFatalWithPolicy(_ _0: UInt64, _ _1: UInt64, _ _2: Pid) throws { throw IpcError.unimplemented(name: "nn::fatalsrv::nn::fatalsrv::IService#ThrowFatalWithPolicy") }
+	func throwFatalWithCpuContext(_ errorCode: UInt64, _ _1: UInt64, _ errorBuf: Buffer<UInt8>, _ _3: Pid) throws { throw IpcError.unimplemented(name: "nn::fatalsrv::nn::fatalsrv::IService#ThrowFatalWithCpuContext") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {

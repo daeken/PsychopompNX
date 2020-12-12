@@ -1,22 +1,22 @@
 class NnPsm_IPsmServer: IpcService {
-	func getBatteryChargePercentage() throws -> Any? { throw IpcError.unimplemented }
-	func getChargerType() throws -> Any? { throw IpcError.unimplemented }
-	func enableBatteryCharging() throws { throw IpcError.unimplemented }
-	func disableBatteryCharging() throws { throw IpcError.unimplemented }
-	func isBatteryChargingEnabled() throws -> Any? { throw IpcError.unimplemented }
-	func acquireControllerPowerSupply() throws { throw IpcError.unimplemented }
-	func releaseControllerPowerSupply() throws { throw IpcError.unimplemented }
-	func openSession() throws -> NnPsm_IPsmSession { throw IpcError.unimplemented }
-	func enableEnoughPowerChargeEmulation() throws { throw IpcError.unimplemented }
-	func disableEnoughPowerChargeEmulation() throws { throw IpcError.unimplemented }
-	func enableFastBatteryCharging() throws { throw IpcError.unimplemented }
-	func disableFastBatteryCharging() throws { throw IpcError.unimplemented }
-	func getBatteryVoltageState() throws -> Any? { throw IpcError.unimplemented }
-	func getRawBatteryChargePercentage() throws -> Any? { throw IpcError.unimplemented }
-	func isEnoughPowerSupplied() throws -> Any? { throw IpcError.unimplemented }
-	func getBatteryAgePercentage() throws -> Any? { throw IpcError.unimplemented }
-	func getBatteryChargeInfoEvent() throws -> KObject { throw IpcError.unimplemented }
-	func getBatteryChargeInfoFields() throws -> Any? { throw IpcError.unimplemented }
+	func getBatteryChargePercentage() throws -> Any? { throw IpcError.unimplemented(name: "nn::psm::nn::psm::IPsmServer#GetBatteryChargePercentage") }
+	func getChargerType() throws -> Any? { throw IpcError.unimplemented(name: "nn::psm::nn::psm::IPsmServer#GetChargerType") }
+	func enableBatteryCharging() throws { throw IpcError.unimplemented(name: "nn::psm::nn::psm::IPsmServer#EnableBatteryCharging") }
+	func disableBatteryCharging() throws { throw IpcError.unimplemented(name: "nn::psm::nn::psm::IPsmServer#DisableBatteryCharging") }
+	func isBatteryChargingEnabled() throws -> Any? { throw IpcError.unimplemented(name: "nn::psm::nn::psm::IPsmServer#IsBatteryChargingEnabled") }
+	func acquireControllerPowerSupply() throws { throw IpcError.unimplemented(name: "nn::psm::nn::psm::IPsmServer#AcquireControllerPowerSupply") }
+	func releaseControllerPowerSupply() throws { throw IpcError.unimplemented(name: "nn::psm::nn::psm::IPsmServer#ReleaseControllerPowerSupply") }
+	func openSession() throws -> NnPsm_IPsmSession { throw IpcError.unimplemented(name: "nn::psm::nn::psm::IPsmServer#OpenSession") }
+	func enableEnoughPowerChargeEmulation() throws { throw IpcError.unimplemented(name: "nn::psm::nn::psm::IPsmServer#EnableEnoughPowerChargeEmulation") }
+	func disableEnoughPowerChargeEmulation() throws { throw IpcError.unimplemented(name: "nn::psm::nn::psm::IPsmServer#DisableEnoughPowerChargeEmulation") }
+	func enableFastBatteryCharging() throws { throw IpcError.unimplemented(name: "nn::psm::nn::psm::IPsmServer#EnableFastBatteryCharging") }
+	func disableFastBatteryCharging() throws { throw IpcError.unimplemented(name: "nn::psm::nn::psm::IPsmServer#DisableFastBatteryCharging") }
+	func getBatteryVoltageState() throws -> Any? { throw IpcError.unimplemented(name: "nn::psm::nn::psm::IPsmServer#GetBatteryVoltageState") }
+	func getRawBatteryChargePercentage() throws -> Any? { throw IpcError.unimplemented(name: "nn::psm::nn::psm::IPsmServer#GetRawBatteryChargePercentage") }
+	func isEnoughPowerSupplied() throws -> Any? { throw IpcError.unimplemented(name: "nn::psm::nn::psm::IPsmServer#IsEnoughPowerSupplied") }
+	func getBatteryAgePercentage() throws -> Any? { throw IpcError.unimplemented(name: "nn::psm::nn::psm::IPsmServer#GetBatteryAgePercentage") }
+	func getBatteryChargeInfoEvent() throws -> KObject { throw IpcError.unimplemented(name: "nn::psm::nn::psm::IPsmServer#GetBatteryChargeInfoEvent") }
+	func getBatteryChargeInfoFields() throws -> Any? { throw IpcError.unimplemented(name: "nn::psm::nn::psm::IPsmServer#GetBatteryChargeInfoFields") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
@@ -102,11 +102,11 @@ class NnPsm_IPsmServer: IpcService {
 }
 
 class NnPsm_IPsmSession: IpcService {
-	func bindStateChangeEvent() throws -> KObject { throw IpcError.unimplemented }
-	func unbindStateChangeEvent() throws { throw IpcError.unimplemented }
-	func setChargerTypeChangeEventEnabled(_ _0: Any?) throws { throw IpcError.unimplemented }
-	func setPowerSupplyChangeEventEnabled(_ _0: Any?) throws { throw IpcError.unimplemented }
-	func setBatteryVoltageStateChangeEventEnabled(_ _0: Any?) throws { throw IpcError.unimplemented }
+	func bindStateChangeEvent() throws -> KObject { throw IpcError.unimplemented(name: "nn::psm::nn::psm::IPsmSession#BindStateChangeEvent") }
+	func unbindStateChangeEvent() throws { throw IpcError.unimplemented(name: "nn::psm::nn::psm::IPsmSession#UnbindStateChangeEvent") }
+	func setChargerTypeChangeEventEnabled(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::psm::nn::psm::IPsmSession#SetChargerTypeChangeEventEnabled") }
+	func setPowerSupplyChangeEventEnabled(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::psm::nn::psm::IPsmSession#SetPowerSupplyChangeEventEnabled") }
+	func setBatteryVoltageStateChangeEventEnabled(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::psm::nn::psm::IPsmSession#SetBatteryVoltageStateChangeEventEnabled") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {

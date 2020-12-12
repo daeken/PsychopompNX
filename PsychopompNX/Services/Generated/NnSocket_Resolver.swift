@@ -1,14 +1,14 @@
 class NnSocketResolver_IResolver: IpcService {
-	func setDnsAddressesPrivate(_ _0: UInt32, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func getDnsAddressPrivate(_ _0: UInt32, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func getHostByName(_ _0: UInt8, _ _1: UInt32, _ _2: UInt64, _ _3: Pid, _ _4: Buffer<UInt8>, _ _5: Buffer<UInt8>) throws -> (UInt32, UInt32, UInt32) { throw IpcError.unimplemented }
-	func getHostByAddr(_ _0: UInt32, _ _1: UInt32, _ _2: UInt32, _ _3: UInt64, _ _4: Pid, _ _5: Buffer<UInt8>, _ _6: Buffer<UInt8>) throws -> (UInt32, UInt32, UInt32) { throw IpcError.unimplemented }
-	func getHostStringError(_ _0: UInt32, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func getGaiStringError(_ _0: UInt32, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func getAddrInfo(_ enable_nsd_resolve: Bool, _ _1: UInt32, _ pid_placeholder: UInt64, _ _3: Pid, _ host: Buffer<Int8>, _ service: Buffer<Int8>, _ hints: Buffer<Packed_Addrinfo>, _ response: Buffer<Packed_Addrinfo>) throws -> (ret: Int32, bsd_errno: UInt32, packed_addrinfo_size: UInt32) { throw IpcError.unimplemented }
-	func getNameInfo(_ _0: UInt32, _ _1: UInt32, _ _2: UInt64, _ _3: Pid, _ _4: Buffer<UInt8>, _ _5: Buffer<UInt8>, _ _6: Buffer<UInt8>) throws -> (UInt32, UInt32) { throw IpcError.unimplemented }
-	func requestCancelHandle(_ _0: UInt64, _ _1: Pid) throws -> UInt32 { throw IpcError.unimplemented }
-	func cancelSocketCall(_ _0: UInt32, _ _1: UInt64, _ _2: Pid) throws { throw IpcError.unimplemented }
+	func setDnsAddressesPrivate(_ _0: UInt32, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::socket::resolver::nn::socket::resolver::IResolver#SetDnsAddressesPrivate") }
+	func getDnsAddressPrivate(_ _0: UInt32, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::socket::resolver::nn::socket::resolver::IResolver#GetDnsAddressPrivate") }
+	func getHostByName(_ _0: UInt8, _ _1: UInt32, _ _2: UInt64, _ _3: Pid, _ _4: Buffer<UInt8>, _ _5: Buffer<UInt8>) throws -> (UInt32, UInt32, UInt32) { throw IpcError.unimplemented(name: "nn::socket::resolver::nn::socket::resolver::IResolver#GetHostByName") }
+	func getHostByAddr(_ _0: UInt32, _ _1: UInt32, _ _2: UInt32, _ _3: UInt64, _ _4: Pid, _ _5: Buffer<UInt8>, _ _6: Buffer<UInt8>) throws -> (UInt32, UInt32, UInt32) { throw IpcError.unimplemented(name: "nn::socket::resolver::nn::socket::resolver::IResolver#GetHostByAddr") }
+	func getHostStringError(_ _0: UInt32, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::socket::resolver::nn::socket::resolver::IResolver#GetHostStringError") }
+	func getGaiStringError(_ _0: UInt32, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::socket::resolver::nn::socket::resolver::IResolver#GetGaiStringError") }
+	func getAddrInfo(_ enable_nsd_resolve: Bool, _ _1: UInt32, _ pid_placeholder: UInt64, _ _3: Pid, _ host: Buffer<Int8>, _ service: Buffer<Int8>, _ hints: Buffer<Packed_Addrinfo>, _ response: Buffer<Packed_Addrinfo>) throws -> (ret: Int32, bsd_errno: UInt32, packed_addrinfo_size: UInt32) { throw IpcError.unimplemented(name: "nn::socket::resolver::nn::socket::resolver::IResolver#GetAddrInfo") }
+	func getNameInfo(_ _0: UInt32, _ _1: UInt32, _ _2: UInt64, _ _3: Pid, _ _4: Buffer<UInt8>, _ _5: Buffer<UInt8>, _ _6: Buffer<UInt8>) throws -> (UInt32, UInt32) { throw IpcError.unimplemented(name: "nn::socket::resolver::nn::socket::resolver::IResolver#GetNameInfo") }
+	func requestCancelHandle(_ _0: UInt64, _ _1: Pid) throws -> UInt32 { throw IpcError.unimplemented(name: "nn::socket::resolver::nn::socket::resolver::IResolver#RequestCancelHandle") }
+	func cancelSocketCall(_ _0: UInt32, _ _1: UInt64, _ _2: Pid) throws { throw IpcError.unimplemented(name: "nn::socket::resolver::nn::socket::resolver::IResolver#CancelSocketCall") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {

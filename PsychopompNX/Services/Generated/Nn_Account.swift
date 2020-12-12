@@ -9,44 +9,44 @@ typealias NnAccount_NintendoAccountAuthorizationRequestParameters = [UInt8]
 typealias NnAccount_Nickname = [UInt8]
 
 class NnAccount_IAccountServiceForAdministrator: IpcService {
-	func getUserCount() throws -> UInt32 { throw IpcError.unimplemented }
-	func getUserExistence(_ _0: NnAccount_Uid) throws -> UInt8 { throw IpcError.unimplemented }
-	func listAllUsers(_ _0: Buffer<NnAccount_Uid>) throws { throw IpcError.unimplemented }
-	func listOpenUsers(_ _0: Buffer<NnAccount_Uid>) throws { throw IpcError.unimplemented }
-	func getLastOpenedUser() throws -> NnAccount_Uid { throw IpcError.unimplemented }
-	func getProfile(_ _0: NnAccount_Uid) throws -> NnAccountProfile_IProfile { throw IpcError.unimplemented }
-	func getProfileDigest(_ _0: NnAccount_Uid) throws -> NnAccount_ProfileDigest { throw IpcError.unimplemented }
-	func isUserRegistrationRequestPermitted(_ _0: UInt64, _ _1: Pid) throws -> UInt8 { throw IpcError.unimplemented }
-	func trySelectUserWithoutInteraction(_ _0: UInt8) throws -> NnAccount_Uid { throw IpcError.unimplemented }
-	func listOpenContextStoredUsers(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func getUserRegistrationNotifier() throws -> NnAccountDetail_INotifier { throw IpcError.unimplemented }
-	func getUserStateChangeNotifier() throws -> NnAccountDetail_INotifier { throw IpcError.unimplemented }
-	func getBaasAccountManagerForSystemService(_ _0: NnAccount_Uid) throws -> NnAccountBaas_IManagerForSystemService { throw IpcError.unimplemented }
-	func getBaasUserAvailabilityChangeNotifier() throws -> NnAccountDetail_INotifier { throw IpcError.unimplemented }
-	func getProfileUpdateNotifier() throws -> NnAccountDetail_INotifier { throw IpcError.unimplemented }
-	func checkNetworkServiceAvailabilityAsync(_ _0: UInt64, _ _1: Pid, _ _2: Buffer<NnAccount_SystemProgramIdentification>) throws -> NnAccountDetail_IAsyncContext { throw IpcError.unimplemented }
-	func storeSaveDataThumbnail(_ _0: NnAccount_Uid, _ _1: Nn_ApplicationId, _ _2: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func clearSaveDataThumbnail(_ _0: NnAccount_Uid, _ _1: Nn_ApplicationId) throws { throw IpcError.unimplemented }
-	func loadSaveDataThumbnail(_ _0: NnAccount_Uid, _ _1: Nn_ApplicationId, _ _2: Buffer<UInt8>) throws -> UInt32 { throw IpcError.unimplemented }
-	func getSaveDataThumbnailExistence(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func getUserLastOpenedApplication(_ _0: NnAccount_Uid) throws -> (UInt32, Nn_ApplicationId) { throw IpcError.unimplemented }
-	func activateOpenContextHolder(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func beginUserRegistration() throws -> NnAccount_Uid { throw IpcError.unimplemented }
-	func completeUserRegistration(_ _0: NnAccount_Uid) throws { throw IpcError.unimplemented }
-	func cancelUserRegistration(_ _0: NnAccount_Uid) throws { throw IpcError.unimplemented }
-	func deleteUser(_ _0: NnAccount_Uid) throws { throw IpcError.unimplemented }
-	func setUserPosition(_ _0: UInt32, _ _1: NnAccount_Uid) throws { throw IpcError.unimplemented }
-	func getProfileEditor(_ _0: NnAccount_Uid) throws -> NnAccountProfile_IProfileEditor { throw IpcError.unimplemented }
-	func completeUserRegistrationForcibly(_ _0: NnAccount_Uid) throws { throw IpcError.unimplemented }
-	func createFloatingRegistrationRequest(_ _0: UInt32, _ _1: KObject) throws -> NnAccountBaas_IFloatingRegistrationRequest { throw IpcError.unimplemented }
-	func authenticateServiceAsync() throws -> NnAccountDetail_IAsyncContext { throw IpcError.unimplemented }
-	func getBaasAccountAdministrator(_ _0: NnAccount_Uid) throws -> NnAccountBaas_IAdministrator { throw IpcError.unimplemented }
-	func proxyProcedureForGuestLoginWithNintendoAccount(_ _0: NnAccountDetail_Uuid) throws -> NnAccountNas_IOAuthProcedureForExternalNsa { throw IpcError.unimplemented }
-	func proxyProcedureForFloatingRegistrationWithNintendoAccount(_ _0: NnAccountDetail_Uuid) throws -> NnAccountNas_IOAuthProcedureForExternalNsa { throw IpcError.unimplemented }
-	func suspendBackgroundDaemon() throws -> NnAccountDetail_ISessionObject { throw IpcError.unimplemented }
-	func debugInvalidateTokenCacheForUser(_ _0: NnAccount_Uid) throws { throw IpcError.unimplemented }
-	func debugSetUserStateClose(_ _0: NnAccount_Uid) throws { throw IpcError.unimplemented }
-	func debugSetUserStateOpen(_ _0: NnAccount_Uid) throws { throw IpcError.unimplemented }
+	func getUserCount() throws -> UInt32 { throw IpcError.unimplemented(name: "nn::account::nn::account::IAccountServiceForAdministrator#GetUserCount") }
+	func getUserExistence(_ _0: NnAccount_Uid) throws -> UInt8 { throw IpcError.unimplemented(name: "nn::account::nn::account::IAccountServiceForAdministrator#GetUserExistence") }
+	func listAllUsers(_ _0: Buffer<NnAccount_Uid>) throws { throw IpcError.unimplemented(name: "nn::account::nn::account::IAccountServiceForAdministrator#ListAllUsers") }
+	func listOpenUsers(_ _0: Buffer<NnAccount_Uid>) throws { throw IpcError.unimplemented(name: "nn::account::nn::account::IAccountServiceForAdministrator#ListOpenUsers") }
+	func getLastOpenedUser() throws -> NnAccount_Uid { throw IpcError.unimplemented(name: "nn::account::nn::account::IAccountServiceForAdministrator#GetLastOpenedUser") }
+	func getProfile(_ _0: NnAccount_Uid) throws -> NnAccountProfile_IProfile { throw IpcError.unimplemented(name: "nn::account::nn::account::IAccountServiceForAdministrator#GetProfile") }
+	func getProfileDigest(_ _0: NnAccount_Uid) throws -> NnAccount_ProfileDigest { throw IpcError.unimplemented(name: "nn::account::nn::account::IAccountServiceForAdministrator#GetProfileDigest") }
+	func isUserRegistrationRequestPermitted(_ _0: UInt64, _ _1: Pid) throws -> UInt8 { throw IpcError.unimplemented(name: "nn::account::nn::account::IAccountServiceForAdministrator#IsUserRegistrationRequestPermitted") }
+	func trySelectUserWithoutInteraction(_ _0: UInt8) throws -> NnAccount_Uid { throw IpcError.unimplemented(name: "nn::account::nn::account::IAccountServiceForAdministrator#TrySelectUserWithoutInteraction") }
+	func listOpenContextStoredUsers(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::account::nn::account::IAccountServiceForAdministrator#ListOpenContextStoredUsers") }
+	func getUserRegistrationNotifier() throws -> NnAccountDetail_INotifier { throw IpcError.unimplemented(name: "nn::account::nn::account::IAccountServiceForAdministrator#GetUserRegistrationNotifier") }
+	func getUserStateChangeNotifier() throws -> NnAccountDetail_INotifier { throw IpcError.unimplemented(name: "nn::account::nn::account::IAccountServiceForAdministrator#GetUserStateChangeNotifier") }
+	func getBaasAccountManagerForSystemService(_ _0: NnAccount_Uid) throws -> NnAccountBaas_IManagerForSystemService { throw IpcError.unimplemented(name: "nn::account::nn::account::IAccountServiceForAdministrator#GetBaasAccountManagerForSystemService") }
+	func getBaasUserAvailabilityChangeNotifier() throws -> NnAccountDetail_INotifier { throw IpcError.unimplemented(name: "nn::account::nn::account::IAccountServiceForAdministrator#GetBaasUserAvailabilityChangeNotifier") }
+	func getProfileUpdateNotifier() throws -> NnAccountDetail_INotifier { throw IpcError.unimplemented(name: "nn::account::nn::account::IAccountServiceForAdministrator#GetProfileUpdateNotifier") }
+	func checkNetworkServiceAvailabilityAsync(_ _0: UInt64, _ _1: Pid, _ _2: Buffer<NnAccount_SystemProgramIdentification>) throws -> NnAccountDetail_IAsyncContext { throw IpcError.unimplemented(name: "nn::account::nn::account::IAccountServiceForAdministrator#CheckNetworkServiceAvailabilityAsync") }
+	func storeSaveDataThumbnail(_ _0: NnAccount_Uid, _ _1: Nn_ApplicationId, _ _2: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::account::nn::account::IAccountServiceForAdministrator#StoreSaveDataThumbnail") }
+	func clearSaveDataThumbnail(_ _0: NnAccount_Uid, _ _1: Nn_ApplicationId) throws { throw IpcError.unimplemented(name: "nn::account::nn::account::IAccountServiceForAdministrator#ClearSaveDataThumbnail") }
+	func loadSaveDataThumbnail(_ _0: NnAccount_Uid, _ _1: Nn_ApplicationId, _ _2: Buffer<UInt8>) throws -> UInt32 { throw IpcError.unimplemented(name: "nn::account::nn::account::IAccountServiceForAdministrator#LoadSaveDataThumbnail") }
+	func getSaveDataThumbnailExistence(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::account::nn::account::IAccountServiceForAdministrator#GetSaveDataThumbnailExistence") }
+	func getUserLastOpenedApplication(_ _0: NnAccount_Uid) throws -> (UInt32, Nn_ApplicationId) { throw IpcError.unimplemented(name: "nn::account::nn::account::IAccountServiceForAdministrator#GetUserLastOpenedApplication") }
+	func activateOpenContextHolder(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::account::nn::account::IAccountServiceForAdministrator#ActivateOpenContextHolder") }
+	func beginUserRegistration() throws -> NnAccount_Uid { throw IpcError.unimplemented(name: "nn::account::nn::account::IAccountServiceForAdministrator#BeginUserRegistration") }
+	func completeUserRegistration(_ _0: NnAccount_Uid) throws { throw IpcError.unimplemented(name: "nn::account::nn::account::IAccountServiceForAdministrator#CompleteUserRegistration") }
+	func cancelUserRegistration(_ _0: NnAccount_Uid) throws { throw IpcError.unimplemented(name: "nn::account::nn::account::IAccountServiceForAdministrator#CancelUserRegistration") }
+	func deleteUser(_ _0: NnAccount_Uid) throws { throw IpcError.unimplemented(name: "nn::account::nn::account::IAccountServiceForAdministrator#DeleteUser") }
+	func setUserPosition(_ _0: UInt32, _ _1: NnAccount_Uid) throws { throw IpcError.unimplemented(name: "nn::account::nn::account::IAccountServiceForAdministrator#SetUserPosition") }
+	func getProfileEditor(_ _0: NnAccount_Uid) throws -> NnAccountProfile_IProfileEditor { throw IpcError.unimplemented(name: "nn::account::nn::account::IAccountServiceForAdministrator#GetProfileEditor") }
+	func completeUserRegistrationForcibly(_ _0: NnAccount_Uid) throws { throw IpcError.unimplemented(name: "nn::account::nn::account::IAccountServiceForAdministrator#CompleteUserRegistrationForcibly") }
+	func createFloatingRegistrationRequest(_ _0: UInt32, _ _1: KObject) throws -> NnAccountBaas_IFloatingRegistrationRequest { throw IpcError.unimplemented(name: "nn::account::nn::account::IAccountServiceForAdministrator#CreateFloatingRegistrationRequest") }
+	func authenticateServiceAsync() throws -> NnAccountDetail_IAsyncContext { throw IpcError.unimplemented(name: "nn::account::nn::account::IAccountServiceForAdministrator#AuthenticateServiceAsync") }
+	func getBaasAccountAdministrator(_ _0: NnAccount_Uid) throws -> NnAccountBaas_IAdministrator { throw IpcError.unimplemented(name: "nn::account::nn::account::IAccountServiceForAdministrator#GetBaasAccountAdministrator") }
+	func proxyProcedureForGuestLoginWithNintendoAccount(_ _0: NnAccountDetail_Uuid) throws -> NnAccountNas_IOAuthProcedureForExternalNsa { throw IpcError.unimplemented(name: "nn::account::nn::account::IAccountServiceForAdministrator#ProxyProcedureForGuestLoginWithNintendoAccount") }
+	func proxyProcedureForFloatingRegistrationWithNintendoAccount(_ _0: NnAccountDetail_Uuid) throws -> NnAccountNas_IOAuthProcedureForExternalNsa { throw IpcError.unimplemented(name: "nn::account::nn::account::IAccountServiceForAdministrator#ProxyProcedureForFloatingRegistrationWithNintendoAccount") }
+	func suspendBackgroundDaemon() throws -> NnAccountDetail_ISessionObject { throw IpcError.unimplemented(name: "nn::account::nn::account::IAccountServiceForAdministrator#SuspendBackgroundDaemon") }
+	func debugInvalidateTokenCacheForUser(_ _0: NnAccount_Uid) throws { throw IpcError.unimplemented(name: "nn::account::nn::account::IAccountServiceForAdministrator#DebugInvalidateTokenCacheForUser") }
+	func debugSetUserStateClose(_ _0: NnAccount_Uid) throws { throw IpcError.unimplemented(name: "nn::account::nn::account::IAccountServiceForAdministrator#DebugSetUserStateClose") }
+	func debugSetUserStateOpen(_ _0: NnAccount_Uid) throws { throw IpcError.unimplemented(name: "nn::account::nn::account::IAccountServiceForAdministrator#DebugSetUserStateOpen") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
@@ -238,11 +238,11 @@ class NnAccount_IAccountServiceForAdministrator: IpcService {
 }
 
 class NnAccount_IBaasAccessTokenAccessor: IpcService {
-	func ensureCacheAsync(_ _0: NnAccount_Uid) throws -> NnAccountDetail_IAsyncContext { throw IpcError.unimplemented }
-	func loadCache(_ _0: NnAccount_Uid, _ _1: Buffer<UInt8>) throws -> UInt32 { throw IpcError.unimplemented }
-	func getDeviceAccountId(_ _0: NnAccount_Uid) throws -> UInt64 { throw IpcError.unimplemented }
-	func registerNotificationTokenAsync(_ _0: NnNpns_NotificationToken, _ _1: NnAccount_Uid) throws -> NnAccountDetail_IAsyncContext { throw IpcError.unimplemented }
-	func unregisterNotificationTokenAsync(_ _0: NnAccount_Uid) throws -> NnAccountDetail_IAsyncContext { throw IpcError.unimplemented }
+	func ensureCacheAsync(_ _0: NnAccount_Uid) throws -> NnAccountDetail_IAsyncContext { throw IpcError.unimplemented(name: "nn::account::nn::account::IBaasAccessTokenAccessor#EnsureCacheAsync") }
+	func loadCache(_ _0: NnAccount_Uid, _ _1: Buffer<UInt8>) throws -> UInt32 { throw IpcError.unimplemented(name: "nn::account::nn::account::IBaasAccessTokenAccessor#LoadCache") }
+	func getDeviceAccountId(_ _0: NnAccount_Uid) throws -> UInt64 { throw IpcError.unimplemented(name: "nn::account::nn::account::IBaasAccessTokenAccessor#GetDeviceAccountId") }
+	func registerNotificationTokenAsync(_ _0: NnNpns_NotificationToken, _ _1: NnAccount_Uid) throws -> NnAccountDetail_IAsyncContext { throw IpcError.unimplemented(name: "nn::account::nn::account::IBaasAccessTokenAccessor#RegisterNotificationTokenAsync") }
+	func unregisterNotificationTokenAsync(_ _0: NnAccount_Uid) throws -> NnAccountDetail_IAsyncContext { throw IpcError.unimplemented(name: "nn::account::nn::account::IBaasAccessTokenAccessor#UnregisterNotificationTokenAsync") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
@@ -279,24 +279,24 @@ class NnAccount_IBaasAccessTokenAccessor: IpcService {
 }
 
 class NnAccount_IAccountServiceForApplication: IpcService {
-	func getUserCount() throws -> UInt32 { throw IpcError.unimplemented }
-	func getUserExistence(_ _0: NnAccount_Uid) throws -> UInt8 { throw IpcError.unimplemented }
-	func listAllUsers(_ _0: Buffer<NnAccount_Uid>) throws { throw IpcError.unimplemented }
-	func listOpenUsers(_ _0: Buffer<NnAccount_Uid>) throws { throw IpcError.unimplemented }
-	func getLastOpenedUser() throws -> NnAccount_Uid { throw IpcError.unimplemented }
-	func getProfile(_ _0: NnAccount_Uid) throws -> NnAccountProfile_IProfile { throw IpcError.unimplemented }
-	func getProfileDigest(_ _0: NnAccount_Uid) throws -> NnAccount_ProfileDigest { throw IpcError.unimplemented }
-	func isUserRegistrationRequestPermitted(_ _0: UInt64, _ _1: Pid) throws -> UInt8 { throw IpcError.unimplemented }
-	func trySelectUserWithoutInteraction(_ _0: UInt8) throws -> NnAccount_Uid { throw IpcError.unimplemented }
-	func listOpenContextStoredUsers(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func initializeApplicationInfo(_ _0: UInt64, _ _1: Pid) throws { throw IpcError.unimplemented }
-	func getBaasAccountManagerForApplication(_ _0: NnAccount_Uid) throws -> NnAccountBaas_IManagerForApplication { throw IpcError.unimplemented }
-	func authenticateApplicationAsync() throws -> NnAccountDetail_IAsyncContext { throw IpcError.unimplemented }
-	func checkNetworkServiceAvailabilityAsync() throws -> NnAccountDetail_IAsyncContext { throw IpcError.unimplemented }
-	func storeSaveDataThumbnail(_ _0: NnAccount_Uid, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func clearSaveDataThumbnail(_ _0: NnAccount_Uid) throws { throw IpcError.unimplemented }
-	func createGuestLoginRequest(_ _0: UInt32, _ _1: KObject) throws -> NnAccountBaas_IGuestLoginRequest { throw IpcError.unimplemented }
-	func loadOpenContext(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
+	func getUserCount() throws -> UInt32 { throw IpcError.unimplemented(name: "nn::account::nn::account::IAccountServiceForApplication#GetUserCount") }
+	func getUserExistence(_ _0: NnAccount_Uid) throws -> UInt8 { throw IpcError.unimplemented(name: "nn::account::nn::account::IAccountServiceForApplication#GetUserExistence") }
+	func listAllUsers(_ _0: Buffer<NnAccount_Uid>) throws { throw IpcError.unimplemented(name: "nn::account::nn::account::IAccountServiceForApplication#ListAllUsers") }
+	func listOpenUsers(_ _0: Buffer<NnAccount_Uid>) throws { throw IpcError.unimplemented(name: "nn::account::nn::account::IAccountServiceForApplication#ListOpenUsers") }
+	func getLastOpenedUser() throws -> NnAccount_Uid { throw IpcError.unimplemented(name: "nn::account::nn::account::IAccountServiceForApplication#GetLastOpenedUser") }
+	func getProfile(_ _0: NnAccount_Uid) throws -> NnAccountProfile_IProfile { throw IpcError.unimplemented(name: "nn::account::nn::account::IAccountServiceForApplication#GetProfile") }
+	func getProfileDigest(_ _0: NnAccount_Uid) throws -> NnAccount_ProfileDigest { throw IpcError.unimplemented(name: "nn::account::nn::account::IAccountServiceForApplication#GetProfileDigest") }
+	func isUserRegistrationRequestPermitted(_ _0: UInt64, _ _1: Pid) throws -> UInt8 { throw IpcError.unimplemented(name: "nn::account::nn::account::IAccountServiceForApplication#IsUserRegistrationRequestPermitted") }
+	func trySelectUserWithoutInteraction(_ _0: UInt8) throws -> NnAccount_Uid { throw IpcError.unimplemented(name: "nn::account::nn::account::IAccountServiceForApplication#TrySelectUserWithoutInteraction") }
+	func listOpenContextStoredUsers(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::account::nn::account::IAccountServiceForApplication#ListOpenContextStoredUsers") }
+	func initializeApplicationInfo(_ _0: UInt64, _ _1: Pid) throws { throw IpcError.unimplemented(name: "nn::account::nn::account::IAccountServiceForApplication#InitializeApplicationInfo") }
+	func getBaasAccountManagerForApplication(_ _0: NnAccount_Uid) throws -> NnAccountBaas_IManagerForApplication { throw IpcError.unimplemented(name: "nn::account::nn::account::IAccountServiceForApplication#GetBaasAccountManagerForApplication") }
+	func authenticateApplicationAsync() throws -> NnAccountDetail_IAsyncContext { throw IpcError.unimplemented(name: "nn::account::nn::account::IAccountServiceForApplication#AuthenticateApplicationAsync") }
+	func checkNetworkServiceAvailabilityAsync() throws -> NnAccountDetail_IAsyncContext { throw IpcError.unimplemented(name: "nn::account::nn::account::IAccountServiceForApplication#CheckNetworkServiceAvailabilityAsync") }
+	func storeSaveDataThumbnail(_ _0: NnAccount_Uid, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::account::nn::account::IAccountServiceForApplication#StoreSaveDataThumbnail") }
+	func clearSaveDataThumbnail(_ _0: NnAccount_Uid) throws { throw IpcError.unimplemented(name: "nn::account::nn::account::IAccountServiceForApplication#ClearSaveDataThumbnail") }
+	func createGuestLoginRequest(_ _0: UInt32, _ _1: KObject) throws -> NnAccountBaas_IGuestLoginRequest { throw IpcError.unimplemented(name: "nn::account::nn::account::IAccountServiceForApplication#CreateGuestLoginRequest") }
+	func loadOpenContext(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::account::nn::account::IAccountServiceForApplication#LoadOpenContext") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
@@ -394,31 +394,31 @@ class NnAccount_IAccountServiceForApplication: IpcService {
 }
 
 class NnAccount_IAccountServiceForSystemService: IpcService {
-	func getUserCount() throws -> UInt32 { throw IpcError.unimplemented }
-	func getUserExistence(_ _0: NnAccount_Uid) throws -> UInt8 { throw IpcError.unimplemented }
-	func listAllUsers(_ _0: Buffer<NnAccount_Uid>) throws { throw IpcError.unimplemented }
-	func listOpenUsers(_ _0: Buffer<NnAccount_Uid>) throws { throw IpcError.unimplemented }
-	func getLastOpenedUser() throws -> NnAccount_Uid { throw IpcError.unimplemented }
-	func getProfile(_ _0: NnAccount_Uid) throws -> NnAccountProfile_IProfile { throw IpcError.unimplemented }
-	func getProfileDigest(_ _0: NnAccount_Uid) throws -> NnAccount_ProfileDigest { throw IpcError.unimplemented }
-	func isUserRegistrationRequestPermitted(_ _0: UInt64, _ _1: Pid) throws -> UInt8 { throw IpcError.unimplemented }
-	func trySelectUserWithoutInteraction(_ _0: UInt8) throws -> NnAccount_Uid { throw IpcError.unimplemented }
-	func listOpenContextStoredUsers(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func getUserRegistrationNotifier() throws -> NnAccountDetail_INotifier { throw IpcError.unimplemented }
-	func getUserStateChangeNotifier() throws -> NnAccountDetail_INotifier { throw IpcError.unimplemented }
-	func getBaasAccountManagerForSystemService(_ _0: NnAccount_Uid) throws -> NnAccountBaas_IManagerForSystemService { throw IpcError.unimplemented }
-	func getBaasUserAvailabilityChangeNotifier() throws -> NnAccountDetail_INotifier { throw IpcError.unimplemented }
-	func getProfileUpdateNotifier() throws -> NnAccountDetail_INotifier { throw IpcError.unimplemented }
-	func checkNetworkServiceAvailabilityAsync(_ _0: UInt64, _ _1: Pid, _ _2: Buffer<NnAccount_SystemProgramIdentification>) throws -> NnAccountDetail_IAsyncContext { throw IpcError.unimplemented }
-	func storeSaveDataThumbnail(_ _0: NnAccount_Uid, _ _1: Nn_ApplicationId, _ _2: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func clearSaveDataThumbnail(_ _0: NnAccount_Uid, _ _1: Nn_ApplicationId) throws { throw IpcError.unimplemented }
-	func loadSaveDataThumbnail(_ _0: NnAccount_Uid, _ _1: Nn_ApplicationId, _ _2: Buffer<UInt8>) throws -> UInt32 { throw IpcError.unimplemented }
-	func getSaveDataThumbnailExistence(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func getUserLastOpenedApplication(_ _0: NnAccount_Uid) throws -> (UInt32, Nn_ApplicationId) { throw IpcError.unimplemented }
-	func activateOpenContextHolder(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func debugInvalidateTokenCacheForUser(_ _0: NnAccount_Uid) throws { throw IpcError.unimplemented }
-	func debugSetUserStateClose(_ _0: NnAccount_Uid) throws { throw IpcError.unimplemented }
-	func debugSetUserStateOpen(_ _0: NnAccount_Uid) throws { throw IpcError.unimplemented }
+	func getUserCount() throws -> UInt32 { throw IpcError.unimplemented(name: "nn::account::nn::account::IAccountServiceForSystemService#GetUserCount") }
+	func getUserExistence(_ _0: NnAccount_Uid) throws -> UInt8 { throw IpcError.unimplemented(name: "nn::account::nn::account::IAccountServiceForSystemService#GetUserExistence") }
+	func listAllUsers(_ _0: Buffer<NnAccount_Uid>) throws { throw IpcError.unimplemented(name: "nn::account::nn::account::IAccountServiceForSystemService#ListAllUsers") }
+	func listOpenUsers(_ _0: Buffer<NnAccount_Uid>) throws { throw IpcError.unimplemented(name: "nn::account::nn::account::IAccountServiceForSystemService#ListOpenUsers") }
+	func getLastOpenedUser() throws -> NnAccount_Uid { throw IpcError.unimplemented(name: "nn::account::nn::account::IAccountServiceForSystemService#GetLastOpenedUser") }
+	func getProfile(_ _0: NnAccount_Uid) throws -> NnAccountProfile_IProfile { throw IpcError.unimplemented(name: "nn::account::nn::account::IAccountServiceForSystemService#GetProfile") }
+	func getProfileDigest(_ _0: NnAccount_Uid) throws -> NnAccount_ProfileDigest { throw IpcError.unimplemented(name: "nn::account::nn::account::IAccountServiceForSystemService#GetProfileDigest") }
+	func isUserRegistrationRequestPermitted(_ _0: UInt64, _ _1: Pid) throws -> UInt8 { throw IpcError.unimplemented(name: "nn::account::nn::account::IAccountServiceForSystemService#IsUserRegistrationRequestPermitted") }
+	func trySelectUserWithoutInteraction(_ _0: UInt8) throws -> NnAccount_Uid { throw IpcError.unimplemented(name: "nn::account::nn::account::IAccountServiceForSystemService#TrySelectUserWithoutInteraction") }
+	func listOpenContextStoredUsers(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::account::nn::account::IAccountServiceForSystemService#ListOpenContextStoredUsers") }
+	func getUserRegistrationNotifier() throws -> NnAccountDetail_INotifier { throw IpcError.unimplemented(name: "nn::account::nn::account::IAccountServiceForSystemService#GetUserRegistrationNotifier") }
+	func getUserStateChangeNotifier() throws -> NnAccountDetail_INotifier { throw IpcError.unimplemented(name: "nn::account::nn::account::IAccountServiceForSystemService#GetUserStateChangeNotifier") }
+	func getBaasAccountManagerForSystemService(_ _0: NnAccount_Uid) throws -> NnAccountBaas_IManagerForSystemService { throw IpcError.unimplemented(name: "nn::account::nn::account::IAccountServiceForSystemService#GetBaasAccountManagerForSystemService") }
+	func getBaasUserAvailabilityChangeNotifier() throws -> NnAccountDetail_INotifier { throw IpcError.unimplemented(name: "nn::account::nn::account::IAccountServiceForSystemService#GetBaasUserAvailabilityChangeNotifier") }
+	func getProfileUpdateNotifier() throws -> NnAccountDetail_INotifier { throw IpcError.unimplemented(name: "nn::account::nn::account::IAccountServiceForSystemService#GetProfileUpdateNotifier") }
+	func checkNetworkServiceAvailabilityAsync(_ _0: UInt64, _ _1: Pid, _ _2: Buffer<NnAccount_SystemProgramIdentification>) throws -> NnAccountDetail_IAsyncContext { throw IpcError.unimplemented(name: "nn::account::nn::account::IAccountServiceForSystemService#CheckNetworkServiceAvailabilityAsync") }
+	func storeSaveDataThumbnail(_ _0: NnAccount_Uid, _ _1: Nn_ApplicationId, _ _2: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::account::nn::account::IAccountServiceForSystemService#StoreSaveDataThumbnail") }
+	func clearSaveDataThumbnail(_ _0: NnAccount_Uid, _ _1: Nn_ApplicationId) throws { throw IpcError.unimplemented(name: "nn::account::nn::account::IAccountServiceForSystemService#ClearSaveDataThumbnail") }
+	func loadSaveDataThumbnail(_ _0: NnAccount_Uid, _ _1: Nn_ApplicationId, _ _2: Buffer<UInt8>) throws -> UInt32 { throw IpcError.unimplemented(name: "nn::account::nn::account::IAccountServiceForSystemService#LoadSaveDataThumbnail") }
+	func getSaveDataThumbnailExistence(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::account::nn::account::IAccountServiceForSystemService#GetSaveDataThumbnailExistence") }
+	func getUserLastOpenedApplication(_ _0: NnAccount_Uid) throws -> (UInt32, Nn_ApplicationId) { throw IpcError.unimplemented(name: "nn::account::nn::account::IAccountServiceForSystemService#GetUserLastOpenedApplication") }
+	func activateOpenContextHolder(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::account::nn::account::IAccountServiceForSystemService#ActivateOpenContextHolder") }
+	func debugInvalidateTokenCacheForUser(_ _0: NnAccount_Uid) throws { throw IpcError.unimplemented(name: "nn::account::nn::account::IAccountServiceForSystemService#DebugInvalidateTokenCacheForUser") }
+	func debugSetUserStateClose(_ _0: NnAccount_Uid) throws { throw IpcError.unimplemented(name: "nn::account::nn::account::IAccountServiceForSystemService#DebugSetUserStateClose") }
+	func debugSetUserStateOpen(_ _0: NnAccount_Uid) throws { throw IpcError.unimplemented(name: "nn::account::nn::account::IAccountServiceForSystemService#DebugSetUserStateOpen") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {

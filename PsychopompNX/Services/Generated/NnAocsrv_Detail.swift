@@ -1,13 +1,13 @@
 class NnAocsrvDetail_IAddOnContentManager: IpcService {
-	func countAddOnContentByApplicationId(_ _0: NnNcm_ApplicationId) throws -> UInt32 { throw IpcError.unimplemented }
-	func listAddOnContentByApplicationId(_ _0: UInt32, _ _1: UInt32, _ _2: NnNcm_ApplicationId, _ _3: Buffer<UInt32>) throws -> UInt32 { throw IpcError.unimplemented }
-	func countAddOnContent(_ _0: UInt64, _ _1: Pid) throws -> UInt32 { throw IpcError.unimplemented }
-	func listAddOnContent(_ _0: UInt32, _ _1: UInt32, _ _2: UInt64, _ _3: Pid, _ _4: Buffer<UInt32>) throws -> UInt32 { throw IpcError.unimplemented }
-	func getAddOnContentBaseIdByApplicationId(_ _0: NnNcm_ApplicationId) throws -> UInt64 { throw IpcError.unimplemented }
-	func getAddOnContentBaseId(_ _0: UInt64, _ _1: Pid) throws -> UInt64 { throw IpcError.unimplemented }
-	func prepareAddOnContentByApplicationId(_ _0: UInt32, _ _1: NnNcm_ApplicationId) throws { throw IpcError.unimplemented }
-	func prepareAddOnContent(_ _0: UInt32, _ _1: UInt64, _ _2: Pid) throws { throw IpcError.unimplemented }
-	func getAddOnContentListChangedEvent() throws -> KObject { throw IpcError.unimplemented }
+	func countAddOnContentByApplicationId(_ _0: NnNcm_ApplicationId) throws -> UInt32 { throw IpcError.unimplemented(name: "nn::aocsrv::detail::nn::aocsrv::detail::IAddOnContentManager#CountAddOnContentByApplicationId") }
+	func listAddOnContentByApplicationId(_ _0: UInt32, _ _1: UInt32, _ _2: NnNcm_ApplicationId, _ _3: Buffer<UInt32>) throws -> UInt32 { throw IpcError.unimplemented(name: "nn::aocsrv::detail::nn::aocsrv::detail::IAddOnContentManager#ListAddOnContentByApplicationId") }
+	func countAddOnContent(_ _0: UInt64, _ _1: Pid) throws -> UInt32 { throw IpcError.unimplemented(name: "nn::aocsrv::detail::nn::aocsrv::detail::IAddOnContentManager#CountAddOnContent") }
+	func listAddOnContent(_ _0: UInt32, _ _1: UInt32, _ _2: UInt64, _ _3: Pid, _ _4: Buffer<UInt32>) throws -> UInt32 { throw IpcError.unimplemented(name: "nn::aocsrv::detail::nn::aocsrv::detail::IAddOnContentManager#ListAddOnContent") }
+	func getAddOnContentBaseIdByApplicationId(_ _0: NnNcm_ApplicationId) throws -> UInt64 { throw IpcError.unimplemented(name: "nn::aocsrv::detail::nn::aocsrv::detail::IAddOnContentManager#GetAddOnContentBaseIdByApplicationId") }
+	func getAddOnContentBaseId(_ _0: UInt64, _ _1: Pid) throws -> UInt64 { throw IpcError.unimplemented(name: "nn::aocsrv::detail::nn::aocsrv::detail::IAddOnContentManager#GetAddOnContentBaseId") }
+	func prepareAddOnContentByApplicationId(_ _0: UInt32, _ _1: NnNcm_ApplicationId) throws { throw IpcError.unimplemented(name: "nn::aocsrv::detail::nn::aocsrv::detail::IAddOnContentManager#PrepareAddOnContentByApplicationId") }
+	func prepareAddOnContent(_ _0: UInt32, _ _1: UInt64, _ _2: Pid) throws { throw IpcError.unimplemented(name: "nn::aocsrv::detail::nn::aocsrv::detail::IAddOnContentManager#PrepareAddOnContent") }
+	func getAddOnContentListChangedEvent() throws -> KObject { throw IpcError.unimplemented(name: "nn::aocsrv::detail::nn::aocsrv::detail::IAddOnContentManager#GetAddOnContentListChangedEvent") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {

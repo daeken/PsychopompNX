@@ -1,12 +1,12 @@
 class NnUart_IPortSession: IpcService {
-	func openSession(_ _0: Any?, _ _1: KObject, _ _2: KObject) throws -> Any? { throw IpcError.unimplemented }
-	func openSessionForTest(_ _0: Any?, _ _1: KObject, _ _2: KObject) throws -> Any? { throw IpcError.unimplemented }
-	func unknown2() throws -> Any? { throw IpcError.unimplemented }
-	func unknown3(_ _0: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented }
-	func unknown4() throws -> Any? { throw IpcError.unimplemented }
-	func unknown5(_ _0: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented }
-	func unknown6(_ _0: Any?) throws -> (Any?, KObject) { throw IpcError.unimplemented }
-	func unknown7(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
+	func openSession(_ _0: Any?, _ _1: KObject, _ _2: KObject) throws -> Any? { throw IpcError.unimplemented(name: "nn::uart::nn::uart::IPortSession#OpenSession") }
+	func openSessionForTest(_ _0: Any?, _ _1: KObject, _ _2: KObject) throws -> Any? { throw IpcError.unimplemented(name: "nn::uart::nn::uart::IPortSession#OpenSessionForTest") }
+	func unknown2() throws -> Any? { throw IpcError.unimplemented(name: "nn::uart::nn::uart::IPortSession#Unknown2") }
+	func unknown3(_ _0: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented(name: "nn::uart::nn::uart::IPortSession#Unknown3") }
+	func unknown4() throws -> Any? { throw IpcError.unimplemented(name: "nn::uart::nn::uart::IPortSession#Unknown4") }
+	func unknown5(_ _0: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented(name: "nn::uart::nn::uart::IPortSession#Unknown5") }
+	func unknown6(_ _0: Any?) throws -> (Any?, KObject) { throw IpcError.unimplemented(name: "nn::uart::nn::uart::IPortSession#Unknown6") }
+	func unknown7(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::uart::nn::uart::IPortSession#Unknown7") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
@@ -51,15 +51,15 @@ class NnUart_IPortSession: IpcService {
 }
 
 class NnUart_IManager: IpcService {
-	func doesUartExist(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func doesUartExistForTest(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func setUartBaudrate(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func setUartBaudrateForTest(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func isSomethingUartValid(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func isSomethingUartValidForTest(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func getSession() throws -> NnUart_IPortSession { throw IpcError.unimplemented }
-	func isSomethingUartValid2(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func isSomethingUartValid2ForTest(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
+	func doesUartExist(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::uart::nn::uart::IManager#DoesUartExist") }
+	func doesUartExistForTest(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::uart::nn::uart::IManager#DoesUartExistForTest") }
+	func setUartBaudrate(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::uart::nn::uart::IManager#SetUartBaudrate") }
+	func setUartBaudrateForTest(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::uart::nn::uart::IManager#SetUartBaudrateForTest") }
+	func isSomethingUartValid(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::uart::nn::uart::IManager#IsSomethingUartValid") }
+	func isSomethingUartValidForTest(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::uart::nn::uart::IManager#IsSomethingUartValidForTest") }
+	func getSession() throws -> NnUart_IPortSession { throw IpcError.unimplemented(name: "nn::uart::nn::uart::IManager#GetSession") }
+	func isSomethingUartValid2(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::uart::nn::uart::IManager#IsSomethingUartValid2") }
+	func isSomethingUartValid2ForTest(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::uart::nn::uart::IManager#IsSomethingUartValid2ForTest") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {

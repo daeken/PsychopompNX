@@ -1,7 +1,7 @@
 class NnBcatDetailIpc_IServiceCreator: IpcService {
-	func createBcatService(_ _0: UInt64, _ _1: Pid) throws -> NnBcatDetailIpc_IBcatService { throw IpcError.unimplemented }
-	func createDeliveryCacheStorageService(_ _0: UInt64, _ _1: Pid) throws -> NnBcatDetailIpc_IDeliveryCacheStorageService { throw IpcError.unimplemented }
-	func createDeliveryCacheStorageServiceWithApplicationId(_ _0: Nn_ApplicationId) throws -> NnBcatDetailIpc_IDeliveryCacheStorageService { throw IpcError.unimplemented }
+	func createBcatService(_ _0: UInt64, _ _1: Pid) throws -> NnBcatDetailIpc_IBcatService { throw IpcError.unimplemented(name: "nn::bcat::detail::ipc::nn::bcat::detail::ipc::IServiceCreator#CreateBcatService") }
+	func createDeliveryCacheStorageService(_ _0: UInt64, _ _1: Pid) throws -> NnBcatDetailIpc_IDeliveryCacheStorageService { throw IpcError.unimplemented(name: "nn::bcat::detail::ipc::nn::bcat::detail::ipc::IServiceCreator#CreateDeliveryCacheStorageService") }
+	func createDeliveryCacheStorageServiceWithApplicationId(_ _0: Nn_ApplicationId) throws -> NnBcatDetailIpc_IDeliveryCacheStorageService { throw IpcError.unimplemented(name: "nn::bcat::detail::ipc::nn::bcat::detail::ipc::IServiceCreator#CreateDeliveryCacheStorageServiceWithApplicationId") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
@@ -28,8 +28,8 @@ class NnBcatDetailIpc_IServiceCreator: IpcService {
 }
 
 class NnBcatDetailIpc_IDeliveryCacheProgressService: IpcService {
-	func getEvent() throws -> KObject { throw IpcError.unimplemented }
-	func getImpl(_ _0: Buffer<NnBcatDetail_DeliveryCacheProgressImpl>) throws { throw IpcError.unimplemented }
+	func getEvent() throws -> KObject { throw IpcError.unimplemented(name: "nn::bcat::detail::ipc::nn::bcat::detail::ipc::IDeliveryCacheProgressService#GetEvent") }
+	func getImpl(_ _0: Buffer<NnBcatDetail_DeliveryCacheProgressImpl>) throws { throw IpcError.unimplemented(name: "nn::bcat::detail::ipc::nn::bcat::detail::ipc::IDeliveryCacheProgressService#GetImpl") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
@@ -50,10 +50,10 @@ class NnBcatDetailIpc_IDeliveryCacheProgressService: IpcService {
 }
 
 class NnBcatDetailIpc_IDeliveryCacheFileService: IpcService {
-	func open(_ _0: NnBcat_DirectoryName, _ _1: NnBcat_FileName) throws { throw IpcError.unimplemented }
-	func read(_ _0: UInt64, _ _1: Buffer<UInt8>) throws -> UInt64 { throw IpcError.unimplemented }
-	func getSize() throws -> UInt64 { throw IpcError.unimplemented }
-	func getDigest() throws -> NnBcat_Digest { throw IpcError.unimplemented }
+	func open(_ _0: NnBcat_DirectoryName, _ _1: NnBcat_FileName) throws { throw IpcError.unimplemented(name: "nn::bcat::detail::ipc::nn::bcat::detail::ipc::IDeliveryCacheFileService#Open") }
+	func read(_ _0: UInt64, _ _1: Buffer<UInt8>) throws -> UInt64 { throw IpcError.unimplemented(name: "nn::bcat::detail::ipc::nn::bcat::detail::ipc::IDeliveryCacheFileService#Read") }
+	func getSize() throws -> UInt64 { throw IpcError.unimplemented(name: "nn::bcat::detail::ipc::nn::bcat::detail::ipc::IDeliveryCacheFileService#GetSize") }
+	func getDigest() throws -> NnBcat_Digest { throw IpcError.unimplemented(name: "nn::bcat::detail::ipc::nn::bcat::detail::ipc::IDeliveryCacheFileService#GetDigest") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
@@ -85,9 +85,9 @@ class NnBcatDetailIpc_IDeliveryCacheFileService: IpcService {
 }
 
 class NnBcatDetailIpc_IDeliveryCacheDirectoryService: IpcService {
-	func open(_ _0: NnBcat_DirectoryName) throws { throw IpcError.unimplemented }
-	func read(_ _0: Buffer<NnBcat_DeliveryCacheDirectoryEntry>) throws -> UInt32 { throw IpcError.unimplemented }
-	func getCount() throws -> UInt32 { throw IpcError.unimplemented }
+	func open(_ _0: NnBcat_DirectoryName) throws { throw IpcError.unimplemented(name: "nn::bcat::detail::ipc::nn::bcat::detail::ipc::IDeliveryCacheDirectoryService#Open") }
+	func read(_ _0: Buffer<NnBcat_DeliveryCacheDirectoryEntry>) throws -> UInt32 { throw IpcError.unimplemented(name: "nn::bcat::detail::ipc::nn::bcat::detail::ipc::IDeliveryCacheDirectoryService#Read") }
+	func getCount() throws -> UInt32 { throw IpcError.unimplemented(name: "nn::bcat::detail::ipc::nn::bcat::detail::ipc::IDeliveryCacheDirectoryService#GetCount") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
@@ -113,20 +113,20 @@ class NnBcatDetailIpc_IDeliveryCacheDirectoryService: IpcService {
 }
 
 class NnBcatDetailIpc_IBcatService: IpcService {
-	func requestSyncDeliveryCache() throws -> NnBcatDetailIpc_IDeliveryCacheProgressService { throw IpcError.unimplemented }
-	func requestSyncDeliveryCacheWithDirectoryName(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func cancelSyncDeliveryCacheRequest(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func requestSyncDeliveryCacheWithApplicationId(_ _0: UInt32, _ _1: Nn_ApplicationId) throws -> NnBcatDetailIpc_IDeliveryCacheProgressService { throw IpcError.unimplemented }
-	func requestSyncDeliveryCacheWithApplicationIdAndDirectoryName(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func setPassphrase(_ _0: Nn_ApplicationId, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func registerBackgroundDeliveryTask(_ _0: UInt32, _ _1: Nn_ApplicationId) throws { throw IpcError.unimplemented }
-	func unregisterBackgroundDeliveryTask(_ _0: Nn_ApplicationId) throws { throw IpcError.unimplemented }
-	func blockDeliveryTask(_ _0: Nn_ApplicationId) throws { throw IpcError.unimplemented }
-	func unblockDeliveryTask(_ _0: Nn_ApplicationId) throws { throw IpcError.unimplemented }
-	func enumerateBackgroundDeliveryTask(_ _0: Buffer<NnBcat_TaskInfo>) throws -> UInt32 { throw IpcError.unimplemented }
-	func getDeliveryList(_ _0: Nn_ApplicationId, _ _1: Buffer<UInt8>) throws -> UInt64 { throw IpcError.unimplemented }
-	func clearDeliveryCacheStorage(_ _0: Nn_ApplicationId) throws { throw IpcError.unimplemented }
-	func getPushNotificationLog(_ _0: Buffer<NnBcat_PushNotificationLog>) throws -> UInt32 { throw IpcError.unimplemented }
+	func requestSyncDeliveryCache() throws -> NnBcatDetailIpc_IDeliveryCacheProgressService { throw IpcError.unimplemented(name: "nn::bcat::detail::ipc::nn::bcat::detail::ipc::IBcatService#RequestSyncDeliveryCache") }
+	func requestSyncDeliveryCacheWithDirectoryName(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::bcat::detail::ipc::nn::bcat::detail::ipc::IBcatService#RequestSyncDeliveryCacheWithDirectoryName") }
+	func cancelSyncDeliveryCacheRequest(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::bcat::detail::ipc::nn::bcat::detail::ipc::IBcatService#CancelSyncDeliveryCacheRequest") }
+	func requestSyncDeliveryCacheWithApplicationId(_ _0: UInt32, _ _1: Nn_ApplicationId) throws -> NnBcatDetailIpc_IDeliveryCacheProgressService { throw IpcError.unimplemented(name: "nn::bcat::detail::ipc::nn::bcat::detail::ipc::IBcatService#RequestSyncDeliveryCacheWithApplicationId") }
+	func requestSyncDeliveryCacheWithApplicationIdAndDirectoryName(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::bcat::detail::ipc::nn::bcat::detail::ipc::IBcatService#RequestSyncDeliveryCacheWithApplicationIdAndDirectoryName") }
+	func setPassphrase(_ _0: Nn_ApplicationId, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::bcat::detail::ipc::nn::bcat::detail::ipc::IBcatService#SetPassphrase") }
+	func registerBackgroundDeliveryTask(_ _0: UInt32, _ _1: Nn_ApplicationId) throws { throw IpcError.unimplemented(name: "nn::bcat::detail::ipc::nn::bcat::detail::ipc::IBcatService#RegisterBackgroundDeliveryTask") }
+	func unregisterBackgroundDeliveryTask(_ _0: Nn_ApplicationId) throws { throw IpcError.unimplemented(name: "nn::bcat::detail::ipc::nn::bcat::detail::ipc::IBcatService#UnregisterBackgroundDeliveryTask") }
+	func blockDeliveryTask(_ _0: Nn_ApplicationId) throws { throw IpcError.unimplemented(name: "nn::bcat::detail::ipc::nn::bcat::detail::ipc::IBcatService#BlockDeliveryTask") }
+	func unblockDeliveryTask(_ _0: Nn_ApplicationId) throws { throw IpcError.unimplemented(name: "nn::bcat::detail::ipc::nn::bcat::detail::ipc::IBcatService#UnblockDeliveryTask") }
+	func enumerateBackgroundDeliveryTask(_ _0: Buffer<NnBcat_TaskInfo>) throws -> UInt32 { throw IpcError.unimplemented(name: "nn::bcat::detail::ipc::nn::bcat::detail::ipc::IBcatService#EnumerateBackgroundDeliveryTask") }
+	func getDeliveryList(_ _0: Nn_ApplicationId, _ _1: Buffer<UInt8>) throws -> UInt64 { throw IpcError.unimplemented(name: "nn::bcat::detail::ipc::nn::bcat::detail::ipc::IBcatService#GetDeliveryList") }
+	func clearDeliveryCacheStorage(_ _0: Nn_ApplicationId) throws { throw IpcError.unimplemented(name: "nn::bcat::detail::ipc::nn::bcat::detail::ipc::IBcatService#ClearDeliveryCacheStorage") }
+	func getPushNotificationLog(_ _0: Buffer<NnBcat_PushNotificationLog>) throws -> UInt32 { throw IpcError.unimplemented(name: "nn::bcat::detail::ipc::nn::bcat::detail::ipc::IBcatService#GetPushNotificationLog") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
@@ -199,9 +199,9 @@ class NnBcatDetailIpc_IBcatService: IpcService {
 }
 
 class NnBcatDetailIpc_IDeliveryCacheStorageService: IpcService {
-	func createFileService() throws -> NnBcatDetailIpc_IDeliveryCacheFileService { throw IpcError.unimplemented }
-	func createDirectoryService() throws -> NnBcatDetailIpc_IDeliveryCacheDirectoryService { throw IpcError.unimplemented }
-	func enumerateDeliveryCacheDirectory(_ _0: Buffer<NnBcat_DirectoryName>) throws -> UInt32 { throw IpcError.unimplemented }
+	func createFileService() throws -> NnBcatDetailIpc_IDeliveryCacheFileService { throw IpcError.unimplemented(name: "nn::bcat::detail::ipc::nn::bcat::detail::ipc::IDeliveryCacheStorageService#CreateFileService") }
+	func createDirectoryService() throws -> NnBcatDetailIpc_IDeliveryCacheDirectoryService { throw IpcError.unimplemented(name: "nn::bcat::detail::ipc::nn::bcat::detail::ipc::IDeliveryCacheStorageService#CreateDirectoryService") }
+	func enumerateDeliveryCacheDirectory(_ _0: Buffer<NnBcat_DirectoryName>) throws -> UInt32 { throw IpcError.unimplemented(name: "nn::bcat::detail::ipc::nn::bcat::detail::ipc::IDeliveryCacheStorageService#EnumerateDeliveryCacheDirectory") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {

@@ -1,5 +1,5 @@
 class NnJitsrv_IJitService: IpcService {
-	func createJitEnvironment(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
+	func createJitEnvironment(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::jitsrv::nn::jitsrv::IJitService#CreateJitEnvironment") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
@@ -15,10 +15,10 @@ class NnJitsrv_IJitService: IpcService {
 }
 
 class NnJitsrv_IJitEnvironment: IpcService {
-	func control(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func generateCode(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func loadPlugin(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func getCodeAddress(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
+	func control(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::jitsrv::nn::jitsrv::IJitEnvironment#Control") }
+	func generateCode(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::jitsrv::nn::jitsrv::IJitEnvironment#GenerateCode") }
+	func loadPlugin(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::jitsrv::nn::jitsrv::IJitEnvironment#LoadPlugin") }
+	func getCodeAddress(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::jitsrv::nn::jitsrv::IJitEnvironment#GetCodeAddress") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {

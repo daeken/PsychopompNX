@@ -1,14 +1,14 @@
 class NnBtm_IBtmSystemCore: IpcService {
-	func startGamepadPairingImpl() throws { throw IpcError.unimplemented }
-	func cancelGamepadPairingImpl() throws { throw IpcError.unimplemented }
-	func clearGamepadPairingDatabaseImpl() throws { throw IpcError.unimplemented }
-	func getPairedGamepadCountImpl() throws -> Any? { throw IpcError.unimplemented }
-	func enableRadioImpl() throws { throw IpcError.unimplemented }
-	func disableRadioImpl() throws { throw IpcError.unimplemented }
-	func getRadioOnOffImpl() throws -> Any? { throw IpcError.unimplemented }
-	func acquireRadioEventImpl() throws -> (Any?, KObject) { throw IpcError.unimplemented }
-	func acquireGamepadPairingEventImpl() throws -> (Any?, KObject) { throw IpcError.unimplemented }
-	func isGamepadPairingStartedImpl() throws -> Any? { throw IpcError.unimplemented }
+	func startGamepadPairingImpl() throws { throw IpcError.unimplemented(name: "nn::btm::nn::btm::IBtmSystemCore#StartGamepadPairingImpl") }
+	func cancelGamepadPairingImpl() throws { throw IpcError.unimplemented(name: "nn::btm::nn::btm::IBtmSystemCore#CancelGamepadPairingImpl") }
+	func clearGamepadPairingDatabaseImpl() throws { throw IpcError.unimplemented(name: "nn::btm::nn::btm::IBtmSystemCore#ClearGamepadPairingDatabaseImpl") }
+	func getPairedGamepadCountImpl() throws -> Any? { throw IpcError.unimplemented(name: "nn::btm::nn::btm::IBtmSystemCore#GetPairedGamepadCountImpl") }
+	func enableRadioImpl() throws { throw IpcError.unimplemented(name: "nn::btm::nn::btm::IBtmSystemCore#EnableRadioImpl") }
+	func disableRadioImpl() throws { throw IpcError.unimplemented(name: "nn::btm::nn::btm::IBtmSystemCore#DisableRadioImpl") }
+	func getRadioOnOffImpl() throws -> Any? { throw IpcError.unimplemented(name: "nn::btm::nn::btm::IBtmSystemCore#GetRadioOnOffImpl") }
+	func acquireRadioEventImpl() throws -> (Any?, KObject) { throw IpcError.unimplemented(name: "nn::btm::nn::btm::IBtmSystemCore#AcquireRadioEventImpl") }
+	func acquireGamepadPairingEventImpl() throws -> (Any?, KObject) { throw IpcError.unimplemented(name: "nn::btm::nn::btm::IBtmSystemCore#AcquireGamepadPairingEventImpl") }
+	func isGamepadPairingStartedImpl() throws -> Any? { throw IpcError.unimplemented(name: "nn::btm::nn::btm::IBtmSystemCore#IsGamepadPairingStartedImpl") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
@@ -62,7 +62,7 @@ class NnBtm_IBtmSystemCore: IpcService {
 }
 
 class NnBtm_IBtmSystem: IpcService {
-	func getCoreImpl() throws -> NnBtm_IBtmSystemCore { throw IpcError.unimplemented }
+	func getCoreImpl() throws -> NnBtm_IBtmSystemCore { throw IpcError.unimplemented(name: "nn::btm::nn::btm::IBtmSystem#GetCoreImpl") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
@@ -79,28 +79,28 @@ class NnBtm_IBtmSystem: IpcService {
 }
 
 class NnBtm_IBtm: IpcService {
-	func unknown0() throws -> Any? { throw IpcError.unimplemented }
-	func unknown1() throws -> Any? { throw IpcError.unimplemented }
-	func registerSystemEventForConnectedDeviceConditionImpl() throws -> (Any?, KObject) { throw IpcError.unimplemented }
-	func unknown3(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func unknown4(_ _0: Any?) throws { throw IpcError.unimplemented }
-	func unknown5(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func unknown6(_ _0: Any?) throws { throw IpcError.unimplemented }
-	func unknown7(_ _0: Any?) throws { throw IpcError.unimplemented }
-	func registerSystemEventForRegisteredDeviceInfoImpl() throws -> (Any?, KObject) { throw IpcError.unimplemented }
-	func unknown9(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func unknown10(_ _0: Any?) throws { throw IpcError.unimplemented }
-	func unknown11(_ _0: Any?) throws { throw IpcError.unimplemented }
-	func unknown12(_ _0: Any?) throws { throw IpcError.unimplemented }
-	func unknown13(_ _0: Any?) throws { throw IpcError.unimplemented }
-	func enableRadioImpl() throws { throw IpcError.unimplemented }
-	func disableRadioImpl() throws { throw IpcError.unimplemented }
-	func unknown16(_ _0: Any?) throws { throw IpcError.unimplemented }
-	func unknown17(_ _0: Any?, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func unknown18() throws -> (Any?, KObject) { throw IpcError.unimplemented }
-	func unknown19() throws -> (Any?, KObject) { throw IpcError.unimplemented }
-	func unknown20() throws -> Any? { throw IpcError.unimplemented }
-	func unknown21(_ _0: Any?) throws { throw IpcError.unimplemented }
+	func unknown0() throws -> Any? { throw IpcError.unimplemented(name: "nn::btm::nn::btm::IBtm#Unknown0") }
+	func unknown1() throws -> Any? { throw IpcError.unimplemented(name: "nn::btm::nn::btm::IBtm#Unknown1") }
+	func registerSystemEventForConnectedDeviceConditionImpl() throws -> (Any?, KObject) { throw IpcError.unimplemented(name: "nn::btm::nn::btm::IBtm#RegisterSystemEventForConnectedDeviceConditionImpl") }
+	func unknown3(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::btm::nn::btm::IBtm#Unknown3") }
+	func unknown4(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::btm::nn::btm::IBtm#Unknown4") }
+	func unknown5(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::btm::nn::btm::IBtm#Unknown5") }
+	func unknown6(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::btm::nn::btm::IBtm#Unknown6") }
+	func unknown7(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::btm::nn::btm::IBtm#Unknown7") }
+	func registerSystemEventForRegisteredDeviceInfoImpl() throws -> (Any?, KObject) { throw IpcError.unimplemented(name: "nn::btm::nn::btm::IBtm#RegisterSystemEventForRegisteredDeviceInfoImpl") }
+	func unknown9(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::btm::nn::btm::IBtm#Unknown9") }
+	func unknown10(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::btm::nn::btm::IBtm#Unknown10") }
+	func unknown11(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::btm::nn::btm::IBtm#Unknown11") }
+	func unknown12(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::btm::nn::btm::IBtm#Unknown12") }
+	func unknown13(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::btm::nn::btm::IBtm#Unknown13") }
+	func enableRadioImpl() throws { throw IpcError.unimplemented(name: "nn::btm::nn::btm::IBtm#EnableRadioImpl") }
+	func disableRadioImpl() throws { throw IpcError.unimplemented(name: "nn::btm::nn::btm::IBtm#DisableRadioImpl") }
+	func unknown16(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::btm::nn::btm::IBtm#Unknown16") }
+	func unknown17(_ _0: Any?, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::btm::nn::btm::IBtm#Unknown17") }
+	func unknown18() throws -> (Any?, KObject) { throw IpcError.unimplemented(name: "nn::btm::nn::btm::IBtm#Unknown18") }
+	func unknown19() throws -> (Any?, KObject) { throw IpcError.unimplemented(name: "nn::btm::nn::btm::IBtm#Unknown19") }
+	func unknown20() throws -> Any? { throw IpcError.unimplemented(name: "nn::btm::nn::btm::IBtm#Unknown20") }
+	func unknown21(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::btm::nn::btm::IBtm#Unknown21") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
@@ -204,15 +204,15 @@ class NnBtm_IBtm: IpcService {
 }
 
 class NnBtm_IBtmDebug: IpcService {
-	func registerSystemEventForDiscoveryImpl() throws -> (Any?, KObject) { throw IpcError.unimplemented }
-	func unknown1() throws { throw IpcError.unimplemented }
-	func unknown2() throws { throw IpcError.unimplemented }
-	func unknown3(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func unknown4(_ _0: Any?) throws { throw IpcError.unimplemented }
-	func unknown5(_ _0: Any?) throws { throw IpcError.unimplemented }
-	func unknown6(_ _0: Any?) throws { throw IpcError.unimplemented }
-	func unknown7(_ _0: Any?) throws { throw IpcError.unimplemented }
-	func unknown8(_ _0: Any?) throws { throw IpcError.unimplemented }
+	func registerSystemEventForDiscoveryImpl() throws -> (Any?, KObject) { throw IpcError.unimplemented(name: "nn::btm::nn::btm::IBtmDebug#RegisterSystemEventForDiscoveryImpl") }
+	func unknown1() throws { throw IpcError.unimplemented(name: "nn::btm::nn::btm::IBtmDebug#Unknown1") }
+	func unknown2() throws { throw IpcError.unimplemented(name: "nn::btm::nn::btm::IBtmDebug#Unknown2") }
+	func unknown3(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::btm::nn::btm::IBtmDebug#Unknown3") }
+	func unknown4(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::btm::nn::btm::IBtmDebug#Unknown4") }
+	func unknown5(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::btm::nn::btm::IBtmDebug#Unknown5") }
+	func unknown6(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::btm::nn::btm::IBtmDebug#Unknown6") }
+	func unknown7(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::btm::nn::btm::IBtmDebug#Unknown7") }
+	func unknown8(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::btm::nn::btm::IBtmDebug#Unknown8") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {

@@ -1,11 +1,11 @@
 class NnCec_ICecManager: IpcService {
-	func unknown0() throws -> (Any?, KObject) { throw IpcError.unimplemented }
-	func unknown1(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func unknown2(_ _0: Any?) throws { throw IpcError.unimplemented }
-	func unknown3(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func unknown4(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func unknown5() throws -> Any? { throw IpcError.unimplemented }
-	func unknown6() throws -> Any? { throw IpcError.unimplemented }
+	func unknown0() throws -> (Any?, KObject) { throw IpcError.unimplemented(name: "nn::cec::nn::cec::ICecManager#Unknown0") }
+	func unknown1(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::cec::nn::cec::ICecManager#Unknown1") }
+	func unknown2(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::cec::nn::cec::ICecManager#Unknown2") }
+	func unknown3(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::cec::nn::cec::ICecManager#Unknown3") }
+	func unknown4(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::cec::nn::cec::ICecManager#Unknown4") }
+	func unknown5() throws -> Any? { throw IpcError.unimplemented(name: "nn::cec::nn::cec::ICecManager#Unknown5") }
+	func unknown6() throws -> Any? { throw IpcError.unimplemented(name: "nn::cec::nn::cec::ICecManager#Unknown6") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {

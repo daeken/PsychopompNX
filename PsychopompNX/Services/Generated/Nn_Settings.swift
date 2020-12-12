@@ -3,153 +3,153 @@ typealias NnSettings_LanguageCode = [UInt8]
 typealias NnSettings_SettingsName = [UInt8]
 
 class NnSettings_ISystemSettingsServer: IpcService {
-	func setLanguageCode(_ _0: NnSettings_LanguageCode) throws { throw IpcError.unimplemented }
-	func setNetworkSettings(_ _0: Buffer<NnSettingsSystem_NetworkSettings>) throws { throw IpcError.unimplemented }
-	func getNetworkSettings(_ _0: Buffer<NnSettingsSystem_NetworkSettings>) throws -> UInt32 { throw IpcError.unimplemented }
-	func getFirmwareVersion(_ _0: Buffer<NnSettingsSystem_FirmwareVersion>) throws { throw IpcError.unimplemented }
-	func getFirmwareVersion2(_ _0: Buffer<NnSettingsSystem_FirmwareVersion>) throws { throw IpcError.unimplemented }
-	func getFirmwareVersionDigest(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func getLockScreenFlag() throws -> UInt8 { throw IpcError.unimplemented }
-	func setLockScreenFlag(_ _0: UInt8) throws { throw IpcError.unimplemented }
-	func getBacklightSettings() throws -> NnSettingsSystem_BacklightSettings { throw IpcError.unimplemented }
-	func setBacklightSettings(_ _0: NnSettingsSystem_BacklightSettings) throws { throw IpcError.unimplemented }
-	func setBluetoothDevicesSettings(_ _0: Buffer<NnSettingsSystem_BluetoothDevicesSettings>) throws { throw IpcError.unimplemented }
-	func getBluetoothDevicesSettings(_ _0: Buffer<NnSettingsSystem_BluetoothDevicesSettings>) throws -> UInt32 { throw IpcError.unimplemented }
-	func getExternalSteadyClockSourceId() throws -> NnUtil_Uuid { throw IpcError.unimplemented }
-	func setExternalSteadyClockSourceId(_ _0: NnUtil_Uuid) throws { throw IpcError.unimplemented }
-	func getUserSystemClockContext() throws -> NnTime_SystemClockContext { throw IpcError.unimplemented }
-	func setUserSystemClockContext(_ _0: NnTime_SystemClockContext) throws { throw IpcError.unimplemented }
-	func getAccountSettings() throws -> NnSettingsSystem_AccountSettings { throw IpcError.unimplemented }
-	func setAccountSettings(_ _0: NnSettingsSystem_AccountSettings) throws { throw IpcError.unimplemented }
-	func getAudioVolume(_ _0: UInt32) throws -> NnSettingsSystem_AudioVolume { throw IpcError.unimplemented }
-	func setAudioVolume(_ _0: NnSettingsSystem_AudioVolume, _ _1: UInt32) throws { throw IpcError.unimplemented }
-	func getEulaVersions(_ _0: Buffer<NnSettingsSystem_EulaVersion>) throws -> UInt32 { throw IpcError.unimplemented }
-	func setEulaVersions(_ _0: Buffer<NnSettingsSystem_EulaVersion>) throws { throw IpcError.unimplemented }
-	func getColorSetId() throws -> UInt32 { throw IpcError.unimplemented }
-	func setColorSetId(_ _0: UInt32) throws { throw IpcError.unimplemented }
-	func getConsoleInformationUploadFlag() throws -> UInt8 { throw IpcError.unimplemented }
-	func setConsoleInformationUploadFlag(_ _0: UInt8) throws { throw IpcError.unimplemented }
-	func getAutomaticApplicationDownloadFlag() throws -> UInt8 { throw IpcError.unimplemented }
-	func setAutomaticApplicationDownloadFlag(_ _0: UInt8) throws { throw IpcError.unimplemented }
-	func getNotificationSettings() throws -> NnSettingsSystem_NotificationSettings { throw IpcError.unimplemented }
-	func setNotificationSettings(_ _0: NnSettingsSystem_NotificationSettings) throws { throw IpcError.unimplemented }
-	func getAccountNotificationSettings(_ _0: Buffer<NnSettingsSystem_AccountNotificationSettings>) throws -> UInt32 { throw IpcError.unimplemented }
-	func setAccountNotificationSettings(_ _0: Buffer<NnSettingsSystem_AccountNotificationSettings>) throws { throw IpcError.unimplemented }
-	func getVibrationMasterVolume() throws -> Float32 { throw IpcError.unimplemented }
-	func setVibrationMasterVolume(_ _0: Float32) throws { throw IpcError.unimplemented }
-	func getSettingsItemValueSize(_ _0: Buffer<NnSettings_SettingsName>, _ _1: Buffer<NnSettings_SettingsItemKey>) throws -> UInt64 { throw IpcError.unimplemented }
-	func getSettingsItemValue(_ _0: Buffer<NnSettings_SettingsName>, _ _1: Buffer<NnSettings_SettingsItemKey>, _ _2: Buffer<UInt8>) throws -> UInt64 { throw IpcError.unimplemented }
-	func getTvSettings() throws -> NnSettingsSystem_TvSettings { throw IpcError.unimplemented }
-	func setTvSettings(_ _0: NnSettingsSystem_TvSettings) throws { throw IpcError.unimplemented }
-	func getEdid(_ _0: Buffer<NnSettingsSystem_Edid>) throws { throw IpcError.unimplemented }
-	func setEdid(_ _0: Buffer<NnSettingsSystem_Edid>) throws { throw IpcError.unimplemented }
-	func getAudioOutputMode(_ _0: UInt32) throws -> UInt32 { throw IpcError.unimplemented }
-	func setAudioOutputMode(_ _0: UInt32, _ _1: UInt32) throws { throw IpcError.unimplemented }
-	func isForceMuteOnHeadphoneRemoved() throws -> UInt8 { throw IpcError.unimplemented }
-	func setForceMuteOnHeadphoneRemoved(_ _0: UInt8) throws { throw IpcError.unimplemented }
-	func getQuestFlag() throws -> UInt8 { throw IpcError.unimplemented }
-	func setQuestFlag(_ _0: UInt8) throws { throw IpcError.unimplemented }
-	func getDataDeletionSettings() throws -> NnSettingsSystem_DataDeletionSettings { throw IpcError.unimplemented }
-	func setDataDeletionSettings(_ _0: NnSettingsSystem_DataDeletionSettings) throws { throw IpcError.unimplemented }
-	func getInitialSystemAppletProgramId() throws -> NnNcm_ProgramId { throw IpcError.unimplemented }
-	func getOverlayDispProgramId() throws -> NnNcm_ProgramId { throw IpcError.unimplemented }
-	func getDeviceTimeZoneLocationName() throws -> NnTime_LocationName { throw IpcError.unimplemented }
-	func setDeviceTimeZoneLocationName(_ _0: NnTime_LocationName) throws { throw IpcError.unimplemented }
-	func getWirelessCertificationFileSize() throws -> UInt64 { throw IpcError.unimplemented }
-	func getWirelessCertificationFile(_ _0: Buffer<UInt8>) throws -> UInt64 { throw IpcError.unimplemented }
-	func setRegionCode(_ _0: UInt32) throws { throw IpcError.unimplemented }
-	func getNetworkSystemClockContext() throws -> NnTime_SystemClockContext { throw IpcError.unimplemented }
-	func setNetworkSystemClockContext(_ _0: NnTime_SystemClockContext) throws { throw IpcError.unimplemented }
-	func isUserSystemClockAutomaticCorrectionEnabled() throws -> UInt8 { throw IpcError.unimplemented }
-	func setUserSystemClockAutomaticCorrectionEnabled(_ _0: UInt8) throws { throw IpcError.unimplemented }
-	func getDebugModeFlag() throws -> UInt8 { throw IpcError.unimplemented }
-	func getPrimaryAlbumStorage() throws -> UInt32 { throw IpcError.unimplemented }
-	func setPrimaryAlbumStorage(_ _0: UInt32) throws { throw IpcError.unimplemented }
-	func getUsb30EnableFlag() throws -> UInt8 { throw IpcError.unimplemented }
-	func setUsb30EnableFlag(_ _0: UInt8) throws { throw IpcError.unimplemented }
-	func getBatteryLot() throws -> NnSettingsSystem_BatteryLot { throw IpcError.unimplemented }
-	func getSerialNumber() throws -> NnSettingsSystem_SerialNumber { throw IpcError.unimplemented }
-	func getNfcEnableFlag() throws -> UInt8 { throw IpcError.unimplemented }
-	func setNfcEnableFlag(_ _0: UInt8) throws { throw IpcError.unimplemented }
-	func getSleepSettings() throws -> NnSettingsSystem_SleepSettings { throw IpcError.unimplemented }
-	func setSleepSettings(_ _0: NnSettingsSystem_SleepSettings) throws { throw IpcError.unimplemented }
-	func getWirelessLanEnableFlag() throws -> UInt8 { throw IpcError.unimplemented }
-	func setWirelessLanEnableFlag(_ _0: UInt8) throws { throw IpcError.unimplemented }
-	func getInitialLaunchSettings() throws -> NnSettingsSystem_InitialLaunchSettings { throw IpcError.unimplemented }
-	func setInitialLaunchSettings(_ _0: NnSettingsSystem_InitialLaunchSettings) throws { throw IpcError.unimplemented }
-	func getDeviceNickName(_ _0: Buffer<NnSettingsSystem_DeviceNickName>) throws { throw IpcError.unimplemented }
-	func setDeviceNickName(_ _0: Buffer<NnSettingsSystem_DeviceNickName>) throws { throw IpcError.unimplemented }
-	func getProductModel() throws -> UInt32 { throw IpcError.unimplemented }
-	func getLdnChannel() throws -> UInt32 { throw IpcError.unimplemented }
-	func setLdnChannel(_ _0: UInt32) throws { throw IpcError.unimplemented }
-	func acquireTelemetryDirtyFlagEventHandle() throws -> KObject { throw IpcError.unimplemented }
-	func getTelemetryDirtyFlags() throws -> Any? { throw IpcError.unimplemented }
-	func getPtmBatteryLot() throws -> NnSettingsFactory_BatteryLot { throw IpcError.unimplemented }
-	func setPtmBatteryLot(_ _0: NnSettingsFactory_BatteryLot) throws { throw IpcError.unimplemented }
-	func getPtmFuelGaugeParameter() throws -> NnSettingsSystem_PtmFuelGaugeParameter { throw IpcError.unimplemented }
-	func setPtmFuelGaugeParameter(_ _0: NnSettingsSystem_PtmFuelGaugeParameter) throws { throw IpcError.unimplemented }
-	func getBluetoothEnableFlag() throws -> UInt8 { throw IpcError.unimplemented }
-	func setBluetoothEnableFlag(_ _0: UInt8) throws { throw IpcError.unimplemented }
-	func getMiiAuthorId() throws -> NnUtil_Uuid { throw IpcError.unimplemented }
-	func setShutdownRtcValue(_ _0: UInt64) throws { throw IpcError.unimplemented }
-	func getShutdownRtcValue() throws -> UInt64 { throw IpcError.unimplemented }
-	func acquireFatalDirtyFlagEventHandle() throws -> KObject { throw IpcError.unimplemented }
-	func getFatalDirtyFlags() throws -> Any? { throw IpcError.unimplemented }
-	func getAutoUpdateEnableFlag() throws -> UInt8 { throw IpcError.unimplemented }
-	func setAutoUpdateEnableFlag(_ _0: UInt8) throws { throw IpcError.unimplemented }
-	func getNxControllerSettings(_ _0: Buffer<NnSettingsSystem_NxControllerSettings>) throws -> UInt32 { throw IpcError.unimplemented }
-	func setNxControllerSettings(_ _0: Buffer<NnSettingsSystem_NxControllerSettings>) throws { throw IpcError.unimplemented }
-	func getBatteryPercentageFlag() throws -> UInt8 { throw IpcError.unimplemented }
-	func setBatteryPercentageFlag(_ _0: UInt8) throws { throw IpcError.unimplemented }
-	func getExternalRtcResetFlag() throws -> UInt8 { throw IpcError.unimplemented }
-	func setExternalRtcResetFlag(_ _0: UInt8) throws { throw IpcError.unimplemented }
-	func getUsbFullKeyEnableFlag() throws -> UInt8 { throw IpcError.unimplemented }
-	func setUsbFullKeyEnableFlag(_ _0: UInt8) throws { throw IpcError.unimplemented }
-	func setExternalSteadyClockInternalOffset(_ _0: UInt64) throws { throw IpcError.unimplemented }
-	func getExternalSteadyClockInternalOffset() throws -> UInt64 { throw IpcError.unimplemented }
-	func getBacklightSettingsEx() throws -> NnSettingsSystem_BacklightSettingsEx { throw IpcError.unimplemented }
-	func setBacklightSettingsEx(_ _0: NnSettingsSystem_BacklightSettingsEx) throws { throw IpcError.unimplemented }
-	func getHeadphoneVolumeWarningCount() throws -> UInt32 { throw IpcError.unimplemented }
-	func setHeadphoneVolumeWarningCount(_ _0: UInt32) throws { throw IpcError.unimplemented }
-	func getBluetoothAfhEnableFlag() throws -> UInt8 { throw IpcError.unimplemented }
-	func setBluetoothAfhEnableFlag(_ _0: UInt8) throws { throw IpcError.unimplemented }
-	func getBluetoothBoostEnableFlag() throws -> UInt8 { throw IpcError.unimplemented }
-	func setBluetoothBoostEnableFlag(_ _0: UInt8) throws { throw IpcError.unimplemented }
-	func getInRepairProcessEnableFlag() throws -> UInt8 { throw IpcError.unimplemented }
-	func setInRepairProcessEnableFlag(_ _0: UInt8) throws { throw IpcError.unimplemented }
-	func getHeadphoneVolumeUpdateFlag() throws -> UInt8 { throw IpcError.unimplemented }
-	func setHeadphoneVolumeUpdateFlag(_ _0: UInt8) throws { throw IpcError.unimplemented }
-	func needsToUpdateHeadphoneVolume(_ _0: UInt8) throws -> (UInt8, UInt8, Int8) { throw IpcError.unimplemented }
-	func getPushNotificationActivityModeOnSleep() throws -> UInt32 { throw IpcError.unimplemented }
-	func setPushNotificationActivityModeOnSleep(_ _0: UInt32) throws { throw IpcError.unimplemented }
-	func getServiceDiscoveryControlSettings() throws -> NnSettingsSystem_ServiceDiscoveryControlSettings { throw IpcError.unimplemented }
-	func setServiceDiscoveryControlSettings(_ _0: NnSettingsSystem_ServiceDiscoveryControlSettings) throws { throw IpcError.unimplemented }
-	func getErrorReportSharePermission() throws -> UInt32 { throw IpcError.unimplemented }
-	func setErrorReportSharePermission(_ _0: UInt32) throws { throw IpcError.unimplemented }
-	func getAppletLaunchFlags() throws -> Any? { throw IpcError.unimplemented }
-	func setAppletLaunchFlags(_ _0: Any?) throws { throw IpcError.unimplemented }
-	func getConsoleSixAxisSensorAccelerationBias() throws -> NnSettingsSystem_ConsoleSixAxisSensorAccelerationBias { throw IpcError.unimplemented }
-	func setConsoleSixAxisSensorAccelerationBias(_ _0: NnSettingsSystem_ConsoleSixAxisSensorAccelerationBias) throws { throw IpcError.unimplemented }
-	func getConsoleSixAxisSensorAngularVelocityBias() throws -> NnSettingsSystem_ConsoleSixAxisSensorAngularVelocityBias { throw IpcError.unimplemented }
-	func setConsoleSixAxisSensorAngularVelocityBias(_ _0: NnSettingsSystem_ConsoleSixAxisSensorAngularVelocityBias) throws { throw IpcError.unimplemented }
-	func getConsoleSixAxisSensorAccelerationGain() throws -> NnSettingsSystem_ConsoleSixAxisSensorAccelerationGain { throw IpcError.unimplemented }
-	func setConsoleSixAxisSensorAccelerationGain(_ _0: NnSettingsSystem_ConsoleSixAxisSensorAccelerationGain) throws { throw IpcError.unimplemented }
-	func getConsoleSixAxisSensorAngularVelocityGain() throws -> NnSettingsSystem_ConsoleSixAxisSensorAngularVelocityGain { throw IpcError.unimplemented }
-	func setConsoleSixAxisSensorAngularVelocityGain(_ _0: NnSettingsSystem_ConsoleSixAxisSensorAngularVelocityGain) throws { throw IpcError.unimplemented }
-	func getKeyboardLayout() throws -> UInt32 { throw IpcError.unimplemented }
-	func setKeyboardLayout(_ _0: UInt32) throws { throw IpcError.unimplemented }
-	func getWebInspectorFlag() throws -> UInt8 { throw IpcError.unimplemented }
-	func getAllowedSslHosts(_ _0: Buffer<NnSettingsSystem_AllowedSslHost>) throws -> UInt32 { throw IpcError.unimplemented }
-	func getHostFsMountPoint(_ _0: Buffer<NnSettingsSystem_HostFsMountPoint>) throws { throw IpcError.unimplemented }
-	func getRequiresRunRepairTimeReviser(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func setRequiresRunRepairTimeReviser(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func setBlePairingSettings(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func getBlePairingSettings(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func getConsoleSixAxisSensorAngularVelocityTimeBias(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func setConsoleSixAxisSensorAngularVelocityTimeBias(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func getConsoleSixAxisSensorAngularAcceleration(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func setConsoleSixAxisSensorAngularAcceleration(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func getRebootlessSystemUpdateVersion(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
+	func setLanguageCode(_ _0: NnSettings_LanguageCode) throws { throw IpcError.unimplemented(name: "nn::settings::nn::settings::ISystemSettingsServer#SetLanguageCode") }
+	func setNetworkSettings(_ _0: Buffer<NnSettingsSystem_NetworkSettings>) throws { throw IpcError.unimplemented(name: "nn::settings::nn::settings::ISystemSettingsServer#SetNetworkSettings") }
+	func getNetworkSettings(_ _0: Buffer<NnSettingsSystem_NetworkSettings>) throws -> UInt32 { throw IpcError.unimplemented(name: "nn::settings::nn::settings::ISystemSettingsServer#GetNetworkSettings") }
+	func getFirmwareVersion(_ _0: Buffer<NnSettingsSystem_FirmwareVersion>) throws { throw IpcError.unimplemented(name: "nn::settings::nn::settings::ISystemSettingsServer#GetFirmwareVersion") }
+	func getFirmwareVersion2(_ _0: Buffer<NnSettingsSystem_FirmwareVersion>) throws { throw IpcError.unimplemented(name: "nn::settings::nn::settings::ISystemSettingsServer#GetFirmwareVersion2") }
+	func getFirmwareVersionDigest(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::settings::nn::settings::ISystemSettingsServer#GetFirmwareVersionDigest") }
+	func getLockScreenFlag() throws -> UInt8 { throw IpcError.unimplemented(name: "nn::settings::nn::settings::ISystemSettingsServer#GetLockScreenFlag") }
+	func setLockScreenFlag(_ _0: UInt8) throws { throw IpcError.unimplemented(name: "nn::settings::nn::settings::ISystemSettingsServer#SetLockScreenFlag") }
+	func getBacklightSettings() throws -> NnSettingsSystem_BacklightSettings { throw IpcError.unimplemented(name: "nn::settings::nn::settings::ISystemSettingsServer#GetBacklightSettings") }
+	func setBacklightSettings(_ _0: NnSettingsSystem_BacklightSettings) throws { throw IpcError.unimplemented(name: "nn::settings::nn::settings::ISystemSettingsServer#SetBacklightSettings") }
+	func setBluetoothDevicesSettings(_ _0: Buffer<NnSettingsSystem_BluetoothDevicesSettings>) throws { throw IpcError.unimplemented(name: "nn::settings::nn::settings::ISystemSettingsServer#SetBluetoothDevicesSettings") }
+	func getBluetoothDevicesSettings(_ _0: Buffer<NnSettingsSystem_BluetoothDevicesSettings>) throws -> UInt32 { throw IpcError.unimplemented(name: "nn::settings::nn::settings::ISystemSettingsServer#GetBluetoothDevicesSettings") }
+	func getExternalSteadyClockSourceId() throws -> NnUtil_Uuid { throw IpcError.unimplemented(name: "nn::settings::nn::settings::ISystemSettingsServer#GetExternalSteadyClockSourceId") }
+	func setExternalSteadyClockSourceId(_ _0: NnUtil_Uuid) throws { throw IpcError.unimplemented(name: "nn::settings::nn::settings::ISystemSettingsServer#SetExternalSteadyClockSourceId") }
+	func getUserSystemClockContext() throws -> NnTime_SystemClockContext { throw IpcError.unimplemented(name: "nn::settings::nn::settings::ISystemSettingsServer#GetUserSystemClockContext") }
+	func setUserSystemClockContext(_ _0: NnTime_SystemClockContext) throws { throw IpcError.unimplemented(name: "nn::settings::nn::settings::ISystemSettingsServer#SetUserSystemClockContext") }
+	func getAccountSettings() throws -> NnSettingsSystem_AccountSettings { throw IpcError.unimplemented(name: "nn::settings::nn::settings::ISystemSettingsServer#GetAccountSettings") }
+	func setAccountSettings(_ _0: NnSettingsSystem_AccountSettings) throws { throw IpcError.unimplemented(name: "nn::settings::nn::settings::ISystemSettingsServer#SetAccountSettings") }
+	func getAudioVolume(_ _0: UInt32) throws -> NnSettingsSystem_AudioVolume { throw IpcError.unimplemented(name: "nn::settings::nn::settings::ISystemSettingsServer#GetAudioVolume") }
+	func setAudioVolume(_ _0: NnSettingsSystem_AudioVolume, _ _1: UInt32) throws { throw IpcError.unimplemented(name: "nn::settings::nn::settings::ISystemSettingsServer#SetAudioVolume") }
+	func getEulaVersions(_ _0: Buffer<NnSettingsSystem_EulaVersion>) throws -> UInt32 { throw IpcError.unimplemented(name: "nn::settings::nn::settings::ISystemSettingsServer#GetEulaVersions") }
+	func setEulaVersions(_ _0: Buffer<NnSettingsSystem_EulaVersion>) throws { throw IpcError.unimplemented(name: "nn::settings::nn::settings::ISystemSettingsServer#SetEulaVersions") }
+	func getColorSetId() throws -> UInt32 { throw IpcError.unimplemented(name: "nn::settings::nn::settings::ISystemSettingsServer#GetColorSetId") }
+	func setColorSetId(_ _0: UInt32) throws { throw IpcError.unimplemented(name: "nn::settings::nn::settings::ISystemSettingsServer#SetColorSetId") }
+	func getConsoleInformationUploadFlag() throws -> UInt8 { throw IpcError.unimplemented(name: "nn::settings::nn::settings::ISystemSettingsServer#GetConsoleInformationUploadFlag") }
+	func setConsoleInformationUploadFlag(_ _0: UInt8) throws { throw IpcError.unimplemented(name: "nn::settings::nn::settings::ISystemSettingsServer#SetConsoleInformationUploadFlag") }
+	func getAutomaticApplicationDownloadFlag() throws -> UInt8 { throw IpcError.unimplemented(name: "nn::settings::nn::settings::ISystemSettingsServer#GetAutomaticApplicationDownloadFlag") }
+	func setAutomaticApplicationDownloadFlag(_ _0: UInt8) throws { throw IpcError.unimplemented(name: "nn::settings::nn::settings::ISystemSettingsServer#SetAutomaticApplicationDownloadFlag") }
+	func getNotificationSettings() throws -> NnSettingsSystem_NotificationSettings { throw IpcError.unimplemented(name: "nn::settings::nn::settings::ISystemSettingsServer#GetNotificationSettings") }
+	func setNotificationSettings(_ _0: NnSettingsSystem_NotificationSettings) throws { throw IpcError.unimplemented(name: "nn::settings::nn::settings::ISystemSettingsServer#SetNotificationSettings") }
+	func getAccountNotificationSettings(_ _0: Buffer<NnSettingsSystem_AccountNotificationSettings>) throws -> UInt32 { throw IpcError.unimplemented(name: "nn::settings::nn::settings::ISystemSettingsServer#GetAccountNotificationSettings") }
+	func setAccountNotificationSettings(_ _0: Buffer<NnSettingsSystem_AccountNotificationSettings>) throws { throw IpcError.unimplemented(name: "nn::settings::nn::settings::ISystemSettingsServer#SetAccountNotificationSettings") }
+	func getVibrationMasterVolume() throws -> Float32 { throw IpcError.unimplemented(name: "nn::settings::nn::settings::ISystemSettingsServer#GetVibrationMasterVolume") }
+	func setVibrationMasterVolume(_ _0: Float32) throws { throw IpcError.unimplemented(name: "nn::settings::nn::settings::ISystemSettingsServer#SetVibrationMasterVolume") }
+	func getSettingsItemValueSize(_ _0: Buffer<NnSettings_SettingsName>, _ _1: Buffer<NnSettings_SettingsItemKey>) throws -> UInt64 { throw IpcError.unimplemented(name: "nn::settings::nn::settings::ISystemSettingsServer#GetSettingsItemValueSize") }
+	func getSettingsItemValue(_ _0: Buffer<NnSettings_SettingsName>, _ _1: Buffer<NnSettings_SettingsItemKey>, _ _2: Buffer<UInt8>) throws -> UInt64 { throw IpcError.unimplemented(name: "nn::settings::nn::settings::ISystemSettingsServer#GetSettingsItemValue") }
+	func getTvSettings() throws -> NnSettingsSystem_TvSettings { throw IpcError.unimplemented(name: "nn::settings::nn::settings::ISystemSettingsServer#GetTvSettings") }
+	func setTvSettings(_ _0: NnSettingsSystem_TvSettings) throws { throw IpcError.unimplemented(name: "nn::settings::nn::settings::ISystemSettingsServer#SetTvSettings") }
+	func getEdid(_ _0: Buffer<NnSettingsSystem_Edid>) throws { throw IpcError.unimplemented(name: "nn::settings::nn::settings::ISystemSettingsServer#GetEdid") }
+	func setEdid(_ _0: Buffer<NnSettingsSystem_Edid>) throws { throw IpcError.unimplemented(name: "nn::settings::nn::settings::ISystemSettingsServer#SetEdid") }
+	func getAudioOutputMode(_ _0: UInt32) throws -> UInt32 { throw IpcError.unimplemented(name: "nn::settings::nn::settings::ISystemSettingsServer#GetAudioOutputMode") }
+	func setAudioOutputMode(_ _0: UInt32, _ _1: UInt32) throws { throw IpcError.unimplemented(name: "nn::settings::nn::settings::ISystemSettingsServer#SetAudioOutputMode") }
+	func isForceMuteOnHeadphoneRemoved() throws -> UInt8 { throw IpcError.unimplemented(name: "nn::settings::nn::settings::ISystemSettingsServer#IsForceMuteOnHeadphoneRemoved") }
+	func setForceMuteOnHeadphoneRemoved(_ _0: UInt8) throws { throw IpcError.unimplemented(name: "nn::settings::nn::settings::ISystemSettingsServer#SetForceMuteOnHeadphoneRemoved") }
+	func getQuestFlag() throws -> UInt8 { throw IpcError.unimplemented(name: "nn::settings::nn::settings::ISystemSettingsServer#GetQuestFlag") }
+	func setQuestFlag(_ _0: UInt8) throws { throw IpcError.unimplemented(name: "nn::settings::nn::settings::ISystemSettingsServer#SetQuestFlag") }
+	func getDataDeletionSettings() throws -> NnSettingsSystem_DataDeletionSettings { throw IpcError.unimplemented(name: "nn::settings::nn::settings::ISystemSettingsServer#GetDataDeletionSettings") }
+	func setDataDeletionSettings(_ _0: NnSettingsSystem_DataDeletionSettings) throws { throw IpcError.unimplemented(name: "nn::settings::nn::settings::ISystemSettingsServer#SetDataDeletionSettings") }
+	func getInitialSystemAppletProgramId() throws -> NnNcm_ProgramId { throw IpcError.unimplemented(name: "nn::settings::nn::settings::ISystemSettingsServer#GetInitialSystemAppletProgramId") }
+	func getOverlayDispProgramId() throws -> NnNcm_ProgramId { throw IpcError.unimplemented(name: "nn::settings::nn::settings::ISystemSettingsServer#GetOverlayDispProgramId") }
+	func getDeviceTimeZoneLocationName() throws -> NnTime_LocationName { throw IpcError.unimplemented(name: "nn::settings::nn::settings::ISystemSettingsServer#GetDeviceTimeZoneLocationName") }
+	func setDeviceTimeZoneLocationName(_ _0: NnTime_LocationName) throws { throw IpcError.unimplemented(name: "nn::settings::nn::settings::ISystemSettingsServer#SetDeviceTimeZoneLocationName") }
+	func getWirelessCertificationFileSize() throws -> UInt64 { throw IpcError.unimplemented(name: "nn::settings::nn::settings::ISystemSettingsServer#GetWirelessCertificationFileSize") }
+	func getWirelessCertificationFile(_ _0: Buffer<UInt8>) throws -> UInt64 { throw IpcError.unimplemented(name: "nn::settings::nn::settings::ISystemSettingsServer#GetWirelessCertificationFile") }
+	func setRegionCode(_ _0: UInt32) throws { throw IpcError.unimplemented(name: "nn::settings::nn::settings::ISystemSettingsServer#SetRegionCode") }
+	func getNetworkSystemClockContext() throws -> NnTime_SystemClockContext { throw IpcError.unimplemented(name: "nn::settings::nn::settings::ISystemSettingsServer#GetNetworkSystemClockContext") }
+	func setNetworkSystemClockContext(_ _0: NnTime_SystemClockContext) throws { throw IpcError.unimplemented(name: "nn::settings::nn::settings::ISystemSettingsServer#SetNetworkSystemClockContext") }
+	func isUserSystemClockAutomaticCorrectionEnabled() throws -> UInt8 { throw IpcError.unimplemented(name: "nn::settings::nn::settings::ISystemSettingsServer#IsUserSystemClockAutomaticCorrectionEnabled") }
+	func setUserSystemClockAutomaticCorrectionEnabled(_ _0: UInt8) throws { throw IpcError.unimplemented(name: "nn::settings::nn::settings::ISystemSettingsServer#SetUserSystemClockAutomaticCorrectionEnabled") }
+	func getDebugModeFlag() throws -> UInt8 { throw IpcError.unimplemented(name: "nn::settings::nn::settings::ISystemSettingsServer#GetDebugModeFlag") }
+	func getPrimaryAlbumStorage() throws -> UInt32 { throw IpcError.unimplemented(name: "nn::settings::nn::settings::ISystemSettingsServer#GetPrimaryAlbumStorage") }
+	func setPrimaryAlbumStorage(_ _0: UInt32) throws { throw IpcError.unimplemented(name: "nn::settings::nn::settings::ISystemSettingsServer#SetPrimaryAlbumStorage") }
+	func getUsb30EnableFlag() throws -> UInt8 { throw IpcError.unimplemented(name: "nn::settings::nn::settings::ISystemSettingsServer#GetUsb30EnableFlag") }
+	func setUsb30EnableFlag(_ _0: UInt8) throws { throw IpcError.unimplemented(name: "nn::settings::nn::settings::ISystemSettingsServer#SetUsb30EnableFlag") }
+	func getBatteryLot() throws -> NnSettingsSystem_BatteryLot { throw IpcError.unimplemented(name: "nn::settings::nn::settings::ISystemSettingsServer#GetBatteryLot") }
+	func getSerialNumber() throws -> NnSettingsSystem_SerialNumber { throw IpcError.unimplemented(name: "nn::settings::nn::settings::ISystemSettingsServer#GetSerialNumber") }
+	func getNfcEnableFlag() throws -> UInt8 { throw IpcError.unimplemented(name: "nn::settings::nn::settings::ISystemSettingsServer#GetNfcEnableFlag") }
+	func setNfcEnableFlag(_ _0: UInt8) throws { throw IpcError.unimplemented(name: "nn::settings::nn::settings::ISystemSettingsServer#SetNfcEnableFlag") }
+	func getSleepSettings() throws -> NnSettingsSystem_SleepSettings { throw IpcError.unimplemented(name: "nn::settings::nn::settings::ISystemSettingsServer#GetSleepSettings") }
+	func setSleepSettings(_ _0: NnSettingsSystem_SleepSettings) throws { throw IpcError.unimplemented(name: "nn::settings::nn::settings::ISystemSettingsServer#SetSleepSettings") }
+	func getWirelessLanEnableFlag() throws -> UInt8 { throw IpcError.unimplemented(name: "nn::settings::nn::settings::ISystemSettingsServer#GetWirelessLanEnableFlag") }
+	func setWirelessLanEnableFlag(_ _0: UInt8) throws { throw IpcError.unimplemented(name: "nn::settings::nn::settings::ISystemSettingsServer#SetWirelessLanEnableFlag") }
+	func getInitialLaunchSettings() throws -> NnSettingsSystem_InitialLaunchSettings { throw IpcError.unimplemented(name: "nn::settings::nn::settings::ISystemSettingsServer#GetInitialLaunchSettings") }
+	func setInitialLaunchSettings(_ _0: NnSettingsSystem_InitialLaunchSettings) throws { throw IpcError.unimplemented(name: "nn::settings::nn::settings::ISystemSettingsServer#SetInitialLaunchSettings") }
+	func getDeviceNickName(_ _0: Buffer<NnSettingsSystem_DeviceNickName>) throws { throw IpcError.unimplemented(name: "nn::settings::nn::settings::ISystemSettingsServer#GetDeviceNickName") }
+	func setDeviceNickName(_ _0: Buffer<NnSettingsSystem_DeviceNickName>) throws { throw IpcError.unimplemented(name: "nn::settings::nn::settings::ISystemSettingsServer#SetDeviceNickName") }
+	func getProductModel() throws -> UInt32 { throw IpcError.unimplemented(name: "nn::settings::nn::settings::ISystemSettingsServer#GetProductModel") }
+	func getLdnChannel() throws -> UInt32 { throw IpcError.unimplemented(name: "nn::settings::nn::settings::ISystemSettingsServer#GetLdnChannel") }
+	func setLdnChannel(_ _0: UInt32) throws { throw IpcError.unimplemented(name: "nn::settings::nn::settings::ISystemSettingsServer#SetLdnChannel") }
+	func acquireTelemetryDirtyFlagEventHandle() throws -> KObject { throw IpcError.unimplemented(name: "nn::settings::nn::settings::ISystemSettingsServer#AcquireTelemetryDirtyFlagEventHandle") }
+	func getTelemetryDirtyFlags() throws -> Any? { throw IpcError.unimplemented(name: "nn::settings::nn::settings::ISystemSettingsServer#GetTelemetryDirtyFlags") }
+	func getPtmBatteryLot() throws -> NnSettingsFactory_BatteryLot { throw IpcError.unimplemented(name: "nn::settings::nn::settings::ISystemSettingsServer#GetPtmBatteryLot") }
+	func setPtmBatteryLot(_ _0: NnSettingsFactory_BatteryLot) throws { throw IpcError.unimplemented(name: "nn::settings::nn::settings::ISystemSettingsServer#SetPtmBatteryLot") }
+	func getPtmFuelGaugeParameter() throws -> NnSettingsSystem_PtmFuelGaugeParameter { throw IpcError.unimplemented(name: "nn::settings::nn::settings::ISystemSettingsServer#GetPtmFuelGaugeParameter") }
+	func setPtmFuelGaugeParameter(_ _0: NnSettingsSystem_PtmFuelGaugeParameter) throws { throw IpcError.unimplemented(name: "nn::settings::nn::settings::ISystemSettingsServer#SetPtmFuelGaugeParameter") }
+	func getBluetoothEnableFlag() throws -> UInt8 { throw IpcError.unimplemented(name: "nn::settings::nn::settings::ISystemSettingsServer#GetBluetoothEnableFlag") }
+	func setBluetoothEnableFlag(_ _0: UInt8) throws { throw IpcError.unimplemented(name: "nn::settings::nn::settings::ISystemSettingsServer#SetBluetoothEnableFlag") }
+	func getMiiAuthorId() throws -> NnUtil_Uuid { throw IpcError.unimplemented(name: "nn::settings::nn::settings::ISystemSettingsServer#GetMiiAuthorId") }
+	func setShutdownRtcValue(_ _0: UInt64) throws { throw IpcError.unimplemented(name: "nn::settings::nn::settings::ISystemSettingsServer#SetShutdownRtcValue") }
+	func getShutdownRtcValue() throws -> UInt64 { throw IpcError.unimplemented(name: "nn::settings::nn::settings::ISystemSettingsServer#GetShutdownRtcValue") }
+	func acquireFatalDirtyFlagEventHandle() throws -> KObject { throw IpcError.unimplemented(name: "nn::settings::nn::settings::ISystemSettingsServer#AcquireFatalDirtyFlagEventHandle") }
+	func getFatalDirtyFlags() throws -> Any? { throw IpcError.unimplemented(name: "nn::settings::nn::settings::ISystemSettingsServer#GetFatalDirtyFlags") }
+	func getAutoUpdateEnableFlag() throws -> UInt8 { throw IpcError.unimplemented(name: "nn::settings::nn::settings::ISystemSettingsServer#GetAutoUpdateEnableFlag") }
+	func setAutoUpdateEnableFlag(_ _0: UInt8) throws { throw IpcError.unimplemented(name: "nn::settings::nn::settings::ISystemSettingsServer#SetAutoUpdateEnableFlag") }
+	func getNxControllerSettings(_ _0: Buffer<NnSettingsSystem_NxControllerSettings>) throws -> UInt32 { throw IpcError.unimplemented(name: "nn::settings::nn::settings::ISystemSettingsServer#GetNxControllerSettings") }
+	func setNxControllerSettings(_ _0: Buffer<NnSettingsSystem_NxControllerSettings>) throws { throw IpcError.unimplemented(name: "nn::settings::nn::settings::ISystemSettingsServer#SetNxControllerSettings") }
+	func getBatteryPercentageFlag() throws -> UInt8 { throw IpcError.unimplemented(name: "nn::settings::nn::settings::ISystemSettingsServer#GetBatteryPercentageFlag") }
+	func setBatteryPercentageFlag(_ _0: UInt8) throws { throw IpcError.unimplemented(name: "nn::settings::nn::settings::ISystemSettingsServer#SetBatteryPercentageFlag") }
+	func getExternalRtcResetFlag() throws -> UInt8 { throw IpcError.unimplemented(name: "nn::settings::nn::settings::ISystemSettingsServer#GetExternalRtcResetFlag") }
+	func setExternalRtcResetFlag(_ _0: UInt8) throws { throw IpcError.unimplemented(name: "nn::settings::nn::settings::ISystemSettingsServer#SetExternalRtcResetFlag") }
+	func getUsbFullKeyEnableFlag() throws -> UInt8 { throw IpcError.unimplemented(name: "nn::settings::nn::settings::ISystemSettingsServer#GetUsbFullKeyEnableFlag") }
+	func setUsbFullKeyEnableFlag(_ _0: UInt8) throws { throw IpcError.unimplemented(name: "nn::settings::nn::settings::ISystemSettingsServer#SetUsbFullKeyEnableFlag") }
+	func setExternalSteadyClockInternalOffset(_ _0: UInt64) throws { throw IpcError.unimplemented(name: "nn::settings::nn::settings::ISystemSettingsServer#SetExternalSteadyClockInternalOffset") }
+	func getExternalSteadyClockInternalOffset() throws -> UInt64 { throw IpcError.unimplemented(name: "nn::settings::nn::settings::ISystemSettingsServer#GetExternalSteadyClockInternalOffset") }
+	func getBacklightSettingsEx() throws -> NnSettingsSystem_BacklightSettingsEx { throw IpcError.unimplemented(name: "nn::settings::nn::settings::ISystemSettingsServer#GetBacklightSettingsEx") }
+	func setBacklightSettingsEx(_ _0: NnSettingsSystem_BacklightSettingsEx) throws { throw IpcError.unimplemented(name: "nn::settings::nn::settings::ISystemSettingsServer#SetBacklightSettingsEx") }
+	func getHeadphoneVolumeWarningCount() throws -> UInt32 { throw IpcError.unimplemented(name: "nn::settings::nn::settings::ISystemSettingsServer#GetHeadphoneVolumeWarningCount") }
+	func setHeadphoneVolumeWarningCount(_ _0: UInt32) throws { throw IpcError.unimplemented(name: "nn::settings::nn::settings::ISystemSettingsServer#SetHeadphoneVolumeWarningCount") }
+	func getBluetoothAfhEnableFlag() throws -> UInt8 { throw IpcError.unimplemented(name: "nn::settings::nn::settings::ISystemSettingsServer#GetBluetoothAfhEnableFlag") }
+	func setBluetoothAfhEnableFlag(_ _0: UInt8) throws { throw IpcError.unimplemented(name: "nn::settings::nn::settings::ISystemSettingsServer#SetBluetoothAfhEnableFlag") }
+	func getBluetoothBoostEnableFlag() throws -> UInt8 { throw IpcError.unimplemented(name: "nn::settings::nn::settings::ISystemSettingsServer#GetBluetoothBoostEnableFlag") }
+	func setBluetoothBoostEnableFlag(_ _0: UInt8) throws { throw IpcError.unimplemented(name: "nn::settings::nn::settings::ISystemSettingsServer#SetBluetoothBoostEnableFlag") }
+	func getInRepairProcessEnableFlag() throws -> UInt8 { throw IpcError.unimplemented(name: "nn::settings::nn::settings::ISystemSettingsServer#GetInRepairProcessEnableFlag") }
+	func setInRepairProcessEnableFlag(_ _0: UInt8) throws { throw IpcError.unimplemented(name: "nn::settings::nn::settings::ISystemSettingsServer#SetInRepairProcessEnableFlag") }
+	func getHeadphoneVolumeUpdateFlag() throws -> UInt8 { throw IpcError.unimplemented(name: "nn::settings::nn::settings::ISystemSettingsServer#GetHeadphoneVolumeUpdateFlag") }
+	func setHeadphoneVolumeUpdateFlag(_ _0: UInt8) throws { throw IpcError.unimplemented(name: "nn::settings::nn::settings::ISystemSettingsServer#SetHeadphoneVolumeUpdateFlag") }
+	func needsToUpdateHeadphoneVolume(_ _0: UInt8) throws -> (UInt8, UInt8, Int8) { throw IpcError.unimplemented(name: "nn::settings::nn::settings::ISystemSettingsServer#NeedsToUpdateHeadphoneVolume") }
+	func getPushNotificationActivityModeOnSleep() throws -> UInt32 { throw IpcError.unimplemented(name: "nn::settings::nn::settings::ISystemSettingsServer#GetPushNotificationActivityModeOnSleep") }
+	func setPushNotificationActivityModeOnSleep(_ _0: UInt32) throws { throw IpcError.unimplemented(name: "nn::settings::nn::settings::ISystemSettingsServer#SetPushNotificationActivityModeOnSleep") }
+	func getServiceDiscoveryControlSettings() throws -> NnSettingsSystem_ServiceDiscoveryControlSettings { throw IpcError.unimplemented(name: "nn::settings::nn::settings::ISystemSettingsServer#GetServiceDiscoveryControlSettings") }
+	func setServiceDiscoveryControlSettings(_ _0: NnSettingsSystem_ServiceDiscoveryControlSettings) throws { throw IpcError.unimplemented(name: "nn::settings::nn::settings::ISystemSettingsServer#SetServiceDiscoveryControlSettings") }
+	func getErrorReportSharePermission() throws -> UInt32 { throw IpcError.unimplemented(name: "nn::settings::nn::settings::ISystemSettingsServer#GetErrorReportSharePermission") }
+	func setErrorReportSharePermission(_ _0: UInt32) throws { throw IpcError.unimplemented(name: "nn::settings::nn::settings::ISystemSettingsServer#SetErrorReportSharePermission") }
+	func getAppletLaunchFlags() throws -> Any? { throw IpcError.unimplemented(name: "nn::settings::nn::settings::ISystemSettingsServer#GetAppletLaunchFlags") }
+	func setAppletLaunchFlags(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::settings::nn::settings::ISystemSettingsServer#SetAppletLaunchFlags") }
+	func getConsoleSixAxisSensorAccelerationBias() throws -> NnSettingsSystem_ConsoleSixAxisSensorAccelerationBias { throw IpcError.unimplemented(name: "nn::settings::nn::settings::ISystemSettingsServer#GetConsoleSixAxisSensorAccelerationBias") }
+	func setConsoleSixAxisSensorAccelerationBias(_ _0: NnSettingsSystem_ConsoleSixAxisSensorAccelerationBias) throws { throw IpcError.unimplemented(name: "nn::settings::nn::settings::ISystemSettingsServer#SetConsoleSixAxisSensorAccelerationBias") }
+	func getConsoleSixAxisSensorAngularVelocityBias() throws -> NnSettingsSystem_ConsoleSixAxisSensorAngularVelocityBias { throw IpcError.unimplemented(name: "nn::settings::nn::settings::ISystemSettingsServer#GetConsoleSixAxisSensorAngularVelocityBias") }
+	func setConsoleSixAxisSensorAngularVelocityBias(_ _0: NnSettingsSystem_ConsoleSixAxisSensorAngularVelocityBias) throws { throw IpcError.unimplemented(name: "nn::settings::nn::settings::ISystemSettingsServer#SetConsoleSixAxisSensorAngularVelocityBias") }
+	func getConsoleSixAxisSensorAccelerationGain() throws -> NnSettingsSystem_ConsoleSixAxisSensorAccelerationGain { throw IpcError.unimplemented(name: "nn::settings::nn::settings::ISystemSettingsServer#GetConsoleSixAxisSensorAccelerationGain") }
+	func setConsoleSixAxisSensorAccelerationGain(_ _0: NnSettingsSystem_ConsoleSixAxisSensorAccelerationGain) throws { throw IpcError.unimplemented(name: "nn::settings::nn::settings::ISystemSettingsServer#SetConsoleSixAxisSensorAccelerationGain") }
+	func getConsoleSixAxisSensorAngularVelocityGain() throws -> NnSettingsSystem_ConsoleSixAxisSensorAngularVelocityGain { throw IpcError.unimplemented(name: "nn::settings::nn::settings::ISystemSettingsServer#GetConsoleSixAxisSensorAngularVelocityGain") }
+	func setConsoleSixAxisSensorAngularVelocityGain(_ _0: NnSettingsSystem_ConsoleSixAxisSensorAngularVelocityGain) throws { throw IpcError.unimplemented(name: "nn::settings::nn::settings::ISystemSettingsServer#SetConsoleSixAxisSensorAngularVelocityGain") }
+	func getKeyboardLayout() throws -> UInt32 { throw IpcError.unimplemented(name: "nn::settings::nn::settings::ISystemSettingsServer#GetKeyboardLayout") }
+	func setKeyboardLayout(_ _0: UInt32) throws { throw IpcError.unimplemented(name: "nn::settings::nn::settings::ISystemSettingsServer#SetKeyboardLayout") }
+	func getWebInspectorFlag() throws -> UInt8 { throw IpcError.unimplemented(name: "nn::settings::nn::settings::ISystemSettingsServer#GetWebInspectorFlag") }
+	func getAllowedSslHosts(_ _0: Buffer<NnSettingsSystem_AllowedSslHost>) throws -> UInt32 { throw IpcError.unimplemented(name: "nn::settings::nn::settings::ISystemSettingsServer#GetAllowedSslHosts") }
+	func getHostFsMountPoint(_ _0: Buffer<NnSettingsSystem_HostFsMountPoint>) throws { throw IpcError.unimplemented(name: "nn::settings::nn::settings::ISystemSettingsServer#GetHostFsMountPoint") }
+	func getRequiresRunRepairTimeReviser(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::settings::nn::settings::ISystemSettingsServer#GetRequiresRunRepairTimeReviser") }
+	func setRequiresRunRepairTimeReviser(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::settings::nn::settings::ISystemSettingsServer#SetRequiresRunRepairTimeReviser") }
+	func setBlePairingSettings(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::settings::nn::settings::ISystemSettingsServer#SetBlePairingSettings") }
+	func getBlePairingSettings(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::settings::nn::settings::ISystemSettingsServer#GetBlePairingSettings") }
+	func getConsoleSixAxisSensorAngularVelocityTimeBias(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::settings::nn::settings::ISystemSettingsServer#GetConsoleSixAxisSensorAngularVelocityTimeBias") }
+	func setConsoleSixAxisSensorAngularVelocityTimeBias(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::settings::nn::settings::ISystemSettingsServer#SetConsoleSixAxisSensorAngularVelocityTimeBias") }
+	func getConsoleSixAxisSensorAngularAcceleration(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::settings::nn::settings::ISystemSettingsServer#GetConsoleSixAxisSensorAngularAcceleration") }
+	func setConsoleSixAxisSensorAngularAcceleration(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::settings::nn::settings::ISystemSettingsServer#SetConsoleSixAxisSensorAngularAcceleration") }
+	func getRebootlessSystemUpdateVersion(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::settings::nn::settings::ISystemSettingsServer#GetRebootlessSystemUpdateVersion") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
@@ -842,9 +842,9 @@ class NnSettings_ISystemSettingsServer: IpcService {
 }
 
 class NnSettings_ISettingsItemKeyIterator: IpcService {
-	func goNext() throws { throw IpcError.unimplemented }
-	func getKeySize() throws -> UInt64 { throw IpcError.unimplemented }
-	func getKey(_ _0: Buffer<UInt8>) throws -> UInt64 { throw IpcError.unimplemented }
+	func goNext() throws { throw IpcError.unimplemented(name: "nn::settings::nn::settings::ISettingsItemKeyIterator#GoNext") }
+	func getKeySize() throws -> UInt64 { throw IpcError.unimplemented(name: "nn::settings::nn::settings::ISettingsItemKeyIterator#GetKeySize") }
+	func getKey(_ _0: Buffer<UInt8>) throws -> UInt64 { throw IpcError.unimplemented(name: "nn::settings::nn::settings::ISettingsItemKeyIterator#GetKey") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
@@ -870,15 +870,15 @@ class NnSettings_ISettingsItemKeyIterator: IpcService {
 }
 
 class NnSettings_ISettingsServer: IpcService {
-	func getLanguageCode() throws -> NnSettings_LanguageCode { throw IpcError.unimplemented }
-	func getAvailableLanguageCodes(_ _0: Buffer<NnSettings_LanguageCode>) throws -> UInt32 { throw IpcError.unimplemented }
-	func makeLanguageCode(_ _0: UInt32) throws -> NnSettings_LanguageCode { throw IpcError.unimplemented }
-	func getAvailableLanguageCodeCount() throws -> UInt32 { throw IpcError.unimplemented }
-	func getRegionCode() throws -> UInt32 { throw IpcError.unimplemented }
-	func getAvailableLanguageCodes2(_ _0: Buffer<NnSettings_LanguageCode>) throws -> UInt32 { throw IpcError.unimplemented }
-	func getAvailableLanguageCodeCount2() throws -> UInt32 { throw IpcError.unimplemented }
-	func getKeyCodeMap(_ _0: Buffer<NnKpr_KeyCodeMap>) throws { throw IpcError.unimplemented }
-	func getQuestFlag(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
+	func getLanguageCode() throws -> NnSettings_LanguageCode { throw IpcError.unimplemented(name: "nn::settings::nn::settings::ISettingsServer#GetLanguageCode") }
+	func getAvailableLanguageCodes(_ _0: Buffer<NnSettings_LanguageCode>) throws -> UInt32 { throw IpcError.unimplemented(name: "nn::settings::nn::settings::ISettingsServer#GetAvailableLanguageCodes") }
+	func makeLanguageCode(_ _0: UInt32) throws -> NnSettings_LanguageCode { throw IpcError.unimplemented(name: "nn::settings::nn::settings::ISettingsServer#MakeLanguageCode") }
+	func getAvailableLanguageCodeCount() throws -> UInt32 { throw IpcError.unimplemented(name: "nn::settings::nn::settings::ISettingsServer#GetAvailableLanguageCodeCount") }
+	func getRegionCode() throws -> UInt32 { throw IpcError.unimplemented(name: "nn::settings::nn::settings::ISettingsServer#GetRegionCode") }
+	func getAvailableLanguageCodes2(_ _0: Buffer<NnSettings_LanguageCode>) throws -> UInt32 { throw IpcError.unimplemented(name: "nn::settings::nn::settings::ISettingsServer#GetAvailableLanguageCodes2") }
+	func getAvailableLanguageCodeCount2() throws -> UInt32 { throw IpcError.unimplemented(name: "nn::settings::nn::settings::ISettingsServer#GetAvailableLanguageCodeCount2") }
+	func getKeyCodeMap(_ _0: Buffer<NnKpr_KeyCodeMap>) throws { throw IpcError.unimplemented(name: "nn::settings::nn::settings::ISettingsServer#GetKeyCodeMap") }
+	func getQuestFlag(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::settings::nn::settings::ISettingsServer#GetQuestFlag") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
@@ -935,14 +935,14 @@ class NnSettings_ISettingsServer: IpcService {
 }
 
 class NnSettings_IFirmwareDebugSettingsServer: IpcService {
-	func setSettingsItemValue(_ _0: Buffer<NnSettings_SettingsName>, _ _1: Buffer<NnSettings_SettingsItemKey>, _ _2: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func resetSettingsItemValue(_ _0: Buffer<NnSettings_SettingsName>, _ _1: Buffer<NnSettings_SettingsItemKey>) throws { throw IpcError.unimplemented }
-	func createSettingsItemKeyIterator(_ _0: Buffer<NnSettings_SettingsName>) throws -> NnSettings_ISettingsItemKeyIterator { throw IpcError.unimplemented }
-	func readSettings(_ _0: UInt32, _ _1: Buffer<UInt8>) throws -> UInt64 { throw IpcError.unimplemented }
-	func resetSettings(_ _0: UInt32) throws { throw IpcError.unimplemented }
-	func setWebInspectorFlag(_ _0: UInt8) throws { throw IpcError.unimplemented }
-	func setAllowedSslHosts(_ _0: Buffer<NnSettingsSystem_AllowedSslHost>) throws { throw IpcError.unimplemented }
-	func setHostFsMountPoint(_ _0: Buffer<NnSettingsSystem_HostFsMountPoint>) throws { throw IpcError.unimplemented }
+	func setSettingsItemValue(_ _0: Buffer<NnSettings_SettingsName>, _ _1: Buffer<NnSettings_SettingsItemKey>, _ _2: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::settings::nn::settings::IFirmwareDebugSettingsServer#SetSettingsItemValue") }
+	func resetSettingsItemValue(_ _0: Buffer<NnSettings_SettingsName>, _ _1: Buffer<NnSettings_SettingsItemKey>) throws { throw IpcError.unimplemented(name: "nn::settings::nn::settings::IFirmwareDebugSettingsServer#ResetSettingsItemValue") }
+	func createSettingsItemKeyIterator(_ _0: Buffer<NnSettings_SettingsName>) throws -> NnSettings_ISettingsItemKeyIterator { throw IpcError.unimplemented(name: "nn::settings::nn::settings::IFirmwareDebugSettingsServer#CreateSettingsItemKeyIterator") }
+	func readSettings(_ _0: UInt32, _ _1: Buffer<UInt8>) throws -> UInt64 { throw IpcError.unimplemented(name: "nn::settings::nn::settings::IFirmwareDebugSettingsServer#ReadSettings") }
+	func resetSettings(_ _0: UInt32) throws { throw IpcError.unimplemented(name: "nn::settings::nn::settings::IFirmwareDebugSettingsServer#ResetSettings") }
+	func setWebInspectorFlag(_ _0: UInt8) throws { throw IpcError.unimplemented(name: "nn::settings::nn::settings::IFirmwareDebugSettingsServer#SetWebInspectorFlag") }
+	func setAllowedSslHosts(_ _0: Buffer<NnSettingsSystem_AllowedSslHost>) throws { throw IpcError.unimplemented(name: "nn::settings::nn::settings::IFirmwareDebugSettingsServer#SetAllowedSslHosts") }
+	func setHostFsMountPoint(_ _0: Buffer<NnSettingsSystem_HostFsMountPoint>) throws { throw IpcError.unimplemented(name: "nn::settings::nn::settings::IFirmwareDebugSettingsServer#SetHostFsMountPoint") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
@@ -988,39 +988,39 @@ class NnSettings_IFirmwareDebugSettingsServer: IpcService {
 }
 
 class NnSettings_IFactorySettingsServer: IpcService {
-	func getBluetoothBdAddress() throws -> NnSettingsFactory_BdAddress { throw IpcError.unimplemented }
-	func getConfigurationId1() throws -> NnSettingsFactory_ConfigurationId1 { throw IpcError.unimplemented }
-	func getAccelerometerOffset() throws -> NnSettingsFactory_AccelerometerOffset { throw IpcError.unimplemented }
-	func getAccelerometerScale() throws -> NnSettingsFactory_AccelerometerScale { throw IpcError.unimplemented }
-	func getGyroscopeOffset() throws -> NnSettingsFactory_GyroscopeOffset { throw IpcError.unimplemented }
-	func getGyroscopeScale() throws -> NnSettingsFactory_GyroscopeScale { throw IpcError.unimplemented }
-	func getWirelessLanMacAddress() throws -> NnSettingsFactory_MacAddress { throw IpcError.unimplemented }
-	func getWirelessLanCountryCodeCount() throws -> UInt32 { throw IpcError.unimplemented }
-	func getWirelessLanCountryCodes(_ _0: Buffer<NnSettingsFactory_CountryCode>) throws -> UInt32 { throw IpcError.unimplemented }
-	func getSerialNumber() throws -> NnSettingsFactory_SerialNumber { throw IpcError.unimplemented }
-	func setInitialSystemAppletProgramId(_ _0: NnNcm_ProgramId) throws { throw IpcError.unimplemented }
-	func setOverlayDispProgramId(_ _0: NnNcm_ProgramId) throws { throw IpcError.unimplemented }
-	func getBatteryLot() throws -> NnSettingsFactory_BatteryLot { throw IpcError.unimplemented }
-	func getEciDeviceCertificate(_ _0: Buffer<NnSettingsFactory_EccB233DeviceCertificate>) throws { throw IpcError.unimplemented }
-	func getEticketDeviceCertificate(_ _0: Buffer<NnSettingsFactory_Rsa2048DeviceCertificate>) throws { throw IpcError.unimplemented }
-	func getSslKey(_ _0: Buffer<NnSettingsFactory_SslKey>) throws { throw IpcError.unimplemented }
-	func getSslCertificate(_ _0: Buffer<NnSettingsFactory_SslCertificate>) throws { throw IpcError.unimplemented }
-	func getGameCardKey(_ _0: Buffer<NnSettingsFactory_GameCardKey>) throws { throw IpcError.unimplemented }
-	func getGameCardCertificate(_ _0: Buffer<NnSettingsFactory_GameCardCertificate>) throws { throw IpcError.unimplemented }
-	func getEciDeviceKey() throws -> NnSettingsFactory_EccB233DeviceKey { throw IpcError.unimplemented }
-	func getEticketDeviceKey(_ _0: Buffer<NnSettingsFactory_Rsa2048DeviceKey>) throws { throw IpcError.unimplemented }
-	func getSpeakerParameter() throws -> NnSettingsFactory_SpeakerParameter { throw IpcError.unimplemented }
-	func getLcdVendorId() throws -> UInt32 { throw IpcError.unimplemented }
-	func getEciDeviceCertificate2(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func getEciDeviceKey2(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func getAmiiboKey(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func getAmiiboEcqvCertificate(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func getAmiiboEcdsaCertificate(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func getAmiiboEcqvBlsKey(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func getAmiiboEcqvBlsCertificate(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func getAmiiboEcqvBlsRootCertificate(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func getUnknownId(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func getUnknownId2(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
+	func getBluetoothBdAddress() throws -> NnSettingsFactory_BdAddress { throw IpcError.unimplemented(name: "nn::settings::nn::settings::IFactorySettingsServer#GetBluetoothBdAddress") }
+	func getConfigurationId1() throws -> NnSettingsFactory_ConfigurationId1 { throw IpcError.unimplemented(name: "nn::settings::nn::settings::IFactorySettingsServer#GetConfigurationId1") }
+	func getAccelerometerOffset() throws -> NnSettingsFactory_AccelerometerOffset { throw IpcError.unimplemented(name: "nn::settings::nn::settings::IFactorySettingsServer#GetAccelerometerOffset") }
+	func getAccelerometerScale() throws -> NnSettingsFactory_AccelerometerScale { throw IpcError.unimplemented(name: "nn::settings::nn::settings::IFactorySettingsServer#GetAccelerometerScale") }
+	func getGyroscopeOffset() throws -> NnSettingsFactory_GyroscopeOffset { throw IpcError.unimplemented(name: "nn::settings::nn::settings::IFactorySettingsServer#GetGyroscopeOffset") }
+	func getGyroscopeScale() throws -> NnSettingsFactory_GyroscopeScale { throw IpcError.unimplemented(name: "nn::settings::nn::settings::IFactorySettingsServer#GetGyroscopeScale") }
+	func getWirelessLanMacAddress() throws -> NnSettingsFactory_MacAddress { throw IpcError.unimplemented(name: "nn::settings::nn::settings::IFactorySettingsServer#GetWirelessLanMacAddress") }
+	func getWirelessLanCountryCodeCount() throws -> UInt32 { throw IpcError.unimplemented(name: "nn::settings::nn::settings::IFactorySettingsServer#GetWirelessLanCountryCodeCount") }
+	func getWirelessLanCountryCodes(_ _0: Buffer<NnSettingsFactory_CountryCode>) throws -> UInt32 { throw IpcError.unimplemented(name: "nn::settings::nn::settings::IFactorySettingsServer#GetWirelessLanCountryCodes") }
+	func getSerialNumber() throws -> NnSettingsFactory_SerialNumber { throw IpcError.unimplemented(name: "nn::settings::nn::settings::IFactorySettingsServer#GetSerialNumber") }
+	func setInitialSystemAppletProgramId(_ _0: NnNcm_ProgramId) throws { throw IpcError.unimplemented(name: "nn::settings::nn::settings::IFactorySettingsServer#SetInitialSystemAppletProgramId") }
+	func setOverlayDispProgramId(_ _0: NnNcm_ProgramId) throws { throw IpcError.unimplemented(name: "nn::settings::nn::settings::IFactorySettingsServer#SetOverlayDispProgramId") }
+	func getBatteryLot() throws -> NnSettingsFactory_BatteryLot { throw IpcError.unimplemented(name: "nn::settings::nn::settings::IFactorySettingsServer#GetBatteryLot") }
+	func getEciDeviceCertificate(_ _0: Buffer<NnSettingsFactory_EccB233DeviceCertificate>) throws { throw IpcError.unimplemented(name: "nn::settings::nn::settings::IFactorySettingsServer#GetEciDeviceCertificate") }
+	func getEticketDeviceCertificate(_ _0: Buffer<NnSettingsFactory_Rsa2048DeviceCertificate>) throws { throw IpcError.unimplemented(name: "nn::settings::nn::settings::IFactorySettingsServer#GetEticketDeviceCertificate") }
+	func getSslKey(_ _0: Buffer<NnSettingsFactory_SslKey>) throws { throw IpcError.unimplemented(name: "nn::settings::nn::settings::IFactorySettingsServer#GetSslKey") }
+	func getSslCertificate(_ _0: Buffer<NnSettingsFactory_SslCertificate>) throws { throw IpcError.unimplemented(name: "nn::settings::nn::settings::IFactorySettingsServer#GetSslCertificate") }
+	func getGameCardKey(_ _0: Buffer<NnSettingsFactory_GameCardKey>) throws { throw IpcError.unimplemented(name: "nn::settings::nn::settings::IFactorySettingsServer#GetGameCardKey") }
+	func getGameCardCertificate(_ _0: Buffer<NnSettingsFactory_GameCardCertificate>) throws { throw IpcError.unimplemented(name: "nn::settings::nn::settings::IFactorySettingsServer#GetGameCardCertificate") }
+	func getEciDeviceKey() throws -> NnSettingsFactory_EccB233DeviceKey { throw IpcError.unimplemented(name: "nn::settings::nn::settings::IFactorySettingsServer#GetEciDeviceKey") }
+	func getEticketDeviceKey(_ _0: Buffer<NnSettingsFactory_Rsa2048DeviceKey>) throws { throw IpcError.unimplemented(name: "nn::settings::nn::settings::IFactorySettingsServer#GetEticketDeviceKey") }
+	func getSpeakerParameter() throws -> NnSettingsFactory_SpeakerParameter { throw IpcError.unimplemented(name: "nn::settings::nn::settings::IFactorySettingsServer#GetSpeakerParameter") }
+	func getLcdVendorId() throws -> UInt32 { throw IpcError.unimplemented(name: "nn::settings::nn::settings::IFactorySettingsServer#GetLcdVendorId") }
+	func getEciDeviceCertificate2(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::settings::nn::settings::IFactorySettingsServer#GetEciDeviceCertificate2") }
+	func getEciDeviceKey2(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::settings::nn::settings::IFactorySettingsServer#GetEciDeviceKey2") }
+	func getAmiiboKey(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::settings::nn::settings::IFactorySettingsServer#GetAmiiboKey") }
+	func getAmiiboEcqvCertificate(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::settings::nn::settings::IFactorySettingsServer#GetAmiiboEcqvCertificate") }
+	func getAmiiboEcdsaCertificate(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::settings::nn::settings::IFactorySettingsServer#GetAmiiboEcdsaCertificate") }
+	func getAmiiboEcqvBlsKey(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::settings::nn::settings::IFactorySettingsServer#GetAmiiboEcqvBlsKey") }
+	func getAmiiboEcqvBlsCertificate(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::settings::nn::settings::IFactorySettingsServer#GetAmiiboEcqvBlsCertificate") }
+	func getAmiiboEcqvBlsRootCertificate(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::settings::nn::settings::IFactorySettingsServer#GetAmiiboEcqvBlsRootCertificate") }
+	func getUnknownId(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::settings::nn::settings::IFactorySettingsServer#GetUnknownId") }
+	func getUnknownId2(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::settings::nn::settings::IFactorySettingsServer#GetUnknownId2") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {

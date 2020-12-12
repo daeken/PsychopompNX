@@ -1,7 +1,7 @@
 typealias NnAccountDetail_Uuid = [UInt8]
 
 class NnAccountDetail_ISessionObject: IpcService {
-	func dummy() throws { throw IpcError.unimplemented }
+	func dummy() throws { throw IpcError.unimplemented(name: "nn::account::detail::nn::account::detail::ISessionObject#Dummy") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
@@ -17,10 +17,10 @@ class NnAccountDetail_ISessionObject: IpcService {
 }
 
 class NnAccountDetail_IAsyncContext: IpcService {
-	func getSystemEvent() throws -> KObject { throw IpcError.unimplemented }
-	func cancel() throws { throw IpcError.unimplemented }
-	func hasDone() throws -> UInt8 { throw IpcError.unimplemented }
-	func getResult() throws { throw IpcError.unimplemented }
+	func getSystemEvent() throws -> KObject { throw IpcError.unimplemented(name: "nn::account::detail::nn::account::detail::IAsyncContext#GetSystemEvent") }
+	func cancel() throws { throw IpcError.unimplemented(name: "nn::account::detail::nn::account::detail::IAsyncContext#Cancel") }
+	func hasDone() throws -> UInt8 { throw IpcError.unimplemented(name: "nn::account::detail::nn::account::detail::IAsyncContext#HasDone") }
+	func getResult() throws { throw IpcError.unimplemented(name: "nn::account::detail::nn::account::detail::IAsyncContext#GetResult") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
@@ -50,7 +50,7 @@ class NnAccountDetail_IAsyncContext: IpcService {
 }
 
 class NnAccountDetail_INotifier: IpcService {
-	func getSystemEvent() throws -> KObject { throw IpcError.unimplemented }
+	func getSystemEvent() throws -> KObject { throw IpcError.unimplemented(name: "nn::account::detail::nn::account::detail::INotifier#GetSystemEvent") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {

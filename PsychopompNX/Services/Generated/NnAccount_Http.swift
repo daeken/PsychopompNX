@@ -1,9 +1,9 @@
 class NnAccountHttp_IOAuthProcedure: IpcService {
-	func prepareAsync() throws -> NnAccountDetail_IAsyncContext { throw IpcError.unimplemented }
-	func getRequest(_ _0: Buffer<NnAccount_RequestUrl>, _ _1: Buffer<NnAccount_CallbackUri>) throws { throw IpcError.unimplemented }
-	func applyResponse(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func applyResponseAsync(_ _0: Buffer<UInt8>) throws -> NnAccountDetail_IAsyncContext { throw IpcError.unimplemented }
-	func suspend() throws -> NnAccountDetail_Uuid { throw IpcError.unimplemented }
+	func prepareAsync() throws -> NnAccountDetail_IAsyncContext { throw IpcError.unimplemented(name: "nn::account::http::nn::account::http::IOAuthProcedure#PrepareAsync") }
+	func getRequest(_ _0: Buffer<NnAccount_RequestUrl>, _ _1: Buffer<NnAccount_CallbackUri>) throws { throw IpcError.unimplemented(name: "nn::account::http::nn::account::http::IOAuthProcedure#GetRequest") }
+	func applyResponse(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::account::http::nn::account::http::IOAuthProcedure#ApplyResponse") }
+	func applyResponseAsync(_ _0: Buffer<UInt8>) throws -> NnAccountDetail_IAsyncContext { throw IpcError.unimplemented(name: "nn::account::http::nn::account::http::IOAuthProcedure#ApplyResponseAsync") }
+	func suspend() throws -> NnAccountDetail_Uuid { throw IpcError.unimplemented(name: "nn::account::http::nn::account::http::IOAuthProcedure#Suspend") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {

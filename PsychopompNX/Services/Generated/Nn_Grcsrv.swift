@@ -1,12 +1,12 @@
 typealias NnGrcsrv_GameMovieId = [UInt8]
 
 class NnGrcsrv_IContinuousRecorder: IpcService {
-	func unknown1() throws { throw IpcError.unimplemented }
-	func unknown2() throws { throw IpcError.unimplemented }
-	func unknown10() throws -> KObject { throw IpcError.unimplemented }
-	func unknown11() throws { throw IpcError.unimplemented }
-	func unknown12() throws { throw IpcError.unimplemented }
-	func unknown13(_ _0: Any?) throws { throw IpcError.unimplemented }
+	func unknown1() throws { throw IpcError.unimplemented(name: "nn::grcsrv::nn::grcsrv::IContinuousRecorder#Unknown1") }
+	func unknown2() throws { throw IpcError.unimplemented(name: "nn::grcsrv::nn::grcsrv::IContinuousRecorder#Unknown2") }
+	func unknown10() throws -> KObject { throw IpcError.unimplemented(name: "nn::grcsrv::nn::grcsrv::IContinuousRecorder#Unknown10") }
+	func unknown11() throws { throw IpcError.unimplemented(name: "nn::grcsrv::nn::grcsrv::IContinuousRecorder#Unknown11") }
+	func unknown12() throws { throw IpcError.unimplemented(name: "nn::grcsrv::nn::grcsrv::IContinuousRecorder#Unknown12") }
+	func unknown13(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::grcsrv::nn::grcsrv::IContinuousRecorder#Unknown13") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
@@ -43,10 +43,10 @@ class NnGrcsrv_IContinuousRecorder: IpcService {
 }
 
 class NnGrcsrv_IGameMovieTrimmer: IpcService {
-	func beginTrim(_ _0: UInt32, _ _1: UInt32, _ _2: NnGrcsrv_GameMovieId) throws { throw IpcError.unimplemented }
-	func endTrim() throws -> NnGrcsrv_GameMovieId { throw IpcError.unimplemented }
-	func getNotTrimmingEvent() throws -> KObject { throw IpcError.unimplemented }
-	func setThumbnailRgba(_ _0: UInt32, _ _1: UInt32, _ _2: Buffer<UInt8>) throws { throw IpcError.unimplemented }
+	func beginTrim(_ _0: UInt32, _ _1: UInt32, _ _2: NnGrcsrv_GameMovieId) throws { throw IpcError.unimplemented(name: "nn::grcsrv::nn::grcsrv::IGameMovieTrimmer#BeginTrim") }
+	func endTrim() throws -> NnGrcsrv_GameMovieId { throw IpcError.unimplemented(name: "nn::grcsrv::nn::grcsrv::IGameMovieTrimmer#EndTrim") }
+	func getNotTrimmingEvent() throws -> KObject { throw IpcError.unimplemented(name: "nn::grcsrv::nn::grcsrv::IGameMovieTrimmer#GetNotTrimmingEvent") }
+	func setThumbnailRgba(_ _0: UInt32, _ _1: UInt32, _ _2: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::grcsrv::nn::grcsrv::IGameMovieTrimmer#SetThumbnailRgba") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
@@ -77,8 +77,8 @@ class NnGrcsrv_IGameMovieTrimmer: IpcService {
 }
 
 class NnGrcsrv_IGrcService: IpcService {
-	func openContinuousRecorder(_ _0: Any?, _ _1: KObject) throws -> NnGrcsrv_IContinuousRecorder { throw IpcError.unimplemented }
-	func openGameMovieTrimmer(_ _0: Any?, _ _1: KObject) throws -> NnGrcsrv_IGameMovieTrimmer { throw IpcError.unimplemented }
+	func openContinuousRecorder(_ _0: Any?, _ _1: KObject) throws -> NnGrcsrv_IContinuousRecorder { throw IpcError.unimplemented(name: "nn::grcsrv::nn::grcsrv::IGrcService#OpenContinuousRecorder") }
+	func openGameMovieTrimmer(_ _0: Any?, _ _1: KObject) throws -> NnGrcsrv_IGameMovieTrimmer { throw IpcError.unimplemented(name: "nn::grcsrv::nn::grcsrv::IGrcService#OpenGameMovieTrimmer") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {

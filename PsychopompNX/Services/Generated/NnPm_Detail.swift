@@ -1,5 +1,5 @@
 class NnPmDetail_IInformationInterface: IpcService {
-	func getTitleId(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
+	func getTitleId(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::pm::detail::nn::pm::detail::IInformationInterface#GetTitleId") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
@@ -15,8 +15,8 @@ class NnPmDetail_IInformationInterface: IpcService {
 }
 
 class NnPmDetail_IBootModeInterface: IpcService {
-	func getBootMode() throws -> Any? { throw IpcError.unimplemented }
-	func setMaintenanceBoot() throws { throw IpcError.unimplemented }
+	func getBootMode() throws -> Any? { throw IpcError.unimplemented(name: "nn::pm::detail::nn::pm::detail::IBootModeInterface#GetBootMode") }
+	func setMaintenanceBoot() throws { throw IpcError.unimplemented(name: "nn::pm::detail::nn::pm::detail::IBootModeInterface#SetMaintenanceBoot") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
@@ -36,16 +36,16 @@ class NnPmDetail_IBootModeInterface: IpcService {
 }
 
 class NnPmDetail_IShellInterface: IpcService {
-	func launchProcess(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func terminateProcessByPid(_ _0: Any?) throws { throw IpcError.unimplemented }
-	func terminateProcessByTitleId(_ _0: Any?) throws { throw IpcError.unimplemented }
-	func getProcessEventWaiter() throws -> KObject { throw IpcError.unimplemented }
-	func getProcessEventType() throws -> Any? { throw IpcError.unimplemented }
-	func finalizeDeadProcess(_ _0: Any?) throws { throw IpcError.unimplemented }
-	func clearProcessNotificationFlag(_ _0: Any?) throws { throw IpcError.unimplemented }
-	func notifyBootFinished() throws { throw IpcError.unimplemented }
-	func getApplicationPid() throws -> Any? { throw IpcError.unimplemented }
-	func boostSystemMemoryResourceLimit(_ _0: Any?) throws { throw IpcError.unimplemented }
+	func launchProcess(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::pm::detail::nn::pm::detail::IShellInterface#LaunchProcess") }
+	func terminateProcessByPid(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::pm::detail::nn::pm::detail::IShellInterface#TerminateProcessByPid") }
+	func terminateProcessByTitleId(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::pm::detail::nn::pm::detail::IShellInterface#TerminateProcessByTitleId") }
+	func getProcessEventWaiter() throws -> KObject { throw IpcError.unimplemented(name: "nn::pm::detail::nn::pm::detail::IShellInterface#GetProcessEventWaiter") }
+	func getProcessEventType() throws -> Any? { throw IpcError.unimplemented(name: "nn::pm::detail::nn::pm::detail::IShellInterface#GetProcessEventType") }
+	func finalizeDeadProcess(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::pm::detail::nn::pm::detail::IShellInterface#FinalizeDeadProcess") }
+	func clearProcessNotificationFlag(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::pm::detail::nn::pm::detail::IShellInterface#ClearProcessNotificationFlag") }
+	func notifyBootFinished() throws { throw IpcError.unimplemented(name: "nn::pm::detail::nn::pm::detail::IShellInterface#NotifyBootFinished") }
+	func getApplicationPid() throws -> Any? { throw IpcError.unimplemented(name: "nn::pm::detail::nn::pm::detail::IShellInterface#GetApplicationPid") }
+	func boostSystemMemoryResourceLimit(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::pm::detail::nn::pm::detail::IShellInterface#BoostSystemMemoryResourceLimit") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
@@ -98,13 +98,13 @@ class NnPmDetail_IShellInterface: IpcService {
 }
 
 class NnPmDetail_IDebugMonitorInterface: IpcService {
-	func isDebugMode(_ _0: Any?, _ _1: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented }
-	func getDebugProcesses(_ _0: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented }
-	func getTitlePid(_ _0: Any?) throws { throw IpcError.unimplemented }
-	func enableDebugForTitleId(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func getApplicationPid(_ _0: Any?) throws -> KObject { throw IpcError.unimplemented }
-	func enableDebugForApplication() throws -> Any? { throw IpcError.unimplemented }
-	func disableDebug() throws -> KObject { throw IpcError.unimplemented }
+	func isDebugMode(_ _0: Any?, _ _1: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented(name: "nn::pm::detail::nn::pm::detail::IDebugMonitorInterface#IsDebugMode") }
+	func getDebugProcesses(_ _0: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented(name: "nn::pm::detail::nn::pm::detail::IDebugMonitorInterface#GetDebugProcesses") }
+	func getTitlePid(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::pm::detail::nn::pm::detail::IDebugMonitorInterface#GetTitlePid") }
+	func enableDebugForTitleId(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::pm::detail::nn::pm::detail::IDebugMonitorInterface#EnableDebugForTitleId") }
+	func getApplicationPid(_ _0: Any?) throws -> KObject { throw IpcError.unimplemented(name: "nn::pm::detail::nn::pm::detail::IDebugMonitorInterface#GetApplicationPid") }
+	func enableDebugForApplication() throws -> Any? { throw IpcError.unimplemented(name: "nn::pm::detail::nn::pm::detail::IDebugMonitorInterface#EnableDebugForApplication") }
+	func disableDebug() throws -> KObject { throw IpcError.unimplemented(name: "nn::pm::detail::nn::pm::detail::IDebugMonitorInterface#DisableDebug") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {

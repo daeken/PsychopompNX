@@ -1,16 +1,16 @@
 class NnUsbDs_IDsService: IpcService {
-	func bindDevice(_ complexId: UInt32) throws { throw IpcError.unimplemented }
-	func bindClientProcess(_ _0: KObject) throws { throw IpcError.unimplemented }
-	func registerInterface(_ address: UInt8) throws -> NnUsbDs_IDsInterface { throw IpcError.unimplemented }
-	func getStateChangeEvent() throws -> KObject { throw IpcError.unimplemented }
-	func getState() throws -> UInt32 { throw IpcError.unimplemented }
-	func clearDeviceData() throws { throw IpcError.unimplemented }
-	func addUsbStringDescriptor(_ string_descriptor: Buffer<UInt8>) throws -> UInt8 { throw IpcError.unimplemented }
-	func deleteUsbStringDescriptor(_ index: UInt8) throws { throw IpcError.unimplemented }
-	func setUsbDeviceDescriptor(_ speed_mode: NnUsb_Usb_Device_Speed, _ descriptor: Buffer<NnUsb_Usb_Device_Descriptor>) throws { throw IpcError.unimplemented }
-	func setBinaryObjectStore(_ _0: Buffer<NnUsb_Usb_Bos_Descriptor>) throws { throw IpcError.unimplemented }
-	func enable() throws { throw IpcError.unimplemented }
-	func disable() throws { throw IpcError.unimplemented }
+	func bindDevice(_ complexId: UInt32) throws { throw IpcError.unimplemented(name: "nn::usb::ds::nn::usb::ds::IDsService#BindDevice") }
+	func bindClientProcess(_ _0: KObject) throws { throw IpcError.unimplemented(name: "nn::usb::ds::nn::usb::ds::IDsService#BindClientProcess") }
+	func registerInterface(_ address: UInt8) throws -> NnUsbDs_IDsInterface { throw IpcError.unimplemented(name: "nn::usb::ds::nn::usb::ds::IDsService#RegisterInterface") }
+	func getStateChangeEvent() throws -> KObject { throw IpcError.unimplemented(name: "nn::usb::ds::nn::usb::ds::IDsService#GetStateChangeEvent") }
+	func getState() throws -> UInt32 { throw IpcError.unimplemented(name: "nn::usb::ds::nn::usb::ds::IDsService#GetState") }
+	func clearDeviceData() throws { throw IpcError.unimplemented(name: "nn::usb::ds::nn::usb::ds::IDsService#ClearDeviceData") }
+	func addUsbStringDescriptor(_ string_descriptor: Buffer<UInt8>) throws -> UInt8 { throw IpcError.unimplemented(name: "nn::usb::ds::nn::usb::ds::IDsService#AddUsbStringDescriptor") }
+	func deleteUsbStringDescriptor(_ index: UInt8) throws { throw IpcError.unimplemented(name: "nn::usb::ds::nn::usb::ds::IDsService#DeleteUsbStringDescriptor") }
+	func setUsbDeviceDescriptor(_ speed_mode: NnUsb_Usb_Device_Speed, _ descriptor: Buffer<NnUsb_Usb_Device_Descriptor>) throws { throw IpcError.unimplemented(name: "nn::usb::ds::nn::usb::ds::IDsService#SetUsbDeviceDescriptor") }
+	func setBinaryObjectStore(_ _0: Buffer<NnUsb_Usb_Bos_Descriptor>) throws { throw IpcError.unimplemented(name: "nn::usb::ds::nn::usb::ds::IDsService#SetBinaryObjectStore") }
+	func enable() throws { throw IpcError.unimplemented(name: "nn::usb::ds::nn::usb::ds::IDsService#Enable") }
+	func disable() throws { throw IpcError.unimplemented(name: "nn::usb::ds::nn::usb::ds::IDsService#Disable") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
@@ -74,12 +74,12 @@ class NnUsbDs_IDsService: IpcService {
 }
 
 class NnUsbDs_IDsEndpoint: IpcService {
-	func postBufferAsync(_ size: UInt32, _ buffer: UInt64) throws -> UInt32 { throw IpcError.unimplemented }
-	func cancel() throws { throw IpcError.unimplemented }
-	func getCompletionEvent() throws -> KObject { throw IpcError.unimplemented }
-	func getReportData() throws -> (entries: NnUsb_Usb_Report_Entry, report_count: UInt32) { throw IpcError.unimplemented }
-	func stall() throws { throw IpcError.unimplemented }
-	func setZlt(_ _0: Bool) throws { throw IpcError.unimplemented }
+	func postBufferAsync(_ size: UInt32, _ buffer: UInt64) throws -> UInt32 { throw IpcError.unimplemented(name: "nn::usb::ds::nn::usb::ds::IDsEndpoint#PostBufferAsync") }
+	func cancel() throws { throw IpcError.unimplemented(name: "nn::usb::ds::nn::usb::ds::IDsEndpoint#Cancel") }
+	func getCompletionEvent() throws -> KObject { throw IpcError.unimplemented(name: "nn::usb::ds::nn::usb::ds::IDsEndpoint#GetCompletionEvent") }
+	func getReportData() throws -> (entries: NnUsb_Usb_Report_Entry, report_count: UInt32) { throw IpcError.unimplemented(name: "nn::usb::ds::nn::usb::ds::IDsEndpoint#GetReportData") }
+	func stall() throws { throw IpcError.unimplemented(name: "nn::usb::ds::nn::usb::ds::IDsEndpoint#Stall") }
+	func setZlt(_ _0: Bool) throws { throw IpcError.unimplemented(name: "nn::usb::ds::nn::usb::ds::IDsEndpoint#SetZlt") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
@@ -122,19 +122,19 @@ class NnUsbDs_IDsEndpoint: IpcService {
 }
 
 class NnUsbDs_IDsInterface: IpcService {
-	func registerEndpoint(_ address: UInt8) throws -> NnUsbDs_IDsEndpoint { throw IpcError.unimplemented }
-	func getSetupEvent() throws -> KObject { throw IpcError.unimplemented }
-	func getSetupPacket(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func enableInterface() throws { throw IpcError.unimplemented }
-	func disableInterface() throws { throw IpcError.unimplemented }
-	func ctrlInPostBufferAsync(_ size: UInt32, _ buffer: UInt64) throws -> UInt32 { throw IpcError.unimplemented }
-	func ctrlOutPostBufferAsync(_ size: UInt32, _ buffer: UInt64) throws -> UInt32 { throw IpcError.unimplemented }
-	func getCtrlInCompletionEvent() throws -> KObject { throw IpcError.unimplemented }
-	func getCtrlInReportData() throws -> (entries: NnUsb_Usb_Report_Entry, report_count: UInt32) { throw IpcError.unimplemented }
-	func getCtrlOutCompletionEvent() throws -> KObject { throw IpcError.unimplemented }
-	func getCtrlOutReportData() throws -> (entries: NnUsb_Usb_Report_Entry, report_count: UInt32) { throw IpcError.unimplemented }
-	func stallCtrl() throws { throw IpcError.unimplemented }
-	func appendConfigurationData(_ interface_number: UInt8, _ speed_mode: NnUsb_Usb_Device_Speed, _ descriptor: Buffer<UInt8>) throws { throw IpcError.unimplemented }
+	func registerEndpoint(_ address: UInt8) throws -> NnUsbDs_IDsEndpoint { throw IpcError.unimplemented(name: "nn::usb::ds::nn::usb::ds::IDsInterface#RegisterEndpoint") }
+	func getSetupEvent() throws -> KObject { throw IpcError.unimplemented(name: "nn::usb::ds::nn::usb::ds::IDsInterface#GetSetupEvent") }
+	func getSetupPacket(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::usb::ds::nn::usb::ds::IDsInterface#GetSetupPacket") }
+	func enableInterface() throws { throw IpcError.unimplemented(name: "nn::usb::ds::nn::usb::ds::IDsInterface#EnableInterface") }
+	func disableInterface() throws { throw IpcError.unimplemented(name: "nn::usb::ds::nn::usb::ds::IDsInterface#DisableInterface") }
+	func ctrlInPostBufferAsync(_ size: UInt32, _ buffer: UInt64) throws -> UInt32 { throw IpcError.unimplemented(name: "nn::usb::ds::nn::usb::ds::IDsInterface#CtrlInPostBufferAsync") }
+	func ctrlOutPostBufferAsync(_ size: UInt32, _ buffer: UInt64) throws -> UInt32 { throw IpcError.unimplemented(name: "nn::usb::ds::nn::usb::ds::IDsInterface#CtrlOutPostBufferAsync") }
+	func getCtrlInCompletionEvent() throws -> KObject { throw IpcError.unimplemented(name: "nn::usb::ds::nn::usb::ds::IDsInterface#GetCtrlInCompletionEvent") }
+	func getCtrlInReportData() throws -> (entries: NnUsb_Usb_Report_Entry, report_count: UInt32) { throw IpcError.unimplemented(name: "nn::usb::ds::nn::usb::ds::IDsInterface#GetCtrlInReportData") }
+	func getCtrlOutCompletionEvent() throws -> KObject { throw IpcError.unimplemented(name: "nn::usb::ds::nn::usb::ds::IDsInterface#GetCtrlOutCompletionEvent") }
+	func getCtrlOutReportData() throws -> (entries: NnUsb_Usb_Report_Entry, report_count: UInt32) { throw IpcError.unimplemented(name: "nn::usb::ds::nn::usb::ds::IDsInterface#GetCtrlOutReportData") }
+	func stallCtrl() throws { throw IpcError.unimplemented(name: "nn::usb::ds::nn::usb::ds::IDsInterface#StallCtrl") }
+	func appendConfigurationData(_ interface_number: UInt8, _ speed_mode: NnUsb_Usb_Device_Speed, _ descriptor: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::usb::ds::nn::usb::ds::IDsInterface#AppendConfigurationData") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {

@@ -1,5 +1,5 @@
 class NnHtcTenv_IServiceManager: IpcService {
-	func getServiceInterface(_ _0: UInt64, _ _1: Pid) throws -> IpcService { throw IpcError.unimplemented }
+	func getServiceInterface(_ _0: UInt64, _ _1: Pid) throws -> IpcService { throw IpcError.unimplemented(name: "nn::htc::tenv::nn::htc::tenv::IServiceManager#GetServiceInterface") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
@@ -16,9 +16,9 @@ class NnHtcTenv_IServiceManager: IpcService {
 }
 
 class NnHtcTenv_IService: IpcService {
-	func getVariable(_ _0: [UInt8], _ _1: Buffer<UInt8>) throws -> UInt64 { throw IpcError.unimplemented }
-	func getVariableLength(_ _0: [UInt8]) throws -> UInt64 { throw IpcError.unimplemented }
-	func waitUntilVariableAvailable(_ _0: UInt64) throws { throw IpcError.unimplemented }
+	func getVariable(_ _0: [UInt8], _ _1: Buffer<UInt8>) throws -> UInt64 { throw IpcError.unimplemented(name: "nn::htc::tenv::nn::htc::tenv::IService#GetVariable") }
+	func getVariableLength(_ _0: [UInt8]) throws -> UInt64 { throw IpcError.unimplemented(name: "nn::htc::tenv::nn::htc::tenv::IService#GetVariableLength") }
+	func waitUntilVariableAvailable(_ _0: UInt64) throws { throw IpcError.unimplemented(name: "nn::htc::tenv::nn::htc::tenv::IService#WaitUntilVariableAvailable") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {

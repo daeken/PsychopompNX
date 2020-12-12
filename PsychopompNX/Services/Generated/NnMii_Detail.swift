@@ -1,18 +1,18 @@
 class NnMiiDetail_IImageDatabaseService: IpcService {
-	func initialize(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func reload(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func getCount(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func isEmpty(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func isFull(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func getAttribute(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func loadImage(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func addOrUpdateImage(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func deleteImages(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func deleteFile(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func destroyFile(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func importFile(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func exportFile(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func forceInitialize(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
+	func initialize(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::mii::detail::nn::mii::detail::IImageDatabaseService#Initialize") }
+	func reload(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::mii::detail::nn::mii::detail::IImageDatabaseService#Reload") }
+	func getCount(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::mii::detail::nn::mii::detail::IImageDatabaseService#GetCount") }
+	func isEmpty(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::mii::detail::nn::mii::detail::IImageDatabaseService#IsEmpty") }
+	func isFull(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::mii::detail::nn::mii::detail::IImageDatabaseService#IsFull") }
+	func getAttribute(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::mii::detail::nn::mii::detail::IImageDatabaseService#GetAttribute") }
+	func loadImage(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::mii::detail::nn::mii::detail::IImageDatabaseService#LoadImage") }
+	func addOrUpdateImage(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::mii::detail::nn::mii::detail::IImageDatabaseService#AddOrUpdateImage") }
+	func deleteImages(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::mii::detail::nn::mii::detail::IImageDatabaseService#DeleteImages") }
+	func deleteFile(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::mii::detail::nn::mii::detail::IImageDatabaseService#DeleteFile") }
+	func destroyFile(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::mii::detail::nn::mii::detail::IImageDatabaseService#DestroyFile") }
+	func importFile(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::mii::detail::nn::mii::detail::IImageDatabaseService#ImportFile") }
+	func exportFile(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::mii::detail::nn::mii::detail::IImageDatabaseService#ExportFile") }
+	func forceInitialize(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::mii::detail::nn::mii::detail::IImageDatabaseService#ForceInitialize") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
@@ -80,7 +80,7 @@ class NnMiiDetail_IImageDatabaseService: IpcService {
 }
 
 class NnMiiDetail_IStaticService: IpcService {
-	func getDatabaseService(_ _0: UInt32) throws -> NnMiiDetail_IDatabaseService { throw IpcError.unimplemented }
+	func getDatabaseService(_ _0: UInt32) throws -> NnMiiDetail_IDatabaseService { throw IpcError.unimplemented(name: "nn::mii::detail::nn::mii::detail::IStaticService#GetDatabaseService") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
@@ -97,30 +97,30 @@ class NnMiiDetail_IStaticService: IpcService {
 }
 
 class NnMiiDetail_IDatabaseService: IpcService {
-	func isUpdated(_ _0: UInt32) throws -> UInt8 { throw IpcError.unimplemented }
-	func isFullDatabase() throws -> UInt8 { throw IpcError.unimplemented }
-	func getCount(_ _0: UInt32) throws -> UInt32 { throw IpcError.unimplemented }
-	func get(_ _0: UInt32, _ _1: Buffer<NnMii_CharInfoElement>) throws -> UInt32 { throw IpcError.unimplemented }
-	func get1(_ _0: UInt32, _ _1: Buffer<NnMii_CharInfo>) throws -> UInt32 { throw IpcError.unimplemented }
-	func updateLatest(_ _0: NnMii_CharInfo, _ _1: UInt32) throws -> NnMii_CharInfo { throw IpcError.unimplemented }
-	func buildRandom(_ _0: UInt32, _ _1: UInt32, _ _2: UInt32) throws -> NnMii_CharInfo { throw IpcError.unimplemented }
-	func buildDefault(_ _0: UInt32) throws -> NnMii_CharInfo { throw IpcError.unimplemented }
-	func get2(_ _0: UInt32, _ _1: Buffer<NnMii_StoreDataElement>) throws -> UInt32 { throw IpcError.unimplemented }
-	func get3(_ _0: UInt32, _ _1: Buffer<NnMii_StoreData>) throws -> UInt32 { throw IpcError.unimplemented }
-	func updateLatest1(_ _0: NnMii_StoreData, _ _1: UInt32) throws -> NnMii_StoreData { throw IpcError.unimplemented }
-	func findIndex(_ _0: NnMii_CreateId, _ _1: UInt8) throws -> UInt32 { throw IpcError.unimplemented }
-	func move(_ _0: NnMii_CreateId, _ _1: UInt32) throws { throw IpcError.unimplemented }
-	func addOrReplace(_ _0: NnMii_StoreData) throws { throw IpcError.unimplemented }
-	func delete(_ _0: NnMii_CreateId) throws { throw IpcError.unimplemented }
-	func destroyFile() throws { throw IpcError.unimplemented }
-	func deleteFile() throws { throw IpcError.unimplemented }
-	func format() throws { throw IpcError.unimplemented }
-	func _import(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func export(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func isBrokenDatabaseWithClearFlag() throws -> UInt8 { throw IpcError.unimplemented }
-	func getIndex(_ _0: NnMii_CharInfo) throws -> UInt32 { throw IpcError.unimplemented }
-	func setInterfaceVersion(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func convert(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
+	func isUpdated(_ _0: UInt32) throws -> UInt8 { throw IpcError.unimplemented(name: "nn::mii::detail::nn::mii::detail::IDatabaseService#IsUpdated") }
+	func isFullDatabase() throws -> UInt8 { throw IpcError.unimplemented(name: "nn::mii::detail::nn::mii::detail::IDatabaseService#IsFullDatabase") }
+	func getCount(_ _0: UInt32) throws -> UInt32 { throw IpcError.unimplemented(name: "nn::mii::detail::nn::mii::detail::IDatabaseService#GetCount") }
+	func get(_ _0: UInt32, _ _1: Buffer<NnMii_CharInfoElement>) throws -> UInt32 { throw IpcError.unimplemented(name: "nn::mii::detail::nn::mii::detail::IDatabaseService#Get") }
+	func get1(_ _0: UInt32, _ _1: Buffer<NnMii_CharInfo>) throws -> UInt32 { throw IpcError.unimplemented(name: "nn::mii::detail::nn::mii::detail::IDatabaseService#Get1") }
+	func updateLatest(_ _0: NnMii_CharInfo, _ _1: UInt32) throws -> NnMii_CharInfo { throw IpcError.unimplemented(name: "nn::mii::detail::nn::mii::detail::IDatabaseService#UpdateLatest") }
+	func buildRandom(_ _0: UInt32, _ _1: UInt32, _ _2: UInt32) throws -> NnMii_CharInfo { throw IpcError.unimplemented(name: "nn::mii::detail::nn::mii::detail::IDatabaseService#BuildRandom") }
+	func buildDefault(_ _0: UInt32) throws -> NnMii_CharInfo { throw IpcError.unimplemented(name: "nn::mii::detail::nn::mii::detail::IDatabaseService#BuildDefault") }
+	func get2(_ _0: UInt32, _ _1: Buffer<NnMii_StoreDataElement>) throws -> UInt32 { throw IpcError.unimplemented(name: "nn::mii::detail::nn::mii::detail::IDatabaseService#Get2") }
+	func get3(_ _0: UInt32, _ _1: Buffer<NnMii_StoreData>) throws -> UInt32 { throw IpcError.unimplemented(name: "nn::mii::detail::nn::mii::detail::IDatabaseService#Get3") }
+	func updateLatest1(_ _0: NnMii_StoreData, _ _1: UInt32) throws -> NnMii_StoreData { throw IpcError.unimplemented(name: "nn::mii::detail::nn::mii::detail::IDatabaseService#UpdateLatest1") }
+	func findIndex(_ _0: NnMii_CreateId, _ _1: UInt8) throws -> UInt32 { throw IpcError.unimplemented(name: "nn::mii::detail::nn::mii::detail::IDatabaseService#FindIndex") }
+	func move(_ _0: NnMii_CreateId, _ _1: UInt32) throws { throw IpcError.unimplemented(name: "nn::mii::detail::nn::mii::detail::IDatabaseService#Move") }
+	func addOrReplace(_ _0: NnMii_StoreData) throws { throw IpcError.unimplemented(name: "nn::mii::detail::nn::mii::detail::IDatabaseService#AddOrReplace") }
+	func delete(_ _0: NnMii_CreateId) throws { throw IpcError.unimplemented(name: "nn::mii::detail::nn::mii::detail::IDatabaseService#Delete") }
+	func destroyFile() throws { throw IpcError.unimplemented(name: "nn::mii::detail::nn::mii::detail::IDatabaseService#DestroyFile") }
+	func deleteFile() throws { throw IpcError.unimplemented(name: "nn::mii::detail::nn::mii::detail::IDatabaseService#DeleteFile") }
+	func format() throws { throw IpcError.unimplemented(name: "nn::mii::detail::nn::mii::detail::IDatabaseService#Format") }
+	func _import(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::mii::detail::nn::mii::detail::IDatabaseService#Import") }
+	func export(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::mii::detail::nn::mii::detail::IDatabaseService#Export") }
+	func isBrokenDatabaseWithClearFlag() throws -> UInt8 { throw IpcError.unimplemented(name: "nn::mii::detail::nn::mii::detail::IDatabaseService#IsBrokenDatabaseWithClearFlag") }
+	func getIndex(_ _0: NnMii_CharInfo) throws -> UInt32 { throw IpcError.unimplemented(name: "nn::mii::detail::nn::mii::detail::IDatabaseService#GetIndex") }
+	func setInterfaceVersion(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::mii::detail::nn::mii::detail::IDatabaseService#SetInterfaceVersion") }
+	func convert(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::mii::detail::nn::mii::detail::IDatabaseService#Convert") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {

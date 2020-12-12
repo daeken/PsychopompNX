@@ -1,10 +1,10 @@
 class NnPwm_IChannelSession: IpcService {
-	func setPeriod(_ _0: UInt64) throws { throw IpcError.unimplemented }
-	func getPeriod() throws -> UInt64 { throw IpcError.unimplemented }
-	func setDuty(_ _0: UInt32) throws { throw IpcError.unimplemented }
-	func getDuty() throws -> UInt32 { throw IpcError.unimplemented }
-	func setEnabled(_ _0: UInt8) throws { throw IpcError.unimplemented }
-	func getEnabled() throws -> UInt8 { throw IpcError.unimplemented }
+	func setPeriod(_ _0: UInt64) throws { throw IpcError.unimplemented(name: "nn::pwm::nn::pwm::IChannelSession#SetPeriod") }
+	func getPeriod() throws -> UInt64 { throw IpcError.unimplemented(name: "nn::pwm::nn::pwm::IChannelSession#GetPeriod") }
+	func setDuty(_ _0: UInt32) throws { throw IpcError.unimplemented(name: "nn::pwm::nn::pwm::IChannelSession#SetDuty") }
+	func getDuty() throws -> UInt32 { throw IpcError.unimplemented(name: "nn::pwm::nn::pwm::IChannelSession#GetDuty") }
+	func setEnabled(_ _0: UInt8) throws { throw IpcError.unimplemented(name: "nn::pwm::nn::pwm::IChannelSession#SetEnabled") }
+	func getEnabled() throws -> UInt8 { throw IpcError.unimplemented(name: "nn::pwm::nn::pwm::IChannelSession#GetEnabled") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
@@ -43,8 +43,8 @@ class NnPwm_IChannelSession: IpcService {
 }
 
 class NnPwm_IManager: IpcService {
-	func openSessionForDev(_ _0: UInt32) throws -> NnPwm_IChannelSession { throw IpcError.unimplemented }
-	func openSession(_ _0: UInt32) throws -> NnPwm_IChannelSession { throw IpcError.unimplemented }
+	func openSessionForDev(_ _0: UInt32) throws -> NnPwm_IChannelSession { throw IpcError.unimplemented(name: "nn::pwm::nn::pwm::IManager#OpenSessionForDev") }
+	func openSession(_ _0: UInt32) throws -> NnPwm_IChannelSession { throw IpcError.unimplemented(name: "nn::pwm::nn::pwm::IManager#OpenSession") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {

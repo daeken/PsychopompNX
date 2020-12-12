@@ -1,33 +1,33 @@
 class NnLblDetail_ILblController: IpcService {
-	func unknown0() throws { throw IpcError.unimplemented }
-	func unknown1() throws { throw IpcError.unimplemented }
-	func unknown2(_ _0: Any?) throws { throw IpcError.unimplemented }
-	func unknown3() throws -> Any? { throw IpcError.unimplemented }
-	func unknown4() throws { throw IpcError.unimplemented }
-	func unknown5() throws -> Any? { throw IpcError.unimplemented }
-	func turnOnBacklight(_ _0: Any?) throws { throw IpcError.unimplemented }
-	func turnOffBacklight(_ _0: Any?) throws { throw IpcError.unimplemented }
-	func getBacklightStatus() throws -> Any? { throw IpcError.unimplemented }
-	func unknown9() throws { throw IpcError.unimplemented }
-	func unknown10() throws { throw IpcError.unimplemented }
-	func unknown11() throws -> Any? { throw IpcError.unimplemented }
-	func unknown12() throws { throw IpcError.unimplemented }
-	func unknown13() throws { throw IpcError.unimplemented }
-	func unknown14() throws -> Any? { throw IpcError.unimplemented }
-	func unknown15(_ _0: Any?) throws { throw IpcError.unimplemented }
-	func readRawLightSensor() throws -> Any? { throw IpcError.unimplemented }
-	func unknown17(_ _0: Any?) throws { throw IpcError.unimplemented }
-	func unknown18(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func unknown19(_ _0: Any?) throws { throw IpcError.unimplemented }
-	func unknown20() throws -> Any? { throw IpcError.unimplemented }
-	func unknown21(_ _0: Any?) throws { throw IpcError.unimplemented }
-	func unknown22() throws -> Any? { throw IpcError.unimplemented }
-	func unknown23() throws -> Any? { throw IpcError.unimplemented }
-	func unknown24(_ _0: Any?) throws { throw IpcError.unimplemented }
-	func unknown25() throws -> Any? { throw IpcError.unimplemented }
-	func enableVrMode() throws { throw IpcError.unimplemented }
-	func disableVrMode() throws { throw IpcError.unimplemented }
-	func getVrMode() throws -> Any? { throw IpcError.unimplemented }
+	func unknown0() throws { throw IpcError.unimplemented(name: "nn::lbl::detail::nn::lbl::detail::ILblController#Unknown0") }
+	func unknown1() throws { throw IpcError.unimplemented(name: "nn::lbl::detail::nn::lbl::detail::ILblController#Unknown1") }
+	func unknown2(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::lbl::detail::nn::lbl::detail::ILblController#Unknown2") }
+	func unknown3() throws -> Any? { throw IpcError.unimplemented(name: "nn::lbl::detail::nn::lbl::detail::ILblController#Unknown3") }
+	func unknown4() throws { throw IpcError.unimplemented(name: "nn::lbl::detail::nn::lbl::detail::ILblController#Unknown4") }
+	func unknown5() throws -> Any? { throw IpcError.unimplemented(name: "nn::lbl::detail::nn::lbl::detail::ILblController#Unknown5") }
+	func turnOnBacklight(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::lbl::detail::nn::lbl::detail::ILblController#TurnOnBacklight") }
+	func turnOffBacklight(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::lbl::detail::nn::lbl::detail::ILblController#TurnOffBacklight") }
+	func getBacklightStatus() throws -> Any? { throw IpcError.unimplemented(name: "nn::lbl::detail::nn::lbl::detail::ILblController#GetBacklightStatus") }
+	func unknown9() throws { throw IpcError.unimplemented(name: "nn::lbl::detail::nn::lbl::detail::ILblController#Unknown9") }
+	func unknown10() throws { throw IpcError.unimplemented(name: "nn::lbl::detail::nn::lbl::detail::ILblController#Unknown10") }
+	func unknown11() throws -> Any? { throw IpcError.unimplemented(name: "nn::lbl::detail::nn::lbl::detail::ILblController#Unknown11") }
+	func unknown12() throws { throw IpcError.unimplemented(name: "nn::lbl::detail::nn::lbl::detail::ILblController#Unknown12") }
+	func unknown13() throws { throw IpcError.unimplemented(name: "nn::lbl::detail::nn::lbl::detail::ILblController#Unknown13") }
+	func unknown14() throws -> Any? { throw IpcError.unimplemented(name: "nn::lbl::detail::nn::lbl::detail::ILblController#Unknown14") }
+	func unknown15(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::lbl::detail::nn::lbl::detail::ILblController#Unknown15") }
+	func readRawLightSensor() throws -> Any? { throw IpcError.unimplemented(name: "nn::lbl::detail::nn::lbl::detail::ILblController#ReadRawLightSensor") }
+	func unknown17(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::lbl::detail::nn::lbl::detail::ILblController#Unknown17") }
+	func unknown18(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::lbl::detail::nn::lbl::detail::ILblController#Unknown18") }
+	func unknown19(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::lbl::detail::nn::lbl::detail::ILblController#Unknown19") }
+	func unknown20() throws -> Any? { throw IpcError.unimplemented(name: "nn::lbl::detail::nn::lbl::detail::ILblController#Unknown20") }
+	func unknown21(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::lbl::detail::nn::lbl::detail::ILblController#Unknown21") }
+	func unknown22() throws -> Any? { throw IpcError.unimplemented(name: "nn::lbl::detail::nn::lbl::detail::ILblController#Unknown22") }
+	func unknown23() throws -> Any? { throw IpcError.unimplemented(name: "nn::lbl::detail::nn::lbl::detail::ILblController#Unknown23") }
+	func unknown24(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::lbl::detail::nn::lbl::detail::ILblController#Unknown24") }
+	func unknown25() throws -> Any? { throw IpcError.unimplemented(name: "nn::lbl::detail::nn::lbl::detail::ILblController#Unknown25") }
+	func enableVrMode() throws { throw IpcError.unimplemented(name: "nn::lbl::detail::nn::lbl::detail::ILblController#EnableVrMode") }
+	func disableVrMode() throws { throw IpcError.unimplemented(name: "nn::lbl::detail::nn::lbl::detail::ILblController#DisableVrMode") }
+	func getVrMode() throws -> Any? { throw IpcError.unimplemented(name: "nn::lbl::detail::nn::lbl::detail::ILblController#GetVrMode") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {

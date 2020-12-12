@@ -1,20 +1,20 @@
 class NnLr_ILocationResolver: IpcService {
-	func resolveProgramPath(_ _0: Any?, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func redirectProgramPath(_ _0: Any?, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func resolveApplicationControlPath(_ _0: Any?, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func resolveApplicationHtmlDocumentPath(_ _0: Any?, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func resolveDataPath(_ _0: Any?, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func redirectApplicationControlPath(_ _0: Any?, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func redirectApplicationHtmlDocumentPath(_ _0: Any?, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func resolveApplicationLegalInformationPath(_ _0: Any?, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func redirectApplicationLegalInformationPath(_ _0: Any?, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func refresh() throws { throw IpcError.unimplemented }
-	func setProgramNcaPath2(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func clearLocationResolver2(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func deleteProgramNcaPath(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func deleteControlNcaPath(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func deleteDocHtmlNcaPath(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func deleteInfoHtmlNcaPath(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
+	func resolveProgramPath(_ _0: Any?, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::lr::nn::lr::ILocationResolver#ResolveProgramPath") }
+	func redirectProgramPath(_ _0: Any?, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::lr::nn::lr::ILocationResolver#RedirectProgramPath") }
+	func resolveApplicationControlPath(_ _0: Any?, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::lr::nn::lr::ILocationResolver#ResolveApplicationControlPath") }
+	func resolveApplicationHtmlDocumentPath(_ _0: Any?, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::lr::nn::lr::ILocationResolver#ResolveApplicationHtmlDocumentPath") }
+	func resolveDataPath(_ _0: Any?, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::lr::nn::lr::ILocationResolver#ResolveDataPath") }
+	func redirectApplicationControlPath(_ _0: Any?, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::lr::nn::lr::ILocationResolver#RedirectApplicationControlPath") }
+	func redirectApplicationHtmlDocumentPath(_ _0: Any?, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::lr::nn::lr::ILocationResolver#RedirectApplicationHtmlDocumentPath") }
+	func resolveApplicationLegalInformationPath(_ _0: Any?, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::lr::nn::lr::ILocationResolver#ResolveApplicationLegalInformationPath") }
+	func redirectApplicationLegalInformationPath(_ _0: Any?, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::lr::nn::lr::ILocationResolver#RedirectApplicationLegalInformationPath") }
+	func refresh() throws { throw IpcError.unimplemented(name: "nn::lr::nn::lr::ILocationResolver#Refresh") }
+	func setProgramNcaPath2(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::lr::nn::lr::ILocationResolver#SetProgramNcaPath2") }
+	func clearLocationResolver2(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::lr::nn::lr::ILocationResolver#ClearLocationResolver2") }
+	func deleteProgramNcaPath(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::lr::nn::lr::ILocationResolver#DeleteProgramNcaPath") }
+	func deleteControlNcaPath(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::lr::nn::lr::ILocationResolver#DeleteControlNcaPath") }
+	func deleteDocHtmlNcaPath(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::lr::nn::lr::ILocationResolver#DeleteDocHtmlNcaPath") }
+	func deleteInfoHtmlNcaPath(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::lr::nn::lr::ILocationResolver#DeleteInfoHtmlNcaPath") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
@@ -90,14 +90,14 @@ class NnLr_ILocationResolver: IpcService {
 }
 
 class NnLr_IRegisteredLocationResolver: IpcService {
-	func resolveProgramPath(_ _0: Any?, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func registerProgramPath(_ _0: Any?, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func unregisterProgramPath(_ _0: Any?) throws { throw IpcError.unimplemented }
-	func redirectProgramPath(_ _0: Any?, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func resolveHtmlDocumentPath(_ _0: Any?, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func registerHtmlDocumentPath(_ _0: Any?, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func unregisterHtmlDocumentPath(_ _0: Any?) throws { throw IpcError.unimplemented }
-	func redirectHtmlDocumentPath(_ _0: Any?, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented }
+	func resolveProgramPath(_ _0: Any?, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::lr::nn::lr::IRegisteredLocationResolver#ResolveProgramPath") }
+	func registerProgramPath(_ _0: Any?, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::lr::nn::lr::IRegisteredLocationResolver#RegisterProgramPath") }
+	func unregisterProgramPath(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::lr::nn::lr::IRegisteredLocationResolver#UnregisterProgramPath") }
+	func redirectProgramPath(_ _0: Any?, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::lr::nn::lr::IRegisteredLocationResolver#RedirectProgramPath") }
+	func resolveHtmlDocumentPath(_ _0: Any?, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::lr::nn::lr::IRegisteredLocationResolver#ResolveHtmlDocumentPath") }
+	func registerHtmlDocumentPath(_ _0: Any?, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::lr::nn::lr::IRegisteredLocationResolver#RegisterHtmlDocumentPath") }
+	func unregisterHtmlDocumentPath(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::lr::nn::lr::IRegisteredLocationResolver#UnregisterHtmlDocumentPath") }
+	func redirectHtmlDocumentPath(_ _0: Any?, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::lr::nn::lr::IRegisteredLocationResolver#RedirectHtmlDocumentPath") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
@@ -141,9 +141,9 @@ class NnLr_IRegisteredLocationResolver: IpcService {
 }
 
 class NnLr_IAddOnContentLocationResolver: IpcService {
-	func resolveAddOnContentPath(_ _0: Any?, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func registerAddOnContentStorage(_ _0: Any?) throws { throw IpcError.unimplemented }
-	func unregisterAllAddOnContentPath() throws { throw IpcError.unimplemented }
+	func resolveAddOnContentPath(_ _0: Any?, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::lr::nn::lr::IAddOnContentLocationResolver#ResolveAddOnContentPath") }
+	func registerAddOnContentStorage(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::lr::nn::lr::IAddOnContentLocationResolver#RegisterAddOnContentStorage") }
+	func unregisterAllAddOnContentPath() throws { throw IpcError.unimplemented(name: "nn::lr::nn::lr::IAddOnContentLocationResolver#UnregisterAllAddOnContentPath") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
@@ -167,10 +167,10 @@ class NnLr_IAddOnContentLocationResolver: IpcService {
 }
 
 class NnLr_ILocationResolverManager: IpcService {
-	func openLocationResolver(_ _0: Any?) throws -> NnLr_ILocationResolver { throw IpcError.unimplemented }
-	func openRegisteredLocationResolver() throws -> NnLr_IRegisteredLocationResolver { throw IpcError.unimplemented }
-	func refreshLocationResolver(_ _0: Any?) throws { throw IpcError.unimplemented }
-	func openAddOnContentLocationResolver() throws -> NnLr_IAddOnContentLocationResolver { throw IpcError.unimplemented }
+	func openLocationResolver(_ _0: Any?) throws -> NnLr_ILocationResolver { throw IpcError.unimplemented(name: "nn::lr::nn::lr::ILocationResolverManager#OpenLocationResolver") }
+	func openRegisteredLocationResolver() throws -> NnLr_IRegisteredLocationResolver { throw IpcError.unimplemented(name: "nn::lr::nn::lr::ILocationResolverManager#OpenRegisteredLocationResolver") }
+	func refreshLocationResolver(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::lr::nn::lr::ILocationResolverManager#RefreshLocationResolver") }
+	func openAddOnContentLocationResolver() throws -> NnLr_IAddOnContentLocationResolver { throw IpcError.unimplemented(name: "nn::lr::nn::lr::ILocationResolverManager#OpenAddOnContentLocationResolver") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {

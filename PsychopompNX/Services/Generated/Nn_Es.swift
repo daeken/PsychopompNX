@@ -1,69 +1,69 @@
 class NnEs_IETicketService: IpcService {
-	func importTicket(_ _0: Buffer<UInt8>, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func importTicketCertificateSet(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func deleteTicket(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func deletePersonalizedTicket(_ _0: Any?) throws { throw IpcError.unimplemented }
-	func deleteAllCommonTicket() throws { throw IpcError.unimplemented }
-	func deleteAllPersonalizedTicket() throws { throw IpcError.unimplemented }
-	func deleteAllPersonalizedTicketEx(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func countCommonTicket() throws -> Any? { throw IpcError.unimplemented }
-	func countPersonalizedTicket() throws -> Any? { throw IpcError.unimplemented }
-	func listCommonTicket(_ _0: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented }
-	func listPersonalizedTicket(_ _0: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented }
-	func listMissingPersonalizedTicket(_ _0: Buffer<UInt8>, _ _1: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented }
-	func getCommonTicketSize(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func getPersonalizedTicketSize(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func getCommonTicketData(_ _0: Any?, _ _1: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented }
-	func getPersonalizedTicketData(_ _0: Any?, _ _1: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented }
-	func ownTicket(_ _0: Buffer<UInt8>, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func getTicketInfo(_ _0: Buffer<UInt8>, _ _1: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented }
-	func listLightTicketInfo(_ _0: Any?, _ _1: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented }
-	func signData(_ _0: Buffer<UInt8>, _ _1: Buffer<UInt8>, _ _2: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func getCommonTicketAndCertificateSize(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func getCommonTicketAndCertificateData(_ _0: Any?, _ _1: Buffer<UInt8>, _ _2: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented }
-	func importPrepurchaseRecord(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func deletePrepurchaseRecord(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func deleteAllPrepurchaseRecord() throws { throw IpcError.unimplemented }
-	func countPrepurchaseRecord() throws -> Any? { throw IpcError.unimplemented }
-	func listPrepurchaseRecord(_ _0: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented }
-	func listPrepurchaseRecordInfo(_ _0: Any?, _ _1: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented }
-	func unknown30(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func unknown31(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func unknown32(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func unknown33(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func unknown34(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func unknown35(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func unknown36(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func unknown501(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func unknown502(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func getTitleKey(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func unknown504(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func unknown508(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func unknown509(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func unknown510(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func unknown1001(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func unknown1002(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func unknown1003(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func unknown1004(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func unknown1005(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func unknown1006(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func unknown1007(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func unknown1009(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func unknown1010(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func unknown1011(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func unknown1012(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func unknown1013(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func unknown1014(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func unknown1015(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func unknown1016(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func unknown1501(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func unknown1502(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func unknown1503(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func unknown1504(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func unknown1505(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func unknown2000(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func unknown2501(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func unknown2502(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
+	func importTicket(_ _0: Buffer<UInt8>, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::es::nn::es::IETicketService#ImportTicket") }
+	func importTicketCertificateSet(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::es::nn::es::IETicketService#ImportTicketCertificateSet") }
+	func deleteTicket(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::es::nn::es::IETicketService#DeleteTicket") }
+	func deletePersonalizedTicket(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::es::nn::es::IETicketService#DeletePersonalizedTicket") }
+	func deleteAllCommonTicket() throws { throw IpcError.unimplemented(name: "nn::es::nn::es::IETicketService#DeleteAllCommonTicket") }
+	func deleteAllPersonalizedTicket() throws { throw IpcError.unimplemented(name: "nn::es::nn::es::IETicketService#DeleteAllPersonalizedTicket") }
+	func deleteAllPersonalizedTicketEx(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::es::nn::es::IETicketService#DeleteAllPersonalizedTicketEx") }
+	func countCommonTicket() throws -> Any? { throw IpcError.unimplemented(name: "nn::es::nn::es::IETicketService#CountCommonTicket") }
+	func countPersonalizedTicket() throws -> Any? { throw IpcError.unimplemented(name: "nn::es::nn::es::IETicketService#CountPersonalizedTicket") }
+	func listCommonTicket(_ _0: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented(name: "nn::es::nn::es::IETicketService#ListCommonTicket") }
+	func listPersonalizedTicket(_ _0: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented(name: "nn::es::nn::es::IETicketService#ListPersonalizedTicket") }
+	func listMissingPersonalizedTicket(_ _0: Buffer<UInt8>, _ _1: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented(name: "nn::es::nn::es::IETicketService#ListMissingPersonalizedTicket") }
+	func getCommonTicketSize(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::es::nn::es::IETicketService#GetCommonTicketSize") }
+	func getPersonalizedTicketSize(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::es::nn::es::IETicketService#GetPersonalizedTicketSize") }
+	func getCommonTicketData(_ _0: Any?, _ _1: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented(name: "nn::es::nn::es::IETicketService#GetCommonTicketData") }
+	func getPersonalizedTicketData(_ _0: Any?, _ _1: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented(name: "nn::es::nn::es::IETicketService#GetPersonalizedTicketData") }
+	func ownTicket(_ _0: Buffer<UInt8>, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::es::nn::es::IETicketService#OwnTicket") }
+	func getTicketInfo(_ _0: Buffer<UInt8>, _ _1: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented(name: "nn::es::nn::es::IETicketService#GetTicketInfo") }
+	func listLightTicketInfo(_ _0: Any?, _ _1: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented(name: "nn::es::nn::es::IETicketService#ListLightTicketInfo") }
+	func signData(_ _0: Buffer<UInt8>, _ _1: Buffer<UInt8>, _ _2: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::es::nn::es::IETicketService#SignData") }
+	func getCommonTicketAndCertificateSize(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::es::nn::es::IETicketService#GetCommonTicketAndCertificateSize") }
+	func getCommonTicketAndCertificateData(_ _0: Any?, _ _1: Buffer<UInt8>, _ _2: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented(name: "nn::es::nn::es::IETicketService#GetCommonTicketAndCertificateData") }
+	func importPrepurchaseRecord(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::es::nn::es::IETicketService#ImportPrepurchaseRecord") }
+	func deletePrepurchaseRecord(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::es::nn::es::IETicketService#DeletePrepurchaseRecord") }
+	func deleteAllPrepurchaseRecord() throws { throw IpcError.unimplemented(name: "nn::es::nn::es::IETicketService#DeleteAllPrepurchaseRecord") }
+	func countPrepurchaseRecord() throws -> Any? { throw IpcError.unimplemented(name: "nn::es::nn::es::IETicketService#CountPrepurchaseRecord") }
+	func listPrepurchaseRecord(_ _0: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented(name: "nn::es::nn::es::IETicketService#ListPrepurchaseRecord") }
+	func listPrepurchaseRecordInfo(_ _0: Any?, _ _1: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented(name: "nn::es::nn::es::IETicketService#ListPrepurchaseRecordInfo") }
+	func unknown30(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::es::nn::es::IETicketService#Unknown30") }
+	func unknown31(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::es::nn::es::IETicketService#Unknown31") }
+	func unknown32(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::es::nn::es::IETicketService#Unknown32") }
+	func unknown33(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::es::nn::es::IETicketService#Unknown33") }
+	func unknown34(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::es::nn::es::IETicketService#Unknown34") }
+	func unknown35(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::es::nn::es::IETicketService#Unknown35") }
+	func unknown36(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::es::nn::es::IETicketService#Unknown36") }
+	func unknown501(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::es::nn::es::IETicketService#Unknown501") }
+	func unknown502(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::es::nn::es::IETicketService#Unknown502") }
+	func getTitleKey(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::es::nn::es::IETicketService#GetTitleKey") }
+	func unknown504(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::es::nn::es::IETicketService#Unknown504") }
+	func unknown508(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::es::nn::es::IETicketService#Unknown508") }
+	func unknown509(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::es::nn::es::IETicketService#Unknown509") }
+	func unknown510(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::es::nn::es::IETicketService#Unknown510") }
+	func unknown1001(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::es::nn::es::IETicketService#Unknown1001") }
+	func unknown1002(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::es::nn::es::IETicketService#Unknown1002") }
+	func unknown1003(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::es::nn::es::IETicketService#Unknown1003") }
+	func unknown1004(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::es::nn::es::IETicketService#Unknown1004") }
+	func unknown1005(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::es::nn::es::IETicketService#Unknown1005") }
+	func unknown1006(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::es::nn::es::IETicketService#Unknown1006") }
+	func unknown1007(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::es::nn::es::IETicketService#Unknown1007") }
+	func unknown1009(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::es::nn::es::IETicketService#Unknown1009") }
+	func unknown1010(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::es::nn::es::IETicketService#Unknown1010") }
+	func unknown1011(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::es::nn::es::IETicketService#Unknown1011") }
+	func unknown1012(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::es::nn::es::IETicketService#Unknown1012") }
+	func unknown1013(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::es::nn::es::IETicketService#Unknown1013") }
+	func unknown1014(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::es::nn::es::IETicketService#Unknown1014") }
+	func unknown1015(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::es::nn::es::IETicketService#Unknown1015") }
+	func unknown1016(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::es::nn::es::IETicketService#Unknown1016") }
+	func unknown1501(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::es::nn::es::IETicketService#Unknown1501") }
+	func unknown1502(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::es::nn::es::IETicketService#Unknown1502") }
+	func unknown1503(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::es::nn::es::IETicketService#Unknown1503") }
+	func unknown1504(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::es::nn::es::IETicketService#Unknown1504") }
+	func unknown1505(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::es::nn::es::IETicketService#Unknown1505") }
+	func unknown2000(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::es::nn::es::IETicketService#Unknown2000") }
+	func unknown2501(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::es::nn::es::IETicketService#Unknown2501") }
+	func unknown2502(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::es::nn::es::IETicketService#Unknown2502") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {

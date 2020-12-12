@@ -1,50 +1,50 @@
 class NnNimDetail_INetworkInstallManager: IpcService {
-	func createSystemUpdateTask(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func destroySystemUpdateTask(_ _0: Any?) throws { throw IpcError.unimplemented }
-	func listSystemUpdateTask(_ _0: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented }
-	func requestSystemUpdateTaskRun(_ _0: Any?) throws -> (KObject, NnNimDetail_IAsyncResult) { throw IpcError.unimplemented }
-	func getSystemUpdateTaskInfo(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func commitSystemUpdateTask(_ _0: Any?) throws { throw IpcError.unimplemented }
-	func createNetworkInstallTask(_ _0: Any?, _ _1: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented }
-	func destroyNetworkInstallTask(_ _0: Any?) throws { throw IpcError.unimplemented }
-	func listNetworkInstallTask(_ _0: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented }
-	func requestNetworkInstallTaskRun(_ _0: Any?) throws -> (KObject, NnNimDetail_IAsyncResult) { throw IpcError.unimplemented }
-	func getNetworkInstallTaskInfo(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func commitNetworkInstallTask(_ _0: Any?) throws { throw IpcError.unimplemented }
-	func requestLatestSystemUpdateMeta() throws -> (KObject, NnNimDetail_IAsyncValue) { throw IpcError.unimplemented }
-	func listApplicationNetworkInstallTask(_ _0: Any?, _ _1: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented }
-	func listNetworkInstallTaskContentMeta(_ _0: Any?, _ _1: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented }
-	func requestLatestVersion(_ _0: Any?) throws -> (KObject, NnNimDetail_IAsyncValue) { throw IpcError.unimplemented }
-	func setNetworkInstallTaskAttribute(_ _0: Any?) throws { throw IpcError.unimplemented }
-	func addNetworkInstallTaskContentMeta(_ _0: Any?, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func getDownloadedSystemDataPath(_ _0: Any?, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func calculateNetworkInstallTaskRequiredSize(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func isExFatDriverIncluded(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func getBackgroundDownloadStressTaskInfo() throws -> Any? { throw IpcError.unimplemented }
-	func requestDeviceAuthenticationToken() throws -> (KObject, NnNimDetail_IAsyncValue) { throw IpcError.unimplemented }
-	func requestGameCardRegistrationStatus(_ _0: Any?, _ _1: Buffer<UInt8>, _ _2: Buffer<UInt8>) throws -> (KObject, NnNimDetail_IAsyncValue) { throw IpcError.unimplemented }
-	func requestRegisterGameCard(_ _0: Any?, _ _1: Buffer<UInt8>, _ _2: Buffer<UInt8>) throws -> (KObject, NnNimDetail_IAsyncResult) { throw IpcError.unimplemented }
-	func requestRegisterNotificationToken(_ _0: Any?) throws -> (KObject, NnNimDetail_IAsyncResult) { throw IpcError.unimplemented }
-	func requestDownloadTaskList(_ _0: Any?) throws -> (KObject, NnNimDetail_IAsyncData) { throw IpcError.unimplemented }
-	func requestApplicationControl(_ _0: Any?) throws -> (KObject, NnNimDetail_IAsyncValue) { throw IpcError.unimplemented }
-	func requestLatestApplicationControl(_ _0: Any?) throws -> (KObject, NnNimDetail_IAsyncValue) { throw IpcError.unimplemented }
-	func requestVersionList(_ _0: Any?) throws -> (KObject, NnNimDetail_IAsyncData) { throw IpcError.unimplemented }
-	func createApplyDeltaTask(_ _0: Any?, _ _1: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented }
-	func destroyApplyDeltaTask(_ _0: Any?) throws { throw IpcError.unimplemented }
-	func listApplicationApplyDeltaTask(_ _0: Any?, _ _1: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented }
-	func requestApplyDeltaTaskRun(_ _0: Any?) throws -> (KObject, NnNimDetail_IAsyncResult) { throw IpcError.unimplemented }
-	func getApplyDeltaTaskInfo(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func listApplyDeltaTask(_ _0: Any?, _ _1: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented }
-	func commitApplyDeltaTask(_ _0: Any?) throws { throw IpcError.unimplemented }
-	func calculateApplyDeltaTaskRequiredSize(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func prepareShutdown() throws { throw IpcError.unimplemented }
-	func listApplyDeltaTask2(_ _0: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented }
-	func clearNotEnoughSpaceStateOfApplyDeltaTask(_ _0: Any?) throws { throw IpcError.unimplemented }
-	func unknown42(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func unknown43() throws -> Any? { throw IpcError.unimplemented }
-	func unknown44(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func unknown45(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func unknown46() throws { throw IpcError.unimplemented }
+	func createSystemUpdateTask(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::nim::detail::nn::nim::detail::INetworkInstallManager#CreateSystemUpdateTask") }
+	func destroySystemUpdateTask(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::nim::detail::nn::nim::detail::INetworkInstallManager#DestroySystemUpdateTask") }
+	func listSystemUpdateTask(_ _0: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented(name: "nn::nim::detail::nn::nim::detail::INetworkInstallManager#ListSystemUpdateTask") }
+	func requestSystemUpdateTaskRun(_ _0: Any?) throws -> (KObject, NnNimDetail_IAsyncResult) { throw IpcError.unimplemented(name: "nn::nim::detail::nn::nim::detail::INetworkInstallManager#RequestSystemUpdateTaskRun") }
+	func getSystemUpdateTaskInfo(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::nim::detail::nn::nim::detail::INetworkInstallManager#GetSystemUpdateTaskInfo") }
+	func commitSystemUpdateTask(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::nim::detail::nn::nim::detail::INetworkInstallManager#CommitSystemUpdateTask") }
+	func createNetworkInstallTask(_ _0: Any?, _ _1: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented(name: "nn::nim::detail::nn::nim::detail::INetworkInstallManager#CreateNetworkInstallTask") }
+	func destroyNetworkInstallTask(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::nim::detail::nn::nim::detail::INetworkInstallManager#DestroyNetworkInstallTask") }
+	func listNetworkInstallTask(_ _0: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented(name: "nn::nim::detail::nn::nim::detail::INetworkInstallManager#ListNetworkInstallTask") }
+	func requestNetworkInstallTaskRun(_ _0: Any?) throws -> (KObject, NnNimDetail_IAsyncResult) { throw IpcError.unimplemented(name: "nn::nim::detail::nn::nim::detail::INetworkInstallManager#RequestNetworkInstallTaskRun") }
+	func getNetworkInstallTaskInfo(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::nim::detail::nn::nim::detail::INetworkInstallManager#GetNetworkInstallTaskInfo") }
+	func commitNetworkInstallTask(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::nim::detail::nn::nim::detail::INetworkInstallManager#CommitNetworkInstallTask") }
+	func requestLatestSystemUpdateMeta() throws -> (KObject, NnNimDetail_IAsyncValue) { throw IpcError.unimplemented(name: "nn::nim::detail::nn::nim::detail::INetworkInstallManager#RequestLatestSystemUpdateMeta") }
+	func listApplicationNetworkInstallTask(_ _0: Any?, _ _1: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented(name: "nn::nim::detail::nn::nim::detail::INetworkInstallManager#ListApplicationNetworkInstallTask") }
+	func listNetworkInstallTaskContentMeta(_ _0: Any?, _ _1: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented(name: "nn::nim::detail::nn::nim::detail::INetworkInstallManager#ListNetworkInstallTaskContentMeta") }
+	func requestLatestVersion(_ _0: Any?) throws -> (KObject, NnNimDetail_IAsyncValue) { throw IpcError.unimplemented(name: "nn::nim::detail::nn::nim::detail::INetworkInstallManager#RequestLatestVersion") }
+	func setNetworkInstallTaskAttribute(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::nim::detail::nn::nim::detail::INetworkInstallManager#SetNetworkInstallTaskAttribute") }
+	func addNetworkInstallTaskContentMeta(_ _0: Any?, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::nim::detail::nn::nim::detail::INetworkInstallManager#AddNetworkInstallTaskContentMeta") }
+	func getDownloadedSystemDataPath(_ _0: Any?, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::nim::detail::nn::nim::detail::INetworkInstallManager#GetDownloadedSystemDataPath") }
+	func calculateNetworkInstallTaskRequiredSize(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::nim::detail::nn::nim::detail::INetworkInstallManager#CalculateNetworkInstallTaskRequiredSize") }
+	func isExFatDriverIncluded(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::nim::detail::nn::nim::detail::INetworkInstallManager#IsExFatDriverIncluded") }
+	func getBackgroundDownloadStressTaskInfo() throws -> Any? { throw IpcError.unimplemented(name: "nn::nim::detail::nn::nim::detail::INetworkInstallManager#GetBackgroundDownloadStressTaskInfo") }
+	func requestDeviceAuthenticationToken() throws -> (KObject, NnNimDetail_IAsyncValue) { throw IpcError.unimplemented(name: "nn::nim::detail::nn::nim::detail::INetworkInstallManager#RequestDeviceAuthenticationToken") }
+	func requestGameCardRegistrationStatus(_ _0: Any?, _ _1: Buffer<UInt8>, _ _2: Buffer<UInt8>) throws -> (KObject, NnNimDetail_IAsyncValue) { throw IpcError.unimplemented(name: "nn::nim::detail::nn::nim::detail::INetworkInstallManager#RequestGameCardRegistrationStatus") }
+	func requestRegisterGameCard(_ _0: Any?, _ _1: Buffer<UInt8>, _ _2: Buffer<UInt8>) throws -> (KObject, NnNimDetail_IAsyncResult) { throw IpcError.unimplemented(name: "nn::nim::detail::nn::nim::detail::INetworkInstallManager#RequestRegisterGameCard") }
+	func requestRegisterNotificationToken(_ _0: Any?) throws -> (KObject, NnNimDetail_IAsyncResult) { throw IpcError.unimplemented(name: "nn::nim::detail::nn::nim::detail::INetworkInstallManager#RequestRegisterNotificationToken") }
+	func requestDownloadTaskList(_ _0: Any?) throws -> (KObject, NnNimDetail_IAsyncData) { throw IpcError.unimplemented(name: "nn::nim::detail::nn::nim::detail::INetworkInstallManager#RequestDownloadTaskList") }
+	func requestApplicationControl(_ _0: Any?) throws -> (KObject, NnNimDetail_IAsyncValue) { throw IpcError.unimplemented(name: "nn::nim::detail::nn::nim::detail::INetworkInstallManager#RequestApplicationControl") }
+	func requestLatestApplicationControl(_ _0: Any?) throws -> (KObject, NnNimDetail_IAsyncValue) { throw IpcError.unimplemented(name: "nn::nim::detail::nn::nim::detail::INetworkInstallManager#RequestLatestApplicationControl") }
+	func requestVersionList(_ _0: Any?) throws -> (KObject, NnNimDetail_IAsyncData) { throw IpcError.unimplemented(name: "nn::nim::detail::nn::nim::detail::INetworkInstallManager#RequestVersionList") }
+	func createApplyDeltaTask(_ _0: Any?, _ _1: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented(name: "nn::nim::detail::nn::nim::detail::INetworkInstallManager#CreateApplyDeltaTask") }
+	func destroyApplyDeltaTask(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::nim::detail::nn::nim::detail::INetworkInstallManager#DestroyApplyDeltaTask") }
+	func listApplicationApplyDeltaTask(_ _0: Any?, _ _1: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented(name: "nn::nim::detail::nn::nim::detail::INetworkInstallManager#ListApplicationApplyDeltaTask") }
+	func requestApplyDeltaTaskRun(_ _0: Any?) throws -> (KObject, NnNimDetail_IAsyncResult) { throw IpcError.unimplemented(name: "nn::nim::detail::nn::nim::detail::INetworkInstallManager#RequestApplyDeltaTaskRun") }
+	func getApplyDeltaTaskInfo(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::nim::detail::nn::nim::detail::INetworkInstallManager#GetApplyDeltaTaskInfo") }
+	func listApplyDeltaTask(_ _0: Any?, _ _1: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented(name: "nn::nim::detail::nn::nim::detail::INetworkInstallManager#ListApplyDeltaTask") }
+	func commitApplyDeltaTask(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::nim::detail::nn::nim::detail::INetworkInstallManager#CommitApplyDeltaTask") }
+	func calculateApplyDeltaTaskRequiredSize(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::nim::detail::nn::nim::detail::INetworkInstallManager#CalculateApplyDeltaTaskRequiredSize") }
+	func prepareShutdown() throws { throw IpcError.unimplemented(name: "nn::nim::detail::nn::nim::detail::INetworkInstallManager#PrepareShutdown") }
+	func listApplyDeltaTask2(_ _0: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented(name: "nn::nim::detail::nn::nim::detail::INetworkInstallManager#ListApplyDeltaTask2") }
+	func clearNotEnoughSpaceStateOfApplyDeltaTask(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::nim::detail::nn::nim::detail::INetworkInstallManager#ClearNotEnoughSpaceStateOfApplyDeltaTask") }
+	func unknown42(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::nim::detail::nn::nim::detail::INetworkInstallManager#Unknown42") }
+	func unknown43() throws -> Any? { throw IpcError.unimplemented(name: "nn::nim::detail::nn::nim::detail::INetworkInstallManager#Unknown43") }
+	func unknown44(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::nim::detail::nn::nim::detail::INetworkInstallManager#Unknown44") }
+	func unknown45(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::nim::detail::nn::nim::detail::INetworkInstallManager#Unknown45") }
+	func unknown46() throws { throw IpcError.unimplemented(name: "nn::nim::detail::nn::nim::detail::INetworkInstallManager#Unknown46") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
@@ -266,28 +266,28 @@ class NnNimDetail_INetworkInstallManager: IpcService {
 }
 
 class NnNimDetail_IShopServiceManager: IpcService {
-	func requestDeviceAuthenticationToken() throws -> (KObject, NnNimDetail_IAsyncValue) { throw IpcError.unimplemented }
-	func requestCachedDeviceAuthenticationToken(_ _0: Any?) throws -> (KObject, NnNimDetail_IAsyncValue) { throw IpcError.unimplemented }
-	func requestRegisterDeviceAccount() throws -> (KObject, NnNimDetail_IAsyncResult) { throw IpcError.unimplemented }
-	func requestUnregisterDeviceAccount() throws -> (KObject, NnNimDetail_IAsyncResult) { throw IpcError.unimplemented }
-	func requestDeviceAccountStatus() throws -> (KObject, NnNimDetail_IAsyncValue) { throw IpcError.unimplemented }
-	func getDeviceAccountInfo() throws -> Any? { throw IpcError.unimplemented }
-	func requestDeviceRegistrationInfo() throws -> (KObject, NnNimDetail_IAsyncValue) { throw IpcError.unimplemented }
-	func requestTransferDeviceAccount() throws -> (KObject, NnNimDetail_IAsyncResult) { throw IpcError.unimplemented }
-	func requestSyncRegistration() throws -> (KObject, NnNimDetail_IAsyncResult) { throw IpcError.unimplemented }
-	func isOwnDeviceId(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func requestRegisterNotificationToken(_ _0: Any?) throws -> (KObject, NnNimDetail_IAsyncResult) { throw IpcError.unimplemented }
-	func requestUnlinkDevice(_ _0: Any?) throws -> (KObject, NnNimDetail_IAsyncResult) { throw IpcError.unimplemented }
-	func requestUnlinkDeviceIntegrated(_ _0: Any?) throws -> (KObject, NnNimDetail_IAsyncResult) { throw IpcError.unimplemented }
-	func requestLinkDevice(_ _0: Any?) throws -> (KObject, NnNimDetail_IAsyncResult) { throw IpcError.unimplemented }
-	func hasDeviceLink(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func requestUnlinkDeviceAll() throws -> (KObject, NnNimDetail_IAsyncResult) { throw IpcError.unimplemented }
-	func requestCreateVirtualAccount(_ _0: Any?) throws -> (KObject, NnNimDetail_IAsyncResult) { throw IpcError.unimplemented }
-	func requestDeviceLinkStatus(_ _0: Any?) throws -> (KObject, NnNimDetail_IAsyncValue) { throw IpcError.unimplemented }
-	func getAccountByVirtualAccount(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func requestSyncTicket() throws -> (KObject, NnNimDetail_IAsyncProgressResult) { throw IpcError.unimplemented }
-	func requestDownloadTicket(_ _0: Any?) throws -> (KObject, NnNimDetail_IAsyncResult) { throw IpcError.unimplemented }
-	func requestDownloadTicketForPrepurchasedContents(_ _0: Any?) throws -> (KObject, NnNimDetail_IAsyncValue) { throw IpcError.unimplemented }
+	func requestDeviceAuthenticationToken() throws -> (KObject, NnNimDetail_IAsyncValue) { throw IpcError.unimplemented(name: "nn::nim::detail::nn::nim::detail::IShopServiceManager#RequestDeviceAuthenticationToken") }
+	func requestCachedDeviceAuthenticationToken(_ _0: Any?) throws -> (KObject, NnNimDetail_IAsyncValue) { throw IpcError.unimplemented(name: "nn::nim::detail::nn::nim::detail::IShopServiceManager#RequestCachedDeviceAuthenticationToken") }
+	func requestRegisterDeviceAccount() throws -> (KObject, NnNimDetail_IAsyncResult) { throw IpcError.unimplemented(name: "nn::nim::detail::nn::nim::detail::IShopServiceManager#RequestRegisterDeviceAccount") }
+	func requestUnregisterDeviceAccount() throws -> (KObject, NnNimDetail_IAsyncResult) { throw IpcError.unimplemented(name: "nn::nim::detail::nn::nim::detail::IShopServiceManager#RequestUnregisterDeviceAccount") }
+	func requestDeviceAccountStatus() throws -> (KObject, NnNimDetail_IAsyncValue) { throw IpcError.unimplemented(name: "nn::nim::detail::nn::nim::detail::IShopServiceManager#RequestDeviceAccountStatus") }
+	func getDeviceAccountInfo() throws -> Any? { throw IpcError.unimplemented(name: "nn::nim::detail::nn::nim::detail::IShopServiceManager#GetDeviceAccountInfo") }
+	func requestDeviceRegistrationInfo() throws -> (KObject, NnNimDetail_IAsyncValue) { throw IpcError.unimplemented(name: "nn::nim::detail::nn::nim::detail::IShopServiceManager#RequestDeviceRegistrationInfo") }
+	func requestTransferDeviceAccount() throws -> (KObject, NnNimDetail_IAsyncResult) { throw IpcError.unimplemented(name: "nn::nim::detail::nn::nim::detail::IShopServiceManager#RequestTransferDeviceAccount") }
+	func requestSyncRegistration() throws -> (KObject, NnNimDetail_IAsyncResult) { throw IpcError.unimplemented(name: "nn::nim::detail::nn::nim::detail::IShopServiceManager#RequestSyncRegistration") }
+	func isOwnDeviceId(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::nim::detail::nn::nim::detail::IShopServiceManager#IsOwnDeviceId") }
+	func requestRegisterNotificationToken(_ _0: Any?) throws -> (KObject, NnNimDetail_IAsyncResult) { throw IpcError.unimplemented(name: "nn::nim::detail::nn::nim::detail::IShopServiceManager#RequestRegisterNotificationToken") }
+	func requestUnlinkDevice(_ _0: Any?) throws -> (KObject, NnNimDetail_IAsyncResult) { throw IpcError.unimplemented(name: "nn::nim::detail::nn::nim::detail::IShopServiceManager#RequestUnlinkDevice") }
+	func requestUnlinkDeviceIntegrated(_ _0: Any?) throws -> (KObject, NnNimDetail_IAsyncResult) { throw IpcError.unimplemented(name: "nn::nim::detail::nn::nim::detail::IShopServiceManager#RequestUnlinkDeviceIntegrated") }
+	func requestLinkDevice(_ _0: Any?) throws -> (KObject, NnNimDetail_IAsyncResult) { throw IpcError.unimplemented(name: "nn::nim::detail::nn::nim::detail::IShopServiceManager#RequestLinkDevice") }
+	func hasDeviceLink(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::nim::detail::nn::nim::detail::IShopServiceManager#HasDeviceLink") }
+	func requestUnlinkDeviceAll() throws -> (KObject, NnNimDetail_IAsyncResult) { throw IpcError.unimplemented(name: "nn::nim::detail::nn::nim::detail::IShopServiceManager#RequestUnlinkDeviceAll") }
+	func requestCreateVirtualAccount(_ _0: Any?) throws -> (KObject, NnNimDetail_IAsyncResult) { throw IpcError.unimplemented(name: "nn::nim::detail::nn::nim::detail::IShopServiceManager#RequestCreateVirtualAccount") }
+	func requestDeviceLinkStatus(_ _0: Any?) throws -> (KObject, NnNimDetail_IAsyncValue) { throw IpcError.unimplemented(name: "nn::nim::detail::nn::nim::detail::IShopServiceManager#RequestDeviceLinkStatus") }
+	func getAccountByVirtualAccount(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::nim::detail::nn::nim::detail::IShopServiceManager#GetAccountByVirtualAccount") }
+	func requestSyncTicket() throws -> (KObject, NnNimDetail_IAsyncProgressResult) { throw IpcError.unimplemented(name: "nn::nim::detail::nn::nim::detail::IShopServiceManager#RequestSyncTicket") }
+	func requestDownloadTicket(_ _0: Any?) throws -> (KObject, NnNimDetail_IAsyncResult) { throw IpcError.unimplemented(name: "nn::nim::detail::nn::nim::detail::IShopServiceManager#RequestDownloadTicket") }
+	func requestDownloadTicketForPrepurchasedContents(_ _0: Any?) throws -> (KObject, NnNimDetail_IAsyncValue) { throw IpcError.unimplemented(name: "nn::nim::detail::nn::nim::detail::IShopServiceManager#RequestDownloadTicketForPrepurchasedContents") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
@@ -423,10 +423,10 @@ class NnNimDetail_IShopServiceManager: IpcService {
 }
 
 class NnNimDetail_IAsyncValue: IpcService {
-	func unknown0() throws -> Any? { throw IpcError.unimplemented }
-	func unknown1(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func unknown2() throws { throw IpcError.unimplemented }
-	func unknown3(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented }
+	func unknown0() throws -> Any? { throw IpcError.unimplemented(name: "nn::nim::detail::nn::nim::detail::IAsyncValue#Unknown0") }
+	func unknown1(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::nim::detail::nn::nim::detail::IAsyncValue#Unknown1") }
+	func unknown2() throws { throw IpcError.unimplemented(name: "nn::nim::detail::nn::nim::detail::IAsyncValue#Unknown2") }
+	func unknown3(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::nim::detail::nn::nim::detail::IAsyncValue#Unknown3") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
@@ -454,9 +454,9 @@ class NnNimDetail_IAsyncValue: IpcService {
 }
 
 class NnNimDetail_IAsyncResult: IpcService {
-	func unknown0() throws { throw IpcError.unimplemented }
-	func unknown1() throws { throw IpcError.unimplemented }
-	func unknown2(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented }
+	func unknown0() throws { throw IpcError.unimplemented(name: "nn::nim::detail::nn::nim::detail::IAsyncResult#Unknown0") }
+	func unknown1() throws { throw IpcError.unimplemented(name: "nn::nim::detail::nn::nim::detail::IAsyncResult#Unknown1") }
+	func unknown2(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::nim::detail::nn::nim::detail::IAsyncResult#Unknown2") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
@@ -480,10 +480,10 @@ class NnNimDetail_IAsyncResult: IpcService {
 }
 
 class NnNimDetail_IAsyncProgressResult: IpcService {
-	func unknown0() throws { throw IpcError.unimplemented }
-	func unknown1() throws { throw IpcError.unimplemented }
-	func unknown2() throws -> Any? { throw IpcError.unimplemented }
-	func unknown3(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented }
+	func unknown0() throws { throw IpcError.unimplemented(name: "nn::nim::detail::nn::nim::detail::IAsyncProgressResult#Unknown0") }
+	func unknown1() throws { throw IpcError.unimplemented(name: "nn::nim::detail::nn::nim::detail::IAsyncProgressResult#Unknown1") }
+	func unknown2() throws -> Any? { throw IpcError.unimplemented(name: "nn::nim::detail::nn::nim::detail::IAsyncProgressResult#Unknown2") }
+	func unknown3(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::nim::detail::nn::nim::detail::IAsyncProgressResult#Unknown3") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
@@ -511,12 +511,12 @@ class NnNimDetail_IAsyncProgressResult: IpcService {
 }
 
 class NnNimDetail_IAsyncData: IpcService {
-	func unknown0() throws { throw IpcError.unimplemented }
-	func unknown1() throws { throw IpcError.unimplemented }
-	func unknown2() throws -> Any? { throw IpcError.unimplemented }
-	func unknown3(_ _0: Any?, _ _1: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented }
-	func unknown4() throws -> Any? { throw IpcError.unimplemented }
-	func unknown5(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented }
+	func unknown0() throws { throw IpcError.unimplemented(name: "nn::nim::detail::nn::nim::detail::IAsyncData#Unknown0") }
+	func unknown1() throws { throw IpcError.unimplemented(name: "nn::nim::detail::nn::nim::detail::IAsyncData#Unknown1") }
+	func unknown2() throws -> Any? { throw IpcError.unimplemented(name: "nn::nim::detail::nn::nim::detail::IAsyncData#Unknown2") }
+	func unknown3(_ _0: Any?, _ _1: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented(name: "nn::nim::detail::nn::nim::detail::IAsyncData#Unknown3") }
+	func unknown4() throws -> Any? { throw IpcError.unimplemented(name: "nn::nim::detail::nn::nim::detail::IAsyncData#Unknown4") }
+	func unknown5(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::nim::detail::nn::nim::detail::IAsyncData#Unknown5") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {

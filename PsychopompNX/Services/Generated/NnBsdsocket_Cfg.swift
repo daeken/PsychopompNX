@@ -1,17 +1,17 @@
 class NnBsdsocketCfg_ServerInterface: IpcService {
-	func setIfUp(_ _0: Any?, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func setIfUpWithEvent(_ _0: Any?, _ _1: Buffer<UInt8>) throws -> KObject { throw IpcError.unimplemented }
-	func cancelIf(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func setIfDown(_ _0: Any?, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func getIfState(_ _0: Buffer<UInt8>, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func dhcpRenew(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func addStaticArpEntry(_ _0: Any?, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func removeArpEntry(_ _0: Any?) throws { throw IpcError.unimplemented }
-	func lookupArpEntry(_ _0: Any?, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func lookupArpEntry2(_ _0: Buffer<UInt8>, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func clearArpEntries() throws { throw IpcError.unimplemented }
-	func clearArpEntries2(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func printArpEntries() throws { throw IpcError.unimplemented }
+	func setIfUp(_ _0: Any?, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::bsdsocket::cfg::nn::bsdsocket::cfg::ServerInterface#SetIfUp") }
+	func setIfUpWithEvent(_ _0: Any?, _ _1: Buffer<UInt8>) throws -> KObject { throw IpcError.unimplemented(name: "nn::bsdsocket::cfg::nn::bsdsocket::cfg::ServerInterface#SetIfUpWithEvent") }
+	func cancelIf(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::bsdsocket::cfg::nn::bsdsocket::cfg::ServerInterface#CancelIf") }
+	func setIfDown(_ _0: Any?, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::bsdsocket::cfg::nn::bsdsocket::cfg::ServerInterface#SetIfDown") }
+	func getIfState(_ _0: Buffer<UInt8>, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::bsdsocket::cfg::nn::bsdsocket::cfg::ServerInterface#GetIfState") }
+	func dhcpRenew(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::bsdsocket::cfg::nn::bsdsocket::cfg::ServerInterface#DhcpRenew") }
+	func addStaticArpEntry(_ _0: Any?, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::bsdsocket::cfg::nn::bsdsocket::cfg::ServerInterface#AddStaticArpEntry") }
+	func removeArpEntry(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::bsdsocket::cfg::nn::bsdsocket::cfg::ServerInterface#RemoveArpEntry") }
+	func lookupArpEntry(_ _0: Any?, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::bsdsocket::cfg::nn::bsdsocket::cfg::ServerInterface#LookupArpEntry") }
+	func lookupArpEntry2(_ _0: Buffer<UInt8>, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::bsdsocket::cfg::nn::bsdsocket::cfg::ServerInterface#LookupArpEntry2") }
+	func clearArpEntries() throws { throw IpcError.unimplemented(name: "nn::bsdsocket::cfg::nn::bsdsocket::cfg::ServerInterface#ClearArpEntries") }
+	func clearArpEntries2(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::bsdsocket::cfg::nn::bsdsocket::cfg::ServerInterface#ClearArpEntries2") }
+	func printArpEntries() throws { throw IpcError.unimplemented(name: "nn::bsdsocket::cfg::nn::bsdsocket::cfg::ServerInterface#PrintArpEntries") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {

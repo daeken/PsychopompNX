@@ -1,8 +1,8 @@
 class NnI2c_IManager: IpcService {
-	func openSessionForDev(_ _0: UInt16, _ _1: UInt32, _ _2: UInt32, _ _3: UInt32) throws -> NnI2c_ISession { throw IpcError.unimplemented }
-	func openSession(_ _0: UInt32) throws -> NnI2c_ISession { throw IpcError.unimplemented }
-	func hasDevice(_ _0: UInt32) throws -> UInt8 { throw IpcError.unimplemented }
-	func hasDeviceForDev(_ _0: UInt16, _ _1: UInt32, _ _2: UInt32, _ _3: UInt32) throws -> UInt8 { throw IpcError.unimplemented }
+	func openSessionForDev(_ _0: UInt16, _ _1: UInt32, _ _2: UInt32, _ _3: UInt32) throws -> NnI2c_ISession { throw IpcError.unimplemented(name: "nn::i2c::nn::i2c::IManager#OpenSessionForDev") }
+	func openSession(_ _0: UInt32) throws -> NnI2c_ISession { throw IpcError.unimplemented(name: "nn::i2c::nn::i2c::IManager#OpenSession") }
+	func hasDevice(_ _0: UInt32) throws -> UInt8 { throw IpcError.unimplemented(name: "nn::i2c::nn::i2c::IManager#HasDevice") }
+	func hasDeviceForDev(_ _0: UInt16, _ _1: UInt32, _ _2: UInt32, _ _3: UInt32) throws -> UInt8 { throw IpcError.unimplemented(name: "nn::i2c::nn::i2c::IManager#HasDeviceForDev") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
@@ -34,12 +34,12 @@ class NnI2c_IManager: IpcService {
 }
 
 class NnI2c_ISession: IpcService {
-	func send(_ _0: UInt32, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func receive(_ _0: UInt32, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func executeCommandList(_ _0: Buffer<UInt8>, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func sendAuto(_ _0: UInt32, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func receiveAuto(_ _0: UInt32, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func executeCommandListAuto(_ _0: Buffer<UInt8>, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented }
+	func send(_ _0: UInt32, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::i2c::nn::i2c::ISession#Send") }
+	func receive(_ _0: UInt32, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::i2c::nn::i2c::ISession#Receive") }
+	func executeCommandList(_ _0: Buffer<UInt8>, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::i2c::nn::i2c::ISession#ExecuteCommandList") }
+	func sendAuto(_ _0: UInt32, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::i2c::nn::i2c::ISession#SendAuto") }
+	func receiveAuto(_ _0: UInt32, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::i2c::nn::i2c::ISession#ReceiveAuto") }
+	func executeCommandListAuto(_ _0: Buffer<UInt8>, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::i2c::nn::i2c::ISession#ExecuteCommandListAuto") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {

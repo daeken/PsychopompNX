@@ -1,5 +1,5 @@
 class NnNfcMifareDetail_IUserManager: IpcService {
-	func createUserInterface() throws -> NnNfcDetail_IUser { throw IpcError.unimplemented }
+	func createUserInterface() throws -> NnNfcDetail_IUser { throw IpcError.unimplemented(name: "nn::nfc::mifare::detail::nn::nfc::mifare::detail::IUserManager#CreateUserInterface") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
@@ -16,20 +16,20 @@ class NnNfcMifareDetail_IUserManager: IpcService {
 }
 
 class NnNfcMifareDetail_IUser: IpcService {
-	func initialize(_ _0: UInt64, _ _1: UInt64, _ _2: Pid, _ _3: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func finalize() throws { throw IpcError.unimplemented }
-	func listDevices(_ _0: Buffer<UInt8>) throws -> UInt32 { throw IpcError.unimplemented }
-	func startDetection(_ _0: [UInt8]) throws { throw IpcError.unimplemented }
-	func stopDetection(_ _0: [UInt8]) throws { throw IpcError.unimplemented }
-	func read(_ _0: [UInt8], _ _1: Buffer<UInt8>, _ _2: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func write(_ _0: [UInt8], _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func getTagInfo(_ _0: [UInt8], _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func getActivateEventHandle(_ _0: [UInt8]) throws -> KObject { throw IpcError.unimplemented }
-	func getDeactivateEventHandle(_ _0: [UInt8]) throws -> KObject { throw IpcError.unimplemented }
-	func getState() throws -> UInt32 { throw IpcError.unimplemented }
-	func getDeviceState(_ _0: [UInt8]) throws -> UInt32 { throw IpcError.unimplemented }
-	func getNpadId(_ _0: [UInt8]) throws -> UInt32 { throw IpcError.unimplemented }
-	func getAvailabilityChangeEventHandle() throws -> KObject { throw IpcError.unimplemented }
+	func initialize(_ _0: UInt64, _ _1: UInt64, _ _2: Pid, _ _3: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::nfc::mifare::detail::nn::nfc::mifare::detail::IUser#Initialize") }
+	func finalize() throws { throw IpcError.unimplemented(name: "nn::nfc::mifare::detail::nn::nfc::mifare::detail::IUser#Finalize") }
+	func listDevices(_ _0: Buffer<UInt8>) throws -> UInt32 { throw IpcError.unimplemented(name: "nn::nfc::mifare::detail::nn::nfc::mifare::detail::IUser#ListDevices") }
+	func startDetection(_ _0: [UInt8]) throws { throw IpcError.unimplemented(name: "nn::nfc::mifare::detail::nn::nfc::mifare::detail::IUser#StartDetection") }
+	func stopDetection(_ _0: [UInt8]) throws { throw IpcError.unimplemented(name: "nn::nfc::mifare::detail::nn::nfc::mifare::detail::IUser#StopDetection") }
+	func read(_ _0: [UInt8], _ _1: Buffer<UInt8>, _ _2: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::nfc::mifare::detail::nn::nfc::mifare::detail::IUser#Read") }
+	func write(_ _0: [UInt8], _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::nfc::mifare::detail::nn::nfc::mifare::detail::IUser#Write") }
+	func getTagInfo(_ _0: [UInt8], _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::nfc::mifare::detail::nn::nfc::mifare::detail::IUser#GetTagInfo") }
+	func getActivateEventHandle(_ _0: [UInt8]) throws -> KObject { throw IpcError.unimplemented(name: "nn::nfc::mifare::detail::nn::nfc::mifare::detail::IUser#GetActivateEventHandle") }
+	func getDeactivateEventHandle(_ _0: [UInt8]) throws -> KObject { throw IpcError.unimplemented(name: "nn::nfc::mifare::detail::nn::nfc::mifare::detail::IUser#GetDeactivateEventHandle") }
+	func getState() throws -> UInt32 { throw IpcError.unimplemented(name: "nn::nfc::mifare::detail::nn::nfc::mifare::detail::IUser#GetState") }
+	func getDeviceState(_ _0: [UInt8]) throws -> UInt32 { throw IpcError.unimplemented(name: "nn::nfc::mifare::detail::nn::nfc::mifare::detail::IUser#GetDeviceState") }
+	func getNpadId(_ _0: [UInt8]) throws -> UInt32 { throw IpcError.unimplemented(name: "nn::nfc::mifare::detail::nn::nfc::mifare::detail::IUser#GetNpadId") }
+	func getAvailabilityChangeEventHandle() throws -> KObject { throw IpcError.unimplemented(name: "nn::nfc::mifare::detail::nn::nfc::mifare::detail::IUser#GetAvailabilityChangeEventHandle") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {

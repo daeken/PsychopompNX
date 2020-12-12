@@ -1,7 +1,7 @@
 class NnProfiler_IProfiler: IpcService {
-	func getSystemEvent(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func startSignalingEvent(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func stopSignalingEvent(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
+	func getSystemEvent(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::profiler::nn::profiler::IProfiler#GetSystemEvent") }
+	func startSignalingEvent(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::profiler::nn::profiler::IProfiler#StartSignalingEvent") }
+	func stopSignalingEvent(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::profiler::nn::profiler::IProfiler#StopSignalingEvent") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {

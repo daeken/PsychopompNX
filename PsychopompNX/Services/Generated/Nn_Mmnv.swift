@@ -1,12 +1,12 @@
 class NnMmnv_IRequest: IpcService {
-	func initializeOld(_ _0: UInt32, _ _1: UInt32, _ _2: UInt32) throws { throw IpcError.unimplemented }
-	func finalizeOld(_ _0: UInt32) throws { throw IpcError.unimplemented }
-	func setAndWaitOld(_ _0: UInt32, _ _1: UInt32, _ _2: UInt32) throws { throw IpcError.unimplemented }
-	func getOld(_ _0: UInt32) throws -> UInt32 { throw IpcError.unimplemented }
-	func initialize(_ _0: UInt32, _ _1: UInt32, _ _2: UInt32) throws -> UInt32 { throw IpcError.unimplemented }
-	func finalize(_ _0: UInt32) throws { throw IpcError.unimplemented }
-	func setAndWait(_ _0: UInt32, _ _1: UInt32, _ _2: UInt32) throws { throw IpcError.unimplemented }
-	func get(_ _0: UInt32) throws -> UInt32 { throw IpcError.unimplemented }
+	func initializeOld(_ _0: UInt32, _ _1: UInt32, _ _2: UInt32) throws { throw IpcError.unimplemented(name: "nn::mmnv::nn::mmnv::IRequest#InitializeOld") }
+	func finalizeOld(_ _0: UInt32) throws { throw IpcError.unimplemented(name: "nn::mmnv::nn::mmnv::IRequest#FinalizeOld") }
+	func setAndWaitOld(_ _0: UInt32, _ _1: UInt32, _ _2: UInt32) throws { throw IpcError.unimplemented(name: "nn::mmnv::nn::mmnv::IRequest#SetAndWaitOld") }
+	func getOld(_ _0: UInt32) throws -> UInt32 { throw IpcError.unimplemented(name: "nn::mmnv::nn::mmnv::IRequest#GetOld") }
+	func initialize(_ _0: UInt32, _ _1: UInt32, _ _2: UInt32) throws -> UInt32 { throw IpcError.unimplemented(name: "nn::mmnv::nn::mmnv::IRequest#Initialize") }
+	func finalize(_ _0: UInt32) throws { throw IpcError.unimplemented(name: "nn::mmnv::nn::mmnv::IRequest#Finalize") }
+	func setAndWait(_ _0: UInt32, _ _1: UInt32, _ _2: UInt32) throws { throw IpcError.unimplemented(name: "nn::mmnv::nn::mmnv::IRequest#SetAndWait") }
+	func get(_ _0: UInt32) throws -> UInt32 { throw IpcError.unimplemented(name: "nn::mmnv::nn::mmnv::IRequest#Get") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {

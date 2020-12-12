@@ -1,8 +1,8 @@
 class NnTimesrvDetailService_ISystemClock: IpcService {
-	func getCurrentTime() throws -> NnTime_PosixTime { throw IpcError.unimplemented }
-	func setCurrentTime(_ _0: NnTime_PosixTime) throws { throw IpcError.unimplemented }
-	func getSystemClockContext() throws -> NnTime_SystemClockContext { throw IpcError.unimplemented }
-	func setSystemClockContext(_ _0: NnTime_SystemClockContext) throws { throw IpcError.unimplemented }
+	func getCurrentTime() throws -> NnTime_PosixTime { throw IpcError.unimplemented(name: "nn::timesrv::detail::service::nn::timesrv::detail::service::ISystemClock#GetCurrentTime") }
+	func setCurrentTime(_ _0: NnTime_PosixTime) throws { throw IpcError.unimplemented(name: "nn::timesrv::detail::service::nn::timesrv::detail::service::ISystemClock#SetCurrentTime") }
+	func getSystemClockContext() throws -> NnTime_SystemClockContext { throw IpcError.unimplemented(name: "nn::timesrv::detail::service::nn::timesrv::detail::service::ISystemClock#GetSystemClockContext") }
+	func setSystemClockContext(_ _0: NnTime_SystemClockContext) throws { throw IpcError.unimplemented(name: "nn::timesrv::detail::service::nn::timesrv::detail::service::ISystemClock#SetSystemClockContext") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
@@ -33,14 +33,14 @@ class NnTimesrvDetailService_ISystemClock: IpcService {
 }
 
 class NnTimesrvDetailService_ISteadyClock: IpcService {
-	func getCurrentTimePoint() throws -> NnTime_SteadyClockTimePoint { throw IpcError.unimplemented }
-	func getTestOffset() throws -> Nn_TimeSpanType { throw IpcError.unimplemented }
-	func setTestOffset(_ _0: Nn_TimeSpanType) throws { throw IpcError.unimplemented }
-	func getRtcValue() throws -> UInt64 { throw IpcError.unimplemented }
-	func isRtcResetDetected() throws -> UInt8 { throw IpcError.unimplemented }
-	func getSetupResultValue() throws -> UInt32 { throw IpcError.unimplemented }
-	func getInternalOffset() throws -> Nn_TimeSpanType { throw IpcError.unimplemented }
-	func setInternalOffset(_ _0: Nn_TimeSpanType) throws { throw IpcError.unimplemented }
+	func getCurrentTimePoint() throws -> NnTime_SteadyClockTimePoint { throw IpcError.unimplemented(name: "nn::timesrv::detail::service::nn::timesrv::detail::service::ISteadyClock#GetCurrentTimePoint") }
+	func getTestOffset() throws -> Nn_TimeSpanType { throw IpcError.unimplemented(name: "nn::timesrv::detail::service::nn::timesrv::detail::service::ISteadyClock#GetTestOffset") }
+	func setTestOffset(_ _0: Nn_TimeSpanType) throws { throw IpcError.unimplemented(name: "nn::timesrv::detail::service::nn::timesrv::detail::service::ISteadyClock#SetTestOffset") }
+	func getRtcValue() throws -> UInt64 { throw IpcError.unimplemented(name: "nn::timesrv::detail::service::nn::timesrv::detail::service::ISteadyClock#GetRtcValue") }
+	func isRtcResetDetected() throws -> UInt8 { throw IpcError.unimplemented(name: "nn::timesrv::detail::service::nn::timesrv::detail::service::ISteadyClock#IsRtcResetDetected") }
+	func getSetupResultValue() throws -> UInt32 { throw IpcError.unimplemented(name: "nn::timesrv::detail::service::nn::timesrv::detail::service::ISteadyClock#GetSetupResultValue") }
+	func getInternalOffset() throws -> Nn_TimeSpanType { throw IpcError.unimplemented(name: "nn::timesrv::detail::service::nn::timesrv::detail::service::ISteadyClock#GetInternalOffset") }
+	func setInternalOffset(_ _0: Nn_TimeSpanType) throws { throw IpcError.unimplemented(name: "nn::timesrv::detail::service::nn::timesrv::detail::service::ISteadyClock#SetInternalOffset") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
@@ -91,16 +91,16 @@ class NnTimesrvDetailService_ISteadyClock: IpcService {
 }
 
 class NnTimesrvDetailService_ITimeZoneService: IpcService {
-	func getDeviceLocationName() throws -> NnTime_LocationName { throw IpcError.unimplemented }
-	func setDeviceLocationName(_ _0: NnTime_LocationName) throws { throw IpcError.unimplemented }
-	func getTotalLocationNameCount() throws -> UInt32 { throw IpcError.unimplemented }
-	func loadLocationNameList(_ _0: UInt32, _ _1: Buffer<NnTime_LocationName>) throws -> UInt32 { throw IpcError.unimplemented }
-	func loadTimeZoneRule(_ _0: NnTime_LocationName, _ _1: Buffer<NnTime_TimeZoneRule>) throws { throw IpcError.unimplemented }
-	func getTimeZoneRuleVersion() throws -> NnTime_TimeZoneRuleVersion { throw IpcError.unimplemented }
-	func toCalendarTime(_ _0: NnTime_PosixTime, _ _1: Buffer<NnTime_TimeZoneRule>) throws -> (NnTime_CalendarTime, NnTimeSf_CalendarAdditionalInfo) { throw IpcError.unimplemented }
-	func toCalendarTimeWithMyRule(_ _0: NnTime_PosixTime) throws -> (NnTime_CalendarTime, NnTimeSf_CalendarAdditionalInfo) { throw IpcError.unimplemented }
-	func toPosixTime(_ _0: NnTime_CalendarTime, _ _1: Buffer<NnTime_TimeZoneRule>, _ _2: Buffer<NnTime_PosixTime>) throws -> UInt32 { throw IpcError.unimplemented }
-	func toPosixTimeWithMyRule(_ _0: NnTime_CalendarTime, _ _1: Buffer<NnTime_PosixTime>) throws -> UInt32 { throw IpcError.unimplemented }
+	func getDeviceLocationName() throws -> NnTime_LocationName { throw IpcError.unimplemented(name: "nn::timesrv::detail::service::nn::timesrv::detail::service::ITimeZoneService#GetDeviceLocationName") }
+	func setDeviceLocationName(_ _0: NnTime_LocationName) throws { throw IpcError.unimplemented(name: "nn::timesrv::detail::service::nn::timesrv::detail::service::ITimeZoneService#SetDeviceLocationName") }
+	func getTotalLocationNameCount() throws -> UInt32 { throw IpcError.unimplemented(name: "nn::timesrv::detail::service::nn::timesrv::detail::service::ITimeZoneService#GetTotalLocationNameCount") }
+	func loadLocationNameList(_ _0: UInt32, _ _1: Buffer<NnTime_LocationName>) throws -> UInt32 { throw IpcError.unimplemented(name: "nn::timesrv::detail::service::nn::timesrv::detail::service::ITimeZoneService#LoadLocationNameList") }
+	func loadTimeZoneRule(_ _0: NnTime_LocationName, _ _1: Buffer<NnTime_TimeZoneRule>) throws { throw IpcError.unimplemented(name: "nn::timesrv::detail::service::nn::timesrv::detail::service::ITimeZoneService#LoadTimeZoneRule") }
+	func getTimeZoneRuleVersion() throws -> NnTime_TimeZoneRuleVersion { throw IpcError.unimplemented(name: "nn::timesrv::detail::service::nn::timesrv::detail::service::ITimeZoneService#GetTimeZoneRuleVersion") }
+	func toCalendarTime(_ _0: NnTime_PosixTime, _ _1: Buffer<NnTime_TimeZoneRule>) throws -> (NnTime_CalendarTime, NnTimeSf_CalendarAdditionalInfo) { throw IpcError.unimplemented(name: "nn::timesrv::detail::service::nn::timesrv::detail::service::ITimeZoneService#ToCalendarTime") }
+	func toCalendarTimeWithMyRule(_ _0: NnTime_PosixTime) throws -> (NnTime_CalendarTime, NnTimeSf_CalendarAdditionalInfo) { throw IpcError.unimplemented(name: "nn::timesrv::detail::service::nn::timesrv::detail::service::ITimeZoneService#ToCalendarTimeWithMyRule") }
+	func toPosixTime(_ _0: NnTime_CalendarTime, _ _1: Buffer<NnTime_TimeZoneRule>, _ _2: Buffer<NnTime_PosixTime>) throws -> UInt32 { throw IpcError.unimplemented(name: "nn::timesrv::detail::service::nn::timesrv::detail::service::ITimeZoneService#ToPosixTime") }
+	func toPosixTimeWithMyRule(_ _0: NnTime_CalendarTime, _ _1: Buffer<NnTime_PosixTime>) throws -> UInt32 { throw IpcError.unimplemented(name: "nn::timesrv::detail::service::nn::timesrv::detail::service::ITimeZoneService#ToPosixTimeWithMyRule") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
@@ -184,22 +184,22 @@ class NnTimesrvDetailService_ITimeZoneService: IpcService {
 }
 
 class NnTimesrvDetailService_IStaticService: IpcService {
-	func getStandardUserSystemClock() throws -> NnTimesrvDetailService_ISystemClock { throw IpcError.unimplemented }
-	func getStandardNetworkSystemClock() throws -> NnTimesrvDetailService_ISystemClock { throw IpcError.unimplemented }
-	func getStandardSteadyClock() throws -> NnTimesrvDetailService_ISteadyClock { throw IpcError.unimplemented }
-	func getTimeZoneService() throws -> NnTimesrvDetailService_ITimeZoneService { throw IpcError.unimplemented }
-	func getStandardLocalSystemClock() throws -> NnTimesrvDetailService_ISystemClock { throw IpcError.unimplemented }
-	func getEphemeralNetworkSystemClock() throws -> NnTimesrvDetailService_ISystemClock { throw IpcError.unimplemented }
-	func setStandardSteadyClockInternalOffset(_ _0: Nn_TimeSpanType) throws { throw IpcError.unimplemented }
-	func isStandardUserSystemClockAutomaticCorrectionEnabled() throws -> UInt8 { throw IpcError.unimplemented }
-	func setStandardUserSystemClockAutomaticCorrectionEnabled(_ _0: UInt8) throws { throw IpcError.unimplemented }
-	func getStandardUserSystemClockInitialYear(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func isStandardNetworkSystemClockAccuracySufficient() throws -> UInt8 { throw IpcError.unimplemented }
-	func calculateMonotonicSystemClockBaseTimePoint(_ _0: NnTime_SystemClockContext) throws -> UInt64 { throw IpcError.unimplemented }
-	func getClockSnapshot(_ _0: UInt8, _ _1: Buffer<NnTimeSf_ClockSnapshot>) throws { throw IpcError.unimplemented }
-	func getClockSnapshotFromSystemClockContext(_ _0: UInt8, _ _1: NnTime_SystemClockContext, _ _2: NnTime_SystemClockContext, _ _3: Buffer<NnTimeSf_ClockSnapshot>) throws { throw IpcError.unimplemented }
-	func calculateStandardUserSystemClockDifferenceByUser(_ _0: Buffer<NnTimeSf_ClockSnapshot>, _ _1: Buffer<NnTimeSf_ClockSnapshot>) throws -> Nn_TimeSpanType { throw IpcError.unimplemented }
-	func calculateSpanBetween(_ _0: Buffer<NnTimeSf_ClockSnapshot>, _ _1: Buffer<NnTimeSf_ClockSnapshot>) throws -> Nn_TimeSpanType { throw IpcError.unimplemented }
+	func getStandardUserSystemClock() throws -> NnTimesrvDetailService_ISystemClock { throw IpcError.unimplemented(name: "nn::timesrv::detail::service::nn::timesrv::detail::service::IStaticService#GetStandardUserSystemClock") }
+	func getStandardNetworkSystemClock() throws -> NnTimesrvDetailService_ISystemClock { throw IpcError.unimplemented(name: "nn::timesrv::detail::service::nn::timesrv::detail::service::IStaticService#GetStandardNetworkSystemClock") }
+	func getStandardSteadyClock() throws -> NnTimesrvDetailService_ISteadyClock { throw IpcError.unimplemented(name: "nn::timesrv::detail::service::nn::timesrv::detail::service::IStaticService#GetStandardSteadyClock") }
+	func getTimeZoneService() throws -> NnTimesrvDetailService_ITimeZoneService { throw IpcError.unimplemented(name: "nn::timesrv::detail::service::nn::timesrv::detail::service::IStaticService#GetTimeZoneService") }
+	func getStandardLocalSystemClock() throws -> NnTimesrvDetailService_ISystemClock { throw IpcError.unimplemented(name: "nn::timesrv::detail::service::nn::timesrv::detail::service::IStaticService#GetStandardLocalSystemClock") }
+	func getEphemeralNetworkSystemClock() throws -> NnTimesrvDetailService_ISystemClock { throw IpcError.unimplemented(name: "nn::timesrv::detail::service::nn::timesrv::detail::service::IStaticService#GetEphemeralNetworkSystemClock") }
+	func setStandardSteadyClockInternalOffset(_ _0: Nn_TimeSpanType) throws { throw IpcError.unimplemented(name: "nn::timesrv::detail::service::nn::timesrv::detail::service::IStaticService#SetStandardSteadyClockInternalOffset") }
+	func isStandardUserSystemClockAutomaticCorrectionEnabled() throws -> UInt8 { throw IpcError.unimplemented(name: "nn::timesrv::detail::service::nn::timesrv::detail::service::IStaticService#IsStandardUserSystemClockAutomaticCorrectionEnabled") }
+	func setStandardUserSystemClockAutomaticCorrectionEnabled(_ _0: UInt8) throws { throw IpcError.unimplemented(name: "nn::timesrv::detail::service::nn::timesrv::detail::service::IStaticService#SetStandardUserSystemClockAutomaticCorrectionEnabled") }
+	func getStandardUserSystemClockInitialYear(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::timesrv::detail::service::nn::timesrv::detail::service::IStaticService#GetStandardUserSystemClockInitialYear") }
+	func isStandardNetworkSystemClockAccuracySufficient() throws -> UInt8 { throw IpcError.unimplemented(name: "nn::timesrv::detail::service::nn::timesrv::detail::service::IStaticService#IsStandardNetworkSystemClockAccuracySufficient") }
+	func calculateMonotonicSystemClockBaseTimePoint(_ _0: NnTime_SystemClockContext) throws -> UInt64 { throw IpcError.unimplemented(name: "nn::timesrv::detail::service::nn::timesrv::detail::service::IStaticService#CalculateMonotonicSystemClockBaseTimePoint") }
+	func getClockSnapshot(_ _0: UInt8, _ _1: Buffer<NnTimeSf_ClockSnapshot>) throws { throw IpcError.unimplemented(name: "nn::timesrv::detail::service::nn::timesrv::detail::service::IStaticService#GetClockSnapshot") }
+	func getClockSnapshotFromSystemClockContext(_ _0: UInt8, _ _1: NnTime_SystemClockContext, _ _2: NnTime_SystemClockContext, _ _3: Buffer<NnTimeSf_ClockSnapshot>) throws { throw IpcError.unimplemented(name: "nn::timesrv::detail::service::nn::timesrv::detail::service::IStaticService#GetClockSnapshotFromSystemClockContext") }
+	func calculateStandardUserSystemClockDifferenceByUser(_ _0: Buffer<NnTimeSf_ClockSnapshot>, _ _1: Buffer<NnTimeSf_ClockSnapshot>) throws -> Nn_TimeSpanType { throw IpcError.unimplemented(name: "nn::timesrv::detail::service::nn::timesrv::detail::service::IStaticService#CalculateStandardUserSystemClockDifferenceByUser") }
+	func calculateSpanBetween(_ _0: Buffer<NnTimeSf_ClockSnapshot>, _ _1: Buffer<NnTimeSf_ClockSnapshot>) throws -> Nn_TimeSpanType { throw IpcError.unimplemented(name: "nn::timesrv::detail::service::nn::timesrv::detail::service::IStaticService#CalculateSpanBetween") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {

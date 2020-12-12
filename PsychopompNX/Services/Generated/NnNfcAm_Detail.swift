@@ -1,7 +1,7 @@
 class NnNfcAmDetail_IAm: IpcService {
-	func initialize() throws { throw IpcError.unimplemented }
-	func finalize() throws { throw IpcError.unimplemented }
-	func notifyForegroundApplet(_ _0: Any?) throws { throw IpcError.unimplemented }
+	func initialize() throws { throw IpcError.unimplemented(name: "nn::nfc::am::detail::nn::nfc::am::detail::IAm#Initialize") }
+	func finalize() throws { throw IpcError.unimplemented(name: "nn::nfc::am::detail::nn::nfc::am::detail::IAm#Finalize") }
+	func notifyForegroundApplet(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::nfc::am::detail::nn::nfc::am::detail::IAm#NotifyForegroundApplet") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
@@ -25,7 +25,7 @@ class NnNfcAmDetail_IAm: IpcService {
 }
 
 class NnNfcAmDetail_IAmManager: IpcService {
-	func createAmInterface() throws -> NnNfcAmDetail_IAm { throw IpcError.unimplemented }
+	func createAmInterface() throws -> NnNfcAmDetail_IAm { throw IpcError.unimplemented(name: "nn::nfc::am::detail::nn::nfc::am::detail::IAmManager#CreateAmInterface") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {

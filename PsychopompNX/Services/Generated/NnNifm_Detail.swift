@@ -1,8 +1,8 @@
 class NnNifmDetail_IScanRequest: IpcService {
-	func submit() throws { throw IpcError.unimplemented }
-	func isProcessing() throws -> UInt8 { throw IpcError.unimplemented }
-	func getResult() throws { throw IpcError.unimplemented }
-	func getSystemEventReadableHandle() throws -> KObject { throw IpcError.unimplemented }
+	func submit() throws { throw IpcError.unimplemented(name: "nn::nifm::detail::nn::nifm::detail::IScanRequest#Submit") }
+	func isProcessing() throws -> UInt8 { throw IpcError.unimplemented(name: "nn::nifm::detail::nn::nifm::detail::IScanRequest#IsProcessing") }
+	func getResult() throws { throw IpcError.unimplemented(name: "nn::nifm::detail::nn::nifm::detail::IScanRequest#GetResult") }
+	func getSystemEventReadableHandle() throws -> KObject { throw IpcError.unimplemented(name: "nn::nifm::detail::nn::nifm::detail::IScanRequest#GetSystemEventReadableHandle") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
@@ -32,9 +32,9 @@ class NnNifmDetail_IScanRequest: IpcService {
 }
 
 class NnNifmDetail_INetworkProfile: IpcService {
-	func update(_ _0: Buffer<NnNifmDetailSf_NetworkProfileData>) throws -> NnUtil_Uuid { throw IpcError.unimplemented }
-	func persistOld(_ _0: NnUtil_Uuid) throws -> NnUtil_Uuid { throw IpcError.unimplemented }
-	func persist() throws -> NnUtil_Uuid { throw IpcError.unimplemented }
+	func update(_ _0: Buffer<NnNifmDetailSf_NetworkProfileData>) throws -> NnUtil_Uuid { throw IpcError.unimplemented(name: "nn::nifm::detail::nn::nifm::detail::INetworkProfile#Update") }
+	func persistOld(_ _0: NnUtil_Uuid) throws -> NnUtil_Uuid { throw IpcError.unimplemented(name: "nn::nifm::detail::nn::nifm::detail::INetworkProfile#PersistOld") }
+	func persist() throws -> NnUtil_Uuid { throw IpcError.unimplemented(name: "nn::nifm::detail::nn::nifm::detail::INetworkProfile#Persist") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
@@ -64,31 +64,31 @@ class NnNifmDetail_INetworkProfile: IpcService {
 }
 
 class NnNifmDetail_IRequest: IpcService {
-	func getRequestState() throws -> UInt32 { throw IpcError.unimplemented }
-	func getResult() throws { throw IpcError.unimplemented }
-	func getSystemEventReadableHandles() throws -> (KObject, KObject) { throw IpcError.unimplemented }
-	func cancel() throws { throw IpcError.unimplemented }
-	func submit() throws { throw IpcError.unimplemented }
-	func setRequirement(_ _0: NnNifm_Requirement) throws { throw IpcError.unimplemented }
-	func setRequirementPreset(_ _0: UInt32) throws { throw IpcError.unimplemented }
-	func setPriority(_ _0: UInt8) throws { throw IpcError.unimplemented }
-	func setNetworkProfileId(_ _0: NnUtil_Uuid) throws { throw IpcError.unimplemented }
-	func setRejectable(_ _0: UInt8) throws { throw IpcError.unimplemented }
-	func setConnectionConfirmationOption(_ _0: Int8) throws { throw IpcError.unimplemented }
-	func setPersistent(_ _0: UInt8) throws { throw IpcError.unimplemented }
-	func setInstant(_ _0: UInt8) throws { throw IpcError.unimplemented }
-	func setSustainable(_ _0: UInt8, _ _1: UInt8) throws { throw IpcError.unimplemented }
-	func setRawPriority(_ _0: UInt8) throws { throw IpcError.unimplemented }
-	func setGreedy(_ _0: UInt8) throws { throw IpcError.unimplemented }
-	func setSharable(_ _0: UInt8) throws { throw IpcError.unimplemented }
-	func setRequirementByRevision(_ _0: UInt32) throws { throw IpcError.unimplemented }
-	func getRequirement() throws -> NnNifm_Requirement { throw IpcError.unimplemented }
-	func getRevision() throws -> UInt32 { throw IpcError.unimplemented }
-	func getAppletInfo(_ _0: UInt32, _ _1: Buffer<UInt8>) throws -> (UInt32, UInt32, UInt32) { throw IpcError.unimplemented }
-	func getAdditionalInfo(_ _0: Buffer<NnNifm_AdditionalInfo>) throws -> UInt32 { throw IpcError.unimplemented }
-	func setKeptInSleep(_ _0: UInt8) throws { throw IpcError.unimplemented }
-	func registerSocketDescriptor(_ _0: UInt32) throws { throw IpcError.unimplemented }
-	func unregisterSocketDescriptor(_ _0: UInt32) throws { throw IpcError.unimplemented }
+	func getRequestState() throws -> UInt32 { throw IpcError.unimplemented(name: "nn::nifm::detail::nn::nifm::detail::IRequest#GetRequestState") }
+	func getResult() throws { throw IpcError.unimplemented(name: "nn::nifm::detail::nn::nifm::detail::IRequest#GetResult") }
+	func getSystemEventReadableHandles() throws -> (KObject, KObject) { throw IpcError.unimplemented(name: "nn::nifm::detail::nn::nifm::detail::IRequest#GetSystemEventReadableHandles") }
+	func cancel() throws { throw IpcError.unimplemented(name: "nn::nifm::detail::nn::nifm::detail::IRequest#Cancel") }
+	func submit() throws { throw IpcError.unimplemented(name: "nn::nifm::detail::nn::nifm::detail::IRequest#Submit") }
+	func setRequirement(_ _0: NnNifm_Requirement) throws { throw IpcError.unimplemented(name: "nn::nifm::detail::nn::nifm::detail::IRequest#SetRequirement") }
+	func setRequirementPreset(_ _0: UInt32) throws { throw IpcError.unimplemented(name: "nn::nifm::detail::nn::nifm::detail::IRequest#SetRequirementPreset") }
+	func setPriority(_ _0: UInt8) throws { throw IpcError.unimplemented(name: "nn::nifm::detail::nn::nifm::detail::IRequest#SetPriority") }
+	func setNetworkProfileId(_ _0: NnUtil_Uuid) throws { throw IpcError.unimplemented(name: "nn::nifm::detail::nn::nifm::detail::IRequest#SetNetworkProfileId") }
+	func setRejectable(_ _0: UInt8) throws { throw IpcError.unimplemented(name: "nn::nifm::detail::nn::nifm::detail::IRequest#SetRejectable") }
+	func setConnectionConfirmationOption(_ _0: Int8) throws { throw IpcError.unimplemented(name: "nn::nifm::detail::nn::nifm::detail::IRequest#SetConnectionConfirmationOption") }
+	func setPersistent(_ _0: UInt8) throws { throw IpcError.unimplemented(name: "nn::nifm::detail::nn::nifm::detail::IRequest#SetPersistent") }
+	func setInstant(_ _0: UInt8) throws { throw IpcError.unimplemented(name: "nn::nifm::detail::nn::nifm::detail::IRequest#SetInstant") }
+	func setSustainable(_ _0: UInt8, _ _1: UInt8) throws { throw IpcError.unimplemented(name: "nn::nifm::detail::nn::nifm::detail::IRequest#SetSustainable") }
+	func setRawPriority(_ _0: UInt8) throws { throw IpcError.unimplemented(name: "nn::nifm::detail::nn::nifm::detail::IRequest#SetRawPriority") }
+	func setGreedy(_ _0: UInt8) throws { throw IpcError.unimplemented(name: "nn::nifm::detail::nn::nifm::detail::IRequest#SetGreedy") }
+	func setSharable(_ _0: UInt8) throws { throw IpcError.unimplemented(name: "nn::nifm::detail::nn::nifm::detail::IRequest#SetSharable") }
+	func setRequirementByRevision(_ _0: UInt32) throws { throw IpcError.unimplemented(name: "nn::nifm::detail::nn::nifm::detail::IRequest#SetRequirementByRevision") }
+	func getRequirement() throws -> NnNifm_Requirement { throw IpcError.unimplemented(name: "nn::nifm::detail::nn::nifm::detail::IRequest#GetRequirement") }
+	func getRevision() throws -> UInt32 { throw IpcError.unimplemented(name: "nn::nifm::detail::nn::nifm::detail::IRequest#GetRevision") }
+	func getAppletInfo(_ _0: UInt32, _ _1: Buffer<UInt8>) throws -> (UInt32, UInt32, UInt32) { throw IpcError.unimplemented(name: "nn::nifm::detail::nn::nifm::detail::IRequest#GetAppletInfo") }
+	func getAdditionalInfo(_ _0: Buffer<NnNifm_AdditionalInfo>) throws -> UInt32 { throw IpcError.unimplemented(name: "nn::nifm::detail::nn::nifm::detail::IRequest#GetAdditionalInfo") }
+	func setKeptInSleep(_ _0: UInt8) throws { throw IpcError.unimplemented(name: "nn::nifm::detail::nn::nifm::detail::IRequest#SetKeptInSleep") }
+	func registerSocketDescriptor(_ _0: UInt32) throws { throw IpcError.unimplemented(name: "nn::nifm::detail::nn::nifm::detail::IRequest#RegisterSocketDescriptor") }
+	func unregisterSocketDescriptor(_ _0: UInt32) throws { throw IpcError.unimplemented(name: "nn::nifm::detail::nn::nifm::detail::IRequest#UnregisterSocketDescriptor") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
@@ -210,8 +210,8 @@ class NnNifmDetail_IRequest: IpcService {
 }
 
 class NnNifmDetail_IStaticService: IpcService {
-	func createGeneralServiceOld() throws -> NnNifmDetail_IGeneralService { throw IpcError.unimplemented }
-	func createGeneralService(_ _0: UInt64, _ _1: Pid) throws -> NnNifmDetail_IGeneralService { throw IpcError.unimplemented }
+	func createGeneralServiceOld() throws -> NnNifmDetail_IGeneralService { throw IpcError.unimplemented(name: "nn::nifm::detail::nn::nifm::detail::IStaticService#CreateGeneralServiceOld") }
+	func createGeneralService(_ _0: UInt64, _ _1: Pid) throws -> NnNifmDetail_IGeneralService { throw IpcError.unimplemented(name: "nn::nifm::detail::nn::nifm::detail::IStaticService#CreateGeneralService") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
@@ -233,42 +233,42 @@ class NnNifmDetail_IStaticService: IpcService {
 }
 
 class NnNifmDetail_IGeneralService: IpcService {
-	func getClientId(_ _0: Buffer<NnNifm_ClientId>) throws { throw IpcError.unimplemented }
-	func createScanRequest() throws -> NnNifmDetail_IScanRequest { throw IpcError.unimplemented }
-	func createRequest(_ _0: UInt32) throws -> NnNifmDetail_IRequest { throw IpcError.unimplemented }
-	func getCurrentNetworkProfile(_ _0: Buffer<NnNifmDetailSf_NetworkProfileData>) throws { throw IpcError.unimplemented }
-	func enumerateNetworkInterfaces(_ _0: UInt32, _ _1: Buffer<NnNifmDetailSf_NetworkInterfaceInfo>) throws -> UInt32 { throw IpcError.unimplemented }
-	func enumerateNetworkProfiles(_ _0: UInt8, _ _1: Buffer<NnNifmDetailSf_NetworkProfileBasicInfo>) throws -> UInt32 { throw IpcError.unimplemented }
-	func getNetworkProfile(_ _0: NnUtil_Uuid, _ _1: Buffer<NnNifmDetailSf_NetworkProfileData>) throws { throw IpcError.unimplemented }
-	func setNetworkProfile(_ _0: Buffer<NnNifmDetailSf_NetworkProfileData>) throws -> NnUtil_Uuid { throw IpcError.unimplemented }
-	func removeNetworkProfile(_ _0: NnUtil_Uuid) throws { throw IpcError.unimplemented }
-	func getScanDataOld(_ _0: Buffer<NnNifmDetailSf_AccessPointDataOld>) throws -> UInt32 { throw IpcError.unimplemented }
-	func getCurrentIpAddress() throws -> NnNifm_IpV4Address { throw IpcError.unimplemented }
-	func getCurrentAccessPointOld(_ _0: Buffer<NnNifmDetailSf_AccessPointDataOld>) throws { throw IpcError.unimplemented }
-	func createTemporaryNetworkProfile(_ _0: Buffer<NnNifmDetailSf_NetworkProfileData>) throws -> (NnUtil_Uuid, NnNifmDetail_INetworkProfile) { throw IpcError.unimplemented }
-	func getCurrentIpConfigInfo() throws -> (NnNifm_IpAddressSetting, NnNifm_DnsSetting) { throw IpcError.unimplemented }
-	func setWirelessCommunicationEnabled(_ _0: UInt8) throws { throw IpcError.unimplemented }
-	func isWirelessCommunicationEnabled() throws -> UInt8 { throw IpcError.unimplemented }
-	func getInternetConnectionStatus() throws -> NnNifmDetailSf_InternetConnectionStatus { throw IpcError.unimplemented }
-	func setEthernetCommunicationEnabled(_ _0: UInt8) throws { throw IpcError.unimplemented }
-	func isEthernetCommunicationEnabled() throws -> UInt8 { throw IpcError.unimplemented }
-	func isAnyInternetRequestAccepted(_ _0: Buffer<NnNifm_ClientId>) throws -> UInt8 { throw IpcError.unimplemented }
-	func isAnyForegroundRequestAccepted() throws -> UInt8 { throw IpcError.unimplemented }
-	func putToSleep() throws { throw IpcError.unimplemented }
-	func wakeUp() throws { throw IpcError.unimplemented }
-	func getSsidListVersion() throws -> NnNifm_SsidListVersion { throw IpcError.unimplemented }
-	func setExclusiveClient(_ _0: Buffer<NnNifm_ClientId>) throws { throw IpcError.unimplemented }
-	func getDefaultIpSetting(_ _0: Buffer<NnNifm_IpSettingData>) throws { throw IpcError.unimplemented }
-	func setDefaultIpSetting(_ _0: Buffer<NnNifm_IpSettingData>) throws { throw IpcError.unimplemented }
-	func setWirelessCommunicationEnabledForTest(_ _0: UInt8) throws { throw IpcError.unimplemented }
-	func setEthernetCommunicationEnabledForTest(_ _0: UInt8) throws { throw IpcError.unimplemented }
-	func getTelemetorySystemEventReadableHandle() throws -> KObject { throw IpcError.unimplemented }
-	func getTelemetryInfo(_ _0: Buffer<NnNifm_TelemetryInfo>) throws { throw IpcError.unimplemented }
-	func confirmSystemAvailability() throws { throw IpcError.unimplemented }
-	func setBackgroundRequestEnabled(_ _0: UInt8) throws { throw IpcError.unimplemented }
-	func getScanData(_ _0: Buffer<NnNifmDetailSf_AccessPointData>) throws -> UInt32 { throw IpcError.unimplemented }
-	func getCurrentAccessPoint(_ _0: Buffer<NnNifmDetailSf_AccessPointData>) throws { throw IpcError.unimplemented }
-	func shutdown() throws { throw IpcError.unimplemented }
+	func getClientId(_ _0: Buffer<NnNifm_ClientId>) throws { throw IpcError.unimplemented(name: "nn::nifm::detail::nn::nifm::detail::IGeneralService#GetClientId") }
+	func createScanRequest() throws -> NnNifmDetail_IScanRequest { throw IpcError.unimplemented(name: "nn::nifm::detail::nn::nifm::detail::IGeneralService#CreateScanRequest") }
+	func createRequest(_ _0: UInt32) throws -> NnNifmDetail_IRequest { throw IpcError.unimplemented(name: "nn::nifm::detail::nn::nifm::detail::IGeneralService#CreateRequest") }
+	func getCurrentNetworkProfile(_ _0: Buffer<NnNifmDetailSf_NetworkProfileData>) throws { throw IpcError.unimplemented(name: "nn::nifm::detail::nn::nifm::detail::IGeneralService#GetCurrentNetworkProfile") }
+	func enumerateNetworkInterfaces(_ _0: UInt32, _ _1: Buffer<NnNifmDetailSf_NetworkInterfaceInfo>) throws -> UInt32 { throw IpcError.unimplemented(name: "nn::nifm::detail::nn::nifm::detail::IGeneralService#EnumerateNetworkInterfaces") }
+	func enumerateNetworkProfiles(_ _0: UInt8, _ _1: Buffer<NnNifmDetailSf_NetworkProfileBasicInfo>) throws -> UInt32 { throw IpcError.unimplemented(name: "nn::nifm::detail::nn::nifm::detail::IGeneralService#EnumerateNetworkProfiles") }
+	func getNetworkProfile(_ _0: NnUtil_Uuid, _ _1: Buffer<NnNifmDetailSf_NetworkProfileData>) throws { throw IpcError.unimplemented(name: "nn::nifm::detail::nn::nifm::detail::IGeneralService#GetNetworkProfile") }
+	func setNetworkProfile(_ _0: Buffer<NnNifmDetailSf_NetworkProfileData>) throws -> NnUtil_Uuid { throw IpcError.unimplemented(name: "nn::nifm::detail::nn::nifm::detail::IGeneralService#SetNetworkProfile") }
+	func removeNetworkProfile(_ _0: NnUtil_Uuid) throws { throw IpcError.unimplemented(name: "nn::nifm::detail::nn::nifm::detail::IGeneralService#RemoveNetworkProfile") }
+	func getScanDataOld(_ _0: Buffer<NnNifmDetailSf_AccessPointDataOld>) throws -> UInt32 { throw IpcError.unimplemented(name: "nn::nifm::detail::nn::nifm::detail::IGeneralService#GetScanDataOld") }
+	func getCurrentIpAddress() throws -> NnNifm_IpV4Address { throw IpcError.unimplemented(name: "nn::nifm::detail::nn::nifm::detail::IGeneralService#GetCurrentIpAddress") }
+	func getCurrentAccessPointOld(_ _0: Buffer<NnNifmDetailSf_AccessPointDataOld>) throws { throw IpcError.unimplemented(name: "nn::nifm::detail::nn::nifm::detail::IGeneralService#GetCurrentAccessPointOld") }
+	func createTemporaryNetworkProfile(_ _0: Buffer<NnNifmDetailSf_NetworkProfileData>) throws -> (NnUtil_Uuid, NnNifmDetail_INetworkProfile) { throw IpcError.unimplemented(name: "nn::nifm::detail::nn::nifm::detail::IGeneralService#CreateTemporaryNetworkProfile") }
+	func getCurrentIpConfigInfo() throws -> (NnNifm_IpAddressSetting, NnNifm_DnsSetting) { throw IpcError.unimplemented(name: "nn::nifm::detail::nn::nifm::detail::IGeneralService#GetCurrentIpConfigInfo") }
+	func setWirelessCommunicationEnabled(_ _0: UInt8) throws { throw IpcError.unimplemented(name: "nn::nifm::detail::nn::nifm::detail::IGeneralService#SetWirelessCommunicationEnabled") }
+	func isWirelessCommunicationEnabled() throws -> UInt8 { throw IpcError.unimplemented(name: "nn::nifm::detail::nn::nifm::detail::IGeneralService#IsWirelessCommunicationEnabled") }
+	func getInternetConnectionStatus() throws -> NnNifmDetailSf_InternetConnectionStatus { throw IpcError.unimplemented(name: "nn::nifm::detail::nn::nifm::detail::IGeneralService#GetInternetConnectionStatus") }
+	func setEthernetCommunicationEnabled(_ _0: UInt8) throws { throw IpcError.unimplemented(name: "nn::nifm::detail::nn::nifm::detail::IGeneralService#SetEthernetCommunicationEnabled") }
+	func isEthernetCommunicationEnabled() throws -> UInt8 { throw IpcError.unimplemented(name: "nn::nifm::detail::nn::nifm::detail::IGeneralService#IsEthernetCommunicationEnabled") }
+	func isAnyInternetRequestAccepted(_ _0: Buffer<NnNifm_ClientId>) throws -> UInt8 { throw IpcError.unimplemented(name: "nn::nifm::detail::nn::nifm::detail::IGeneralService#IsAnyInternetRequestAccepted") }
+	func isAnyForegroundRequestAccepted() throws -> UInt8 { throw IpcError.unimplemented(name: "nn::nifm::detail::nn::nifm::detail::IGeneralService#IsAnyForegroundRequestAccepted") }
+	func putToSleep() throws { throw IpcError.unimplemented(name: "nn::nifm::detail::nn::nifm::detail::IGeneralService#PutToSleep") }
+	func wakeUp() throws { throw IpcError.unimplemented(name: "nn::nifm::detail::nn::nifm::detail::IGeneralService#WakeUp") }
+	func getSsidListVersion() throws -> NnNifm_SsidListVersion { throw IpcError.unimplemented(name: "nn::nifm::detail::nn::nifm::detail::IGeneralService#GetSsidListVersion") }
+	func setExclusiveClient(_ _0: Buffer<NnNifm_ClientId>) throws { throw IpcError.unimplemented(name: "nn::nifm::detail::nn::nifm::detail::IGeneralService#SetExclusiveClient") }
+	func getDefaultIpSetting(_ _0: Buffer<NnNifm_IpSettingData>) throws { throw IpcError.unimplemented(name: "nn::nifm::detail::nn::nifm::detail::IGeneralService#GetDefaultIpSetting") }
+	func setDefaultIpSetting(_ _0: Buffer<NnNifm_IpSettingData>) throws { throw IpcError.unimplemented(name: "nn::nifm::detail::nn::nifm::detail::IGeneralService#SetDefaultIpSetting") }
+	func setWirelessCommunicationEnabledForTest(_ _0: UInt8) throws { throw IpcError.unimplemented(name: "nn::nifm::detail::nn::nifm::detail::IGeneralService#SetWirelessCommunicationEnabledForTest") }
+	func setEthernetCommunicationEnabledForTest(_ _0: UInt8) throws { throw IpcError.unimplemented(name: "nn::nifm::detail::nn::nifm::detail::IGeneralService#SetEthernetCommunicationEnabledForTest") }
+	func getTelemetorySystemEventReadableHandle() throws -> KObject { throw IpcError.unimplemented(name: "nn::nifm::detail::nn::nifm::detail::IGeneralService#GetTelemetorySystemEventReadableHandle") }
+	func getTelemetryInfo(_ _0: Buffer<NnNifm_TelemetryInfo>) throws { throw IpcError.unimplemented(name: "nn::nifm::detail::nn::nifm::detail::IGeneralService#GetTelemetryInfo") }
+	func confirmSystemAvailability() throws { throw IpcError.unimplemented(name: "nn::nifm::detail::nn::nifm::detail::IGeneralService#ConfirmSystemAvailability") }
+	func setBackgroundRequestEnabled(_ _0: UInt8) throws { throw IpcError.unimplemented(name: "nn::nifm::detail::nn::nifm::detail::IGeneralService#SetBackgroundRequestEnabled") }
+	func getScanData(_ _0: Buffer<NnNifmDetailSf_AccessPointData>) throws -> UInt32 { throw IpcError.unimplemented(name: "nn::nifm::detail::nn::nifm::detail::IGeneralService#GetScanData") }
+	func getCurrentAccessPoint(_ _0: Buffer<NnNifmDetailSf_AccessPointData>) throws { throw IpcError.unimplemented(name: "nn::nifm::detail::nn::nifm::detail::IGeneralService#GetCurrentAccessPoint") }
+	func shutdown() throws { throw IpcError.unimplemented(name: "nn::nifm::detail::nn::nifm::detail::IGeneralService#Shutdown") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {

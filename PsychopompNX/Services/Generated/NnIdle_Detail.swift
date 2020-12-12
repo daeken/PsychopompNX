@@ -1,10 +1,10 @@
 class NnIdleDetail_IPolicyManagerSystem: IpcService {
-	func getAutoPowerDownEvent() throws -> KObject { throw IpcError.unimplemented }
-	func unknown1() throws { throw IpcError.unimplemented }
-	func unknown2() throws { throw IpcError.unimplemented }
-	func unknown3(_ _0: Any?) throws { throw IpcError.unimplemented }
-	func unknown4() throws { throw IpcError.unimplemented }
-	func unknown5() throws { throw IpcError.unimplemented }
+	func getAutoPowerDownEvent() throws -> KObject { throw IpcError.unimplemented(name: "nn::idle::detail::nn::idle::detail::IPolicyManagerSystem#GetAutoPowerDownEvent") }
+	func unknown1() throws { throw IpcError.unimplemented(name: "nn::idle::detail::nn::idle::detail::IPolicyManagerSystem#Unknown1") }
+	func unknown2() throws { throw IpcError.unimplemented(name: "nn::idle::detail::nn::idle::detail::IPolicyManagerSystem#Unknown2") }
+	func unknown3(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::idle::detail::nn::idle::detail::IPolicyManagerSystem#Unknown3") }
+	func unknown4() throws { throw IpcError.unimplemented(name: "nn::idle::detail::nn::idle::detail::IPolicyManagerSystem#Unknown4") }
+	func unknown5() throws { throw IpcError.unimplemented(name: "nn::idle::detail::nn::idle::detail::IPolicyManagerSystem#Unknown5") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {

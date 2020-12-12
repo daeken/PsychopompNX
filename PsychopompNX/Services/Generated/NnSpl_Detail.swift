@@ -1,5 +1,5 @@
 class NnSplDetail_IRandomInterface: IpcService {
-	func getRandomBytes(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented }
+	func getRandomBytes(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::spl::detail::nn::spl::detail::IRandomInterface#GetRandomBytes") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
@@ -15,26 +15,26 @@ class NnSplDetail_IRandomInterface: IpcService {
 }
 
 class NnSplDetail_IEsInterface: IpcService {
-	func unknown0(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func unknown1(_ _0: Buffer<UInt8>, _ _1: Buffer<UInt8>, _ _2: Buffer<UInt8>, _ _3: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func unknown2(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func unknown3(_ _0: Any?) throws { throw IpcError.unimplemented }
-	func unknown4(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func unknown5(_ _0: Any?) throws { throw IpcError.unimplemented }
-	func unknown7(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func unknown11() throws -> Any? { throw IpcError.unimplemented }
-	func unknown13(_ _0: Any?, _ _1: Buffer<UInt8>, _ _2: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func unknown14(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func unknown15(_ _0: Any?, _ _1: Buffer<UInt8>, _ _2: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func unknown16(_ _0: Any?, _ _1: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented }
-	func unknown17(_ _0: Any?, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func unknown18(_ _0: Any?, _ _1: Buffer<UInt8>, _ _2: Buffer<UInt8>, _ _3: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented }
-	func unknown20(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func unknown21() throws -> Any? { throw IpcError.unimplemented }
-	func unknown22(_ _0: Any?) throws { throw IpcError.unimplemented }
-	func unknown23() throws -> KObject { throw IpcError.unimplemented }
-	func unknown24(_ _0: Any?) throws { throw IpcError.unimplemented }
-	func unknown25() throws -> Any? { throw IpcError.unimplemented }
+	func unknown0(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::spl::detail::nn::spl::detail::IEsInterface#Unknown0") }
+	func unknown1(_ _0: Buffer<UInt8>, _ _1: Buffer<UInt8>, _ _2: Buffer<UInt8>, _ _3: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::spl::detail::nn::spl::detail::IEsInterface#Unknown1") }
+	func unknown2(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::spl::detail::nn::spl::detail::IEsInterface#Unknown2") }
+	func unknown3(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::spl::detail::nn::spl::detail::IEsInterface#Unknown3") }
+	func unknown4(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::spl::detail::nn::spl::detail::IEsInterface#Unknown4") }
+	func unknown5(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::spl::detail::nn::spl::detail::IEsInterface#Unknown5") }
+	func unknown7(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::spl::detail::nn::spl::detail::IEsInterface#Unknown7") }
+	func unknown11() throws -> Any? { throw IpcError.unimplemented(name: "nn::spl::detail::nn::spl::detail::IEsInterface#Unknown11") }
+	func unknown13(_ _0: Any?, _ _1: Buffer<UInt8>, _ _2: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::spl::detail::nn::spl::detail::IEsInterface#Unknown13") }
+	func unknown14(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::spl::detail::nn::spl::detail::IEsInterface#Unknown14") }
+	func unknown15(_ _0: Any?, _ _1: Buffer<UInt8>, _ _2: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::spl::detail::nn::spl::detail::IEsInterface#Unknown15") }
+	func unknown16(_ _0: Any?, _ _1: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented(name: "nn::spl::detail::nn::spl::detail::IEsInterface#Unknown16") }
+	func unknown17(_ _0: Any?, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::spl::detail::nn::spl::detail::IEsInterface#Unknown17") }
+	func unknown18(_ _0: Any?, _ _1: Buffer<UInt8>, _ _2: Buffer<UInt8>, _ _3: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented(name: "nn::spl::detail::nn::spl::detail::IEsInterface#Unknown18") }
+	func unknown20(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::spl::detail::nn::spl::detail::IEsInterface#Unknown20") }
+	func unknown21() throws -> Any? { throw IpcError.unimplemented(name: "nn::spl::detail::nn::spl::detail::IEsInterface#Unknown21") }
+	func unknown22(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::spl::detail::nn::spl::detail::IEsInterface#Unknown22") }
+	func unknown23() throws -> KObject { throw IpcError.unimplemented(name: "nn::spl::detail::nn::spl::detail::IEsInterface#Unknown23") }
+	func unknown24(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::spl::detail::nn::spl::detail::IEsInterface#Unknown24") }
+	func unknown25() throws -> Any? { throw IpcError.unimplemented(name: "nn::spl::detail::nn::spl::detail::IEsInterface#Unknown25") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
@@ -127,36 +127,36 @@ class NnSplDetail_IEsInterface: IpcService {
 }
 
 class NnSplDetail_IGeneralInterface: IpcService {
-	func getConfig(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func userExpMod(_ _0: Buffer<UInt8>, _ _1: Buffer<UInt8>, _ _2: Buffer<UInt8>, _ _3: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func generateAesKek(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func loadAesKey(_ _0: Any?) throws { throw IpcError.unimplemented }
-	func generateAesKey(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func setConfig(_ _0: Any?) throws { throw IpcError.unimplemented }
-	func getRandomBytes(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func loadSecureExpModKey(_ _0: Any?, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func secureExpMod(_ _0: Buffer<UInt8>, _ _1: Buffer<UInt8>, _ _2: Buffer<UInt8>, _ _3: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented }
-	func isDevelopment() throws -> Any? { throw IpcError.unimplemented }
-	func generateSpecificAesKey(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func decryptRsaPrivateKey(_ _0: Any?, _ _1: Buffer<UInt8>, _ _2: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func decryptAesKey(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func decryptAesCtr(_ _0: Any?, _ _1: Buffer<UInt8>, _ _2: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func computeCmac(_ _0: Any?, _ _1: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented }
-	func loadRsaOaepKey(_ _0: Any?, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func unwrapRsaOaepWrappedTitleKey(_ _0: Any?, _ _1: Buffer<UInt8>, _ _2: Buffer<UInt8>, _ _3: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented }
-	func loadTitleKey(_ _0: Any?) throws { throw IpcError.unimplemented }
-	func unwrapAesWrappedTitleKey(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func lockAesEngine() throws -> Any? { throw IpcError.unimplemented }
-	func unlockAesEngine(_ _0: Any?) throws { throw IpcError.unimplemented }
-	func getSplWaitEvent() throws -> KObject { throw IpcError.unimplemented }
-	func setSharedData(_ _0: Any?) throws { throw IpcError.unimplemented }
-	func getSharedData() throws -> Any? { throw IpcError.unimplemented }
-	func importSslRsaKey(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func secureExpModWithSslKey(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func importEsRsaKey(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func secureExpModWithEsKey(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func encryptManuRsaKeyForImport(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func getPackage2Hash(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
+	func getConfig(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::spl::detail::nn::spl::detail::IGeneralInterface#GetConfig") }
+	func userExpMod(_ _0: Buffer<UInt8>, _ _1: Buffer<UInt8>, _ _2: Buffer<UInt8>, _ _3: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::spl::detail::nn::spl::detail::IGeneralInterface#UserExpMod") }
+	func generateAesKek(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::spl::detail::nn::spl::detail::IGeneralInterface#GenerateAesKek") }
+	func loadAesKey(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::spl::detail::nn::spl::detail::IGeneralInterface#LoadAesKey") }
+	func generateAesKey(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::spl::detail::nn::spl::detail::IGeneralInterface#GenerateAesKey") }
+	func setConfig(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::spl::detail::nn::spl::detail::IGeneralInterface#SetConfig") }
+	func getRandomBytes(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::spl::detail::nn::spl::detail::IGeneralInterface#GetRandomBytes") }
+	func loadSecureExpModKey(_ _0: Any?, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::spl::detail::nn::spl::detail::IGeneralInterface#LoadSecureExpModKey") }
+	func secureExpMod(_ _0: Buffer<UInt8>, _ _1: Buffer<UInt8>, _ _2: Buffer<UInt8>, _ _3: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented(name: "nn::spl::detail::nn::spl::detail::IGeneralInterface#SecureExpMod") }
+	func isDevelopment() throws -> Any? { throw IpcError.unimplemented(name: "nn::spl::detail::nn::spl::detail::IGeneralInterface#IsDevelopment") }
+	func generateSpecificAesKey(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::spl::detail::nn::spl::detail::IGeneralInterface#GenerateSpecificAesKey") }
+	func decryptRsaPrivateKey(_ _0: Any?, _ _1: Buffer<UInt8>, _ _2: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::spl::detail::nn::spl::detail::IGeneralInterface#DecryptRsaPrivateKey") }
+	func decryptAesKey(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::spl::detail::nn::spl::detail::IGeneralInterface#DecryptAesKey") }
+	func decryptAesCtr(_ _0: Any?, _ _1: Buffer<UInt8>, _ _2: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::spl::detail::nn::spl::detail::IGeneralInterface#DecryptAesCtr") }
+	func computeCmac(_ _0: Any?, _ _1: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented(name: "nn::spl::detail::nn::spl::detail::IGeneralInterface#ComputeCmac") }
+	func loadRsaOaepKey(_ _0: Any?, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::spl::detail::nn::spl::detail::IGeneralInterface#LoadRsaOaepKey") }
+	func unwrapRsaOaepWrappedTitleKey(_ _0: Any?, _ _1: Buffer<UInt8>, _ _2: Buffer<UInt8>, _ _3: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented(name: "nn::spl::detail::nn::spl::detail::IGeneralInterface#UnwrapRsaOaepWrappedTitleKey") }
+	func loadTitleKey(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::spl::detail::nn::spl::detail::IGeneralInterface#LoadTitleKey") }
+	func unwrapAesWrappedTitleKey(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::spl::detail::nn::spl::detail::IGeneralInterface#UnwrapAesWrappedTitleKey") }
+	func lockAesEngine() throws -> Any? { throw IpcError.unimplemented(name: "nn::spl::detail::nn::spl::detail::IGeneralInterface#LockAesEngine") }
+	func unlockAesEngine(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::spl::detail::nn::spl::detail::IGeneralInterface#UnlockAesEngine") }
+	func getSplWaitEvent() throws -> KObject { throw IpcError.unimplemented(name: "nn::spl::detail::nn::spl::detail::IGeneralInterface#GetSplWaitEvent") }
+	func setSharedData(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::spl::detail::nn::spl::detail::IGeneralInterface#SetSharedData") }
+	func getSharedData() throws -> Any? { throw IpcError.unimplemented(name: "nn::spl::detail::nn::spl::detail::IGeneralInterface#GetSharedData") }
+	func importSslRsaKey(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::spl::detail::nn::spl::detail::IGeneralInterface#ImportSslRsaKey") }
+	func secureExpModWithSslKey(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::spl::detail::nn::spl::detail::IGeneralInterface#SecureExpModWithSslKey") }
+	func importEsRsaKey(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::spl::detail::nn::spl::detail::IGeneralInterface#ImportEsRsaKey") }
+	func secureExpModWithEsKey(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::spl::detail::nn::spl::detail::IGeneralInterface#SecureExpModWithEsKey") }
+	func encryptManuRsaKeyForImport(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::spl::detail::nn::spl::detail::IGeneralInterface#EncryptManuRsaKeyForImport") }
+	func getPackage2Hash(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::spl::detail::nn::spl::detail::IGeneralInterface#GetPackage2Hash") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
@@ -289,26 +289,26 @@ class NnSplDetail_IGeneralInterface: IpcService {
 }
 
 class NnSplDetail_IFsInterface: IpcService {
-	func unknown0(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func unknown1(_ _0: Buffer<UInt8>, _ _1: Buffer<UInt8>, _ _2: Buffer<UInt8>, _ _3: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func unknown2(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func unknown3(_ _0: Any?) throws { throw IpcError.unimplemented }
-	func unknown4(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func unknown5(_ _0: Any?) throws { throw IpcError.unimplemented }
-	func unknown7(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func unknown9(_ _0: Any?, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func unknown10(_ _0: Buffer<UInt8>, _ _1: Buffer<UInt8>, _ _2: Buffer<UInt8>, _ _3: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented }
-	func unknown11() throws -> Any? { throw IpcError.unimplemented }
-	func unknown12(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func unknown14(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func unknown15(_ _0: Any?, _ _1: Buffer<UInt8>, _ _2: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func unknown16(_ _0: Any?, _ _1: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented }
-	func unknown19(_ _0: Any?) throws { throw IpcError.unimplemented }
-	func unknown21() throws -> Any? { throw IpcError.unimplemented }
-	func unknown22(_ _0: Any?) throws { throw IpcError.unimplemented }
-	func unknown23() throws -> KObject { throw IpcError.unimplemented }
-	func unknown24(_ _0: Any?) throws { throw IpcError.unimplemented }
-	func unknown25() throws -> Any? { throw IpcError.unimplemented }
+	func unknown0(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::spl::detail::nn::spl::detail::IFsInterface#Unknown0") }
+	func unknown1(_ _0: Buffer<UInt8>, _ _1: Buffer<UInt8>, _ _2: Buffer<UInt8>, _ _3: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::spl::detail::nn::spl::detail::IFsInterface#Unknown1") }
+	func unknown2(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::spl::detail::nn::spl::detail::IFsInterface#Unknown2") }
+	func unknown3(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::spl::detail::nn::spl::detail::IFsInterface#Unknown3") }
+	func unknown4(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::spl::detail::nn::spl::detail::IFsInterface#Unknown4") }
+	func unknown5(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::spl::detail::nn::spl::detail::IFsInterface#Unknown5") }
+	func unknown7(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::spl::detail::nn::spl::detail::IFsInterface#Unknown7") }
+	func unknown9(_ _0: Any?, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::spl::detail::nn::spl::detail::IFsInterface#Unknown9") }
+	func unknown10(_ _0: Buffer<UInt8>, _ _1: Buffer<UInt8>, _ _2: Buffer<UInt8>, _ _3: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented(name: "nn::spl::detail::nn::spl::detail::IFsInterface#Unknown10") }
+	func unknown11() throws -> Any? { throw IpcError.unimplemented(name: "nn::spl::detail::nn::spl::detail::IFsInterface#Unknown11") }
+	func unknown12(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::spl::detail::nn::spl::detail::IFsInterface#Unknown12") }
+	func unknown14(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::spl::detail::nn::spl::detail::IFsInterface#Unknown14") }
+	func unknown15(_ _0: Any?, _ _1: Buffer<UInt8>, _ _2: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::spl::detail::nn::spl::detail::IFsInterface#Unknown15") }
+	func unknown16(_ _0: Any?, _ _1: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented(name: "nn::spl::detail::nn::spl::detail::IFsInterface#Unknown16") }
+	func unknown19(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::spl::detail::nn::spl::detail::IFsInterface#Unknown19") }
+	func unknown21() throws -> Any? { throw IpcError.unimplemented(name: "nn::spl::detail::nn::spl::detail::IFsInterface#Unknown21") }
+	func unknown22(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::spl::detail::nn::spl::detail::IFsInterface#Unknown22") }
+	func unknown23() throws -> KObject { throw IpcError.unimplemented(name: "nn::spl::detail::nn::spl::detail::IFsInterface#Unknown23") }
+	func unknown24(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::spl::detail::nn::spl::detail::IFsInterface#Unknown24") }
+	func unknown25() throws -> Any? { throw IpcError.unimplemented(name: "nn::spl::detail::nn::spl::detail::IFsInterface#Unknown25") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
@@ -401,22 +401,22 @@ class NnSplDetail_IFsInterface: IpcService {
 }
 
 class NnSplDetail_ICryptoInterface: IpcService {
-	func unknown0(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func unknown1(_ _0: Buffer<UInt8>, _ _1: Buffer<UInt8>, _ _2: Buffer<UInt8>, _ _3: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func unknown2(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func unknown3(_ _0: Any?) throws { throw IpcError.unimplemented }
-	func unknown4(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func unknown5(_ _0: Any?) throws { throw IpcError.unimplemented }
-	func unknown7(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func unknown11() throws -> Any? { throw IpcError.unimplemented }
-	func unknown14(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func unknown15(_ _0: Any?, _ _1: Buffer<UInt8>, _ _2: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func unknown16(_ _0: Any?, _ _1: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented }
-	func unknown21() throws -> Any? { throw IpcError.unimplemented }
-	func unknown22(_ _0: Any?) throws { throw IpcError.unimplemented }
-	func unknown23() throws -> KObject { throw IpcError.unimplemented }
-	func unknown24(_ _0: Any?) throws { throw IpcError.unimplemented }
-	func unknown25() throws -> Any? { throw IpcError.unimplemented }
+	func unknown0(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::spl::detail::nn::spl::detail::ICryptoInterface#Unknown0") }
+	func unknown1(_ _0: Buffer<UInt8>, _ _1: Buffer<UInt8>, _ _2: Buffer<UInt8>, _ _3: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::spl::detail::nn::spl::detail::ICryptoInterface#Unknown1") }
+	func unknown2(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::spl::detail::nn::spl::detail::ICryptoInterface#Unknown2") }
+	func unknown3(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::spl::detail::nn::spl::detail::ICryptoInterface#Unknown3") }
+	func unknown4(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::spl::detail::nn::spl::detail::ICryptoInterface#Unknown4") }
+	func unknown5(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::spl::detail::nn::spl::detail::ICryptoInterface#Unknown5") }
+	func unknown7(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::spl::detail::nn::spl::detail::ICryptoInterface#Unknown7") }
+	func unknown11() throws -> Any? { throw IpcError.unimplemented(name: "nn::spl::detail::nn::spl::detail::ICryptoInterface#Unknown11") }
+	func unknown14(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::spl::detail::nn::spl::detail::ICryptoInterface#Unknown14") }
+	func unknown15(_ _0: Any?, _ _1: Buffer<UInt8>, _ _2: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::spl::detail::nn::spl::detail::ICryptoInterface#Unknown15") }
+	func unknown16(_ _0: Any?, _ _1: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented(name: "nn::spl::detail::nn::spl::detail::ICryptoInterface#Unknown16") }
+	func unknown21() throws -> Any? { throw IpcError.unimplemented(name: "nn::spl::detail::nn::spl::detail::ICryptoInterface#Unknown21") }
+	func unknown22(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::spl::detail::nn::spl::detail::ICryptoInterface#Unknown22") }
+	func unknown23() throws -> KObject { throw IpcError.unimplemented(name: "nn::spl::detail::nn::spl::detail::ICryptoInterface#Unknown23") }
+	func unknown24(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::spl::detail::nn::spl::detail::ICryptoInterface#Unknown24") }
+	func unknown25() throws -> Any? { throw IpcError.unimplemented(name: "nn::spl::detail::nn::spl::detail::ICryptoInterface#Unknown25") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
@@ -493,23 +493,23 @@ class NnSplDetail_ICryptoInterface: IpcService {
 }
 
 class NnSplDetail_ISslInterface: IpcService {
-	func unknown0(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func unknown1(_ _0: Buffer<UInt8>, _ _1: Buffer<UInt8>, _ _2: Buffer<UInt8>, _ _3: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func unknown2(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func unknown3(_ _0: Any?) throws { throw IpcError.unimplemented }
-	func unknown4(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func unknown5(_ _0: Any?) throws { throw IpcError.unimplemented }
-	func unknown7(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func unknown11() throws -> Any? { throw IpcError.unimplemented }
-	func unknown13(_ _0: Any?, _ _1: Buffer<UInt8>, _ _2: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func unknown14(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func unknown15(_ _0: Any?, _ _1: Buffer<UInt8>, _ _2: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func unknown16(_ _0: Any?, _ _1: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented }
-	func unknown21() throws -> Any? { throw IpcError.unimplemented }
-	func unknown22(_ _0: Any?) throws { throw IpcError.unimplemented }
-	func unknown23() throws -> KObject { throw IpcError.unimplemented }
-	func unknown24(_ _0: Any?) throws { throw IpcError.unimplemented }
-	func unknown25() throws -> Any? { throw IpcError.unimplemented }
+	func unknown0(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::spl::detail::nn::spl::detail::ISslInterface#Unknown0") }
+	func unknown1(_ _0: Buffer<UInt8>, _ _1: Buffer<UInt8>, _ _2: Buffer<UInt8>, _ _3: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::spl::detail::nn::spl::detail::ISslInterface#Unknown1") }
+	func unknown2(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::spl::detail::nn::spl::detail::ISslInterface#Unknown2") }
+	func unknown3(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::spl::detail::nn::spl::detail::ISslInterface#Unknown3") }
+	func unknown4(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::spl::detail::nn::spl::detail::ISslInterface#Unknown4") }
+	func unknown5(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::spl::detail::nn::spl::detail::ISslInterface#Unknown5") }
+	func unknown7(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::spl::detail::nn::spl::detail::ISslInterface#Unknown7") }
+	func unknown11() throws -> Any? { throw IpcError.unimplemented(name: "nn::spl::detail::nn::spl::detail::ISslInterface#Unknown11") }
+	func unknown13(_ _0: Any?, _ _1: Buffer<UInt8>, _ _2: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::spl::detail::nn::spl::detail::ISslInterface#Unknown13") }
+	func unknown14(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::spl::detail::nn::spl::detail::ISslInterface#Unknown14") }
+	func unknown15(_ _0: Any?, _ _1: Buffer<UInt8>, _ _2: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::spl::detail::nn::spl::detail::ISslInterface#Unknown15") }
+	func unknown16(_ _0: Any?, _ _1: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented(name: "nn::spl::detail::nn::spl::detail::ISslInterface#Unknown16") }
+	func unknown21() throws -> Any? { throw IpcError.unimplemented(name: "nn::spl::detail::nn::spl::detail::ISslInterface#Unknown21") }
+	func unknown22(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::spl::detail::nn::spl::detail::ISslInterface#Unknown22") }
+	func unknown23() throws -> KObject { throw IpcError.unimplemented(name: "nn::spl::detail::nn::spl::detail::ISslInterface#Unknown23") }
+	func unknown24(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::spl::detail::nn::spl::detail::ISslInterface#Unknown24") }
+	func unknown25() throws -> Any? { throw IpcError.unimplemented(name: "nn::spl::detail::nn::spl::detail::ISslInterface#Unknown25") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {

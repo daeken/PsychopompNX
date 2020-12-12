@@ -1,9 +1,9 @@
 class NnBgtc_IStateControlService: IpcService {
-	func unknown1() throws -> Any? { throw IpcError.unimplemented }
-	func unknown2() throws -> KObject { throw IpcError.unimplemented }
-	func unknown3() throws { throw IpcError.unimplemented }
-	func unknown4() throws { throw IpcError.unimplemented }
-	func unknown5(_ _0: Any?) throws { throw IpcError.unimplemented }
+	func unknown1() throws -> Any? { throw IpcError.unimplemented(name: "nn::bgtc::nn::bgtc::IStateControlService#Unknown1") }
+	func unknown2() throws -> KObject { throw IpcError.unimplemented(name: "nn::bgtc::nn::bgtc::IStateControlService#Unknown2") }
+	func unknown3() throws { throw IpcError.unimplemented(name: "nn::bgtc::nn::bgtc::IStateControlService#Unknown3") }
+	func unknown4() throws { throw IpcError.unimplemented(name: "nn::bgtc::nn::bgtc::IStateControlService#Unknown4") }
+	func unknown5(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::bgtc::nn::bgtc::IStateControlService#Unknown5") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
@@ -36,20 +36,20 @@ class NnBgtc_IStateControlService: IpcService {
 }
 
 class NnBgtc_ITaskService: IpcService {
-	func unknown1() throws { throw IpcError.unimplemented }
-	func unknown2() throws { throw IpcError.unimplemented }
-	func unknown3() throws -> KObject { throw IpcError.unimplemented }
-	func unknown4() throws -> Any? { throw IpcError.unimplemented }
-	func unknown5(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func unknown6() throws -> Any? { throw IpcError.unimplemented }
-	func unknown11(_ _0: Any?) throws { throw IpcError.unimplemented }
-	func unknown12() throws -> Any? { throw IpcError.unimplemented }
-	func unknown13() throws { throw IpcError.unimplemented }
-	func unknown14() throws -> KObject { throw IpcError.unimplemented }
-	func unknown15(_ _0: Any?) throws { throw IpcError.unimplemented }
-	func unknown101() throws -> Any? { throw IpcError.unimplemented }
-	func unknown102() throws -> Any? { throw IpcError.unimplemented }
-	func unknown103() throws -> Any? { throw IpcError.unimplemented }
+	func unknown1() throws { throw IpcError.unimplemented(name: "nn::bgtc::nn::bgtc::ITaskService#Unknown1") }
+	func unknown2() throws { throw IpcError.unimplemented(name: "nn::bgtc::nn::bgtc::ITaskService#Unknown2") }
+	func unknown3() throws -> KObject { throw IpcError.unimplemented(name: "nn::bgtc::nn::bgtc::ITaskService#Unknown3") }
+	func unknown4() throws -> Any? { throw IpcError.unimplemented(name: "nn::bgtc::nn::bgtc::ITaskService#Unknown4") }
+	func unknown5(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::bgtc::nn::bgtc::ITaskService#Unknown5") }
+	func unknown6() throws -> Any? { throw IpcError.unimplemented(name: "nn::bgtc::nn::bgtc::ITaskService#Unknown6") }
+	func unknown11(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::bgtc::nn::bgtc::ITaskService#Unknown11") }
+	func unknown12() throws -> Any? { throw IpcError.unimplemented(name: "nn::bgtc::nn::bgtc::ITaskService#Unknown12") }
+	func unknown13() throws { throw IpcError.unimplemented(name: "nn::bgtc::nn::bgtc::ITaskService#Unknown13") }
+	func unknown14() throws -> KObject { throw IpcError.unimplemented(name: "nn::bgtc::nn::bgtc::ITaskService#Unknown14") }
+	func unknown15(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::bgtc::nn::bgtc::ITaskService#Unknown15") }
+	func unknown101() throws -> Any? { throw IpcError.unimplemented(name: "nn::bgtc::nn::bgtc::ITaskService#Unknown101") }
+	func unknown102() throws -> Any? { throw IpcError.unimplemented(name: "nn::bgtc::nn::bgtc::ITaskService#Unknown102") }
+	func unknown103() throws -> Any? { throw IpcError.unimplemented(name: "nn::bgtc::nn::bgtc::ITaskService#Unknown103") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {

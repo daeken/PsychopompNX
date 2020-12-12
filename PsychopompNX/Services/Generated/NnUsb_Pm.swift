@@ -1,10 +1,10 @@
 class NnUsbPm_IPmService: IpcService {
-	func unknown0() throws -> KObject { throw IpcError.unimplemented }
-	func unknown1(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func unknown2() throws -> KObject { throw IpcError.unimplemented }
-	func unknown3() throws -> Any? { throw IpcError.unimplemented }
-	func unknown4(_ _0: Any?) throws { throw IpcError.unimplemented }
-	func unknown5(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
+	func unknown0() throws -> KObject { throw IpcError.unimplemented(name: "nn::usb::pm::nn::usb::pm::IPmService#Unknown0") }
+	func unknown1(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::usb::pm::nn::usb::pm::IPmService#Unknown1") }
+	func unknown2() throws -> KObject { throw IpcError.unimplemented(name: "nn::usb::pm::nn::usb::pm::IPmService#Unknown2") }
+	func unknown3() throws -> Any? { throw IpcError.unimplemented(name: "nn::usb::pm::nn::usb::pm::IPmService#Unknown3") }
+	func unknown4(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::usb::pm::nn::usb::pm::IPmService#Unknown4") }
+	func unknown5(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::usb::pm::nn::usb::pm::IPmService#Unknown5") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {

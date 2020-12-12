@@ -2,12 +2,12 @@ typealias NnAccountProfile_UserData = [UInt8]
 typealias NnAccountProfile_ProfileBase = [UInt8]
 
 class NnAccountProfile_IProfileEditor: IpcService {
-	func get(_ _0: Buffer<NnAccountProfile_UserData>) throws -> NnAccountProfile_ProfileBase { throw IpcError.unimplemented }
-	func getBase() throws -> NnAccountProfile_ProfileBase { throw IpcError.unimplemented }
-	func getImageSize() throws -> UInt32 { throw IpcError.unimplemented }
-	func loadImage(_ _0: Buffer<UInt8>) throws -> UInt32 { throw IpcError.unimplemented }
-	func store(_ _0: NnAccountProfile_ProfileBase, _ _1: Buffer<NnAccountProfile_UserData>) throws { throw IpcError.unimplemented }
-	func storeWithImage(_ _0: NnAccountProfile_ProfileBase, _ _1: Buffer<NnAccountProfile_UserData>, _ _2: Buffer<UInt8>) throws { throw IpcError.unimplemented }
+	func get(_ _0: Buffer<NnAccountProfile_UserData>) throws -> NnAccountProfile_ProfileBase { throw IpcError.unimplemented(name: "nn::account::profile::nn::account::profile::IProfileEditor#Get") }
+	func getBase() throws -> NnAccountProfile_ProfileBase { throw IpcError.unimplemented(name: "nn::account::profile::nn::account::profile::IProfileEditor#GetBase") }
+	func getImageSize() throws -> UInt32 { throw IpcError.unimplemented(name: "nn::account::profile::nn::account::profile::IProfileEditor#GetImageSize") }
+	func loadImage(_ _0: Buffer<UInt8>) throws -> UInt32 { throw IpcError.unimplemented(name: "nn::account::profile::nn::account::profile::IProfileEditor#LoadImage") }
+	func store(_ _0: NnAccountProfile_ProfileBase, _ _1: Buffer<NnAccountProfile_UserData>) throws { throw IpcError.unimplemented(name: "nn::account::profile::nn::account::profile::IProfileEditor#Store") }
+	func storeWithImage(_ _0: NnAccountProfile_ProfileBase, _ _1: Buffer<NnAccountProfile_UserData>, _ _2: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::account::profile::nn::account::profile::IProfileEditor#StoreWithImage") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
@@ -49,10 +49,10 @@ class NnAccountProfile_IProfileEditor: IpcService {
 }
 
 class NnAccountProfile_IProfile: IpcService {
-	func get(_ _0: Buffer<NnAccountProfile_UserData>) throws -> NnAccountProfile_ProfileBase { throw IpcError.unimplemented }
-	func getBase() throws -> NnAccountProfile_ProfileBase { throw IpcError.unimplemented }
-	func getImageSize() throws -> UInt32 { throw IpcError.unimplemented }
-	func loadImage(_ _0: Buffer<UInt8>) throws -> UInt32 { throw IpcError.unimplemented }
+	func get(_ _0: Buffer<NnAccountProfile_UserData>) throws -> NnAccountProfile_ProfileBase { throw IpcError.unimplemented(name: "nn::account::profile::nn::account::profile::IProfile#Get") }
+	func getBase() throws -> NnAccountProfile_ProfileBase { throw IpcError.unimplemented(name: "nn::account::profile::nn::account::profile::IProfile#GetBase") }
+	func getImageSize() throws -> UInt32 { throw IpcError.unimplemented(name: "nn::account::profile::nn::account::profile::IProfile#GetImageSize") }
+	func loadImage(_ _0: Buffer<UInt8>) throws -> UInt32 { throw IpcError.unimplemented(name: "nn::account::profile::nn::account::profile::IProfile#LoadImage") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {

@@ -2,79 +2,79 @@ typealias NnFriendsDetailIpc_SizedNotificationInfo = [UInt8]
 typealias NnFriendsDetailIpc_SizedFriendFilter = [UInt8]
 
 class NnFriendsDetailIpc_IFriendService: IpcService {
-	func getCompletionEvent() throws -> KObject { throw IpcError.unimplemented }
-	func cancel() throws { throw IpcError.unimplemented }
-	func getFriendListIds(_ _0: UInt32, _ _1: NnAccount_Uid, _ _2: NnFriendsDetailIpc_SizedFriendFilter, _ _3: UInt64, _ _4: Pid, _ _5: Buffer<NnAccount_NetworkServiceAccountId>) throws -> UInt32 { throw IpcError.unimplemented }
-	func getFriendList(_ _0: UInt32, _ _1: NnAccount_Uid, _ _2: NnFriendsDetailIpc_SizedFriendFilter, _ _3: UInt64, _ _4: Pid, _ _5: Buffer<NnFriendsDetail_FriendImpl>) throws -> UInt32 { throw IpcError.unimplemented }
-	func updateFriendInfo(_ _0: NnAccount_Uid, _ _1: UInt64, _ _2: Pid, _ _3: Buffer<NnAccount_NetworkServiceAccountId>, _ _4: Buffer<NnFriendsDetail_FriendImpl>) throws { throw IpcError.unimplemented }
-	func getFriendProfileImage(_ _0: NnAccount_Uid, _ _1: NnAccount_NetworkServiceAccountId, _ _2: Buffer<UInt8>) throws -> UInt32 { throw IpcError.unimplemented }
-	func sendFriendRequestForApplication(_ _0: NnAccount_Uid, _ _1: NnAccount_NetworkServiceAccountId, _ _2: UInt64, _ _3: Pid, _ _4: Buffer<NnFriends_InAppScreenName>, _ _5: Buffer<NnFriends_InAppScreenName>) throws { throw IpcError.unimplemented }
-	func addFacedFriendRequestForApplication(_ _0: NnFriends_FacedFriendRequestRegistrationKey, _ _1: NnAccount_Nickname, _ _2: NnAccount_Uid, _ _3: UInt64, _ _4: Pid, _ _5: Buffer<NnFriends_InAppScreenName>, _ _6: Buffer<NnFriends_InAppScreenName>, _ _7: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func getBlockedUserListIds(_ _0: UInt32, _ _1: NnAccount_Uid, _ _2: Buffer<NnAccount_NetworkServiceAccountId>) throws -> UInt32 { throw IpcError.unimplemented }
-	func getProfileList(_ _0: NnAccount_Uid, _ _1: Buffer<NnAccount_NetworkServiceAccountId>, _ _2: Buffer<NnFriendsDetail_ProfileImpl>) throws { throw IpcError.unimplemented }
-	func declareOpenOnlinePlaySession(_ _0: NnAccount_Uid) throws { throw IpcError.unimplemented }
-	func declareCloseOnlinePlaySession(_ _0: NnAccount_Uid) throws { throw IpcError.unimplemented }
-	func updateUserPresence(_ _0: NnAccount_Uid, _ _1: UInt64, _ _2: Pid, _ _3: Buffer<NnFriendsDetail_UserPresenceImpl>) throws { throw IpcError.unimplemented }
-	func getPlayHistoryRegistrationKey(_ _0: UInt8, _ _1: NnAccount_Uid, _ _2: Buffer<NnFriends_PlayHistoryRegistrationKey>) throws { throw IpcError.unimplemented }
-	func getPlayHistoryRegistrationKeyWithNetworkServiceAccountId(_ _0: UInt8, _ _1: NnAccount_NetworkServiceAccountId, _ _2: Buffer<NnFriends_PlayHistoryRegistrationKey>) throws { throw IpcError.unimplemented }
-	func addPlayHistory(_ _0: NnAccount_Uid, _ _1: UInt64, _ _2: Pid, _ _3: Buffer<NnFriends_PlayHistoryRegistrationKey>, _ _4: Buffer<NnFriends_InAppScreenName>, _ _5: Buffer<NnFriends_InAppScreenName>) throws { throw IpcError.unimplemented }
-	func getProfileImageUrl(_ _0: NnFriends_Url, _ _1: UInt32) throws -> NnFriends_Url { throw IpcError.unimplemented }
-	func getFriendCount(_ _0: NnAccount_Uid, _ _1: NnFriendsDetailIpc_SizedFriendFilter, _ _2: UInt64, _ _3: Pid) throws -> UInt32 { throw IpcError.unimplemented }
-	func getNewlyFriendCount(_ _0: NnAccount_Uid) throws -> UInt32 { throw IpcError.unimplemented }
-	func getFriendDetailedInfo(_ _0: NnAccount_Uid, _ _1: NnAccount_NetworkServiceAccountId, _ _2: Buffer<NnFriendsDetail_FriendDetailedInfoImpl>) throws { throw IpcError.unimplemented }
-	func syncFriendList(_ _0: NnAccount_Uid) throws { throw IpcError.unimplemented }
-	func requestSyncFriendList(_ _0: NnAccount_Uid) throws { throw IpcError.unimplemented }
-	func loadFriendSetting(_ _0: NnAccount_Uid, _ _1: NnAccount_NetworkServiceAccountId, _ _2: Buffer<NnFriendsDetail_FriendSettingImpl>) throws { throw IpcError.unimplemented }
-	func getReceivedFriendRequestCount(_ _0: NnAccount_Uid) throws -> (UInt32, UInt32) { throw IpcError.unimplemented }
-	func getFriendRequestList(_ _0: UInt32, _ _1: UInt32, _ _2: NnAccount_Uid, _ _3: Buffer<NnFriendsDetail_FriendRequestImpl>) throws -> UInt32 { throw IpcError.unimplemented }
-	func getFriendCandidateList(_ _0: UInt32, _ _1: NnAccount_Uid, _ _2: Buffer<NnFriendsDetail_FriendCandidateImpl>) throws -> UInt32 { throw IpcError.unimplemented }
-	func getNintendoNetworkIdInfo(_ _0: UInt32, _ _1: NnAccount_Uid, _ _2: Buffer<NnFriends_NintendoNetworkIdUserInfo>, _ _3: Buffer<NnFriendsDetail_NintendoNetworkIdFriendImpl>) throws -> UInt32 { throw IpcError.unimplemented }
-	func getSnsAccountLinkage(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func getSnsAccountProfile(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func getSnsAccountFriendList(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func getBlockedUserList(_ _0: UInt32, _ _1: NnAccount_Uid, _ _2: Buffer<NnFriendsDetail_BlockedUserImpl>) throws -> UInt32 { throw IpcError.unimplemented }
-	func syncBlockedUserList(_ _0: NnAccount_Uid) throws { throw IpcError.unimplemented }
-	func getProfileExtraList(_ _0: NnAccount_Uid, _ _1: Buffer<NnAccount_NetworkServiceAccountId>, _ _2: Buffer<NnFriendsDetail_ProfileExtraImpl>) throws { throw IpcError.unimplemented }
-	func getRelationship(_ _0: NnAccount_Uid, _ _1: NnAccount_NetworkServiceAccountId) throws -> NnFriends_Relationship { throw IpcError.unimplemented }
-	func getUserPresenceView(_ _0: NnAccount_Uid, _ _1: Buffer<NnFriendsDetail_UserPresenceViewImpl>) throws { throw IpcError.unimplemented }
-	func getPlayHistoryList(_ _0: UInt32, _ _1: NnAccount_Uid, _ _2: Buffer<NnFriendsDetail_PlayHistoryImpl>) throws -> UInt32 { throw IpcError.unimplemented }
-	func getPlayHistoryStatistics(_ _0: NnAccount_Uid) throws -> NnFriends_PlayHistoryStatistics { throw IpcError.unimplemented }
-	func loadUserSetting(_ _0: NnAccount_Uid, _ _1: Buffer<NnFriendsDetail_UserSettingImpl>) throws { throw IpcError.unimplemented }
-	func syncUserSetting(_ _0: NnAccount_Uid) throws { throw IpcError.unimplemented }
-	func requestListSummaryOverlayNotification() throws { throw IpcError.unimplemented }
-	func getExternalApplicationCatalog(_ _0: NnSettings_LanguageCode, _ _1: NnFriends_ExternalApplicationCatalogId, _ _2: Buffer<NnFriends_ExternalApplicationCatalog>) throws { throw IpcError.unimplemented }
-	func dropFriendNewlyFlags(_ _0: NnAccount_Uid) throws { throw IpcError.unimplemented }
-	func deleteFriend(_ _0: NnAccount_Uid, _ _1: NnAccount_NetworkServiceAccountId) throws { throw IpcError.unimplemented }
-	func dropFriendNewlyFlag(_ _0: NnAccount_Uid, _ _1: NnAccount_NetworkServiceAccountId) throws { throw IpcError.unimplemented }
-	func changeFriendFavoriteFlag(_ _0: UInt8, _ _1: NnAccount_Uid, _ _2: NnAccount_NetworkServiceAccountId) throws { throw IpcError.unimplemented }
-	func changeFriendOnlineNotificationFlag(_ _0: UInt8, _ _1: NnAccount_Uid, _ _2: NnAccount_NetworkServiceAccountId) throws { throw IpcError.unimplemented }
-	func sendFriendRequest(_ _0: UInt32, _ _1: NnAccount_Uid, _ _2: NnAccount_NetworkServiceAccountId) throws { throw IpcError.unimplemented }
-	func sendFriendRequestWithApplicationInfo(_ _0: UInt32, _ _1: NnAccount_Uid, _ _2: NnAccount_NetworkServiceAccountId, _ _3: NnFriends_ApplicationInfo, _ _4: Buffer<NnFriends_InAppScreenName>, _ _5: Buffer<NnFriends_InAppScreenName>) throws { throw IpcError.unimplemented }
-	func cancelFriendRequest(_ _0: NnAccount_Uid, _ _1: NnFriends_RequestId) throws { throw IpcError.unimplemented }
-	func acceptFriendRequest(_ _0: NnAccount_Uid, _ _1: NnFriends_RequestId) throws { throw IpcError.unimplemented }
-	func rejectFriendRequest(_ _0: NnAccount_Uid, _ _1: NnFriends_RequestId) throws { throw IpcError.unimplemented }
-	func readFriendRequest(_ _0: NnAccount_Uid, _ _1: NnFriends_RequestId) throws { throw IpcError.unimplemented }
-	func getFacedFriendRequestRegistrationKey(_ _0: NnAccount_Uid) throws -> NnFriends_FacedFriendRequestRegistrationKey { throw IpcError.unimplemented }
-	func addFacedFriendRequest(_ _0: NnFriends_FacedFriendRequestRegistrationKey, _ _1: NnAccount_Nickname, _ _2: NnAccount_Uid, _ _3: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func cancelFacedFriendRequest(_ _0: NnAccount_Uid, _ _1: NnAccount_NetworkServiceAccountId) throws { throw IpcError.unimplemented }
-	func getFacedFriendRequestProfileImage(_ _0: NnAccount_Uid, _ _1: NnAccount_NetworkServiceAccountId, _ _2: Buffer<UInt8>) throws -> UInt32 { throw IpcError.unimplemented }
-	func getFacedFriendRequestProfileImageFromPath(_ _0: Buffer<UInt8>, _ _1: Buffer<UInt8>) throws -> UInt32 { throw IpcError.unimplemented }
-	func sendFriendRequestWithExternalApplicationCatalogId(_ _0: UInt32, _ _1: NnAccount_Uid, _ _2: NnAccount_NetworkServiceAccountId, _ _3: NnFriends_ExternalApplicationCatalogId, _ _4: Buffer<NnFriends_InAppScreenName>, _ _5: Buffer<NnFriends_InAppScreenName>) throws { throw IpcError.unimplemented }
-	func resendFacedFriendRequest(_ _0: NnAccount_Uid, _ _1: NnAccount_NetworkServiceAccountId) throws { throw IpcError.unimplemented }
-	func sendFriendRequestWithNintendoNetworkIdInfo(_ _0: NnFriends_MiiName, _ _1: NnFriends_MiiImageUrlParam, _ _2: NnFriends_MiiName, _ _3: NnFriends_MiiImageUrlParam, _ _4: UInt32, _ _5: NnAccount_Uid, _ _6: NnAccount_NetworkServiceAccountId) throws { throw IpcError.unimplemented }
-	func getSnsAccountLinkPageUrl(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func unlinkSnsAccount(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func blockUser(_ _0: UInt32, _ _1: NnAccount_Uid, _ _2: NnAccount_NetworkServiceAccountId) throws { throw IpcError.unimplemented }
-	func blockUserWithApplicationInfo(_ _0: UInt32, _ _1: NnAccount_Uid, _ _2: NnAccount_NetworkServiceAccountId, _ _3: NnFriends_ApplicationInfo, _ _4: Buffer<NnFriends_InAppScreenName>) throws { throw IpcError.unimplemented }
-	func unblockUser(_ _0: NnAccount_Uid, _ _1: NnAccount_NetworkServiceAccountId) throws { throw IpcError.unimplemented }
-	func getProfileExtraFromFriendCode(_ _0: NnFriends_FriendCode, _ _1: NnAccount_Uid, _ _2: Buffer<NnFriendsDetail_ProfileExtraImpl>) throws { throw IpcError.unimplemented }
-	func deletePlayHistory(_ _0: NnAccount_Uid) throws { throw IpcError.unimplemented }
-	func changePresencePermission(_ _0: UInt32, _ _1: NnAccount_Uid) throws { throw IpcError.unimplemented }
-	func changeFriendRequestReception(_ _0: UInt8, _ _1: NnAccount_Uid) throws { throw IpcError.unimplemented }
-	func changePlayLogPermission(_ _0: UInt32, _ _1: NnAccount_Uid) throws { throw IpcError.unimplemented }
-	func issueFriendCode(_ _0: NnAccount_Uid) throws { throw IpcError.unimplemented }
-	func clearPlayLog(_ _0: NnAccount_Uid) throws { throw IpcError.unimplemented }
-	func deleteNetworkServiceAccountCache(_ _0: NnAccount_Uid) throws { throw IpcError.unimplemented }
+	func getCompletionEvent() throws -> KObject { throw IpcError.unimplemented(name: "nn::friends::detail::ipc::nn::friends::detail::ipc::IFriendService#GetCompletionEvent") }
+	func cancel() throws { throw IpcError.unimplemented(name: "nn::friends::detail::ipc::nn::friends::detail::ipc::IFriendService#Cancel") }
+	func getFriendListIds(_ _0: UInt32, _ _1: NnAccount_Uid, _ _2: NnFriendsDetailIpc_SizedFriendFilter, _ _3: UInt64, _ _4: Pid, _ _5: Buffer<NnAccount_NetworkServiceAccountId>) throws -> UInt32 { throw IpcError.unimplemented(name: "nn::friends::detail::ipc::nn::friends::detail::ipc::IFriendService#GetFriendListIds") }
+	func getFriendList(_ _0: UInt32, _ _1: NnAccount_Uid, _ _2: NnFriendsDetailIpc_SizedFriendFilter, _ _3: UInt64, _ _4: Pid, _ _5: Buffer<NnFriendsDetail_FriendImpl>) throws -> UInt32 { throw IpcError.unimplemented(name: "nn::friends::detail::ipc::nn::friends::detail::ipc::IFriendService#GetFriendList") }
+	func updateFriendInfo(_ _0: NnAccount_Uid, _ _1: UInt64, _ _2: Pid, _ _3: Buffer<NnAccount_NetworkServiceAccountId>, _ _4: Buffer<NnFriendsDetail_FriendImpl>) throws { throw IpcError.unimplemented(name: "nn::friends::detail::ipc::nn::friends::detail::ipc::IFriendService#UpdateFriendInfo") }
+	func getFriendProfileImage(_ _0: NnAccount_Uid, _ _1: NnAccount_NetworkServiceAccountId, _ _2: Buffer<UInt8>) throws -> UInt32 { throw IpcError.unimplemented(name: "nn::friends::detail::ipc::nn::friends::detail::ipc::IFriendService#GetFriendProfileImage") }
+	func sendFriendRequestForApplication(_ _0: NnAccount_Uid, _ _1: NnAccount_NetworkServiceAccountId, _ _2: UInt64, _ _3: Pid, _ _4: Buffer<NnFriends_InAppScreenName>, _ _5: Buffer<NnFriends_InAppScreenName>) throws { throw IpcError.unimplemented(name: "nn::friends::detail::ipc::nn::friends::detail::ipc::IFriendService#SendFriendRequestForApplication") }
+	func addFacedFriendRequestForApplication(_ _0: NnFriends_FacedFriendRequestRegistrationKey, _ _1: NnAccount_Nickname, _ _2: NnAccount_Uid, _ _3: UInt64, _ _4: Pid, _ _5: Buffer<NnFriends_InAppScreenName>, _ _6: Buffer<NnFriends_InAppScreenName>, _ _7: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::friends::detail::ipc::nn::friends::detail::ipc::IFriendService#AddFacedFriendRequestForApplication") }
+	func getBlockedUserListIds(_ _0: UInt32, _ _1: NnAccount_Uid, _ _2: Buffer<NnAccount_NetworkServiceAccountId>) throws -> UInt32 { throw IpcError.unimplemented(name: "nn::friends::detail::ipc::nn::friends::detail::ipc::IFriendService#GetBlockedUserListIds") }
+	func getProfileList(_ _0: NnAccount_Uid, _ _1: Buffer<NnAccount_NetworkServiceAccountId>, _ _2: Buffer<NnFriendsDetail_ProfileImpl>) throws { throw IpcError.unimplemented(name: "nn::friends::detail::ipc::nn::friends::detail::ipc::IFriendService#GetProfileList") }
+	func declareOpenOnlinePlaySession(_ _0: NnAccount_Uid) throws { throw IpcError.unimplemented(name: "nn::friends::detail::ipc::nn::friends::detail::ipc::IFriendService#DeclareOpenOnlinePlaySession") }
+	func declareCloseOnlinePlaySession(_ _0: NnAccount_Uid) throws { throw IpcError.unimplemented(name: "nn::friends::detail::ipc::nn::friends::detail::ipc::IFriendService#DeclareCloseOnlinePlaySession") }
+	func updateUserPresence(_ _0: NnAccount_Uid, _ _1: UInt64, _ _2: Pid, _ _3: Buffer<NnFriendsDetail_UserPresenceImpl>) throws { throw IpcError.unimplemented(name: "nn::friends::detail::ipc::nn::friends::detail::ipc::IFriendService#UpdateUserPresence") }
+	func getPlayHistoryRegistrationKey(_ _0: UInt8, _ _1: NnAccount_Uid, _ _2: Buffer<NnFriends_PlayHistoryRegistrationKey>) throws { throw IpcError.unimplemented(name: "nn::friends::detail::ipc::nn::friends::detail::ipc::IFriendService#GetPlayHistoryRegistrationKey") }
+	func getPlayHistoryRegistrationKeyWithNetworkServiceAccountId(_ _0: UInt8, _ _1: NnAccount_NetworkServiceAccountId, _ _2: Buffer<NnFriends_PlayHistoryRegistrationKey>) throws { throw IpcError.unimplemented(name: "nn::friends::detail::ipc::nn::friends::detail::ipc::IFriendService#GetPlayHistoryRegistrationKeyWithNetworkServiceAccountId") }
+	func addPlayHistory(_ _0: NnAccount_Uid, _ _1: UInt64, _ _2: Pid, _ _3: Buffer<NnFriends_PlayHistoryRegistrationKey>, _ _4: Buffer<NnFriends_InAppScreenName>, _ _5: Buffer<NnFriends_InAppScreenName>) throws { throw IpcError.unimplemented(name: "nn::friends::detail::ipc::nn::friends::detail::ipc::IFriendService#AddPlayHistory") }
+	func getProfileImageUrl(_ _0: NnFriends_Url, _ _1: UInt32) throws -> NnFriends_Url { throw IpcError.unimplemented(name: "nn::friends::detail::ipc::nn::friends::detail::ipc::IFriendService#GetProfileImageUrl") }
+	func getFriendCount(_ _0: NnAccount_Uid, _ _1: NnFriendsDetailIpc_SizedFriendFilter, _ _2: UInt64, _ _3: Pid) throws -> UInt32 { throw IpcError.unimplemented(name: "nn::friends::detail::ipc::nn::friends::detail::ipc::IFriendService#GetFriendCount") }
+	func getNewlyFriendCount(_ _0: NnAccount_Uid) throws -> UInt32 { throw IpcError.unimplemented(name: "nn::friends::detail::ipc::nn::friends::detail::ipc::IFriendService#GetNewlyFriendCount") }
+	func getFriendDetailedInfo(_ _0: NnAccount_Uid, _ _1: NnAccount_NetworkServiceAccountId, _ _2: Buffer<NnFriendsDetail_FriendDetailedInfoImpl>) throws { throw IpcError.unimplemented(name: "nn::friends::detail::ipc::nn::friends::detail::ipc::IFriendService#GetFriendDetailedInfo") }
+	func syncFriendList(_ _0: NnAccount_Uid) throws { throw IpcError.unimplemented(name: "nn::friends::detail::ipc::nn::friends::detail::ipc::IFriendService#SyncFriendList") }
+	func requestSyncFriendList(_ _0: NnAccount_Uid) throws { throw IpcError.unimplemented(name: "nn::friends::detail::ipc::nn::friends::detail::ipc::IFriendService#RequestSyncFriendList") }
+	func loadFriendSetting(_ _0: NnAccount_Uid, _ _1: NnAccount_NetworkServiceAccountId, _ _2: Buffer<NnFriendsDetail_FriendSettingImpl>) throws { throw IpcError.unimplemented(name: "nn::friends::detail::ipc::nn::friends::detail::ipc::IFriendService#LoadFriendSetting") }
+	func getReceivedFriendRequestCount(_ _0: NnAccount_Uid) throws -> (UInt32, UInt32) { throw IpcError.unimplemented(name: "nn::friends::detail::ipc::nn::friends::detail::ipc::IFriendService#GetReceivedFriendRequestCount") }
+	func getFriendRequestList(_ _0: UInt32, _ _1: UInt32, _ _2: NnAccount_Uid, _ _3: Buffer<NnFriendsDetail_FriendRequestImpl>) throws -> UInt32 { throw IpcError.unimplemented(name: "nn::friends::detail::ipc::nn::friends::detail::ipc::IFriendService#GetFriendRequestList") }
+	func getFriendCandidateList(_ _0: UInt32, _ _1: NnAccount_Uid, _ _2: Buffer<NnFriendsDetail_FriendCandidateImpl>) throws -> UInt32 { throw IpcError.unimplemented(name: "nn::friends::detail::ipc::nn::friends::detail::ipc::IFriendService#GetFriendCandidateList") }
+	func getNintendoNetworkIdInfo(_ _0: UInt32, _ _1: NnAccount_Uid, _ _2: Buffer<NnFriends_NintendoNetworkIdUserInfo>, _ _3: Buffer<NnFriendsDetail_NintendoNetworkIdFriendImpl>) throws -> UInt32 { throw IpcError.unimplemented(name: "nn::friends::detail::ipc::nn::friends::detail::ipc::IFriendService#GetNintendoNetworkIdInfo") }
+	func getSnsAccountLinkage(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::friends::detail::ipc::nn::friends::detail::ipc::IFriendService#GetSnsAccountLinkage") }
+	func getSnsAccountProfile(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::friends::detail::ipc::nn::friends::detail::ipc::IFriendService#GetSnsAccountProfile") }
+	func getSnsAccountFriendList(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::friends::detail::ipc::nn::friends::detail::ipc::IFriendService#GetSnsAccountFriendList") }
+	func getBlockedUserList(_ _0: UInt32, _ _1: NnAccount_Uid, _ _2: Buffer<NnFriendsDetail_BlockedUserImpl>) throws -> UInt32 { throw IpcError.unimplemented(name: "nn::friends::detail::ipc::nn::friends::detail::ipc::IFriendService#GetBlockedUserList") }
+	func syncBlockedUserList(_ _0: NnAccount_Uid) throws { throw IpcError.unimplemented(name: "nn::friends::detail::ipc::nn::friends::detail::ipc::IFriendService#SyncBlockedUserList") }
+	func getProfileExtraList(_ _0: NnAccount_Uid, _ _1: Buffer<NnAccount_NetworkServiceAccountId>, _ _2: Buffer<NnFriendsDetail_ProfileExtraImpl>) throws { throw IpcError.unimplemented(name: "nn::friends::detail::ipc::nn::friends::detail::ipc::IFriendService#GetProfileExtraList") }
+	func getRelationship(_ _0: NnAccount_Uid, _ _1: NnAccount_NetworkServiceAccountId) throws -> NnFriends_Relationship { throw IpcError.unimplemented(name: "nn::friends::detail::ipc::nn::friends::detail::ipc::IFriendService#GetRelationship") }
+	func getUserPresenceView(_ _0: NnAccount_Uid, _ _1: Buffer<NnFriendsDetail_UserPresenceViewImpl>) throws { throw IpcError.unimplemented(name: "nn::friends::detail::ipc::nn::friends::detail::ipc::IFriendService#GetUserPresenceView") }
+	func getPlayHistoryList(_ _0: UInt32, _ _1: NnAccount_Uid, _ _2: Buffer<NnFriendsDetail_PlayHistoryImpl>) throws -> UInt32 { throw IpcError.unimplemented(name: "nn::friends::detail::ipc::nn::friends::detail::ipc::IFriendService#GetPlayHistoryList") }
+	func getPlayHistoryStatistics(_ _0: NnAccount_Uid) throws -> NnFriends_PlayHistoryStatistics { throw IpcError.unimplemented(name: "nn::friends::detail::ipc::nn::friends::detail::ipc::IFriendService#GetPlayHistoryStatistics") }
+	func loadUserSetting(_ _0: NnAccount_Uid, _ _1: Buffer<NnFriendsDetail_UserSettingImpl>) throws { throw IpcError.unimplemented(name: "nn::friends::detail::ipc::nn::friends::detail::ipc::IFriendService#LoadUserSetting") }
+	func syncUserSetting(_ _0: NnAccount_Uid) throws { throw IpcError.unimplemented(name: "nn::friends::detail::ipc::nn::friends::detail::ipc::IFriendService#SyncUserSetting") }
+	func requestListSummaryOverlayNotification() throws { throw IpcError.unimplemented(name: "nn::friends::detail::ipc::nn::friends::detail::ipc::IFriendService#RequestListSummaryOverlayNotification") }
+	func getExternalApplicationCatalog(_ _0: NnSettings_LanguageCode, _ _1: NnFriends_ExternalApplicationCatalogId, _ _2: Buffer<NnFriends_ExternalApplicationCatalog>) throws { throw IpcError.unimplemented(name: "nn::friends::detail::ipc::nn::friends::detail::ipc::IFriendService#GetExternalApplicationCatalog") }
+	func dropFriendNewlyFlags(_ _0: NnAccount_Uid) throws { throw IpcError.unimplemented(name: "nn::friends::detail::ipc::nn::friends::detail::ipc::IFriendService#DropFriendNewlyFlags") }
+	func deleteFriend(_ _0: NnAccount_Uid, _ _1: NnAccount_NetworkServiceAccountId) throws { throw IpcError.unimplemented(name: "nn::friends::detail::ipc::nn::friends::detail::ipc::IFriendService#DeleteFriend") }
+	func dropFriendNewlyFlag(_ _0: NnAccount_Uid, _ _1: NnAccount_NetworkServiceAccountId) throws { throw IpcError.unimplemented(name: "nn::friends::detail::ipc::nn::friends::detail::ipc::IFriendService#DropFriendNewlyFlag") }
+	func changeFriendFavoriteFlag(_ _0: UInt8, _ _1: NnAccount_Uid, _ _2: NnAccount_NetworkServiceAccountId) throws { throw IpcError.unimplemented(name: "nn::friends::detail::ipc::nn::friends::detail::ipc::IFriendService#ChangeFriendFavoriteFlag") }
+	func changeFriendOnlineNotificationFlag(_ _0: UInt8, _ _1: NnAccount_Uid, _ _2: NnAccount_NetworkServiceAccountId) throws { throw IpcError.unimplemented(name: "nn::friends::detail::ipc::nn::friends::detail::ipc::IFriendService#ChangeFriendOnlineNotificationFlag") }
+	func sendFriendRequest(_ _0: UInt32, _ _1: NnAccount_Uid, _ _2: NnAccount_NetworkServiceAccountId) throws { throw IpcError.unimplemented(name: "nn::friends::detail::ipc::nn::friends::detail::ipc::IFriendService#SendFriendRequest") }
+	func sendFriendRequestWithApplicationInfo(_ _0: UInt32, _ _1: NnAccount_Uid, _ _2: NnAccount_NetworkServiceAccountId, _ _3: NnFriends_ApplicationInfo, _ _4: Buffer<NnFriends_InAppScreenName>, _ _5: Buffer<NnFriends_InAppScreenName>) throws { throw IpcError.unimplemented(name: "nn::friends::detail::ipc::nn::friends::detail::ipc::IFriendService#SendFriendRequestWithApplicationInfo") }
+	func cancelFriendRequest(_ _0: NnAccount_Uid, _ _1: NnFriends_RequestId) throws { throw IpcError.unimplemented(name: "nn::friends::detail::ipc::nn::friends::detail::ipc::IFriendService#CancelFriendRequest") }
+	func acceptFriendRequest(_ _0: NnAccount_Uid, _ _1: NnFriends_RequestId) throws { throw IpcError.unimplemented(name: "nn::friends::detail::ipc::nn::friends::detail::ipc::IFriendService#AcceptFriendRequest") }
+	func rejectFriendRequest(_ _0: NnAccount_Uid, _ _1: NnFriends_RequestId) throws { throw IpcError.unimplemented(name: "nn::friends::detail::ipc::nn::friends::detail::ipc::IFriendService#RejectFriendRequest") }
+	func readFriendRequest(_ _0: NnAccount_Uid, _ _1: NnFriends_RequestId) throws { throw IpcError.unimplemented(name: "nn::friends::detail::ipc::nn::friends::detail::ipc::IFriendService#ReadFriendRequest") }
+	func getFacedFriendRequestRegistrationKey(_ _0: NnAccount_Uid) throws -> NnFriends_FacedFriendRequestRegistrationKey { throw IpcError.unimplemented(name: "nn::friends::detail::ipc::nn::friends::detail::ipc::IFriendService#GetFacedFriendRequestRegistrationKey") }
+	func addFacedFriendRequest(_ _0: NnFriends_FacedFriendRequestRegistrationKey, _ _1: NnAccount_Nickname, _ _2: NnAccount_Uid, _ _3: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::friends::detail::ipc::nn::friends::detail::ipc::IFriendService#AddFacedFriendRequest") }
+	func cancelFacedFriendRequest(_ _0: NnAccount_Uid, _ _1: NnAccount_NetworkServiceAccountId) throws { throw IpcError.unimplemented(name: "nn::friends::detail::ipc::nn::friends::detail::ipc::IFriendService#CancelFacedFriendRequest") }
+	func getFacedFriendRequestProfileImage(_ _0: NnAccount_Uid, _ _1: NnAccount_NetworkServiceAccountId, _ _2: Buffer<UInt8>) throws -> UInt32 { throw IpcError.unimplemented(name: "nn::friends::detail::ipc::nn::friends::detail::ipc::IFriendService#GetFacedFriendRequestProfileImage") }
+	func getFacedFriendRequestProfileImageFromPath(_ _0: Buffer<UInt8>, _ _1: Buffer<UInt8>) throws -> UInt32 { throw IpcError.unimplemented(name: "nn::friends::detail::ipc::nn::friends::detail::ipc::IFriendService#GetFacedFriendRequestProfileImageFromPath") }
+	func sendFriendRequestWithExternalApplicationCatalogId(_ _0: UInt32, _ _1: NnAccount_Uid, _ _2: NnAccount_NetworkServiceAccountId, _ _3: NnFriends_ExternalApplicationCatalogId, _ _4: Buffer<NnFriends_InAppScreenName>, _ _5: Buffer<NnFriends_InAppScreenName>) throws { throw IpcError.unimplemented(name: "nn::friends::detail::ipc::nn::friends::detail::ipc::IFriendService#SendFriendRequestWithExternalApplicationCatalogId") }
+	func resendFacedFriendRequest(_ _0: NnAccount_Uid, _ _1: NnAccount_NetworkServiceAccountId) throws { throw IpcError.unimplemented(name: "nn::friends::detail::ipc::nn::friends::detail::ipc::IFriendService#ResendFacedFriendRequest") }
+	func sendFriendRequestWithNintendoNetworkIdInfo(_ _0: NnFriends_MiiName, _ _1: NnFriends_MiiImageUrlParam, _ _2: NnFriends_MiiName, _ _3: NnFriends_MiiImageUrlParam, _ _4: UInt32, _ _5: NnAccount_Uid, _ _6: NnAccount_NetworkServiceAccountId) throws { throw IpcError.unimplemented(name: "nn::friends::detail::ipc::nn::friends::detail::ipc::IFriendService#SendFriendRequestWithNintendoNetworkIdInfo") }
+	func getSnsAccountLinkPageUrl(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::friends::detail::ipc::nn::friends::detail::ipc::IFriendService#GetSnsAccountLinkPageUrl") }
+	func unlinkSnsAccount(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::friends::detail::ipc::nn::friends::detail::ipc::IFriendService#UnlinkSnsAccount") }
+	func blockUser(_ _0: UInt32, _ _1: NnAccount_Uid, _ _2: NnAccount_NetworkServiceAccountId) throws { throw IpcError.unimplemented(name: "nn::friends::detail::ipc::nn::friends::detail::ipc::IFriendService#BlockUser") }
+	func blockUserWithApplicationInfo(_ _0: UInt32, _ _1: NnAccount_Uid, _ _2: NnAccount_NetworkServiceAccountId, _ _3: NnFriends_ApplicationInfo, _ _4: Buffer<NnFriends_InAppScreenName>) throws { throw IpcError.unimplemented(name: "nn::friends::detail::ipc::nn::friends::detail::ipc::IFriendService#BlockUserWithApplicationInfo") }
+	func unblockUser(_ _0: NnAccount_Uid, _ _1: NnAccount_NetworkServiceAccountId) throws { throw IpcError.unimplemented(name: "nn::friends::detail::ipc::nn::friends::detail::ipc::IFriendService#UnblockUser") }
+	func getProfileExtraFromFriendCode(_ _0: NnFriends_FriendCode, _ _1: NnAccount_Uid, _ _2: Buffer<NnFriendsDetail_ProfileExtraImpl>) throws { throw IpcError.unimplemented(name: "nn::friends::detail::ipc::nn::friends::detail::ipc::IFriendService#GetProfileExtraFromFriendCode") }
+	func deletePlayHistory(_ _0: NnAccount_Uid) throws { throw IpcError.unimplemented(name: "nn::friends::detail::ipc::nn::friends::detail::ipc::IFriendService#DeletePlayHistory") }
+	func changePresencePermission(_ _0: UInt32, _ _1: NnAccount_Uid) throws { throw IpcError.unimplemented(name: "nn::friends::detail::ipc::nn::friends::detail::ipc::IFriendService#ChangePresencePermission") }
+	func changeFriendRequestReception(_ _0: UInt8, _ _1: NnAccount_Uid) throws { throw IpcError.unimplemented(name: "nn::friends::detail::ipc::nn::friends::detail::ipc::IFriendService#ChangeFriendRequestReception") }
+	func changePlayLogPermission(_ _0: UInt32, _ _1: NnAccount_Uid) throws { throw IpcError.unimplemented(name: "nn::friends::detail::ipc::nn::friends::detail::ipc::IFriendService#ChangePlayLogPermission") }
+	func issueFriendCode(_ _0: NnAccount_Uid) throws { throw IpcError.unimplemented(name: "nn::friends::detail::ipc::nn::friends::detail::ipc::IFriendService#IssueFriendCode") }
+	func clearPlayLog(_ _0: NnAccount_Uid) throws { throw IpcError.unimplemented(name: "nn::friends::detail::ipc::nn::friends::detail::ipc::IFriendService#ClearPlayLog") }
+	func deleteNetworkServiceAccountCache(_ _0: NnAccount_Uid) throws { throw IpcError.unimplemented(name: "nn::friends::detail::ipc::nn::friends::detail::ipc::IFriendService#DeleteNetworkServiceAccountCache") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
@@ -402,9 +402,9 @@ class NnFriendsDetailIpc_IFriendService: IpcService {
 }
 
 class NnFriendsDetailIpc_IServiceCreator: IpcService {
-	func createFriendService() throws -> NnFriendsDetailIpc_IFriendService { throw IpcError.unimplemented }
-	func createNotificationService(_ _0: NnAccount_Uid) throws -> NnFriendsDetailIpc_INotificationService { throw IpcError.unimplemented }
-	func createDaemonSuspendSessionService() throws -> NnFriendsDetailIpc_IDaemonSuspendSessionService { throw IpcError.unimplemented }
+	func createFriendService() throws -> NnFriendsDetailIpc_IFriendService { throw IpcError.unimplemented(name: "nn::friends::detail::ipc::nn::friends::detail::ipc::IServiceCreator#CreateFriendService") }
+	func createNotificationService(_ _0: NnAccount_Uid) throws -> NnFriendsDetailIpc_INotificationService { throw IpcError.unimplemented(name: "nn::friends::detail::ipc::nn::friends::detail::ipc::IServiceCreator#CreateNotificationService") }
+	func createDaemonSuspendSessionService() throws -> NnFriendsDetailIpc_IDaemonSuspendSessionService { throw IpcError.unimplemented(name: "nn::friends::detail::ipc::nn::friends::detail::ipc::IServiceCreator#CreateDaemonSuspendSessionService") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
@@ -441,9 +441,9 @@ class NnFriendsDetailIpc_IDaemonSuspendSessionService: IpcService {
 }
 
 class NnFriendsDetailIpc_INotificationService: IpcService {
-	func getEvent() throws -> KObject { throw IpcError.unimplemented }
-	func clear() throws { throw IpcError.unimplemented }
-	func pop() throws -> NnFriendsDetailIpc_SizedNotificationInfo { throw IpcError.unimplemented }
+	func getEvent() throws -> KObject { throw IpcError.unimplemented(name: "nn::friends::detail::ipc::nn::friends::detail::ipc::INotificationService#GetEvent") }
+	func clear() throws { throw IpcError.unimplemented(name: "nn::friends::detail::ipc::nn::friends::detail::ipc::INotificationService#Clear") }
+	func pop() throws -> NnFriendsDetailIpc_SizedNotificationInfo { throw IpcError.unimplemented(name: "nn::friends::detail::ipc::nn::friends::detail::ipc::INotificationService#Pop") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
@@ -470,7 +470,7 @@ class NnFriendsDetailIpc_INotificationService: IpcService {
 }
 
 class NnFriendsDetailIpc_IFriendServiceCreator: IpcService {
-	func create() throws -> NnFriendsDetailIpc_IFriendService { throw IpcError.unimplemented }
+	func create() throws -> NnFriendsDetailIpc_IFriendService { throw IpcError.unimplemented(name: "nn::friends::detail::ipc::nn::friends::detail::ipc::IFriendServiceCreator#Create") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {

@@ -1,20 +1,20 @@
 class NnTma_IHtcsManager: IpcService {
-	func unknown0() throws -> (UInt32, UInt32) { throw IpcError.unimplemented }
-	func unknown1(_ _0: UInt32) throws -> (UInt32, UInt32) { throw IpcError.unimplemented }
-	func unknown2(_ _0: [UInt8], _ _1: UInt32) throws -> (UInt32, UInt32) { throw IpcError.unimplemented }
-	func unknown3(_ _0: [UInt8], _ _1: UInt32) throws -> (UInt32, UInt32) { throw IpcError.unimplemented }
-	func unknown4(_ _0: UInt32, _ _1: UInt32) throws -> (UInt32, UInt32) { throw IpcError.unimplemented }
-	func unknown5(_ _0: UInt32) throws -> ([UInt8], UInt32, UInt32) { throw IpcError.unimplemented }
-	func unknown6(_ _0: UInt32, _ _1: UInt32, _ _2: Buffer<UInt8>) throws -> (UInt32, UInt64) { throw IpcError.unimplemented }
-	func unknown7(_ _0: UInt32, _ _1: UInt32, _ _2: Buffer<UInt8>) throws -> (UInt32, UInt64) { throw IpcError.unimplemented }
-	func unknown8(_ _0: UInt32, _ _1: UInt32) throws -> (UInt32, UInt32) { throw IpcError.unimplemented }
-	func unknown9(_ _0: UInt32, _ _1: UInt32, _ _2: UInt32) throws -> (UInt32, UInt32) { throw IpcError.unimplemented }
-	func getPeerNameAny() throws -> [UInt8] { throw IpcError.unimplemented }
-	func getDefaultHostName() throws -> [UInt8] { throw IpcError.unimplemented }
-	func createSocketOld() throws -> (UInt32, IpcService) { throw IpcError.unimplemented }
-	func createSocket(_ _0: UInt8) throws -> (UInt32, IpcService) { throw IpcError.unimplemented }
-	func registerProcessId(_ _0: UInt64, _ _1: Pid) throws { throw IpcError.unimplemented }
-	func monitorManager(_ _0: UInt64, _ _1: Pid) throws { throw IpcError.unimplemented }
+	func unknown0() throws -> (UInt32, UInt32) { throw IpcError.unimplemented(name: "nn::tma::nn::tma::IHtcsManager#Unknown0") }
+	func unknown1(_ _0: UInt32) throws -> (UInt32, UInt32) { throw IpcError.unimplemented(name: "nn::tma::nn::tma::IHtcsManager#Unknown1") }
+	func unknown2(_ _0: [UInt8], _ _1: UInt32) throws -> (UInt32, UInt32) { throw IpcError.unimplemented(name: "nn::tma::nn::tma::IHtcsManager#Unknown2") }
+	func unknown3(_ _0: [UInt8], _ _1: UInt32) throws -> (UInt32, UInt32) { throw IpcError.unimplemented(name: "nn::tma::nn::tma::IHtcsManager#Unknown3") }
+	func unknown4(_ _0: UInt32, _ _1: UInt32) throws -> (UInt32, UInt32) { throw IpcError.unimplemented(name: "nn::tma::nn::tma::IHtcsManager#Unknown4") }
+	func unknown5(_ _0: UInt32) throws -> ([UInt8], UInt32, UInt32) { throw IpcError.unimplemented(name: "nn::tma::nn::tma::IHtcsManager#Unknown5") }
+	func unknown6(_ _0: UInt32, _ _1: UInt32, _ _2: Buffer<UInt8>) throws -> (UInt32, UInt64) { throw IpcError.unimplemented(name: "nn::tma::nn::tma::IHtcsManager#Unknown6") }
+	func unknown7(_ _0: UInt32, _ _1: UInt32, _ _2: Buffer<UInt8>) throws -> (UInt32, UInt64) { throw IpcError.unimplemented(name: "nn::tma::nn::tma::IHtcsManager#Unknown7") }
+	func unknown8(_ _0: UInt32, _ _1: UInt32) throws -> (UInt32, UInt32) { throw IpcError.unimplemented(name: "nn::tma::nn::tma::IHtcsManager#Unknown8") }
+	func unknown9(_ _0: UInt32, _ _1: UInt32, _ _2: UInt32) throws -> (UInt32, UInt32) { throw IpcError.unimplemented(name: "nn::tma::nn::tma::IHtcsManager#Unknown9") }
+	func getPeerNameAny() throws -> [UInt8] { throw IpcError.unimplemented(name: "nn::tma::nn::tma::IHtcsManager#GetPeerNameAny") }
+	func getDefaultHostName() throws -> [UInt8] { throw IpcError.unimplemented(name: "nn::tma::nn::tma::IHtcsManager#GetDefaultHostName") }
+	func createSocketOld() throws -> (UInt32, IpcService) { throw IpcError.unimplemented(name: "nn::tma::nn::tma::IHtcsManager#CreateSocketOld") }
+	func createSocket(_ _0: UInt8) throws -> (UInt32, IpcService) { throw IpcError.unimplemented(name: "nn::tma::nn::tma::IHtcsManager#CreateSocket") }
+	func registerProcessId(_ _0: UInt64, _ _1: Pid) throws { throw IpcError.unimplemented(name: "nn::tma::nn::tma::IHtcsManager#RegisterProcessId") }
+	func monitorManager(_ _0: UInt64, _ _1: Pid) throws { throw IpcError.unimplemented(name: "nn::tma::nn::tma::IHtcsManager#MonitorManager") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
@@ -120,15 +120,15 @@ class NnTma_IHtcsManager: IpcService {
 }
 
 class NnTma_ISocket: IpcService {
-	func _close() throws -> (UInt32, UInt32) { throw IpcError.unimplemented }
-	func connect(_ _0: [UInt8]) throws -> (UInt32, UInt32) { throw IpcError.unimplemented }
-	func bind(_ _0: [UInt8]) throws -> (UInt32, UInt32) { throw IpcError.unimplemented }
-	func listen(_ _0: UInt32) throws -> (UInt32, UInt32) { throw IpcError.unimplemented }
-	func accept() throws -> ([UInt8], UInt32, IpcService) { throw IpcError.unimplemented }
-	func recv(_ _0: UInt32, _ _1: Buffer<UInt8>) throws -> (UInt32, UInt64) { throw IpcError.unimplemented }
-	func send(_ _0: UInt32, _ _1: Buffer<UInt8>) throws -> (UInt32, UInt64) { throw IpcError.unimplemented }
-	func shutdown(_ _0: UInt32) throws -> (UInt32, UInt32) { throw IpcError.unimplemented }
-	func fcntl(_ _0: UInt32, _ _1: UInt32) throws -> (UInt32, UInt32) { throw IpcError.unimplemented }
+	func _close() throws -> (UInt32, UInt32) { throw IpcError.unimplemented(name: "nn::tma::nn::tma::ISocket#Close") }
+	func connect(_ _0: [UInt8]) throws -> (UInt32, UInt32) { throw IpcError.unimplemented(name: "nn::tma::nn::tma::ISocket#Connect") }
+	func bind(_ _0: [UInt8]) throws -> (UInt32, UInt32) { throw IpcError.unimplemented(name: "nn::tma::nn::tma::ISocket#Bind") }
+	func listen(_ _0: UInt32) throws -> (UInt32, UInt32) { throw IpcError.unimplemented(name: "nn::tma::nn::tma::ISocket#Listen") }
+	func accept() throws -> ([UInt8], UInt32, IpcService) { throw IpcError.unimplemented(name: "nn::tma::nn::tma::ISocket#Accept") }
+	func recv(_ _0: UInt32, _ _1: Buffer<UInt8>) throws -> (UInt32, UInt64) { throw IpcError.unimplemented(name: "nn::tma::nn::tma::ISocket#Recv") }
+	func send(_ _0: UInt32, _ _1: Buffer<UInt8>) throws -> (UInt32, UInt64) { throw IpcError.unimplemented(name: "nn::tma::nn::tma::ISocket#Send") }
+	func shutdown(_ _0: UInt32) throws -> (UInt32, UInt32) { throw IpcError.unimplemented(name: "nn::tma::nn::tma::ISocket#Shutdown") }
+	func fcntl(_ _0: UInt32, _ _1: UInt32) throws -> (UInt32, UInt32) { throw IpcError.unimplemented(name: "nn::tma::nn::tma::ISocket#Fcntl") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
@@ -196,17 +196,17 @@ class NnTma_ISocket: IpcService {
 }
 
 class NnTma_IHtcManager: IpcService {
-	func getEnvironmentVariable(_ _0: Buffer<UInt8>, _ _1: Buffer<UInt8>) throws -> UInt32 { throw IpcError.unimplemented }
-	func getEnvironmentVariableLength(_ _0: Buffer<UInt8>) throws -> UInt32 { throw IpcError.unimplemented }
-	func bindHostConnectionEvent() throws -> KObject { throw IpcError.unimplemented }
-	func bindHostDisconnectionEvent() throws -> KObject { throw IpcError.unimplemented }
-	func bindHostConnectionEventForSystem() throws -> KObject { throw IpcError.unimplemented }
-	func bindHostDisconnectionEventForSystem() throws -> KObject { throw IpcError.unimplemented }
-	func getBridgeIpAddress(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func getBridgePort(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func setUsbDetachedForDebug(_ _0: UInt8) throws { throw IpcError.unimplemented }
-	func getBridgeSubnetMask(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func getBridgeMacAddress(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented }
+	func getEnvironmentVariable(_ _0: Buffer<UInt8>, _ _1: Buffer<UInt8>) throws -> UInt32 { throw IpcError.unimplemented(name: "nn::tma::nn::tma::IHtcManager#GetEnvironmentVariable") }
+	func getEnvironmentVariableLength(_ _0: Buffer<UInt8>) throws -> UInt32 { throw IpcError.unimplemented(name: "nn::tma::nn::tma::IHtcManager#GetEnvironmentVariableLength") }
+	func bindHostConnectionEvent() throws -> KObject { throw IpcError.unimplemented(name: "nn::tma::nn::tma::IHtcManager#BindHostConnectionEvent") }
+	func bindHostDisconnectionEvent() throws -> KObject { throw IpcError.unimplemented(name: "nn::tma::nn::tma::IHtcManager#BindHostDisconnectionEvent") }
+	func bindHostConnectionEventForSystem() throws -> KObject { throw IpcError.unimplemented(name: "nn::tma::nn::tma::IHtcManager#BindHostConnectionEventForSystem") }
+	func bindHostDisconnectionEventForSystem() throws -> KObject { throw IpcError.unimplemented(name: "nn::tma::nn::tma::IHtcManager#BindHostDisconnectionEventForSystem") }
+	func getBridgeIpAddress(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::tma::nn::tma::IHtcManager#GetBridgeIpAddress") }
+	func getBridgePort(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::tma::nn::tma::IHtcManager#GetBridgePort") }
+	func setUsbDetachedForDebug(_ _0: UInt8) throws { throw IpcError.unimplemented(name: "nn::tma::nn::tma::IHtcManager#SetUsbDetachedForDebug") }
+	func getBridgeSubnetMask(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::tma::nn::tma::IHtcManager#GetBridgeSubnetMask") }
+	func getBridgeMacAddress(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::tma::nn::tma::IHtcManager#GetBridgeMacAddress") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {

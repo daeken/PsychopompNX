@@ -1,9 +1,9 @@
 class NnRoDetail_IRoInterface: IpcService {
-	func unknown0(_ _0: UInt64, _ _1: UInt64, _ _2: UInt64, _ _3: UInt64, _ _4: UInt64, _ _5: Pid) throws -> UInt64 { throw IpcError.unimplemented }
-	func unknown1(_ _0: UInt64, _ _1: UInt64, _ _2: Pid) throws { throw IpcError.unimplemented }
-	func unknown2(_ _0: UInt64, _ _1: UInt64, _ _2: UInt64, _ _3: Pid) throws { throw IpcError.unimplemented }
-	func unknown3(_ _0: UInt64, _ _1: UInt64, _ _2: Pid) throws { throw IpcError.unimplemented }
-	func unknown4(_ _0: UInt64, _ _1: Pid, _ _2: KObject) throws { throw IpcError.unimplemented }
+	func unknown0(_ _0: UInt64, _ _1: UInt64, _ _2: UInt64, _ _3: UInt64, _ _4: UInt64, _ _5: Pid) throws -> UInt64 { throw IpcError.unimplemented(name: "nn::ro::detail::nn::ro::detail::IRoInterface#Unknown0") }
+	func unknown1(_ _0: UInt64, _ _1: UInt64, _ _2: Pid) throws { throw IpcError.unimplemented(name: "nn::ro::detail::nn::ro::detail::IRoInterface#Unknown1") }
+	func unknown2(_ _0: UInt64, _ _1: UInt64, _ _2: UInt64, _ _3: Pid) throws { throw IpcError.unimplemented(name: "nn::ro::detail::nn::ro::detail::IRoInterface#Unknown2") }
+	func unknown3(_ _0: UInt64, _ _1: UInt64, _ _2: Pid) throws { throw IpcError.unimplemented(name: "nn::ro::detail::nn::ro::detail::IRoInterface#Unknown3") }
+	func unknown4(_ _0: UInt64, _ _1: Pid, _ _2: KObject) throws { throw IpcError.unimplemented(name: "nn::ro::detail::nn::ro::detail::IRoInterface#Unknown4") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
@@ -36,7 +36,7 @@ class NnRoDetail_IRoInterface: IpcService {
 }
 
 class NnRoDetail_IDebugMonitorInterface: IpcService {
-	func unknown0(_ _0: Any?, _ _1: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented }
+	func unknown0(_ _0: Any?, _ _1: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented(name: "nn::ro::detail::nn::ro::detail::IDebugMonitorInterface#Unknown0") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {

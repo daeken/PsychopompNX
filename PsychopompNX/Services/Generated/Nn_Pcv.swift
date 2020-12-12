@@ -4,7 +4,7 @@ typealias NnPcv_ModuleState = Any?
 typealias NnPcv_TemperatureThreshold = Any?
 
 class NnPcv_IImmediateManager: IpcService {
-	func setClockRate(_ _0: UInt32, _ _1: UInt32) throws { throw IpcError.unimplemented }
+	func setClockRate(_ _0: UInt32, _ _1: UInt32) throws { throw IpcError.unimplemented(name: "nn::pcv::nn::pcv::IImmediateManager#SetClockRate") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
@@ -20,7 +20,7 @@ class NnPcv_IImmediateManager: IpcService {
 }
 
 class NnPcv_IArbitrationManager: IpcService {
-	func releaseControl(_ _0: UInt32) throws { throw IpcError.unimplemented }
+	func releaseControl(_ _0: UInt32) throws { throw IpcError.unimplemented(name: "nn::pcv::nn::pcv::IArbitrationManager#ReleaseControl") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {

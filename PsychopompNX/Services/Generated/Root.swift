@@ -2,7 +2,7 @@ typealias Packed_Addrinfo = Any?
 typealias ServiceName = [UInt8]
 
 class JpegDecoder: IpcService {
-	func unknown3001(_ _0: Any?, _ _1: Buffer<UInt8>, _ _2: Buffer<UInt8>) throws { throw IpcError.unimplemented }
+	func unknown3001(_ _0: Any?, _ _1: Buffer<UInt8>, _ _2: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "Root::JpegDecoder#Unknown3001") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
@@ -18,10 +18,10 @@ class JpegDecoder: IpcService {
 }
 
 class CecManagerSubinterface100: IpcService {
-	func unknown0() throws -> KObject { throw IpcError.unimplemented }
-	func unknown1() throws -> Any? { throw IpcError.unimplemented }
-	func unknown2(_ _0: Any?) throws { throw IpcError.unimplemented }
-	func unknown3() throws -> Any? { throw IpcError.unimplemented }
+	func unknown0() throws -> KObject { throw IpcError.unimplemented(name: "Root::CecManagerSubinterface100#Unknown0") }
+	func unknown1() throws -> Any? { throw IpcError.unimplemented(name: "Root::CecManagerSubinterface100#Unknown1") }
+	func unknown2(_ _0: Any?) throws { throw IpcError.unimplemented(name: "Root::CecManagerSubinterface100#Unknown2") }
+	func unknown3() throws -> Any? { throw IpcError.unimplemented(name: "Root::CecManagerSubinterface100#Unknown3") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {

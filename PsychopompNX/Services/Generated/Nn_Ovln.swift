@@ -1,5 +1,5 @@
 class NnOvln_ISenderService: IpcService {
-	func unknown0(_ _0: Any?) throws -> NnOvln_ISender { throw IpcError.unimplemented }
+	func unknown0(_ _0: Any?) throws -> NnOvln_ISender { throw IpcError.unimplemented(name: "nn::ovln::nn::ovln::ISenderService#Unknown0") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
@@ -16,11 +16,11 @@ class NnOvln_ISenderService: IpcService {
 }
 
 class NnOvln_IReceiver: IpcService {
-	func unknown0(_ _0: Any?) throws { throw IpcError.unimplemented }
-	func unknown1(_ _0: Any?) throws { throw IpcError.unimplemented }
-	func unknown2() throws -> KObject { throw IpcError.unimplemented }
-	func unknown3() throws -> Any? { throw IpcError.unimplemented }
-	func unknown4() throws -> Any? { throw IpcError.unimplemented }
+	func unknown0(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::ovln::nn::ovln::IReceiver#Unknown0") }
+	func unknown1(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::ovln::nn::ovln::IReceiver#Unknown1") }
+	func unknown2() throws -> KObject { throw IpcError.unimplemented(name: "nn::ovln::nn::ovln::IReceiver#Unknown2") }
+	func unknown3() throws -> Any? { throw IpcError.unimplemented(name: "nn::ovln::nn::ovln::IReceiver#Unknown3") }
+	func unknown4() throws -> Any? { throw IpcError.unimplemented(name: "nn::ovln::nn::ovln::IReceiver#Unknown4") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
@@ -53,8 +53,8 @@ class NnOvln_IReceiver: IpcService {
 }
 
 class NnOvln_ISender: IpcService {
-	func unknown0(_ _0: Any?) throws { throw IpcError.unimplemented }
-	func unknown1() throws -> Any? { throw IpcError.unimplemented }
+	func unknown0(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::ovln::nn::ovln::ISender#Unknown0") }
+	func unknown1() throws -> Any? { throw IpcError.unimplemented(name: "nn::ovln::nn::ovln::ISender#Unknown1") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
@@ -74,7 +74,7 @@ class NnOvln_ISender: IpcService {
 }
 
 class NnOvln_IReceiverService: IpcService {
-	func unknown0() throws -> NnOvln_IReceiver { throw IpcError.unimplemented }
+	func unknown0() throws -> NnOvln_IReceiver { throw IpcError.unimplemented(name: "nn::ovln::nn::ovln::IReceiverService#Unknown0") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {

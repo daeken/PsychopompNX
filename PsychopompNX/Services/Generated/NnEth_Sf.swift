@@ -1,10 +1,10 @@
 class NnEthSf_IEthInterface: IpcService {
-	func initialize(_ _0: Buffer<UInt8>) throws -> KObject { throw IpcError.unimplemented }
-	func cancel() throws { throw IpcError.unimplemented }
-	func getResult() throws { throw IpcError.unimplemented }
-	func getMediaList(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func setMediaType(_ _0: Any?) throws { throw IpcError.unimplemented }
-	func getMediaType() throws -> Any? { throw IpcError.unimplemented }
+	func initialize(_ _0: Buffer<UInt8>) throws -> KObject { throw IpcError.unimplemented(name: "nn::eth::sf::nn::eth::sf::IEthInterface#Initialize") }
+	func cancel() throws { throw IpcError.unimplemented(name: "nn::eth::sf::nn::eth::sf::IEthInterface#Cancel") }
+	func getResult() throws { throw IpcError.unimplemented(name: "nn::eth::sf::nn::eth::sf::IEthInterface#GetResult") }
+	func getMediaList(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::eth::sf::nn::eth::sf::IEthInterface#GetMediaList") }
+	func setMediaType(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::eth::sf::nn::eth::sf::IEthInterface#SetMediaType") }
+	func getMediaType() throws -> Any? { throw IpcError.unimplemented(name: "nn::eth::sf::nn::eth::sf::IEthInterface#GetMediaType") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
@@ -41,11 +41,11 @@ class NnEthSf_IEthInterface: IpcService {
 }
 
 class NnEthSf_IEthInterfaceGroup: IpcService {
-	func getReadableHandle() throws -> KObject { throw IpcError.unimplemented }
-	func cancel() throws { throw IpcError.unimplemented }
-	func getResult() throws { throw IpcError.unimplemented }
-	func getInterfaceList(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func getInterfaceCount() throws -> Any? { throw IpcError.unimplemented }
+	func getReadableHandle() throws -> KObject { throw IpcError.unimplemented(name: "nn::eth::sf::nn::eth::sf::IEthInterfaceGroup#GetReadableHandle") }
+	func cancel() throws { throw IpcError.unimplemented(name: "nn::eth::sf::nn::eth::sf::IEthInterfaceGroup#Cancel") }
+	func getResult() throws { throw IpcError.unimplemented(name: "nn::eth::sf::nn::eth::sf::IEthInterfaceGroup#GetResult") }
+	func getInterfaceList(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::eth::sf::nn::eth::sf::IEthInterfaceGroup#GetInterfaceList") }
+	func getInterfaceCount() throws -> Any? { throw IpcError.unimplemented(name: "nn::eth::sf::nn::eth::sf::IEthInterfaceGroup#GetInterfaceCount") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {

@@ -1,13 +1,13 @@
 class NnTc_IManager: IpcService {
-	func setOperatingMode(_ _0: Any?) throws { throw IpcError.unimplemented }
-	func getThermalEvent(_ _0: Any?) throws -> KObject { throw IpcError.unimplemented }
-	func unknown2(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func unknown3(_ _0: Any?) throws { throw IpcError.unimplemented }
-	func unknown4(_ _0: Any?) throws { throw IpcError.unimplemented }
-	func unknown5(_ _0: Any?) throws { throw IpcError.unimplemented }
-	func unknown6() throws { throw IpcError.unimplemented }
-	func unknown7() throws { throw IpcError.unimplemented }
-	func unknown8() throws -> Any? { throw IpcError.unimplemented }
+	func setOperatingMode(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::tc::nn::tc::IManager#SetOperatingMode") }
+	func getThermalEvent(_ _0: Any?) throws -> KObject { throw IpcError.unimplemented(name: "nn::tc::nn::tc::IManager#GetThermalEvent") }
+	func unknown2(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::tc::nn::tc::IManager#Unknown2") }
+	func unknown3(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::tc::nn::tc::IManager#Unknown3") }
+	func unknown4(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::tc::nn::tc::IManager#Unknown4") }
+	func unknown5(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::tc::nn::tc::IManager#Unknown5") }
+	func unknown6() throws { throw IpcError.unimplemented(name: "nn::tc::nn::tc::IManager#Unknown6") }
+	func unknown7() throws { throw IpcError.unimplemented(name: "nn::tc::nn::tc::IManager#Unknown7") }
+	func unknown8() throws -> Any? { throw IpcError.unimplemented(name: "nn::tc::nn::tc::IManager#Unknown8") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {

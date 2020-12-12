@@ -1,51 +1,51 @@
 typealias NnBluetooth_Address = [UInt8]
 
 class NnBluetooth_IBluetoothDriver: IpcService {
-	func unknown0() throws { throw IpcError.unimplemented }
-	func _init() throws -> KObject { throw IpcError.unimplemented }
-	func enable() throws { throw IpcError.unimplemented }
-	func disable() throws { throw IpcError.unimplemented }
-	func cleanupAndShutdown() throws { throw IpcError.unimplemented }
-	func getAdapterProperties(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func getAdapterProperty(_ _0: Any?, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func setAdapterProperty(_ _0: Any?, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func startDiscovery() throws { throw IpcError.unimplemented }
-	func cancelDiscovery() throws { throw IpcError.unimplemented }
-	func createBond(_ _0: Any?, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func removeBond(_ _0: Any?) throws { throw IpcError.unimplemented }
-	func cancelBond(_ _0: Any?) throws { throw IpcError.unimplemented }
-	func pinReply(_ _0: Any?) throws { throw IpcError.unimplemented }
-	func sspReply(_ _0: Any?) throws { throw IpcError.unimplemented }
-	func unknown15(_ _0: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented }
-	func initInterfaces(_ _0: Any?) throws -> KObject { throw IpcError.unimplemented }
-	func hidHostInterface_Connect(_ _0: Any?) throws { throw IpcError.unimplemented }
-	func hidHostInterface_Disconnect(_ _0: Any?) throws { throw IpcError.unimplemented }
-	func hidHostInterface_SendData(_ _0: Any?, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func hidHostInterface_SendData2(_ _0: Any?, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func hidHostInterface_SetReport(_ _0: Any?, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func hidHostInterface_GetReport(_ _0: Any?) throws { throw IpcError.unimplemented }
-	func hidHostInterface_WakeController(_ _0: Any?) throws { throw IpcError.unimplemented }
-	func hidHostInterface_AddPairedDevice(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func hidHostInterface_GetPairedDevice(_ _0: Any?, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func hidHostInterface_CleanupAndShutdown() throws { throw IpcError.unimplemented }
-	func unknown27(_ _0: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented }
-	func extInterface_SetTSI(_ _0: Any?) throws { throw IpcError.unimplemented }
-	func extInterface_SetBurstMode(_ _0: Any?) throws { throw IpcError.unimplemented }
-	func extInterface_SetZeroRetran(_ _0: Any?, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func extInterface_SetMcMode(_ _0: Any?) throws { throw IpcError.unimplemented }
-	func extInterface_StartLlrMode() throws { throw IpcError.unimplemented }
-	func extInterface_ExitLlrMode() throws { throw IpcError.unimplemented }
-	func extInterface_SetRadio(_ _0: Any?) throws { throw IpcError.unimplemented }
-	func extInterface_SetVisibility(_ _0: Any?) throws { throw IpcError.unimplemented }
-	func unknown36(_ _0: Any?) throws { throw IpcError.unimplemented }
-	func unknown37() throws -> KObject { throw IpcError.unimplemented }
-	func hidHostInterface_GetLatestPlr(_ _0: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented }
-	func extInterface_GetPendingConnections(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func hidHostInterface_GetChannelMap() throws { throw IpcError.unimplemented }
-	func setIsBluetoothBoostEnabled(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func getIsBluetoothBoostEnabled(_ _0: Any?) throws { throw IpcError.unimplemented }
-	func setIsBluetoothAfhEnabled() throws -> Any? { throw IpcError.unimplemented }
-	func getIsBluetoothAfhEnabled(_ _0: Any?) throws { throw IpcError.unimplemented }
+	func unknown0() throws { throw IpcError.unimplemented(name: "nn::bluetooth::nn::bluetooth::IBluetoothDriver#Unknown0") }
+	func _init() throws -> KObject { throw IpcError.unimplemented(name: "nn::bluetooth::nn::bluetooth::IBluetoothDriver#Init") }
+	func enable() throws { throw IpcError.unimplemented(name: "nn::bluetooth::nn::bluetooth::IBluetoothDriver#Enable") }
+	func disable() throws { throw IpcError.unimplemented(name: "nn::bluetooth::nn::bluetooth::IBluetoothDriver#Disable") }
+	func cleanupAndShutdown() throws { throw IpcError.unimplemented(name: "nn::bluetooth::nn::bluetooth::IBluetoothDriver#CleanupAndShutdown") }
+	func getAdapterProperties(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::bluetooth::nn::bluetooth::IBluetoothDriver#GetAdapterProperties") }
+	func getAdapterProperty(_ _0: Any?, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::bluetooth::nn::bluetooth::IBluetoothDriver#GetAdapterProperty") }
+	func setAdapterProperty(_ _0: Any?, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::bluetooth::nn::bluetooth::IBluetoothDriver#SetAdapterProperty") }
+	func startDiscovery() throws { throw IpcError.unimplemented(name: "nn::bluetooth::nn::bluetooth::IBluetoothDriver#StartDiscovery") }
+	func cancelDiscovery() throws { throw IpcError.unimplemented(name: "nn::bluetooth::nn::bluetooth::IBluetoothDriver#CancelDiscovery") }
+	func createBond(_ _0: Any?, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::bluetooth::nn::bluetooth::IBluetoothDriver#CreateBond") }
+	func removeBond(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::bluetooth::nn::bluetooth::IBluetoothDriver#RemoveBond") }
+	func cancelBond(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::bluetooth::nn::bluetooth::IBluetoothDriver#CancelBond") }
+	func pinReply(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::bluetooth::nn::bluetooth::IBluetoothDriver#PinReply") }
+	func sspReply(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::bluetooth::nn::bluetooth::IBluetoothDriver#SspReply") }
+	func unknown15(_ _0: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented(name: "nn::bluetooth::nn::bluetooth::IBluetoothDriver#Unknown15") }
+	func initInterfaces(_ _0: Any?) throws -> KObject { throw IpcError.unimplemented(name: "nn::bluetooth::nn::bluetooth::IBluetoothDriver#InitInterfaces") }
+	func hidHostInterface_Connect(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::bluetooth::nn::bluetooth::IBluetoothDriver#HidHostInterface_Connect") }
+	func hidHostInterface_Disconnect(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::bluetooth::nn::bluetooth::IBluetoothDriver#HidHostInterface_Disconnect") }
+	func hidHostInterface_SendData(_ _0: Any?, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::bluetooth::nn::bluetooth::IBluetoothDriver#HidHostInterface_SendData") }
+	func hidHostInterface_SendData2(_ _0: Any?, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::bluetooth::nn::bluetooth::IBluetoothDriver#HidHostInterface_SendData2") }
+	func hidHostInterface_SetReport(_ _0: Any?, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::bluetooth::nn::bluetooth::IBluetoothDriver#HidHostInterface_SetReport") }
+	func hidHostInterface_GetReport(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::bluetooth::nn::bluetooth::IBluetoothDriver#HidHostInterface_GetReport") }
+	func hidHostInterface_WakeController(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::bluetooth::nn::bluetooth::IBluetoothDriver#HidHostInterface_WakeController") }
+	func hidHostInterface_AddPairedDevice(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::bluetooth::nn::bluetooth::IBluetoothDriver#HidHostInterface_AddPairedDevice") }
+	func hidHostInterface_GetPairedDevice(_ _0: Any?, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::bluetooth::nn::bluetooth::IBluetoothDriver#HidHostInterface_GetPairedDevice") }
+	func hidHostInterface_CleanupAndShutdown() throws { throw IpcError.unimplemented(name: "nn::bluetooth::nn::bluetooth::IBluetoothDriver#HidHostInterface_CleanupAndShutdown") }
+	func unknown27(_ _0: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented(name: "nn::bluetooth::nn::bluetooth::IBluetoothDriver#Unknown27") }
+	func extInterface_SetTSI(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::bluetooth::nn::bluetooth::IBluetoothDriver#ExtInterface_SetTSI") }
+	func extInterface_SetBurstMode(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::bluetooth::nn::bluetooth::IBluetoothDriver#ExtInterface_SetBurstMode") }
+	func extInterface_SetZeroRetran(_ _0: Any?, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::bluetooth::nn::bluetooth::IBluetoothDriver#ExtInterface_SetZeroRetran") }
+	func extInterface_SetMcMode(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::bluetooth::nn::bluetooth::IBluetoothDriver#ExtInterface_SetMcMode") }
+	func extInterface_StartLlrMode() throws { throw IpcError.unimplemented(name: "nn::bluetooth::nn::bluetooth::IBluetoothDriver#ExtInterface_StartLlrMode") }
+	func extInterface_ExitLlrMode() throws { throw IpcError.unimplemented(name: "nn::bluetooth::nn::bluetooth::IBluetoothDriver#ExtInterface_ExitLlrMode") }
+	func extInterface_SetRadio(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::bluetooth::nn::bluetooth::IBluetoothDriver#ExtInterface_SetRadio") }
+	func extInterface_SetVisibility(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::bluetooth::nn::bluetooth::IBluetoothDriver#ExtInterface_SetVisibility") }
+	func unknown36(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::bluetooth::nn::bluetooth::IBluetoothDriver#Unknown36") }
+	func unknown37() throws -> KObject { throw IpcError.unimplemented(name: "nn::bluetooth::nn::bluetooth::IBluetoothDriver#Unknown37") }
+	func hidHostInterface_GetLatestPlr(_ _0: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented(name: "nn::bluetooth::nn::bluetooth::IBluetoothDriver#HidHostInterface_GetLatestPlr") }
+	func extInterface_GetPendingConnections(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::bluetooth::nn::bluetooth::IBluetoothDriver#ExtInterface_GetPendingConnections") }
+	func hidHostInterface_GetChannelMap() throws { throw IpcError.unimplemented(name: "nn::bluetooth::nn::bluetooth::IBluetoothDriver#HidHostInterface_GetChannelMap") }
+	func setIsBluetoothBoostEnabled(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::bluetooth::nn::bluetooth::IBluetoothDriver#SetIsBluetoothBoostEnabled") }
+	func getIsBluetoothBoostEnabled(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::bluetooth::nn::bluetooth::IBluetoothDriver#GetIsBluetoothBoostEnabled") }
+	func setIsBluetoothAfhEnabled() throws -> Any? { throw IpcError.unimplemented(name: "nn::bluetooth::nn::bluetooth::IBluetoothDriver#SetIsBluetoothAfhEnabled") }
+	func getIsBluetoothAfhEnabled(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::bluetooth::nn::bluetooth::IBluetoothDriver#GetIsBluetoothAfhEnabled") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {

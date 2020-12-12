@@ -1,8 +1,8 @@
 class NnFgmSf_IRequest: IpcService {
-	func initialize(_ _0: NnFgm_Module, _ _1: UInt64, _ _2: Pid) throws -> KObject { throw IpcError.unimplemented }
-	func set(_ _0: UInt32, _ _1: UInt32) throws { throw IpcError.unimplemented }
-	func get() throws -> UInt32 { throw IpcError.unimplemented }
-	func cancel() throws { throw IpcError.unimplemented }
+	func initialize(_ _0: NnFgm_Module, _ _1: UInt64, _ _2: Pid) throws -> KObject { throw IpcError.unimplemented(name: "nn::fgm::sf::nn::fgm::sf::IRequest#Initialize") }
+	func set(_ _0: UInt32, _ _1: UInt32) throws { throw IpcError.unimplemented(name: "nn::fgm::sf::nn::fgm::sf::IRequest#Set") }
+	func get() throws -> UInt32 { throw IpcError.unimplemented(name: "nn::fgm::sf::nn::fgm::sf::IRequest#Get") }
+	func cancel() throws { throw IpcError.unimplemented(name: "nn::fgm::sf::nn::fgm::sf::IRequest#Cancel") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
@@ -32,9 +32,9 @@ class NnFgmSf_IRequest: IpcService {
 }
 
 class NnFgmSf_IDebugger: IpcService {
-	func initialize(_ _0: UInt64, _ _1: KObject) throws -> KObject { throw IpcError.unimplemented }
-	func read(_ _0: Buffer<UInt8>) throws -> (UInt32, UInt32, UInt32) { throw IpcError.unimplemented }
-	func cancel() throws { throw IpcError.unimplemented }
+	func initialize(_ _0: UInt64, _ _1: KObject) throws -> KObject { throw IpcError.unimplemented(name: "nn::fgm::sf::nn::fgm::sf::IDebugger#Initialize") }
+	func read(_ _0: Buffer<UInt8>) throws -> (UInt32, UInt32, UInt32) { throw IpcError.unimplemented(name: "nn::fgm::sf::nn::fgm::sf::IDebugger#Read") }
+	func cancel() throws { throw IpcError.unimplemented(name: "nn::fgm::sf::nn::fgm::sf::IDebugger#Cancel") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
@@ -62,7 +62,7 @@ class NnFgmSf_IDebugger: IpcService {
 }
 
 class NnFgmSf_ISession: IpcService {
-	func initialize() throws -> NnFgmSf_IRequest { throw IpcError.unimplemented }
+	func initialize() throws -> NnFgmSf_IRequest { throw IpcError.unimplemented(name: "nn::fgm::sf::nn::fgm::sf::ISession#Initialize") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {

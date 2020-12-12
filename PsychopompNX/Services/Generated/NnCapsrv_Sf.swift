@@ -1,14 +1,14 @@
 class NnCapsrvSf_IScreenShotControlService: IpcService {
-	func unknown1(_ _0: Any?, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func unknown2(_ _0: Any?, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func unknown1001(_ _0: Any?) throws { throw IpcError.unimplemented }
-	func unknown1002(_ _0: Any?) throws { throw IpcError.unimplemented }
-	func unknown1003(_ _0: Any?) throws { throw IpcError.unimplemented }
-	func unknown1011(_ _0: Any?) throws { throw IpcError.unimplemented }
-	func unknown1012(_ _0: Any?) throws { throw IpcError.unimplemented }
-	func unknown1201(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func unknown1202() throws { throw IpcError.unimplemented }
-	func unknown1203(_ _0: Any?, _ _1: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented }
+	func unknown1(_ _0: Any?, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::capsrv::sf::nn::capsrv::sf::IScreenShotControlService#Unknown1") }
+	func unknown2(_ _0: Any?, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::capsrv::sf::nn::capsrv::sf::IScreenShotControlService#Unknown2") }
+	func unknown1001(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::capsrv::sf::nn::capsrv::sf::IScreenShotControlService#Unknown1001") }
+	func unknown1002(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::capsrv::sf::nn::capsrv::sf::IScreenShotControlService#Unknown1002") }
+	func unknown1003(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::capsrv::sf::nn::capsrv::sf::IScreenShotControlService#Unknown1003") }
+	func unknown1011(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::capsrv::sf::nn::capsrv::sf::IScreenShotControlService#Unknown1011") }
+	func unknown1012(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::capsrv::sf::nn::capsrv::sf::IScreenShotControlService#Unknown1012") }
+	func unknown1201(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::capsrv::sf::nn::capsrv::sf::IScreenShotControlService#Unknown1201") }
+	func unknown1202() throws { throw IpcError.unimplemented(name: "nn::capsrv::sf::nn::capsrv::sf::IScreenShotControlService#Unknown1202") }
+	func unknown1203(_ _0: Any?, _ _1: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented(name: "nn::capsrv::sf::nn::capsrv::sf::IScreenShotControlService#Unknown1203") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
@@ -60,13 +60,13 @@ class NnCapsrvSf_IScreenShotControlService: IpcService {
 }
 
 class NnCapsrvSf_ICaptureControllerService: IpcService {
-	func unknown1(_ _0: Any?, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func unknown2(_ _0: Any?, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func unknown1001(_ _0: Any?) throws { throw IpcError.unimplemented }
-	func unknown1002(_ _0: Any?) throws { throw IpcError.unimplemented }
-	func unknown1011(_ _0: Any?) throws { throw IpcError.unimplemented }
-	func unknown2001(_ _0: Any?) throws { throw IpcError.unimplemented }
-	func unknown2002(_ _0: Any?) throws { throw IpcError.unimplemented }
+	func unknown1(_ _0: Any?, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::capsrv::sf::nn::capsrv::sf::ICaptureControllerService#Unknown1") }
+	func unknown2(_ _0: Any?, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::capsrv::sf::nn::capsrv::sf::ICaptureControllerService#Unknown2") }
+	func unknown1001(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::capsrv::sf::nn::capsrv::sf::ICaptureControllerService#Unknown1001") }
+	func unknown1002(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::capsrv::sf::nn::capsrv::sf::ICaptureControllerService#Unknown1002") }
+	func unknown1011(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::capsrv::sf::nn::capsrv::sf::ICaptureControllerService#Unknown1011") }
+	func unknown2001(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::capsrv::sf::nn::capsrv::sf::ICaptureControllerService#Unknown2001") }
+	func unknown2002(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::capsrv::sf::nn::capsrv::sf::ICaptureControllerService#Unknown2002") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
@@ -106,14 +106,14 @@ class NnCapsrvSf_ICaptureControllerService: IpcService {
 }
 
 class NnCapsrvSf_IAlbumAccessorSession: IpcService {
-	func unknown2001(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func unknown2002(_ _0: Any?) throws { throw IpcError.unimplemented }
-	func unknown2003(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func unknown2004(_ _0: Any?, _ _1: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented }
-	func unknown2005(_ _0: Any?) throws { throw IpcError.unimplemented }
-	func unknown2006(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func unknown2007(_ _0: Any?, _ _1: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented }
-	func unknown2008(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
+	func unknown2001(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::capsrv::sf::nn::capsrv::sf::IAlbumAccessorSession#Unknown2001") }
+	func unknown2002(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::capsrv::sf::nn::capsrv::sf::IAlbumAccessorSession#Unknown2002") }
+	func unknown2003(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::capsrv::sf::nn::capsrv::sf::IAlbumAccessorSession#Unknown2003") }
+	func unknown2004(_ _0: Any?, _ _1: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented(name: "nn::capsrv::sf::nn::capsrv::sf::IAlbumAccessorSession#Unknown2004") }
+	func unknown2005(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::capsrv::sf::nn::capsrv::sf::IAlbumAccessorSession#Unknown2005") }
+	func unknown2006(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::capsrv::sf::nn::capsrv::sf::IAlbumAccessorSession#Unknown2006") }
+	func unknown2007(_ _0: Any?, _ _1: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented(name: "nn::capsrv::sf::nn::capsrv::sf::IAlbumAccessorSession#Unknown2007") }
+	func unknown2008(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::capsrv::sf::nn::capsrv::sf::IAlbumAccessorSession#Unknown2008") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
@@ -157,16 +157,16 @@ class NnCapsrvSf_IAlbumAccessorSession: IpcService {
 }
 
 class NnCapsrvSf_IAlbumControlService: IpcService {
-	func unknown2001(_ _0: Any?) throws { throw IpcError.unimplemented }
-	func unknown2002(_ _0: Any?) throws { throw IpcError.unimplemented }
-	func unknown2011(_ _0: Any?) throws { throw IpcError.unimplemented }
-	func unknown2012(_ _0: Any?) throws { throw IpcError.unimplemented }
-	func unknown2013(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func unknown2014(_ _0: Any?) throws { throw IpcError.unimplemented }
-	func unknown2101(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func unknown2102(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func unknown2201(_ _0: Any?, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func unknown2301(_ _0: Any?, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented }
+	func unknown2001(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::capsrv::sf::nn::capsrv::sf::IAlbumControlService#Unknown2001") }
+	func unknown2002(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::capsrv::sf::nn::capsrv::sf::IAlbumControlService#Unknown2002") }
+	func unknown2011(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::capsrv::sf::nn::capsrv::sf::IAlbumControlService#Unknown2011") }
+	func unknown2012(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::capsrv::sf::nn::capsrv::sf::IAlbumControlService#Unknown2012") }
+	func unknown2013(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::capsrv::sf::nn::capsrv::sf::IAlbumControlService#Unknown2013") }
+	func unknown2014(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::capsrv::sf::nn::capsrv::sf::IAlbumControlService#Unknown2014") }
+	func unknown2101(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::capsrv::sf::nn::capsrv::sf::IAlbumControlService#Unknown2101") }
+	func unknown2102(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::capsrv::sf::nn::capsrv::sf::IAlbumControlService#Unknown2102") }
+	func unknown2201(_ _0: Any?, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::capsrv::sf::nn::capsrv::sf::IAlbumControlService#Unknown2201") }
+	func unknown2301(_ _0: Any?, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::capsrv::sf::nn::capsrv::sf::IAlbumControlService#Unknown2301") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
@@ -218,32 +218,32 @@ class NnCapsrvSf_IAlbumControlService: IpcService {
 }
 
 class NnCapsrvSf_IAlbumAccessorService: IpcService {
-	func unknown0(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func unknown1(_ _0: Any?, _ _1: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented }
-	func unknown2(_ _0: Any?, _ _1: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented }
-	func unknown3(_ _0: Any?) throws { throw IpcError.unimplemented }
-	func unknown4(_ _0: Any?) throws { throw IpcError.unimplemented }
-	func unknown5(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func unknown6(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func unknown7(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func unknown8(_ _0: Any?, _ _1: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented }
-	func unknown9(_ _0: Any?, _ _1: Buffer<UInt8>, _ _2: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented }
-	func unknown10(_ _0: Any?, _ _1: Buffer<UInt8>, _ _2: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented }
-	func unknown11(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func unknown12(_ _0: Any?, _ _1: Buffer<UInt8>, _ _2: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented }
-	func unknown13(_ _0: Any?, _ _1: Buffer<UInt8>, _ _2: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented }
-	func unknown14(_ _0: Any?, _ _1: Buffer<UInt8>, _ _2: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented }
-	func unknown301(_ _0: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented }
-	func unknown401() throws -> Any? { throw IpcError.unimplemented }
-	func unknown501(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func unknown1001(_ _0: Any?, _ _1: Buffer<UInt8>, _ _2: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented }
-	func unknown1002(_ _0: Any?, _ _1: Buffer<UInt8>, _ _2: Buffer<UInt8>, _ _3: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func unknown8001(_ _0: Any?) throws { throw IpcError.unimplemented }
-	func unknown8002(_ _0: Any?) throws { throw IpcError.unimplemented }
-	func unknown8011(_ _0: Any?) throws { throw IpcError.unimplemented }
-	func unknown8012(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func unknown8021(_ _0: Any?, _ _1: Pid) throws -> Any? { throw IpcError.unimplemented }
-	func unknown10011(_ _0: Any?) throws { throw IpcError.unimplemented }
+	func unknown0(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::capsrv::sf::nn::capsrv::sf::IAlbumAccessorService#Unknown0") }
+	func unknown1(_ _0: Any?, _ _1: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented(name: "nn::capsrv::sf::nn::capsrv::sf::IAlbumAccessorService#Unknown1") }
+	func unknown2(_ _0: Any?, _ _1: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented(name: "nn::capsrv::sf::nn::capsrv::sf::IAlbumAccessorService#Unknown2") }
+	func unknown3(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::capsrv::sf::nn::capsrv::sf::IAlbumAccessorService#Unknown3") }
+	func unknown4(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::capsrv::sf::nn::capsrv::sf::IAlbumAccessorService#Unknown4") }
+	func unknown5(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::capsrv::sf::nn::capsrv::sf::IAlbumAccessorService#Unknown5") }
+	func unknown6(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::capsrv::sf::nn::capsrv::sf::IAlbumAccessorService#Unknown6") }
+	func unknown7(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::capsrv::sf::nn::capsrv::sf::IAlbumAccessorService#Unknown7") }
+	func unknown8(_ _0: Any?, _ _1: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented(name: "nn::capsrv::sf::nn::capsrv::sf::IAlbumAccessorService#Unknown8") }
+	func unknown9(_ _0: Any?, _ _1: Buffer<UInt8>, _ _2: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented(name: "nn::capsrv::sf::nn::capsrv::sf::IAlbumAccessorService#Unknown9") }
+	func unknown10(_ _0: Any?, _ _1: Buffer<UInt8>, _ _2: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented(name: "nn::capsrv::sf::nn::capsrv::sf::IAlbumAccessorService#Unknown10") }
+	func unknown11(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::capsrv::sf::nn::capsrv::sf::IAlbumAccessorService#Unknown11") }
+	func unknown12(_ _0: Any?, _ _1: Buffer<UInt8>, _ _2: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented(name: "nn::capsrv::sf::nn::capsrv::sf::IAlbumAccessorService#Unknown12") }
+	func unknown13(_ _0: Any?, _ _1: Buffer<UInt8>, _ _2: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented(name: "nn::capsrv::sf::nn::capsrv::sf::IAlbumAccessorService#Unknown13") }
+	func unknown14(_ _0: Any?, _ _1: Buffer<UInt8>, _ _2: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented(name: "nn::capsrv::sf::nn::capsrv::sf::IAlbumAccessorService#Unknown14") }
+	func unknown301(_ _0: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented(name: "nn::capsrv::sf::nn::capsrv::sf::IAlbumAccessorService#Unknown301") }
+	func unknown401() throws -> Any? { throw IpcError.unimplemented(name: "nn::capsrv::sf::nn::capsrv::sf::IAlbumAccessorService#Unknown401") }
+	func unknown501(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::capsrv::sf::nn::capsrv::sf::IAlbumAccessorService#Unknown501") }
+	func unknown1001(_ _0: Any?, _ _1: Buffer<UInt8>, _ _2: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented(name: "nn::capsrv::sf::nn::capsrv::sf::IAlbumAccessorService#Unknown1001") }
+	func unknown1002(_ _0: Any?, _ _1: Buffer<UInt8>, _ _2: Buffer<UInt8>, _ _3: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::capsrv::sf::nn::capsrv::sf::IAlbumAccessorService#Unknown1002") }
+	func unknown8001(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::capsrv::sf::nn::capsrv::sf::IAlbumAccessorService#Unknown8001") }
+	func unknown8002(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::capsrv::sf::nn::capsrv::sf::IAlbumAccessorService#Unknown8002") }
+	func unknown8011(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::capsrv::sf::nn::capsrv::sf::IAlbumAccessorService#Unknown8011") }
+	func unknown8012(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::capsrv::sf::nn::capsrv::sf::IAlbumAccessorService#Unknown8012") }
+	func unknown8021(_ _0: Any?, _ _1: Pid) throws -> Any? { throw IpcError.unimplemented(name: "nn::capsrv::sf::nn::capsrv::sf::IAlbumAccessorService#Unknown8021") }
+	func unknown10011(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::capsrv::sf::nn::capsrv::sf::IAlbumAccessorService#Unknown10011") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
@@ -359,11 +359,11 @@ class NnCapsrvSf_IAlbumAccessorService: IpcService {
 }
 
 class NnCapsrvSf_IAlbumAccessorApplicationSession: IpcService {
-	func openAlbumMovieReadStream(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func closeAlbumMovieReadStream(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func getAlbumMovieReadStreamMovieDataSize(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func readMovieDataFromAlbumMovieReadStream(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func getAlbumMovieReadStreamBrokenReason(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
+	func openAlbumMovieReadStream(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::capsrv::sf::nn::capsrv::sf::IAlbumAccessorApplicationSession#OpenAlbumMovieReadStream") }
+	func closeAlbumMovieReadStream(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::capsrv::sf::nn::capsrv::sf::IAlbumAccessorApplicationSession#CloseAlbumMovieReadStream") }
+	func getAlbumMovieReadStreamMovieDataSize(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::capsrv::sf::nn::capsrv::sf::IAlbumAccessorApplicationSession#GetAlbumMovieReadStreamMovieDataSize") }
+	func readMovieDataFromAlbumMovieReadStream(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::capsrv::sf::nn::capsrv::sf::IAlbumAccessorApplicationSession#ReadMovieDataFromAlbumMovieReadStream") }
+	func getAlbumMovieReadStreamBrokenReason(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::capsrv::sf::nn::capsrv::sf::IAlbumAccessorApplicationSession#GetAlbumMovieReadStreamBrokenReason") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
@@ -395,12 +395,12 @@ class NnCapsrvSf_IAlbumAccessorApplicationSession: IpcService {
 }
 
 class NnCapsrvSf_IAlbumApplicationService: IpcService {
-	func getAlbumFileListByAruid(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func deleteAlbumFileByAruid(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func getAlbumFileSizeByAruid(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func loadAlbumScreenShotImageByAruid(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func loadAlbumScreenShotThumbnailImageByAruid(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func openAccessorSessionForApplication(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
+	func getAlbumFileListByAruid(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::capsrv::sf::nn::capsrv::sf::IAlbumApplicationService#GetAlbumFileListByAruid") }
+	func deleteAlbumFileByAruid(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::capsrv::sf::nn::capsrv::sf::IAlbumApplicationService#DeleteAlbumFileByAruid") }
+	func getAlbumFileSizeByAruid(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::capsrv::sf::nn::capsrv::sf::IAlbumApplicationService#GetAlbumFileSizeByAruid") }
+	func loadAlbumScreenShotImageByAruid(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::capsrv::sf::nn::capsrv::sf::IAlbumApplicationService#LoadAlbumScreenShotImageByAruid") }
+	func loadAlbumScreenShotThumbnailImageByAruid(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::capsrv::sf::nn::capsrv::sf::IAlbumApplicationService#LoadAlbumScreenShotThumbnailImageByAruid") }
+	func openAccessorSessionForApplication(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::capsrv::sf::nn::capsrv::sf::IAlbumApplicationService#OpenAccessorSessionForApplication") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
@@ -436,8 +436,8 @@ class NnCapsrvSf_IAlbumApplicationService: IpcService {
 }
 
 class NnCapsrvSf_IScreenShotApplicationService: IpcService {
-	func saveScreenShot(_ _0: UInt32, _ _1: UInt32, _ _2: NnApplet_AppletResourceUserId, _ _3: Pid, _ _4: Buffer<UInt8>) throws -> NnCapsrv_ApplicationAlbumEntry { throw IpcError.unimplemented }
-	func saveScreenShotEx0(_ _0: NnCapsrvDetail_ScreenShotAttributeEx0, _ _1: UInt32, _ _2: NnApplet_AppletResourceUserId, _ _3: Pid, _ _4: Buffer<UInt8>) throws -> NnCapsrv_ApplicationAlbumEntry { throw IpcError.unimplemented }
+	func saveScreenShot(_ _0: UInt32, _ _1: UInt32, _ _2: NnApplet_AppletResourceUserId, _ _3: Pid, _ _4: Buffer<UInt8>) throws -> NnCapsrv_ApplicationAlbumEntry { throw IpcError.unimplemented(name: "nn::capsrv::sf::nn::capsrv::sf::IScreenShotApplicationService#SaveScreenShot") }
+	func saveScreenShotEx0(_ _0: NnCapsrvDetail_ScreenShotAttributeEx0, _ _1: UInt32, _ _2: NnApplet_AppletResourceUserId, _ _3: Pid, _ _4: Buffer<UInt8>) throws -> NnCapsrv_ApplicationAlbumEntry { throw IpcError.unimplemented(name: "nn::capsrv::sf::nn::capsrv::sf::IScreenShotApplicationService#SaveScreenShotEx0") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
@@ -461,10 +461,10 @@ class NnCapsrvSf_IScreenShotApplicationService: IpcService {
 }
 
 class NnCapsrvSf_IScreenShotService: IpcService {
-	func unknown201(_ _0: Any?, _ _1: Pid, _ _2: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented }
-	func unknown202(_ _0: Any?, _ _1: Buffer<UInt8>, _ _2: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented }
-	func unknown203(_ _0: Any?, _ _1: Pid, _ _2: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented }
-	func unknown204(_ _0: Any?, _ _1: Buffer<UInt8>, _ _2: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented }
+	func unknown201(_ _0: Any?, _ _1: Pid, _ _2: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented(name: "nn::capsrv::sf::nn::capsrv::sf::IScreenShotService#Unknown201") }
+	func unknown202(_ _0: Any?, _ _1: Buffer<UInt8>, _ _2: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented(name: "nn::capsrv::sf::nn::capsrv::sf::IScreenShotService#Unknown202") }
+	func unknown203(_ _0: Any?, _ _1: Pid, _ _2: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented(name: "nn::capsrv::sf::nn::capsrv::sf::IScreenShotService#Unknown203") }
+	func unknown204(_ _0: Any?, _ _1: Buffer<UInt8>, _ _2: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented(name: "nn::capsrv::sf::nn::capsrv::sf::IScreenShotService#Unknown204") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
@@ -492,29 +492,29 @@ class NnCapsrvSf_IScreenShotService: IpcService {
 }
 
 class NnCapsrvSf_IAlbumControlSession: IpcService {
-	func unknown2001(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func unknown2002(_ _0: Any?) throws { throw IpcError.unimplemented }
-	func unknown2003(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func unknown2004(_ _0: Any?, _ _1: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented }
-	func unknown2005(_ _0: Any?) throws { throw IpcError.unimplemented }
-	func unknown2006(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func unknown2007(_ _0: Any?, _ _1: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented }
-	func unknown2008(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func unknown2401(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func unknown2402(_ _0: Any?) throws { throw IpcError.unimplemented }
-	func unknown2403(_ _0: Any?) throws { throw IpcError.unimplemented }
-	func unknown2404(_ _0: Any?) throws { throw IpcError.unimplemented }
-	func unknown2405(_ _0: Any?) throws { throw IpcError.unimplemented }
-	func unknown2411(_ _0: Any?) throws { throw IpcError.unimplemented }
-	func unknown2412(_ _0: Any?) throws { throw IpcError.unimplemented }
-	func unknown2413(_ _0: Any?) throws { throw IpcError.unimplemented }
-	func unknown2414(_ _0: Any?) throws { throw IpcError.unimplemented }
-	func unknown2421(_ _0: Any?, _ _1: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented }
-	func unknown2422(_ _0: Any?, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func unknown2424(_ _0: Any?, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func unknown2431(_ _0: Any?) throws { throw IpcError.unimplemented }
-	func unknown2433(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func unknown2434(_ _0: Any?) throws { throw IpcError.unimplemented }
+	func unknown2001(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::capsrv::sf::nn::capsrv::sf::IAlbumControlSession#Unknown2001") }
+	func unknown2002(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::capsrv::sf::nn::capsrv::sf::IAlbumControlSession#Unknown2002") }
+	func unknown2003(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::capsrv::sf::nn::capsrv::sf::IAlbumControlSession#Unknown2003") }
+	func unknown2004(_ _0: Any?, _ _1: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented(name: "nn::capsrv::sf::nn::capsrv::sf::IAlbumControlSession#Unknown2004") }
+	func unknown2005(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::capsrv::sf::nn::capsrv::sf::IAlbumControlSession#Unknown2005") }
+	func unknown2006(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::capsrv::sf::nn::capsrv::sf::IAlbumControlSession#Unknown2006") }
+	func unknown2007(_ _0: Any?, _ _1: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented(name: "nn::capsrv::sf::nn::capsrv::sf::IAlbumControlSession#Unknown2007") }
+	func unknown2008(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::capsrv::sf::nn::capsrv::sf::IAlbumControlSession#Unknown2008") }
+	func unknown2401(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::capsrv::sf::nn::capsrv::sf::IAlbumControlSession#Unknown2401") }
+	func unknown2402(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::capsrv::sf::nn::capsrv::sf::IAlbumControlSession#Unknown2402") }
+	func unknown2403(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::capsrv::sf::nn::capsrv::sf::IAlbumControlSession#Unknown2403") }
+	func unknown2404(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::capsrv::sf::nn::capsrv::sf::IAlbumControlSession#Unknown2404") }
+	func unknown2405(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::capsrv::sf::nn::capsrv::sf::IAlbumControlSession#Unknown2405") }
+	func unknown2411(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::capsrv::sf::nn::capsrv::sf::IAlbumControlSession#Unknown2411") }
+	func unknown2412(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::capsrv::sf::nn::capsrv::sf::IAlbumControlSession#Unknown2412") }
+	func unknown2413(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::capsrv::sf::nn::capsrv::sf::IAlbumControlSession#Unknown2413") }
+	func unknown2414(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::capsrv::sf::nn::capsrv::sf::IAlbumControlSession#Unknown2414") }
+	func unknown2421(_ _0: Any?, _ _1: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented(name: "nn::capsrv::sf::nn::capsrv::sf::IAlbumControlSession#Unknown2421") }
+	func unknown2422(_ _0: Any?, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::capsrv::sf::nn::capsrv::sf::IAlbumControlSession#Unknown2422") }
+	func unknown2424(_ _0: Any?, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::capsrv::sf::nn::capsrv::sf::IAlbumControlSession#Unknown2424") }
+	func unknown2431(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::capsrv::sf::nn::capsrv::sf::IAlbumControlSession#Unknown2431") }
+	func unknown2433(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::capsrv::sf::nn::capsrv::sf::IAlbumControlSession#Unknown2433") }
+	func unknown2434(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::capsrv::sf::nn::capsrv::sf::IAlbumControlSession#Unknown2434") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {

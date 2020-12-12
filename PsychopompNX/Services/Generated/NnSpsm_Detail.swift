@@ -1,16 +1,16 @@
 class NnSpsmDetail_IPowerStateInterface: IpcService {
-	func getState() throws -> Any? { throw IpcError.unimplemented }
-	func sleepSystemAndWaitAwake() throws -> KObject { throw IpcError.unimplemented }
-	func unknown2() throws -> Any? { throw IpcError.unimplemented }
-	func unknown3(_ _0: Any?) throws { throw IpcError.unimplemented }
-	func getNotificationMessageEventHandle() throws -> KObject { throw IpcError.unimplemented }
-	func unknown5() throws -> Any? { throw IpcError.unimplemented }
-	func unknown6() throws -> Any? { throw IpcError.unimplemented }
-	func unknown7() throws { throw IpcError.unimplemented }
-	func analyzePerformanceLogForLastSleepWakeSequence(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func changeHomeButtonLongPressingTime(_ _0: Any?) throws { throw IpcError.unimplemented }
-	func unknown10() throws { throw IpcError.unimplemented }
-	func unknown11(_ _0: Any?) throws { throw IpcError.unimplemented }
+	func getState() throws -> Any? { throw IpcError.unimplemented(name: "nn::spsm::detail::nn::spsm::detail::IPowerStateInterface#GetState") }
+	func sleepSystemAndWaitAwake() throws -> KObject { throw IpcError.unimplemented(name: "nn::spsm::detail::nn::spsm::detail::IPowerStateInterface#SleepSystemAndWaitAwake") }
+	func unknown2() throws -> Any? { throw IpcError.unimplemented(name: "nn::spsm::detail::nn::spsm::detail::IPowerStateInterface#Unknown2") }
+	func unknown3(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::spsm::detail::nn::spsm::detail::IPowerStateInterface#Unknown3") }
+	func getNotificationMessageEventHandle() throws -> KObject { throw IpcError.unimplemented(name: "nn::spsm::detail::nn::spsm::detail::IPowerStateInterface#GetNotificationMessageEventHandle") }
+	func unknown5() throws -> Any? { throw IpcError.unimplemented(name: "nn::spsm::detail::nn::spsm::detail::IPowerStateInterface#Unknown5") }
+	func unknown6() throws -> Any? { throw IpcError.unimplemented(name: "nn::spsm::detail::nn::spsm::detail::IPowerStateInterface#Unknown6") }
+	func unknown7() throws { throw IpcError.unimplemented(name: "nn::spsm::detail::nn::spsm::detail::IPowerStateInterface#Unknown7") }
+	func analyzePerformanceLogForLastSleepWakeSequence(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::spsm::detail::nn::spsm::detail::IPowerStateInterface#AnalyzePerformanceLogForLastSleepWakeSequence") }
+	func changeHomeButtonLongPressingTime(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::spsm::detail::nn::spsm::detail::IPowerStateInterface#ChangeHomeButtonLongPressingTime") }
+	func unknown10() throws { throw IpcError.unimplemented(name: "nn::spsm::detail::nn::spsm::detail::IPowerStateInterface#Unknown10") }
+	func unknown11(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::spsm::detail::nn::spsm::detail::IPowerStateInterface#Unknown11") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {

@@ -1,9 +1,9 @@
 class NnNewsDetailIpc_IServiceCreator: IpcService {
-	func unknown0() throws -> NnNewsDetailIpc_INewsService { throw IpcError.unimplemented }
-	func unknown1() throws -> NnNewsDetailIpc_INewlyArrivedEventHolder { throw IpcError.unimplemented }
-	func unknown2() throws -> NnNewsDetailIpc_INewsDataService { throw IpcError.unimplemented }
-	func unknown3() throws -> NnNewsDetailIpc_INewsDatabaseService { throw IpcError.unimplemented }
-	func unknown4() throws -> NnNewsDetailIpc_IOverwriteEventHolder { throw IpcError.unimplemented }
+	func unknown0() throws -> NnNewsDetailIpc_INewsService { throw IpcError.unimplemented(name: "nn::news::detail::ipc::nn::news::detail::ipc::IServiceCreator#Unknown0") }
+	func unknown1() throws -> NnNewsDetailIpc_INewlyArrivedEventHolder { throw IpcError.unimplemented(name: "nn::news::detail::ipc::nn::news::detail::ipc::IServiceCreator#Unknown1") }
+	func unknown2() throws -> NnNewsDetailIpc_INewsDataService { throw IpcError.unimplemented(name: "nn::news::detail::ipc::nn::news::detail::ipc::IServiceCreator#Unknown2") }
+	func unknown3() throws -> NnNewsDetailIpc_INewsDatabaseService { throw IpcError.unimplemented(name: "nn::news::detail::ipc::nn::news::detail::ipc::IServiceCreator#Unknown3") }
+	func unknown4() throws -> NnNewsDetailIpc_IOverwriteEventHolder { throw IpcError.unimplemented(name: "nn::news::detail::ipc::nn::news::detail::ipc::IServiceCreator#Unknown4") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
@@ -40,10 +40,10 @@ class NnNewsDetailIpc_IServiceCreator: IpcService {
 }
 
 class NnNewsDetailIpc_INewsDataService: IpcService {
-	func unknown0(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func unknown1(_ _0: Any?) throws { throw IpcError.unimplemented }
-	func unknown2(_ _0: Any?, _ _1: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented }
-	func unknown3() throws -> Any? { throw IpcError.unimplemented }
+	func unknown0(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::news::detail::ipc::nn::news::detail::ipc::INewsDataService#Unknown0") }
+	func unknown1(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::news::detail::ipc::nn::news::detail::ipc::INewsDataService#Unknown1") }
+	func unknown2(_ _0: Any?, _ _1: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented(name: "nn::news::detail::ipc::nn::news::detail::ipc::INewsDataService#Unknown2") }
+	func unknown3() throws -> Any? { throw IpcError.unimplemented(name: "nn::news::detail::ipc::nn::news::detail::ipc::INewsDataService#Unknown3") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
@@ -71,12 +71,12 @@ class NnNewsDetailIpc_INewsDataService: IpcService {
 }
 
 class NnNewsDetailIpc_INewsDatabaseService: IpcService {
-	func unknown0(_ _0: Any?, _ _1: Buffer<UInt8>, _ _2: Buffer<UInt8>, _ _3: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented }
-	func unknown1(_ _0: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented }
-	func unknown2(_ _0: Any?, _ _1: Buffer<UInt8>, _ _2: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented }
-	func unknown3(_ _0: Any?, _ _1: Buffer<UInt8>, _ _2: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func unknown4(_ _0: Any?, _ _1: Buffer<UInt8>, _ _2: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func unknown5(_ _0: Buffer<UInt8>, _ _1: Buffer<UInt8>, _ _2: Buffer<UInt8>) throws { throw IpcError.unimplemented }
+	func unknown0(_ _0: Any?, _ _1: Buffer<UInt8>, _ _2: Buffer<UInt8>, _ _3: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented(name: "nn::news::detail::ipc::nn::news::detail::ipc::INewsDatabaseService#Unknown0") }
+	func unknown1(_ _0: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented(name: "nn::news::detail::ipc::nn::news::detail::ipc::INewsDatabaseService#Unknown1") }
+	func unknown2(_ _0: Any?, _ _1: Buffer<UInt8>, _ _2: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented(name: "nn::news::detail::ipc::nn::news::detail::ipc::INewsDatabaseService#Unknown2") }
+	func unknown3(_ _0: Any?, _ _1: Buffer<UInt8>, _ _2: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::news::detail::ipc::nn::news::detail::ipc::INewsDatabaseService#Unknown3") }
+	func unknown4(_ _0: Any?, _ _1: Buffer<UInt8>, _ _2: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::news::detail::ipc::nn::news::detail::ipc::INewsDatabaseService#Unknown4") }
+	func unknown5(_ _0: Buffer<UInt8>, _ _1: Buffer<UInt8>, _ _2: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::news::detail::ipc::nn::news::detail::ipc::INewsDatabaseService#Unknown5") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
@@ -112,7 +112,7 @@ class NnNewsDetailIpc_INewsDatabaseService: IpcService {
 }
 
 class NnNewsDetailIpc_INewlyArrivedEventHolder: IpcService {
-	func unknown0() throws -> KObject { throw IpcError.unimplemented }
+	func unknown0() throws -> KObject { throw IpcError.unimplemented(name: "nn::news::detail::ipc::nn::news::detail::ipc::INewlyArrivedEventHolder#Unknown0") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
@@ -129,7 +129,7 @@ class NnNewsDetailIpc_INewlyArrivedEventHolder: IpcService {
 }
 
 class NnNewsDetailIpc_IOverwriteEventHolder: IpcService {
-	func unknown0() throws -> KObject { throw IpcError.unimplemented }
+	func unknown0() throws -> KObject { throw IpcError.unimplemented(name: "nn::news::detail::ipc::nn::news::detail::ipc::IOverwriteEventHolder#Unknown0") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
@@ -146,21 +146,21 @@ class NnNewsDetailIpc_IOverwriteEventHolder: IpcService {
 }
 
 class NnNewsDetailIpc_INewsService: IpcService {
-	func unknown10100(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func unknown20100(_ _0: Any?, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func unknown30100(_ _0: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented }
-	func unknown30101(_ _0: Any?, _ _1: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented }
-	func unknown30200() throws -> Any? { throw IpcError.unimplemented }
-	func unknown30300(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func unknown30400(_ _0: Buffer<UInt8>, _ _1: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented }
-	func unknown30900() throws -> NnNewsDetailIpc_INewlyArrivedEventHolder { throw IpcError.unimplemented }
-	func unknown30901() throws -> NnNewsDetailIpc_INewsDataService { throw IpcError.unimplemented }
-	func unknown30902() throws -> NnNewsDetailIpc_INewsDatabaseService { throw IpcError.unimplemented }
-	func unknown40100(_ _0: Any?, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func unknown40101(_ _0: Any?) throws { throw IpcError.unimplemented }
-	func unknown40200() throws { throw IpcError.unimplemented }
-	func unknown40201() throws { throw IpcError.unimplemented }
-	func unknown90100(_ _0: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented }
+	func unknown10100(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::news::detail::ipc::nn::news::detail::ipc::INewsService#Unknown10100") }
+	func unknown20100(_ _0: Any?, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::news::detail::ipc::nn::news::detail::ipc::INewsService#Unknown20100") }
+	func unknown30100(_ _0: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented(name: "nn::news::detail::ipc::nn::news::detail::ipc::INewsService#Unknown30100") }
+	func unknown30101(_ _0: Any?, _ _1: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented(name: "nn::news::detail::ipc::nn::news::detail::ipc::INewsService#Unknown30101") }
+	func unknown30200() throws -> Any? { throw IpcError.unimplemented(name: "nn::news::detail::ipc::nn::news::detail::ipc::INewsService#Unknown30200") }
+	func unknown30300(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::news::detail::ipc::nn::news::detail::ipc::INewsService#Unknown30300") }
+	func unknown30400(_ _0: Buffer<UInt8>, _ _1: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented(name: "nn::news::detail::ipc::nn::news::detail::ipc::INewsService#Unknown30400") }
+	func unknown30900() throws -> NnNewsDetailIpc_INewlyArrivedEventHolder { throw IpcError.unimplemented(name: "nn::news::detail::ipc::nn::news::detail::ipc::INewsService#Unknown30900") }
+	func unknown30901() throws -> NnNewsDetailIpc_INewsDataService { throw IpcError.unimplemented(name: "nn::news::detail::ipc::nn::news::detail::ipc::INewsService#Unknown30901") }
+	func unknown30902() throws -> NnNewsDetailIpc_INewsDatabaseService { throw IpcError.unimplemented(name: "nn::news::detail::ipc::nn::news::detail::ipc::INewsService#Unknown30902") }
+	func unknown40100(_ _0: Any?, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::news::detail::ipc::nn::news::detail::ipc::INewsService#Unknown40100") }
+	func unknown40101(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::news::detail::ipc::nn::news::detail::ipc::INewsService#Unknown40101") }
+	func unknown40200() throws { throw IpcError.unimplemented(name: "nn::news::detail::ipc::nn::news::detail::ipc::INewsService#Unknown40200") }
+	func unknown40201() throws { throw IpcError.unimplemented(name: "nn::news::detail::ipc::nn::news::detail::ipc::INewsService#Unknown40201") }
+	func unknown90100(_ _0: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented(name: "nn::news::detail::ipc::nn::news::detail::ipc::INewsService#Unknown90100") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {

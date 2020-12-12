@@ -1,35 +1,35 @@
 class NnSocketSf_IClient: IpcService {
-	func registerClient(_ config: NnSocket_BsdBufferConfig, _ pid: UInt64, _ transferMemorySize: UInt64, _ _3: KObject, _ _4: Pid) throws -> UInt32 { throw IpcError.unimplemented }
-	func startMonitoring(_ pid: UInt64, _ _1: Pid) throws { throw IpcError.unimplemented }
-	func socket(_ domain: UInt32, _ type: UInt32, _ protocol: UInt32) throws -> (ret: Int32, bsd_errno: UInt32) { throw IpcError.unimplemented }
-	func socketExempt(_ _0: UInt32, _ _1: UInt32, _ _2: UInt32) throws -> (ret: Int32, bsd_errno: UInt32) { throw IpcError.unimplemented }
-	func open(_ _0: UInt32, _ _1: Buffer<UInt8>) throws -> (ret: Int32, bsd_errno: UInt32) { throw IpcError.unimplemented }
-	func select(_ nfds: UInt32, _ timeout: NnSocket_Timeout, _ readfds_in: Buffer<NnSocket_Fd_Set>, _ writefds_in: Buffer<NnSocket_Fd_Set>, _ errorfds_in: Buffer<NnSocket_Fd_Set>, _ readfds_out: Buffer<NnSocket_Fd_Set>, _ writefds_out: Buffer<NnSocket_Fd_Set>, _ errorfds_out: Buffer<NnSocket_Fd_Set>) throws -> (ret: Int32, bsd_errno: UInt32) { throw IpcError.unimplemented }
-	func poll(_ _0: UInt32, _ _1: UInt32, _ _2: Buffer<UInt8>, _ _3: Buffer<UInt8>) throws -> (ret: Int32, bsd_errno: UInt32) { throw IpcError.unimplemented }
-	func sysctl(_ _0: Buffer<UInt8>, _ _1: Buffer<UInt8>, _ _2: Buffer<UInt8>) throws -> (ret: Int32, bsd_errno: UInt32, UInt32) { throw IpcError.unimplemented }
-	func recv(_ socket: UInt32, _ flags: UInt32, _ message: Buffer<UInt8>) throws -> (ret: Int32, bsd_errno: UInt32) { throw IpcError.unimplemented }
-	func recvFrom(_ sock: UInt32, _ flags: UInt32, _ message: Buffer<UInt8>, _ _3: Buffer<NnSocket_Sockaddr>) throws -> (ret: Int32, bsd_errno: UInt32, addrlen: UInt32) { throw IpcError.unimplemented }
-	func send(_ socket: UInt32, _ flags: UInt32, _ _2: Buffer<UInt8>) throws -> (ret: Int32, bsd_errno: UInt32) { throw IpcError.unimplemented }
-	func sendTo(_ socket: UInt32, _ flags: UInt32, _ _2: Buffer<UInt8>, _ _3: Buffer<NnSocket_Sockaddr>) throws -> (ret: Int32, bsd_errno: UInt32) { throw IpcError.unimplemented }
-	func accept(_ socket: UInt32, _ addr: Buffer<NnSocket_Sockaddr>) throws -> (ret: Int32, bsd_errno: UInt32, addrlen: UInt32) { throw IpcError.unimplemented }
-	func bind(_ socket: UInt32, _ _1: Buffer<NnSocket_Sockaddr>) throws -> (ret: Int32, bsd_errno: UInt32) { throw IpcError.unimplemented }
-	func connect(_ socket: UInt32, _ _1: Buffer<NnSocket_Sockaddr>) throws -> (ret: Int32, bsd_errno: UInt32) { throw IpcError.unimplemented }
-	func getPeerName(_ socket: UInt32, _ addr: Buffer<NnSocket_Sockaddr>) throws -> (ret: Int32, bsd_errno: UInt32, addrlen: UInt32) { throw IpcError.unimplemented }
-	func getSockName(_ socket: UInt32, _ addr: Buffer<NnSocket_Sockaddr>) throws -> (ret: Int32, bsd_errno: UInt32, addrlen: UInt32) { throw IpcError.unimplemented }
-	func getSockOpt(_ _0: UInt32, _ _1: UInt32, _ _2: UInt32, _ _3: Buffer<UInt8>) throws -> (ret: Int32, bsd_errno: UInt32, UInt32) { throw IpcError.unimplemented }
-	func listen(_ socket: UInt32, _ backlog: UInt32) throws -> (ret: Int32, bsd_errno: UInt32) { throw IpcError.unimplemented }
-	func ioctl(_ _0: UInt32, _ _1: UInt32, _ _2: UInt32, _ _3: Buffer<UInt8>, _ _4: Buffer<UInt8>, _ _5: Buffer<UInt8>, _ _6: Buffer<UInt8>, _ _7: Buffer<UInt8>, _ _8: Buffer<UInt8>, _ _9: Buffer<UInt8>, _ _10: Buffer<UInt8>) throws -> (ret: Int32, bsd_errno: UInt32) { throw IpcError.unimplemented }
-	func fcntl(_ _0: UInt32, _ _1: UInt32, _ _2: UInt32) throws -> (ret: Int32, bsd_errno: UInt32) { throw IpcError.unimplemented }
-	func setSockOpt(_ socket: UInt32, _ level: UInt32, _ option_name: UInt32, _ _3: Buffer<UInt8>) throws -> (ret: Int32, bsd_errno: UInt32) { throw IpcError.unimplemented }
-	func shutdown(_ socket: UInt32, _ how: UInt32) throws -> (ret: Int32, bsd_errno: UInt32) { throw IpcError.unimplemented }
-	func shutdownAllSockets(_ how: UInt32) throws -> (ret: Int32, bsd_errno: UInt32) { throw IpcError.unimplemented }
-	func write(_ socket: UInt32, _ message: Buffer<UInt8>) throws -> (ret: Int32, bsd_errno: UInt32) { throw IpcError.unimplemented }
-	func read(_ socket: UInt32, _ message: Buffer<Int8>) throws -> (ret: Int32, bsd_errno: UInt32) { throw IpcError.unimplemented }
-	func _close(_ socket: UInt32) throws -> (ret: Int32, bsd_errno: UInt32) { throw IpcError.unimplemented }
-	func duplicateSocket(_ _0: UInt32, _ _1: UInt64) throws -> (ret: Int32, bsd_errno: UInt32) { throw IpcError.unimplemented }
-	func getResourceStatistics(_ _0: UInt32, _ _1: UInt32, _ _2: UInt64, _ _3: Pid, _ _4: Buffer<NnSocket_ResourceStatistics>) throws -> (ret: Int32, bsd_errno: UInt32) { throw IpcError.unimplemented }
-	func recvMMsg(_ _0: UInt32, _ _1: UInt32, _ _2: UInt32, _ _3: UInt128, _ _4: Buffer<UInt8>) throws -> (ret: Int32, bsd_errno: UInt32) { throw IpcError.unimplemented }
-	func sendMMsg(_ _0: UInt32, _ _1: UInt32, _ _2: UInt32, _ _3: Buffer<UInt8>, _ _4: Buffer<UInt8>) throws -> (ret: Int32, bsd_errno: UInt32) { throw IpcError.unimplemented }
+	func registerClient(_ config: NnSocket_BsdBufferConfig, _ pid: UInt64, _ transferMemorySize: UInt64, _ _3: KObject, _ _4: Pid) throws -> UInt32 { throw IpcError.unimplemented(name: "nn::socket::sf::nn::socket::sf::IClient#RegisterClient") }
+	func startMonitoring(_ pid: UInt64, _ _1: Pid) throws { throw IpcError.unimplemented(name: "nn::socket::sf::nn::socket::sf::IClient#StartMonitoring") }
+	func socket(_ domain: UInt32, _ type: UInt32, _ protocol: UInt32) throws -> (ret: Int32, bsd_errno: UInt32) { throw IpcError.unimplemented(name: "nn::socket::sf::nn::socket::sf::IClient#Socket") }
+	func socketExempt(_ _0: UInt32, _ _1: UInt32, _ _2: UInt32) throws -> (ret: Int32, bsd_errno: UInt32) { throw IpcError.unimplemented(name: "nn::socket::sf::nn::socket::sf::IClient#SocketExempt") }
+	func open(_ _0: UInt32, _ _1: Buffer<UInt8>) throws -> (ret: Int32, bsd_errno: UInt32) { throw IpcError.unimplemented(name: "nn::socket::sf::nn::socket::sf::IClient#Open") }
+	func select(_ nfds: UInt32, _ timeout: NnSocket_Timeout, _ readfds_in: Buffer<NnSocket_Fd_Set>, _ writefds_in: Buffer<NnSocket_Fd_Set>, _ errorfds_in: Buffer<NnSocket_Fd_Set>, _ readfds_out: Buffer<NnSocket_Fd_Set>, _ writefds_out: Buffer<NnSocket_Fd_Set>, _ errorfds_out: Buffer<NnSocket_Fd_Set>) throws -> (ret: Int32, bsd_errno: UInt32) { throw IpcError.unimplemented(name: "nn::socket::sf::nn::socket::sf::IClient#Select") }
+	func poll(_ _0: UInt32, _ _1: UInt32, _ _2: Buffer<UInt8>, _ _3: Buffer<UInt8>) throws -> (ret: Int32, bsd_errno: UInt32) { throw IpcError.unimplemented(name: "nn::socket::sf::nn::socket::sf::IClient#Poll") }
+	func sysctl(_ _0: Buffer<UInt8>, _ _1: Buffer<UInt8>, _ _2: Buffer<UInt8>) throws -> (ret: Int32, bsd_errno: UInt32, UInt32) { throw IpcError.unimplemented(name: "nn::socket::sf::nn::socket::sf::IClient#Sysctl") }
+	func recv(_ socket: UInt32, _ flags: UInt32, _ message: Buffer<UInt8>) throws -> (ret: Int32, bsd_errno: UInt32) { throw IpcError.unimplemented(name: "nn::socket::sf::nn::socket::sf::IClient#Recv") }
+	func recvFrom(_ sock: UInt32, _ flags: UInt32, _ message: Buffer<UInt8>, _ _3: Buffer<NnSocket_Sockaddr>) throws -> (ret: Int32, bsd_errno: UInt32, addrlen: UInt32) { throw IpcError.unimplemented(name: "nn::socket::sf::nn::socket::sf::IClient#RecvFrom") }
+	func send(_ socket: UInt32, _ flags: UInt32, _ _2: Buffer<UInt8>) throws -> (ret: Int32, bsd_errno: UInt32) { throw IpcError.unimplemented(name: "nn::socket::sf::nn::socket::sf::IClient#Send") }
+	func sendTo(_ socket: UInt32, _ flags: UInt32, _ _2: Buffer<UInt8>, _ _3: Buffer<NnSocket_Sockaddr>) throws -> (ret: Int32, bsd_errno: UInt32) { throw IpcError.unimplemented(name: "nn::socket::sf::nn::socket::sf::IClient#SendTo") }
+	func accept(_ socket: UInt32, _ addr: Buffer<NnSocket_Sockaddr>) throws -> (ret: Int32, bsd_errno: UInt32, addrlen: UInt32) { throw IpcError.unimplemented(name: "nn::socket::sf::nn::socket::sf::IClient#Accept") }
+	func bind(_ socket: UInt32, _ _1: Buffer<NnSocket_Sockaddr>) throws -> (ret: Int32, bsd_errno: UInt32) { throw IpcError.unimplemented(name: "nn::socket::sf::nn::socket::sf::IClient#Bind") }
+	func connect(_ socket: UInt32, _ _1: Buffer<NnSocket_Sockaddr>) throws -> (ret: Int32, bsd_errno: UInt32) { throw IpcError.unimplemented(name: "nn::socket::sf::nn::socket::sf::IClient#Connect") }
+	func getPeerName(_ socket: UInt32, _ addr: Buffer<NnSocket_Sockaddr>) throws -> (ret: Int32, bsd_errno: UInt32, addrlen: UInt32) { throw IpcError.unimplemented(name: "nn::socket::sf::nn::socket::sf::IClient#GetPeerName") }
+	func getSockName(_ socket: UInt32, _ addr: Buffer<NnSocket_Sockaddr>) throws -> (ret: Int32, bsd_errno: UInt32, addrlen: UInt32) { throw IpcError.unimplemented(name: "nn::socket::sf::nn::socket::sf::IClient#GetSockName") }
+	func getSockOpt(_ _0: UInt32, _ _1: UInt32, _ _2: UInt32, _ _3: Buffer<UInt8>) throws -> (ret: Int32, bsd_errno: UInt32, UInt32) { throw IpcError.unimplemented(name: "nn::socket::sf::nn::socket::sf::IClient#GetSockOpt") }
+	func listen(_ socket: UInt32, _ backlog: UInt32) throws -> (ret: Int32, bsd_errno: UInt32) { throw IpcError.unimplemented(name: "nn::socket::sf::nn::socket::sf::IClient#Listen") }
+	func ioctl(_ _0: UInt32, _ _1: UInt32, _ _2: UInt32, _ _3: Buffer<UInt8>, _ _4: Buffer<UInt8>, _ _5: Buffer<UInt8>, _ _6: Buffer<UInt8>, _ _7: Buffer<UInt8>, _ _8: Buffer<UInt8>, _ _9: Buffer<UInt8>, _ _10: Buffer<UInt8>) throws -> (ret: Int32, bsd_errno: UInt32) { throw IpcError.unimplemented(name: "nn::socket::sf::nn::socket::sf::IClient#Ioctl") }
+	func fcntl(_ _0: UInt32, _ _1: UInt32, _ _2: UInt32) throws -> (ret: Int32, bsd_errno: UInt32) { throw IpcError.unimplemented(name: "nn::socket::sf::nn::socket::sf::IClient#Fcntl") }
+	func setSockOpt(_ socket: UInt32, _ level: UInt32, _ option_name: UInt32, _ _3: Buffer<UInt8>) throws -> (ret: Int32, bsd_errno: UInt32) { throw IpcError.unimplemented(name: "nn::socket::sf::nn::socket::sf::IClient#SetSockOpt") }
+	func shutdown(_ socket: UInt32, _ how: UInt32) throws -> (ret: Int32, bsd_errno: UInt32) { throw IpcError.unimplemented(name: "nn::socket::sf::nn::socket::sf::IClient#Shutdown") }
+	func shutdownAllSockets(_ how: UInt32) throws -> (ret: Int32, bsd_errno: UInt32) { throw IpcError.unimplemented(name: "nn::socket::sf::nn::socket::sf::IClient#ShutdownAllSockets") }
+	func write(_ socket: UInt32, _ message: Buffer<UInt8>) throws -> (ret: Int32, bsd_errno: UInt32) { throw IpcError.unimplemented(name: "nn::socket::sf::nn::socket::sf::IClient#Write") }
+	func read(_ socket: UInt32, _ message: Buffer<Int8>) throws -> (ret: Int32, bsd_errno: UInt32) { throw IpcError.unimplemented(name: "nn::socket::sf::nn::socket::sf::IClient#Read") }
+	func _close(_ socket: UInt32) throws -> (ret: Int32, bsd_errno: UInt32) { throw IpcError.unimplemented(name: "nn::socket::sf::nn::socket::sf::IClient#Close") }
+	func duplicateSocket(_ _0: UInt32, _ _1: UInt64) throws -> (ret: Int32, bsd_errno: UInt32) { throw IpcError.unimplemented(name: "nn::socket::sf::nn::socket::sf::IClient#DuplicateSocket") }
+	func getResourceStatistics(_ _0: UInt32, _ _1: UInt32, _ _2: UInt64, _ _3: Pid, _ _4: Buffer<NnSocket_ResourceStatistics>) throws -> (ret: Int32, bsd_errno: UInt32) { throw IpcError.unimplemented(name: "nn::socket::sf::nn::socket::sf::IClient#GetResourceStatistics") }
+	func recvMMsg(_ _0: UInt32, _ _1: UInt32, _ _2: UInt32, _ _3: UInt128, _ _4: Buffer<UInt8>) throws -> (ret: Int32, bsd_errno: UInt32) { throw IpcError.unimplemented(name: "nn::socket::sf::nn::socket::sf::IClient#RecvMMsg") }
+	func sendMMsg(_ _0: UInt32, _ _1: UInt32, _ _2: UInt32, _ _3: Buffer<UInt8>, _ _4: Buffer<UInt8>) throws -> (ret: Int32, bsd_errno: UInt32) { throw IpcError.unimplemented(name: "nn::socket::sf::nn::socket::sf::IClient#SendMMsg") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {

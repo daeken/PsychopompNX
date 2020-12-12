@@ -1,5 +1,5 @@
 class NnLm_ILogService: IpcService {
-	func initialize(_ _0: UInt64, _ _1: Pid) throws -> NnLm_ILogger { throw IpcError.unimplemented }
+	func initialize(_ _0: UInt64, _ _1: Pid) throws -> NnLm_ILogger { throw IpcError.unimplemented(name: "nn::lm::nn::lm::ILogService#Initialize") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
@@ -16,9 +16,9 @@ class NnLm_ILogService: IpcService {
 }
 
 class NnLm_ILogGetter: IpcService {
-	func startLogging(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func stopLogging(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func getLog(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
+	func startLogging(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::lm::nn::lm::ILogGetter#StartLogging") }
+	func stopLogging(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::lm::nn::lm::ILogGetter#StopLogging") }
+	func getLog(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::lm::nn::lm::ILogGetter#GetLog") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
@@ -42,8 +42,8 @@ class NnLm_ILogGetter: IpcService {
 }
 
 class NnLm_ILogger: IpcService {
-	func initialize(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func setDestination(_ _0: UInt32) throws { throw IpcError.unimplemented }
+	func initialize(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::lm::nn::lm::ILogger#Initialize") }
+	func setDestination(_ _0: UInt32) throws { throw IpcError.unimplemented(name: "nn::lm::nn::lm::ILogger#SetDestination") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {

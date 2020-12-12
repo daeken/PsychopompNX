@@ -1,8 +1,8 @@
 class NnTsServer_IMeasurementServer: IpcService {
-	func unknown0(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func unknown1(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func unknown2(_ _0: Any?) throws { throw IpcError.unimplemented }
-	func unknown3(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
+	func unknown0(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::ts::server::nn::ts::server::IMeasurementServer#Unknown0") }
+	func unknown1(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::ts::server::nn::ts::server::IMeasurementServer#Unknown1") }
+	func unknown2(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::ts::server::nn::ts::server::IMeasurementServer#Unknown2") }
+	func unknown3(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::ts::server::nn::ts::server::IMeasurementServer#Unknown3") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {

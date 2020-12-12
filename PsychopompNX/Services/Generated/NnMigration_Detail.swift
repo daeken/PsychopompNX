@@ -1,8 +1,8 @@
 class NnMigrationDetail_IAsyncContext: IpcService {
-	func unknown0() throws -> KObject { throw IpcError.unimplemented }
-	func unknown1() throws { throw IpcError.unimplemented }
-	func unknown2() throws -> Any? { throw IpcError.unimplemented }
-	func unknown3() throws { throw IpcError.unimplemented }
+	func unknown0() throws -> KObject { throw IpcError.unimplemented(name: "nn::migration::detail::nn::migration::detail::IAsyncContext#Unknown0") }
+	func unknown1() throws { throw IpcError.unimplemented(name: "nn::migration::detail::nn::migration::detail::IAsyncContext#Unknown1") }
+	func unknown2() throws -> Any? { throw IpcError.unimplemented(name: "nn::migration::detail::nn::migration::detail::IAsyncContext#Unknown2") }
+	func unknown3() throws { throw IpcError.unimplemented(name: "nn::migration::detail::nn::migration::detail::IAsyncContext#Unknown3") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {

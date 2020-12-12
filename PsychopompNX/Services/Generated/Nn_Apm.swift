@@ -4,8 +4,8 @@ typealias NnApm_PerformanceConfiguration = UInt32
 typealias NnApm_ThrottlingState = [UInt8]
 
 class NnApm_IManager: IpcService {
-	func openSession() throws -> NnApm_ISession { throw IpcError.unimplemented }
-	func getPerformanceMode() throws -> NnApm_PerformanceMode { throw IpcError.unimplemented }
+	func openSession() throws -> NnApm_ISession { throw IpcError.unimplemented(name: "nn::apm::nn::apm::IManager#OpenSession") }
+	func getPerformanceMode() throws -> NnApm_PerformanceMode { throw IpcError.unimplemented(name: "nn::apm::nn::apm::IManager#GetPerformanceMode") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
@@ -27,7 +27,7 @@ class NnApm_IManager: IpcService {
 }
 
 class NnApm_IManagerPrivileged: IpcService {
-	func openSession() throws -> NnApm_ISession { throw IpcError.unimplemented }
+	func openSession() throws -> NnApm_ISession { throw IpcError.unimplemented(name: "nn::apm::nn::apm::IManagerPrivileged#OpenSession") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
@@ -44,12 +44,12 @@ class NnApm_IManagerPrivileged: IpcService {
 }
 
 class NnApm_ISystemManager: IpcService {
-	func requestPerformanceMode(_ _0: NnApm_PerformanceMode) throws { throw IpcError.unimplemented }
-	func getPerformanceEvent(_ _0: NnApm_EventTarget) throws -> KObject { throw IpcError.unimplemented }
-	func getThrottlingState() throws -> NnApm_ThrottlingState { throw IpcError.unimplemented }
-	func getLastThrottlingState() throws -> NnApm_ThrottlingState { throw IpcError.unimplemented }
-	func clearLastThrottlingState() throws { throw IpcError.unimplemented }
-	func loadAndApplySettings(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
+	func requestPerformanceMode(_ _0: NnApm_PerformanceMode) throws { throw IpcError.unimplemented(name: "nn::apm::nn::apm::ISystemManager#RequestPerformanceMode") }
+	func getPerformanceEvent(_ _0: NnApm_EventTarget) throws -> KObject { throw IpcError.unimplemented(name: "nn::apm::nn::apm::ISystemManager#GetPerformanceEvent") }
+	func getThrottlingState() throws -> NnApm_ThrottlingState { throw IpcError.unimplemented(name: "nn::apm::nn::apm::ISystemManager#GetThrottlingState") }
+	func getLastThrottlingState() throws -> NnApm_ThrottlingState { throw IpcError.unimplemented(name: "nn::apm::nn::apm::ISystemManager#GetLastThrottlingState") }
+	func clearLastThrottlingState() throws { throw IpcError.unimplemented(name: "nn::apm::nn::apm::ISystemManager#ClearLastThrottlingState") }
+	func loadAndApplySettings(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::apm::nn::apm::ISystemManager#LoadAndApplySettings") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
@@ -90,9 +90,9 @@ class NnApm_ISystemManager: IpcService {
 }
 
 class NnApm_IDebugManager: IpcService {
-	func getThrottlingState() throws -> Any? { throw IpcError.unimplemented }
-	func getLastThrottlingState() throws -> Any? { throw IpcError.unimplemented }
-	func clearLastThrottlingState() throws { throw IpcError.unimplemented }
+	func getThrottlingState() throws -> Any? { throw IpcError.unimplemented(name: "nn::apm::nn::apm::IDebugManager#GetThrottlingState") }
+	func getLastThrottlingState() throws -> Any? { throw IpcError.unimplemented(name: "nn::apm::nn::apm::IDebugManager#GetLastThrottlingState") }
+	func clearLastThrottlingState() throws { throw IpcError.unimplemented(name: "nn::apm::nn::apm::IDebugManager#ClearLastThrottlingState") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
@@ -116,8 +116,8 @@ class NnApm_IDebugManager: IpcService {
 }
 
 class NnApm_ISession: IpcService {
-	func setPerformanceConfiguration(_ _0: NnApm_PerformanceMode, _ _1: NnApm_PerformanceConfiguration) throws { throw IpcError.unimplemented }
-	func getPerformanceConfiguration(_ _0: NnApm_PerformanceMode) throws -> NnApm_PerformanceConfiguration { throw IpcError.unimplemented }
+	func setPerformanceConfiguration(_ _0: NnApm_PerformanceMode, _ _1: NnApm_PerformanceConfiguration) throws { throw IpcError.unimplemented(name: "nn::apm::nn::apm::ISession#SetPerformanceConfiguration") }
+	func getPerformanceConfiguration(_ _0: NnApm_PerformanceMode) throws -> NnApm_PerformanceConfiguration { throw IpcError.unimplemented(name: "nn::apm::nn::apm::ISession#GetPerformanceConfiguration") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {

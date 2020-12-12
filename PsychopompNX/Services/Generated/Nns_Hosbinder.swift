@@ -1,8 +1,8 @@
 class NnsHosbinder_IHOSBinderDriver: IpcService {
-	func transactParcel(_ id: Int32, _ code: UInt32, _ parcel_data: Buffer<UInt8>, _ flags: UInt32, _ parcel_reply: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func adjustRefcount(_ id: Int32, _ addVal: Int32, _ type: Int32) throws { throw IpcError.unimplemented }
-	func getNativeHandle(_ id: Int32, _ _1: UInt32) throws -> KObject { throw IpcError.unimplemented }
-	func transactParcelAuto(_ id: Int32, _ code: UInt32, _ parcel_data: Buffer<UInt8>, _ flags: UInt32, _ parcel_reply: Buffer<UInt8>) throws { throw IpcError.unimplemented }
+	func transactParcel(_ id: Int32, _ code: UInt32, _ parcel_data: Buffer<UInt8>, _ flags: UInt32, _ parcel_reply: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nns::hosbinder::nns::hosbinder::IHOSBinderDriver#TransactParcel") }
+	func adjustRefcount(_ id: Int32, _ addVal: Int32, _ type: Int32) throws { throw IpcError.unimplemented(name: "nns::hosbinder::nns::hosbinder::IHOSBinderDriver#AdjustRefcount") }
+	func getNativeHandle(_ id: Int32, _ _1: UInt32) throws -> KObject { throw IpcError.unimplemented(name: "nns::hosbinder::nns::hosbinder::IHOSBinderDriver#GetNativeHandle") }
+	func transactParcelAuto(_ id: Int32, _ code: UInt32, _ parcel_data: Buffer<UInt8>, _ flags: UInt32, _ parcel_reply: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nns::hosbinder::nns::hosbinder::IHOSBinderDriver#TransactParcelAuto") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {

@@ -1,9 +1,9 @@
 class NnsNvdrv_INvDrvDebugFSServices: IpcService {
-	func openLog(_ _0: KObject) throws -> Any? { throw IpcError.unimplemented }
-	func closeLog(_ _0: Any?) throws { throw IpcError.unimplemented }
-	func readLog(_ _0: Any?, _ _1: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented }
-	func unknown3(_ _0: Any?, _ _1: Buffer<UInt8>, _ _2: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented }
-	func unknown4(_ _0: Any?, _ _1: Buffer<UInt8>, _ _2: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented }
+	func openLog(_ _0: KObject) throws -> Any? { throw IpcError.unimplemented(name: "nns::nvdrv::nns::nvdrv::INvDrvDebugFSServices#OpenLog") }
+	func closeLog(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nns::nvdrv::nns::nvdrv::INvDrvDebugFSServices#CloseLog") }
+	func readLog(_ _0: Any?, _ _1: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented(name: "nns::nvdrv::nns::nvdrv::INvDrvDebugFSServices#ReadLog") }
+	func unknown3(_ _0: Any?, _ _1: Buffer<UInt8>, _ _2: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented(name: "nns::nvdrv::nns::nvdrv::INvDrvDebugFSServices#Unknown3") }
+	func unknown4(_ _0: Any?, _ _1: Buffer<UInt8>, _ _2: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented(name: "nns::nvdrv::nns::nvdrv::INvDrvDebugFSServices#Unknown4") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
@@ -35,20 +35,20 @@ class NnsNvdrv_INvDrvDebugFSServices: IpcService {
 }
 
 class NnsNvdrv_INvDrvServices: IpcService {
-	func open(_ path: Buffer<UInt8>) throws -> (fd: UInt32, error_code: UInt32) { throw IpcError.unimplemented }
-	func ioctl(_ fd: UInt32, _ rq_id: UInt32, _ _2: Buffer<UInt8>, _ _3: Buffer<UInt8>) throws -> UInt32 { throw IpcError.unimplemented }
-	func _close(_ fd: UInt32) throws -> UInt32 { throw IpcError.unimplemented }
-	func initialize(_ transfer_memory_size: UInt32, _ current_process: KObject, _ transfer_memory: KObject) throws -> UInt32 { throw IpcError.unimplemented }
-	func queryEvent(_ fd: UInt32, _ event_id: UInt32) throws -> (UInt32, KObject) { throw IpcError.unimplemented }
-	func mapSharedMem(_ fd: UInt32, _ nvmap_handle: UInt32, _ _2: KObject) throws -> UInt32 { throw IpcError.unimplemented }
-	func getStatus() throws -> Any? { throw IpcError.unimplemented }
-	func forceSetClientPID(_ pid: UInt64) throws -> UInt32 { throw IpcError.unimplemented }
-	func setClientPID(_ _0: UInt64, _ _1: Pid) throws -> UInt32 { throw IpcError.unimplemented }
-	func dumpGraphicsMemoryInfo() throws { throw IpcError.unimplemented }
-	func unknown10(_ _0: UInt32, _ _1: KObject) throws -> UInt32 { throw IpcError.unimplemented }
-	func ioctl2(_ _0: UInt32, _ _1: UInt32, _ _2: Buffer<UInt8>, _ _3: Buffer<UInt8>, _ _4: Buffer<UInt8>) throws -> UInt32 { throw IpcError.unimplemented }
-	func ioctl3(_ _0: UInt32, _ _1: UInt32, _ _2: Buffer<UInt8>, _ _3: Buffer<UInt8>, _ _4: Buffer<UInt8>) throws -> UInt32 { throw IpcError.unimplemented }
-	func unknown13(_ _0: Any?) throws { throw IpcError.unimplemented }
+	func open(_ path: Buffer<UInt8>) throws -> (fd: UInt32, error_code: UInt32) { throw IpcError.unimplemented(name: "nns::nvdrv::nns::nvdrv::INvDrvServices#Open") }
+	func ioctl(_ fd: UInt32, _ rq_id: UInt32, _ _2: Buffer<UInt8>, _ _3: Buffer<UInt8>) throws -> UInt32 { throw IpcError.unimplemented(name: "nns::nvdrv::nns::nvdrv::INvDrvServices#Ioctl") }
+	func _close(_ fd: UInt32) throws -> UInt32 { throw IpcError.unimplemented(name: "nns::nvdrv::nns::nvdrv::INvDrvServices#Close") }
+	func initialize(_ transfer_memory_size: UInt32, _ current_process: KObject, _ transfer_memory: KObject) throws -> UInt32 { throw IpcError.unimplemented(name: "nns::nvdrv::nns::nvdrv::INvDrvServices#Initialize") }
+	func queryEvent(_ fd: UInt32, _ event_id: UInt32) throws -> (UInt32, KObject) { throw IpcError.unimplemented(name: "nns::nvdrv::nns::nvdrv::INvDrvServices#QueryEvent") }
+	func mapSharedMem(_ fd: UInt32, _ nvmap_handle: UInt32, _ _2: KObject) throws -> UInt32 { throw IpcError.unimplemented(name: "nns::nvdrv::nns::nvdrv::INvDrvServices#MapSharedMem") }
+	func getStatus() throws -> Any? { throw IpcError.unimplemented(name: "nns::nvdrv::nns::nvdrv::INvDrvServices#GetStatus") }
+	func forceSetClientPID(_ pid: UInt64) throws -> UInt32 { throw IpcError.unimplemented(name: "nns::nvdrv::nns::nvdrv::INvDrvServices#ForceSetClientPID") }
+	func setClientPID(_ _0: UInt64, _ _1: Pid) throws -> UInt32 { throw IpcError.unimplemented(name: "nns::nvdrv::nns::nvdrv::INvDrvServices#SetClientPID") }
+	func dumpGraphicsMemoryInfo() throws { throw IpcError.unimplemented(name: "nns::nvdrv::nns::nvdrv::INvDrvServices#DumpGraphicsMemoryInfo") }
+	func unknown10(_ _0: UInt32, _ _1: KObject) throws -> UInt32 { throw IpcError.unimplemented(name: "nns::nvdrv::nns::nvdrv::INvDrvServices#Unknown10") }
+	func ioctl2(_ _0: UInt32, _ _1: UInt32, _ _2: Buffer<UInt8>, _ _3: Buffer<UInt8>, _ _4: Buffer<UInt8>) throws -> UInt32 { throw IpcError.unimplemented(name: "nns::nvdrv::nns::nvdrv::INvDrvServices#Ioctl2") }
+	func ioctl3(_ _0: UInt32, _ _1: UInt32, _ _2: Buffer<UInt8>, _ _3: Buffer<UInt8>, _ _4: Buffer<UInt8>) throws -> UInt32 { throw IpcError.unimplemented(name: "nns::nvdrv::nns::nvdrv::INvDrvServices#Ioctl3") }
+	func unknown13(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nns::nvdrv::nns::nvdrv::INvDrvServices#Unknown13") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {

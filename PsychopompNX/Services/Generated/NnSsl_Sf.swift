@@ -1,8 +1,8 @@
-typealias NnSslSf_OptionType = UInt32
-typealias NnSslSf_PollEvent = UInt32
-typealias NnSslSf_ContextOption = UInt32
-typealias NnSslSf_VerifyOption = UInt32
 typealias NnSslSf_CertificateFormat = UInt32
+typealias NnSslSf_PollEvent = UInt32
+typealias NnSslSf_OptionType = UInt32
+typealias NnSslSf_VerifyOption = UInt32
+typealias NnSslSf_ContextOption = UInt32
 typealias NnSslSf_IoMode = UInt32
 typealias NnSslSf_RenegotiationMode = UInt32
 typealias NnSslSf_SslVersion = UInt32
@@ -10,18 +10,18 @@ typealias NnSslSf_InternalPki = UInt32
 typealias NnSslSf_SessionCacheMode = UInt32
 
 class NnSslSf_ISslContext: IpcService {
-	func setOption(_ _0: NnSslSf_ContextOption, _ _1: UInt32) throws { throw IpcError.unimplemented }
-	func getOption(_ _0: NnSslSf_ContextOption) throws -> UInt32 { throw IpcError.unimplemented }
-	func createConnection() throws -> NnSslSf_ISslConnection { throw IpcError.unimplemented }
-	func getConnectionCount() throws -> UInt32 { throw IpcError.unimplemented }
-	func importServerPki(_ _0: NnSslSf_CertificateFormat, _ _1: Buffer<UInt8>) throws -> UInt64 { throw IpcError.unimplemented }
-	func importClientPki(_ _0: Buffer<UInt8>, _ _1: Buffer<UInt8>) throws -> UInt64 { throw IpcError.unimplemented }
-	func removeServerPki(_ _0: UInt64) throws { throw IpcError.unimplemented }
-	func removeClientPki(_ _0: UInt64) throws { throw IpcError.unimplemented }
-	func registerInternalPki(_ _0: NnSslSf_InternalPki) throws -> UInt64 { throw IpcError.unimplemented }
-	func addPolicyOid(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func importCrl(_ _0: Buffer<UInt8>) throws -> UInt64 { throw IpcError.unimplemented }
-	func removeCrl(_ _0: UInt64) throws { throw IpcError.unimplemented }
+	func setOption(_ _0: NnSslSf_ContextOption, _ _1: UInt32) throws { throw IpcError.unimplemented(name: "nn::ssl::sf::nn::ssl::sf::ISslContext#SetOption") }
+	func getOption(_ _0: NnSslSf_ContextOption) throws -> UInt32 { throw IpcError.unimplemented(name: "nn::ssl::sf::nn::ssl::sf::ISslContext#GetOption") }
+	func createConnection() throws -> NnSslSf_ISslConnection { throw IpcError.unimplemented(name: "nn::ssl::sf::nn::ssl::sf::ISslContext#CreateConnection") }
+	func getConnectionCount() throws -> UInt32 { throw IpcError.unimplemented(name: "nn::ssl::sf::nn::ssl::sf::ISslContext#GetConnectionCount") }
+	func importServerPki(_ _0: NnSslSf_CertificateFormat, _ _1: Buffer<UInt8>) throws -> UInt64 { throw IpcError.unimplemented(name: "nn::ssl::sf::nn::ssl::sf::ISslContext#ImportServerPki") }
+	func importClientPki(_ _0: Buffer<UInt8>, _ _1: Buffer<UInt8>) throws -> UInt64 { throw IpcError.unimplemented(name: "nn::ssl::sf::nn::ssl::sf::ISslContext#ImportClientPki") }
+	func removeServerPki(_ _0: UInt64) throws { throw IpcError.unimplemented(name: "nn::ssl::sf::nn::ssl::sf::ISslContext#RemoveServerPki") }
+	func removeClientPki(_ _0: UInt64) throws { throw IpcError.unimplemented(name: "nn::ssl::sf::nn::ssl::sf::ISslContext#RemoveClientPki") }
+	func registerInternalPki(_ _0: NnSslSf_InternalPki) throws -> UInt64 { throw IpcError.unimplemented(name: "nn::ssl::sf::nn::ssl::sf::ISslContext#RegisterInternalPki") }
+	func addPolicyOid(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::ssl::sf::nn::ssl::sf::ISslContext#AddPolicyOid") }
+	func importCrl(_ _0: Buffer<UInt8>) throws -> UInt64 { throw IpcError.unimplemented(name: "nn::ssl::sf::nn::ssl::sf::ISslContext#ImportCrl") }
+	func removeCrl(_ _0: UInt64) throws { throw IpcError.unimplemented(name: "nn::ssl::sf::nn::ssl::sf::ISslContext#RemoveCrl") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
@@ -88,32 +88,32 @@ class NnSslSf_ISslContext: IpcService {
 }
 
 class NnSslSf_ISslConnection: IpcService {
-	func setSocketDescriptor(_ _0: UInt32) throws -> UInt32 { throw IpcError.unimplemented }
-	func setHostName(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func setVerifyOption(_ _0: NnSslSf_VerifyOption) throws { throw IpcError.unimplemented }
-	func setIoMode(_ _0: NnSslSf_IoMode) throws { throw IpcError.unimplemented }
-	func getSocketDescriptor() throws -> UInt32 { throw IpcError.unimplemented }
-	func getHostName(_ _0: Buffer<UInt8>) throws -> UInt32 { throw IpcError.unimplemented }
-	func getVerifyOption() throws -> NnSslSf_VerifyOption { throw IpcError.unimplemented }
-	func getIoMode() throws -> NnSslSf_IoMode { throw IpcError.unimplemented }
-	func doHandshake() throws { throw IpcError.unimplemented }
-	func doHandshakeGetServerCert(_ _0: Buffer<UInt8>) throws -> (UInt32, UInt32) { throw IpcError.unimplemented }
-	func read(_ _0: Buffer<UInt8>) throws -> UInt32 { throw IpcError.unimplemented }
-	func write(_ _0: Buffer<UInt8>) throws -> UInt32 { throw IpcError.unimplemented }
-	func pending() throws -> UInt32 { throw IpcError.unimplemented }
-	func peek(_ _0: Buffer<UInt8>) throws -> UInt32 { throw IpcError.unimplemented }
-	func poll(_ _0: NnSslSf_PollEvent, _ _1: UInt32) throws -> NnSslSf_PollEvent { throw IpcError.unimplemented }
-	func getVerifyCertError() throws { throw IpcError.unimplemented }
-	func getNeededServerCertBufferSize() throws -> UInt32 { throw IpcError.unimplemented }
-	func setSessionCacheMode(_ _0: NnSslSf_SessionCacheMode) throws { throw IpcError.unimplemented }
-	func getSessionCacheMode() throws -> NnSslSf_SessionCacheMode { throw IpcError.unimplemented }
-	func flushSessionCache() throws { throw IpcError.unimplemented }
-	func setRenegotiationMode(_ _0: NnSslSf_RenegotiationMode) throws { throw IpcError.unimplemented }
-	func getRenegotiationMode() throws -> NnSslSf_RenegotiationMode { throw IpcError.unimplemented }
-	func setOption(_ _0: UInt8, _ _1: NnSslSf_OptionType) throws { throw IpcError.unimplemented }
-	func getOption(_ _0: NnSslSf_OptionType) throws -> UInt8 { throw IpcError.unimplemented }
-	func getVerifyCertErrors(_ _0: Buffer<UInt8>) throws -> (UInt32, UInt32) { throw IpcError.unimplemented }
-	func getCipherInfo(_ _0: UInt32, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented }
+	func setSocketDescriptor(_ _0: UInt32) throws -> UInt32 { throw IpcError.unimplemented(name: "nn::ssl::sf::nn::ssl::sf::ISslConnection#SetSocketDescriptor") }
+	func setHostName(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::ssl::sf::nn::ssl::sf::ISslConnection#SetHostName") }
+	func setVerifyOption(_ _0: NnSslSf_VerifyOption) throws { throw IpcError.unimplemented(name: "nn::ssl::sf::nn::ssl::sf::ISslConnection#SetVerifyOption") }
+	func setIoMode(_ _0: NnSslSf_IoMode) throws { throw IpcError.unimplemented(name: "nn::ssl::sf::nn::ssl::sf::ISslConnection#SetIoMode") }
+	func getSocketDescriptor() throws -> UInt32 { throw IpcError.unimplemented(name: "nn::ssl::sf::nn::ssl::sf::ISslConnection#GetSocketDescriptor") }
+	func getHostName(_ _0: Buffer<UInt8>) throws -> UInt32 { throw IpcError.unimplemented(name: "nn::ssl::sf::nn::ssl::sf::ISslConnection#GetHostName") }
+	func getVerifyOption() throws -> NnSslSf_VerifyOption { throw IpcError.unimplemented(name: "nn::ssl::sf::nn::ssl::sf::ISslConnection#GetVerifyOption") }
+	func getIoMode() throws -> NnSslSf_IoMode { throw IpcError.unimplemented(name: "nn::ssl::sf::nn::ssl::sf::ISslConnection#GetIoMode") }
+	func doHandshake() throws { throw IpcError.unimplemented(name: "nn::ssl::sf::nn::ssl::sf::ISslConnection#DoHandshake") }
+	func doHandshakeGetServerCert(_ _0: Buffer<UInt8>) throws -> (UInt32, UInt32) { throw IpcError.unimplemented(name: "nn::ssl::sf::nn::ssl::sf::ISslConnection#DoHandshakeGetServerCert") }
+	func read(_ _0: Buffer<UInt8>) throws -> UInt32 { throw IpcError.unimplemented(name: "nn::ssl::sf::nn::ssl::sf::ISslConnection#Read") }
+	func write(_ _0: Buffer<UInt8>) throws -> UInt32 { throw IpcError.unimplemented(name: "nn::ssl::sf::nn::ssl::sf::ISslConnection#Write") }
+	func pending() throws -> UInt32 { throw IpcError.unimplemented(name: "nn::ssl::sf::nn::ssl::sf::ISslConnection#Pending") }
+	func peek(_ _0: Buffer<UInt8>) throws -> UInt32 { throw IpcError.unimplemented(name: "nn::ssl::sf::nn::ssl::sf::ISslConnection#Peek") }
+	func poll(_ _0: NnSslSf_PollEvent, _ _1: UInt32) throws -> NnSslSf_PollEvent { throw IpcError.unimplemented(name: "nn::ssl::sf::nn::ssl::sf::ISslConnection#Poll") }
+	func getVerifyCertError() throws { throw IpcError.unimplemented(name: "nn::ssl::sf::nn::ssl::sf::ISslConnection#GetVerifyCertError") }
+	func getNeededServerCertBufferSize() throws -> UInt32 { throw IpcError.unimplemented(name: "nn::ssl::sf::nn::ssl::sf::ISslConnection#GetNeededServerCertBufferSize") }
+	func setSessionCacheMode(_ _0: NnSslSf_SessionCacheMode) throws { throw IpcError.unimplemented(name: "nn::ssl::sf::nn::ssl::sf::ISslConnection#SetSessionCacheMode") }
+	func getSessionCacheMode() throws -> NnSslSf_SessionCacheMode { throw IpcError.unimplemented(name: "nn::ssl::sf::nn::ssl::sf::ISslConnection#GetSessionCacheMode") }
+	func flushSessionCache() throws { throw IpcError.unimplemented(name: "nn::ssl::sf::nn::ssl::sf::ISslConnection#FlushSessionCache") }
+	func setRenegotiationMode(_ _0: NnSslSf_RenegotiationMode) throws { throw IpcError.unimplemented(name: "nn::ssl::sf::nn::ssl::sf::ISslConnection#SetRenegotiationMode") }
+	func getRenegotiationMode() throws -> NnSslSf_RenegotiationMode { throw IpcError.unimplemented(name: "nn::ssl::sf::nn::ssl::sf::ISslConnection#GetRenegotiationMode") }
+	func setOption(_ _0: UInt8, _ _1: NnSslSf_OptionType) throws { throw IpcError.unimplemented(name: "nn::ssl::sf::nn::ssl::sf::ISslConnection#SetOption") }
+	func getOption(_ _0: NnSslSf_OptionType) throws -> UInt8 { throw IpcError.unimplemented(name: "nn::ssl::sf::nn::ssl::sf::ISslConnection#GetOption") }
+	func getVerifyCertErrors(_ _0: Buffer<UInt8>) throws -> (UInt32, UInt32) { throw IpcError.unimplemented(name: "nn::ssl::sf::nn::ssl::sf::ISslConnection#GetVerifyCertErrors") }
+	func getCipherInfo(_ _0: UInt32, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::ssl::sf::nn::ssl::sf::ISslConnection#GetCipherInfo") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
@@ -247,13 +247,13 @@ class NnSslSf_ISslConnection: IpcService {
 }
 
 class NnSslSf_ISslService: IpcService {
-	func createContext(_ _0: NnSslSf_SslVersion, _ _1: UInt64, _ _2: Pid) throws -> NnSslSf_ISslContext { throw IpcError.unimplemented }
-	func getContextCount() throws -> UInt32 { throw IpcError.unimplemented }
-	func getCertificates(_ _0: Buffer<UInt8>, _ _1: Buffer<UInt8>) throws -> UInt32 { throw IpcError.unimplemented }
-	func getCertificateBufSize(_ _0: Buffer<UInt8>) throws -> UInt32 { throw IpcError.unimplemented }
-	func debugIoctl(_ _0: UInt64, _ _1: Buffer<UInt8>, _ _2: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func setInterfaceVersion(_ _0: UInt32) throws { throw IpcError.unimplemented }
-	func flushSessionCache(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
+	func createContext(_ _0: NnSslSf_SslVersion, _ _1: UInt64, _ _2: Pid) throws -> NnSslSf_ISslContext { throw IpcError.unimplemented(name: "nn::ssl::sf::nn::ssl::sf::ISslService#CreateContext") }
+	func getContextCount() throws -> UInt32 { throw IpcError.unimplemented(name: "nn::ssl::sf::nn::ssl::sf::ISslService#GetContextCount") }
+	func getCertificates(_ _0: Buffer<UInt8>, _ _1: Buffer<UInt8>) throws -> UInt32 { throw IpcError.unimplemented(name: "nn::ssl::sf::nn::ssl::sf::ISslService#GetCertificates") }
+	func getCertificateBufSize(_ _0: Buffer<UInt8>) throws -> UInt32 { throw IpcError.unimplemented(name: "nn::ssl::sf::nn::ssl::sf::ISslService#GetCertificateBufSize") }
+	func debugIoctl(_ _0: UInt64, _ _1: Buffer<UInt8>, _ _2: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::ssl::sf::nn::ssl::sf::ISslService#DebugIoctl") }
+	func setInterfaceVersion(_ _0: UInt32) throws { throw IpcError.unimplemented(name: "nn::ssl::sf::nn::ssl::sf::ISslService#SetInterfaceVersion") }
+	func flushSessionCache(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::ssl::sf::nn::ssl::sf::ISslService#FlushSessionCache") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {

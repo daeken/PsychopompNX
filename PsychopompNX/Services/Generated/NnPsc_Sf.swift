@@ -1,11 +1,11 @@
 class NnPscSf_IPmControl: IpcService {
-	func unknown0() throws -> KObject { throw IpcError.unimplemented }
-	func unknown1(_ _0: Any?) throws { throw IpcError.unimplemented }
-	func unknown2() throws { throw IpcError.unimplemented }
-	func unknown3() throws -> Any? { throw IpcError.unimplemented }
-	func unknown4() throws { throw IpcError.unimplemented }
-	func unknown5() throws { throw IpcError.unimplemented }
-	func unknown6(_ _0: Buffer<UInt8>, _ _1: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented }
+	func unknown0() throws -> KObject { throw IpcError.unimplemented(name: "nn::psc::sf::nn::psc::sf::IPmControl#Unknown0") }
+	func unknown1(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::psc::sf::nn::psc::sf::IPmControl#Unknown1") }
+	func unknown2() throws { throw IpcError.unimplemented(name: "nn::psc::sf::nn::psc::sf::IPmControl#Unknown2") }
+	func unknown3() throws -> Any? { throw IpcError.unimplemented(name: "nn::psc::sf::nn::psc::sf::IPmControl#Unknown3") }
+	func unknown4() throws { throw IpcError.unimplemented(name: "nn::psc::sf::nn::psc::sf::IPmControl#Unknown4") }
+	func unknown5() throws { throw IpcError.unimplemented(name: "nn::psc::sf::nn::psc::sf::IPmControl#Unknown5") }
+	func unknown6(_ _0: Buffer<UInt8>, _ _1: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented(name: "nn::psc::sf::nn::psc::sf::IPmControl#Unknown6") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
@@ -46,10 +46,10 @@ class NnPscSf_IPmControl: IpcService {
 }
 
 class NnPscSf_IPmModule: IpcService {
-	func initialize(_ _0: Any?, _ _1: Buffer<UInt8>) throws -> KObject { throw IpcError.unimplemented }
-	func getRequest() throws -> Any? { throw IpcError.unimplemented }
-	func acknowledge() throws { throw IpcError.unimplemented }
-	func unknown3() throws { throw IpcError.unimplemented }
+	func initialize(_ _0: Any?, _ _1: Buffer<UInt8>) throws -> KObject { throw IpcError.unimplemented(name: "nn::psc::sf::nn::psc::sf::IPmModule#Initialize") }
+	func getRequest() throws -> Any? { throw IpcError.unimplemented(name: "nn::psc::sf::nn::psc::sf::IPmModule#GetRequest") }
+	func acknowledge() throws { throw IpcError.unimplemented(name: "nn::psc::sf::nn::psc::sf::IPmModule#Acknowledge") }
+	func unknown3() throws { throw IpcError.unimplemented(name: "nn::psc::sf::nn::psc::sf::IPmModule#Unknown3") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
@@ -78,7 +78,7 @@ class NnPscSf_IPmModule: IpcService {
 }
 
 class NnPscSf_IPmService: IpcService {
-	func getPmModule() throws -> NnPscSf_IPmModule { throw IpcError.unimplemented }
+	func getPmModule() throws -> NnPscSf_IPmModule { throw IpcError.unimplemented(name: "nn::psc::sf::nn::psc::sf::IPmService#GetPmModule") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {

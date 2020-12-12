@@ -1,10 +1,10 @@
 class NnCodecDetail_IHardwareOpusDecoder: IpcService {
-	func decodeInterleaved(_ _0: Buffer<UInt8>, _ _1: Buffer<UInt8>) throws -> (UInt32, UInt32) { throw IpcError.unimplemented }
-	func setContext(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func unknown2(_ _0: Buffer<UInt8>, _ _1: Buffer<UInt8>) throws -> (UInt32, UInt32) { throw IpcError.unimplemented }
-	func unknown3(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func unknown4(_ _0: Buffer<UInt8>, _ _1: Buffer<UInt8>) throws -> (UInt32, UInt32, UInt64) { throw IpcError.unimplemented }
-	func unknown5(_ _0: Buffer<UInt8>, _ _1: Buffer<UInt8>) throws -> (UInt32, UInt32, UInt64) { throw IpcError.unimplemented }
+	func decodeInterleaved(_ _0: Buffer<UInt8>, _ _1: Buffer<UInt8>) throws -> (UInt32, UInt32) { throw IpcError.unimplemented(name: "nn::codec::detail::nn::codec::detail::IHardwareOpusDecoder#DecodeInterleaved") }
+	func setContext(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::codec::detail::nn::codec::detail::IHardwareOpusDecoder#SetContext") }
+	func unknown2(_ _0: Buffer<UInt8>, _ _1: Buffer<UInt8>) throws -> (UInt32, UInt32) { throw IpcError.unimplemented(name: "nn::codec::detail::nn::codec::detail::IHardwareOpusDecoder#Unknown2") }
+	func unknown3(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::codec::detail::nn::codec::detail::IHardwareOpusDecoder#Unknown3") }
+	func unknown4(_ _0: Buffer<UInt8>, _ _1: Buffer<UInt8>) throws -> (UInt32, UInt32, UInt64) { throw IpcError.unimplemented(name: "nn::codec::detail::nn::codec::detail::IHardwareOpusDecoder#Unknown4") }
+	func unknown5(_ _0: Buffer<UInt8>, _ _1: Buffer<UInt8>) throws -> (UInt32, UInt32, UInt64) { throw IpcError.unimplemented(name: "nn::codec::detail::nn::codec::detail::IHardwareOpusDecoder#Unknown5") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
@@ -50,10 +50,10 @@ class NnCodecDetail_IHardwareOpusDecoder: IpcService {
 }
 
 class NnCodecDetail_IHardwareOpusDecoderManager: IpcService {
-	func initialize(_ _0: [UInt8], _ _1: UInt32, _ _2: KObject) throws -> NnCodecDetail_IHardwareOpusDecoder { throw IpcError.unimplemented }
-	func getWorkBufferSize(_ _0: [UInt8]) throws -> UInt32 { throw IpcError.unimplemented }
-	func initializeMultiStream(_ _0: UInt32, _ _1: KObject, _ _2: Buffer<UInt8>) throws -> NnCodecDetail_IHardwareOpusDecoder { throw IpcError.unimplemented }
-	func getWorkBufferSizeMultiStream(_ _0: Buffer<UInt8>) throws -> UInt32 { throw IpcError.unimplemented }
+	func initialize(_ _0: [UInt8], _ _1: UInt32, _ _2: KObject) throws -> NnCodecDetail_IHardwareOpusDecoder { throw IpcError.unimplemented(name: "nn::codec::detail::nn::codec::detail::IHardwareOpusDecoderManager#Initialize") }
+	func getWorkBufferSize(_ _0: [UInt8]) throws -> UInt32 { throw IpcError.unimplemented(name: "nn::codec::detail::nn::codec::detail::IHardwareOpusDecoderManager#GetWorkBufferSize") }
+	func initializeMultiStream(_ _0: UInt32, _ _1: KObject, _ _2: Buffer<UInt8>) throws -> NnCodecDetail_IHardwareOpusDecoder { throw IpcError.unimplemented(name: "nn::codec::detail::nn::codec::detail::IHardwareOpusDecoderManager#InitializeMultiStream") }
+	func getWorkBufferSizeMultiStream(_ _0: Buffer<UInt8>) throws -> UInt32 { throw IpcError.unimplemented(name: "nn::codec::detail::nn::codec::detail::IHardwareOpusDecoderManager#GetWorkBufferSizeMultiStream") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {

@@ -1,7 +1,7 @@
 class NnSrepoDetailIpc_ISrepoService: IpcService {
-	func unknown0(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func unknown1(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func unknown2(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
+	func unknown0(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::srepo::detail::ipc::nn::srepo::detail::ipc::ISrepoService#Unknown0") }
+	func unknown1(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::srepo::detail::ipc::nn::srepo::detail::ipc::ISrepoService#Unknown1") }
+	func unknown2(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::srepo::detail::ipc::nn::srepo::detail::ipc::ISrepoService#Unknown2") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {

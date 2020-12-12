@@ -1,7 +1,7 @@
 class NvGemcoredump_INvGemCoreDump: IpcService {
-	func unknown0() throws -> Any? { throw IpcError.unimplemented }
-	func unknown1() throws -> Any? { throw IpcError.unimplemented }
-	func unknown2(_ _0: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented }
+	func unknown0() throws -> Any? { throw IpcError.unimplemented(name: "nv::gemcoredump::nv::gemcoredump::INvGemCoreDump#Unknown0") }
+	func unknown1() throws -> Any? { throw IpcError.unimplemented(name: "nv::gemcoredump::nv::gemcoredump::INvGemCoreDump#Unknown1") }
+	func unknown2(_ _0: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented(name: "nv::gemcoredump::nv::gemcoredump::INvGemCoreDump#Unknown2") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {

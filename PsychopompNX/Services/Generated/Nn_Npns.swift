@@ -1,20 +1,20 @@
 typealias NnNpns_NotificationToken = [UInt8]
 
 class NnNpns_INpnsUser: IpcService {
-	func unknown1() throws { throw IpcError.unimplemented }
-	func unknown2(_ _0: Any?) throws { throw IpcError.unimplemented }
-	func unknown3(_ _0: Any?, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func unknown4(_ _0: Any?, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func unknown5() throws -> KObject { throw IpcError.unimplemented }
-	func unknown7() throws -> KObject { throw IpcError.unimplemented }
-	func unknown21(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func unknown23(_ _0: Any?) throws { throw IpcError.unimplemented }
-	func unknown25(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func unknown101() throws { throw IpcError.unimplemented }
-	func unknown102() throws { throw IpcError.unimplemented }
-	func unknown103() throws -> Any? { throw IpcError.unimplemented }
-	func unknown104(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func unknown111(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented }
+	func unknown1() throws { throw IpcError.unimplemented(name: "nn::npns::nn::npns::INpnsUser#Unknown1") }
+	func unknown2(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::npns::nn::npns::INpnsUser#Unknown2") }
+	func unknown3(_ _0: Any?, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::npns::nn::npns::INpnsUser#Unknown3") }
+	func unknown4(_ _0: Any?, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::npns::nn::npns::INpnsUser#Unknown4") }
+	func unknown5() throws -> KObject { throw IpcError.unimplemented(name: "nn::npns::nn::npns::INpnsUser#Unknown5") }
+	func unknown7() throws -> KObject { throw IpcError.unimplemented(name: "nn::npns::nn::npns::INpnsUser#Unknown7") }
+	func unknown21(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::npns::nn::npns::INpnsUser#Unknown21") }
+	func unknown23(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::npns::nn::npns::INpnsUser#Unknown23") }
+	func unknown25(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::npns::nn::npns::INpnsUser#Unknown25") }
+	func unknown101() throws { throw IpcError.unimplemented(name: "nn::npns::nn::npns::INpnsUser#Unknown101") }
+	func unknown102() throws { throw IpcError.unimplemented(name: "nn::npns::nn::npns::INpnsUser#Unknown102") }
+	func unknown103() throws -> Any? { throw IpcError.unimplemented(name: "nn::npns::nn::npns::INpnsUser#Unknown103") }
+	func unknown104(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::npns::nn::npns::INpnsUser#Unknown104") }
+	func unknown111(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::npns::nn::npns::INpnsUser#Unknown111") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
@@ -84,35 +84,35 @@ class NnNpns_INpnsUser: IpcService {
 }
 
 class NnNpns_INpnsSystem: IpcService {
-	func unknown1() throws { throw IpcError.unimplemented }
-	func unknown2(_ _0: Any?) throws { throw IpcError.unimplemented }
-	func unknown3(_ _0: Any?, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func unknown4(_ _0: Any?, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func unknown5() throws -> KObject { throw IpcError.unimplemented }
-	func unknown6() throws { throw IpcError.unimplemented }
-	func unknown7() throws -> KObject { throw IpcError.unimplemented }
-	func unknown11(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func unknown12(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func unknown13(_ _0: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented }
-	func unknown21(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func unknown22(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func unknown23(_ _0: Any?) throws { throw IpcError.unimplemented }
-	func unknown24(_ _0: Any?) throws { throw IpcError.unimplemented }
-	func unknown25(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func unknown31(_ _0: Any?) throws { throw IpcError.unimplemented }
-	func unknown32(_ _0: Any?) throws { throw IpcError.unimplemented }
-	func unknown101() throws { throw IpcError.unimplemented }
-	func unknown102() throws { throw IpcError.unimplemented }
-	func unknown103() throws -> Any? { throw IpcError.unimplemented }
-	func unknown104(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func unknown105() throws -> KObject { throw IpcError.unimplemented }
-	func unknown111(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func unknown112() throws { throw IpcError.unimplemented }
-	func unknown113() throws { throw IpcError.unimplemented }
-	func unknown114(_ _0: Buffer<UInt8>, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func unknown115(_ _0: Buffer<UInt8>, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func unknown201(_ _0: Any?) throws { throw IpcError.unimplemented }
-	func unknown202(_ _0: Any?) throws { throw IpcError.unimplemented }
+	func unknown1() throws { throw IpcError.unimplemented(name: "nn::npns::nn::npns::INpnsSystem#Unknown1") }
+	func unknown2(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::npns::nn::npns::INpnsSystem#Unknown2") }
+	func unknown3(_ _0: Any?, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::npns::nn::npns::INpnsSystem#Unknown3") }
+	func unknown4(_ _0: Any?, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::npns::nn::npns::INpnsSystem#Unknown4") }
+	func unknown5() throws -> KObject { throw IpcError.unimplemented(name: "nn::npns::nn::npns::INpnsSystem#Unknown5") }
+	func unknown6() throws { throw IpcError.unimplemented(name: "nn::npns::nn::npns::INpnsSystem#Unknown6") }
+	func unknown7() throws -> KObject { throw IpcError.unimplemented(name: "nn::npns::nn::npns::INpnsSystem#Unknown7") }
+	func unknown11(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::npns::nn::npns::INpnsSystem#Unknown11") }
+	func unknown12(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::npns::nn::npns::INpnsSystem#Unknown12") }
+	func unknown13(_ _0: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented(name: "nn::npns::nn::npns::INpnsSystem#Unknown13") }
+	func unknown21(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::npns::nn::npns::INpnsSystem#Unknown21") }
+	func unknown22(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::npns::nn::npns::INpnsSystem#Unknown22") }
+	func unknown23(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::npns::nn::npns::INpnsSystem#Unknown23") }
+	func unknown24(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::npns::nn::npns::INpnsSystem#Unknown24") }
+	func unknown25(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::npns::nn::npns::INpnsSystem#Unknown25") }
+	func unknown31(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::npns::nn::npns::INpnsSystem#Unknown31") }
+	func unknown32(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::npns::nn::npns::INpnsSystem#Unknown32") }
+	func unknown101() throws { throw IpcError.unimplemented(name: "nn::npns::nn::npns::INpnsSystem#Unknown101") }
+	func unknown102() throws { throw IpcError.unimplemented(name: "nn::npns::nn::npns::INpnsSystem#Unknown102") }
+	func unknown103() throws -> Any? { throw IpcError.unimplemented(name: "nn::npns::nn::npns::INpnsSystem#Unknown103") }
+	func unknown104(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::npns::nn::npns::INpnsSystem#Unknown104") }
+	func unknown105() throws -> KObject { throw IpcError.unimplemented(name: "nn::npns::nn::npns::INpnsSystem#Unknown105") }
+	func unknown111(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::npns::nn::npns::INpnsSystem#Unknown111") }
+	func unknown112() throws { throw IpcError.unimplemented(name: "nn::npns::nn::npns::INpnsSystem#Unknown112") }
+	func unknown113() throws { throw IpcError.unimplemented(name: "nn::npns::nn::npns::INpnsSystem#Unknown113") }
+	func unknown114(_ _0: Buffer<UInt8>, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::npns::nn::npns::INpnsSystem#Unknown114") }
+	func unknown115(_ _0: Buffer<UInt8>, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::npns::nn::npns::INpnsSystem#Unknown115") }
+	func unknown201(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::npns::nn::npns::INpnsSystem#Unknown201") }
+	func unknown202(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::npns::nn::npns::INpnsSystem#Unknown202") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {

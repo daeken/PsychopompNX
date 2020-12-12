@@ -1,13 +1,13 @@
 class NnUsbHs_IClientEpSession: IpcService {
-	func unknown0() throws { throw IpcError.unimplemented }
-	func unknown1() throws { throw IpcError.unimplemented }
-	func unknown2() throws -> KObject { throw IpcError.unimplemented }
-	func unknown3() throws { throw IpcError.unimplemented }
-	func postBufferAsync(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func unknown5(_ _0: Any?, _ _1: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented }
-	func unknown6(_ _0: Any?, _ _1: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented }
-	func unknown7(_ _0: Any?) throws { throw IpcError.unimplemented }
-	func unknown8(_ _0: Any?, _ _1: KObject) throws { throw IpcError.unimplemented }
+	func unknown0() throws { throw IpcError.unimplemented(name: "nn::usb::hs::nn::usb::hs::IClientEpSession#Unknown0") }
+	func unknown1() throws { throw IpcError.unimplemented(name: "nn::usb::hs::nn::usb::hs::IClientEpSession#Unknown1") }
+	func unknown2() throws -> KObject { throw IpcError.unimplemented(name: "nn::usb::hs::nn::usb::hs::IClientEpSession#Unknown2") }
+	func unknown3() throws { throw IpcError.unimplemented(name: "nn::usb::hs::nn::usb::hs::IClientEpSession#Unknown3") }
+	func postBufferAsync(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::usb::hs::nn::usb::hs::IClientEpSession#PostBufferAsync") }
+	func unknown5(_ _0: Any?, _ _1: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented(name: "nn::usb::hs::nn::usb::hs::IClientEpSession#Unknown5") }
+	func unknown6(_ _0: Any?, _ _1: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented(name: "nn::usb::hs::nn::usb::hs::IClientEpSession#Unknown6") }
+	func unknown7(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::usb::hs::nn::usb::hs::IClientEpSession#Unknown7") }
+	func unknown8(_ _0: Any?, _ _1: KObject) throws { throw IpcError.unimplemented(name: "nn::usb::hs::nn::usb::hs::IClientEpSession#Unknown8") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
@@ -56,14 +56,14 @@ class NnUsbHs_IClientEpSession: IpcService {
 }
 
 class NnUsbHs_IClientRootSession: IpcService {
-	func bindClientProcess(_ _0: KObject) throws { throw IpcError.unimplemented }
-	func unknown1(_ _0: Any?, _ _1: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented }
-	func unknown2(_ _0: Any?, _ _1: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented }
-	func unknown3(_ _0: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented }
-	func unknown4(_ _0: Any?) throws -> KObject { throw IpcError.unimplemented }
-	func unknown5(_ _0: Any?) throws { throw IpcError.unimplemented }
-	func getInterfaceStateChangeEvent() throws -> KObject { throw IpcError.unimplemented }
-	func getClientIfSession(_ _0: Any?, _ _1: Buffer<UInt8>, _ _2: Buffer<UInt8>) throws -> NnUsbHs_IClientIfSession { throw IpcError.unimplemented }
+	func bindClientProcess(_ _0: KObject) throws { throw IpcError.unimplemented(name: "nn::usb::hs::nn::usb::hs::IClientRootSession#BindClientProcess") }
+	func unknown1(_ _0: Any?, _ _1: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented(name: "nn::usb::hs::nn::usb::hs::IClientRootSession#Unknown1") }
+	func unknown2(_ _0: Any?, _ _1: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented(name: "nn::usb::hs::nn::usb::hs::IClientRootSession#Unknown2") }
+	func unknown3(_ _0: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented(name: "nn::usb::hs::nn::usb::hs::IClientRootSession#Unknown3") }
+	func unknown4(_ _0: Any?) throws -> KObject { throw IpcError.unimplemented(name: "nn::usb::hs::nn::usb::hs::IClientRootSession#Unknown4") }
+	func unknown5(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::usb::hs::nn::usb::hs::IClientRootSession#Unknown5") }
+	func getInterfaceStateChangeEvent() throws -> KObject { throw IpcError.unimplemented(name: "nn::usb::hs::nn::usb::hs::IClientRootSession#GetInterfaceStateChangeEvent") }
+	func getClientIfSession(_ _0: Any?, _ _1: Buffer<UInt8>, _ _2: Buffer<UInt8>) throws -> NnUsbHs_IClientIfSession { throw IpcError.unimplemented(name: "nn::usb::hs::nn::usb::hs::IClientRootSession#GetClientIfSession") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
@@ -110,16 +110,16 @@ class NnUsbHs_IClientRootSession: IpcService {
 }
 
 class NnUsbHs_IClientIfSession: IpcService {
-	func unknown0() throws -> KObject { throw IpcError.unimplemented }
-	func unknown1(_ _0: Any?, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func unknown2(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func unknown3(_ _0: Any?, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func unknown4() throws -> Any? { throw IpcError.unimplemented }
-	func ctrlXferAsync(_ _0: Any?) throws { throw IpcError.unimplemented }
-	func unknown6() throws -> KObject { throw IpcError.unimplemented }
-	func getCtrlXferReport(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func unknown8() throws { throw IpcError.unimplemented }
-	func getClientEpSession(_ _0: Any?) throws -> (Any?, NnUsbHs_IClientEpSession) { throw IpcError.unimplemented }
+	func unknown0() throws -> KObject { throw IpcError.unimplemented(name: "nn::usb::hs::nn::usb::hs::IClientIfSession#Unknown0") }
+	func unknown1(_ _0: Any?, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::usb::hs::nn::usb::hs::IClientIfSession#Unknown1") }
+	func unknown2(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::usb::hs::nn::usb::hs::IClientIfSession#Unknown2") }
+	func unknown3(_ _0: Any?, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::usb::hs::nn::usb::hs::IClientIfSession#Unknown3") }
+	func unknown4() throws -> Any? { throw IpcError.unimplemented(name: "nn::usb::hs::nn::usb::hs::IClientIfSession#Unknown4") }
+	func ctrlXferAsync(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::usb::hs::nn::usb::hs::IClientIfSession#CtrlXferAsync") }
+	func unknown6() throws -> KObject { throw IpcError.unimplemented(name: "nn::usb::hs::nn::usb::hs::IClientIfSession#Unknown6") }
+	func getCtrlXferReport(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::usb::hs::nn::usb::hs::IClientIfSession#GetCtrlXferReport") }
+	func unknown8() throws { throw IpcError.unimplemented(name: "nn::usb::hs::nn::usb::hs::IClientIfSession#Unknown8") }
+	func getClientEpSession(_ _0: Any?) throws -> (Any?, NnUsbHs_IClientEpSession) { throw IpcError.unimplemented(name: "nn::usb::hs::nn::usb::hs::IClientIfSession#GetClientEpSession") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {

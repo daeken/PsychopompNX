@@ -1,6 +1,6 @@
 class NnPcieDetail_IManager: IpcService {
-	func registerClassDriver(_ _0: Any?, _ _1: KObject) throws -> (KObject, NnPcieDetail_ISession) { throw IpcError.unimplemented }
-	func queryFunctionsUnregistered(_ _0: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented }
+	func registerClassDriver(_ _0: Any?, _ _1: KObject) throws -> (KObject, NnPcieDetail_ISession) { throw IpcError.unimplemented(name: "nn::pcie::detail::nn::pcie::detail::IManager#RegisterClassDriver") }
+	func queryFunctionsUnregistered(_ _0: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented(name: "nn::pcie::detail::nn::pcie::detail::IManager#QueryFunctionsUnregistered") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
@@ -22,27 +22,27 @@ class NnPcieDetail_IManager: IpcService {
 }
 
 class NnPcieDetail_ISession: IpcService {
-	func queryFunctions(_ _0: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented }
-	func acquireFunction(_ _0: Any?) throws -> KObject { throw IpcError.unimplemented }
-	func releaseFunction(_ _0: Any?) throws { throw IpcError.unimplemented }
-	func getFunctionState(_ _0: Any?, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func getBarProfile(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func readConfig(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func writeConfig(_ _0: Any?) throws { throw IpcError.unimplemented }
-	func readBarRegion(_ _0: Any?, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func writeBarRegion(_ _0: Any?, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func findCapability(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func findExtendedCapability(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func mapDma(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func unmapDma(_ _0: Any?) throws { throw IpcError.unimplemented }
-	func unmapDmaBusAddress(_ _0: Any?) throws { throw IpcError.unimplemented }
-	func getDmaBusAddress(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func getDmaBusAddressRange(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func setDmaEnable(_ _0: Any?) throws { throw IpcError.unimplemented }
-	func acquireIrq(_ _0: Any?) throws -> KObject { throw IpcError.unimplemented }
-	func releaseIrq(_ _0: Any?) throws { throw IpcError.unimplemented }
-	func setIrqEnable(_ _0: Any?) throws { throw IpcError.unimplemented }
-	func setAspmEnable(_ _0: Any?) throws { throw IpcError.unimplemented }
+	func queryFunctions(_ _0: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented(name: "nn::pcie::detail::nn::pcie::detail::ISession#QueryFunctions") }
+	func acquireFunction(_ _0: Any?) throws -> KObject { throw IpcError.unimplemented(name: "nn::pcie::detail::nn::pcie::detail::ISession#AcquireFunction") }
+	func releaseFunction(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::pcie::detail::nn::pcie::detail::ISession#ReleaseFunction") }
+	func getFunctionState(_ _0: Any?, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::pcie::detail::nn::pcie::detail::ISession#GetFunctionState") }
+	func getBarProfile(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::pcie::detail::nn::pcie::detail::ISession#GetBarProfile") }
+	func readConfig(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::pcie::detail::nn::pcie::detail::ISession#ReadConfig") }
+	func writeConfig(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::pcie::detail::nn::pcie::detail::ISession#WriteConfig") }
+	func readBarRegion(_ _0: Any?, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::pcie::detail::nn::pcie::detail::ISession#ReadBarRegion") }
+	func writeBarRegion(_ _0: Any?, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::pcie::detail::nn::pcie::detail::ISession#WriteBarRegion") }
+	func findCapability(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::pcie::detail::nn::pcie::detail::ISession#FindCapability") }
+	func findExtendedCapability(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::pcie::detail::nn::pcie::detail::ISession#FindExtendedCapability") }
+	func mapDma(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::pcie::detail::nn::pcie::detail::ISession#MapDma") }
+	func unmapDma(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::pcie::detail::nn::pcie::detail::ISession#UnmapDma") }
+	func unmapDmaBusAddress(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::pcie::detail::nn::pcie::detail::ISession#UnmapDmaBusAddress") }
+	func getDmaBusAddress(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::pcie::detail::nn::pcie::detail::ISession#GetDmaBusAddress") }
+	func getDmaBusAddressRange(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::pcie::detail::nn::pcie::detail::ISession#GetDmaBusAddressRange") }
+	func setDmaEnable(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::pcie::detail::nn::pcie::detail::ISession#SetDmaEnable") }
+	func acquireIrq(_ _0: Any?) throws -> KObject { throw IpcError.unimplemented(name: "nn::pcie::detail::nn::pcie::detail::ISession#AcquireIrq") }
+	func releaseIrq(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::pcie::detail::nn::pcie::detail::ISession#ReleaseIrq") }
+	func setIrqEnable(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::pcie::detail::nn::pcie::detail::ISession#SetIrqEnable") }
+	func setAspmEnable(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::pcie::detail::nn::pcie::detail::ISession#SetAspmEnable") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {

@@ -1,5 +1,5 @@
 class NnPinmux_IManager: IpcService {
-	func openSession(_ _0: Any?) throws -> NnPinmux_ISession { throw IpcError.unimplemented }
+	func openSession(_ _0: Any?) throws -> NnPinmux_ISession { throw IpcError.unimplemented(name: "nn::pinmux::nn::pinmux::IManager#OpenSession") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
@@ -16,9 +16,9 @@ class NnPinmux_IManager: IpcService {
 }
 
 class NnPinmux_ISession: IpcService {
-	func setPinAssignment(_ _0: Any?) throws { throw IpcError.unimplemented }
-	func getPinAssignment() throws -> Any? { throw IpcError.unimplemented }
-	func setPinAssignmentForHardwareTest(_ _0: Any?) throws { throw IpcError.unimplemented }
+	func setPinAssignment(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::pinmux::nn::pinmux::ISession#SetPinAssignment") }
+	func getPinAssignment() throws -> Any? { throw IpcError.unimplemented(name: "nn::pinmux::nn::pinmux::ISession#GetPinAssignment") }
+	func setPinAssignmentForHardwareTest(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::pinmux::nn::pinmux::ISession#SetPinAssignmentForHardwareTest") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {

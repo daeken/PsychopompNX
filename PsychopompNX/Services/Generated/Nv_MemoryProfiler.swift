@@ -1,6 +1,6 @@
 class NvMemoryProfiler_IMemoryProfiler: IpcService {
-	func unknown0(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func unknown1(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
+	func unknown0(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nv::MemoryProfiler::nv::MemoryProfiler::IMemoryProfiler#Unknown0") }
+	func unknown1(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nv::MemoryProfiler::nv::MemoryProfiler::IMemoryProfiler#Unknown1") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {

@@ -265,7 +265,7 @@ let ipcServiceMappings: [String: () -> IpcService] =
 						rettype = ' -> ' + genType(outputs[0][1])
 					elif len(outputs) > 1:
 						rettype = ' -> (%s)' % ', '.join('%s: %s' % (rename(name), genType(type)) if name else genType(type) for name, type in outputs)
-					cb += 'func %s(%s) throws%s { throw IpcError.unimplemented }' % (rename(cmd.name), ', '.join('_ %s: %s' % (name if name else '_%i' % i, genType(type)) for i, (name, type) in enumerate(cmd.inputs + outBufs)), rettype)
+					cb += 'func %s(%s) throws%s { throw IpcError.unimplemented(name: "%s") }' % (rename(cmd.name), ', '.join('_ %s: %s' % (name if name else '_%i' % i, genType(type)) for i, (name, type) in enumerate(cmd.inputs + outBufs)), rettype, ns + '::' + iface.name + '#' + cmd.name)
 
 				if iface.commands:
 					cb += ''

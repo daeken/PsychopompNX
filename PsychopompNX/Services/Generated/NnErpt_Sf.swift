@@ -1,10 +1,10 @@
 class NnErptSf_IReport: IpcService {
-	func open(_ _0: Any?) throws { throw IpcError.unimplemented }
-	func read(_ _0: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented }
-	func setFlags(_ _0: Any?) throws { throw IpcError.unimplemented }
-	func getFlags() throws -> Any? { throw IpcError.unimplemented }
-	func _close() throws { throw IpcError.unimplemented }
-	func getSize() throws -> Any? { throw IpcError.unimplemented }
+	func open(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::erpt::sf::nn::erpt::sf::IReport#Open") }
+	func read(_ _0: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented(name: "nn::erpt::sf::nn::erpt::sf::IReport#Read") }
+	func setFlags(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::erpt::sf::nn::erpt::sf::IReport#SetFlags") }
+	func getFlags() throws -> Any? { throw IpcError.unimplemented(name: "nn::erpt::sf::nn::erpt::sf::IReport#GetFlags") }
+	func _close() throws { throw IpcError.unimplemented(name: "nn::erpt::sf::nn::erpt::sf::IReport#Close") }
+	func getSize() throws -> Any? { throw IpcError.unimplemented(name: "nn::erpt::sf::nn::erpt::sf::IReport#GetSize") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
@@ -40,13 +40,13 @@ class NnErptSf_IReport: IpcService {
 }
 
 class NnErptSf_IContext: IpcService {
-	func submitContext(_ _0: Buffer<UInt8>, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func createReport(_ _0: Any?, _ _1: Buffer<UInt8>, _ _2: Buffer<UInt8>, _ _3: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func unknown2(_ _0: Any?) throws { throw IpcError.unimplemented }
-	func unknown3() throws { throw IpcError.unimplemented }
-	func unknown4() throws { throw IpcError.unimplemented }
-	func unknown5() throws { throw IpcError.unimplemented }
-	func unknown6(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
+	func submitContext(_ _0: Buffer<UInt8>, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::erpt::sf::nn::erpt::sf::IContext#SubmitContext") }
+	func createReport(_ _0: Any?, _ _1: Buffer<UInt8>, _ _2: Buffer<UInt8>, _ _3: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::erpt::sf::nn::erpt::sf::IContext#CreateReport") }
+	func unknown2(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::erpt::sf::nn::erpt::sf::IContext#Unknown2") }
+	func unknown3() throws { throw IpcError.unimplemented(name: "nn::erpt::sf::nn::erpt::sf::IContext#Unknown3") }
+	func unknown4() throws { throw IpcError.unimplemented(name: "nn::erpt::sf::nn::erpt::sf::IContext#Unknown4") }
+	func unknown5() throws { throw IpcError.unimplemented(name: "nn::erpt::sf::nn::erpt::sf::IContext#Unknown5") }
+	func unknown6(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::erpt::sf::nn::erpt::sf::IContext#Unknown6") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
@@ -86,11 +86,11 @@ class NnErptSf_IContext: IpcService {
 }
 
 class NnErptSf_IManager: IpcService {
-	func getReportList(_ _0: Any?, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func getEvent() throws -> KObject { throw IpcError.unimplemented }
-	func unknown2() throws { throw IpcError.unimplemented }
-	func unknown3(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func unknown4(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
+	func getReportList(_ _0: Any?, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::erpt::sf::nn::erpt::sf::IManager#GetReportList") }
+	func getEvent() throws -> KObject { throw IpcError.unimplemented(name: "nn::erpt::sf::nn::erpt::sf::IManager#GetEvent") }
+	func unknown2() throws { throw IpcError.unimplemented(name: "nn::erpt::sf::nn::erpt::sf::IManager#Unknown2") }
+	func unknown3(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::erpt::sf::nn::erpt::sf::IManager#Unknown3") }
+	func unknown4(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::erpt::sf::nn::erpt::sf::IManager#Unknown4") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
@@ -123,8 +123,8 @@ class NnErptSf_IManager: IpcService {
 }
 
 class NnErptSf_ISession: IpcService {
-	func openReport() throws -> NnErptSf_IReport { throw IpcError.unimplemented }
-	func openManager() throws -> NnErptSf_IManager { throw IpcError.unimplemented }
+	func openReport() throws -> NnErptSf_IReport { throw IpcError.unimplemented(name: "nn::erpt::sf::nn::erpt::sf::ISession#OpenReport") }
+	func openManager() throws -> NnErptSf_IManager { throw IpcError.unimplemented(name: "nn::erpt::sf::nn::erpt::sf::ISession#OpenManager") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {

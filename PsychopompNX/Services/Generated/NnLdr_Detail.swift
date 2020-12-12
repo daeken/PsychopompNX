@@ -1,9 +1,9 @@
 class NnLdrDetail_IRoInterface: IpcService {
-	func loadNro(_ _0: UInt64, _ _1: UInt64, _ _2: UInt64, _ _3: UInt64, _ _4: UInt64, _ _5: Pid) throws -> UInt64 { throw IpcError.unimplemented }
-	func unloadNro(_ _0: UInt64, _ _1: UInt64, _ _2: Pid) throws { throw IpcError.unimplemented }
-	func loadNrr(_ _0: UInt64, _ _1: UInt64, _ _2: UInt64, _ _3: Pid) throws { throw IpcError.unimplemented }
-	func unloadNrr(_ _0: UInt64, _ _1: UInt64, _ _2: Pid) throws { throw IpcError.unimplemented }
-	func initialize(_ _0: UInt64, _ _1: Pid, _ _2: KObject) throws { throw IpcError.unimplemented }
+	func loadNro(_ _0: UInt64, _ _1: UInt64, _ _2: UInt64, _ _3: UInt64, _ _4: UInt64, _ _5: Pid) throws -> UInt64 { throw IpcError.unimplemented(name: "nn::ldr::detail::nn::ldr::detail::IRoInterface#LoadNro") }
+	func unloadNro(_ _0: UInt64, _ _1: UInt64, _ _2: Pid) throws { throw IpcError.unimplemented(name: "nn::ldr::detail::nn::ldr::detail::IRoInterface#UnloadNro") }
+	func loadNrr(_ _0: UInt64, _ _1: UInt64, _ _2: UInt64, _ _3: Pid) throws { throw IpcError.unimplemented(name: "nn::ldr::detail::nn::ldr::detail::IRoInterface#LoadNrr") }
+	func unloadNrr(_ _0: UInt64, _ _1: UInt64, _ _2: Pid) throws { throw IpcError.unimplemented(name: "nn::ldr::detail::nn::ldr::detail::IRoInterface#UnloadNrr") }
+	func initialize(_ _0: UInt64, _ _1: Pid, _ _2: KObject) throws { throw IpcError.unimplemented(name: "nn::ldr::detail::nn::ldr::detail::IRoInterface#Initialize") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
@@ -36,10 +36,10 @@ class NnLdrDetail_IRoInterface: IpcService {
 }
 
 class NnLdrDetail_IProcessManagerInterface: IpcService {
-	func createProcess(_ _0: Any?, _ _1: KObject) throws -> IpcService { throw IpcError.unimplemented }
-	func getProgramInfo(_ _0: Any?, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func registerTitle(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func unregisterTitle(_ _0: Any?) throws { throw IpcError.unimplemented }
+	func createProcess(_ _0: Any?, _ _1: KObject) throws -> IpcService { throw IpcError.unimplemented(name: "nn::ldr::detail::nn::ldr::detail::IProcessManagerInterface#CreateProcess") }
+	func getProgramInfo(_ _0: Any?, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::ldr::detail::nn::ldr::detail::IProcessManagerInterface#GetProgramInfo") }
+	func registerTitle(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::ldr::detail::nn::ldr::detail::IProcessManagerInterface#RegisterTitle") }
+	func unregisterTitle(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::ldr::detail::nn::ldr::detail::IProcessManagerInterface#UnregisterTitle") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
@@ -68,9 +68,9 @@ class NnLdrDetail_IProcessManagerInterface: IpcService {
 }
 
 class NnLdrDetail_IDebugMonitorInterface: IpcService {
-	func addProcessToDebugLaunchQueue(_ _0: Any?, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func clearDebugLaunchQueue() throws { throw IpcError.unimplemented }
-	func getNsoInfos(_ _0: Any?, _ _1: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented }
+	func addProcessToDebugLaunchQueue(_ _0: Any?, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::ldr::detail::nn::ldr::detail::IDebugMonitorInterface#AddProcessToDebugLaunchQueue") }
+	func clearDebugLaunchQueue() throws { throw IpcError.unimplemented(name: "nn::ldr::detail::nn::ldr::detail::IDebugMonitorInterface#ClearDebugLaunchQueue") }
+	func getNsoInfos(_ _0: Any?, _ _1: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented(name: "nn::ldr::detail::nn::ldr::detail::IDebugMonitorInterface#GetNsoInfos") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
@@ -94,8 +94,8 @@ class NnLdrDetail_IDebugMonitorInterface: IpcService {
 }
 
 class NnLdrDetail_IShellInterface: IpcService {
-	func addProcessToLaunchQueue(_ _0: Buffer<UInt8>, _ size: UInt32, _ appID: NnNcm_ApplicationId) throws { throw IpcError.unimplemented }
-	func clearLaunchQueue() throws { throw IpcError.unimplemented }
+	func addProcessToLaunchQueue(_ _0: Buffer<UInt8>, _ size: UInt32, _ appID: NnNcm_ApplicationId) throws { throw IpcError.unimplemented(name: "nn::ldr::detail::nn::ldr::detail::IShellInterface#AddProcessToLaunchQueue") }
+	func clearLaunchQueue() throws { throw IpcError.unimplemented(name: "nn::ldr::detail::nn::ldr::detail::IShellInterface#ClearLaunchQueue") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {

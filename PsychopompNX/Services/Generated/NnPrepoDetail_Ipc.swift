@@ -1,18 +1,18 @@
 class NnPrepoDetailIpc_IPrepoService: IpcService {
-	func saveReport(_ _0: UInt64, _ _1: Pid, _ _2: Buffer<UInt8>, _ _3: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func saveReportWithUser(_ _0: NnAccount_Uid, _ _1: UInt64, _ _2: Pid, _ _3: Buffer<UInt8>, _ _4: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func requestImmediateTransmission() throws { throw IpcError.unimplemented }
-	func getTransmissionStatus() throws -> UInt32 { throw IpcError.unimplemented }
-	func saveSystemReport(_ _0: Nn_ApplicationId, _ _1: Buffer<UInt8>, _ _2: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func saveSystemReportWithUser(_ _0: NnAccount_Uid, _ _1: Nn_ApplicationId, _ _2: Buffer<UInt8>, _ _3: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func setOperationMode(_ _0: UInt64) throws { throw IpcError.unimplemented }
-	func clearStorage() throws { throw IpcError.unimplemented }
-	func isUserAgreementCheckEnabled() throws -> UInt8 { throw IpcError.unimplemented }
-	func setUserAgreementCheckEnabled(_ _0: UInt8) throws { throw IpcError.unimplemented }
-	func getStorageUsage() throws -> (UInt64, UInt64) { throw IpcError.unimplemented }
-	func getStatistics(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func getThroughputHistory(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func getLastUploadError(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
+	func saveReport(_ _0: UInt64, _ _1: Pid, _ _2: Buffer<UInt8>, _ _3: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::prepo::detail::ipc::nn::prepo::detail::ipc::IPrepoService#SaveReport") }
+	func saveReportWithUser(_ _0: NnAccount_Uid, _ _1: UInt64, _ _2: Pid, _ _3: Buffer<UInt8>, _ _4: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::prepo::detail::ipc::nn::prepo::detail::ipc::IPrepoService#SaveReportWithUser") }
+	func requestImmediateTransmission() throws { throw IpcError.unimplemented(name: "nn::prepo::detail::ipc::nn::prepo::detail::ipc::IPrepoService#RequestImmediateTransmission") }
+	func getTransmissionStatus() throws -> UInt32 { throw IpcError.unimplemented(name: "nn::prepo::detail::ipc::nn::prepo::detail::ipc::IPrepoService#GetTransmissionStatus") }
+	func saveSystemReport(_ _0: Nn_ApplicationId, _ _1: Buffer<UInt8>, _ _2: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::prepo::detail::ipc::nn::prepo::detail::ipc::IPrepoService#SaveSystemReport") }
+	func saveSystemReportWithUser(_ _0: NnAccount_Uid, _ _1: Nn_ApplicationId, _ _2: Buffer<UInt8>, _ _3: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::prepo::detail::ipc::nn::prepo::detail::ipc::IPrepoService#SaveSystemReportWithUser") }
+	func setOperationMode(_ _0: UInt64) throws { throw IpcError.unimplemented(name: "nn::prepo::detail::ipc::nn::prepo::detail::ipc::IPrepoService#SetOperationMode") }
+	func clearStorage() throws { throw IpcError.unimplemented(name: "nn::prepo::detail::ipc::nn::prepo::detail::ipc::IPrepoService#ClearStorage") }
+	func isUserAgreementCheckEnabled() throws -> UInt8 { throw IpcError.unimplemented(name: "nn::prepo::detail::ipc::nn::prepo::detail::ipc::IPrepoService#IsUserAgreementCheckEnabled") }
+	func setUserAgreementCheckEnabled(_ _0: UInt8) throws { throw IpcError.unimplemented(name: "nn::prepo::detail::ipc::nn::prepo::detail::ipc::IPrepoService#SetUserAgreementCheckEnabled") }
+	func getStorageUsage() throws -> (UInt64, UInt64) { throw IpcError.unimplemented(name: "nn::prepo::detail::ipc::nn::prepo::detail::ipc::IPrepoService#GetStorageUsage") }
+	func getStatistics(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::prepo::detail::ipc::nn::prepo::detail::ipc::IPrepoService#GetStatistics") }
+	func getThroughputHistory(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::prepo::detail::ipc::nn::prepo::detail::ipc::IPrepoService#GetThroughputHistory") }
+	func getLastUploadError(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::prepo::detail::ipc::nn::prepo::detail::ipc::IPrepoService#GetLastUploadError") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {

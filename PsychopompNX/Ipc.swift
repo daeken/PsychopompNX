@@ -10,7 +10,7 @@ import Foundation
 typealias Pid = UInt64
 
 enum IpcError: Error {
-    case unimplemented
+    case unimplemented(name: String)
     case byteCountMismatch
 }
 

@@ -1,8 +1,8 @@
 class NnArpDetail_IReader: IpcService {
-	func getApplicationLaunchProperty(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func getApplicationLaunchPropertyWithApplicationId(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func getApplicationControlProperty(_ _0: Any?, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func getApplicationControlPropertyWithApplicationId(_ _0: Any?, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented }
+	func getApplicationLaunchProperty(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::arp::detail::nn::arp::detail::IReader#GetApplicationLaunchProperty") }
+	func getApplicationLaunchPropertyWithApplicationId(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::arp::detail::nn::arp::detail::IReader#GetApplicationLaunchPropertyWithApplicationId") }
+	func getApplicationControlProperty(_ _0: Any?, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::arp::detail::nn::arp::detail::IReader#GetApplicationControlProperty") }
+	func getApplicationControlPropertyWithApplicationId(_ _0: Any?, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::arp::detail::nn::arp::detail::IReader#GetApplicationControlPropertyWithApplicationId") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
@@ -30,8 +30,8 @@ class NnArpDetail_IReader: IpcService {
 }
 
 class NnArpDetail_IWriter: IpcService {
-	func acquireRegistrar() throws -> NnArpDetail_IRegistrar { throw IpcError.unimplemented }
-	func deleteProperties(_ _0: Any?) throws { throw IpcError.unimplemented }
+	func acquireRegistrar() throws -> NnArpDetail_IRegistrar { throw IpcError.unimplemented(name: "nn::arp::detail::nn::arp::detail::IWriter#AcquireRegistrar") }
+	func deleteProperties(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::arp::detail::nn::arp::detail::IWriter#DeleteProperties") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
@@ -52,9 +52,9 @@ class NnArpDetail_IWriter: IpcService {
 }
 
 class NnArpDetail_IRegistrar: IpcService {
-	func issue(_ _0: Any?) throws { throw IpcError.unimplemented }
-	func setApplicationLaunchProperty(_ _0: Any?) throws { throw IpcError.unimplemented }
-	func setApplicationControlProperty(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented }
+	func issue(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::arp::detail::nn::arp::detail::IRegistrar#Issue") }
+	func setApplicationLaunchProperty(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::arp::detail::nn::arp::detail::IRegistrar#SetApplicationLaunchProperty") }
+	func setApplicationControlProperty(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::arp::detail::nn::arp::detail::IRegistrar#SetApplicationControlProperty") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {

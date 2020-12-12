@@ -4,27 +4,27 @@ typealias NnNcm_StorageId = UInt8
 typealias NnNcm_SystemApplicationId = UInt64
 
 class NnNcm_IContentMetaDatabase: IpcService {
-	func set(_ _0: Any?, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func get(_ _0: Any?, _ _1: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented }
-	func remove(_ _0: Any?) throws { throw IpcError.unimplemented }
-	func getContentIdByType(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func listContentInfo(_ _0: Any?, _ _1: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented }
-	func list(_ _0: Any?, _ _1: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented }
-	func getLatestContentMetaKey(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func listApplication(_ _0: Any?, _ _1: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented }
-	func has(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func hasAll(_ _0: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented }
-	func getSize(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func getRequiredSystemVersion(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func getPatchId(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func disableForcibly() throws { throw IpcError.unimplemented }
-	func lookupOrphanContent(_ _0: Buffer<UInt8>, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func commit() throws { throw IpcError.unimplemented }
-	func hasContent(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func listContentMetaInfo(_ _0: Any?, _ _1: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented }
-	func getAttributes(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func getRequiredApplicationVersion(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func unknown20(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
+	func set(_ _0: Any?, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::ncm::nn::ncm::IContentMetaDatabase#Set") }
+	func get(_ _0: Any?, _ _1: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented(name: "nn::ncm::nn::ncm::IContentMetaDatabase#Get") }
+	func remove(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::ncm::nn::ncm::IContentMetaDatabase#Remove") }
+	func getContentIdByType(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::ncm::nn::ncm::IContentMetaDatabase#GetContentIdByType") }
+	func listContentInfo(_ _0: Any?, _ _1: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented(name: "nn::ncm::nn::ncm::IContentMetaDatabase#ListContentInfo") }
+	func list(_ _0: Any?, _ _1: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented(name: "nn::ncm::nn::ncm::IContentMetaDatabase#List") }
+	func getLatestContentMetaKey(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::ncm::nn::ncm::IContentMetaDatabase#GetLatestContentMetaKey") }
+	func listApplication(_ _0: Any?, _ _1: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented(name: "nn::ncm::nn::ncm::IContentMetaDatabase#ListApplication") }
+	func has(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::ncm::nn::ncm::IContentMetaDatabase#Has") }
+	func hasAll(_ _0: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented(name: "nn::ncm::nn::ncm::IContentMetaDatabase#HasAll") }
+	func getSize(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::ncm::nn::ncm::IContentMetaDatabase#GetSize") }
+	func getRequiredSystemVersion(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::ncm::nn::ncm::IContentMetaDatabase#GetRequiredSystemVersion") }
+	func getPatchId(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::ncm::nn::ncm::IContentMetaDatabase#GetPatchId") }
+	func disableForcibly() throws { throw IpcError.unimplemented(name: "nn::ncm::nn::ncm::IContentMetaDatabase#DisableForcibly") }
+	func lookupOrphanContent(_ _0: Buffer<UInt8>, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::ncm::nn::ncm::IContentMetaDatabase#LookupOrphanContent") }
+	func commit() throws { throw IpcError.unimplemented(name: "nn::ncm::nn::ncm::IContentMetaDatabase#Commit") }
+	func hasContent(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::ncm::nn::ncm::IContentMetaDatabase#HasContent") }
+	func listContentMetaInfo(_ _0: Any?, _ _1: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented(name: "nn::ncm::nn::ncm::IContentMetaDatabase#ListContentMetaInfo") }
+	func getAttributes(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::ncm::nn::ncm::IContentMetaDatabase#GetAttributes") }
+	func getRequiredApplicationVersion(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::ncm::nn::ncm::IContentMetaDatabase#GetRequiredApplicationVersion") }
+	func unknown20(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::ncm::nn::ncm::IContentMetaDatabase#Unknown20") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
@@ -120,33 +120,33 @@ class NnNcm_IContentMetaDatabase: IpcService {
 }
 
 class NnNcm_IContentStorage: IpcService {
-	func generatePlaceHolderId() throws -> Any? { throw IpcError.unimplemented }
-	func createPlaceHolder(_ _0: Any?) throws { throw IpcError.unimplemented }
-	func deletePlaceHolder(_ _0: Any?) throws { throw IpcError.unimplemented }
-	func hasPlaceHolder(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func writePlaceHolder(_ _0: Any?, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func register(_ _0: Any?) throws { throw IpcError.unimplemented }
-	func delete(_ _0: Any?) throws { throw IpcError.unimplemented }
-	func has(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func getPath(_ _0: Any?, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func getPlaceHolderPath(_ _0: Any?, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func cleanupAllPlaceHolder() throws { throw IpcError.unimplemented }
-	func listPlaceHolder(_ _0: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented }
-	func getContentCount() throws -> Any? { throw IpcError.unimplemented }
-	func listContentId(_ _0: Any?, _ _1: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented }
-	func getSize(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func disableForcibly() throws { throw IpcError.unimplemented }
-	func revertToPlaceHolder(_ _0: Any?) throws { throw IpcError.unimplemented }
-	func setPlaceHolderSize(_ _0: Any?) throws { throw IpcError.unimplemented }
-	func readContentIdFile(_ _0: Any?, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func getRightsIdFromPlaceHolderId(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func getRightsIdFromContentId(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func writeContentForDebug(_ _0: Any?, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented }
-	func getFreeSpaceSize() throws -> Any? { throw IpcError.unimplemented }
-	func getTotalSpaceSize() throws -> Any? { throw IpcError.unimplemented }
-	func flushStorage() throws { throw IpcError.unimplemented }
-	func unknown25(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented }
-	func unknown26() throws { throw IpcError.unimplemented }
+	func generatePlaceHolderId() throws -> Any? { throw IpcError.unimplemented(name: "nn::ncm::nn::ncm::IContentStorage#GeneratePlaceHolderId") }
+	func createPlaceHolder(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::ncm::nn::ncm::IContentStorage#CreatePlaceHolder") }
+	func deletePlaceHolder(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::ncm::nn::ncm::IContentStorage#DeletePlaceHolder") }
+	func hasPlaceHolder(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::ncm::nn::ncm::IContentStorage#HasPlaceHolder") }
+	func writePlaceHolder(_ _0: Any?, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::ncm::nn::ncm::IContentStorage#WritePlaceHolder") }
+	func register(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::ncm::nn::ncm::IContentStorage#Register") }
+	func delete(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::ncm::nn::ncm::IContentStorage#Delete") }
+	func has(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::ncm::nn::ncm::IContentStorage#Has") }
+	func getPath(_ _0: Any?, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::ncm::nn::ncm::IContentStorage#GetPath") }
+	func getPlaceHolderPath(_ _0: Any?, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::ncm::nn::ncm::IContentStorage#GetPlaceHolderPath") }
+	func cleanupAllPlaceHolder() throws { throw IpcError.unimplemented(name: "nn::ncm::nn::ncm::IContentStorage#CleanupAllPlaceHolder") }
+	func listPlaceHolder(_ _0: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented(name: "nn::ncm::nn::ncm::IContentStorage#ListPlaceHolder") }
+	func getContentCount() throws -> Any? { throw IpcError.unimplemented(name: "nn::ncm::nn::ncm::IContentStorage#GetContentCount") }
+	func listContentId(_ _0: Any?, _ _1: Buffer<UInt8>) throws -> Any? { throw IpcError.unimplemented(name: "nn::ncm::nn::ncm::IContentStorage#ListContentId") }
+	func getSize(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::ncm::nn::ncm::IContentStorage#GetSize") }
+	func disableForcibly() throws { throw IpcError.unimplemented(name: "nn::ncm::nn::ncm::IContentStorage#DisableForcibly") }
+	func revertToPlaceHolder(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::ncm::nn::ncm::IContentStorage#RevertToPlaceHolder") }
+	func setPlaceHolderSize(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::ncm::nn::ncm::IContentStorage#SetPlaceHolderSize") }
+	func readContentIdFile(_ _0: Any?, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::ncm::nn::ncm::IContentStorage#ReadContentIdFile") }
+	func getRightsIdFromPlaceHolderId(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::ncm::nn::ncm::IContentStorage#GetRightsIdFromPlaceHolderId") }
+	func getRightsIdFromContentId(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::ncm::nn::ncm::IContentStorage#GetRightsIdFromContentId") }
+	func writeContentForDebug(_ _0: Any?, _ _1: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::ncm::nn::ncm::IContentStorage#WriteContentForDebug") }
+	func getFreeSpaceSize() throws -> Any? { throw IpcError.unimplemented(name: "nn::ncm::nn::ncm::IContentStorage#GetFreeSpaceSize") }
+	func getTotalSpaceSize() throws -> Any? { throw IpcError.unimplemented(name: "nn::ncm::nn::ncm::IContentStorage#GetTotalSpaceSize") }
+	func flushStorage() throws { throw IpcError.unimplemented(name: "nn::ncm::nn::ncm::IContentStorage#FlushStorage") }
+	func unknown25(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::ncm::nn::ncm::IContentStorage#Unknown25") }
+	func unknown26() throws { throw IpcError.unimplemented(name: "nn::ncm::nn::ncm::IContentStorage#Unknown26") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
@@ -266,19 +266,19 @@ class NnNcm_IContentStorage: IpcService {
 }
 
 class NnNcm_IContentManager: IpcService {
-	func createContentStorage(_ _0: Any?) throws { throw IpcError.unimplemented }
-	func createContentMetaDatabase(_ _0: Any?) throws { throw IpcError.unimplemented }
-	func verifyContentStorage(_ _0: Any?) throws { throw IpcError.unimplemented }
-	func verifyContentMetaDatabase(_ _0: Any?) throws { throw IpcError.unimplemented }
-	func openContentStorage(_ _0: Any?) throws -> NnNcm_IContentStorage { throw IpcError.unimplemented }
-	func openContentMetaDatabase(_ _0: Any?) throws -> NnNcm_IContentMetaDatabase { throw IpcError.unimplemented }
-	func closeContentStorageForcibly(_ _0: Any?) throws { throw IpcError.unimplemented }
-	func closeContentMetaDatabaseForcibly(_ _0: Any?) throws { throw IpcError.unimplemented }
-	func cleanupContentMetaDatabase(_ _0: Any?) throws { throw IpcError.unimplemented }
-	func openContentStorage2(_ _0: Any?) throws { throw IpcError.unimplemented }
-	func closeContentStorage(_ _0: Any?) throws { throw IpcError.unimplemented }
-	func openContentMetaDatabase2(_ _0: Any?) throws { throw IpcError.unimplemented }
-	func closeContentMetaDatabase(_ _0: Any?) throws { throw IpcError.unimplemented }
+	func createContentStorage(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::ncm::nn::ncm::IContentManager#CreateContentStorage") }
+	func createContentMetaDatabase(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::ncm::nn::ncm::IContentManager#CreateContentMetaDatabase") }
+	func verifyContentStorage(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::ncm::nn::ncm::IContentManager#VerifyContentStorage") }
+	func verifyContentMetaDatabase(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::ncm::nn::ncm::IContentManager#VerifyContentMetaDatabase") }
+	func openContentStorage(_ _0: Any?) throws -> NnNcm_IContentStorage { throw IpcError.unimplemented(name: "nn::ncm::nn::ncm::IContentManager#OpenContentStorage") }
+	func openContentMetaDatabase(_ _0: Any?) throws -> NnNcm_IContentMetaDatabase { throw IpcError.unimplemented(name: "nn::ncm::nn::ncm::IContentManager#OpenContentMetaDatabase") }
+	func closeContentStorageForcibly(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::ncm::nn::ncm::IContentManager#CloseContentStorageForcibly") }
+	func closeContentMetaDatabaseForcibly(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::ncm::nn::ncm::IContentManager#CloseContentMetaDatabaseForcibly") }
+	func cleanupContentMetaDatabase(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::ncm::nn::ncm::IContentManager#CleanupContentMetaDatabase") }
+	func openContentStorage2(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::ncm::nn::ncm::IContentManager#OpenContentStorage2") }
+	func closeContentStorage(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::ncm::nn::ncm::IContentManager#CloseContentStorage") }
+	func openContentMetaDatabase2(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::ncm::nn::ncm::IContentManager#OpenContentMetaDatabase2") }
+	func closeContentMetaDatabase(_ _0: Any?) throws { throw IpcError.unimplemented(name: "nn::ncm::nn::ncm::IContentManager#CloseContentMetaDatabase") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {

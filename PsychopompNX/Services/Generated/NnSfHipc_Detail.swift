@@ -1,9 +1,9 @@
 class NnSfHipcDetail_IHipcManager: IpcService {
-	func unknown0() throws -> Any? { throw IpcError.unimplemented }
-	func unknown1(_ _0: Any?) throws -> IpcService { throw IpcError.unimplemented }
-	func unknown2() throws -> IpcService { throw IpcError.unimplemented }
-	func unknown3() throws -> Any? { throw IpcError.unimplemented }
-	func unknown4(_ _0: Any?) throws -> IpcService { throw IpcError.unimplemented }
+	func unknown0() throws -> Any? { throw IpcError.unimplemented(name: "nn::sf::hipc::detail::nn::sf::hipc::detail::IHipcManager#Unknown0") }
+	func unknown1(_ _0: Any?) throws -> IpcService { throw IpcError.unimplemented(name: "nn::sf::hipc::detail::nn::sf::hipc::detail::IHipcManager#Unknown1") }
+	func unknown2() throws -> IpcService { throw IpcError.unimplemented(name: "nn::sf::hipc::detail::nn::sf::hipc::detail::IHipcManager#Unknown2") }
+	func unknown3() throws -> Any? { throw IpcError.unimplemented(name: "nn::sf::hipc::detail::nn::sf::hipc::detail::IHipcManager#Unknown3") }
+	func unknown4(_ _0: Any?) throws -> IpcService { throw IpcError.unimplemented(name: "nn::sf::hipc::detail::nn::sf::hipc::detail::IHipcManager#Unknown4") }
 	
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
