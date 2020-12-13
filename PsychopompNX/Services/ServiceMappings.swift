@@ -131,7 +131,7 @@ let ipcServiceMappings: [String: () -> IpcService] =
             "nifm:a": { NnNifmDetail_IStaticService() }, 
             "nifm:s": { NnNifmDetail_IStaticService() }, 
             "usb:pm": { NnUsbPm_IPmService() }, 
-            "fsp-srv": { NnFssrvSf_IFileSystemProxy() }, 
+            "fsp-srv": { NnFssrvSf_IFileSystemProxy_Impl() }, 
             "fsp-pr": { NnFssrvSf_IProgramRegistry() }, 
             "fsp-ldr": { NnFssrvSf_IFileSystemProxyForLoader() }, 
             "omm": { NnOmmDetail_IOperationModeManager() }, 

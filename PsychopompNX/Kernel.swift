@@ -212,10 +212,15 @@ class Kernel {
         case .GetThreadPriority:
             thread.X[0] = 0
             thread.X[1] = UInt64(thread.priority)
-
+        case .SetThreadPriority:
+            thread.X[0] = 0
         case .GetThreadId:
             thread.X[0] = 0
             thread.X[1] = thread.id
+        case .SetThreadCoreMask:
+            thread.X[0] = 0
+        case .GetCurrentProcessorNumber:
+            thread.X[0] = 0
 
         case .GetInfo:
             let pair = (Int(thread.X[1]), Int(thread.X[3]))
@@ -223,6 +228,8 @@ class Kernel {
             var value: uint64 = 0
             thread.X[0] = 0
             switch pair {
+            case (0, 0):
+                value = 0xF
             case (2, 0):
                 value = 0xbb0000000
             case (3, 0):

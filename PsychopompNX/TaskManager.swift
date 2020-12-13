@@ -31,6 +31,10 @@ class NxThread {
         TPIDR = Emulator.instance!.tlsSpace + id * 0x10000
         TPIDRRO = TPIDR
     }
+    
+    func stackTrace() {
+        
+    }
 }
 
 class TaskManager {
