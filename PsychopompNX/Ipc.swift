@@ -114,7 +114,7 @@ class IncomingMessage {
 class OutgoingMessage {
     var buf = [UInt32](repeating: 0, count: 0x100 >> 2)
     let inBuf: [UInt32]
-    let isDomainObject: Bool
+    var isDomainObject: Bool
     let domainOwner: IpcService?
     let incomingMessage: IncomingMessage
 
@@ -234,6 +234,10 @@ class IpcService: KObject {
                     om.initialize(0, 0, 4)
                     isDomainObject = true
                     om.setData(8, thisHandle)
+                case 2: // DuplicateSession
+                    om.isDomainObject = false
+                    om.initialize(1, 0, 0)
+                    om.move(0, target)
                 case 3: // QueryPointerBufferSize
                     om.initialize(0, 0, 4)
                     om.setData(8, UInt32(0x500))
@@ -266,5 +270,32 @@ class IpcService: KObject {
 
     func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
         try! bailout()
+    }
+}
+
+extension Kernel {
+    func ConnectToNamedPort(_ thread: NxThread) throws {
+        let name = readNullTerminatedString(thread.X[1])
+        print("ConnectToNamedPort: '" + name + "'")
+        guard let op = ipcServiceMappings[name]?() else {
+            throw KernelError.unknownNamedPort
+        }
+        thread.X[0] = 0
+        thread.X[1] = UInt64(op.handle)
+    }
+    
+    func SendSyncRequest(_ thread: NxThread) throws {
+        let handle = UInt32(thread.X[0])
+        guard let service = getHandle(handle) as IpcService? else {
+            print_hex("SendSyncRequest to bad handle?", handle)
+            thread.X[0] = 0xf601
+            return
+        }
+        let (ret, closeHandle) = try service.handleMessage(thread.TPIDRRO)
+        if closeHandle {
+            print("SendSyncRequest closing handle")
+            close(handle)
+        }
+        thread.X[0] = UInt64(ret)
     }
 }

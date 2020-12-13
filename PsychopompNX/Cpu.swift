@@ -15,6 +15,7 @@ enum CpuError: Error {
 
 enum ExceptionCode: UInt64 {
     case ServiceCall = 0b010101
+    case MsrMrsTrap = 0b011000
     case InsnAbort = 0b100000
     case DataAbort = 0b100100
     case PcAlignmentFault = 0b100010
@@ -188,6 +189,28 @@ class Cpu {
                     try Emulator.instance!.kernel.svc(curThread!, Int(svc))
                     curThread!.PC = elr
                     try restoreState(curThread!)
+                case .MsrMrsTrap:
+                    let op0 = (esr >> 20) & 0b11
+                    let op2 = (esr >> 17) & 0b111
+                    let op1 = (esr >> 14) & 0b111
+                    let crn = (esr >> 10) & 0b1111
+                    let rt = (esr >> 5) & 0b11111
+                    let crm = (esr >> 1) & 0b1111
+                    let write = (esr & 1) == 0
+                    
+                    switch (op0, op2, op1, crn, crm) {
+                    case (0b11, 0b001, 0b011, 0b1110, 0b0000): // cntpct_el0
+                        if write { try! bailout() }
+                        print("Reading cntpct_el0")
+                        try set_reg(hv_reg_t(HV_REG_X0.rawValue + uint32(rt)), 0)
+                    default:
+                        print("Attempted to \(write ? "write" : "read") unsupported MSR with X\(rt)")
+                        print_bin(op0, op2, op1, crn, crm)
+                        try! bailout()
+                    }
+                    try set_reg(HV_REG_CPSR, try get_sys_reg(HV_SYS_REG_SPSR_EL1))
+                    try set_reg(HV_REG_PC, elr + 4)
+                    
                 default:
                     print_bin("Unknown exception code:", ec)
                     if ece != nil {

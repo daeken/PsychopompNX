@@ -248,33 +248,6 @@ class Kernel {
             }
             thread.X[1] = value
 
-        case .SignalProcessWideKey:
-            print("SignalProcessWideKey")
-            thread.X[0] = 0
-
-        case .ConnectToNamedPort:
-            let name = readNullTerminatedString(thread.X[1])
-            print("ConnectToNamedPort: '" + name + "'")
-            guard let op = ipcServiceMappings[name]?() else {
-                throw KernelError.unknownNamedPort
-            }
-            thread.X[0] = 0
-            thread.X[1] = UInt64(op.handle)
-
-        case .SendSyncRequest:
-            let handle = UInt32(thread.X[0])
-            guard let service = getHandle(handle) as IpcService? else {
-                print_hex("SendSyncRequest to bad handle?", handle)
-                thread.X[0] = 0xf601
-                return
-            }
-            let (ret, closeHandle) = try service.handleMessage(thread.TPIDRRO)
-            if closeHandle {
-                print("SendSyncRequest closing handle")
-                close(handle)
-            }
-            thread.X[0] = UInt64(ret)
-
         case .CloseHandle:
             (getHandle(UInt32(thread.X[0])) as KObject?)?.close()
             thread.X[0] = 0
@@ -300,7 +273,12 @@ class Kernel {
         case .CreateTransferMemory:
             print_hex("CreateTransferMemory stub", thread.X[1], thread.X[2])
             thread.X[0] = 0
-            thread.X[1] = 0xffff
+            thread.X[1] = UInt64(KObject().handle)
+        
+        case .ConnectToNamedPort: try ConnectToNamedPort(thread)
+        case .SendSyncRequest: try SendSyncRequest(thread)
+        case .WaitSynchronization: try WaitSynchronization(thread)
+        case .SignalProcessWideKey: try SignalProcessWideKey(thread)
 
         default:
             print_hex("Unhandled SVC:", code!)
