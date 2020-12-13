@@ -10,7 +10,6 @@
 		4C21AC2C257ABA8A0023284C /* GuestPointer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C21AC2B257ABA8A0023284C /* GuestPointer.swift */; };
 		4C21AC33257BEB040023284C /* Emulator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C21AC32257BEB040023284C /* Emulator.swift */; };
 		4C21AC36257C4FD80023284C /* TaskManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C21AC35257C4FD80023284C /* TaskManager.swift */; };
-		4C21AC39257C9A0B0023284C /* PfsReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C21AC38257C9A0B0023284C /* PfsReader.swift */; };
 		4C21AC3C257F35230023284C /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C21AC3B257F35230023284C /* Utilities.swift */; };
 		4C21AC3F257F4E250023284C /* NxoReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C21AC3E257F4E250023284C /* NxoReader.swift */; };
 		4C21AC42257F4EEC0023284C /* BinaryReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C21AC41257F4EEC0023284C /* BinaryReader.swift */; };
@@ -172,13 +171,13 @@
 		4C9622DC258549010096E007 /* KEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9622DB258549010096E007 /* KEvent.swift */; };
 		4C9622DF258589F20096E007 /* Synchronization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9622DE258589F20096E007 /* Synchronization.swift */; };
 		4C9622E225858E290096E007 /* NnPctlDetail_Ipc_Impl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9622E125858E290096E007 /* NnPctlDetail_Ipc_Impl.swift */; };
+		4C9622E525859C320096E007 /* NnFssrv_Sf_Impl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9622E425859C320096E007 /* NnFssrv_Sf_Impl.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		4C21AC2B257ABA8A0023284C /* GuestPointer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuestPointer.swift; sourceTree = "<group>"; };
 		4C21AC32257BEB040023284C /* Emulator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Emulator.swift; sourceTree = "<group>"; };
 		4C21AC35257C4FD80023284C /* TaskManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskManager.swift; sourceTree = "<group>"; };
-		4C21AC38257C9A0B0023284C /* PfsReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PfsReader.swift; sourceTree = "<group>"; };
 		4C21AC3B257F35230023284C /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		4C21AC3E257F4E250023284C /* NxoReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NxoReader.swift; sourceTree = "<group>"; };
 		4C21AC41257F4EEC0023284C /* BinaryReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinaryReader.swift; sourceTree = "<group>"; };
@@ -343,6 +342,7 @@
 		4C9622DB258549010096E007 /* KEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KEvent.swift; sourceTree = "<group>"; };
 		4C9622DE258589F20096E007 /* Synchronization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Synchronization.swift; sourceTree = "<group>"; };
 		4C9622E125858E290096E007 /* NnPctlDetail_Ipc_Impl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NnPctlDetail_Ipc_Impl.swift; sourceTree = "<group>"; };
+		4C9622E425859C320096E007 /* NnFssrv_Sf_Impl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NnFssrv_Sf_Impl.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -365,6 +365,7 @@
 				4C9622D52584B8440096E007 /* Nn_Lm_Impl.swift */,
 				4C9622D8258547020096E007 /* NnAm_Service_Impl.swift */,
 				4C9622E125858E290096E007 /* NnPctlDetail_Ipc_Impl.swift */,
+				4C9622E425859C320096E007 /* NnFssrv_Sf_Impl.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -400,7 +401,6 @@
 				4C21AC2B257ABA8A0023284C /* GuestPointer.swift */,
 				4C21AC32257BEB040023284C /* Emulator.swift */,
 				4C21AC35257C4FD80023284C /* TaskManager.swift */,
-				4C21AC38257C9A0B0023284C /* PfsReader.swift */,
 				4C21AC3B257F35230023284C /* Utilities.swift */,
 				4C21AC3E257F4E250023284C /* NxoReader.swift */,
 				4C21AC41257F4EEC0023284C /* BinaryReader.swift */,
@@ -740,6 +740,7 @@
 				4C9622632584AD270096E007 /* Nn_Pcm.swift in Sources */,
 				4C96224C2584AD270096E007 /* Nn_Irsensor.swift in Sources */,
 				4C21AC36257C4FD80023284C /* TaskManager.swift in Sources */,
+				4C9622E525859C320096E007 /* NnFssrv_Sf_Impl.swift in Sources */,
 				4C9622C02584AD270096E007 /* Nn_Lm.swift in Sources */,
 				4C9622C52584AD270096E007 /* Nn_Ovln.swift in Sources */,
 				4C9622552584AD270096E007 /* NnUsb_Pm.swift in Sources */,
@@ -782,7 +783,6 @@
 				4C96229F2584AD270096E007 /* Nn_Jitsrv.swift in Sources */,
 				4C9622672584AD270096E007 /* Nn_Friends.swift in Sources */,
 				4C96226F2584AD270096E007 /* NnCodec_Detail.swift in Sources */,
-				4C21AC39257C9A0B0023284C /* PfsReader.swift in Sources */,
 				4C9622512584AD270096E007 /* NnRo_Detail.swift in Sources */,
 				4C8379B92579E9DA006FF416 /* Vmm.swift in Sources */,
 				4C9622C62584AD270096E007 /* Nn_Time.swift in Sources */,
