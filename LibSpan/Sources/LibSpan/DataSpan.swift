@@ -7,17 +7,17 @@
 
 import Foundation
 
-final class DataSpan<Element>: SpanProtocol {
-    var length: Int
-    var byteLength: Int
-    let byteOffset: Int
-    let stride: Int = MemoryLayout<Element>.size
+public final class DataSpan<Element>: SpanProtocol {
+    public var length: Int
+    public var byteLength: Int
+    public let byteOffset: Int
+    public let stride: Int = MemoryLayout<Element>.size
 
-    func offsetBy(bytes: Int) -> DataSpan<Element> {
+    public func offsetBy(bytes: Int) -> DataSpan<Element> {
         DataSpan<Element>(data, byteOffset + bytes, (byteLength - bytes) / MemoryLayout<Element>.size)
     }
     
-    func offsetBy(elements: Int) -> DataSpan<Element> {
+    public func offsetBy(elements: Int) -> DataSpan<Element> {
         DataSpan<Element>(data, byteOffset + elements * stride, length - elements)
     }
     
@@ -30,7 +30,7 @@ final class DataSpan<Element>: SpanProtocol {
         byteLength = length * stride
     }
     
-    subscript(index: Int) -> Element {
+    public subscript(index: Int) -> Element {
         get { data.data.withUnsafeBytes { (buf: UnsafeRawBufferPointer) in
             let ptr = buf.baseAddress!.advanced(by: byteOffset + index * stride)
             return ptr.assumingMemoryBound(to: Element.self).pointee
@@ -41,7 +41,7 @@ final class DataSpan<Element>: SpanProtocol {
         } }
     }
     
-    subscript(range: Range<Int>) -> DataSpan<Element> {
+    public subscript(range: Range<Int>) -> DataSpan<Element> {
         get { DataSpan<Element>(data, byteOffset + range.lowerBound * stride, range.upperBound - range.lowerBound) }
         set {
             data.data.withUnsafeMutableBytes { (buf: UnsafeMutableRawBufferPointer) in
@@ -54,17 +54,17 @@ final class DataSpan<Element>: SpanProtocol {
         }
     }
     
-    static func +(left: DataSpan<Element>, right: Int) -> DataSpan<Element> {
+    public static func +(left: DataSpan<Element>, right: Int) -> DataSpan<Element> {
         DataSpan<Element>(left.data, left.byteOffset + right * left.stride, left.length - right)
     }
     
-    static func +=(left: inout DataSpan<Element>, right: Int) {
+    public static func +=(left: inout DataSpan<Element>, right: Int) {
         left = left + right
     }
     
-    func to<T>() -> DataSpan<T> {
+    public func to<T>() -> DataSpan<T> {
         DataSpan<T>(data, byteOffset, byteLength / MemoryLayout<T>.size)
     }
     
-    func to<T>(type: T.Type) -> DataSpan<T> { to() as DataSpan<T> }
+    public func to<T>(type: T.Type) -> DataSpan<T> { to() as DataSpan<T> }
 }

@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import LibSpan
 import Hypervisor
 
 enum VmmError: Error {
@@ -52,7 +53,7 @@ class Vmm {
     let chunkSize: UInt64 = 0x1000000
     var physTop: UInt64 = 0x10000000
     var freeTables = [UInt64]()
-    var physMappings = [UnsafeMutableRawPointer?](repeating: nil, count: 4096)
+    var physMappings = [PointerSpan<UInt8>?](repeating: nil, count: 4096)
     var pageTableBase = GuestPhysicalPointer<UInt64>(0)
     var pageTables = [(GuestPhysicalPointer<UInt64>, [(GuestPhysicalPointer<UInt64>, [(UInt64, AccessFlags)?])?])?](repeating: nil, count: 512)
 
@@ -82,14 +83,17 @@ class Vmm {
     }
 
     func mapChunk(_ count: Int = 1) throws -> (uint64, UnsafeMutableRawPointer) {
-        let pmem = UnsafeMutableRawPointer.allocate(byteCount: Int(chunkSize) * count, alignment: 0x4000)
+        let byteCount = Int(chunkSize) * count
+        let pmem = UnsafeMutableRawPointer.allocate(byteCount: byteCount, alignment: 0x4000)
+        let ptr = pmem.bindMemory(to: UInt8.self, capacity: byteCount)
         let addr = physTop
         physTop += chunkSize * UInt64(count)
         try hv_guard(hv_vm_map(pmem, addr, Int(chunkSize) * count, hv_memory_flags_t(HV_MEMORY_EXEC | HV_MEMORY_WRITE | HV_MEMORY_READ))) {
             throw VmmError.vmMappingFailed
         }
+        let span = Span<UInt8>.from(pointer: ptr, length: byteCount)
         for i in 0..<count {
-            physMappings[Int(addr >> 24) + i] = pmem + UnsafeMutableRawPointer.Stride(chunkSize * UInt64(i))
+            physMappings[Int(addr >> 24) + i] = span + Int(chunkSize * UInt64(i))
         }
         return (addr, pmem)
     }
@@ -253,31 +257,28 @@ class Vmm {
         guard let ptr = physMappings[Int((address >> 24) & 0xFFF)] else {
             throw VmmError.unmappedPhysicalMemory
         }
-        return ptr.load(fromByteOffset: Int(address & 0xFF_FFFF), as: UInt8.self)
+        return ptr[Int(address & 0xFF_FFFF)]
     }
 
     func writePhysByte(_ address: uint64, _ value: uint8) throws {
         guard let ptr = physMappings[Int((address >> 24) & 0xFFF)] else {
             throw VmmError.unmappedPhysicalMemory
         }
-        ptr.storeBytes(of: value, toByteOffset: Int(address & 0xFF_FFFF), as: UInt8.self)
+        ptr[Int(address & 0xFF_FFFF)] = value
     }
 
     func readPhysMem<T>(_ address: uint64) throws -> T {
-        let data: [UInt8] = try (0..<MemoryLayout<T>.size).map {
-            try readPhysByte(address + UInt64($0))
+        guard let ptr = physMappings[Int((address >> 24) & 0xFFF)] else {
+            throw VmmError.unmappedPhysicalMemory
         }
-        return data.withUnsafeBytes {
-            $0.load(as: T.self)
-        }
+        return (ptr + Int(address & 0xFFFFFF)).to(type: T.self)[0]
     }
 
     func writePhysMem<T>(_ address: uint64, _ value: T) throws {
-        try withUnsafeBytes(of: value) {
-            try $0.enumerated().forEach {
-                try writePhysByte(address + UInt64($0.offset), $0.element)
-            }
+        guard let ptr = physMappings[Int((address >> 24) & 0xFFF)] else {
+            throw VmmError.unmappedPhysicalMemory
         }
+        (ptr + Int(address & 0xFFFFFF)).to(type: T.self)[0] = value
     }
 
     func readVirtMem<T>(_ address: uint64) throws -> T {

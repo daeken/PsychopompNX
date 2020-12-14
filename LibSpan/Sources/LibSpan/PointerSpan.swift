@@ -7,18 +7,18 @@
 
 import Foundation
 
-final class PointerSpan<Element>: SpanProtocol {
-    var length: Int
-    var byteLength: Int
-    let stride: Int = MemoryLayout<Element>.size
+public final class PointerSpan<Element>: SpanProtocol {
+    public var length: Int
+    public var byteLength: Int
+    public let stride: Int = MemoryLayout<Element>.size
     
-    func offsetBy(bytes: Int) -> PointerSpan<Element> {
+    public func offsetBy(bytes: Int) -> PointerSpan<Element> {
         let raw = UnsafeMutableRawPointer(ptr)
         let count = (byteLength - bytes) / MemoryLayout<Element>.size
         return PointerSpan<Element>(raw.bindMemory(to: Element.self, capacity: count), count)
     }
     
-    func offsetBy(elements: Int) -> PointerSpan<Element> {
+    public func offsetBy(elements: Int) -> PointerSpan<Element> {
         PointerSpan<Element>(ptr + elements, length - elements)
     }
     
@@ -30,12 +30,12 @@ final class PointerSpan<Element>: SpanProtocol {
         byteLength = length * stride
     }
     
-    subscript(index: Int) -> Element {
+    public subscript(index: Int) -> Element {
         get { ptr[index] }
         set { ptr[index] = newValue }
     }
     
-    subscript(range: Range<Int>) -> PointerSpan<Element> {
+    public subscript(range: Range<Int>) -> PointerSpan<Element> {
         get { PointerSpan<Element>(ptr + range.lowerBound, range.upperBound - range.lowerBound) }
         set {
             for i in 0..<(range.upperBound - range.lowerBound) {
@@ -44,19 +44,19 @@ final class PointerSpan<Element>: SpanProtocol {
         }
     }
     
-    static func +(left: PointerSpan<Element>, right: Int) -> PointerSpan<Element> {
+    public static func +(left: PointerSpan<Element>, right: Int) -> PointerSpan<Element> {
         PointerSpan<Element>(left.ptr + right, left.length - right)
     }
     
-    static func +=(left: inout PointerSpan<Element>, right: Int) {
+    public static func +=(left: inout PointerSpan<Element>, right: Int) {
         left = left + right
     }
     
-    func to<T>() -> PointerSpan<T> {
+    public func to<T>() -> PointerSpan<T> {
         let raw = UnsafeMutableRawPointer(ptr)
         let count = byteLength / MemoryLayout<T>.size
         return PointerSpan<T>(raw.bindMemory(to: T.self, capacity: count), count)
     }
     
-    func to<T>(type: T.Type) -> PointerSpan<T> { to() as PointerSpan<T> }
+    public func to<T>(type: T.Type) -> PointerSpan<T> { to() as PointerSpan<T> }
 }

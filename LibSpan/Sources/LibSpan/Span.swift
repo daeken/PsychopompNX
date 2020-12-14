@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol SpanProtocol: Collection where Index == Int {
+public protocol SpanProtocol: Collection where Index == Int {
     associatedtype Element
     
     var length: Int { get }
@@ -24,7 +24,7 @@ protocol SpanProtocol: Collection where Index == Int {
     func offsetBy(elements: Int) -> Self
 }
 
-extension SpanProtocol {
+public extension SpanProtocol {
     var startIndex: Int { 0 }
     var endIndex: Int { length }
     
@@ -55,23 +55,23 @@ extension SpanProtocol {
 }
 
 public class Span<Element> {
-    static func from(data: DataBox, length: Int? = nil, byteOffset: Int = 0) -> DataSpan<Element> {
+    public static func from(data: DataBox, length: Int? = nil, byteOffset: Int = 0) -> DataSpan<Element> {
         DataSpan<Element>(data, byteOffset, (length ?? data.data.count) / MemoryLayout<Element>.size)
     }
-    static func from(pointer: UnsafePointer<Element>, length: Int, byteOffset: Int = 0) -> PointerSpan<Element> {
+    public static func from(pointer: UnsafePointer<Element>, length: Int, byteOffset: Int = 0) -> PointerSpan<Element> {
         let raw = UnsafeMutableRawPointer(mutating: pointer).advanced(by: byteOffset)
         let retyped = raw.bindMemory(to: Element.self, capacity: length)
         return PointerSpan<Element>(retyped, length)
     }
-    static func from<T>(pointer: UnsafePointer<T>, length: Int, byteOffset: Int = 0) -> PointerSpan<Element> {
+    public static func from<T>(pointer: UnsafePointer<T>, length: Int, byteOffset: Int = 0) -> PointerSpan<Element> {
         let raw = UnsafeMutableRawPointer(mutating: pointer).advanced(by: byteOffset)
         let retyped = raw.bindMemory(to: Element.self, capacity: length)
         return PointerSpan<Element>(retyped, length)
     }
-    static func from(mutablePointer: UnsafeMutablePointer<Element>, length: Int, byteOffset: Int = 0) -> PointerSpan<Element> {
+    public static func from(mutablePointer: UnsafeMutablePointer<Element>, length: Int, byteOffset: Int = 0) -> PointerSpan<Element> {
         PointerSpan<Element>(mutablePointer, length)
     }
-    static func from<T>(mutablePointer: UnsafeMutablePointer<T>, length: Int, byteOffset: Int = 0) -> PointerSpan<Element> {
+    public static func from<T>(mutablePointer: UnsafeMutablePointer<T>, length: Int, byteOffset: Int = 0) -> PointerSpan<Element> {
         let raw = UnsafeMutableRawPointer(mutablePointer).advanced(by: byteOffset)
         let retyped = raw.bindMemory(to: Element.self, capacity: length)
         return PointerSpan<Element>(retyped, length)

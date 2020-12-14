@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C00237C2587FED500444554 /* LibSpan in Frameworks */ = {isa = PBXBuildFile; productRef = 4C00237B2587FED500444554 /* LibSpan */; };
 		4C21AC2C257ABA8A0023284C /* GuestPointer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C21AC2B257ABA8A0023284C /* GuestPointer.swift */; };
 		4C21AC33257BEB040023284C /* Emulator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C21AC32257BEB040023284C /* Emulator.swift */; };
 		4C21AC36257C4FD80023284C /* TaskManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C21AC35257C4FD80023284C /* TaskManager.swift */; };
@@ -175,6 +176,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4C0023782587FE3E00444554 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Package.swift; path = LibSpan/Package.swift; sourceTree = "<group>"; };
 		4C21AC2B257ABA8A0023284C /* GuestPointer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuestPointer.swift; sourceTree = "<group>"; };
 		4C21AC32257BEB040023284C /* Emulator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Emulator.swift; sourceTree = "<group>"; };
 		4C21AC35257C4FD80023284C /* TaskManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskManager.swift; sourceTree = "<group>"; };
@@ -350,12 +352,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C00237C2587FED500444554 /* LibSpan in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4C0023772587FE3E00444554 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4C0023782587FE3E00444554 /* Package.swift */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		4C21AC47258094AD0023284C /* Services */ = {
 			isa = PBXGroup;
 			children = (
@@ -375,6 +386,7 @@
 			children = (
 				4C8379902579AA64006FF416 /* PsychopompNX */,
 				4C83798F2579AA64006FF416 /* Products */,
+				4C0023772587FE3E00444554 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -586,6 +598,9 @@
 			dependencies = (
 			);
 			name = PsychopompNX;
+			packageProductDependencies = (
+				4C00237B2587FED500444554 /* LibSpan */,
+			);
 			productName = PsychopompNX;
 			productReference = 4C83798E2579AA64006FF416 /* PsychopompNX.app */;
 			productType = "com.apple.product-type.application";
@@ -991,6 +1006,13 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		4C00237B2587FED500444554 /* LibSpan */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = LibSpan;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 4C8379862579AA64006FF416 /* Project object */;
 }
