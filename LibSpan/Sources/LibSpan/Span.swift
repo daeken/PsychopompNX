@@ -30,7 +30,19 @@ extension SpanProtocol {
     
     func index(after i: Int) -> Int { i + 1 }
     
+    subscript<T: SpanProtocol>(_ range: Range<Int>) -> T? where T.Element == Element {
+        get { nil }
+        set {
+            copyFrom(source: newValue!, toOffset: range.lowerBound, length: range.upperBound - range.lowerBound)
+        }
+    }
+    
     subscript(_ range: ClosedRange<Int>) -> Self {
+        get { self[range.lowerBound..<(range.upperBound + 1)] }
+        set { self[range.lowerBound..<(range.upperBound + 1)] = newValue }
+    }
+    
+    subscript<T: SpanProtocol>(_ range: ClosedRange<Int>) -> T? where T.Element == Element {
         get { self[range.lowerBound..<(range.upperBound + 1)] }
         set { self[range.lowerBound..<(range.upperBound + 1)] = newValue }
     }

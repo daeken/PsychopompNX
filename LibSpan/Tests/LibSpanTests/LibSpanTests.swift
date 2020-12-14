@@ -44,12 +44,6 @@ final class LibSpanTests: XCTestCase {
         
         XCTAssertEqual(Array(deadbeef.data), [0xEF, 0x0B, 0xF0, 0xF0])
         
-        span = Span<UInt8>.from(data: deadbeef)
-        var _1234 = UInt16(0x1234)
-        let ptrspan = Span<UInt8>.from(pointer: &_1234, length: 2)
-        span.copyFrom(source: ptrspan, toOffset: 1)
-        XCTAssertEqual(Array(span), [0xEF, 0x34, 0x12, 0xF0])
-        
         let deadbeef2 = DataBox(Data([0xEF, 0xBE, 0xAD, 0xDE]))
         span = Span<UInt8>.from(data: deadbeef2)
         span[1...2] = Span<UInt8>.from(data: DataBox(Data([0x34, 0x12])))
@@ -103,9 +97,25 @@ final class LibSpanTests: XCTestCase {
         
         XCTAssertEqual(deadbeef, 0xDE1234EF)
     }
+    
+    func testBoth() {
+        let deadbeef = DataBox(Data([0xEF, 0xBE, 0xAD, 0xDE]))
+        var span = Span<UInt8>.from(data: deadbeef)
+        var _1234 = UInt16(0x1234)
+        let ptrspan = Span<UInt8>.from(pointer: &_1234, length: 2)
+        span.copyFrom(source: ptrspan, toOffset: 1)
+        XCTAssertEqual(Array(span), [0xEF, 0x34, 0x12, 0xDE])
+        
+        span[0..<2] = ptrspan
+        XCTAssertEqual(Array(span), [0x34, 0x12, 0x12, 0xDE])
+
+        span[2...3] = ptrspan
+        XCTAssertEqual(Array(span), [0x34, 0x12, 0x34, 0x12])
+    }
 
     static var allTests = [
         ("testData", testData),
         ("testPointers", testPointers),
+        ("testBoth", testBoth),
     ]
 }
