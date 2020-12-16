@@ -42,7 +42,7 @@ class NnUsbDs_IDsService: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 6:
-			let ret = try addUsbStringDescriptor(im.getBuffer(0x5, 0) as Buffer<UInt8>)
+			let ret = try addUsbStringDescriptor(im.getBuffer(0x5, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 1)
 			om.setData(8, ret)
 		
@@ -51,11 +51,11 @@ class NnUsbDs_IDsService: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 8:
-			try setUsbDeviceDescriptor(NnUsb_Usb_Device_Speed(rawValue: im.getData(8) as UInt32)!, im.getBuffer(0x5, 0) as Buffer<NnUsb_Usb_Device_Descriptor>)
+			try setUsbDeviceDescriptor(NnUsb_Usb_Device_Speed(rawValue: im.getData(8) as UInt32)!, im.getBuffer(0x5, 0)! as Buffer<NnUsb_Usb_Device_Descriptor>)
 			om.initialize(0, 0, 0)
 		
 		case 9:
-			try setBinaryObjectStore(im.getBuffer(0x5, 0) as Buffer<NnUsb_Usb_Bos_Descriptor>)
+			try setBinaryObjectStore(im.getBuffer(0x5, 0)! as Buffer<NnUsb_Usb_Bos_Descriptor>)
 			om.initialize(0, 0, 0)
 		
 		case 10:
@@ -177,7 +177,7 @@ class NnUsbDs_IDsInterface: IpcService {
 			om.copy(0, ret)
 		
 		case 2:
-			try getSetupPacket(im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			try getSetupPacket(im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 3:
@@ -231,7 +231,7 @@ class NnUsbDs_IDsInterface: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 12:
-			try appendConfigurationData(im.getData(8) as UInt8, NnUsb_Usb_Device_Speed(rawValue: im.getData(12) as UInt32)!, im.getBuffer(0x5, 0) as Buffer<UInt8>)
+			try appendConfigurationData(im.getData(8) as UInt8, NnUsb_Usb_Device_Speed(rawValue: im.getData(12) as UInt32)!, im.getBuffer(0x5, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		default:

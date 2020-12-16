@@ -13,44 +13,44 @@ class NnSocketResolver_IResolver: IpcService {
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
 		case 0:
-			try setDnsAddressesPrivate(im.getData(8) as UInt32, im.getBuffer(0x5, 0) as Buffer<UInt8>)
+			try setDnsAddressesPrivate(im.getData(8) as UInt32, im.getBuffer(0x5, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 1:
-			try getDnsAddressPrivate(im.getData(8) as UInt32, im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			try getDnsAddressPrivate(im.getData(8) as UInt32, im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 2:
-			let (_0, _1, _2) = try getHostByName(im.getData(8) as UInt8, im.getData(12) as UInt32, im.getData(16) as UInt64, im.pid, im.getBuffer(0x5, 0) as Buffer<UInt8>, im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			let (_0, _1, _2) = try getHostByName(im.getData(8) as UInt8, im.getData(12) as UInt32, im.getData(16) as UInt64, im.pid, im.getBuffer(0x5, 0)! as Buffer<UInt8>, im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 12)
 			om.setData(8, _0)
 			om.setData(12, _1)
 			om.setData(16, _2)
 		
 		case 3:
-			let (_0, _1, _2) = try getHostByAddr(im.getData(8) as UInt32, im.getData(12) as UInt32, im.getData(16) as UInt32, im.getData(24) as UInt64, im.pid, im.getBuffer(0x5, 0) as Buffer<UInt8>, im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			let (_0, _1, _2) = try getHostByAddr(im.getData(8) as UInt32, im.getData(12) as UInt32, im.getData(16) as UInt32, im.getData(24) as UInt64, im.pid, im.getBuffer(0x5, 0)! as Buffer<UInt8>, im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 12)
 			om.setData(8, _0)
 			om.setData(12, _1)
 			om.setData(16, _2)
 		
 		case 4:
-			try getHostStringError(im.getData(8) as UInt32, im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			try getHostStringError(im.getData(8) as UInt32, im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 5:
-			try getGaiStringError(im.getData(8) as UInt32, im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			try getGaiStringError(im.getData(8) as UInt32, im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 6:
-			let (_0, _1, _2) = try getAddrInfo(im.getData(8) as Bool, im.getData(12) as UInt32, im.getData(16) as UInt64, im.pid, im.getBuffer(0x5, 0) as Buffer<Int8>, im.getBuffer(0x5, 1) as Buffer<Int8>, im.getBuffer(0x5, 2) as Buffer<Packed_Addrinfo>, im.getBuffer(0x6, 0) as Buffer<Packed_Addrinfo>)
+			let (_0, _1, _2) = try getAddrInfo(im.getData(8) as Bool, im.getData(12) as UInt32, im.getData(16) as UInt64, im.pid, im.getBuffer(0x5, 0)! as Buffer<Int8>, im.getBuffer(0x5, 1)! as Buffer<Int8>, im.getBuffer(0x5, 2)! as Buffer<Packed_Addrinfo>, im.getBuffer(0x6, 0)! as Buffer<Packed_Addrinfo>)
 			om.initialize(0, 0, 12)
 			om.setData(8, _0)
 			om.setData(12, _1)
 			om.setData(16, _2)
 		
 		case 7:
-			let (_0, _1) = try getNameInfo(im.getData(8) as UInt32, im.getData(12) as UInt32, im.getData(16) as UInt64, im.pid, im.getBuffer(0x5, 0) as Buffer<UInt8>, im.getBuffer(0x6, 0) as Buffer<UInt8>, im.getBuffer(0x6, 1) as Buffer<UInt8>)
+			let (_0, _1) = try getNameInfo(im.getData(8) as UInt32, im.getData(12) as UInt32, im.getData(16) as UInt64, im.pid, im.getBuffer(0x5, 0)! as Buffer<UInt8>, im.getBuffer(0x6, 0)! as Buffer<UInt8>, im.getBuffer(0x6, 1)! as Buffer<UInt8>)
 			om.initialize(0, 0, 8)
 			om.setData(8, _0)
 			om.setData(12, _1)

@@ -16,15 +16,15 @@ class NnsNvdrv_INvDrvDebugFSServices: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 2:
-			let ret = try readLog(nil, im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			let ret = try readLog(nil, im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 3:
-			let ret = try unknown3(nil, im.getBuffer(0x5, 0) as Buffer<UInt8>, im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			let ret = try unknown3(nil, im.getBuffer(0x5, 0)! as Buffer<UInt8>, im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 4:
-			let ret = try unknown4(nil, im.getBuffer(0x5, 0) as Buffer<UInt8>, im.getBuffer(0x5, 1) as Buffer<UInt8>)
+			let ret = try unknown4(nil, im.getBuffer(0x5, 0)! as Buffer<UInt8>, im.getBuffer(0x5, 1)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		default:
@@ -63,13 +63,13 @@ class NnsNvdrv_INvDrvServices: IpcService {
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
 		case 0:
-			let (_0, _1) = try open(im.getBuffer(0x5, 0) as Buffer<UInt8>)
+			let (_0, _1) = try open(im.getBuffer(0x5, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 8)
 			om.setData(8, _0)
 			om.setData(12, _1)
 		
 		case 1:
-			let ret = try ioctl(im.getData(8) as UInt32, im.getData(12) as UInt32, im.getBuffer(0x21, 0) as Buffer<UInt8>, im.getBuffer(0x22, 0) as Buffer<UInt8>)
+			let ret = try ioctl(im.getData(8) as UInt32, im.getData(12) as UInt32, im.getBuffer(0x21, 0)! as Buffer<UInt8>, im.getBuffer(0x22, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 4)
 			om.setData(8, ret)
 		
@@ -118,12 +118,12 @@ class NnsNvdrv_INvDrvServices: IpcService {
 			om.setData(8, ret)
 		
 		case 11:
-			let ret = try ioctl2(im.getData(8) as UInt32, im.getData(12) as UInt32, im.getBuffer(0x21, 0) as Buffer<UInt8>, im.getBuffer(0x21, 1) as Buffer<UInt8>, im.getBuffer(0x22, 0) as Buffer<UInt8>)
+			let ret = try ioctl2(im.getData(8) as UInt32, im.getData(12) as UInt32, im.getBuffer(0x21, 0)! as Buffer<UInt8>, im.getBuffer(0x21, 1)! as Buffer<UInt8>, im.getBuffer(0x22, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 4)
 			om.setData(8, ret)
 		
 		case 12:
-			let ret = try ioctl3(im.getData(8) as UInt32, im.getData(12) as UInt32, im.getBuffer(0x21, 0) as Buffer<UInt8>, im.getBuffer(0x22, 0) as Buffer<UInt8>, im.getBuffer(0x22, 1) as Buffer<UInt8>)
+			let ret = try ioctl3(im.getData(8) as UInt32, im.getData(12) as UInt32, im.getBuffer(0x21, 0)! as Buffer<UInt8>, im.getBuffer(0x22, 0)! as Buffer<UInt8>, im.getBuffer(0x22, 1)! as Buffer<UInt8>)
 			om.initialize(0, 0, 4)
 			om.setData(8, ret)
 		

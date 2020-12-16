@@ -22,15 +22,15 @@ class NnAccountNas_IOAuthProcedureForGuestLogin: IpcService {
 			om.move(0, ret)
 		
 		case 1:
-			try getRequest(im.getBuffer(0x1a, 0) as Buffer<NnAccount_RequestUrl>, im.getBuffer(0x1a, 1) as Buffer<NnAccount_CallbackUri>)
+			try getRequest(im.getBuffer(0x1a, 0)! as Buffer<NnAccount_RequestUrl>, im.getBuffer(0x1a, 1)! as Buffer<NnAccount_CallbackUri>)
 			om.initialize(0, 0, 0)
 		
 		case 2:
-			try applyResponse(im.getBuffer(0x9, 0) as Buffer<UInt8>)
+			try applyResponse(im.getBuffer(0x9, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 3:
-			let ret = try applyResponseAsync(im.getBuffer(0x9, 0) as Buffer<UInt8>)
+			let ret = try applyResponseAsync(im.getBuffer(0x9, 0)! as Buffer<UInt8>)
 			om.initialize(1, 0, 0)
 			om.move(0, ret)
 		
@@ -51,11 +51,11 @@ class NnAccountNas_IOAuthProcedureForGuestLogin: IpcService {
 			om.setData(8, ret)
 		
 		case 102:
-			try getNickname(im.getBuffer(0xa, 0) as Buffer<UInt8>)
+			try getNickname(im.getBuffer(0xa, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 103:
-			let ret = try getProfileImage(im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			let ret = try getProfileImage(im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 4)
 			om.setData(8, ret)
 		
@@ -107,17 +107,17 @@ class NnAccountNas_IAuthorizationRequest: IpcService {
 			om.setData(8, ret)
 		
 		case 20:
-			let ret = try getAuthorizationCode(im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			let ret = try getAuthorizationCode(im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 4)
 			om.setData(8, ret)
 		
 		case 21:
-			let ret = try getIdToken(im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			let ret = try getIdToken(im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 4)
 			om.setData(8, ret)
 		
 		case 22:
-			try getState(im.getBuffer(0x1a, 0) as Buffer<NnAccountNas_State>)
+			try getState(im.getBuffer(0x1a, 0)! as Buffer<NnAccountNas_State>)
 			om.initialize(0, 0, 0)
 		
 		default:
@@ -156,15 +156,15 @@ class NnAccountNas_IOAuthProcedureForNintendoAccountLinkage: IpcService {
 			om.move(0, ret)
 		
 		case 1:
-			try getRequest(im.getBuffer(0x1a, 0) as Buffer<NnAccount_RequestUrl>, im.getBuffer(0x1a, 1) as Buffer<NnAccount_CallbackUri>)
+			try getRequest(im.getBuffer(0x1a, 0)! as Buffer<NnAccount_RequestUrl>, im.getBuffer(0x1a, 1)! as Buffer<NnAccount_CallbackUri>)
 			om.initialize(0, 0, 0)
 		
 		case 2:
-			try applyResponse(im.getBuffer(0x9, 0) as Buffer<UInt8>)
+			try applyResponse(im.getBuffer(0x9, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 3:
-			let ret = try applyResponseAsync(im.getBuffer(0x9, 0) as Buffer<UInt8>)
+			let ret = try applyResponseAsync(im.getBuffer(0x9, 0)! as Buffer<UInt8>)
 			om.initialize(1, 0, 0)
 			om.move(0, ret)
 		
@@ -175,7 +175,7 @@ class NnAccountNas_IOAuthProcedureForNintendoAccountLinkage: IpcService {
 			om.setBytes(8, ret)
 		
 		case 100:
-			try getRequestWithTheme(im.getData(8) as UInt32, im.getBuffer(0x1a, 0) as Buffer<NnAccount_RequestUrl>, im.getBuffer(0x1a, 1) as Buffer<NnAccount_CallbackUri>)
+			try getRequestWithTheme(im.getData(8) as UInt32, im.getBuffer(0x1a, 0)! as Buffer<NnAccount_RequestUrl>, im.getBuffer(0x1a, 1)! as Buffer<NnAccount_CallbackUri>)
 			om.initialize(0, 0, 0)
 		
 		case 101:
@@ -184,7 +184,7 @@ class NnAccountNas_IOAuthProcedureForNintendoAccountLinkage: IpcService {
 			om.setData(8, ret)
 		
 		case 199:
-			try getUrlForIntroductionOfExtraMembership(im.getBuffer(0x1a, 0) as Buffer<NnAccount_RequestUrl>)
+			try getUrlForIntroductionOfExtraMembership(im.getBuffer(0x1a, 0)! as Buffer<NnAccount_RequestUrl>)
 			om.initialize(0, 0, 0)
 		
 		default:
@@ -226,15 +226,15 @@ class NnAccountNas_IOAuthProcedureForExternalNsa: IpcService {
 			om.move(0, ret)
 		
 		case 1:
-			try getRequest(im.getBuffer(0x1a, 0) as Buffer<NnAccount_RequestUrl>, im.getBuffer(0x1a, 1) as Buffer<NnAccount_CallbackUri>)
+			try getRequest(im.getBuffer(0x1a, 0)! as Buffer<NnAccount_RequestUrl>, im.getBuffer(0x1a, 1)! as Buffer<NnAccount_CallbackUri>)
 			om.initialize(0, 0, 0)
 		
 		case 2:
-			try applyResponse(im.getBuffer(0x9, 0) as Buffer<UInt8>)
+			try applyResponse(im.getBuffer(0x9, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 3:
-			let ret = try applyResponseAsync(im.getBuffer(0x9, 0) as Buffer<UInt8>)
+			let ret = try applyResponseAsync(im.getBuffer(0x9, 0)! as Buffer<UInt8>)
 			om.initialize(1, 0, 0)
 			om.move(0, ret)
 		
@@ -255,11 +255,11 @@ class NnAccountNas_IOAuthProcedureForExternalNsa: IpcService {
 			om.setData(8, ret)
 		
 		case 102:
-			try getNickname(im.getBuffer(0xa, 0) as Buffer<UInt8>)
+			try getNickname(im.getBuffer(0xa, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 103:
-			let ret = try getProfileImage(im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			let ret = try getProfileImage(im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 4)
 			om.setData(8, ret)
 		

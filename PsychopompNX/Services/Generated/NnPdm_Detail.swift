@@ -26,7 +26,7 @@ class NnPdmDetail_INotifyService: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 5:
-			try unknown5(im.getBuffer(0x5, 0) as Buffer<UInt8>)
+			try unknown5(im.getBuffer(0x5, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 6:
@@ -74,19 +74,19 @@ class NnPdmDetail_IQueryService: IpcService {
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
 		case 0:
-			let ret = try unknown0(nil, im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			let ret = try unknown0(nil, im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 1:
-			let ret = try unknown1(im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			let ret = try unknown1(im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 2:
-			let ret = try unknown2(nil, im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			let ret = try unknown2(nil, im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 3:
-			let ret = try unknown3(nil, im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			let ret = try unknown3(nil, im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 4:
@@ -102,11 +102,11 @@ class NnPdmDetail_IQueryService: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 7:
-			let ret = try unknown7(im.getBuffer(0x5, 0) as Buffer<UInt8>, im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			let ret = try unknown7(im.getBuffer(0x5, 0)! as Buffer<UInt8>, im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 8:
-			let ret = try unknown8(nil, im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			let ret = try unknown8(nil, im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 9:
@@ -114,11 +114,11 @@ class NnPdmDetail_IQueryService: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 10:
-			let ret = try unknown10(nil, im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			let ret = try unknown10(nil, im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 11:
-			let ret = try unknown11(nil, im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			let ret = try unknown11(nil, im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 12:

@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import LibSwiftHac
 
 class Emulator {
     static var instance: Emulator? = nil
@@ -17,8 +18,13 @@ class Emulator {
     let stackSize: uint64 = 0x4000000
 
     let tlsSpace: uint64 = 0xb000000
+    
+    let romfsFile: MmappedFile
 
     init() throws {
+        romfsFile = try MmappedFile("/Users/daeken/switch/smo/romfs.raw")
+        hexdump(Array(romfsFile.data[0..<0x50]))
+        
         vmm = try Vmm()
         tm = TaskManager()
         kernel = Kernel()

@@ -33,11 +33,11 @@ class NnUsbHs_IClientEpSession: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 5:
-			let ret = try unknown5(nil, im.getBuffer(0x22, 0) as Buffer<UInt8>)
+			let ret = try unknown5(nil, im.getBuffer(0x22, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 6:
-			let ret = try unknown6(nil, im.getBuffer(0x21, 0) as Buffer<UInt8>)
+			let ret = try unknown6(nil, im.getBuffer(0x21, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 7:
@@ -86,15 +86,15 @@ class NnUsbHs_IClientRootSession: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 1:
-			let ret = try unknown1(nil, im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			let ret = try unknown1(nil, im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 2:
-			let ret = try unknown2(nil, im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			let ret = try unknown2(nil, im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 3:
-			let ret = try unknown3(im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			let ret = try unknown3(im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 4:
@@ -112,7 +112,7 @@ class NnUsbHs_IClientRootSession: IpcService {
 			om.copy(0, ret)
 		
 		case 7:
-			let ret = try getClientIfSession(nil, im.getBuffer(0x6, 0) as Buffer<UInt8>, im.getBuffer(0x6, 1) as Buffer<UInt8>)
+			let ret = try getClientIfSession(nil, im.getBuffer(0x6, 0)! as Buffer<UInt8>, im.getBuffer(0x6, 1)! as Buffer<UInt8>)
 			om.initialize(1, 0, 0)
 			om.move(0, ret)
 		
@@ -156,15 +156,15 @@ class NnUsbHs_IClientIfSession: IpcService {
 			om.copy(0, ret)
 		
 		case 1:
-			try unknown1(nil, im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			try unknown1(nil, im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 2:
-			try unknown2(im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			try unknown2(im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 3:
-			try unknown3(nil, im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			try unknown3(nil, im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 4:
@@ -181,7 +181,7 @@ class NnUsbHs_IClientIfSession: IpcService {
 			om.copy(0, ret)
 		
 		case 7:
-			try getCtrlXferReport(im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			try getCtrlXferReport(im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 8:

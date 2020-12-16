@@ -43,7 +43,7 @@ class NnWlanDetail_IInfraManager: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 3:
-			try startScan(im.getBuffer(0x15, 0) as Buffer<UInt8>)
+			try startScan(im.getBuffer(0x15, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 4:
@@ -76,7 +76,7 @@ class NnWlanDetail_IInfraManager: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 11:
-			try getScanResult(im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			try getScanResult(im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 12:
@@ -88,7 +88,7 @@ class NnWlanDetail_IInfraManager: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 14:
-			try unknown14(im.getBuffer(0xa, 0) as Buffer<UInt8>)
+			try unknown14(im.getBuffer(0xa, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 15:
@@ -100,7 +100,7 @@ class NnWlanDetail_IInfraManager: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 17:
-			try requestIfUpDown(nil, im.getBuffer(0x9, 0) as Buffer<UInt8>)
+			try requestIfUpDown(nil, im.getBuffer(0x9, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 18:
@@ -200,7 +200,7 @@ class NnWlanDetail_ISocketManager: IpcService {
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
 		case 0:
-			try unknown0(im.getBuffer(0x5, 0) as Buffer<UInt8>)
+			try unknown0(im.getBuffer(0x5, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 1:
@@ -208,7 +208,7 @@ class NnWlanDetail_ISocketManager: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 2:
-			let ret = try unknown2(nil, im.getBuffer(0x9, 0) as Buffer<UInt8>)
+			let ret = try unknown2(nil, im.getBuffer(0x9, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 3:
@@ -277,7 +277,7 @@ class NnWlanDetail_ILocalGetActionFrame: IpcService {
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
 		case 0:
-			let ret = try unknown0(nil, im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			let ret = try unknown0(nil, im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		default:
@@ -299,7 +299,7 @@ class NnWlanDetail_ISocketGetFrame: IpcService {
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
 		case 0:
-			let ret = try unknown0(nil, im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			let ret = try unknown0(nil, im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		default:
@@ -321,7 +321,7 @@ class NnWlanDetail_ILocalGetFrame: IpcService {
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
 		case 0:
-			let ret = try unknown0(nil, im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			let ret = try unknown0(nil, im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		default:
@@ -427,7 +427,7 @@ class NnWlanDetail_ILocalManager: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 9:
-			try startScan(im.getBuffer(0x15, 0) as Buffer<UInt8>)
+			try startScan(im.getBuffer(0x15, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 10:
@@ -468,7 +468,7 @@ class NnWlanDetail_ILocalManager: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 19:
-			try unknown19(im.getBuffer(0x16, 0) as Buffer<UInt8>)
+			try unknown19(im.getBuffer(0x16, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 20:
@@ -477,7 +477,7 @@ class NnWlanDetail_ILocalManager: IpcService {
 			om.copy(0, ret)
 		
 		case 21:
-			try getBssIndicationInfo(im.getBuffer(0x16, 0) as Buffer<UInt8>)
+			try getBssIndicationInfo(im.getBuffer(0x16, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 22:
@@ -489,7 +489,7 @@ class NnWlanDetail_ILocalManager: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 24:
-			let ret = try addIe(nil, im.getBuffer(0x5, 0) as Buffer<UInt8>)
+			let ret = try addIe(nil, im.getBuffer(0x5, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 25:
@@ -497,7 +497,7 @@ class NnWlanDetail_ILocalManager: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 26:
-			try unknown26(im.getBuffer(0x5, 0) as Buffer<UInt8>)
+			try unknown26(im.getBuffer(0x5, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 27:
@@ -505,7 +505,7 @@ class NnWlanDetail_ILocalManager: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 28:
-			let ret = try createRxEntry(nil, im.getBuffer(0x9, 0) as Buffer<UInt8>)
+			let ret = try createRxEntry(nil, im.getBuffer(0x9, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 29:
@@ -521,23 +521,23 @@ class NnWlanDetail_ILocalManager: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 32:
-			try addMatchingDataToRxEntry(nil, im.getBuffer(0x19, 0) as Buffer<UInt8>)
+			try addMatchingDataToRxEntry(nil, im.getBuffer(0x19, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 33:
-			try removeMatchingDataFromRxEntry(nil, im.getBuffer(0x19, 0) as Buffer<UInt8>)
+			try removeMatchingDataFromRxEntry(nil, im.getBuffer(0x19, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 34:
-			try getScanResult(im.getBuffer(0x19, 0) as Buffer<UInt8>, im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			try getScanResult(im.getBuffer(0x19, 0)! as Buffer<UInt8>, im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 35:
-			try unknown35(nil, im.getBuffer(0x5, 0) as Buffer<UInt8>)
+			try unknown35(nil, im.getBuffer(0x5, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 36:
-			try setActionFrameWithBeacon(im.getBuffer(0x5, 0) as Buffer<UInt8>)
+			try setActionFrameWithBeacon(im.getBuffer(0x5, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 37:
@@ -545,7 +545,7 @@ class NnWlanDetail_ILocalManager: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 38:
-			let ret = try createRxEntryForActionFrame(nil, im.getBuffer(0x9, 0) as Buffer<UInt8>)
+			let ret = try createRxEntryForActionFrame(nil, im.getBuffer(0x9, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 39:

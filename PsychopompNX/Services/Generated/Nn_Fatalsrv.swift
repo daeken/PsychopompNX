@@ -37,7 +37,7 @@ class NnFatalsrv_IService: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 2:
-			try throwFatalWithCpuContext(im.getData(8) as UInt64, im.getData(16) as UInt64, im.getBuffer(0x15, 0) as Buffer<UInt8>, im.pid)
+			try throwFatalWithCpuContext(im.getData(8) as UInt64, im.getData(16) as UInt64, im.getBuffer(0x15, 0)! as Buffer<UInt8>, im.pid)
 			om.initialize(0, 0, 0)
 		
 		default:

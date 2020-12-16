@@ -46,7 +46,7 @@ class NnAhid_IWriteSession: IpcService {
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
 		case 0:
-			let ret = try unknown0(im.getBuffer(0x5, 0) as Buffer<UInt8>)
+			let ret = try unknown0(im.getBuffer(0x5, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		default:
@@ -80,23 +80,23 @@ class NnAhid_ICtrlSession: IpcService {
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
 		case 0:
-			try unknown0(nil, im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			try unknown0(nil, im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 1:
-			try unknown1(im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			try unknown1(im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 2:
-			try unknown2(nil, im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			try unknown2(nil, im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 3:
-			try unknown3(nil, im.getBuffer(0x5, 0) as Buffer<UInt8>)
+			try unknown3(nil, im.getBuffer(0x5, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 4:
-			try unknown4(nil, im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			try unknown4(nil, im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 5:
@@ -104,7 +104,7 @@ class NnAhid_ICtrlSession: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 6:
-			try unknown6(im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			try unknown6(im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 7:
@@ -112,11 +112,11 @@ class NnAhid_ICtrlSession: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 8:
-			try unknown8(nil, im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			try unknown8(nil, im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 9:
-			try unknown9(nil, im.getBuffer(0x5, 0) as Buffer<UInt8>)
+			try unknown9(nil, im.getBuffer(0x5, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 10:
@@ -129,7 +129,7 @@ class NnAhid_ICtrlSession: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 12:
-			let ret = try unknown12(nil, im.getBuffer(0x5, 0) as Buffer<UInt8>)
+			let ret = try unknown12(nil, im.getBuffer(0x5, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		default:
@@ -163,7 +163,7 @@ class NnAhid_IReadSession: IpcService {
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
 		case 0:
-			let ret = try unknown0(nil, im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			let ret = try unknown0(nil, im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		default:

@@ -23,7 +23,7 @@ class NnUart_IPortSession: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 3:
-			let ret = try unknown3(im.getBuffer(0x21, 0) as Buffer<UInt8>)
+			let ret = try unknown3(im.getBuffer(0x21, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 4:
@@ -31,7 +31,7 @@ class NnUart_IPortSession: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 5:
-			let ret = try unknown5(im.getBuffer(0x22, 0) as Buffer<UInt8>)
+			let ret = try unknown5(im.getBuffer(0x22, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 6:

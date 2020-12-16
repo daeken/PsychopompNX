@@ -53,27 +53,27 @@ class NnI2c_ISession: IpcService {
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
 		case 0:
-			try send(im.getData(8) as UInt32, im.getBuffer(0x5, 0) as Buffer<UInt8>)
+			try send(im.getData(8) as UInt32, im.getBuffer(0x5, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 1:
-			try receive(im.getData(8) as UInt32, im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			try receive(im.getData(8) as UInt32, im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 2:
-			try executeCommandList(im.getBuffer(0x9, 0) as Buffer<UInt8>, im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			try executeCommandList(im.getBuffer(0x9, 0)! as Buffer<UInt8>, im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 10:
-			try sendAuto(im.getData(8) as UInt32, im.getBuffer(0x21, 0) as Buffer<UInt8>)
+			try sendAuto(im.getData(8) as UInt32, im.getBuffer(0x21, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 11:
-			try receiveAuto(im.getData(8) as UInt32, im.getBuffer(0x22, 0) as Buffer<UInt8>)
+			try receiveAuto(im.getData(8) as UInt32, im.getBuffer(0x22, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 12:
-			try executeCommandListAuto(im.getBuffer(0x9, 0) as Buffer<UInt8>, im.getBuffer(0x22, 0) as Buffer<UInt8>)
+			try executeCommandListAuto(im.getBuffer(0x9, 0)! as Buffer<UInt8>, im.getBuffer(0x22, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		default:

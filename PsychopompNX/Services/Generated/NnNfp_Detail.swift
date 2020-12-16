@@ -57,7 +57,7 @@ class NnNfpDetail_IDebug: IpcService {
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
 		case 0:
-			try initializeDebug(im.getData(8) as UInt64, im.getData(16) as UInt64, im.pid, im.getBuffer(0x5, 0) as Buffer<UInt8>)
+			try initializeDebug(im.getData(8) as UInt64, im.getData(16) as UInt64, im.pid, im.getBuffer(0x5, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 1:
@@ -65,7 +65,7 @@ class NnNfpDetail_IDebug: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 2:
-			let ret = try listDevices(im.getBuffer(0xa, 0) as Buffer<UInt8>)
+			let ret = try listDevices(im.getBuffer(0xa, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 4)
 			om.setData(8, ret)
 		
@@ -90,12 +90,12 @@ class NnNfpDetail_IDebug: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 8:
-			let ret = try getApplicationArea(im.getBytes(8, 0x8), im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			let ret = try getApplicationArea(im.getBytes(8, 0x8), im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 4)
 			om.setData(8, ret)
 		
 		case 9:
-			try setApplicationArea(im.getBytes(8, 0x8), im.getBuffer(0x5, 0) as Buffer<UInt8>)
+			try setApplicationArea(im.getBytes(8, 0x8), im.getBuffer(0x5, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 10:
@@ -107,23 +107,23 @@ class NnNfpDetail_IDebug: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 12:
-			try createApplicationArea(im.getBytes(8, 0x8), im.getData(16) as UInt32, im.getBuffer(0x5, 0) as Buffer<UInt8>)
+			try createApplicationArea(im.getBytes(8, 0x8), im.getData(16) as UInt32, im.getBuffer(0x5, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 13:
-			try getTagInfo(im.getBytes(8, 0x8), im.getBuffer(0x1a, 0) as Buffer<UInt8>)
+			try getTagInfo(im.getBytes(8, 0x8), im.getBuffer(0x1a, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 14:
-			try getRegisterInfo(im.getBytes(8, 0x8), im.getBuffer(0x1a, 0) as Buffer<UInt8>)
+			try getRegisterInfo(im.getBytes(8, 0x8), im.getBuffer(0x1a, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 15:
-			try getCommonInfo(im.getBytes(8, 0x8), im.getBuffer(0x1a, 0) as Buffer<UInt8>)
+			try getCommonInfo(im.getBytes(8, 0x8), im.getBuffer(0x1a, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 16:
-			try getModelInfo(im.getBytes(8, 0x8), im.getBuffer(0x1a, 0) as Buffer<UInt8>)
+			try getModelInfo(im.getBytes(8, 0x8), im.getBuffer(0x1a, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 17:
@@ -162,7 +162,7 @@ class NnNfpDetail_IDebug: IpcService {
 			om.copy(0, ret)
 		
 		case 24:
-			try recreateApplicationArea(im.getBytes(8, 0x8), im.getData(16) as UInt32, im.getBuffer(0x5, 0) as Buffer<UInt8>)
+			try recreateApplicationArea(im.getBytes(8, 0x8), im.getData(16) as UInt32, im.getBuffer(0x5, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 100:
@@ -170,15 +170,15 @@ class NnNfpDetail_IDebug: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 101:
-			try getAdminInfo(im.getBytes(8, 0x8), im.getBuffer(0x1a, 0) as Buffer<UInt8>)
+			try getAdminInfo(im.getBytes(8, 0x8), im.getBuffer(0x1a, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 102:
-			try getRegisterInfo2(im.getBytes(8, 0x8), im.getBuffer(0x1a, 0) as Buffer<UInt8>)
+			try getRegisterInfo2(im.getBytes(8, 0x8), im.getBuffer(0x1a, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 103:
-			try setRegisterInfo(im.getBytes(8, 0x8), im.getBuffer(0x19, 0) as Buffer<UInt8>)
+			try setRegisterInfo(im.getBytes(8, 0x8), im.getBuffer(0x19, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 104:
@@ -195,11 +195,11 @@ class NnNfpDetail_IDebug: IpcService {
 			om.setData(8, ret)
 		
 		case 200:
-			try getAll(im.getBytes(8, 0x8), im.getBuffer(0x1a, 0) as Buffer<UInt8>)
+			try getAll(im.getBytes(8, 0x8), im.getBuffer(0x1a, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 201:
-			try setAll(im.getBytes(8, 0x8), im.getBuffer(0x19, 0) as Buffer<UInt8>)
+			try setAll(im.getBytes(8, 0x8), im.getBuffer(0x19, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 202:
@@ -211,20 +211,20 @@ class NnNfpDetail_IDebug: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 204:
-			let ret = try readBackupData(im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			let ret = try readBackupData(im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 4)
 			om.setData(8, ret)
 		
 		case 205:
-			try writeBackupData(im.getBuffer(0x5, 0) as Buffer<UInt8>)
+			try writeBackupData(im.getBuffer(0x5, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 206:
-			try writeNtf(im.getBytes(8, 0x8), im.getData(16) as UInt32, im.getBuffer(0x5, 0) as Buffer<UInt8>)
+			try writeNtf(im.getBytes(8, 0x8), im.getData(16) as UInt32, im.getBuffer(0x5, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 300:
-			try unknown300(im.getData(8) as UInt64, im.getData(16) as UInt64, im.pid, im.getBuffer(0x5, 0) as Buffer<UInt8>)
+			try unknown300(im.getData(8) as UInt64, im.getData(16) as UInt64, im.pid, im.getBuffer(0x5, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 301:
@@ -232,7 +232,7 @@ class NnNfpDetail_IDebug: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 302:
-			let ret = try unknown302(im.getBuffer(0xa, 0) as Buffer<UInt8>)
+			let ret = try unknown302(im.getBuffer(0xa, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 4)
 			om.setData(8, ret)
 		
@@ -245,12 +245,12 @@ class NnNfpDetail_IDebug: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 305:
-			let ret = try unknown305(im.getBytes(8, 0x8), im.getData(16) as UInt64, im.getBuffer(0x5, 0) as Buffer<UInt8>, im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			let ret = try unknown305(im.getBytes(8, 0x8), im.getData(16) as UInt64, im.getBuffer(0x5, 0)! as Buffer<UInt8>, im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 4)
 			om.setData(8, ret)
 		
 		case 306:
-			try unknown306(im.getBytes(8, 0x8), im.getBuffer(0x1a, 0) as Buffer<UInt8>)
+			try unknown306(im.getBytes(8, 0x8), im.getBuffer(0x1a, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 307:
@@ -388,7 +388,7 @@ class NnNfpDetail_ISystem: IpcService {
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
 		case 0:
-			try initializeSystem(im.getData(8) as UInt64, im.getData(16) as UInt64, im.pid, im.getBuffer(0x5, 0) as Buffer<UInt8>)
+			try initializeSystem(im.getData(8) as UInt64, im.getData(16) as UInt64, im.pid, im.getBuffer(0x5, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 1:
@@ -396,7 +396,7 @@ class NnNfpDetail_ISystem: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 2:
-			let ret = try listDevices(im.getBuffer(0xa, 0) as Buffer<UInt8>)
+			let ret = try listDevices(im.getBuffer(0xa, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 4)
 			om.setData(8, ret)
 		
@@ -425,19 +425,19 @@ class NnNfpDetail_ISystem: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 13:
-			try getTagInfo(im.getBytes(8, 0x8), im.getBuffer(0x1a, 0) as Buffer<UInt8>)
+			try getTagInfo(im.getBytes(8, 0x8), im.getBuffer(0x1a, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 14:
-			try getRegisterInfo(im.getBytes(8, 0x8), im.getBuffer(0x1a, 0) as Buffer<UInt8>)
+			try getRegisterInfo(im.getBytes(8, 0x8), im.getBuffer(0x1a, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 15:
-			try getCommonInfo(im.getBytes(8, 0x8), im.getBuffer(0x1a, 0) as Buffer<UInt8>)
+			try getCommonInfo(im.getBytes(8, 0x8), im.getBuffer(0x1a, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 16:
-			try getModelInfo(im.getBytes(8, 0x8), im.getBuffer(0x1a, 0) as Buffer<UInt8>)
+			try getModelInfo(im.getBytes(8, 0x8), im.getBuffer(0x1a, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 17:
@@ -475,15 +475,15 @@ class NnNfpDetail_ISystem: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 101:
-			try getAdminInfo(im.getBytes(8, 0x8), im.getBuffer(0x1a, 0) as Buffer<UInt8>)
+			try getAdminInfo(im.getBytes(8, 0x8), im.getBuffer(0x1a, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 102:
-			try getRegisterInfo2(im.getBytes(8, 0x8), im.getBuffer(0x1a, 0) as Buffer<UInt8>)
+			try getRegisterInfo2(im.getBytes(8, 0x8), im.getBuffer(0x1a, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 103:
-			try setRegisterInfo(im.getBytes(8, 0x8), im.getBuffer(0x19, 0) as Buffer<UInt8>)
+			try setRegisterInfo(im.getBytes(8, 0x8), im.getBuffer(0x19, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 104:
@@ -636,7 +636,7 @@ class NnNfpDetail_IUser: IpcService {
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
 		case 0:
-			try initialize(im.getData(8) as UInt64, im.getData(16) as UInt64, im.pid, im.getBuffer(0x5, 0) as Buffer<UInt8>)
+			try initialize(im.getData(8) as UInt64, im.getData(16) as UInt64, im.pid, im.getBuffer(0x5, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 1:
@@ -644,7 +644,7 @@ class NnNfpDetail_IUser: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 2:
-			let ret = try listDevices(im.getBuffer(0xa, 0) as Buffer<UInt8>)
+			let ret = try listDevices(im.getBuffer(0xa, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 4)
 			om.setData(8, ret)
 		
@@ -669,12 +669,12 @@ class NnNfpDetail_IUser: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 8:
-			let ret = try getApplicationArea(im.getBytes(8, 0x8), im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			let ret = try getApplicationArea(im.getBytes(8, 0x8), im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 4)
 			om.setData(8, ret)
 		
 		case 9:
-			try setApplicationArea(im.getBytes(8, 0x8), im.getBuffer(0x5, 0) as Buffer<UInt8>)
+			try setApplicationArea(im.getBytes(8, 0x8), im.getBuffer(0x5, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 10:
@@ -686,23 +686,23 @@ class NnNfpDetail_IUser: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 12:
-			try createApplicationArea(im.getBytes(8, 0x8), im.getData(16) as UInt32, im.getBuffer(0x5, 0) as Buffer<UInt8>)
+			try createApplicationArea(im.getBytes(8, 0x8), im.getData(16) as UInt32, im.getBuffer(0x5, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 13:
-			try getTagInfo(im.getBytes(8, 0x8), im.getBuffer(0x1a, 0) as Buffer<UInt8>)
+			try getTagInfo(im.getBytes(8, 0x8), im.getBuffer(0x1a, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 14:
-			try getRegisterInfo(im.getBytes(8, 0x8), im.getBuffer(0x1a, 0) as Buffer<UInt8>)
+			try getRegisterInfo(im.getBytes(8, 0x8), im.getBuffer(0x1a, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 15:
-			try getCommonInfo(im.getBytes(8, 0x8), im.getBuffer(0x1a, 0) as Buffer<UInt8>)
+			try getCommonInfo(im.getBytes(8, 0x8), im.getBuffer(0x1a, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 16:
-			try getModelInfo(im.getBytes(8, 0x8), im.getBuffer(0x1a, 0) as Buffer<UInt8>)
+			try getModelInfo(im.getBytes(8, 0x8), im.getBuffer(0x1a, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 17:
@@ -741,7 +741,7 @@ class NnNfpDetail_IUser: IpcService {
 			om.copy(0, ret)
 		
 		case 24:
-			try recreateApplicationArea(im.getBytes(8, 0x8), im.getData(16) as UInt32, im.getBuffer(0x5, 0) as Buffer<UInt8>)
+			try recreateApplicationArea(im.getBytes(8, 0x8), im.getData(16) as UInt32, im.getBuffer(0x5, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		default:

@@ -45,12 +45,12 @@ class NnSslSf_ISslContext: IpcService {
 			om.setData(8, ret)
 		
 		case 4:
-			let ret = try importServerPki(im.getData(8) as UInt32, im.getBuffer(0x5, 0) as Buffer<UInt8>)
+			let ret = try importServerPki(im.getData(8) as UInt32, im.getBuffer(0x5, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 8)
 			om.setData(8, ret)
 		
 		case 5:
-			let ret = try importClientPki(im.getBuffer(0x5, 0) as Buffer<UInt8>, im.getBuffer(0x5, 1) as Buffer<UInt8>)
+			let ret = try importClientPki(im.getBuffer(0x5, 0)! as Buffer<UInt8>, im.getBuffer(0x5, 1)! as Buffer<UInt8>)
 			om.initialize(0, 0, 8)
 			om.setData(8, ret)
 		
@@ -68,11 +68,11 @@ class NnSslSf_ISslContext: IpcService {
 			om.setData(8, ret)
 		
 		case 9:
-			try addPolicyOid(im.getBuffer(0x5, 0) as Buffer<UInt8>)
+			try addPolicyOid(im.getBuffer(0x5, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 10:
-			let ret = try importCrl(im.getBuffer(0x5, 0) as Buffer<UInt8>)
+			let ret = try importCrl(im.getBuffer(0x5, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 8)
 			om.setData(8, ret)
 		
@@ -140,7 +140,7 @@ class NnSslSf_ISslConnection: IpcService {
 			om.setData(8, ret)
 		
 		case 1:
-			try setHostName(im.getBuffer(0x5, 0) as Buffer<UInt8>)
+			try setHostName(im.getBuffer(0x5, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 2:
@@ -157,7 +157,7 @@ class NnSslSf_ISslConnection: IpcService {
 			om.setData(8, ret)
 		
 		case 5:
-			let ret = try getHostName(im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			let ret = try getHostName(im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 4)
 			om.setData(8, ret)
 		
@@ -176,18 +176,18 @@ class NnSslSf_ISslConnection: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 9:
-			let (_0, _1) = try doHandshakeGetServerCert(im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			let (_0, _1) = try doHandshakeGetServerCert(im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 8)
 			om.setData(8, _0)
 			om.setData(12, _1)
 		
 		case 10:
-			let ret = try read(im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			let ret = try read(im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 4)
 			om.setData(8, ret)
 		
 		case 11:
-			let ret = try write(im.getBuffer(0x5, 0) as Buffer<UInt8>)
+			let ret = try write(im.getBuffer(0x5, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 4)
 			om.setData(8, ret)
 		
@@ -197,7 +197,7 @@ class NnSslSf_ISslConnection: IpcService {
 			om.setData(8, ret)
 		
 		case 13:
-			let ret = try peek(im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			let ret = try peek(im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 4)
 			om.setData(8, ret)
 		
@@ -247,13 +247,13 @@ class NnSslSf_ISslConnection: IpcService {
 			om.setData(8, ret)
 		
 		case 24:
-			let (_0, _1) = try getVerifyCertErrors(im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			let (_0, _1) = try getVerifyCertErrors(im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 8)
 			om.setData(8, _0)
 			om.setData(12, _1)
 		
 		case 25:
-			try getCipherInfo(im.getData(8) as UInt32, im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			try getCipherInfo(im.getData(8) as UInt32, im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		default:
@@ -316,17 +316,17 @@ class NnSslSf_ISslService: IpcService {
 			om.setData(8, ret)
 		
 		case 2:
-			let ret = try getCertificates(im.getBuffer(0x5, 0) as Buffer<UInt8>, im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			let ret = try getCertificates(im.getBuffer(0x5, 0)! as Buffer<UInt8>, im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 4)
 			om.setData(8, ret)
 		
 		case 3:
-			let ret = try getCertificateBufSize(im.getBuffer(0x5, 0) as Buffer<UInt8>)
+			let ret = try getCertificateBufSize(im.getBuffer(0x5, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 4)
 			om.setData(8, ret)
 		
 		case 4:
-			try debugIoctl(im.getData(8) as UInt64, im.getBuffer(0x5, 0) as Buffer<UInt8>, im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			try debugIoctl(im.getData(8) as UInt64, im.getBuffer(0x5, 0)! as Buffer<UInt8>, im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 5:

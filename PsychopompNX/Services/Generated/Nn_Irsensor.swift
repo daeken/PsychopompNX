@@ -63,7 +63,7 @@ class NnIrsensor_IIrSensorServer: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 309:
-			let ret = try getImageTransferProcessorState(im.getData(8) as UInt32, im.getData(16) as UInt64, im.pid, im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			let ret = try getImageTransferProcessorState(im.getData(8) as UInt32, im.getData(16) as UInt64, im.pid, im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 16)
 			if ret.count != 0x10 { throw IpcError.byteCountMismatch }
 			om.setBytes(8, ret)

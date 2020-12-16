@@ -9,7 +9,7 @@ class NnEthSf_IEthInterface: IpcService {
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
 		case 0:
-			let ret = try initialize(im.getBuffer(0x5, 0) as Buffer<UInt8>)
+			let ret = try initialize(im.getBuffer(0x5, 0)! as Buffer<UInt8>)
 			om.initialize(0, 1, 0)
 			om.copy(0, ret)
 		
@@ -22,7 +22,7 @@ class NnEthSf_IEthInterface: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 3:
-			try getMediaList(im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			try getMediaList(im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 4:
@@ -74,7 +74,7 @@ class NnEthSf_IEthInterfaceGroup: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 3:
-			try getInterfaceList(im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			try getInterfaceList(im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 4:

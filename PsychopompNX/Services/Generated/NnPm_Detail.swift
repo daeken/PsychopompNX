@@ -137,11 +137,11 @@ class NnPmDetail_IDebugMonitorInterface: IpcService {
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
 		case 0:
-			let ret = try isDebugMode(nil, im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			let ret = try isDebugMode(nil, im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 1:
-			let ret = try getDebugProcesses(im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			let ret = try getDebugProcesses(im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 2:

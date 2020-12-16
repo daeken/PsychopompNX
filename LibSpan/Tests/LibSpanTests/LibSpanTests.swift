@@ -100,7 +100,7 @@ final class LibSpanTests: XCTestCase {
     
     func testBoth() {
         let deadbeef = DataBox(Data([0xEF, 0xBE, 0xAD, 0xDE]))
-        var span = Span<UInt8>.from(data: deadbeef)
+        let span = Span<UInt8>.from(data: deadbeef)
         var _1234 = UInt16(0x1234)
         let ptrspan = Span<UInt8>.from(pointer: &_1234, length: 2)
         span.copyFrom(source: ptrspan, toOffset: 1)

@@ -158,20 +158,20 @@ class NnSettings_ISystemSettingsServer: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 1:
-			try setNetworkSettings(im.getBuffer(0x5, 0) as Buffer<NnSettingsSystem_NetworkSettings>)
+			try setNetworkSettings(im.getBuffer(0x5, 0)! as Buffer<NnSettingsSystem_NetworkSettings>)
 			om.initialize(0, 0, 0)
 		
 		case 2:
-			let ret = try getNetworkSettings(im.getBuffer(0x6, 0) as Buffer<NnSettingsSystem_NetworkSettings>)
+			let ret = try getNetworkSettings(im.getBuffer(0x6, 0)! as Buffer<NnSettingsSystem_NetworkSettings>)
 			om.initialize(0, 0, 4)
 			om.setData(8, ret)
 		
 		case 3:
-			try getFirmwareVersion(im.getBuffer(0x1a, 0) as Buffer<NnSettingsSystem_FirmwareVersion>)
+			try getFirmwareVersion(im.getBuffer(0x1a, 0)! as Buffer<NnSettingsSystem_FirmwareVersion>)
 			om.initialize(0, 0, 0)
 		
 		case 4:
-			try getFirmwareVersion2(im.getBuffer(0x1a, 0) as Buffer<NnSettingsSystem_FirmwareVersion>)
+			try getFirmwareVersion2(im.getBuffer(0x1a, 0)! as Buffer<NnSettingsSystem_FirmwareVersion>)
 			om.initialize(0, 0, 0)
 		
 		case 5:
@@ -198,11 +198,11 @@ class NnSettings_ISystemSettingsServer: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 11:
-			try setBluetoothDevicesSettings(im.getBuffer(0x5, 0) as Buffer<NnSettingsSystem_BluetoothDevicesSettings>)
+			try setBluetoothDevicesSettings(im.getBuffer(0x5, 0)! as Buffer<NnSettingsSystem_BluetoothDevicesSettings>)
 			om.initialize(0, 0, 0)
 		
 		case 12:
-			let ret = try getBluetoothDevicesSettings(im.getBuffer(0x6, 0) as Buffer<NnSettingsSystem_BluetoothDevicesSettings>)
+			let ret = try getBluetoothDevicesSettings(im.getBuffer(0x6, 0)! as Buffer<NnSettingsSystem_BluetoothDevicesSettings>)
 			om.initialize(0, 0, 4)
 			om.setData(8, ret)
 		
@@ -246,12 +246,12 @@ class NnSettings_ISystemSettingsServer: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 21:
-			let ret = try getEulaVersions(im.getBuffer(0x6, 0) as Buffer<NnSettingsSystem_EulaVersion>)
+			let ret = try getEulaVersions(im.getBuffer(0x6, 0)! as Buffer<NnSettingsSystem_EulaVersion>)
 			om.initialize(0, 0, 4)
 			om.setData(8, ret)
 		
 		case 22:
-			try setEulaVersions(im.getBuffer(0x5, 0) as Buffer<NnSettingsSystem_EulaVersion>)
+			try setEulaVersions(im.getBuffer(0x5, 0)! as Buffer<NnSettingsSystem_EulaVersion>)
 			om.initialize(0, 0, 0)
 		
 		case 23:
@@ -292,12 +292,12 @@ class NnSettings_ISystemSettingsServer: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 31:
-			let ret = try getAccountNotificationSettings(im.getBuffer(0x6, 0) as Buffer<NnSettingsSystem_AccountNotificationSettings>)
+			let ret = try getAccountNotificationSettings(im.getBuffer(0x6, 0)! as Buffer<NnSettingsSystem_AccountNotificationSettings>)
 			om.initialize(0, 0, 4)
 			om.setData(8, ret)
 		
 		case 32:
-			try setAccountNotificationSettings(im.getBuffer(0x5, 0) as Buffer<NnSettingsSystem_AccountNotificationSettings>)
+			try setAccountNotificationSettings(im.getBuffer(0x5, 0)! as Buffer<NnSettingsSystem_AccountNotificationSettings>)
 			om.initialize(0, 0, 0)
 		
 		case 35:
@@ -310,12 +310,12 @@ class NnSettings_ISystemSettingsServer: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 37:
-			let ret = try getSettingsItemValueSize(im.getBuffer(0x19, 0) as Buffer<NnSettings_SettingsName>, im.getBuffer(0x19, 1) as Buffer<NnSettings_SettingsItemKey>)
+			let ret = try getSettingsItemValueSize(im.getBuffer(0x19, 0)! as Buffer<NnSettings_SettingsName>, im.getBuffer(0x19, 1)! as Buffer<NnSettings_SettingsItemKey>)
 			om.initialize(0, 0, 8)
 			om.setData(8, ret)
 		
 		case 38:
-			let ret = try getSettingsItemValue(im.getBuffer(0x19, 0) as Buffer<NnSettings_SettingsName>, im.getBuffer(0x19, 1) as Buffer<NnSettings_SettingsItemKey>, im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			let ret = try getSettingsItemValue(im.getBuffer(0x19, 0)! as Buffer<NnSettings_SettingsName>, im.getBuffer(0x19, 1)! as Buffer<NnSettings_SettingsItemKey>, im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 8)
 			om.setData(8, ret)
 		
@@ -330,11 +330,11 @@ class NnSettings_ISystemSettingsServer: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 41:
-			try getEdid(im.getBuffer(0x1a, 0) as Buffer<NnSettingsSystem_Edid>)
+			try getEdid(im.getBuffer(0x1a, 0)! as Buffer<NnSettingsSystem_Edid>)
 			om.initialize(0, 0, 0)
 		
 		case 42:
-			try setEdid(im.getBuffer(0x19, 0) as Buffer<NnSettingsSystem_Edid>)
+			try setEdid(im.getBuffer(0x19, 0)! as Buffer<NnSettingsSystem_Edid>)
 			om.initialize(0, 0, 0)
 		
 		case 43:
@@ -400,7 +400,7 @@ class NnSettings_ISystemSettingsServer: IpcService {
 			om.setData(8, ret)
 		
 		case 56:
-			let ret = try getWirelessCertificationFile(im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			let ret = try getWirelessCertificationFile(im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 8)
 			om.setData(8, ret)
 		
@@ -501,11 +501,11 @@ class NnSettings_ISystemSettingsServer: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 77:
-			try getDeviceNickName(im.getBuffer(0x16, 0) as Buffer<NnSettingsSystem_DeviceNickName>)
+			try getDeviceNickName(im.getBuffer(0x16, 0)! as Buffer<NnSettingsSystem_DeviceNickName>)
 			om.initialize(0, 0, 0)
 		
 		case 78:
-			try setDeviceNickName(im.getBuffer(0x15, 0) as Buffer<NnSettingsSystem_DeviceNickName>)
+			try setDeviceNickName(im.getBuffer(0x15, 0)! as Buffer<NnSettingsSystem_DeviceNickName>)
 			om.initialize(0, 0, 0)
 		
 		case 79:
@@ -594,12 +594,12 @@ class NnSettings_ISystemSettingsServer: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 97:
-			let ret = try getNxControllerSettings(im.getBuffer(0x6, 0) as Buffer<NnSettingsSystem_NxControllerSettings>)
+			let ret = try getNxControllerSettings(im.getBuffer(0x6, 0)! as Buffer<NnSettingsSystem_NxControllerSettings>)
 			om.initialize(0, 0, 4)
 			om.setData(8, ret)
 		
 		case 98:
-			try setNxControllerSettings(im.getBuffer(0x5, 0) as Buffer<NnSettingsSystem_NxControllerSettings>)
+			try setNxControllerSettings(im.getBuffer(0x5, 0)! as Buffer<NnSettingsSystem_NxControllerSettings>)
 			om.initialize(0, 0, 0)
 		
 		case 99:
@@ -790,12 +790,12 @@ class NnSettings_ISystemSettingsServer: IpcService {
 			om.setData(8, ret)
 		
 		case 139:
-			let ret = try getAllowedSslHosts(im.getBuffer(0x6, 0) as Buffer<NnSettingsSystem_AllowedSslHost>)
+			let ret = try getAllowedSslHosts(im.getBuffer(0x6, 0)! as Buffer<NnSettingsSystem_AllowedSslHost>)
 			om.initialize(0, 0, 4)
 			om.setData(8, ret)
 		
 		case 140:
-			try getHostFsMountPoint(im.getBuffer(0x16, 0) as Buffer<NnSettingsSystem_HostFsMountPoint>)
+			try getHostFsMountPoint(im.getBuffer(0x16, 0)! as Buffer<NnSettingsSystem_HostFsMountPoint>)
 			om.initialize(0, 0, 0)
 		
 		case 141:
@@ -1010,7 +1010,7 @@ class NnSettings_ISettingsItemKeyIterator: IpcService {
 			om.setData(8, ret)
 		
 		case 2:
-			let ret = try getKey(im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			let ret = try getKey(im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 8)
 			om.setData(8, ret)
 		
@@ -1049,7 +1049,7 @@ class NnSettings_ISettingsServer: IpcService {
 			om.setBytes(8, ret)
 		
 		case 1:
-			let ret = try getAvailableLanguageCodes(im.getBuffer(0xa, 0) as Buffer<NnSettings_LanguageCode>)
+			let ret = try getAvailableLanguageCodes(im.getBuffer(0xa, 0)! as Buffer<NnSettings_LanguageCode>)
 			om.initialize(0, 0, 4)
 			om.setData(8, ret)
 		
@@ -1070,7 +1070,7 @@ class NnSettings_ISettingsServer: IpcService {
 			om.setData(8, ret)
 		
 		case 5:
-			let ret = try getAvailableLanguageCodes2(im.getBuffer(0x6, 0) as Buffer<NnSettings_LanguageCode>)
+			let ret = try getAvailableLanguageCodes2(im.getBuffer(0x6, 0)! as Buffer<NnSettings_LanguageCode>)
 			om.initialize(0, 0, 4)
 			om.setData(8, ret)
 		
@@ -1080,7 +1080,7 @@ class NnSettings_ISettingsServer: IpcService {
 			om.setData(8, ret)
 		
 		case 7:
-			try getKeyCodeMap(im.getBuffer(0x16, 0) as Buffer<NnKpr_KeyCodeMap>)
+			try getKeyCodeMap(im.getBuffer(0x16, 0)! as Buffer<NnKpr_KeyCodeMap>)
 			om.initialize(0, 0, 0)
 		
 		case 8:
@@ -1121,20 +1121,20 @@ class NnSettings_IFirmwareDebugSettingsServer: IpcService {
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
 		case 2:
-			try setSettingsItemValue(im.getBuffer(0x19, 0) as Buffer<NnSettings_SettingsName>, im.getBuffer(0x19, 1) as Buffer<NnSettings_SettingsItemKey>, im.getBuffer(0x5, 0) as Buffer<UInt8>)
+			try setSettingsItemValue(im.getBuffer(0x19, 0)! as Buffer<NnSettings_SettingsName>, im.getBuffer(0x19, 1)! as Buffer<NnSettings_SettingsItemKey>, im.getBuffer(0x5, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 3:
-			try resetSettingsItemValue(im.getBuffer(0x19, 0) as Buffer<NnSettings_SettingsName>, im.getBuffer(0x19, 1) as Buffer<NnSettings_SettingsItemKey>)
+			try resetSettingsItemValue(im.getBuffer(0x19, 0)! as Buffer<NnSettings_SettingsName>, im.getBuffer(0x19, 1)! as Buffer<NnSettings_SettingsItemKey>)
 			om.initialize(0, 0, 0)
 		
 		case 4:
-			let ret = try createSettingsItemKeyIterator(im.getBuffer(0x19, 0) as Buffer<NnSettings_SettingsName>)
+			let ret = try createSettingsItemKeyIterator(im.getBuffer(0x19, 0)! as Buffer<NnSettings_SettingsName>)
 			om.initialize(1, 0, 0)
 			om.move(0, ret)
 		
 		case 10:
-			let ret = try readSettings(im.getData(8) as UInt32, im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			let ret = try readSettings(im.getData(8) as UInt32, im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 8)
 			om.setData(8, ret)
 		
@@ -1147,11 +1147,11 @@ class NnSettings_IFirmwareDebugSettingsServer: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 21:
-			try setAllowedSslHosts(im.getBuffer(0x5, 0) as Buffer<NnSettingsSystem_AllowedSslHost>)
+			try setAllowedSslHosts(im.getBuffer(0x5, 0)! as Buffer<NnSettingsSystem_AllowedSslHost>)
 			om.initialize(0, 0, 0)
 		
 		case 22:
-			try setHostFsMountPoint(im.getBuffer(0x15, 0) as Buffer<NnSettingsSystem_HostFsMountPoint>)
+			try setHostFsMountPoint(im.getBuffer(0x15, 0)! as Buffer<NnSettingsSystem_HostFsMountPoint>)
 			om.initialize(0, 0, 0)
 		
 		default:
@@ -1259,7 +1259,7 @@ class NnSettings_IFactorySettingsServer: IpcService {
 			om.setData(8, ret)
 		
 		case 8:
-			let ret = try getWirelessLanCountryCodes(im.getBuffer(0xa, 0) as Buffer<NnSettingsFactory_CountryCode>)
+			let ret = try getWirelessLanCountryCodes(im.getBuffer(0xa, 0)! as Buffer<NnSettingsFactory_CountryCode>)
 			om.initialize(0, 0, 4)
 			om.setData(8, ret)
 		
@@ -1284,27 +1284,27 @@ class NnSettings_IFactorySettingsServer: IpcService {
 			om.setBytes(8, ret)
 		
 		case 14:
-			try getEciDeviceCertificate(im.getBuffer(0x16, 0) as Buffer<NnSettingsFactory_EccB233DeviceCertificate>)
+			try getEciDeviceCertificate(im.getBuffer(0x16, 0)! as Buffer<NnSettingsFactory_EccB233DeviceCertificate>)
 			om.initialize(0, 0, 0)
 		
 		case 15:
-			try getEticketDeviceCertificate(im.getBuffer(0x16, 0) as Buffer<NnSettingsFactory_Rsa2048DeviceCertificate>)
+			try getEticketDeviceCertificate(im.getBuffer(0x16, 0)! as Buffer<NnSettingsFactory_Rsa2048DeviceCertificate>)
 			om.initialize(0, 0, 0)
 		
 		case 16:
-			try getSslKey(im.getBuffer(0x16, 0) as Buffer<NnSettingsFactory_SslKey>)
+			try getSslKey(im.getBuffer(0x16, 0)! as Buffer<NnSettingsFactory_SslKey>)
 			om.initialize(0, 0, 0)
 		
 		case 17:
-			try getSslCertificate(im.getBuffer(0x16, 0) as Buffer<NnSettingsFactory_SslCertificate>)
+			try getSslCertificate(im.getBuffer(0x16, 0)! as Buffer<NnSettingsFactory_SslCertificate>)
 			om.initialize(0, 0, 0)
 		
 		case 18:
-			try getGameCardKey(im.getBuffer(0x16, 0) as Buffer<NnSettingsFactory_GameCardKey>)
+			try getGameCardKey(im.getBuffer(0x16, 0)! as Buffer<NnSettingsFactory_GameCardKey>)
 			om.initialize(0, 0, 0)
 		
 		case 19:
-			try getGameCardCertificate(im.getBuffer(0x16, 0) as Buffer<NnSettingsFactory_GameCardCertificate>)
+			try getGameCardCertificate(im.getBuffer(0x16, 0)! as Buffer<NnSettingsFactory_GameCardCertificate>)
 			om.initialize(0, 0, 0)
 		
 		case 20:
@@ -1314,7 +1314,7 @@ class NnSettings_IFactorySettingsServer: IpcService {
 			om.setBytes(8, ret)
 		
 		case 21:
-			try getEticketDeviceKey(im.getBuffer(0x16, 0) as Buffer<NnSettingsFactory_Rsa2048DeviceKey>)
+			try getEticketDeviceKey(im.getBuffer(0x16, 0)! as Buffer<NnSettingsFactory_Rsa2048DeviceKey>)
 			om.initialize(0, 0, 0)
 		
 		case 22:

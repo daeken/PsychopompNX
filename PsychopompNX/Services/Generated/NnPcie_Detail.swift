@@ -11,7 +11,7 @@ class NnPcieDetail_IManager: IpcService {
 			om.move(0, _1)
 		
 		case 1:
-			let ret = try queryFunctionsUnregistered(im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			let ret = try queryFunctionsUnregistered(im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		default:
@@ -54,7 +54,7 @@ class NnPcieDetail_ISession: IpcService {
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
 		case 0:
-			let ret = try queryFunctions(im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			let ret = try queryFunctions(im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 1:
@@ -67,7 +67,7 @@ class NnPcieDetail_ISession: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 3:
-			try getFunctionState(nil, im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			try getFunctionState(nil, im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 4:
@@ -83,11 +83,11 @@ class NnPcieDetail_ISession: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 7:
-			try readBarRegion(nil, im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			try readBarRegion(nil, im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 8:
-			try writeBarRegion(nil, im.getBuffer(0x5, 0) as Buffer<UInt8>)
+			try writeBarRegion(nil, im.getBuffer(0x5, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 9:

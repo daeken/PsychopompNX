@@ -27,11 +27,11 @@ class NnNpns_INpnsUser: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 3:
-			try unknown3(nil, im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			try unknown3(nil, im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 4:
-			try unknown4(nil, im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			try unknown4(nil, im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 5:
@@ -69,11 +69,11 @@ class NnNpns_INpnsUser: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 104:
-			try unknown104(im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			try unknown104(im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 111:
-			try unknown111(im.getBuffer(0xa, 0) as Buffer<UInt8>)
+			try unknown111(im.getBuffer(0xa, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		default:
@@ -144,11 +144,11 @@ class NnNpns_INpnsSystem: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 3:
-			try unknown3(nil, im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			try unknown3(nil, im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 4:
-			try unknown4(nil, im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			try unknown4(nil, im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 5:
@@ -166,15 +166,15 @@ class NnNpns_INpnsSystem: IpcService {
 			om.copy(0, ret)
 		
 		case 11:
-			try unknown11(im.getBuffer(0x9, 0) as Buffer<UInt8>)
+			try unknown11(im.getBuffer(0x9, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 12:
-			try unknown12(im.getBuffer(0x9, 0) as Buffer<UInt8>)
+			try unknown12(im.getBuffer(0x9, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 13:
-			let ret = try unknown13(im.getBuffer(0x9, 0) as Buffer<UInt8>)
+			let ret = try unknown13(im.getBuffer(0x9, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 21:
@@ -218,7 +218,7 @@ class NnNpns_INpnsSystem: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 104:
-			try unknown104(im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			try unknown104(im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 105:
@@ -227,7 +227,7 @@ class NnNpns_INpnsSystem: IpcService {
 			om.copy(0, ret)
 		
 		case 111:
-			try unknown111(im.getBuffer(0xa, 0) as Buffer<UInt8>)
+			try unknown111(im.getBuffer(0xa, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 112:
@@ -239,11 +239,11 @@ class NnNpns_INpnsSystem: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 114:
-			try unknown114(im.getBuffer(0x9, 0) as Buffer<UInt8>, im.getBuffer(0x9, 1) as Buffer<UInt8>)
+			try unknown114(im.getBuffer(0x9, 0)! as Buffer<UInt8>, im.getBuffer(0x9, 1)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 115:
-			try unknown115(im.getBuffer(0xa, 0) as Buffer<UInt8>, im.getBuffer(0xa, 1) as Buffer<UInt8>)
+			try unknown115(im.getBuffer(0xa, 0)! as Buffer<UInt8>, im.getBuffer(0xa, 1)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 201:

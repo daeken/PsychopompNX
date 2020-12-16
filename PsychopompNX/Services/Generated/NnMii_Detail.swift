@@ -165,12 +165,12 @@ class NnMiiDetail_IDatabaseService: IpcService {
 			om.setData(8, ret)
 		
 		case 3:
-			let ret = try get(im.getData(8) as UInt32, im.getBuffer(0x6, 0) as Buffer<NnMii_CharInfoElement>)
+			let ret = try get(im.getData(8) as UInt32, im.getBuffer(0x6, 0)! as Buffer<NnMii_CharInfoElement>)
 			om.initialize(0, 0, 4)
 			om.setData(8, ret)
 		
 		case 4:
-			let ret = try get1(im.getData(8) as UInt32, im.getBuffer(0x6, 0) as Buffer<NnMii_CharInfo>)
+			let ret = try get1(im.getData(8) as UInt32, im.getBuffer(0x6, 0)! as Buffer<NnMii_CharInfo>)
 			om.initialize(0, 0, 4)
 			om.setData(8, ret)
 		
@@ -193,12 +193,12 @@ class NnMiiDetail_IDatabaseService: IpcService {
 			om.setBytes(8, ret)
 		
 		case 8:
-			let ret = try get2(im.getData(8) as UInt32, im.getBuffer(0x6, 0) as Buffer<NnMii_StoreDataElement>)
+			let ret = try get2(im.getData(8) as UInt32, im.getBuffer(0x6, 0)! as Buffer<NnMii_StoreDataElement>)
 			om.initialize(0, 0, 4)
 			om.setData(8, ret)
 		
 		case 9:
-			let ret = try get3(im.getData(8) as UInt32, im.getBuffer(0x6, 0) as Buffer<NnMii_StoreData>)
+			let ret = try get3(im.getData(8) as UInt32, im.getBuffer(0x6, 0)! as Buffer<NnMii_StoreData>)
 			om.initialize(0, 0, 4)
 			om.setData(8, ret)
 		
@@ -238,11 +238,11 @@ class NnMiiDetail_IDatabaseService: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 18:
-			try _import(im.getBuffer(0x5, 0) as Buffer<UInt8>)
+			try _import(im.getBuffer(0x5, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 19:
-			try export(im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			try export(im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 20:

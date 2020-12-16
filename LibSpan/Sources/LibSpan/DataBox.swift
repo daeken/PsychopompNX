@@ -8,9 +8,9 @@
 import Foundation
 
 public class DataBox {
-    var data: Data
+    public var data: Data
     
-    init(_ data: Data) {
+    public init(_ data: Data) {
         self.data = data
     }
 }

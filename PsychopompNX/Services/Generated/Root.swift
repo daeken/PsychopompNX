@@ -7,7 +7,7 @@ class JpegDecoder: IpcService {
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
 		case 3001:
-			try unknown3001(nil, im.getBuffer(0x5, 0) as Buffer<UInt8>, im.getBuffer(0x46, 0) as Buffer<UInt8>)
+			try unknown3001(nil, im.getBuffer(0x5, 0)! as Buffer<UInt8>, im.getBuffer(0x46, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		default:

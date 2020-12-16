@@ -47,7 +47,7 @@ class NnBcatDetailIpc_IDeliveryCacheProgressService: IpcService {
 			om.copy(0, ret)
 		
 		case 1:
-			try getImpl(im.getBuffer(0x1a, 0) as Buffer<NnBcatDetail_DeliveryCacheProgressImpl>)
+			try getImpl(im.getBuffer(0x1a, 0)! as Buffer<NnBcatDetail_DeliveryCacheProgressImpl>)
 			om.initialize(0, 0, 0)
 		
 		default:
@@ -77,7 +77,7 @@ class NnBcatDetailIpc_IDeliveryCacheFileService: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 1:
-			let ret = try read(im.getData(8) as UInt64, im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			let ret = try read(im.getData(8) as UInt64, im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 8)
 			om.setData(8, ret)
 		
@@ -120,7 +120,7 @@ class NnBcatDetailIpc_IDeliveryCacheDirectoryService: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 1:
-			let ret = try read(im.getBuffer(0x6, 0) as Buffer<NnBcat_DeliveryCacheDirectoryEntry>)
+			let ret = try read(im.getBuffer(0x6, 0)! as Buffer<NnBcat_DeliveryCacheDirectoryEntry>)
 			om.initialize(0, 0, 4)
 			om.setData(8, ret)
 		
@@ -185,7 +185,7 @@ class NnBcatDetailIpc_IBcatService: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 30100:
-			try setPassphrase(im.getData(8) as UInt64, im.getBuffer(0x9, 0) as Buffer<UInt8>)
+			try setPassphrase(im.getData(8) as UInt64, im.getBuffer(0x9, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 30200:
@@ -205,12 +205,12 @@ class NnBcatDetailIpc_IBcatService: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 90100:
-			let ret = try enumerateBackgroundDeliveryTask(im.getBuffer(0x6, 0) as Buffer<NnBcat_TaskInfo>)
+			let ret = try enumerateBackgroundDeliveryTask(im.getBuffer(0x6, 0)! as Buffer<NnBcat_TaskInfo>)
 			om.initialize(0, 0, 4)
 			om.setData(8, ret)
 		
 		case 90200:
-			let ret = try getDeliveryList(im.getData(8) as UInt64, im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			let ret = try getDeliveryList(im.getData(8) as UInt64, im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 8)
 			om.setData(8, ret)
 		
@@ -219,7 +219,7 @@ class NnBcatDetailIpc_IBcatService: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 90300:
-			let ret = try getPushNotificationLog(im.getBuffer(0x6, 0) as Buffer<NnBcat_PushNotificationLog>)
+			let ret = try getPushNotificationLog(im.getBuffer(0x6, 0)! as Buffer<NnBcat_PushNotificationLog>)
 			om.initialize(0, 0, 4)
 			om.setData(8, ret)
 		
@@ -267,7 +267,7 @@ class NnBcatDetailIpc_IDeliveryCacheStorageService: IpcService {
 			om.move(0, ret)
 		
 		case 10:
-			let ret = try enumerateDeliveryCacheDirectory(im.getBuffer(0x6, 0) as Buffer<NnBcat_DirectoryName>)
+			let ret = try enumerateDeliveryCacheDirectory(im.getBuffer(0x6, 0)! as Buffer<NnBcat_DirectoryName>)
 			om.initialize(0, 0, 4)
 			om.setData(8, ret)
 		

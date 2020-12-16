@@ -17,7 +17,7 @@ class NnAocsrvDetail_IAddOnContentManager: IpcService {
 			om.setData(8, ret)
 		
 		case 1:
-			let ret = try listAddOnContentByApplicationId(im.getData(8) as UInt32, im.getData(12) as UInt32, im.getData(16) as UInt64, im.getBuffer(0x6, 0) as Buffer<UInt32>)
+			let ret = try listAddOnContentByApplicationId(im.getData(8) as UInt32, im.getData(12) as UInt32, im.getData(16) as UInt64, im.getBuffer(0x6, 0)! as Buffer<UInt32>)
 			om.initialize(0, 0, 4)
 			om.setData(8, ret)
 		
@@ -27,7 +27,7 @@ class NnAocsrvDetail_IAddOnContentManager: IpcService {
 			om.setData(8, ret)
 		
 		case 3:
-			let ret = try listAddOnContent(im.getData(8) as UInt32, im.getData(12) as UInt32, im.getData(16) as UInt64, im.pid, im.getBuffer(0x6, 0) as Buffer<UInt32>)
+			let ret = try listAddOnContent(im.getData(8) as UInt32, im.getData(12) as UInt32, im.getData(16) as UInt64, im.pid, im.getBuffer(0x6, 0)! as Buffer<UInt32>)
 			om.initialize(0, 0, 4)
 			om.setData(8, ret)
 		

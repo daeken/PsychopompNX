@@ -49,7 +49,7 @@ class NnSpsmDetail_IPowerStateInterface: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 8:
-			try analyzePerformanceLogForLastSleepWakeSequence(im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			try analyzePerformanceLogForLastSleepWakeSequence(im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 9:

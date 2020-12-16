@@ -40,7 +40,7 @@ class NnNfcMifareDetail_IUser: IpcService {
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
 		case 0:
-			try initialize(im.getData(8) as UInt64, im.getData(16) as UInt64, im.pid, im.getBuffer(0x5, 0) as Buffer<UInt8>)
+			try initialize(im.getData(8) as UInt64, im.getData(16) as UInt64, im.pid, im.getBuffer(0x5, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 1:
@@ -48,7 +48,7 @@ class NnNfcMifareDetail_IUser: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 2:
-			let ret = try listDevices(im.getBuffer(0xa, 0) as Buffer<UInt8>)
+			let ret = try listDevices(im.getBuffer(0xa, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 4)
 			om.setData(8, ret)
 		
@@ -61,15 +61,15 @@ class NnNfcMifareDetail_IUser: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 5:
-			try read(im.getBytes(8, 0x8), im.getBuffer(0x5, 0) as Buffer<UInt8>, im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			try read(im.getBytes(8, 0x8), im.getBuffer(0x5, 0)! as Buffer<UInt8>, im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 6:
-			try write(im.getBytes(8, 0x8), im.getBuffer(0x5, 0) as Buffer<UInt8>)
+			try write(im.getBytes(8, 0x8), im.getBuffer(0x5, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 7:
-			try getTagInfo(im.getBytes(8, 0x8), im.getBuffer(0x1a, 0) as Buffer<UInt8>)
+			try getTagInfo(im.getBytes(8, 0x8), im.getBuffer(0x1a, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 8:

@@ -37,7 +37,7 @@ class NnNsDetail_IDevelopInterface: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 7:
-			let ret = try prepareLaunchProgramFromHost(im.getBuffer(0x5, 0) as Buffer<UInt8>)
+			let ret = try prepareLaunchProgramFromHost(im.getBuffer(0x5, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 8:
@@ -297,7 +297,7 @@ class NnNsDetail_IApplicationManagerInterface: IpcService {
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
 		case 0:
-			let ret = try listApplicationRecord(nil, im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			let ret = try listApplicationRecord(nil, im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 1:
@@ -310,7 +310,7 @@ class NnNsDetail_IApplicationManagerInterface: IpcService {
 			om.copy(0, ret)
 		
 		case 3:
-			try getApplicationViewDeprecated(im.getBuffer(0x5, 0) as Buffer<UInt8>, im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			try getApplicationViewDeprecated(im.getBuffer(0x5, 0)! as Buffer<UInt8>, im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 4:
@@ -342,11 +342,11 @@ class NnNsDetail_IApplicationManagerInterface: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 16:
-			try pushApplicationRecord(nil, im.getBuffer(0x5, 0) as Buffer<UInt8>)
+			try pushApplicationRecord(nil, im.getBuffer(0x5, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 17:
-			let ret = try listApplicationRecordContentMeta(nil, im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			let ret = try listApplicationRecordContentMeta(nil, im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 19:
@@ -354,7 +354,7 @@ class NnNsDetail_IApplicationManagerInterface: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 21:
-			try getApplicationContentPath(nil, im.getBuffer(0x16, 0) as Buffer<UInt8>)
+			try getApplicationContentPath(nil, im.getBuffer(0x16, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 22:
@@ -388,7 +388,7 @@ class NnNsDetail_IApplicationManagerInterface: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 35:
-			try updateVersionList(im.getBuffer(0x5, 0) as Buffer<UInt8>)
+			try updateVersionList(im.getBuffer(0x5, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 36:
@@ -396,7 +396,7 @@ class NnNsDetail_IApplicationManagerInterface: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 37:
-			let ret = try listRequiredVersion(im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			let ret = try listRequiredVersion(im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 38:
@@ -408,7 +408,7 @@ class NnNsDetail_IApplicationManagerInterface: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 40:
-			let ret = try getApplicationLogoData(nil, im.getBuffer(0x15, 0) as Buffer<UInt8>, im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			let ret = try getApplicationLogoData(nil, im.getBuffer(0x15, 0)! as Buffer<UInt8>, im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 41:
@@ -540,7 +540,7 @@ class NnNsDetail_IApplicationManagerInterface: IpcService {
 			om.move(0, _1)
 		
 		case 81:
-			let (_0, _1) = try requestDownloadAddOnContent(nil, im.getBuffer(0x5, 0) as Buffer<UInt8>)
+			let (_0, _1) = try requestDownloadAddOnContent(nil, im.getBuffer(0x5, 0)! as Buffer<UInt8>)
 			om.initialize(1, 1, 0)
 			om.copy(0, _0)
 			om.move(0, _1)
@@ -651,7 +651,7 @@ class NnNsDetail_IApplicationManagerInterface: IpcService {
 			om.copy(0, ret)
 		
 		case 301:
-			let ret = try popApplicationShellEventInfo(im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			let ret = try popApplicationShellEventInfo(im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 302:
@@ -679,7 +679,7 @@ class NnNsDetail_IApplicationManagerInterface: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 400:
-			let ret = try getApplicationControlData(nil, im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			let ret = try getApplicationControlData(nil, im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 401:
@@ -701,7 +701,7 @@ class NnNsDetail_IApplicationManagerInterface: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 405:
-			let ret = try listApplicationControlCacheEntryInfo(im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			let ret = try listApplicationControlCacheEntryInfo(im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 406:
@@ -752,11 +752,11 @@ class NnNsDetail_IApplicationManagerInterface: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 601:
-			let ret = try listApplicationContentMetaStatus(nil, im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			let ret = try listApplicationContentMetaStatus(nil, im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 602:
-			let ret = try listAvailableAddOnContent(nil, im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			let ret = try listAvailableAddOnContent(nil, im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 603:
@@ -768,7 +768,7 @@ class NnNsDetail_IApplicationManagerInterface: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 605:
-			let ret = try listApplicationContentMetaStatusWithRightsCheck(nil, im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			let ret = try listApplicationContentMetaStatusWithRightsCheck(nil, im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 606:
@@ -780,7 +780,7 @@ class NnNsDetail_IApplicationManagerInterface: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 700:
-			try pushDownloadTaskList(im.getBuffer(0x5, 0) as Buffer<UInt8>)
+			try pushDownloadTaskList(im.getBuffer(0x5, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 701:
@@ -798,7 +798,7 @@ class NnNsDetail_IApplicationManagerInterface: IpcService {
 			om.move(0, _1)
 		
 		case 704:
-			let ret = try listDownloadTaskStatus(im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			let ret = try listDownloadTaskStatus(im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 705:
@@ -812,7 +812,7 @@ class NnNsDetail_IApplicationManagerInterface: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 801:
-			let ret = try listVersionList(im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			let ret = try listVersionList(im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 802:
@@ -826,7 +826,7 @@ class NnNsDetail_IApplicationManagerInterface: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 901:
-			try getApplicationRecordProperty(nil, im.getBuffer(0x16, 0) as Buffer<UInt8>)
+			try getApplicationRecordProperty(nil, im.getBuffer(0x16, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 902:
@@ -854,7 +854,7 @@ class NnNsDetail_IApplicationManagerInterface: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 908:
-			let ret = try listApplicationRecordInstalledContentMeta(nil, im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			let ret = try listApplicationRecordInstalledContentMeta(nil, im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 909:
@@ -962,11 +962,11 @@ class NnNsDetail_IApplicationManagerInterface: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 1700:
-			let ret = try listApplicationDownloadingContentMeta(nil, im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			let ret = try listApplicationDownloadingContentMeta(nil, im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 1701:
-			try getApplicationView(im.getBuffer(0x5, 0) as Buffer<UInt8>, im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			try getApplicationView(im.getBuffer(0x5, 0)! as Buffer<UInt8>, im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 1702:
@@ -974,7 +974,7 @@ class NnNsDetail_IApplicationManagerInterface: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 1703:
-			try getApplicationViewDownloadErrorContext(nil, im.getBuffer(0x16, 0) as Buffer<UInt8>)
+			try getApplicationViewDownloadErrorContext(nil, im.getBuffer(0x16, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 1800:
@@ -986,11 +986,11 @@ class NnNsDetail_IApplicationManagerInterface: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 1802:
-			let ret = try listLastNotificationInfo(im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			let ret = try listLastNotificationInfo(im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 1803:
-			let ret = try listNotificationTask(im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			let ret = try listNotificationTask(im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 1900:
@@ -1008,47 +1008,47 @@ class NnNsDetail_IApplicationManagerInterface: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 2000:
-			try getSystemDeliveryInfo(im.getBuffer(0x16, 0) as Buffer<UInt8>)
+			try getSystemDeliveryInfo(im.getBuffer(0x16, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 2001:
-			let ret = try selectLatestSystemDeliveryInfo(im.getBuffer(0x15, 0) as Buffer<UInt8>, im.getBuffer(0x5, 0) as Buffer<UInt8>, im.getBuffer(0x5, 1) as Buffer<UInt8>)
+			let ret = try selectLatestSystemDeliveryInfo(im.getBuffer(0x15, 0)! as Buffer<UInt8>, im.getBuffer(0x5, 0)! as Buffer<UInt8>, im.getBuffer(0x5, 1)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 2002:
-			try verifyDeliveryProtocolVersion(im.getBuffer(0x15, 0) as Buffer<UInt8>)
+			try verifyDeliveryProtocolVersion(im.getBuffer(0x15, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 2003:
-			let ret = try getApplicationDeliveryInfo(nil, im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			let ret = try getApplicationDeliveryInfo(nil, im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 2004:
-			let ret = try hasAllContentsToDeliver(im.getBuffer(0x5, 0) as Buffer<UInt8>)
+			let ret = try hasAllContentsToDeliver(im.getBuffer(0x5, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 2005:
-			let ret = try compareApplicationDeliveryInfo(im.getBuffer(0x5, 0) as Buffer<UInt8>, im.getBuffer(0x5, 1) as Buffer<UInt8>)
+			let ret = try compareApplicationDeliveryInfo(im.getBuffer(0x5, 0)! as Buffer<UInt8>, im.getBuffer(0x5, 1)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 2006:
-			let ret = try canDeliverApplication(im.getBuffer(0x5, 0) as Buffer<UInt8>, im.getBuffer(0x5, 1) as Buffer<UInt8>)
+			let ret = try canDeliverApplication(im.getBuffer(0x5, 0)! as Buffer<UInt8>, im.getBuffer(0x5, 1)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 2007:
-			let ret = try listContentMetaKeyToDeliverApplication(nil, im.getBuffer(0x5, 0) as Buffer<UInt8>, im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			let ret = try listContentMetaKeyToDeliverApplication(nil, im.getBuffer(0x5, 0)! as Buffer<UInt8>, im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 2008:
-			let ret = try needsSystemUpdateToDeliverApplication(im.getBuffer(0x15, 0) as Buffer<UInt8>, im.getBuffer(0x5, 0) as Buffer<UInt8>)
+			let ret = try needsSystemUpdateToDeliverApplication(im.getBuffer(0x15, 0)! as Buffer<UInt8>, im.getBuffer(0x5, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 2009:
-			let ret = try estimateRequiredSize(im.getBuffer(0x5, 0) as Buffer<UInt8>)
+			let ret = try estimateRequiredSize(im.getBuffer(0x5, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 2010:
-			let (_0, _1) = try requestReceiveApplication(nil, im.getBuffer(0x5, 0) as Buffer<UInt8>)
+			let (_0, _1) = try requestReceiveApplication(nil, im.getBuffer(0x5, 0)! as Buffer<UInt8>)
 			om.initialize(1, 1, 0)
 			om.copy(0, _0)
 			om.move(0, _1)
@@ -1062,7 +1062,7 @@ class NnNsDetail_IApplicationManagerInterface: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 2013:
-			let (_0, _1) = try requestSendApplication(nil, im.getBuffer(0x5, 0) as Buffer<UInt8>)
+			let (_0, _1) = try requestSendApplication(nil, im.getBuffer(0x5, 0)! as Buffer<UInt8>)
 			om.initialize(1, 1, 0)
 			om.copy(0, _0)
 			om.move(0, _1)
@@ -1072,15 +1072,15 @@ class NnNsDetail_IApplicationManagerInterface: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 2015:
-			let ret = try compareSystemDeliveryInfo(im.getBuffer(0x15, 0) as Buffer<UInt8>, im.getBuffer(0x15, 1) as Buffer<UInt8>)
+			let ret = try compareSystemDeliveryInfo(im.getBuffer(0x15, 0)! as Buffer<UInt8>, im.getBuffer(0x15, 1)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 2016:
-			let ret = try listNotCommittedContentMeta(nil, im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			let ret = try listNotCommittedContentMeta(nil, im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 2017:
-			try createDownloadTask(nil, im.getBuffer(0x5, 0) as Buffer<UInt8>)
+			try createDownloadTask(nil, im.getBuffer(0x5, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 2018:
@@ -1455,7 +1455,7 @@ class NnNsDetail_ISystemUpdateInterface: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 17:
-			let (_0, _1) = try requestSendSystemUpdate(nil, im.getBuffer(0x15, 0) as Buffer<UInt8>)
+			let (_0, _1) = try requestSendSystemUpdate(nil, im.getBuffer(0x15, 0)! as Buffer<UInt8>)
 			om.initialize(1, 1, 0)
 			om.copy(0, _0)
 			om.move(0, _1)
@@ -1517,7 +1517,7 @@ class NnNsDetail_IDownloadTaskInterface: IpcService {
 			om.move(0, _1)
 		
 		case 704:
-			let ret = try listDownloadTaskStatus(im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			let ret = try listDownloadTaskStatus(im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 705:
@@ -1585,7 +1585,7 @@ class NnNsDetail_IApplicationVersionInterface: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 35:
-			try unknown35(im.getBuffer(0x5, 0) as Buffer<UInt8>)
+			try unknown35(im.getBuffer(0x5, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 36:
@@ -1593,7 +1593,7 @@ class NnNsDetail_IApplicationVersionInterface: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 37:
-			let ret = try unknown37(im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			let ret = try unknown37(im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 800:
@@ -1601,7 +1601,7 @@ class NnNsDetail_IApplicationVersionInterface: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 801:
-			let ret = try unknown801(im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			let ret = try unknown801(im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 802:
@@ -1653,7 +1653,7 @@ class NnNsDetail_IProgressAsyncResult: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 2:
-			try unknown2(im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			try unknown2(im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 3:
@@ -1661,7 +1661,7 @@ class NnNsDetail_IProgressAsyncResult: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 4:
-			try unknown4(im.getBuffer(0x16, 0) as Buffer<UInt8>)
+			try unknown4(im.getBuffer(0x16, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		default:
@@ -1688,7 +1688,7 @@ class NnNsDetail_IDocumentInterface: IpcService {
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
 		case 21:
-			try getApplicationContentPath(nil, im.getBuffer(0x16, 0) as Buffer<UInt8>)
+			try getApplicationContentPath(nil, im.getBuffer(0x16, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 23:
@@ -1778,11 +1778,11 @@ class NnNsDetail_ISystemUpdateControl: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 9:
-			let ret = try unknown9(im.getBuffer(0x15, 0) as Buffer<UInt8>)
+			let ret = try unknown9(im.getBuffer(0x15, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 10:
-			let ret = try unknown10(im.getBuffer(0x15, 0) as Buffer<UInt8>, im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			let ret = try unknown10(im.getBuffer(0x15, 0)! as Buffer<UInt8>, im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 11:
@@ -1790,11 +1790,11 @@ class NnNsDetail_ISystemUpdateControl: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 12:
-			let ret = try unknown12(im.getBuffer(0x15, 0) as Buffer<UInt8>)
+			let ret = try unknown12(im.getBuffer(0x15, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 13:
-			let ret = try unknown13(im.getBuffer(0x15, 0) as Buffer<UInt8>, im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			let ret = try unknown13(im.getBuffer(0x15, 0)! as Buffer<UInt8>, im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 14:
@@ -1806,7 +1806,7 @@ class NnNsDetail_ISystemUpdateControl: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 16:
-			let (_0, _1) = try unknown16(nil, im.getBuffer(0x15, 0) as Buffer<UInt8>)
+			let (_0, _1) = try unknown16(nil, im.getBuffer(0x15, 0)! as Buffer<UInt8>)
 			om.initialize(1, 1, 0)
 			om.copy(0, _0)
 			om.move(0, _1)
@@ -1820,11 +1820,11 @@ class NnNsDetail_ISystemUpdateControl: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 19:
-			let ret = try unknown19(im.getBuffer(0x15, 0) as Buffer<UInt8>)
+			let ret = try unknown19(im.getBuffer(0x15, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 20:
-			let ret = try unknown20(im.getBuffer(0x15, 0) as Buffer<UInt8>, im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			let ret = try unknown20(im.getBuffer(0x15, 0)! as Buffer<UInt8>, im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 21:
@@ -1878,7 +1878,7 @@ class NnNsDetail_IAsyncValue: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 1:
-			try unknown1(im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			try unknown1(im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 2:
@@ -1886,7 +1886,7 @@ class NnNsDetail_IAsyncValue: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 3:
-			try unknown3(im.getBuffer(0x16, 0) as Buffer<UInt8>)
+			try unknown3(im.getBuffer(0x16, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		default:
@@ -2045,7 +2045,7 @@ class NnNsDetail_IAsyncResult: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 2:
-			try unknown2(im.getBuffer(0x16, 0) as Buffer<UInt8>)
+			try unknown2(im.getBuffer(0x16, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		default:
@@ -2096,11 +2096,11 @@ class NnNsDetail_IContentManagementInterface: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 601:
-			let ret = try listApplicationContentMetaStatus(nil, im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			let ret = try listApplicationContentMetaStatus(nil, im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 605:
-			let ret = try listApplicationContentMetaStatusWithRightsCheck(nil, im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			let ret = try listApplicationContentMetaStatusWithRightsCheck(nil, im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 607:
@@ -2157,7 +2157,7 @@ class NnNsDetail_IAccountProxyInterface: IpcService {
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
 		case 0:
-			try createUserAccount(nil, im.getBuffer(0x5, 0) as Buffer<UInt8>)
+			try createUserAccount(nil, im.getBuffer(0x5, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		default:

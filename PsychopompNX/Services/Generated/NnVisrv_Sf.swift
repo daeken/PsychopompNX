@@ -44,7 +44,7 @@ class NnVisrvSf_IApplicationDisplayService: IpcService {
 			om.move(0, ret)
 		
 		case 1000:
-			let ret = try listDisplays(im.getBuffer(0x6, 0) as Buffer<NnVi_DisplayInfo>)
+			let ret = try listDisplays(im.getBuffer(0x6, 0)! as Buffer<NnVi_DisplayInfo>)
 			om.initialize(0, 0, 8)
 			om.setData(8, ret)
 		
@@ -73,7 +73,7 @@ class NnVisrvSf_IApplicationDisplayService: IpcService {
 			om.setData(16, _1)
 		
 		case 2020:
-			let ret = try openLayer(im.getBytes(8, 0x40), im.getData(72) as UInt64, im.getData(80) as UInt64, im.pid, im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			let ret = try openLayer(im.getBytes(8, 0x40), im.getData(72) as UInt64, im.getData(80) as UInt64, im.pid, im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 8)
 			om.setData(8, ret)
 		
@@ -82,7 +82,7 @@ class NnVisrvSf_IApplicationDisplayService: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 2030:
-			let (_0, _1) = try createStrayLayer(im.getData(8) as UInt32, im.getData(16) as UInt64, im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			let (_0, _1) = try createStrayLayer(im.getData(8) as UInt32, im.getData(16) as UInt64, im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 16)
 			om.setData(8, _0)
 			om.setData(16, _1)
@@ -100,13 +100,13 @@ class NnVisrvSf_IApplicationDisplayService: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 2450:
-			let (_0, _1) = try getIndirectLayerImageMap(im.getData(8) as UInt64, im.getData(16) as UInt64, im.getData(24) as UInt64, im.getData(32) as UInt64, im.pid, im.getBuffer(0x46, 0) as Buffer<UInt8>)
+			let (_0, _1) = try getIndirectLayerImageMap(im.getData(8) as UInt64, im.getData(16) as UInt64, im.getData(24) as UInt64, im.getData(32) as UInt64, im.pid, im.getBuffer(0x46, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 16)
 			om.setData(8, _0)
 			om.setData(16, _1)
 		
 		case 2451:
-			let (_0, _1) = try getIndirectLayerImageCropMap(im.getData(8) as Float32, im.getData(12) as Float32, im.getData(16) as Float32, im.getData(20) as Float32, im.getData(24) as UInt64, im.getData(32) as UInt64, im.getData(40) as UInt64, im.getData(48) as UInt64, im.pid, im.getBuffer(0x46, 0) as Buffer<UInt8>)
+			let (_0, _1) = try getIndirectLayerImageCropMap(im.getData(8) as Float32, im.getData(12) as Float32, im.getData(16) as Float32, im.getData(20) as Float32, im.getData(24) as UInt64, im.getData(32) as UInt64, im.getData(40) as UInt64, im.getData(48) as UInt64, im.pid, im.getBuffer(0x46, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 16)
 			om.setData(8, _0)
 			om.setData(16, _1)
@@ -300,7 +300,7 @@ class NnVisrvSf_IManagerDisplayService: IpcService {
 			om.setData(8, ret)
 		
 		case 2501:
-			let ret = try getCompositorErrorInfo(im.getData(8) as UInt64, im.getData(16) as UInt64, im.getBuffer(0x16, 0) as Buffer<NnVi_CompositorError>)
+			let ret = try getCompositorErrorInfo(im.getData(8) as UInt64, im.getData(16) as UInt64, im.getBuffer(0x16, 0)! as Buffer<NnVi_CompositorError>)
 			om.initialize(0, 0, 4)
 			om.setData(8, ret)
 		
@@ -382,12 +382,12 @@ class NnVisrvSf_IManagerDisplayService: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 8200:
-			let ret = try createSharedBufferStaticStorage(im.getData(8) as UInt64, im.getBuffer(0x15, 0) as Buffer<NnViFbshare_SharedMemoryPoolLayout>)
+			let ret = try createSharedBufferStaticStorage(im.getData(8) as UInt64, im.getBuffer(0x15, 0)! as Buffer<NnViFbshare_SharedMemoryPoolLayout>)
 			om.initialize(0, 0, 8)
 			om.setData(8, ret)
 		
 		case 8201:
-			let ret = try createSharedBufferTransferMemory(im.getData(8) as UInt64, try Emulator.instance!.kernel.tryGetHandle(im.getCopy(0)) as KObject, im.getBuffer(0x15, 0) as Buffer<NnViFbshare_SharedMemoryPoolLayout>)
+			let ret = try createSharedBufferTransferMemory(im.getData(8) as UInt64, try Emulator.instance!.kernel.tryGetHandle(im.getCopy(0)) as KObject, im.getBuffer(0x15, 0)! as Buffer<NnViFbshare_SharedMemoryPoolLayout>)
 			om.initialize(0, 0, 8)
 			om.setData(8, ret)
 		
@@ -464,7 +464,7 @@ class NnVisrvSf_IManagerDisplayService: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 8227:
-			let ret = try createSharedBufferProcessHeap(im.getData(8) as UInt64, im.getBuffer(0x15, 0) as Buffer<NnViFbshare_SharedMemoryPoolLayout>)
+			let ret = try createSharedBufferProcessHeap(im.getData(8) as UInt64, im.getBuffer(0x15, 0)! as Buffer<NnViFbshare_SharedMemoryPoolLayout>)
 			om.initialize(0, 0, 8)
 			om.setData(8, ret)
 		
@@ -486,12 +486,12 @@ class NnVisrvSf_IManagerDisplayService: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 8293:
-			let ret = try getDetachedSharedFrameBufferImage(im.getData(8) as UInt64, im.getData(16) as UInt64, im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			let ret = try getDetachedSharedFrameBufferImage(im.getData(8) as UInt64, im.getData(16) as UInt64, im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 8)
 			om.setData(8, ret)
 		
 		case 8294:
-			try setDetachedSharedFrameBufferImage(im.getData(8) as UInt32, im.getData(16) as UInt64, im.getData(24) as UInt64, im.getBuffer(0x5, 0) as Buffer<UInt8>)
+			try setDetachedSharedFrameBufferImage(im.getData(8) as UInt32, im.getData(16) as UInt64, im.getData(24) as UInt64, im.getBuffer(0x5, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 8295:
@@ -499,7 +499,7 @@ class NnVisrvSf_IManagerDisplayService: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 8296:
-			try setDetachedSharedFrameBufferSubImage(im.getData(8) as UInt32, im.getData(12) as UInt32, im.getData(16) as UInt32, im.getData(20) as UInt32, im.getData(24) as UInt32, im.getData(28) as UInt32, im.getData(32) as UInt64, im.getData(40) as UInt64, im.getBuffer(0x5, 0) as Buffer<UInt8>)
+			try setDetachedSharedFrameBufferSubImage(im.getData(8) as UInt32, im.getData(12) as UInt32, im.getData(16) as UInt32, im.getData(20) as UInt32, im.getData(24) as UInt32, im.getData(28) as UInt32, im.getData(32) as UInt64, im.getData(40) as UInt64, im.getBuffer(0x5, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 8297:
@@ -709,13 +709,13 @@ class NnVisrvSf_ISystemDisplayService: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 2312:
-			let (_0, _1) = try createStrayLayer(im.getData(8) as UInt32, im.getData(16) as UInt64, im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			let (_0, _1) = try createStrayLayer(im.getData(8) as UInt32, im.getData(16) as UInt64, im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 16)
 			om.setData(8, _0)
 			om.setData(16, _1)
 		
 		case 2400:
-			let ret = try openIndirectLayer(im.getData(8) as UInt64, im.getData(16) as UInt64, im.pid, im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			let ret = try openIndirectLayer(im.getData(8) as UInt64, im.getData(16) as UInt64, im.pid, im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 8)
 			om.setData(8, ret)
 		
@@ -728,17 +728,17 @@ class NnVisrvSf_ISystemDisplayService: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 3000:
-			let ret = try listDisplayModes(im.getData(8) as UInt64, im.getBuffer(0x6, 0) as Buffer<NnVi_DisplayModeInfo>)
+			let ret = try listDisplayModes(im.getData(8) as UInt64, im.getBuffer(0x6, 0)! as Buffer<NnVi_DisplayModeInfo>)
 			om.initialize(0, 0, 8)
 			om.setData(8, ret)
 		
 		case 3001:
-			let ret = try listDisplayRgbRanges(im.getData(8) as UInt64, im.getBuffer(0x6, 0) as Buffer<UInt32>)
+			let ret = try listDisplayRgbRanges(im.getData(8) as UInt64, im.getBuffer(0x6, 0)! as Buffer<UInt32>)
 			om.initialize(0, 0, 8)
 			om.setData(8, ret)
 		
 		case 3002:
-			let ret = try listDisplayContentTypes(im.getData(8) as UInt64, im.getBuffer(0x6, 0) as Buffer<UInt32>)
+			let ret = try listDisplayContentTypes(im.getData(8) as UInt64, im.getBuffer(0x6, 0)! as Buffer<UInt32>)
 			om.initialize(0, 0, 8)
 			om.setData(8, ret)
 		
@@ -814,7 +814,7 @@ class NnVisrvSf_ISystemDisplayService: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 8225:
-			let (_0, _1) = try getSharedBufferMemoryHandleId(im.getData(8) as UInt64, im.getData(16) as UInt64, im.pid, im.getBuffer(0x16, 0) as Buffer<NnViFbshare_SharedMemoryPoolLayout>)
+			let (_0, _1) = try getSharedBufferMemoryHandleId(im.getData(8) as UInt64, im.getData(16) as UInt64, im.pid, im.getBuffer(0x16, 0)! as Buffer<NnViFbshare_SharedMemoryPoolLayout>)
 			om.initialize(0, 0, 16)
 			om.setData(8, _0)
 			om.setData(16, _1)

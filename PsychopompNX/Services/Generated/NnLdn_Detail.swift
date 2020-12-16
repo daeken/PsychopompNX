@@ -16,7 +16,7 @@ class NnLdnDetail_IMonitorService: IpcService {
 			om.setData(8, ret)
 		
 		case 1:
-			try getNetworkInfoForMonitor(im.getBuffer(0x1a, 0) as Buffer<UInt8>)
+			try getNetworkInfoForMonitor(im.getBuffer(0x1a, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 2:
@@ -130,7 +130,7 @@ class NnLdnDetail_IUserLocalCommunicationService: IpcService {
 			om.setData(8, ret)
 		
 		case 1:
-			try getNetworkInfo(im.getBuffer(0x1a, 0) as Buffer<UInt8>)
+			try getNetworkInfo(im.getBuffer(0x1a, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 2:
@@ -162,16 +162,16 @@ class NnLdnDetail_IUserLocalCommunicationService: IpcService {
 			om.copy(0, ret)
 		
 		case 101:
-			try getNetworkInfoLatestUpdate(im.getBuffer(0x1a, 0) as Buffer<UInt8>, im.getBuffer(0xa, 0) as Buffer<UInt8>)
+			try getNetworkInfoLatestUpdate(im.getBuffer(0x1a, 0)! as Buffer<UInt8>, im.getBuffer(0xa, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 102:
-			let ret = try scan(im.getData(8) as UInt16, im.getBytes(10, 0x60), im.getBuffer(0x22, 0) as Buffer<UInt8>)
+			let ret = try scan(im.getData(8) as UInt16, im.getBytes(10, 0x60), im.getBuffer(0x22, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 2)
 			om.setData(8, ret)
 		
 		case 103:
-			let ret = try scanPrivate(im.getData(8) as UInt16, im.getBytes(10, 0x60), im.getBuffer(0x22, 0) as Buffer<UInt8>)
+			let ret = try scanPrivate(im.getData(8) as UInt16, im.getBytes(10, 0x60), im.getBuffer(0x22, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 2)
 			om.setData(8, ret)
 		
@@ -188,7 +188,7 @@ class NnLdnDetail_IUserLocalCommunicationService: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 203:
-			try createNetworkPrivate(im.getBytes(8, 0x44), im.getBytes(76, 0x20), im.getBytes(108, 0x30), im.getBytes(156, 0x20), im.getBuffer(0x9, 0) as Buffer<UInt8>)
+			try createNetworkPrivate(im.getBytes(8, 0x44), im.getBytes(76, 0x20), im.getBytes(108, 0x30), im.getBytes(156, 0x20), im.getBuffer(0x9, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 204:
@@ -200,7 +200,7 @@ class NnLdnDetail_IUserLocalCommunicationService: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 206:
-			try setAdvertiseData(im.getBuffer(0x21, 0) as Buffer<UInt8>)
+			try setAdvertiseData(im.getBuffer(0x21, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 207:
@@ -224,7 +224,7 @@ class NnLdnDetail_IUserLocalCommunicationService: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 302:
-			try connect(im.getBytes(8, 0x44), im.getBytes(76, 0x30), im.getData(124) as UInt32, im.getData(128) as UInt32, im.getBuffer(0x19, 0) as Buffer<UInt8>)
+			try connect(im.getBytes(8, 0x44), im.getBytes(76, 0x30), im.getData(124) as UInt32, im.getData(128) as UInt32, im.getBuffer(0x19, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 303:
@@ -319,7 +319,7 @@ class NnLdnDetail_ISystemLocalCommunicationService: IpcService {
 			om.setData(8, ret)
 		
 		case 1:
-			try getNetworkInfo(im.getBuffer(0x1a, 0) as Buffer<UInt8>)
+			try getNetworkInfo(im.getBuffer(0x1a, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 2:
@@ -351,16 +351,16 @@ class NnLdnDetail_ISystemLocalCommunicationService: IpcService {
 			om.copy(0, ret)
 		
 		case 101:
-			try getNetworkInfoLatestUpdate(im.getBuffer(0x1a, 0) as Buffer<UInt8>, im.getBuffer(0xa, 0) as Buffer<UInt8>)
+			try getNetworkInfoLatestUpdate(im.getBuffer(0x1a, 0)! as Buffer<UInt8>, im.getBuffer(0xa, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 102:
-			let ret = try scan(im.getData(8) as UInt16, im.getBytes(10, 0x60), im.getBuffer(0x22, 0) as Buffer<UInt8>)
+			let ret = try scan(im.getData(8) as UInt16, im.getBytes(10, 0x60), im.getBuffer(0x22, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 2)
 			om.setData(8, ret)
 		
 		case 103:
-			let ret = try scanPrivate(im.getData(8) as UInt16, im.getBytes(10, 0x60), im.getBuffer(0x22, 0) as Buffer<UInt8>)
+			let ret = try scanPrivate(im.getData(8) as UInt16, im.getBytes(10, 0x60), im.getBuffer(0x22, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 2)
 			om.setData(8, ret)
 		
@@ -377,7 +377,7 @@ class NnLdnDetail_ISystemLocalCommunicationService: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 203:
-			try createNetworkPrivate(im.getBytes(8, 0x44), im.getBytes(76, 0x20), im.getBytes(108, 0x30), im.getBytes(156, 0x20), im.getBuffer(0x9, 0) as Buffer<UInt8>)
+			try createNetworkPrivate(im.getBytes(8, 0x44), im.getBytes(76, 0x20), im.getBytes(108, 0x30), im.getBytes(156, 0x20), im.getBuffer(0x9, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 204:
@@ -389,7 +389,7 @@ class NnLdnDetail_ISystemLocalCommunicationService: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 206:
-			try setAdvertiseData(im.getBuffer(0x21, 0) as Buffer<UInt8>)
+			try setAdvertiseData(im.getBuffer(0x21, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 207:
@@ -413,7 +413,7 @@ class NnLdnDetail_ISystemLocalCommunicationService: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 302:
-			try connect(im.getBytes(8, 0x44), im.getBytes(76, 0x30), im.getData(124) as UInt32, im.getData(128) as UInt32, im.getBuffer(0x19, 0) as Buffer<UInt8>)
+			try connect(im.getBytes(8, 0x44), im.getBytes(76, 0x30), im.getData(124) as UInt32, im.getData(128) as UInt32, im.getBuffer(0x19, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 303:

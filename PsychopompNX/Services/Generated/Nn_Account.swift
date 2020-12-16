@@ -61,11 +61,11 @@ class NnAccount_IAccountServiceForAdministrator: IpcService {
 			om.setData(8, ret)
 		
 		case 2:
-			try listAllUsers(im.getBuffer(0xa, 0) as Buffer<NnAccount_Uid>)
+			try listAllUsers(im.getBuffer(0xa, 0)! as Buffer<NnAccount_Uid>)
 			om.initialize(0, 0, 0)
 		
 		case 3:
-			try listOpenUsers(im.getBuffer(0xa, 0) as Buffer<NnAccount_Uid>)
+			try listOpenUsers(im.getBuffer(0xa, 0)! as Buffer<NnAccount_Uid>)
 			om.initialize(0, 0, 0)
 		
 		case 4:
@@ -126,12 +126,12 @@ class NnAccount_IAccountServiceForAdministrator: IpcService {
 			om.move(0, ret)
 		
 		case 105:
-			let ret = try checkNetworkServiceAvailabilityAsync(im.getData(8) as UInt64, im.pid, im.getBuffer(0x19, 0) as Buffer<NnAccount_SystemProgramIdentification>)
+			let ret = try checkNetworkServiceAvailabilityAsync(im.getData(8) as UInt64, im.pid, im.getBuffer(0x19, 0)! as Buffer<NnAccount_SystemProgramIdentification>)
 			om.initialize(1, 0, 0)
 			om.move(0, ret)
 		
 		case 110:
-			try storeSaveDataThumbnail(im.getBytes(8, 0x10), im.getData(24) as UInt64, im.getBuffer(0x5, 0) as Buffer<UInt8>)
+			try storeSaveDataThumbnail(im.getBytes(8, 0x10), im.getData(24) as UInt64, im.getBuffer(0x5, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 111:
@@ -139,7 +139,7 @@ class NnAccount_IAccountServiceForAdministrator: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 112:
-			let ret = try loadSaveDataThumbnail(im.getBytes(8, 0x10), im.getData(24) as UInt64, im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			let ret = try loadSaveDataThumbnail(im.getBytes(8, 0x10), im.getData(24) as UInt64, im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 4)
 			om.setData(8, ret)
 		
@@ -295,7 +295,7 @@ class NnAccount_IBaasAccessTokenAccessor: IpcService {
 			om.move(0, ret)
 		
 		case 1:
-			let ret = try loadCache(im.getBytes(8, 0x10), im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			let ret = try loadCache(im.getBytes(8, 0x10), im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 4)
 			om.setData(8, ret)
 		
@@ -364,11 +364,11 @@ class NnAccount_IAccountServiceForApplication: IpcService {
 			om.setData(8, ret)
 		
 		case 2:
-			try listAllUsers(im.getBuffer(0xa, 0) as Buffer<NnAccount_Uid>)
+			try listAllUsers(im.getBuffer(0xa, 0)! as Buffer<NnAccount_Uid>)
 			om.initialize(0, 0, 0)
 		
 		case 3:
-			try listOpenUsers(im.getBuffer(0xa, 0) as Buffer<NnAccount_Uid>)
+			try listOpenUsers(im.getBuffer(0xa, 0)! as Buffer<NnAccount_Uid>)
 			om.initialize(0, 0, 0)
 		
 		case 4:
@@ -423,7 +423,7 @@ class NnAccount_IAccountServiceForApplication: IpcService {
 			om.move(0, ret)
 		
 		case 110:
-			try storeSaveDataThumbnail(im.getBytes(8, 0x10), im.getBuffer(0x5, 0) as Buffer<UInt8>)
+			try storeSaveDataThumbnail(im.getBytes(8, 0x10), im.getBuffer(0x5, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 111:
@@ -509,11 +509,11 @@ class NnAccount_IAccountServiceForSystemService: IpcService {
 			om.setData(8, ret)
 		
 		case 2:
-			try listAllUsers(im.getBuffer(0xa, 0) as Buffer<NnAccount_Uid>)
+			try listAllUsers(im.getBuffer(0xa, 0)! as Buffer<NnAccount_Uid>)
 			om.initialize(0, 0, 0)
 		
 		case 3:
-			try listOpenUsers(im.getBuffer(0xa, 0) as Buffer<NnAccount_Uid>)
+			try listOpenUsers(im.getBuffer(0xa, 0)! as Buffer<NnAccount_Uid>)
 			om.initialize(0, 0, 0)
 		
 		case 4:
@@ -574,12 +574,12 @@ class NnAccount_IAccountServiceForSystemService: IpcService {
 			om.move(0, ret)
 		
 		case 105:
-			let ret = try checkNetworkServiceAvailabilityAsync(im.getData(8) as UInt64, im.pid, im.getBuffer(0x19, 0) as Buffer<NnAccount_SystemProgramIdentification>)
+			let ret = try checkNetworkServiceAvailabilityAsync(im.getData(8) as UInt64, im.pid, im.getBuffer(0x19, 0)! as Buffer<NnAccount_SystemProgramIdentification>)
 			om.initialize(1, 0, 0)
 			om.move(0, ret)
 		
 		case 110:
-			try storeSaveDataThumbnail(im.getBytes(8, 0x10), im.getData(24) as UInt64, im.getBuffer(0x5, 0) as Buffer<UInt8>)
+			try storeSaveDataThumbnail(im.getBytes(8, 0x10), im.getData(24) as UInt64, im.getBuffer(0x5, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 111:
@@ -587,7 +587,7 @@ class NnAccount_IAccountServiceForSystemService: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 112:
-			let ret = try loadSaveDataThumbnail(im.getBytes(8, 0x10), im.getData(24) as UInt64, im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			let ret = try loadSaveDataThumbnail(im.getBytes(8, 0x10), im.getData(24) as UInt64, im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 4)
 			om.setData(8, ret)
 		

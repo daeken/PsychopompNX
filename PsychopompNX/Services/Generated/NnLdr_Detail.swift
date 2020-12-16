@@ -59,7 +59,7 @@ class NnLdrDetail_IProcessManagerInterface: IpcService {
 			om.move(0, ret)
 		
 		case 1:
-			try getProgramInfo(nil, im.getBuffer(0x1a, 0) as Buffer<UInt8>)
+			try getProgramInfo(nil, im.getBuffer(0x1a, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 2:
@@ -94,7 +94,7 @@ class NnLdrDetail_IDebugMonitorInterface: IpcService {
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
 		case 0:
-			try addProcessToDebugLaunchQueue(nil, im.getBuffer(0x9, 0) as Buffer<UInt8>)
+			try addProcessToDebugLaunchQueue(nil, im.getBuffer(0x9, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 1:
@@ -102,7 +102,7 @@ class NnLdrDetail_IDebugMonitorInterface: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 2:
-			let ret = try getNsoInfos(nil, im.getBuffer(0xa, 0) as Buffer<UInt8>)
+			let ret = try getNsoInfos(nil, im.getBuffer(0xa, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		default:
@@ -127,7 +127,7 @@ class NnLdrDetail_IShellInterface: IpcService {
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
 		case 0:
-			try addProcessToLaunchQueue(im.getBuffer(0x9, 0) as Buffer<UInt8>, im.getData(8) as UInt32, im.getData(16) as UInt64)
+			try addProcessToLaunchQueue(im.getBuffer(0x9, 0)! as Buffer<UInt8>, im.getData(8) as UInt32, im.getData(16) as UInt64)
 			om.initialize(0, 0, 0)
 		
 		case 1:

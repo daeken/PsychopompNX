@@ -33,7 +33,7 @@ class NnPlDetail_ISharedFontManager: IpcService {
 			om.copy(0, ret)
 		
 		case 5:
-			let (_0, _1) = try getSharedFontInOrderOfPriority(im.getBytes(8, 0x8), im.getBuffer(0x6, 0) as Buffer<UInt8>, im.getBuffer(0x6, 1) as Buffer<UInt8>, im.getBuffer(0x6, 2) as Buffer<UInt8>)
+			let (_0, _1) = try getSharedFontInOrderOfPriority(im.getBytes(8, 0x8), im.getBuffer(0x6, 0)! as Buffer<UInt8>, im.getBuffer(0x6, 1)! as Buffer<UInt8>, im.getBuffer(0x6, 2)! as Buffer<UInt8>)
 			om.initialize(0, 0, 8)
 			om.setData(8, _0)
 			om.setData(12, _1)

@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import LibSpan
 
 class NnFssrvSf_IFileSystemProxy_Impl: NnFssrvSf_IFileSystemProxy {
     override func openFileSystem(_ filesystem_type: NnFssrvSf_FileSystemType, _ _1: Buffer<UInt8>) throws -> NnFssrvSf_IFileSystem { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::IFileSystemProxy#OpenFileSystem") }
@@ -51,7 +52,7 @@ class NnFssrvSf_IFileSystemProxy_Impl: NnFssrvSf_IFileSystemProxy {
     override func openImageDirectoryFileSystem(_ _0: UInt32) throws -> NnFssrvSf_IFileSystem { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::IFileSystemProxy#OpenImageDirectoryFileSystem") }
     override func openContentStorageFileSystem(_ content_storage_id: UInt32) throws -> NnFssrvSf_IFileSystem { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::IFileSystemProxy#OpenContentStorageFileSystem") }
     
-    override func openDataStorageByCurrentProcess() throws -> NnFssrvSf_IStorage { NnFssrvSf_IStorage_Impl() }
+    override func openDataStorageByCurrentProcess() throws -> NnFssrvSf_IStorage { NnFssrvSf_IStorage_RO_Span(Emulator.instance!.romfsFile.data) }
     
     override func openDataStorageByProgramId(_ tid: Nn_ApplicationId) throws -> NnFssrvSf_IStorage { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::IFileSystemProxy#OpenDataStorageByProgramId") }
     override func openDataStorageByDataId(_ storage_id: UInt8, _ tid: Nn_ApplicationId) throws -> NnFssrvSf_IStorage { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::IFileSystemProxy#OpenDataStorageByDataId") }
@@ -101,8 +102,18 @@ class NnFssrvSf_IFileSystemProxy_Impl: NnFssrvSf_IFileSystemProxy {
     override func overrideSaveDataTransferTokenSignVerificationKey(_ _0: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::IFileSystemProxy#OverrideSaveDataTransferTokenSignVerificationKey") }
 }
 
-class NnFssrvSf_IStorage_Impl: NnFssrvSf_IStorage {
-    override func read(_ offset: UInt64, _ length: UInt64, _ data: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::IStorage#Read") }
+class NnFssrvSf_IStorage_RO_Span: NnFssrvSf_IStorage {
+    let data: Span<UInt8>
+    
+    init(_ data: Span<UInt8>) {
+        self.data = data
+    }
+    
+    override func read(_ offset: UInt64, _ length: UInt64, _ data: Buffer<UInt8>) throws {
+        //print_hex("Reading from file at offset", offset, "length:", length)
+        data.copyFrom(source: self.data[Int(offset)..<Int(offset + length)], toOffset: 0)
+        //hexdump(Array(data))
+    }
     override func write(_ offset: UInt64, _ length: UInt64, _ data: Buffer<UInt8>) throws { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::IStorage#Write") }
     override func flush() throws { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::IStorage#Flush") }
     override func setSize(_ size: UInt64) throws { throw IpcError.unimplemented(name: "nn::fssrv::sf::nn::fssrv::sf::IStorage#SetSize") }

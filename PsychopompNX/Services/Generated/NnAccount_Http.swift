@@ -13,15 +13,15 @@ class NnAccountHttp_IOAuthProcedure: IpcService {
 			om.move(0, ret)
 		
 		case 1:
-			try getRequest(im.getBuffer(0x1a, 0) as Buffer<NnAccount_RequestUrl>, im.getBuffer(0x1a, 1) as Buffer<NnAccount_CallbackUri>)
+			try getRequest(im.getBuffer(0x1a, 0)! as Buffer<NnAccount_RequestUrl>, im.getBuffer(0x1a, 1)! as Buffer<NnAccount_CallbackUri>)
 			om.initialize(0, 0, 0)
 		
 		case 2:
-			try applyResponse(im.getBuffer(0x9, 0) as Buffer<UInt8>)
+			try applyResponse(im.getBuffer(0x9, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 3:
-			let ret = try applyResponseAsync(im.getBuffer(0x9, 0) as Buffer<UInt8>)
+			let ret = try applyResponseAsync(im.getBuffer(0x9, 0)! as Buffer<UInt8>)
 			om.initialize(1, 0, 0)
 			om.move(0, ret)
 		

@@ -55,11 +55,11 @@ class NnFssrvSf_IStorage: IpcService {
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
 		case 0:
-			try read(im.getData(8) as UInt64, im.getData(16) as UInt64, im.getBuffer(0x46, 0) as Buffer<UInt8>)
+			try read(im.getData(8) as UInt64, im.getData(16) as UInt64, im.getBuffer(0x46, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 1:
-			try write(im.getData(8) as UInt64, im.getData(16) as UInt64, im.getBuffer(0x45, 0) as Buffer<UInt8>)
+			try write(im.getData(8) as UInt64, im.getData(16) as UInt64, im.getBuffer(0x45, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 2:
@@ -106,7 +106,7 @@ class NnFssrvSf_IDirectory: IpcService {
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
 		case 0:
-			let ret = try read(im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			let ret = try read(im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 8)
 			om.setData(8, ret)
 		
@@ -223,7 +223,7 @@ class NnFssrvSf_IFileSystemProxy: IpcService {
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
 		case 0:
-			let ret = try openFileSystem(NnFssrvSf_FileSystemType(rawValue: im.getData(8) as UInt32)!, im.getBuffer(0x19, 0) as Buffer<UInt8>)
+			let ret = try openFileSystem(NnFssrvSf_FileSystemType(rawValue: im.getData(8) as UInt32)!, im.getBuffer(0x19, 0)! as Buffer<UInt8>)
 			om.initialize(1, 0, 0)
 			om.move(0, ret)
 		
@@ -242,7 +242,7 @@ class NnFssrvSf_IFileSystemProxy: IpcService {
 			om.move(0, ret)
 		
 		case 8:
-			let ret = try openFileSystemWithId(NnFssrvSf_FileSystemType(rawValue: im.getData(8) as UInt32)!, im.getData(16) as UInt64, im.getBuffer(0x19, 0) as Buffer<UInt8>)
+			let ret = try openFileSystemWithId(NnFssrvSf_FileSystemType(rawValue: im.getData(8) as UInt32)!, im.getData(16) as UInt64, im.getBuffer(0x19, 0)! as Buffer<UInt8>)
 			om.initialize(1, 0, 0)
 			om.move(0, ret)
 		
@@ -252,7 +252,7 @@ class NnFssrvSf_IFileSystemProxy: IpcService {
 			om.move(0, ret)
 		
 		case 11:
-			let ret = try openBisFileSystem(NnFssrvSf_Partition(rawValue: im.getData(8) as UInt32)!, im.getBuffer(0x19, 0) as Buffer<UInt8>)
+			let ret = try openBisFileSystem(NnFssrvSf_Partition(rawValue: im.getData(8) as UInt32)!, im.getBuffer(0x19, 0)! as Buffer<UInt8>)
 			om.initialize(1, 0, 0)
 			om.move(0, ret)
 		
@@ -266,7 +266,7 @@ class NnFssrvSf_IFileSystemProxy: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 17:
-			let ret = try openHostFileSystem(im.getBuffer(0x19, 0) as Buffer<UInt8>)
+			let ret = try openHostFileSystem(im.getBuffer(0x19, 0)! as Buffer<UInt8>)
 			om.initialize(1, 0, 0)
 			om.move(0, ret)
 		
@@ -292,7 +292,7 @@ class NnFssrvSf_IFileSystemProxy: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 24:
-			try registerSaveDataFileSystemAtomicDeletion(im.getBuffer(0x5, 0) as Buffer<UInt8>)
+			try registerSaveDataFileSystemAtomicDeletion(im.getBuffer(0x5, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 25:
@@ -350,15 +350,15 @@ class NnFssrvSf_IFileSystemProxy: IpcService {
 			om.move(0, ret)
 		
 		case 57:
-			try readSaveDataFileSystemExtraDataBySaveDataSpaceId(im.getData(8) as UInt8, im.getData(16) as UInt64, im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			try readSaveDataFileSystemExtraDataBySaveDataSpaceId(im.getData(8) as UInt8, im.getData(16) as UInt64, im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 58:
-			try readSaveDataFileSystemExtraData(im.getData(8) as UInt64, im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			try readSaveDataFileSystemExtraData(im.getData(8) as UInt64, im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 59:
-			try writeSaveDataFileSystemExtraData(im.getData(8) as UInt8, im.getData(16) as UInt64, im.getBuffer(0x5, 0) as Buffer<UInt8>)
+			try writeSaveDataFileSystemExtraData(im.getData(8) as UInt8, im.getData(16) as UInt64, im.getBuffer(0x5, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 60:
@@ -464,7 +464,7 @@ class NnFssrvSf_IFileSystemProxy: IpcService {
 			om.setData(8, ret)
 		
 		case 602:
-			try verifySaveDataFileSystem(im.getData(8) as UInt64, im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			try verifySaveDataFileSystem(im.getData(8) as UInt64, im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 603:
@@ -494,13 +494,13 @@ class NnFssrvSf_IFileSystemProxy: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 609:
-			let ret = try getRightsIdByPath(im.getBuffer(0x19, 0) as Buffer<UInt8>)
+			let ret = try getRightsIdByPath(im.getBuffer(0x19, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 16)
 			if ret.count != 0x10 { throw IpcError.byteCountMismatch }
 			om.setBytes(8, ret)
 		
 		case 610:
-			let (_0, _1) = try getRightsIdAndKeyGenerationByPath(im.getBuffer(0x19, 0) as Buffer<UInt8>)
+			let (_0, _1) = try getRightsIdAndKeyGenerationByPath(im.getBuffer(0x19, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 17)
 			om.setData(8, _0)
 			if _1.count != 0x10 { throw IpcError.byteCountMismatch }
@@ -516,7 +516,7 @@ class NnFssrvSf_IFileSystemProxy: IpcService {
 			om.setData(8, ret)
 		
 		case 613:
-			try verifySaveDataFileSystemBySaveDataSpaceId(im.getData(8) as UInt8, im.getData(16) as UInt64, im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			try verifySaveDataFileSystemBySaveDataSpaceId(im.getData(8) as UInt8, im.getData(16) as UInt64, im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 614:
@@ -572,7 +572,7 @@ class NnFssrvSf_IFileSystemProxy: IpcService {
 			om.setBytes(8, ret)
 		
 		case 1000:
-			try setBisRootForHost(im.getData(8) as UInt32, im.getBuffer(0x19, 0) as Buffer<UInt8>)
+			try setBisRootForHost(im.getData(8) as UInt32, im.getBuffer(0x19, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 1001:
@@ -580,7 +580,7 @@ class NnFssrvSf_IFileSystemProxy: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 1002:
-			try setSaveDataRootPath(im.getBuffer(0x19, 0) as Buffer<UInt8>)
+			try setSaveDataRootPath(im.getBuffer(0x19, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 1003:
@@ -597,7 +597,7 @@ class NnFssrvSf_IFileSystemProxy: IpcService {
 			om.setData(8, ret)
 		
 		case 1006:
-			try outputAccessLogToSdCard(im.getBuffer(0x5, 0) as Buffer<UInt8>)
+			try outputAccessLogToSdCard(im.getBuffer(0x5, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 1007:
@@ -620,7 +620,7 @@ class NnFssrvSf_IFileSystemProxy: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 1100:
-			try overrideSaveDataTransferTokenSignVerificationKey(im.getBuffer(0x5, 0) as Buffer<UInt8>)
+			try overrideSaveDataTransferTokenSignVerificationKey(im.getBuffer(0x5, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		default:
@@ -777,7 +777,7 @@ class NnFssrvSf_IDeviceOperator: IpcService {
 			om.setData(8, ret)
 		
 		case 2:
-			try getSdCardCid(im.getData(8) as UInt64, im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			try getSdCardCid(im.getData(8) as UInt64, im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 3:
@@ -791,14 +791,14 @@ class NnFssrvSf_IDeviceOperator: IpcService {
 			om.setData(8, ret)
 		
 		case 5:
-			let (_0, _1) = try getAndClearSdCardErrorInfo(im.getData(8) as UInt64, im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			let (_0, _1) = try getAndClearSdCardErrorInfo(im.getData(8) as UInt64, im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 24)
 			if _0.count != 0x10 { throw IpcError.byteCountMismatch }
 			om.setBytes(8, _0)
 			om.setData(24, _1)
 		
 		case 100:
-			try getMmcCid(im.getData(8) as UInt64, im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			try getMmcCid(im.getData(8) as UInt64, im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 101:
@@ -821,14 +821,14 @@ class NnFssrvSf_IDeviceOperator: IpcService {
 			om.setData(8, ret)
 		
 		case 113:
-			let (_0, _1) = try getAndClearMmcErrorInfo(im.getData(8) as UInt64, im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			let (_0, _1) = try getAndClearMmcErrorInfo(im.getData(8) as UInt64, im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 24)
 			if _0.count != 0x10 { throw IpcError.byteCountMismatch }
 			om.setBytes(8, _0)
 			om.setData(24, _1)
 		
 		case 114:
-			try getMmcExtendedCsd(im.getData(8) as UInt64, im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			try getMmcExtendedCsd(im.getData(8) as UInt64, im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 115:
@@ -869,19 +869,19 @@ class NnFssrvSf_IDeviceOperator: IpcService {
 			om.setData(8, ret)
 		
 		case 206:
-			try getGameCardDeviceCertificate(im.getData(8) as UInt32, im.getData(16) as UInt64, im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			try getGameCardDeviceCertificate(im.getData(8) as UInt32, im.getData(16) as UInt64, im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 207:
-			try getGameCardAsicInfo(im.getData(8) as UInt64, im.getData(16) as UInt64, im.getBuffer(0x5, 0) as Buffer<UInt8>, im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			try getGameCardAsicInfo(im.getData(8) as UInt64, im.getData(16) as UInt64, im.getBuffer(0x5, 0)! as Buffer<UInt8>, im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 208:
-			try getGameCardIdSet(im.getData(8) as UInt64, im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			try getGameCardIdSet(im.getData(8) as UInt64, im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 209:
-			try writeToGameCard(im.getData(8) as UInt64, im.getData(16) as UInt64, im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			try writeToGameCard(im.getData(8) as UInt64, im.getData(16) as UInt64, im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 210:
@@ -889,19 +889,19 @@ class NnFssrvSf_IDeviceOperator: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 211:
-			try getGameCardImageHash(im.getData(8) as UInt32, im.getData(16) as UInt64, im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			try getGameCardImageHash(im.getData(8) as UInt32, im.getData(16) as UInt64, im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 212:
-			try getGameCardErrorInfo(im.getData(8) as UInt64, im.getData(16) as UInt64, im.getBuffer(0x5, 0) as Buffer<UInt8>, im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			try getGameCardErrorInfo(im.getData(8) as UInt64, im.getData(16) as UInt64, im.getBuffer(0x5, 0)! as Buffer<UInt8>, im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 213:
-			try eraseAndWriteParamDirectly(im.getData(8) as UInt64, im.getBuffer(0x5, 0) as Buffer<UInt8>)
+			try eraseAndWriteParamDirectly(im.getData(8) as UInt64, im.getBuffer(0x5, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 214:
-			try readParamDirectly(im.getData(8) as UInt64, im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			try readParamDirectly(im.getData(8) as UInt64, im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 215:
@@ -921,7 +921,7 @@ class NnFssrvSf_IDeviceOperator: IpcService {
 			om.setBytes(8, ret)
 		
 		case 218:
-			try getGameCardDeviceId(im.getData(8) as UInt64, im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			try getGameCardDeviceId(im.getData(8) as UInt64, im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 300:
@@ -1002,12 +1002,12 @@ class NnFssrvSf_IFile: IpcService {
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
 		case 0:
-			let ret = try read(im.getData(8) as UInt32, im.getData(16) as UInt64, im.getData(24) as UInt64, im.getBuffer(0x46, 0) as Buffer<UInt8>)
+			let ret = try read(im.getData(8) as UInt32, im.getData(16) as UInt64, im.getData(24) as UInt64, im.getBuffer(0x46, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 8)
 			om.setData(8, ret)
 		
 		case 1:
-			try write(im.getData(8) as UInt32, im.getData(16) as UInt64, im.getData(24) as UInt64, im.getBuffer(0x45, 0) as Buffer<UInt8>)
+			try write(im.getData(8) as UInt32, im.getData(16) as UInt64, im.getData(24) as UInt64, im.getBuffer(0x45, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 2:
@@ -1068,45 +1068,45 @@ class NnFssrvSf_IFileSystem: IpcService {
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
 		case 0:
-			try createFile(im.getData(8) as UInt32, im.getData(16) as UInt64, im.getBuffer(0x19, 0) as Buffer<UInt8>)
+			try createFile(im.getData(8) as UInt32, im.getData(16) as UInt64, im.getBuffer(0x19, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 1:
-			try deleteFile(im.getBuffer(0x19, 0) as Buffer<UInt8>)
+			try deleteFile(im.getBuffer(0x19, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 2:
-			try createDirectory(im.getBuffer(0x19, 0) as Buffer<UInt8>)
+			try createDirectory(im.getBuffer(0x19, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 3:
-			try deleteDirectory(im.getBuffer(0x19, 0) as Buffer<UInt8>)
+			try deleteDirectory(im.getBuffer(0x19, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 4:
-			try deleteDirectoryRecursively(im.getBuffer(0x19, 0) as Buffer<UInt8>)
+			try deleteDirectoryRecursively(im.getBuffer(0x19, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 5:
-			try renameFile(im.getBuffer(0x19, 0) as Buffer<UInt8>, im.getBuffer(0x19, 1) as Buffer<UInt8>)
+			try renameFile(im.getBuffer(0x19, 0)! as Buffer<UInt8>, im.getBuffer(0x19, 1)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 6:
-			try renameDirectory(im.getBuffer(0x19, 0) as Buffer<UInt8>, im.getBuffer(0x19, 1) as Buffer<UInt8>)
+			try renameDirectory(im.getBuffer(0x19, 0)! as Buffer<UInt8>, im.getBuffer(0x19, 1)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 7:
-			let ret = try getEntryType(im.getBuffer(0x19, 0) as Buffer<UInt8>)
+			let ret = try getEntryType(im.getBuffer(0x19, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 1)
 			om.setData(8, UInt8(ret.rawValue))
 		
 		case 8:
-			let ret = try openFile(im.getData(8) as UInt32, im.getBuffer(0x19, 0) as Buffer<UInt8>)
+			let ret = try openFile(im.getData(8) as UInt32, im.getBuffer(0x19, 0)! as Buffer<UInt8>)
 			om.initialize(1, 0, 0)
 			om.move(0, ret)
 		
 		case 9:
-			let ret = try openDirectory(im.getData(8) as UInt32, im.getBuffer(0x19, 0) as Buffer<UInt8>)
+			let ret = try openDirectory(im.getData(8) as UInt32, im.getBuffer(0x19, 0)! as Buffer<UInt8>)
 			om.initialize(1, 0, 0)
 			om.move(0, ret)
 		
@@ -1115,27 +1115,27 @@ class NnFssrvSf_IFileSystem: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 11:
-			let ret = try getFreeSpaceSize(im.getBuffer(0x19, 0) as Buffer<UInt8>)
+			let ret = try getFreeSpaceSize(im.getBuffer(0x19, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 8)
 			om.setData(8, ret)
 		
 		case 12:
-			let ret = try getTotalSpaceSize(im.getBuffer(0x19, 0) as Buffer<UInt8>)
+			let ret = try getTotalSpaceSize(im.getBuffer(0x19, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 8)
 			om.setData(8, ret)
 		
 		case 13:
-			try cleanDirectoryRecursively(im.getBuffer(0x19, 0) as Buffer<UInt8>)
+			try cleanDirectoryRecursively(im.getBuffer(0x19, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 14:
-			let ret = try getFileTimeStampRaw(im.getBuffer(0x19, 0) as Buffer<UInt8>)
+			let ret = try getFileTimeStampRaw(im.getBuffer(0x19, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 32)
 			if ret.count != 0x20 { throw IpcError.byteCountMismatch }
 			om.setBytes(8, ret)
 		
 		case 15:
-			try queryEntry(im.getData(8) as UInt32, im.getBuffer(0x19, 0) as Buffer<UInt8>, im.getBuffer(0x45, 0) as Buffer<UInt8>, im.getBuffer(0x46, 0) as Buffer<UInt8>)
+			try queryEntry(im.getData(8) as UInt32, im.getBuffer(0x19, 0)! as Buffer<UInt8>, im.getBuffer(0x45, 0)! as Buffer<UInt8>, im.getBuffer(0x46, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		default:
@@ -1172,7 +1172,7 @@ class NnFssrvSf_ISaveDataInfoReader: IpcService {
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
 		case 0:
-			let ret = try readSaveDataInfo(im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			let ret = try readSaveDataInfo(im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 8)
 			om.setData(8, ret)
 		
@@ -1198,7 +1198,7 @@ class NnFssrvSf_IProgramRegistry: IpcService {
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
 		case 0:
-			try registerProgram(im.getData(8) as UInt8, im.getData(16) as UInt64, im.getData(24) as UInt64, im.getData(32) as UInt64, im.getData(40) as UInt64, im.getBuffer(0x5, 0) as Buffer<UInt8>, im.getBuffer(0x5, 1) as Buffer<UInt8>)
+			try registerProgram(im.getData(8) as UInt8, im.getData(16) as UInt64, im.getData(24) as UInt64, im.getData(32) as UInt64, im.getData(40) as UInt64, im.getBuffer(0x5, 0)! as Buffer<UInt8>, im.getBuffer(0x5, 1)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 1:
@@ -1261,11 +1261,11 @@ class NnFssrvSf_ISaveDataTransferManager: IpcService {
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
 		case 0:
-			try unknown0(im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			try unknown0(im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 16:
-			try unknown16(im.getBuffer(0x5, 0) as Buffer<UInt8>)
+			try unknown16(im.getBuffer(0x5, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 32:
@@ -1274,7 +1274,7 @@ class NnFssrvSf_ISaveDataTransferManager: IpcService {
 			om.move(0, ret)
 		
 		case 64:
-			let (_0, _1) = try unknown64(im.getData(8) as UInt8, im.getBytes(9, 0x10), im.getBuffer(0x5, 0) as Buffer<UInt8>)
+			let (_0, _1) = try unknown64(im.getData(8) as UInt8, im.getBytes(9, 0x10), im.getBuffer(0x5, 0)! as Buffer<UInt8>)
 			om.initialize(1, 0, 8)
 			om.setData(8, _0)
 			om.move(0, _1)
@@ -1304,7 +1304,7 @@ class NnFssrvSf_ISaveDataImporter: IpcService {
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
 		case 0:
-			try unknown0(im.getBuffer(0x1a, 0) as Buffer<UInt8>)
+			try unknown0(im.getBuffer(0x1a, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 1:
@@ -1313,7 +1313,7 @@ class NnFssrvSf_ISaveDataImporter: IpcService {
 			om.setData(8, ret)
 		
 		case 16:
-			try unknown16(im.getBuffer(0x5, 0) as Buffer<UInt8>)
+			try unknown16(im.getBuffer(0x5, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 17:
@@ -1345,7 +1345,7 @@ class NnFssrvSf_ISaveDataExporter: IpcService {
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
 		case 0:
-			try unknown0(im.getBuffer(0x1a, 0) as Buffer<UInt8>)
+			try unknown0(im.getBuffer(0x1a, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 1:
@@ -1354,12 +1354,12 @@ class NnFssrvSf_ISaveDataExporter: IpcService {
 			om.setData(8, ret)
 		
 		case 16:
-			let ret = try unknown16(im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			let ret = try unknown16(im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 8)
 			om.setData(8, ret)
 		
 		case 17:
-			try unknown17(im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			try unknown17(im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		default:
@@ -1386,7 +1386,7 @@ class NnFssrvSf_IFileSystemProxyForLoader: IpcService {
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
 		case 0:
-			let ret = try openCodeFileSystem(im.getData(8) as UInt64, im.getBuffer(0x19, 0) as Buffer<UInt8>)
+			let ret = try openCodeFileSystem(im.getData(8) as UInt64, im.getBuffer(0x19, 0)! as Buffer<UInt8>)
 			om.initialize(1, 0, 0)
 			om.move(0, ret)
 		

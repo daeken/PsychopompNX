@@ -29,11 +29,11 @@ class NnNcm_IContentMetaDatabase: IpcService {
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
 		case 0:
-			try set(nil, im.getBuffer(0x5, 0) as Buffer<UInt8>)
+			try set(nil, im.getBuffer(0x5, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 1:
-			let ret = try get(nil, im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			let ret = try get(nil, im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 2:
@@ -45,11 +45,11 @@ class NnNcm_IContentMetaDatabase: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 4:
-			let ret = try listContentInfo(nil, im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			let ret = try listContentInfo(nil, im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 5:
-			let ret = try list(nil, im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			let ret = try list(nil, im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 6:
@@ -57,7 +57,7 @@ class NnNcm_IContentMetaDatabase: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 7:
-			let ret = try listApplication(nil, im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			let ret = try listApplication(nil, im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 8:
@@ -65,7 +65,7 @@ class NnNcm_IContentMetaDatabase: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 9:
-			let ret = try hasAll(im.getBuffer(0x5, 0) as Buffer<UInt8>)
+			let ret = try hasAll(im.getBuffer(0x5, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 10:
@@ -85,7 +85,7 @@ class NnNcm_IContentMetaDatabase: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 14:
-			try lookupOrphanContent(im.getBuffer(0x5, 0) as Buffer<UInt8>, im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			try lookupOrphanContent(im.getBuffer(0x5, 0)! as Buffer<UInt8>, im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 15:
@@ -97,7 +97,7 @@ class NnNcm_IContentMetaDatabase: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 17:
-			let ret = try listContentMetaInfo(nil, im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			let ret = try listContentMetaInfo(nil, im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 18:
@@ -193,7 +193,7 @@ class NnNcm_IContentStorage: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 4:
-			try writePlaceHolder(nil, im.getBuffer(0x5, 0) as Buffer<UInt8>)
+			try writePlaceHolder(nil, im.getBuffer(0x5, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 5:
@@ -209,11 +209,11 @@ class NnNcm_IContentStorage: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 8:
-			try getPath(nil, im.getBuffer(0x1a, 0) as Buffer<UInt8>)
+			try getPath(nil, im.getBuffer(0x1a, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 9:
-			try getPlaceHolderPath(nil, im.getBuffer(0x1a, 0) as Buffer<UInt8>)
+			try getPlaceHolderPath(nil, im.getBuffer(0x1a, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 10:
@@ -221,7 +221,7 @@ class NnNcm_IContentStorage: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 11:
-			let ret = try listPlaceHolder(im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			let ret = try listPlaceHolder(im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 12:
@@ -229,7 +229,7 @@ class NnNcm_IContentStorage: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 13:
-			let ret = try listContentId(nil, im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			let ret = try listContentId(nil, im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 14:
@@ -249,7 +249,7 @@ class NnNcm_IContentStorage: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 18:
-			try readContentIdFile(nil, im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			try readContentIdFile(nil, im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 19:
@@ -261,7 +261,7 @@ class NnNcm_IContentStorage: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 21:
-			try writeContentForDebug(nil, im.getBuffer(0x5, 0) as Buffer<UInt8>)
+			try writeContentForDebug(nil, im.getBuffer(0x5, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 22:

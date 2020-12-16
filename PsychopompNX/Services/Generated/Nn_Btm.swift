@@ -139,7 +139,7 @@ class NnBtm_IBtm: IpcService {
 			om.copy(0, _1)
 		
 		case 3:
-			try unknown3(im.getBuffer(0x1a, 0) as Buffer<UInt8>)
+			try unknown3(im.getBuffer(0x1a, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 4:
@@ -147,7 +147,7 @@ class NnBtm_IBtm: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 5:
-			try unknown5(im.getBuffer(0x19, 0) as Buffer<UInt8>)
+			try unknown5(im.getBuffer(0x19, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 6:
@@ -164,7 +164,7 @@ class NnBtm_IBtm: IpcService {
 			om.copy(0, _1)
 		
 		case 9:
-			try unknown9(im.getBuffer(0x1a, 0) as Buffer<UInt8>)
+			try unknown9(im.getBuffer(0x1a, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 10:
@@ -196,7 +196,7 @@ class NnBtm_IBtm: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 17:
-			try unknown17(nil, im.getBuffer(0x19, 0) as Buffer<UInt8>)
+			try unknown17(nil, im.getBuffer(0x19, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 18:
@@ -278,7 +278,7 @@ class NnBtm_IBtmDebug: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 3:
-			try unknown3(im.getBuffer(0x1a, 0) as Buffer<UInt8>)
+			try unknown3(im.getBuffer(0x1a, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 4:

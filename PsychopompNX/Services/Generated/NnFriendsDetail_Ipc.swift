@@ -88,39 +88,39 @@ class NnFriendsDetailIpc_IFriendService: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 10100:
-			let ret = try getFriendListIds(im.getData(8) as UInt32, im.getBytes(12, 0x10), im.getBytes(28, 0x10), im.getData(48) as UInt64, im.pid, im.getBuffer(0xa, 0) as Buffer<NnAccount_NetworkServiceAccountId>)
+			let ret = try getFriendListIds(im.getData(8) as UInt32, im.getBytes(12, 0x10), im.getBytes(28, 0x10), im.getData(48) as UInt64, im.pid, im.getBuffer(0xa, 0)! as Buffer<NnAccount_NetworkServiceAccountId>)
 			om.initialize(0, 0, 4)
 			om.setData(8, ret)
 		
 		case 10101:
-			let ret = try getFriendList(im.getData(8) as UInt32, im.getBytes(12, 0x10), im.getBytes(28, 0x10), im.getData(48) as UInt64, im.pid, im.getBuffer(0x6, 0) as Buffer<NnFriendsDetail_FriendImpl>)
+			let ret = try getFriendList(im.getData(8) as UInt32, im.getBytes(12, 0x10), im.getBytes(28, 0x10), im.getData(48) as UInt64, im.pid, im.getBuffer(0x6, 0)! as Buffer<NnFriendsDetail_FriendImpl>)
 			om.initialize(0, 0, 4)
 			om.setData(8, ret)
 		
 		case 10102:
-			try updateFriendInfo(im.getBytes(8, 0x10), im.getData(24) as UInt64, im.pid, im.getBuffer(0x9, 0) as Buffer<NnAccount_NetworkServiceAccountId>, im.getBuffer(0x6, 0) as Buffer<NnFriendsDetail_FriendImpl>)
+			try updateFriendInfo(im.getBytes(8, 0x10), im.getData(24) as UInt64, im.pid, im.getBuffer(0x9, 0)! as Buffer<NnAccount_NetworkServiceAccountId>, im.getBuffer(0x6, 0)! as Buffer<NnFriendsDetail_FriendImpl>)
 			om.initialize(0, 0, 0)
 		
 		case 10110:
-			let ret = try getFriendProfileImage(im.getBytes(8, 0x10), im.getData(24) as UInt64, im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			let ret = try getFriendProfileImage(im.getBytes(8, 0x10), im.getData(24) as UInt64, im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 4)
 			om.setData(8, ret)
 		
 		case 10200:
-			try sendFriendRequestForApplication(im.getBytes(8, 0x10), im.getData(24) as UInt64, im.getData(32) as UInt64, im.pid, im.getBuffer(0x19, 0) as Buffer<NnFriends_InAppScreenName>, im.getBuffer(0x19, 1) as Buffer<NnFriends_InAppScreenName>)
+			try sendFriendRequestForApplication(im.getBytes(8, 0x10), im.getData(24) as UInt64, im.getData(32) as UInt64, im.pid, im.getBuffer(0x19, 0)! as Buffer<NnFriends_InAppScreenName>, im.getBuffer(0x19, 1)! as Buffer<NnFriends_InAppScreenName>)
 			om.initialize(0, 0, 0)
 		
 		case 10211:
-			try addFacedFriendRequestForApplication(im.getBytes(8, 0x40), im.getBytes(72, 0x21), im.getBytes(105, 0x10), im.getData(128) as UInt64, im.pid, im.getBuffer(0x19, 0) as Buffer<NnFriends_InAppScreenName>, im.getBuffer(0x19, 1) as Buffer<NnFriends_InAppScreenName>, im.getBuffer(0x5, 0) as Buffer<UInt8>)
+			try addFacedFriendRequestForApplication(im.getBytes(8, 0x40), im.getBytes(72, 0x21), im.getBytes(105, 0x10), im.getData(128) as UInt64, im.pid, im.getBuffer(0x19, 0)! as Buffer<NnFriends_InAppScreenName>, im.getBuffer(0x19, 1)! as Buffer<NnFriends_InAppScreenName>, im.getBuffer(0x5, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 10400:
-			let ret = try getBlockedUserListIds(im.getData(8) as UInt32, im.getBytes(12, 0x10), im.getBuffer(0xa, 0) as Buffer<NnAccount_NetworkServiceAccountId>)
+			let ret = try getBlockedUserListIds(im.getData(8) as UInt32, im.getBytes(12, 0x10), im.getBuffer(0xa, 0)! as Buffer<NnAccount_NetworkServiceAccountId>)
 			om.initialize(0, 0, 4)
 			om.setData(8, ret)
 		
 		case 10500:
-			try getProfileList(im.getBytes(8, 0x10), im.getBuffer(0x9, 0) as Buffer<NnAccount_NetworkServiceAccountId>, im.getBuffer(0x6, 0) as Buffer<NnFriendsDetail_ProfileImpl>)
+			try getProfileList(im.getBytes(8, 0x10), im.getBuffer(0x9, 0)! as Buffer<NnAccount_NetworkServiceAccountId>, im.getBuffer(0x6, 0)! as Buffer<NnFriendsDetail_ProfileImpl>)
 			om.initialize(0, 0, 0)
 		
 		case 10600:
@@ -132,19 +132,19 @@ class NnFriendsDetailIpc_IFriendService: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 10610:
-			try updateUserPresence(im.getBytes(8, 0x10), im.getData(24) as UInt64, im.pid, im.getBuffer(0x19, 0) as Buffer<NnFriendsDetail_UserPresenceImpl>)
+			try updateUserPresence(im.getBytes(8, 0x10), im.getData(24) as UInt64, im.pid, im.getBuffer(0x19, 0)! as Buffer<NnFriendsDetail_UserPresenceImpl>)
 			om.initialize(0, 0, 0)
 		
 		case 10700:
-			try getPlayHistoryRegistrationKey(im.getData(8) as UInt8, im.getBytes(9, 0x10), im.getBuffer(0x1a, 0) as Buffer<NnFriends_PlayHistoryRegistrationKey>)
+			try getPlayHistoryRegistrationKey(im.getData(8) as UInt8, im.getBytes(9, 0x10), im.getBuffer(0x1a, 0)! as Buffer<NnFriends_PlayHistoryRegistrationKey>)
 			om.initialize(0, 0, 0)
 		
 		case 10701:
-			try getPlayHistoryRegistrationKeyWithNetworkServiceAccountId(im.getData(8) as UInt8, im.getData(16) as UInt64, im.getBuffer(0x1a, 0) as Buffer<NnFriends_PlayHistoryRegistrationKey>)
+			try getPlayHistoryRegistrationKeyWithNetworkServiceAccountId(im.getData(8) as UInt8, im.getData(16) as UInt64, im.getBuffer(0x1a, 0)! as Buffer<NnFriends_PlayHistoryRegistrationKey>)
 			om.initialize(0, 0, 0)
 		
 		case 10702:
-			try addPlayHistory(im.getBytes(8, 0x10), im.getData(24) as UInt64, im.pid, im.getBuffer(0x19, 0) as Buffer<NnFriends_PlayHistoryRegistrationKey>, im.getBuffer(0x19, 1) as Buffer<NnFriends_InAppScreenName>, im.getBuffer(0x19, 2) as Buffer<NnFriends_InAppScreenName>)
+			try addPlayHistory(im.getBytes(8, 0x10), im.getData(24) as UInt64, im.pid, im.getBuffer(0x19, 0)! as Buffer<NnFriends_PlayHistoryRegistrationKey>, im.getBuffer(0x19, 1)! as Buffer<NnFriends_InAppScreenName>, im.getBuffer(0x19, 2)! as Buffer<NnFriends_InAppScreenName>)
 			om.initialize(0, 0, 0)
 		
 		case 11000:
@@ -164,7 +164,7 @@ class NnFriendsDetailIpc_IFriendService: IpcService {
 			om.setData(8, ret)
 		
 		case 20102:
-			try getFriendDetailedInfo(im.getBytes(8, 0x10), im.getData(24) as UInt64, im.getBuffer(0x1a, 0) as Buffer<NnFriendsDetail_FriendDetailedInfoImpl>)
+			try getFriendDetailedInfo(im.getBytes(8, 0x10), im.getData(24) as UInt64, im.getBuffer(0x1a, 0)! as Buffer<NnFriendsDetail_FriendDetailedInfoImpl>)
 			om.initialize(0, 0, 0)
 		
 		case 20103:
@@ -176,7 +176,7 @@ class NnFriendsDetailIpc_IFriendService: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 20110:
-			try loadFriendSetting(im.getBytes(8, 0x10), im.getData(24) as UInt64, im.getBuffer(0x1a, 0) as Buffer<NnFriendsDetail_FriendSettingImpl>)
+			try loadFriendSetting(im.getBytes(8, 0x10), im.getData(24) as UInt64, im.getBuffer(0x1a, 0)! as Buffer<NnFriendsDetail_FriendSettingImpl>)
 			om.initialize(0, 0, 0)
 		
 		case 20200:
@@ -186,17 +186,17 @@ class NnFriendsDetailIpc_IFriendService: IpcService {
 			om.setData(12, _1)
 		
 		case 20201:
-			let ret = try getFriendRequestList(im.getData(8) as UInt32, im.getData(12) as UInt32, im.getBytes(16, 0x10), im.getBuffer(0x6, 0) as Buffer<NnFriendsDetail_FriendRequestImpl>)
+			let ret = try getFriendRequestList(im.getData(8) as UInt32, im.getData(12) as UInt32, im.getBytes(16, 0x10), im.getBuffer(0x6, 0)! as Buffer<NnFriendsDetail_FriendRequestImpl>)
 			om.initialize(0, 0, 4)
 			om.setData(8, ret)
 		
 		case 20300:
-			let ret = try getFriendCandidateList(im.getData(8) as UInt32, im.getBytes(12, 0x10), im.getBuffer(0x6, 0) as Buffer<NnFriendsDetail_FriendCandidateImpl>)
+			let ret = try getFriendCandidateList(im.getData(8) as UInt32, im.getBytes(12, 0x10), im.getBuffer(0x6, 0)! as Buffer<NnFriendsDetail_FriendCandidateImpl>)
 			om.initialize(0, 0, 4)
 			om.setData(8, ret)
 		
 		case 20301:
-			let ret = try getNintendoNetworkIdInfo(im.getData(8) as UInt32, im.getBytes(12, 0x10), im.getBuffer(0x1a, 0) as Buffer<NnFriends_NintendoNetworkIdUserInfo>, im.getBuffer(0x6, 0) as Buffer<NnFriendsDetail_NintendoNetworkIdFriendImpl>)
+			let ret = try getNintendoNetworkIdInfo(im.getData(8) as UInt32, im.getBytes(12, 0x10), im.getBuffer(0x1a, 0)! as Buffer<NnFriends_NintendoNetworkIdUserInfo>, im.getBuffer(0x6, 0)! as Buffer<NnFriendsDetail_NintendoNetworkIdFriendImpl>)
 			om.initialize(0, 0, 4)
 			om.setData(8, ret)
 		
@@ -213,7 +213,7 @@ class NnFriendsDetailIpc_IFriendService: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 20400:
-			let ret = try getBlockedUserList(im.getData(8) as UInt32, im.getBytes(12, 0x10), im.getBuffer(0x6, 0) as Buffer<NnFriendsDetail_BlockedUserImpl>)
+			let ret = try getBlockedUserList(im.getData(8) as UInt32, im.getBytes(12, 0x10), im.getBuffer(0x6, 0)! as Buffer<NnFriendsDetail_BlockedUserImpl>)
 			om.initialize(0, 0, 4)
 			om.setData(8, ret)
 		
@@ -222,7 +222,7 @@ class NnFriendsDetailIpc_IFriendService: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 20500:
-			try getProfileExtraList(im.getBytes(8, 0x10), im.getBuffer(0x9, 0) as Buffer<NnAccount_NetworkServiceAccountId>, im.getBuffer(0x6, 0) as Buffer<NnFriendsDetail_ProfileExtraImpl>)
+			try getProfileExtraList(im.getBytes(8, 0x10), im.getBuffer(0x9, 0)! as Buffer<NnAccount_NetworkServiceAccountId>, im.getBuffer(0x6, 0)! as Buffer<NnFriendsDetail_ProfileExtraImpl>)
 			om.initialize(0, 0, 0)
 		
 		case 20501:
@@ -232,11 +232,11 @@ class NnFriendsDetailIpc_IFriendService: IpcService {
 			om.setBytes(8, ret)
 		
 		case 20600:
-			try getUserPresenceView(im.getBytes(8, 0x10), im.getBuffer(0x1a, 0) as Buffer<NnFriendsDetail_UserPresenceViewImpl>)
+			try getUserPresenceView(im.getBytes(8, 0x10), im.getBuffer(0x1a, 0)! as Buffer<NnFriendsDetail_UserPresenceViewImpl>)
 			om.initialize(0, 0, 0)
 		
 		case 20700:
-			let ret = try getPlayHistoryList(im.getData(8) as UInt32, im.getBytes(12, 0x10), im.getBuffer(0x6, 0) as Buffer<NnFriendsDetail_PlayHistoryImpl>)
+			let ret = try getPlayHistoryList(im.getData(8) as UInt32, im.getBytes(12, 0x10), im.getBuffer(0x6, 0)! as Buffer<NnFriendsDetail_PlayHistoryImpl>)
 			om.initialize(0, 0, 4)
 			om.setData(8, ret)
 		
@@ -247,7 +247,7 @@ class NnFriendsDetailIpc_IFriendService: IpcService {
 			om.setBytes(8, ret)
 		
 		case 20800:
-			try loadUserSetting(im.getBytes(8, 0x10), im.getBuffer(0x1a, 0) as Buffer<NnFriendsDetail_UserSettingImpl>)
+			try loadUserSetting(im.getBytes(8, 0x10), im.getBuffer(0x1a, 0)! as Buffer<NnFriendsDetail_UserSettingImpl>)
 			om.initialize(0, 0, 0)
 		
 		case 20801:
@@ -259,7 +259,7 @@ class NnFriendsDetailIpc_IFriendService: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 21000:
-			try getExternalApplicationCatalog(im.getBytes(8, 0x8), im.getBytes(16, 0x10), im.getBuffer(0x1a, 0) as Buffer<NnFriends_ExternalApplicationCatalog>)
+			try getExternalApplicationCatalog(im.getBytes(8, 0x8), im.getBytes(16, 0x10), im.getBuffer(0x1a, 0)! as Buffer<NnFriends_ExternalApplicationCatalog>)
 			om.initialize(0, 0, 0)
 		
 		case 30100:
@@ -287,7 +287,7 @@ class NnFriendsDetailIpc_IFriendService: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 30201:
-			try sendFriendRequestWithApplicationInfo(im.getData(8) as UInt32, im.getBytes(12, 0x10), im.getData(32) as UInt64, im.getBytes(40, 0x10), im.getBuffer(0x19, 0) as Buffer<NnFriends_InAppScreenName>, im.getBuffer(0x19, 1) as Buffer<NnFriends_InAppScreenName>)
+			try sendFriendRequestWithApplicationInfo(im.getData(8) as UInt32, im.getBytes(12, 0x10), im.getData(32) as UInt64, im.getBytes(40, 0x10), im.getBuffer(0x19, 0)! as Buffer<NnFriends_InAppScreenName>, im.getBuffer(0x19, 1)! as Buffer<NnFriends_InAppScreenName>)
 			om.initialize(0, 0, 0)
 		
 		case 30202:
@@ -313,7 +313,7 @@ class NnFriendsDetailIpc_IFriendService: IpcService {
 			om.setBytes(8, ret)
 		
 		case 30211:
-			try addFacedFriendRequest(im.getBytes(8, 0x40), im.getBytes(72, 0x21), im.getBytes(105, 0x10), im.getBuffer(0x5, 0) as Buffer<UInt8>)
+			try addFacedFriendRequest(im.getBytes(8, 0x40), im.getBytes(72, 0x21), im.getBytes(105, 0x10), im.getBuffer(0x5, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 30212:
@@ -321,17 +321,17 @@ class NnFriendsDetailIpc_IFriendService: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 30213:
-			let ret = try getFacedFriendRequestProfileImage(im.getBytes(8, 0x10), im.getData(24) as UInt64, im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			let ret = try getFacedFriendRequestProfileImage(im.getBytes(8, 0x10), im.getData(24) as UInt64, im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 4)
 			om.setData(8, ret)
 		
 		case 30214:
-			let ret = try getFacedFriendRequestProfileImageFromPath(im.getBuffer(0x9, 0) as Buffer<UInt8>, im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			let ret = try getFacedFriendRequestProfileImageFromPath(im.getBuffer(0x9, 0)! as Buffer<UInt8>, im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 4)
 			om.setData(8, ret)
 		
 		case 30215:
-			try sendFriendRequestWithExternalApplicationCatalogId(im.getData(8) as UInt32, im.getBytes(12, 0x10), im.getData(32) as UInt64, im.getBytes(40, 0x10), im.getBuffer(0x19, 0) as Buffer<NnFriends_InAppScreenName>, im.getBuffer(0x19, 1) as Buffer<NnFriends_InAppScreenName>)
+			try sendFriendRequestWithExternalApplicationCatalogId(im.getData(8) as UInt32, im.getBytes(12, 0x10), im.getData(32) as UInt64, im.getBytes(40, 0x10), im.getBuffer(0x19, 0)! as Buffer<NnFriends_InAppScreenName>, im.getBuffer(0x19, 1)! as Buffer<NnFriends_InAppScreenName>)
 			om.initialize(0, 0, 0)
 		
 		case 30216:
@@ -355,7 +355,7 @@ class NnFriendsDetailIpc_IFriendService: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 30401:
-			try blockUserWithApplicationInfo(im.getData(8) as UInt32, im.getBytes(12, 0x10), im.getData(32) as UInt64, im.getBytes(40, 0x10), im.getBuffer(0x19, 0) as Buffer<NnFriends_InAppScreenName>)
+			try blockUserWithApplicationInfo(im.getData(8) as UInt32, im.getBytes(12, 0x10), im.getData(32) as UInt64, im.getBytes(40, 0x10), im.getBuffer(0x19, 0)! as Buffer<NnFriends_InAppScreenName>)
 			om.initialize(0, 0, 0)
 		
 		case 30402:
@@ -363,7 +363,7 @@ class NnFriendsDetailIpc_IFriendService: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 30500:
-			try getProfileExtraFromFriendCode(im.getBytes(8, 0x20), im.getBytes(40, 0x10), im.getBuffer(0x1a, 0) as Buffer<NnFriendsDetail_ProfileExtraImpl>)
+			try getProfileExtraFromFriendCode(im.getBytes(8, 0x20), im.getBytes(40, 0x10), im.getBuffer(0x1a, 0)! as Buffer<NnFriendsDetail_ProfileExtraImpl>)
 			om.initialize(0, 0, 0)
 		
 		case 30700:

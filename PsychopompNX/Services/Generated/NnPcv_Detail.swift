@@ -51,7 +51,7 @@ class NnPcvDetail_IPcvService: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 5:
-			let (_0, _1) = try getPossibleClockRates(im.getData(8) as UInt32, im.getData(12) as UInt32, im.getBuffer(0xa, 0) as Buffer<UInt32>)
+			let (_0, _1) = try getPossibleClockRates(im.getData(8) as UInt32, im.getData(12) as UInt32, im.getBuffer(0xa, 0)! as Buffer<UInt32>)
 			om.initialize(0, 0, 8)
 			om.setData(8, _0)
 			om.setData(12, _1)
@@ -90,7 +90,7 @@ class NnPcvDetail_IPcvService: IpcService {
 			om.setData(8, ret)
 		
 		case 13:
-			let ret = try getTemperatureThresholds(im.getData(8) as UInt32, im.getBuffer(0xa, 0) as Buffer<NnPcv_TemperatureThreshold>)
+			let ret = try getTemperatureThresholds(im.getData(8) as UInt32, im.getBuffer(0xa, 0)! as Buffer<NnPcv_TemperatureThreshold>)
 			om.initialize(0, 0, 4)
 			om.setData(8, ret)
 		
@@ -134,22 +134,22 @@ class NnPcvDetail_IPcvService: IpcService {
 			om.setData(8, ret)
 		
 		case 23:
-			let ret = try getDvfsTable(im.getData(8) as UInt32, im.getData(12) as UInt32, im.getBuffer(0xa, 0) as Buffer<UInt32>, im.getBuffer(0xa, 1) as Buffer<UInt32>)
+			let ret = try getDvfsTable(im.getData(8) as UInt32, im.getData(12) as UInt32, im.getBuffer(0xa, 0)! as Buffer<UInt32>, im.getBuffer(0xa, 1)! as Buffer<UInt32>)
 			om.initialize(0, 0, 4)
 			om.setData(8, ret)
 		
 		case 24:
-			let ret = try getModuleStateTable(im.getData(8) as UInt32, im.getBuffer(0xa, 0) as Buffer<NnPcv_ModuleState>)
+			let ret = try getModuleStateTable(im.getData(8) as UInt32, im.getBuffer(0xa, 0)! as Buffer<NnPcv_ModuleState>)
 			om.initialize(0, 0, 4)
 			om.setData(8, ret)
 		
 		case 25:
-			let ret = try getPowerDomainStateTable(im.getData(8) as UInt32, im.getBuffer(0xa, 0) as Buffer<NnPcv_PowerDomainState>)
+			let ret = try getPowerDomainStateTable(im.getData(8) as UInt32, im.getBuffer(0xa, 0)! as Buffer<NnPcv_PowerDomainState>)
 			om.initialize(0, 0, 4)
 			om.setData(8, ret)
 		
 		case 26:
-			let ret = try getFuseInfo(im.getData(8) as UInt32, im.getBuffer(0xa, 0) as Buffer<UInt32>)
+			let ret = try getFuseInfo(im.getData(8) as UInt32, im.getBuffer(0xa, 0)! as Buffer<UInt32>)
 			om.initialize(0, 0, 4)
 			om.setData(8, ret)
 		

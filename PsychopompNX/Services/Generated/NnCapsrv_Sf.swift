@@ -13,11 +13,11 @@ class NnCapsrvSf_IScreenShotControlService: IpcService {
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
 		case 1:
-			try unknown1(nil, im.getBuffer(0x46, 0) as Buffer<UInt8>)
+			try unknown1(nil, im.getBuffer(0x46, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 2:
-			try unknown2(nil, im.getBuffer(0x46, 0) as Buffer<UInt8>)
+			try unknown2(nil, im.getBuffer(0x46, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 1001:
@@ -49,7 +49,7 @@ class NnCapsrvSf_IScreenShotControlService: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 1203:
-			let ret = try unknown1203(nil, im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			let ret = try unknown1203(nil, im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		default:
@@ -86,11 +86,11 @@ class NnCapsrvSf_ICaptureControllerService: IpcService {
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
 		case 1:
-			try unknown1(nil, im.getBuffer(0x46, 0) as Buffer<UInt8>)
+			try unknown1(nil, im.getBuffer(0x46, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 2:
-			try unknown2(nil, im.getBuffer(0x46, 0) as Buffer<UInt8>)
+			try unknown2(nil, im.getBuffer(0x46, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 1001:
@@ -157,7 +157,7 @@ class NnCapsrvSf_IAlbumAccessorSession: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 2004:
-			let ret = try unknown2004(nil, im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			let ret = try unknown2004(nil, im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 2005:
@@ -169,7 +169,7 @@ class NnCapsrvSf_IAlbumAccessorSession: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 2007:
-			let ret = try unknown2007(nil, im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			let ret = try unknown2007(nil, im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 2008:
@@ -243,11 +243,11 @@ class NnCapsrvSf_IAlbumControlService: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 2201:
-			try unknown2201(nil, im.getBuffer(0x45, 0) as Buffer<UInt8>)
+			try unknown2201(nil, im.getBuffer(0x45, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 2301:
-			try unknown2301(nil, im.getBuffer(0x45, 0) as Buffer<UInt8>)
+			try unknown2301(nil, im.getBuffer(0x45, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		default:
@@ -307,11 +307,11 @@ class NnCapsrvSf_IAlbumAccessorService: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 1:
-			let ret = try unknown1(nil, im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			let ret = try unknown1(nil, im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 2:
-			let ret = try unknown2(nil, im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			let ret = try unknown2(nil, im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 3:
@@ -335,15 +335,15 @@ class NnCapsrvSf_IAlbumAccessorService: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 8:
-			let ret = try unknown8(nil, im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			let ret = try unknown8(nil, im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 9:
-			let ret = try unknown9(nil, im.getBuffer(0x46, 0) as Buffer<UInt8>, im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			let ret = try unknown9(nil, im.getBuffer(0x46, 0)! as Buffer<UInt8>, im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 10:
-			let ret = try unknown10(nil, im.getBuffer(0x46, 0) as Buffer<UInt8>, im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			let ret = try unknown10(nil, im.getBuffer(0x46, 0)! as Buffer<UInt8>, im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 11:
@@ -351,19 +351,19 @@ class NnCapsrvSf_IAlbumAccessorService: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 12:
-			let ret = try unknown12(nil, im.getBuffer(0x46, 0) as Buffer<UInt8>, im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			let ret = try unknown12(nil, im.getBuffer(0x46, 0)! as Buffer<UInt8>, im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 13:
-			let ret = try unknown13(nil, im.getBuffer(0x46, 0) as Buffer<UInt8>, im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			let ret = try unknown13(nil, im.getBuffer(0x46, 0)! as Buffer<UInt8>, im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 14:
-			let ret = try unknown14(nil, im.getBuffer(0x46, 0) as Buffer<UInt8>, im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			let ret = try unknown14(nil, im.getBuffer(0x46, 0)! as Buffer<UInt8>, im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 301:
-			let ret = try unknown301(im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			let ret = try unknown301(im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 401:
@@ -375,11 +375,11 @@ class NnCapsrvSf_IAlbumAccessorService: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 1001:
-			let ret = try unknown1001(nil, im.getBuffer(0x46, 0) as Buffer<UInt8>, im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			let ret = try unknown1001(nil, im.getBuffer(0x46, 0)! as Buffer<UInt8>, im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 1002:
-			try unknown1002(nil, im.getBuffer(0x16, 0) as Buffer<UInt8>, im.getBuffer(0x46, 0) as Buffer<UInt8>, im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			try unknown1002(nil, im.getBuffer(0x16, 0)! as Buffer<UInt8>, im.getBuffer(0x46, 0)! as Buffer<UInt8>, im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 8001:
@@ -549,13 +549,13 @@ class NnCapsrvSf_IScreenShotApplicationService: IpcService {
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
 		case 201:
-			let ret = try saveScreenShot(im.getData(8) as UInt32, im.getData(12) as UInt32, im.getData(16) as UInt64, im.pid, im.getBuffer(0x45, 0) as Buffer<UInt8>)
+			let ret = try saveScreenShot(im.getData(8) as UInt32, im.getData(12) as UInt32, im.getData(16) as UInt64, im.pid, im.getBuffer(0x45, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 32)
 			if ret.count != 0x20 { throw IpcError.byteCountMismatch }
 			om.setBytes(8, ret)
 		
 		case 203:
-			let ret = try saveScreenShotEx0(im.getBytes(8, 0x40), im.getData(72) as UInt32, im.getData(80) as UInt64, im.pid, im.getBuffer(0x45, 0) as Buffer<UInt8>)
+			let ret = try saveScreenShotEx0(im.getBytes(8, 0x40), im.getData(72) as UInt32, im.getData(80) as UInt64, im.pid, im.getBuffer(0x45, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 32)
 			if ret.count != 0x20 { throw IpcError.byteCountMismatch }
 			om.setBytes(8, ret)
@@ -583,19 +583,19 @@ class NnCapsrvSf_IScreenShotService: IpcService {
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
 		case 201:
-			let ret = try unknown201(nil, im.pid, im.getBuffer(0x45, 0) as Buffer<UInt8>)
+			let ret = try unknown201(nil, im.pid, im.getBuffer(0x45, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 202:
-			let ret = try unknown202(nil, im.getBuffer(0x45, 0) as Buffer<UInt8>, im.getBuffer(0x45, 1) as Buffer<UInt8>)
+			let ret = try unknown202(nil, im.getBuffer(0x45, 0)! as Buffer<UInt8>, im.getBuffer(0x45, 1)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 203:
-			let ret = try unknown203(nil, im.pid, im.getBuffer(0x45, 0) as Buffer<UInt8>)
+			let ret = try unknown203(nil, im.pid, im.getBuffer(0x45, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 204:
-			let ret = try unknown204(nil, im.getBuffer(0x45, 0) as Buffer<UInt8>, im.getBuffer(0x45, 1) as Buffer<UInt8>)
+			let ret = try unknown204(nil, im.getBuffer(0x45, 0)! as Buffer<UInt8>, im.getBuffer(0x45, 1)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		default:
@@ -654,7 +654,7 @@ class NnCapsrvSf_IAlbumControlSession: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 2004:
-			let ret = try unknown2004(nil, im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			let ret = try unknown2004(nil, im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 2005:
@@ -666,7 +666,7 @@ class NnCapsrvSf_IAlbumControlSession: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 2007:
-			let ret = try unknown2007(nil, im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			let ret = try unknown2007(nil, im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 2008:
@@ -710,15 +710,15 @@ class NnCapsrvSf_IAlbumControlSession: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 2421:
-			let ret = try unknown2421(nil, im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			let ret = try unknown2421(nil, im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 2422:
-			try unknown2422(nil, im.getBuffer(0x5, 0) as Buffer<UInt8>)
+			try unknown2422(nil, im.getBuffer(0x5, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 2424:
-			try unknown2424(nil, im.getBuffer(0x5, 0) as Buffer<UInt8>)
+			try unknown2424(nil, im.getBuffer(0x5, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 2431:

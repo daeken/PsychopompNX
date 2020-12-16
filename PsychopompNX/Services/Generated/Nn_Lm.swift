@@ -62,7 +62,7 @@ class NnLm_ILogger: IpcService {
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
 		case 0:
-			try initialize(im.getBuffer(0x21, 0) as Buffer<UInt8>)
+			try initialize(im.getBuffer(0x21, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 1:

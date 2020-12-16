@@ -6,8 +6,10 @@
 //
 
 import Foundation
+import LibSpan
 
 typealias Pid = UInt64
+typealias Buffer = Span
 
 enum IpcError: Error {
     case unimplemented(name: String)
@@ -106,8 +108,68 @@ class IncomingMessage {
         Array(bbuf[sfciOffset + 8 + offset ..< sfciOffset + 8 + offset + count])
     }
     
-    func getBuffer<T>(_ type: Int, _ number: Int) -> Buffer<T> {
-        Buffer<T>()
+    func getBuffer<T>(_ type: Int, _ number: Int) -> Buffer<T>? {
+        if (type & 0x20) != 0 {
+            return getBuffer((type & ~0x20) | 4, number) ?? getBuffer((type & ~0x20) | 8, number)
+        }
+        
+        let ax = (type & 3) == 1 ? 1 : 0
+        let flags_ = type & 0xC0
+        let flags = flags_ == 0x80 ? 3 : flags_ == 0x40 ? 1 : 0
+        let cx = (type & 0xC) == 8 ? 1 : 0
+        
+        switch (ax << 1) | cx {
+        case 0: // B
+            let o = (descOffset + xCount * 8 + aCount * 12 + number * 12) >> 2
+            let a = UInt64(buf[o + 0]), b = UInt64(buf[o + 1]), c = UInt64(buf[o + 2])
+            assert((c & 0x3) == flags)
+            let size = a | (((c >> 24) & 0xF) << 32)
+            if bCount <= number || size == 0 {
+                fallthrough // C
+            }
+            let buffer = try! Vmm.instance!.getVirtualSpan(
+                b | (((((c >> 2) << 4) & 0x70) | ((c >> 28) & 0xF)) << 32),
+                size);
+            return buffer.to(type: T.self)
+        case 1: // C
+            let o = (rawOffset + wLen * 4) >> 2
+            let a = UInt64(buf[o + 0]), b = UInt64(buf[o + 1])
+            let size = b >> 16
+            if size == 0 {
+                return Span<T>.from(data: DataBox(Data([])), length: 0)
+            }
+            let buffer = try! Vmm.instance!.getVirtualSpan(
+                a | ((b & 0xFFFF) << 32),
+                size);
+            return buffer.to(type: T.self)
+        case 2: // A
+            let o = (descOffset + xCount * 8 + number * 12) >> 2
+            let a = UInt64(buf[o + 0]), b = UInt64(buf[o + 1]), c = UInt64(buf[o + 2])
+            assert((c & 0x3) == flags)
+            let size = a | (((c >> 24) & 0xF) << 32)
+            if aCount <= number || size == 0 {
+                fallthrough // X
+            }
+            let buffer = try! Vmm.instance!.getVirtualSpan(
+                b | (((((c >> 2) << 4) & 0x70) | ((c >> 28) & 0xF)) << 32),
+                size);
+            return buffer.to(type: T.self)
+        case 3: // X
+            let o = (descOffset + number * 8) >> 2
+            let a = UInt64(buf[o + 0]), b = UInt64(buf[o + 1])
+            let size = a >> 16
+            if size == 0 {
+                return Span<T>.from(data: DataBox(Data([])), length: 0)
+            }
+            let buffer = try! Vmm.instance!.getVirtualSpan(
+                b | ((((a >> 12) & 0xF) | ((a >> 2) & 0x70)) << 32),
+                size);
+            return buffer.to(type: T.self)
+        default:
+            try! bailout()
+        }
+
+        return nil
     }
 }
 
@@ -177,9 +239,6 @@ class OutgoingMessage {
             buf[3 + copyCount + number] = obj.handle
         }
     }
-}
-
-class Buffer<T> {
 }
 
 class IpcService: KObject {
@@ -252,6 +311,11 @@ class IpcService: KObject {
             }
         } else {
             switch im.domainCommand {
+            case 2:
+                domainHandles.removeValue(forKey: im.domainHandle)
+                om.initialize(0, 0, 0)
+                om.errCode = 0
+                ret = 0
             default:
                 print("Unhandled domain command: \(im.domainCommand)")
                 try! bailout()

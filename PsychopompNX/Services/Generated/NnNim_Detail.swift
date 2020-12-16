@@ -57,7 +57,7 @@ class NnNimDetail_INetworkInstallManager: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 2:
-			let ret = try listSystemUpdateTask(im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			let ret = try listSystemUpdateTask(im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 3:
@@ -75,7 +75,7 @@ class NnNimDetail_INetworkInstallManager: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 6:
-			let ret = try createNetworkInstallTask(nil, im.getBuffer(0x5, 0) as Buffer<UInt8>)
+			let ret = try createNetworkInstallTask(nil, im.getBuffer(0x5, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 7:
@@ -83,7 +83,7 @@ class NnNimDetail_INetworkInstallManager: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 8:
-			let ret = try listNetworkInstallTask(im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			let ret = try listNetworkInstallTask(im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 9:
@@ -107,11 +107,11 @@ class NnNimDetail_INetworkInstallManager: IpcService {
 			om.move(0, _1)
 		
 		case 14:
-			let ret = try listApplicationNetworkInstallTask(nil, im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			let ret = try listApplicationNetworkInstallTask(nil, im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 15:
-			let ret = try listNetworkInstallTaskContentMeta(nil, im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			let ret = try listNetworkInstallTaskContentMeta(nil, im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 16:
@@ -125,11 +125,11 @@ class NnNimDetail_INetworkInstallManager: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 18:
-			try addNetworkInstallTaskContentMeta(nil, im.getBuffer(0x5, 0) as Buffer<UInt8>)
+			try addNetworkInstallTaskContentMeta(nil, im.getBuffer(0x5, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 19:
-			try getDownloadedSystemDataPath(nil, im.getBuffer(0x16, 0) as Buffer<UInt8>)
+			try getDownloadedSystemDataPath(nil, im.getBuffer(0x16, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 20:
@@ -151,13 +151,13 @@ class NnNimDetail_INetworkInstallManager: IpcService {
 			om.move(0, _1)
 		
 		case 24:
-			let (_0, _1) = try requestGameCardRegistrationStatus(nil, im.getBuffer(0x5, 0) as Buffer<UInt8>, im.getBuffer(0x5, 1) as Buffer<UInt8>)
+			let (_0, _1) = try requestGameCardRegistrationStatus(nil, im.getBuffer(0x5, 0)! as Buffer<UInt8>, im.getBuffer(0x5, 1)! as Buffer<UInt8>)
 			om.initialize(1, 1, 0)
 			om.copy(0, _0)
 			om.move(0, _1)
 		
 		case 25:
-			let (_0, _1) = try requestRegisterGameCard(nil, im.getBuffer(0x5, 0) as Buffer<UInt8>, im.getBuffer(0x5, 1) as Buffer<UInt8>)
+			let (_0, _1) = try requestRegisterGameCard(nil, im.getBuffer(0x5, 0)! as Buffer<UInt8>, im.getBuffer(0x5, 1)! as Buffer<UInt8>)
 			om.initialize(1, 1, 0)
 			om.copy(0, _0)
 			om.move(0, _1)
@@ -193,7 +193,7 @@ class NnNimDetail_INetworkInstallManager: IpcService {
 			om.move(0, _1)
 		
 		case 31:
-			let ret = try createApplyDeltaTask(nil, im.getBuffer(0x5, 0) as Buffer<UInt8>)
+			let ret = try createApplyDeltaTask(nil, im.getBuffer(0x5, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 32:
@@ -201,7 +201,7 @@ class NnNimDetail_INetworkInstallManager: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 33:
-			let ret = try listApplicationApplyDeltaTask(nil, im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			let ret = try listApplicationApplyDeltaTask(nil, im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 34:
@@ -215,7 +215,7 @@ class NnNimDetail_INetworkInstallManager: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 36:
-			let ret = try listApplyDeltaTask(nil, im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			let ret = try listApplyDeltaTask(nil, im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 37:
@@ -231,7 +231,7 @@ class NnNimDetail_INetworkInstallManager: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 40:
-			let ret = try listApplyDeltaTask2(im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			let ret = try listApplyDeltaTask2(im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 41:
@@ -513,7 +513,7 @@ class NnNimDetail_IAsyncValue: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 1:
-			try unknown1(im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			try unknown1(im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 2:
@@ -521,7 +521,7 @@ class NnNimDetail_IAsyncValue: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 3:
-			try unknown3(im.getBuffer(0x16, 0) as Buffer<UInt8>)
+			try unknown3(im.getBuffer(0x16, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		default:
@@ -556,7 +556,7 @@ class NnNimDetail_IAsyncResult: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 2:
-			try unknown2(im.getBuffer(0x16, 0) as Buffer<UInt8>)
+			try unknown2(im.getBuffer(0x16, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		default:
@@ -595,7 +595,7 @@ class NnNimDetail_IAsyncProgressResult: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 3:
-			try unknown3(im.getBuffer(0x16, 0) as Buffer<UInt8>)
+			try unknown3(im.getBuffer(0x16, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		default:
@@ -637,7 +637,7 @@ class NnNimDetail_IAsyncData: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 3:
-			let ret = try unknown3(nil, im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			let ret = try unknown3(nil, im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 4:
@@ -645,7 +645,7 @@ class NnNimDetail_IAsyncData: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 5:
-			try unknown5(im.getBuffer(0x16, 0) as Buffer<UInt8>)
+			try unknown5(im.getBuffer(0x16, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		default:

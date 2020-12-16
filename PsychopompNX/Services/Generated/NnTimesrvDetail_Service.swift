@@ -142,12 +142,12 @@ class NnTimesrvDetailService_ITimeZoneService: IpcService {
 			om.setData(8, ret)
 		
 		case 3:
-			let ret = try loadLocationNameList(im.getData(8) as UInt32, im.getBuffer(0x6, 0) as Buffer<NnTime_LocationName>)
+			let ret = try loadLocationNameList(im.getData(8) as UInt32, im.getBuffer(0x6, 0)! as Buffer<NnTime_LocationName>)
 			om.initialize(0, 0, 4)
 			om.setData(8, ret)
 		
 		case 4:
-			try loadTimeZoneRule(im.getBytes(8, 0x24), im.getBuffer(0x16, 0) as Buffer<NnTime_TimeZoneRule>)
+			try loadTimeZoneRule(im.getBytes(8, 0x24), im.getBuffer(0x16, 0)! as Buffer<NnTime_TimeZoneRule>)
 			om.initialize(0, 0, 0)
 		
 		case 5:
@@ -157,7 +157,7 @@ class NnTimesrvDetailService_ITimeZoneService: IpcService {
 			om.setBytes(8, ret)
 		
 		case 100:
-			let (_0, _1) = try toCalendarTime(im.getData(8) as UInt64, im.getBuffer(0x15, 0) as Buffer<NnTime_TimeZoneRule>)
+			let (_0, _1) = try toCalendarTime(im.getData(8) as UInt64, im.getBuffer(0x15, 0)! as Buffer<NnTime_TimeZoneRule>)
 			om.initialize(0, 0, 32)
 			om.setData(8, _0.year)
 			om.setData(10, _0.month)
@@ -189,12 +189,12 @@ class NnTimesrvDetailService_ITimeZoneService: IpcService {
 			om.setData(36, _1.utc_offset_seconds)
 		
 		case 201:
-			let ret = try toPosixTime(NnTime_CalendarTime(year: im.getData(8) as UInt16, month: im.getData(10) as UInt8, day: im.getData(11) as UInt8, hour: im.getData(12) as UInt8, minute: im.getData(13) as UInt8, second: im.getData(14) as UInt8), im.getBuffer(0x15, 0) as Buffer<NnTime_TimeZoneRule>, im.getBuffer(0xa, 0) as Buffer<NnTime_PosixTime>)
+			let ret = try toPosixTime(NnTime_CalendarTime(year: im.getData(8) as UInt16, month: im.getData(10) as UInt8, day: im.getData(11) as UInt8, hour: im.getData(12) as UInt8, minute: im.getData(13) as UInt8, second: im.getData(14) as UInt8), im.getBuffer(0x15, 0)! as Buffer<NnTime_TimeZoneRule>, im.getBuffer(0xa, 0)! as Buffer<NnTime_PosixTime>)
 			om.initialize(0, 0, 4)
 			om.setData(8, ret)
 		
 		case 202:
-			let ret = try toPosixTimeWithMyRule(NnTime_CalendarTime(year: im.getData(8) as UInt16, month: im.getData(10) as UInt8, day: im.getData(11) as UInt8, hour: im.getData(12) as UInt8, minute: im.getData(13) as UInt8, second: im.getData(14) as UInt8), im.getBuffer(0xa, 0) as Buffer<NnTime_PosixTime>)
+			let ret = try toPosixTimeWithMyRule(NnTime_CalendarTime(year: im.getData(8) as UInt16, month: im.getData(10) as UInt8, day: im.getData(11) as UInt8, hour: im.getData(12) as UInt8, minute: im.getData(13) as UInt8, second: im.getData(14) as UInt8), im.getBuffer(0xa, 0)! as Buffer<NnTime_PosixTime>)
 			om.initialize(0, 0, 4)
 			om.setData(8, ret)
 		
@@ -298,20 +298,20 @@ class NnTimesrvDetailService_IStaticService: IpcService {
 			om.setData(8, ret)
 		
 		case 400:
-			try getClockSnapshot(im.getData(8) as UInt8, im.getBuffer(0x1a, 0) as Buffer<NnTimeSf_ClockSnapshot>)
+			try getClockSnapshot(im.getData(8) as UInt8, im.getBuffer(0x1a, 0)! as Buffer<NnTimeSf_ClockSnapshot>)
 			om.initialize(0, 0, 0)
 		
 		case 401:
-			try getClockSnapshotFromSystemClockContext(im.getData(8) as UInt8, im.getBytes(9, 0x20), im.getBytes(41, 0x20), im.getBuffer(0x1a, 0) as Buffer<NnTimeSf_ClockSnapshot>)
+			try getClockSnapshotFromSystemClockContext(im.getData(8) as UInt8, im.getBytes(9, 0x20), im.getBytes(41, 0x20), im.getBuffer(0x1a, 0)! as Buffer<NnTimeSf_ClockSnapshot>)
 			om.initialize(0, 0, 0)
 		
 		case 500:
-			let ret = try calculateStandardUserSystemClockDifferenceByUser(im.getBuffer(0x19, 0) as Buffer<NnTimeSf_ClockSnapshot>, im.getBuffer(0x19, 1) as Buffer<NnTimeSf_ClockSnapshot>)
+			let ret = try calculateStandardUserSystemClockDifferenceByUser(im.getBuffer(0x19, 0)! as Buffer<NnTimeSf_ClockSnapshot>, im.getBuffer(0x19, 1)! as Buffer<NnTimeSf_ClockSnapshot>)
 			om.initialize(0, 0, 8)
 			om.setData(8, ret)
 		
 		case 501:
-			let ret = try calculateSpanBetween(im.getBuffer(0x19, 0) as Buffer<NnTimeSf_ClockSnapshot>, im.getBuffer(0x19, 1) as Buffer<NnTimeSf_ClockSnapshot>)
+			let ret = try calculateSpanBetween(im.getBuffer(0x19, 0)! as Buffer<NnTimeSf_ClockSnapshot>, im.getBuffer(0x19, 1)! as Buffer<NnTimeSf_ClockSnapshot>)
 			om.initialize(0, 0, 8)
 			om.setData(8, ret)
 		

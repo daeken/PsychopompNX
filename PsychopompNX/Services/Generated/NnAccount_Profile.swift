@@ -12,7 +12,7 @@ class NnAccountProfile_IProfileEditor: IpcService {
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
 		case 0:
-			let ret = try get(im.getBuffer(0x1a, 0) as Buffer<NnAccountProfile_UserData>)
+			let ret = try get(im.getBuffer(0x1a, 0)! as Buffer<NnAccountProfile_UserData>)
 			om.initialize(0, 0, 56)
 			if ret.count != 0x38 { throw IpcError.byteCountMismatch }
 			om.setBytes(8, ret)
@@ -29,16 +29,16 @@ class NnAccountProfile_IProfileEditor: IpcService {
 			om.setData(8, ret)
 		
 		case 11:
-			let ret = try loadImage(im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			let ret = try loadImage(im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 4)
 			om.setData(8, ret)
 		
 		case 100:
-			try store(im.getBytes(8, 0x38), im.getBuffer(0x19, 0) as Buffer<NnAccountProfile_UserData>)
+			try store(im.getBytes(8, 0x38), im.getBuffer(0x19, 0)! as Buffer<NnAccountProfile_UserData>)
 			om.initialize(0, 0, 0)
 		
 		case 101:
-			try storeWithImage(im.getBytes(8, 0x38), im.getBuffer(0x19, 0) as Buffer<NnAccountProfile_UserData>, im.getBuffer(0x5, 0) as Buffer<UInt8>)
+			try storeWithImage(im.getBytes(8, 0x38), im.getBuffer(0x19, 0)! as Buffer<NnAccountProfile_UserData>, im.getBuffer(0x5, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		default:
@@ -68,7 +68,7 @@ class NnAccountProfile_IProfile: IpcService {
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
 		case 0:
-			let ret = try get(im.getBuffer(0x1a, 0) as Buffer<NnAccountProfile_UserData>)
+			let ret = try get(im.getBuffer(0x1a, 0)! as Buffer<NnAccountProfile_UserData>)
 			om.initialize(0, 0, 56)
 			if ret.count != 0x38 { throw IpcError.byteCountMismatch }
 			om.setBytes(8, ret)
@@ -85,7 +85,7 @@ class NnAccountProfile_IProfile: IpcService {
 			om.setData(8, ret)
 		
 		case 11:
-			let ret = try loadImage(im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			let ret = try loadImage(im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 4)
 			om.setData(8, ret)
 		

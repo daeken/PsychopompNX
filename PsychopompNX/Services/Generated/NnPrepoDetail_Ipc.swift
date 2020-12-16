@@ -17,11 +17,11 @@ class NnPrepoDetailIpc_IPrepoService: IpcService {
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
 		case 10100:
-			try saveReport(im.getData(8) as UInt64, im.pid, im.getBuffer(0x9, 0) as Buffer<UInt8>, im.getBuffer(0x5, 0) as Buffer<UInt8>)
+			try saveReport(im.getData(8) as UInt64, im.pid, im.getBuffer(0x9, 0)! as Buffer<UInt8>, im.getBuffer(0x5, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 10101:
-			try saveReportWithUser(im.getBytes(8, 0x10), im.getData(24) as UInt64, im.pid, im.getBuffer(0x9, 0) as Buffer<UInt8>, im.getBuffer(0x5, 0) as Buffer<UInt8>)
+			try saveReportWithUser(im.getBytes(8, 0x10), im.getData(24) as UInt64, im.pid, im.getBuffer(0x9, 0)! as Buffer<UInt8>, im.getBuffer(0x5, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 10200:
@@ -34,11 +34,11 @@ class NnPrepoDetailIpc_IPrepoService: IpcService {
 			om.setData(8, ret)
 		
 		case 20100:
-			try saveSystemReport(im.getData(8) as UInt64, im.getBuffer(0x9, 0) as Buffer<UInt8>, im.getBuffer(0x5, 0) as Buffer<UInt8>)
+			try saveSystemReport(im.getData(8) as UInt64, im.getBuffer(0x9, 0)! as Buffer<UInt8>, im.getBuffer(0x5, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 20101:
-			try saveSystemReportWithUser(im.getBytes(8, 0x10), im.getData(24) as UInt64, im.getBuffer(0x9, 0) as Buffer<UInt8>, im.getBuffer(0x5, 0) as Buffer<UInt8>)
+			try saveSystemReportWithUser(im.getBytes(8, 0x10), im.getData(24) as UInt64, im.getBuffer(0x9, 0)! as Buffer<UInt8>, im.getBuffer(0x5, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 20200:

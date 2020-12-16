@@ -77,7 +77,7 @@ class NnGrcsrv_IGameMovieTrimmer: IpcService {
 			om.copy(0, ret)
 		
 		case 20:
-			try setThumbnailRgba(im.getData(8) as UInt32, im.getData(12) as UInt32, im.getBuffer(0x45, 0) as Buffer<UInt8>)
+			try setThumbnailRgba(im.getData(8) as UInt32, im.getData(12) as UInt32, im.getBuffer(0x45, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		default:

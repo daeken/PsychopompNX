@@ -13,7 +13,7 @@ class NnErptSf_IReport: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 1:
-			let ret = try read(im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			let ret = try read(im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 2:
@@ -62,11 +62,11 @@ class NnErptSf_IContext: IpcService {
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
 		case 0:
-			try submitContext(im.getBuffer(0x5, 0) as Buffer<UInt8>, im.getBuffer(0x5, 1) as Buffer<UInt8>)
+			try submitContext(im.getBuffer(0x5, 0)! as Buffer<UInt8>, im.getBuffer(0x5, 1)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 1:
-			try createReport(nil, im.getBuffer(0x5, 0) as Buffer<UInt8>, im.getBuffer(0x5, 1) as Buffer<UInt8>, im.getBuffer(0x5, 2) as Buffer<UInt8>)
+			try createReport(nil, im.getBuffer(0x5, 0)! as Buffer<UInt8>, im.getBuffer(0x5, 1)! as Buffer<UInt8>, im.getBuffer(0x5, 2)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 2:
@@ -118,7 +118,7 @@ class NnErptSf_IManager: IpcService {
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
 		case 0:
-			try getReportList(nil, im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			try getReportList(nil, im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 1:

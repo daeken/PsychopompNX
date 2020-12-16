@@ -84,21 +84,21 @@ class NnAudioDetail_IAudioDevice: IpcService {
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
 		case 0:
-			let ret = try listAudioDeviceName(im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			let ret = try listAudioDeviceName(im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 4)
 			om.setData(8, ret)
 		
 		case 1:
-			try setAudioDeviceOutputVolume(im.getData(8) as UInt32, im.getBuffer(0x5, 0) as Buffer<UInt8>)
+			try setAudioDeviceOutputVolume(im.getData(8) as UInt32, im.getBuffer(0x5, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 2:
-			let ret = try getAudioDeviceOutputVolume(im.getBuffer(0x5, 0) as Buffer<UInt8>)
+			let ret = try getAudioDeviceOutputVolume(im.getBuffer(0x5, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 4)
 			om.setData(8, ret)
 		
 		case 3:
-			try getActiveAudioDeviceName(im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			try getActiveAudioDeviceName(im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 4:
@@ -112,21 +112,21 @@ class NnAudioDetail_IAudioDevice: IpcService {
 			om.setData(8, ret)
 		
 		case 6:
-			let ret = try listAudioDeviceNameAuto(im.getBuffer(0x22, 0) as Buffer<UInt8>)
+			let ret = try listAudioDeviceNameAuto(im.getBuffer(0x22, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 4)
 			om.setData(8, ret)
 		
 		case 7:
-			try setAudioDeviceOutputVolumeAuto(im.getData(8) as UInt32, im.getBuffer(0x21, 0) as Buffer<UInt8>)
+			try setAudioDeviceOutputVolumeAuto(im.getData(8) as UInt32, im.getBuffer(0x21, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 8:
-			let ret = try getAudioDeviceOutputVolumeAuto(im.getBuffer(0x21, 0) as Buffer<UInt8>)
+			let ret = try getAudioDeviceOutputVolumeAuto(im.getBuffer(0x21, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 4)
 			om.setData(8, ret)
 		
 		case 10:
-			try getActiveAudioDeviceNameAuto(im.getBuffer(0x22, 0) as Buffer<UInt8>)
+			try getActiveAudioDeviceNameAuto(im.getBuffer(0x22, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 11:
@@ -225,7 +225,7 @@ class NnAudioDetail_IAudioRenderer: IpcService {
 			om.setData(8, ret)
 		
 		case 4:
-			try requestUpdateAudioRenderer(im.getBuffer(0x5, 0) as Buffer<NnAudioDetail_AudioRendererUpdateDataHeader>, im.getBuffer(0x6, 0) as Buffer<NnAudioDetail_AudioRendererUpdateDataHeader>, im.getBuffer(0x6, 1) as Buffer<NnAudioDetail_AudioRendererUpdateDataHeader>)
+			try requestUpdateAudioRenderer(im.getBuffer(0x5, 0)! as Buffer<NnAudioDetail_AudioRendererUpdateDataHeader>, im.getBuffer(0x6, 0)! as Buffer<NnAudioDetail_AudioRendererUpdateDataHeader>, im.getBuffer(0x6, 1)! as Buffer<NnAudioDetail_AudioRendererUpdateDataHeader>)
 			om.initialize(0, 0, 0)
 		
 		case 5:
@@ -251,7 +251,7 @@ class NnAudioDetail_IAudioRenderer: IpcService {
 			om.setData(8, ret)
 		
 		case 10:
-			try requestUpdateAudioRendererAuto(im.getBuffer(0x21, 0) as Buffer<NnAudioDetail_AudioRendererUpdateDataHeader>, im.getBuffer(0x22, 0) as Buffer<NnAudioDetail_AudioRendererUpdateDataHeader>, im.getBuffer(0x22, 1) as Buffer<NnAudioDetail_AudioRendererUpdateDataHeader>)
+			try requestUpdateAudioRendererAuto(im.getBuffer(0x21, 0)! as Buffer<NnAudioDetail_AudioRendererUpdateDataHeader>, im.getBuffer(0x22, 0)! as Buffer<NnAudioDetail_AudioRendererUpdateDataHeader>, im.getBuffer(0x22, 1)! as Buffer<NnAudioDetail_AudioRendererUpdateDataHeader>)
 			om.initialize(0, 0, 0)
 		
 		case 11:
@@ -291,12 +291,12 @@ class NnAudioDetail_IAudioOutManager: IpcService {
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
 		case 0:
-			let ret = try listAudioOuts(im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			let ret = try listAudioOuts(im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 4)
 			om.setData(8, ret)
 		
 		case 1:
-			let (_0, _1, _2, _3, _4) = try openAudioOut(im.getData(8) as UInt32, im.getData(12) as UInt16, im.getData(14) as UInt16, im.getData(16) as UInt64, im.pid, try Emulator.instance!.kernel.tryGetHandle(im.getCopy(0)) as KObject, im.getBuffer(0x5, 0) as Buffer<UInt8>, im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			let (_0, _1, _2, _3, _4) = try openAudioOut(im.getData(8) as UInt32, im.getData(12) as UInt16, im.getData(14) as UInt16, im.getData(16) as UInt64, im.pid, try Emulator.instance!.kernel.tryGetHandle(im.getCopy(0)) as KObject, im.getBuffer(0x5, 0)! as Buffer<UInt8>, im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(1, 0, 16)
 			om.setData(8, _0)
 			om.setData(12, _1)
@@ -305,12 +305,12 @@ class NnAudioDetail_IAudioOutManager: IpcService {
 			om.move(0, _4)
 		
 		case 2:
-			let ret = try listAudioOutsAuto(im.getBuffer(0x22, 0) as Buffer<UInt8>)
+			let ret = try listAudioOutsAuto(im.getBuffer(0x22, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 4)
 			om.setData(8, ret)
 		
 		case 3:
-			let (_0, _1, _2, _3, _4) = try openAudioOutAuto(im.getData(8) as UInt32, im.getData(12) as UInt16, im.getData(14) as UInt16, im.getData(16) as UInt64, im.pid, try Emulator.instance!.kernel.tryGetHandle(im.getCopy(0)) as KObject, im.getBuffer(0x21, 0) as Buffer<UInt8>, im.getBuffer(0x22, 0) as Buffer<UInt8>)
+			let (_0, _1, _2, _3, _4) = try openAudioOutAuto(im.getData(8) as UInt32, im.getData(12) as UInt16, im.getData(14) as UInt16, im.getData(16) as UInt64, im.pid, try Emulator.instance!.kernel.tryGetHandle(im.getCopy(0)) as KObject, im.getBuffer(0x21, 0)! as Buffer<UInt8>, im.getBuffer(0x22, 0)! as Buffer<UInt8>)
 			om.initialize(1, 0, 16)
 			om.setData(8, _0)
 			om.setData(12, _1)
@@ -394,7 +394,7 @@ class NnAudioDetail_IAudioIn: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 3:
-			try appendAudioInBuffer(im.getData(8) as UInt64, im.getBuffer(0x5, 0) as Buffer<NnAudio_AudioInBuffer>)
+			try appendAudioInBuffer(im.getData(8) as UInt64, im.getBuffer(0x5, 0)! as Buffer<NnAudio_AudioInBuffer>)
 			om.initialize(0, 0, 0)
 		
 		case 4:
@@ -403,7 +403,7 @@ class NnAudioDetail_IAudioIn: IpcService {
 			om.copy(0, ret)
 		
 		case 5:
-			let ret = try getReleasedAudioInBuffer(im.getBuffer(0x6, 0) as Buffer<NnAudio_AudioInBuffer>)
+			let ret = try getReleasedAudioInBuffer(im.getBuffer(0x6, 0)! as Buffer<NnAudio_AudioInBuffer>)
 			om.initialize(0, 0, 4)
 			om.setData(8, ret)
 		
@@ -413,20 +413,20 @@ class NnAudioDetail_IAudioIn: IpcService {
 			om.setData(8, ret)
 		
 		case 7:
-			try appendAudioInBufferWithUserEvent(im.getData(8) as UInt64, try Emulator.instance!.kernel.tryGetHandle(im.getCopy(0)) as KObject, im.getBuffer(0x5, 0) as Buffer<NnAudio_AudioInBuffer>)
+			try appendAudioInBufferWithUserEvent(im.getData(8) as UInt64, try Emulator.instance!.kernel.tryGetHandle(im.getCopy(0)) as KObject, im.getBuffer(0x5, 0)! as Buffer<NnAudio_AudioInBuffer>)
 			om.initialize(0, 0, 0)
 		
 		case 8:
-			try appendAudioInBufferAuto(im.getData(8) as UInt64, im.getBuffer(0x21, 0) as Buffer<NnAudio_AudioInBuffer>)
+			try appendAudioInBufferAuto(im.getData(8) as UInt64, im.getBuffer(0x21, 0)! as Buffer<NnAudio_AudioInBuffer>)
 			om.initialize(0, 0, 0)
 		
 		case 9:
-			let ret = try getReleasedAudioInBufferAuto(im.getBuffer(0x22, 0) as Buffer<NnAudio_AudioInBuffer>)
+			let ret = try getReleasedAudioInBufferAuto(im.getBuffer(0x22, 0)! as Buffer<NnAudio_AudioInBuffer>)
 			om.initialize(0, 0, 4)
 			om.setData(8, ret)
 		
 		case 10:
-			try appendAudioInBufferWithUserEventAuto(im.getData(8) as UInt64, try Emulator.instance!.kernel.tryGetHandle(im.getCopy(0)) as KObject, im.getBuffer(0x21, 0) as Buffer<NnAudio_AudioInBuffer>)
+			try appendAudioInBufferWithUserEventAuto(im.getData(8) as UInt64, try Emulator.instance!.kernel.tryGetHandle(im.getCopy(0)) as KObject, im.getBuffer(0x21, 0)! as Buffer<NnAudio_AudioInBuffer>)
 			om.initialize(0, 0, 0)
 		
 		case 11:
@@ -538,7 +538,7 @@ class NnAudioDetail_IFinalOutputRecorder: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 3:
-			try appendFinalOutputRecorderBuffer(im.getData(8) as UInt64, im.getBuffer(0x5, 0) as Buffer<NnAudio_AudioInBuffer>)
+			try appendFinalOutputRecorderBuffer(im.getData(8) as UInt64, im.getBuffer(0x5, 0)! as Buffer<NnAudio_AudioInBuffer>)
 			om.initialize(0, 0, 0)
 		
 		case 4:
@@ -547,7 +547,7 @@ class NnAudioDetail_IFinalOutputRecorder: IpcService {
 			om.copy(0, ret)
 		
 		case 5:
-			let (_0, _1) = try getReleasedFinalOutputRecorderBuffer(im.getBuffer(0x6, 0) as Buffer<NnAudio_AudioInBuffer>)
+			let (_0, _1) = try getReleasedFinalOutputRecorderBuffer(im.getBuffer(0x6, 0)! as Buffer<NnAudio_AudioInBuffer>)
 			om.initialize(0, 0, 16)
 			om.setData(8, _0)
 			om.setData(16, _1)
@@ -563,11 +563,11 @@ class NnAudioDetail_IFinalOutputRecorder: IpcService {
 			om.setData(8, ret)
 		
 		case 8:
-			try appendFinalOutputRecorderBufferAuto(im.getData(8) as UInt64, im.getBuffer(0x21, 0) as Buffer<NnAudio_AudioInBuffer>)
+			try appendFinalOutputRecorderBufferAuto(im.getData(8) as UInt64, im.getBuffer(0x21, 0)! as Buffer<NnAudio_AudioInBuffer>)
 			om.initialize(0, 0, 0)
 		
 		case 9:
-			let (_0, _1) = try getReleasedFinalOutputRecorderBufferAuto(im.getBuffer(0x22, 0) as Buffer<NnAudio_AudioInBuffer>)
+			let (_0, _1) = try getReleasedFinalOutputRecorderBufferAuto(im.getBuffer(0x22, 0)! as Buffer<NnAudio_AudioInBuffer>)
 			om.initialize(0, 0, 16)
 			om.setData(8, _0)
 			om.setData(16, _1)
@@ -825,7 +825,7 @@ class NnAudioDetail_IAudioOut: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 3:
-			try appendAudioOutBuffer(im.getData(8) as UInt64, im.getBuffer(0x5, 0) as Buffer<NnAudio_AudioOutBuffer>)
+			try appendAudioOutBuffer(im.getData(8) as UInt64, im.getBuffer(0x5, 0)! as Buffer<NnAudio_AudioOutBuffer>)
 			om.initialize(0, 0, 0)
 		
 		case 4:
@@ -834,7 +834,7 @@ class NnAudioDetail_IAudioOut: IpcService {
 			om.copy(0, ret)
 		
 		case 5:
-			let ret = try getReleasedAudioOutBuffer(im.getBuffer(0x6, 0) as Buffer<NnAudio_AudioOutBuffer>)
+			let ret = try getReleasedAudioOutBuffer(im.getBuffer(0x6, 0)! as Buffer<NnAudio_AudioOutBuffer>)
 			om.initialize(0, 0, 4)
 			om.setData(8, ret)
 		
@@ -844,11 +844,11 @@ class NnAudioDetail_IAudioOut: IpcService {
 			om.setData(8, ret)
 		
 		case 7:
-			try appendAudioOutBufferAuto(im.getData(8) as UInt64, im.getBuffer(0x21, 0) as Buffer<NnAudio_AudioOutBuffer>)
+			try appendAudioOutBufferAuto(im.getData(8) as UInt64, im.getBuffer(0x21, 0)! as Buffer<NnAudio_AudioOutBuffer>)
 			om.initialize(0, 0, 0)
 		
 		case 8:
-			let ret = try getReleasedAudioOutBufferAuto(im.getBuffer(0x22, 0) as Buffer<NnAudio_AudioOutBuffer>)
+			let ret = try getReleasedAudioOutBufferAuto(im.getBuffer(0x22, 0)! as Buffer<NnAudio_AudioOutBuffer>)
 			om.initialize(0, 0, 4)
 			om.setData(8, ret)
 		
@@ -1023,12 +1023,12 @@ class NnAudioDetail_IAudioInManager: IpcService {
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
 		case 0:
-			let ret = try listAudioIns(im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			let ret = try listAudioIns(im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 4)
 			om.setData(8, ret)
 		
 		case 1:
-			let (_0, _1, _2, _3, _4) = try openAudioIn(im.getData(8) as UInt64, im.getData(16) as UInt64, im.pid, try Emulator.instance!.kernel.tryGetHandle(im.getCopy(0)) as KObject, im.getBuffer(0x5, 0) as Buffer<UInt8>, im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			let (_0, _1, _2, _3, _4) = try openAudioIn(im.getData(8) as UInt64, im.getData(16) as UInt64, im.pid, try Emulator.instance!.kernel.tryGetHandle(im.getCopy(0)) as KObject, im.getBuffer(0x5, 0)! as Buffer<UInt8>, im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(1, 0, 16)
 			om.setData(8, _0)
 			om.setData(12, _1)
@@ -1037,12 +1037,12 @@ class NnAudioDetail_IAudioInManager: IpcService {
 			om.move(0, _4)
 		
 		case 2:
-			let ret = try unknown2(im.getBuffer(0x22, 0) as Buffer<UInt8>)
+			let ret = try unknown2(im.getBuffer(0x22, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 4)
 			om.setData(8, ret)
 		
 		case 3:
-			let (_0, _1, _2, _3, _4) = try openAudioInAuto(im.getData(8) as UInt64, im.getData(16) as UInt64, im.pid, try Emulator.instance!.kernel.tryGetHandle(im.getCopy(0)) as KObject, im.getBuffer(0x21, 0) as Buffer<UInt8>, im.getBuffer(0x22, 0) as Buffer<UInt8>)
+			let (_0, _1, _2, _3, _4) = try openAudioInAuto(im.getData(8) as UInt64, im.getData(16) as UInt64, im.pid, try Emulator.instance!.kernel.tryGetHandle(im.getCopy(0)) as KObject, im.getBuffer(0x21, 0)! as Buffer<UInt8>, im.getBuffer(0x22, 0)! as Buffer<UInt8>)
 			om.initialize(1, 0, 16)
 			om.setData(8, _0)
 			om.setData(12, _1)
@@ -1051,7 +1051,7 @@ class NnAudioDetail_IAudioInManager: IpcService {
 			om.move(0, _4)
 		
 		case 4:
-			let ret = try listAudioInsAuto(im.getBuffer(0x22, 0) as Buffer<UInt8>)
+			let ret = try listAudioInsAuto(im.getBuffer(0x22, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 4)
 			om.setData(8, ret)
 		

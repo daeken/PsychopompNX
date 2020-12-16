@@ -68,15 +68,15 @@ class NnEs_IETicketService: IpcService {
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
 		case 1:
-			try importTicket(im.getBuffer(0x5, 0) as Buffer<UInt8>, im.getBuffer(0x5, 1) as Buffer<UInt8>)
+			try importTicket(im.getBuffer(0x5, 0)! as Buffer<UInt8>, im.getBuffer(0x5, 1)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 2:
-			try importTicketCertificateSet(im.getBuffer(0x5, 0) as Buffer<UInt8>)
+			try importTicketCertificateSet(im.getBuffer(0x5, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 3:
-			try deleteTicket(im.getBuffer(0x5, 0) as Buffer<UInt8>)
+			try deleteTicket(im.getBuffer(0x5, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 4:
@@ -92,7 +92,7 @@ class NnEs_IETicketService: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 7:
-			try deleteAllPersonalizedTicketEx(im.getBuffer(0x5, 0) as Buffer<UInt8>)
+			try deleteAllPersonalizedTicketEx(im.getBuffer(0x5, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 9:
@@ -104,15 +104,15 @@ class NnEs_IETicketService: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 11:
-			let ret = try listCommonTicket(im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			let ret = try listCommonTicket(im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 12:
-			let ret = try listPersonalizedTicket(im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			let ret = try listPersonalizedTicket(im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 13:
-			let ret = try listMissingPersonalizedTicket(im.getBuffer(0x5, 0) as Buffer<UInt8>, im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			let ret = try listMissingPersonalizedTicket(im.getBuffer(0x5, 0)! as Buffer<UInt8>, im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 14:
@@ -124,27 +124,27 @@ class NnEs_IETicketService: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 16:
-			let ret = try getCommonTicketData(nil, im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			let ret = try getCommonTicketData(nil, im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 17:
-			let ret = try getPersonalizedTicketData(nil, im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			let ret = try getPersonalizedTicketData(nil, im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 18:
-			try ownTicket(im.getBuffer(0x5, 0) as Buffer<UInt8>, im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			try ownTicket(im.getBuffer(0x5, 0)! as Buffer<UInt8>, im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 19:
-			let ret = try getTicketInfo(im.getBuffer(0x5, 0) as Buffer<UInt8>, im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			let ret = try getTicketInfo(im.getBuffer(0x5, 0)! as Buffer<UInt8>, im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 20:
-			let ret = try listLightTicketInfo(nil, im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			let ret = try listLightTicketInfo(nil, im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 21:
-			try signData(im.getBuffer(0x5, 0) as Buffer<UInt8>, im.getBuffer(0x16, 0) as Buffer<UInt8>, im.getBuffer(0x16, 1) as Buffer<UInt8>)
+			try signData(im.getBuffer(0x5, 0)! as Buffer<UInt8>, im.getBuffer(0x16, 0)! as Buffer<UInt8>, im.getBuffer(0x16, 1)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 22:
@@ -152,15 +152,15 @@ class NnEs_IETicketService: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 23:
-			let ret = try getCommonTicketAndCertificateData(nil, im.getBuffer(0x6, 0) as Buffer<UInt8>, im.getBuffer(0x6, 1) as Buffer<UInt8>)
+			let ret = try getCommonTicketAndCertificateData(nil, im.getBuffer(0x6, 0)! as Buffer<UInt8>, im.getBuffer(0x6, 1)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 24:
-			try importPrepurchaseRecord(im.getBuffer(0x15, 0) as Buffer<UInt8>)
+			try importPrepurchaseRecord(im.getBuffer(0x15, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 25:
-			try deletePrepurchaseRecord(im.getBuffer(0x15, 0) as Buffer<UInt8>)
+			try deletePrepurchaseRecord(im.getBuffer(0x15, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 26:
@@ -172,11 +172,11 @@ class NnEs_IETicketService: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 28:
-			let ret = try listPrepurchaseRecord(im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			let ret = try listPrepurchaseRecord(im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 29:
-			let ret = try listPrepurchaseRecordInfo(nil, im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			let ret = try listPrepurchaseRecordInfo(nil, im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 30:

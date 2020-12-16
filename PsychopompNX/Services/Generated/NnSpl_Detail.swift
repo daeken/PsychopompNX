@@ -4,7 +4,7 @@ class NnSplDetail_IRandomInterface: IpcService {
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
 		case 0:
-			try getRandomBytes(im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			try getRandomBytes(im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		default:
@@ -49,7 +49,7 @@ class NnSplDetail_IEsInterface: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 1:
-			try unknown1(im.getBuffer(0x9, 0) as Buffer<UInt8>, im.getBuffer(0x9, 1) as Buffer<UInt8>, im.getBuffer(0x9, 2) as Buffer<UInt8>, im.getBuffer(0xa, 0) as Buffer<UInt8>)
+			try unknown1(im.getBuffer(0x9, 0)! as Buffer<UInt8>, im.getBuffer(0x9, 1)! as Buffer<UInt8>, im.getBuffer(0x9, 2)! as Buffer<UInt8>, im.getBuffer(0xa, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 2:
@@ -69,7 +69,7 @@ class NnSplDetail_IEsInterface: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 7:
-			try unknown7(im.getBuffer(0xa, 0) as Buffer<UInt8>)
+			try unknown7(im.getBuffer(0xa, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 11:
@@ -77,7 +77,7 @@ class NnSplDetail_IEsInterface: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 13:
-			try unknown13(nil, im.getBuffer(0x9, 0) as Buffer<UInt8>, im.getBuffer(0xa, 0) as Buffer<UInt8>)
+			try unknown13(nil, im.getBuffer(0x9, 0)! as Buffer<UInt8>, im.getBuffer(0xa, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 14:
@@ -85,19 +85,19 @@ class NnSplDetail_IEsInterface: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 15:
-			try unknown15(nil, im.getBuffer(0x45, 0) as Buffer<UInt8>, im.getBuffer(0x46, 0) as Buffer<UInt8>)
+			try unknown15(nil, im.getBuffer(0x45, 0)! as Buffer<UInt8>, im.getBuffer(0x46, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 16:
-			let ret = try unknown16(nil, im.getBuffer(0x9, 0) as Buffer<UInt8>)
+			let ret = try unknown16(nil, im.getBuffer(0x9, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 17:
-			try unknown17(nil, im.getBuffer(0x9, 0) as Buffer<UInt8>)
+			try unknown17(nil, im.getBuffer(0x9, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 18:
-			let ret = try unknown18(nil, im.getBuffer(0x9, 0) as Buffer<UInt8>, im.getBuffer(0x9, 1) as Buffer<UInt8>, im.getBuffer(0x9, 2) as Buffer<UInt8>)
+			let ret = try unknown18(nil, im.getBuffer(0x9, 0)! as Buffer<UInt8>, im.getBuffer(0x9, 1)! as Buffer<UInt8>, im.getBuffer(0x9, 2)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 20:
@@ -196,7 +196,7 @@ class NnSplDetail_IGeneralInterface: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 1:
-			try userExpMod(im.getBuffer(0x9, 0) as Buffer<UInt8>, im.getBuffer(0x9, 1) as Buffer<UInt8>, im.getBuffer(0x9, 2) as Buffer<UInt8>, im.getBuffer(0xa, 0) as Buffer<UInt8>)
+			try userExpMod(im.getBuffer(0x9, 0)! as Buffer<UInt8>, im.getBuffer(0x9, 1)! as Buffer<UInt8>, im.getBuffer(0x9, 2)! as Buffer<UInt8>, im.getBuffer(0xa, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 2:
@@ -216,15 +216,15 @@ class NnSplDetail_IGeneralInterface: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 7:
-			try getRandomBytes(im.getBuffer(0xa, 0) as Buffer<UInt8>)
+			try getRandomBytes(im.getBuffer(0xa, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 9:
-			try loadSecureExpModKey(nil, im.getBuffer(0x9, 0) as Buffer<UInt8>)
+			try loadSecureExpModKey(nil, im.getBuffer(0x9, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 10:
-			let ret = try secureExpMod(im.getBuffer(0x9, 0) as Buffer<UInt8>, im.getBuffer(0x9, 1) as Buffer<UInt8>, im.getBuffer(0x9, 2) as Buffer<UInt8>, im.getBuffer(0xa, 0) as Buffer<UInt8>)
+			let ret = try secureExpMod(im.getBuffer(0x9, 0)! as Buffer<UInt8>, im.getBuffer(0x9, 1)! as Buffer<UInt8>, im.getBuffer(0x9, 2)! as Buffer<UInt8>, im.getBuffer(0xa, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 11:
@@ -236,7 +236,7 @@ class NnSplDetail_IGeneralInterface: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 13:
-			try decryptRsaPrivateKey(nil, im.getBuffer(0x9, 0) as Buffer<UInt8>, im.getBuffer(0xa, 0) as Buffer<UInt8>)
+			try decryptRsaPrivateKey(nil, im.getBuffer(0x9, 0)! as Buffer<UInt8>, im.getBuffer(0xa, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 14:
@@ -244,19 +244,19 @@ class NnSplDetail_IGeneralInterface: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 15:
-			try decryptAesCtr(nil, im.getBuffer(0x45, 0) as Buffer<UInt8>, im.getBuffer(0x46, 0) as Buffer<UInt8>)
+			try decryptAesCtr(nil, im.getBuffer(0x45, 0)! as Buffer<UInt8>, im.getBuffer(0x46, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 16:
-			let ret = try computeCmac(nil, im.getBuffer(0x9, 0) as Buffer<UInt8>)
+			let ret = try computeCmac(nil, im.getBuffer(0x9, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 17:
-			try loadRsaOaepKey(nil, im.getBuffer(0x9, 0) as Buffer<UInt8>)
+			try loadRsaOaepKey(nil, im.getBuffer(0x9, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 18:
-			let ret = try unwrapRsaOaepWrappedTitleKey(nil, im.getBuffer(0x9, 0) as Buffer<UInt8>, im.getBuffer(0x9, 1) as Buffer<UInt8>, im.getBuffer(0x9, 2) as Buffer<UInt8>)
+			let ret = try unwrapRsaOaepWrappedTitleKey(nil, im.getBuffer(0x9, 0)! as Buffer<UInt8>, im.getBuffer(0x9, 1)! as Buffer<UInt8>, im.getBuffer(0x9, 2)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 19:
@@ -383,7 +383,7 @@ class NnSplDetail_IFsInterface: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 1:
-			try unknown1(im.getBuffer(0x9, 0) as Buffer<UInt8>, im.getBuffer(0x9, 1) as Buffer<UInt8>, im.getBuffer(0x9, 2) as Buffer<UInt8>, im.getBuffer(0xa, 0) as Buffer<UInt8>)
+			try unknown1(im.getBuffer(0x9, 0)! as Buffer<UInt8>, im.getBuffer(0x9, 1)! as Buffer<UInt8>, im.getBuffer(0x9, 2)! as Buffer<UInt8>, im.getBuffer(0xa, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 2:
@@ -403,15 +403,15 @@ class NnSplDetail_IFsInterface: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 7:
-			try unknown7(im.getBuffer(0xa, 0) as Buffer<UInt8>)
+			try unknown7(im.getBuffer(0xa, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 9:
-			try unknown9(nil, im.getBuffer(0x9, 0) as Buffer<UInt8>)
+			try unknown9(nil, im.getBuffer(0x9, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 10:
-			let ret = try unknown10(im.getBuffer(0x9, 0) as Buffer<UInt8>, im.getBuffer(0x9, 1) as Buffer<UInt8>, im.getBuffer(0x9, 2) as Buffer<UInt8>, im.getBuffer(0xa, 0) as Buffer<UInt8>)
+			let ret = try unknown10(im.getBuffer(0x9, 0)! as Buffer<UInt8>, im.getBuffer(0x9, 1)! as Buffer<UInt8>, im.getBuffer(0x9, 2)! as Buffer<UInt8>, im.getBuffer(0xa, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 11:
@@ -427,11 +427,11 @@ class NnSplDetail_IFsInterface: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 15:
-			try unknown15(nil, im.getBuffer(0x45, 0) as Buffer<UInt8>, im.getBuffer(0x46, 0) as Buffer<UInt8>)
+			try unknown15(nil, im.getBuffer(0x45, 0)! as Buffer<UInt8>, im.getBuffer(0x46, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 16:
-			let ret = try unknown16(nil, im.getBuffer(0x9, 0) as Buffer<UInt8>)
+			let ret = try unknown16(nil, im.getBuffer(0x9, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 19:
@@ -516,7 +516,7 @@ class NnSplDetail_ICryptoInterface: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 1:
-			try unknown1(im.getBuffer(0x9, 0) as Buffer<UInt8>, im.getBuffer(0x9, 1) as Buffer<UInt8>, im.getBuffer(0x9, 2) as Buffer<UInt8>, im.getBuffer(0xa, 0) as Buffer<UInt8>)
+			try unknown1(im.getBuffer(0x9, 0)! as Buffer<UInt8>, im.getBuffer(0x9, 1)! as Buffer<UInt8>, im.getBuffer(0x9, 2)! as Buffer<UInt8>, im.getBuffer(0xa, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 2:
@@ -536,7 +536,7 @@ class NnSplDetail_ICryptoInterface: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 7:
-			try unknown7(im.getBuffer(0xa, 0) as Buffer<UInt8>)
+			try unknown7(im.getBuffer(0xa, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 11:
@@ -548,11 +548,11 @@ class NnSplDetail_ICryptoInterface: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 15:
-			try unknown15(nil, im.getBuffer(0x45, 0) as Buffer<UInt8>, im.getBuffer(0x46, 0) as Buffer<UInt8>)
+			try unknown15(nil, im.getBuffer(0x45, 0)! as Buffer<UInt8>, im.getBuffer(0x46, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 16:
-			let ret = try unknown16(nil, im.getBuffer(0x9, 0) as Buffer<UInt8>)
+			let ret = try unknown16(nil, im.getBuffer(0x9, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 21:
@@ -630,7 +630,7 @@ class NnSplDetail_ISslInterface: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 1:
-			try unknown1(im.getBuffer(0x9, 0) as Buffer<UInt8>, im.getBuffer(0x9, 1) as Buffer<UInt8>, im.getBuffer(0x9, 2) as Buffer<UInt8>, im.getBuffer(0xa, 0) as Buffer<UInt8>)
+			try unknown1(im.getBuffer(0x9, 0)! as Buffer<UInt8>, im.getBuffer(0x9, 1)! as Buffer<UInt8>, im.getBuffer(0x9, 2)! as Buffer<UInt8>, im.getBuffer(0xa, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 2:
@@ -650,7 +650,7 @@ class NnSplDetail_ISslInterface: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 7:
-			try unknown7(im.getBuffer(0xa, 0) as Buffer<UInt8>)
+			try unknown7(im.getBuffer(0xa, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 11:
@@ -658,7 +658,7 @@ class NnSplDetail_ISslInterface: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 13:
-			try unknown13(nil, im.getBuffer(0x9, 0) as Buffer<UInt8>, im.getBuffer(0xa, 0) as Buffer<UInt8>)
+			try unknown13(nil, im.getBuffer(0x9, 0)! as Buffer<UInt8>, im.getBuffer(0xa, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 14:
@@ -666,11 +666,11 @@ class NnSplDetail_ISslInterface: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 15:
-			try unknown15(nil, im.getBuffer(0x45, 0) as Buffer<UInt8>, im.getBuffer(0x46, 0) as Buffer<UInt8>)
+			try unknown15(nil, im.getBuffer(0x45, 0)! as Buffer<UInt8>, im.getBuffer(0x46, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 16:
-			let ret = try unknown16(nil, im.getBuffer(0x9, 0) as Buffer<UInt8>)
+			let ret = try unknown16(nil, im.getBuffer(0x9, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 21:

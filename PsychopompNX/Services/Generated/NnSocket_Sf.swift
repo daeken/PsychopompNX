@@ -55,90 +55,90 @@ class NnSocketSf_IClient: IpcService {
 			om.setData(12, _1)
 		
 		case 4:
-			let (_0, _1) = try open(im.getData(8) as UInt32, im.getBuffer(0x21, 0) as Buffer<UInt8>)
+			let (_0, _1) = try open(im.getData(8) as UInt32, im.getBuffer(0x21, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 8)
 			om.setData(8, _0)
 			om.setData(12, _1)
 		
 		case 5:
-			let (_0, _1) = try select(im.getData(8) as UInt32, NnSocket_Timeout(sec: im.getData(16) as UInt64, usec: im.getData(24) as UInt64, off: im.getData(32) as UInt64), im.getBuffer(0x21, 0) as Buffer<NnSocket_Fd_Set>, im.getBuffer(0x21, 1) as Buffer<NnSocket_Fd_Set>, im.getBuffer(0x21, 2) as Buffer<NnSocket_Fd_Set>, im.getBuffer(0x22, 0) as Buffer<NnSocket_Fd_Set>, im.getBuffer(0x22, 1) as Buffer<NnSocket_Fd_Set>, im.getBuffer(0x22, 2) as Buffer<NnSocket_Fd_Set>)
+			let (_0, _1) = try select(im.getData(8) as UInt32, NnSocket_Timeout(sec: im.getData(16) as UInt64, usec: im.getData(24) as UInt64, off: im.getData(32) as UInt64), im.getBuffer(0x21, 0)! as Buffer<NnSocket_Fd_Set>, im.getBuffer(0x21, 1)! as Buffer<NnSocket_Fd_Set>, im.getBuffer(0x21, 2)! as Buffer<NnSocket_Fd_Set>, im.getBuffer(0x22, 0)! as Buffer<NnSocket_Fd_Set>, im.getBuffer(0x22, 1)! as Buffer<NnSocket_Fd_Set>, im.getBuffer(0x22, 2)! as Buffer<NnSocket_Fd_Set>)
 			om.initialize(0, 0, 8)
 			om.setData(8, _0)
 			om.setData(12, _1)
 		
 		case 6:
-			let (_0, _1) = try poll(im.getData(8) as UInt32, im.getData(12) as UInt32, im.getBuffer(0x21, 0) as Buffer<UInt8>, im.getBuffer(0x22, 0) as Buffer<UInt8>)
+			let (_0, _1) = try poll(im.getData(8) as UInt32, im.getData(12) as UInt32, im.getBuffer(0x21, 0)! as Buffer<UInt8>, im.getBuffer(0x22, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 8)
 			om.setData(8, _0)
 			om.setData(12, _1)
 		
 		case 7:
-			let (_0, _1, _2) = try sysctl(im.getBuffer(0x21, 0) as Buffer<UInt8>, im.getBuffer(0x21, 1) as Buffer<UInt8>, im.getBuffer(0x22, 0) as Buffer<UInt8>)
+			let (_0, _1, _2) = try sysctl(im.getBuffer(0x21, 0)! as Buffer<UInt8>, im.getBuffer(0x21, 1)! as Buffer<UInt8>, im.getBuffer(0x22, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 12)
 			om.setData(8, _0)
 			om.setData(12, _1)
 			om.setData(16, _2)
 		
 		case 8:
-			let (_0, _1) = try recv(im.getData(8) as UInt32, im.getData(12) as UInt32, im.getBuffer(0x22, 0) as Buffer<UInt8>)
+			let (_0, _1) = try recv(im.getData(8) as UInt32, im.getData(12) as UInt32, im.getBuffer(0x22, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 8)
 			om.setData(8, _0)
 			om.setData(12, _1)
 		
 		case 9:
-			let (_0, _1, _2) = try recvFrom(im.getData(8) as UInt32, im.getData(12) as UInt32, im.getBuffer(0x22, 0) as Buffer<UInt8>, im.getBuffer(0x22, 1) as Buffer<NnSocket_Sockaddr>)
+			let (_0, _1, _2) = try recvFrom(im.getData(8) as UInt32, im.getData(12) as UInt32, im.getBuffer(0x22, 0)! as Buffer<UInt8>, im.getBuffer(0x22, 1)! as Buffer<NnSocket_Sockaddr>)
 			om.initialize(0, 0, 12)
 			om.setData(8, _0)
 			om.setData(12, _1)
 			om.setData(16, _2)
 		
 		case 10:
-			let (_0, _1) = try send(im.getData(8) as UInt32, im.getData(12) as UInt32, im.getBuffer(0x21, 0) as Buffer<UInt8>)
+			let (_0, _1) = try send(im.getData(8) as UInt32, im.getData(12) as UInt32, im.getBuffer(0x21, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 8)
 			om.setData(8, _0)
 			om.setData(12, _1)
 		
 		case 11:
-			let (_0, _1) = try sendTo(im.getData(8) as UInt32, im.getData(12) as UInt32, im.getBuffer(0x21, 0) as Buffer<UInt8>, im.getBuffer(0x21, 1) as Buffer<NnSocket_Sockaddr>)
+			let (_0, _1) = try sendTo(im.getData(8) as UInt32, im.getData(12) as UInt32, im.getBuffer(0x21, 0)! as Buffer<UInt8>, im.getBuffer(0x21, 1)! as Buffer<NnSocket_Sockaddr>)
 			om.initialize(0, 0, 8)
 			om.setData(8, _0)
 			om.setData(12, _1)
 		
 		case 12:
-			let (_0, _1, _2) = try accept(im.getData(8) as UInt32, im.getBuffer(0x22, 0) as Buffer<NnSocket_Sockaddr>)
+			let (_0, _1, _2) = try accept(im.getData(8) as UInt32, im.getBuffer(0x22, 0)! as Buffer<NnSocket_Sockaddr>)
 			om.initialize(0, 0, 12)
 			om.setData(8, _0)
 			om.setData(12, _1)
 			om.setData(16, _2)
 		
 		case 13:
-			let (_0, _1) = try bind(im.getData(8) as UInt32, im.getBuffer(0x21, 0) as Buffer<NnSocket_Sockaddr>)
+			let (_0, _1) = try bind(im.getData(8) as UInt32, im.getBuffer(0x21, 0)! as Buffer<NnSocket_Sockaddr>)
 			om.initialize(0, 0, 8)
 			om.setData(8, _0)
 			om.setData(12, _1)
 		
 		case 14:
-			let (_0, _1) = try connect(im.getData(8) as UInt32, im.getBuffer(0x21, 0) as Buffer<NnSocket_Sockaddr>)
+			let (_0, _1) = try connect(im.getData(8) as UInt32, im.getBuffer(0x21, 0)! as Buffer<NnSocket_Sockaddr>)
 			om.initialize(0, 0, 8)
 			om.setData(8, _0)
 			om.setData(12, _1)
 		
 		case 15:
-			let (_0, _1, _2) = try getPeerName(im.getData(8) as UInt32, im.getBuffer(0x22, 0) as Buffer<NnSocket_Sockaddr>)
+			let (_0, _1, _2) = try getPeerName(im.getData(8) as UInt32, im.getBuffer(0x22, 0)! as Buffer<NnSocket_Sockaddr>)
 			om.initialize(0, 0, 12)
 			om.setData(8, _0)
 			om.setData(12, _1)
 			om.setData(16, _2)
 		
 		case 16:
-			let (_0, _1, _2) = try getSockName(im.getData(8) as UInt32, im.getBuffer(0x22, 0) as Buffer<NnSocket_Sockaddr>)
+			let (_0, _1, _2) = try getSockName(im.getData(8) as UInt32, im.getBuffer(0x22, 0)! as Buffer<NnSocket_Sockaddr>)
 			om.initialize(0, 0, 12)
 			om.setData(8, _0)
 			om.setData(12, _1)
 			om.setData(16, _2)
 		
 		case 17:
-			let (_0, _1, _2) = try getSockOpt(im.getData(8) as UInt32, im.getData(12) as UInt32, im.getData(16) as UInt32, im.getBuffer(0x22, 0) as Buffer<UInt8>)
+			let (_0, _1, _2) = try getSockOpt(im.getData(8) as UInt32, im.getData(12) as UInt32, im.getData(16) as UInt32, im.getBuffer(0x22, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 12)
 			om.setData(8, _0)
 			om.setData(12, _1)
@@ -151,7 +151,7 @@ class NnSocketSf_IClient: IpcService {
 			om.setData(12, _1)
 		
 		case 19:
-			let (_0, _1) = try ioctl(im.getData(8) as UInt32, im.getData(12) as UInt32, im.getData(16) as UInt32, im.getBuffer(0x21, 0) as Buffer<UInt8>, im.getBuffer(0x21, 1) as Buffer<UInt8>, im.getBuffer(0x21, 2) as Buffer<UInt8>, im.getBuffer(0x21, 3) as Buffer<UInt8>, im.getBuffer(0x22, 0) as Buffer<UInt8>, im.getBuffer(0x22, 1) as Buffer<UInt8>, im.getBuffer(0x22, 2) as Buffer<UInt8>, im.getBuffer(0x22, 3) as Buffer<UInt8>)
+			let (_0, _1) = try ioctl(im.getData(8) as UInt32, im.getData(12) as UInt32, im.getData(16) as UInt32, im.getBuffer(0x21, 0)! as Buffer<UInt8>, im.getBuffer(0x21, 1)! as Buffer<UInt8>, im.getBuffer(0x21, 2)! as Buffer<UInt8>, im.getBuffer(0x21, 3)! as Buffer<UInt8>, im.getBuffer(0x22, 0)! as Buffer<UInt8>, im.getBuffer(0x22, 1)! as Buffer<UInt8>, im.getBuffer(0x22, 2)! as Buffer<UInt8>, im.getBuffer(0x22, 3)! as Buffer<UInt8>)
 			om.initialize(0, 0, 8)
 			om.setData(8, _0)
 			om.setData(12, _1)
@@ -163,7 +163,7 @@ class NnSocketSf_IClient: IpcService {
 			om.setData(12, _1)
 		
 		case 21:
-			let (_0, _1) = try setSockOpt(im.getData(8) as UInt32, im.getData(12) as UInt32, im.getData(16) as UInt32, im.getBuffer(0x21, 0) as Buffer<UInt8>)
+			let (_0, _1) = try setSockOpt(im.getData(8) as UInt32, im.getData(12) as UInt32, im.getData(16) as UInt32, im.getBuffer(0x21, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 8)
 			om.setData(8, _0)
 			om.setData(12, _1)
@@ -181,13 +181,13 @@ class NnSocketSf_IClient: IpcService {
 			om.setData(12, _1)
 		
 		case 24:
-			let (_0, _1) = try write(im.getData(8) as UInt32, im.getBuffer(0x21, 0) as Buffer<UInt8>)
+			let (_0, _1) = try write(im.getData(8) as UInt32, im.getBuffer(0x21, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 8)
 			om.setData(8, _0)
 			om.setData(12, _1)
 		
 		case 25:
-			let (_0, _1) = try read(im.getData(8) as UInt32, im.getBuffer(0x22, 0) as Buffer<Int8>)
+			let (_0, _1) = try read(im.getData(8) as UInt32, im.getBuffer(0x22, 0)! as Buffer<Int8>)
 			om.initialize(0, 0, 8)
 			om.setData(8, _0)
 			om.setData(12, _1)
@@ -205,19 +205,19 @@ class NnSocketSf_IClient: IpcService {
 			om.setData(12, _1)
 		
 		case 28:
-			let (_0, _1) = try getResourceStatistics(im.getData(8) as UInt32, im.getData(12) as UInt32, im.getData(16) as UInt64, im.pid, im.getBuffer(0x22, 0) as Buffer<NnSocket_ResourceStatistics>)
+			let (_0, _1) = try getResourceStatistics(im.getData(8) as UInt32, im.getData(12) as UInt32, im.getData(16) as UInt64, im.pid, im.getBuffer(0x22, 0)! as Buffer<NnSocket_ResourceStatistics>)
 			om.initialize(0, 0, 8)
 			om.setData(8, _0)
 			om.setData(12, _1)
 		
 		case 29:
-			let (_0, _1) = try recvMMsg(im.getData(8) as UInt32, im.getData(12) as UInt32, im.getData(16) as UInt32, im.getData(32) as UInt128, im.getBuffer(0x22, 0) as Buffer<UInt8>)
+			let (_0, _1) = try recvMMsg(im.getData(8) as UInt32, im.getData(12) as UInt32, im.getData(16) as UInt32, im.getData(32) as UInt128, im.getBuffer(0x22, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 8)
 			om.setData(8, _0)
 			om.setData(12, _1)
 		
 		case 30:
-			let (_0, _1) = try sendMMsg(im.getData(8) as UInt32, im.getData(12) as UInt32, im.getData(16) as UInt32, im.getBuffer(0x21, 0) as Buffer<UInt8>, im.getBuffer(0x21, 1) as Buffer<UInt8>)
+			let (_0, _1) = try sendMMsg(im.getData(8) as UInt32, im.getData(12) as UInt32, im.getData(16) as UInt32, im.getBuffer(0x21, 0)! as Buffer<UInt8>, im.getBuffer(0x21, 1)! as Buffer<UInt8>)
 			om.initialize(0, 0, 8)
 			om.setData(8, _0)
 			om.setData(12, _1)

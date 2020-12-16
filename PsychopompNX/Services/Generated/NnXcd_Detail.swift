@@ -52,7 +52,7 @@ class NnXcdDetail_ISystemServer: IpcService {
 			om.copy(1, _1)
 		
 		case 11:
-			try getNfcInfo(nil, im.getBuffer(0x1a, 0) as Buffer<UInt8>)
+			try getNfcInfo(nil, im.getBuffer(0x1a, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 12:
@@ -68,15 +68,15 @@ class NnXcdDetail_ISystemServer: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 15:
-			try startNtagWrite(nil, im.getBuffer(0x19, 0) as Buffer<UInt8>)
+			try startNtagWrite(nil, im.getBuffer(0x19, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 16:
-			try sendNfcRawData(nil, im.getBuffer(0x19, 0) as Buffer<UInt8>)
+			try sendNfcRawData(nil, im.getBuffer(0x19, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 17:
-			try registerMifareKey(nil, im.getBuffer(0x19, 0) as Buffer<UInt8>)
+			try registerMifareKey(nil, im.getBuffer(0x19, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 18:
@@ -84,11 +84,11 @@ class NnXcdDetail_ISystemServer: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 19:
-			try startMifareRead(nil, im.getBuffer(0x19, 0) as Buffer<UInt8>)
+			try startMifareRead(nil, im.getBuffer(0x19, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 20:
-			try startMifareWrite(nil, im.getBuffer(0x19, 0) as Buffer<UInt8>)
+			try startMifareWrite(nil, im.getBuffer(0x19, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 101:

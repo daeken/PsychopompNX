@@ -57,13 +57,13 @@ class NnTma_IHtcsManager: IpcService {
 			om.setData(80, _2)
 		
 		case 6:
-			let (_0, _1) = try unknown6(im.getData(8) as UInt32, im.getData(12) as UInt32, im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			let (_0, _1) = try unknown6(im.getData(8) as UInt32, im.getData(12) as UInt32, im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 16)
 			om.setData(8, _0)
 			om.setData(16, _1)
 		
 		case 7:
-			let (_0, _1) = try unknown7(im.getData(8) as UInt32, im.getData(12) as UInt32, im.getBuffer(0x5, 0) as Buffer<UInt8>)
+			let (_0, _1) = try unknown7(im.getData(8) as UInt32, im.getData(12) as UInt32, im.getBuffer(0x5, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 16)
 			om.setData(8, _0)
 			om.setData(16, _1)
@@ -186,13 +186,13 @@ class NnTma_ISocket: IpcService {
 			om.move(0, _2)
 		
 		case 5:
-			let (_0, _1) = try recv(im.getData(8) as UInt32, im.getBuffer(0x22, 0) as Buffer<UInt8>)
+			let (_0, _1) = try recv(im.getData(8) as UInt32, im.getBuffer(0x22, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 16)
 			om.setData(8, _0)
 			om.setData(16, _1)
 		
 		case 6:
-			let (_0, _1) = try send(im.getData(8) as UInt32, im.getBuffer(0x21, 0) as Buffer<UInt8>)
+			let (_0, _1) = try send(im.getData(8) as UInt32, im.getBuffer(0x21, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 16)
 			om.setData(8, _0)
 			om.setData(16, _1)
@@ -246,12 +246,12 @@ class NnTma_IHtcManager: IpcService {
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
 		case 0:
-			let ret = try getEnvironmentVariable(im.getBuffer(0x5, 0) as Buffer<UInt8>, im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			let ret = try getEnvironmentVariable(im.getBuffer(0x5, 0)! as Buffer<UInt8>, im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 4)
 			om.setData(8, ret)
 		
 		case 1:
-			let ret = try getEnvironmentVariableLength(im.getBuffer(0x5, 0) as Buffer<UInt8>)
+			let ret = try getEnvironmentVariableLength(im.getBuffer(0x5, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 4)
 			om.setData(8, ret)
 		
@@ -276,11 +276,11 @@ class NnTma_IHtcManager: IpcService {
 			om.copy(0, ret)
 		
 		case 6:
-			try getBridgeIpAddress(im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			try getBridgeIpAddress(im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 7:
-			try getBridgePort(im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			try getBridgePort(im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 8:
@@ -288,11 +288,11 @@ class NnTma_IHtcManager: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 9:
-			try getBridgeSubnetMask(im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			try getBridgeSubnetMask(im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 10:
-			try getBridgeMacAddress(im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			try getBridgeMacAddress(im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		default:

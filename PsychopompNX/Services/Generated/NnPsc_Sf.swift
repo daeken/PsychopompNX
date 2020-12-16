@@ -35,7 +35,7 @@ class NnPscSf_IPmControl: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 6:
-			let ret = try unknown6(im.getBuffer(0x6, 0) as Buffer<UInt8>, im.getBuffer(0x6, 1) as Buffer<UInt8>)
+			let ret = try unknown6(im.getBuffer(0x6, 0)! as Buffer<UInt8>, im.getBuffer(0x6, 1)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		default:
@@ -66,7 +66,7 @@ class NnPscSf_IPmModule: IpcService {
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
 		case 0:
-			let ret = try initialize(nil, im.getBuffer(0x5, 0) as Buffer<UInt8>)
+			let ret = try initialize(nil, im.getBuffer(0x5, 0)! as Buffer<UInt8>)
 			om.initialize(0, 1, 0)
 			om.copy(0, ret)
 		

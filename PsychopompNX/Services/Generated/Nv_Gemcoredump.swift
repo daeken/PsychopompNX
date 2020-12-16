@@ -14,7 +14,7 @@ class NvGemcoredump_INvGemCoreDump: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 2:
-			let ret = try unknown2(im.getBuffer(0x22, 0) as Buffer<UInt8>)
+			let ret = try unknown2(im.getBuffer(0x22, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		default:

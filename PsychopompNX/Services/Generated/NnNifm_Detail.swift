@@ -48,7 +48,7 @@ class NnNifmDetail_INetworkProfile: IpcService {
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
 		case 0:
-			let ret = try update(im.getBuffer(0x19, 0) as Buffer<NnNifmDetailSf_NetworkProfileData>)
+			let ret = try update(im.getBuffer(0x19, 0)! as Buffer<NnNifmDetailSf_NetworkProfileData>)
 			om.initialize(0, 0, 16)
 			if ret.count != 0x10 { throw IpcError.byteCountMismatch }
 			om.setBytes(8, ret)
@@ -196,14 +196,14 @@ class NnNifmDetail_IRequest: IpcService {
 			om.setData(8, ret)
 		
 		case 21:
-			let (_0, _1, _2) = try getAppletInfo(im.getData(8) as UInt32, im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			let (_0, _1, _2) = try getAppletInfo(im.getData(8) as UInt32, im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 12)
 			om.setData(8, _0)
 			om.setData(12, _1)
 			om.setData(16, _2)
 		
 		case 22:
-			let ret = try getAdditionalInfo(im.getBuffer(0x16, 0) as Buffer<NnNifm_AdditionalInfo>)
+			let ret = try getAdditionalInfo(im.getBuffer(0x16, 0)! as Buffer<NnNifm_AdditionalInfo>)
 			om.initialize(0, 0, 4)
 			om.setData(8, ret)
 		
@@ -327,7 +327,7 @@ class NnNifmDetail_IGeneralService: IpcService {
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
 		case 1:
-			try getClientId(im.getBuffer(0x1a, 0) as Buffer<NnNifm_ClientId>)
+			try getClientId(im.getBuffer(0x1a, 0)! as Buffer<NnNifm_ClientId>)
 			om.initialize(0, 0, 0)
 		
 		case 2:
@@ -341,25 +341,25 @@ class NnNifmDetail_IGeneralService: IpcService {
 			om.move(0, ret)
 		
 		case 5:
-			try getCurrentNetworkProfile(im.getBuffer(0x1a, 0) as Buffer<NnNifmDetailSf_NetworkProfileData>)
+			try getCurrentNetworkProfile(im.getBuffer(0x1a, 0)! as Buffer<NnNifmDetailSf_NetworkProfileData>)
 			om.initialize(0, 0, 0)
 		
 		case 6:
-			let ret = try enumerateNetworkInterfaces(im.getData(8) as UInt32, im.getBuffer(0xa, 0) as Buffer<NnNifmDetailSf_NetworkInterfaceInfo>)
+			let ret = try enumerateNetworkInterfaces(im.getData(8) as UInt32, im.getBuffer(0xa, 0)! as Buffer<NnNifmDetailSf_NetworkInterfaceInfo>)
 			om.initialize(0, 0, 4)
 			om.setData(8, ret)
 		
 		case 7:
-			let ret = try enumerateNetworkProfiles(im.getData(8) as UInt8, im.getBuffer(0x6, 0) as Buffer<NnNifmDetailSf_NetworkProfileBasicInfo>)
+			let ret = try enumerateNetworkProfiles(im.getData(8) as UInt8, im.getBuffer(0x6, 0)! as Buffer<NnNifmDetailSf_NetworkProfileBasicInfo>)
 			om.initialize(0, 0, 4)
 			om.setData(8, ret)
 		
 		case 8:
-			try getNetworkProfile(im.getBytes(8, 0x10), im.getBuffer(0x1a, 0) as Buffer<NnNifmDetailSf_NetworkProfileData>)
+			try getNetworkProfile(im.getBytes(8, 0x10), im.getBuffer(0x1a, 0)! as Buffer<NnNifmDetailSf_NetworkProfileData>)
 			om.initialize(0, 0, 0)
 		
 		case 9:
-			let ret = try setNetworkProfile(im.getBuffer(0x19, 0) as Buffer<NnNifmDetailSf_NetworkProfileData>)
+			let ret = try setNetworkProfile(im.getBuffer(0x19, 0)! as Buffer<NnNifmDetailSf_NetworkProfileData>)
 			om.initialize(0, 0, 16)
 			if ret.count != 0x10 { throw IpcError.byteCountMismatch }
 			om.setBytes(8, ret)
@@ -369,7 +369,7 @@ class NnNifmDetail_IGeneralService: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 11:
-			let ret = try getScanDataOld(im.getBuffer(0x6, 0) as Buffer<NnNifmDetailSf_AccessPointDataOld>)
+			let ret = try getScanDataOld(im.getBuffer(0x6, 0)! as Buffer<NnNifmDetailSf_AccessPointDataOld>)
 			om.initialize(0, 0, 4)
 			om.setData(8, ret)
 		
@@ -380,11 +380,11 @@ class NnNifmDetail_IGeneralService: IpcService {
 			om.setBytes(8, ret)
 		
 		case 13:
-			try getCurrentAccessPointOld(im.getBuffer(0x1a, 0) as Buffer<NnNifmDetailSf_AccessPointDataOld>)
+			try getCurrentAccessPointOld(im.getBuffer(0x1a, 0)! as Buffer<NnNifmDetailSf_AccessPointDataOld>)
 			om.initialize(0, 0, 0)
 		
 		case 14:
-			let (_0, _1) = try createTemporaryNetworkProfile(im.getBuffer(0x19, 0) as Buffer<NnNifmDetailSf_NetworkProfileData>)
+			let (_0, _1) = try createTemporaryNetworkProfile(im.getBuffer(0x19, 0)! as Buffer<NnNifmDetailSf_NetworkProfileData>)
 			om.initialize(1, 0, 16)
 			if _0.count != 0x10 { throw IpcError.byteCountMismatch }
 			om.setBytes(8, _0)
@@ -423,7 +423,7 @@ class NnNifmDetail_IGeneralService: IpcService {
 			om.setData(8, ret)
 		
 		case 21:
-			let ret = try isAnyInternetRequestAccepted(im.getBuffer(0x19, 0) as Buffer<NnNifm_ClientId>)
+			let ret = try isAnyInternetRequestAccepted(im.getBuffer(0x19, 0)! as Buffer<NnNifm_ClientId>)
 			om.initialize(0, 0, 1)
 			om.setData(8, ret)
 		
@@ -447,15 +447,15 @@ class NnNifmDetail_IGeneralService: IpcService {
 			om.setBytes(8, ret)
 		
 		case 26:
-			try setExclusiveClient(im.getBuffer(0x19, 0) as Buffer<NnNifm_ClientId>)
+			try setExclusiveClient(im.getBuffer(0x19, 0)! as Buffer<NnNifm_ClientId>)
 			om.initialize(0, 0, 0)
 		
 		case 27:
-			try getDefaultIpSetting(im.getBuffer(0x1a, 0) as Buffer<NnNifm_IpSettingData>)
+			try getDefaultIpSetting(im.getBuffer(0x1a, 0)! as Buffer<NnNifm_IpSettingData>)
 			om.initialize(0, 0, 0)
 		
 		case 28:
-			try setDefaultIpSetting(im.getBuffer(0x19, 0) as Buffer<NnNifm_IpSettingData>)
+			try setDefaultIpSetting(im.getBuffer(0x19, 0)! as Buffer<NnNifm_IpSettingData>)
 			om.initialize(0, 0, 0)
 		
 		case 29:
@@ -472,7 +472,7 @@ class NnNifmDetail_IGeneralService: IpcService {
 			om.copy(0, ret)
 		
 		case 32:
-			try getTelemetryInfo(im.getBuffer(0x16, 0) as Buffer<NnNifm_TelemetryInfo>)
+			try getTelemetryInfo(im.getBuffer(0x16, 0)! as Buffer<NnNifm_TelemetryInfo>)
 			om.initialize(0, 0, 0)
 		
 		case 33:
@@ -484,12 +484,12 @@ class NnNifmDetail_IGeneralService: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 35:
-			let ret = try getScanData(im.getBuffer(0x6, 0) as Buffer<NnNifmDetailSf_AccessPointData>)
+			let ret = try getScanData(im.getBuffer(0x6, 0)! as Buffer<NnNifmDetailSf_AccessPointData>)
 			om.initialize(0, 0, 4)
 			om.setData(8, ret)
 		
 		case 36:
-			try getCurrentAccessPoint(im.getBuffer(0x1a, 0) as Buffer<NnNifmDetailSf_AccessPointData>)
+			try getCurrentAccessPoint(im.getBuffer(0x1a, 0)! as Buffer<NnNifmDetailSf_AccessPointData>)
 			om.initialize(0, 0, 0)
 		
 		case 37:

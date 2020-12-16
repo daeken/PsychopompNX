@@ -14,7 +14,7 @@ class NnUsbPm_IPmService: IpcService {
 			om.copy(0, ret)
 		
 		case 1:
-			try unknown1(im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			try unknown1(im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 2:

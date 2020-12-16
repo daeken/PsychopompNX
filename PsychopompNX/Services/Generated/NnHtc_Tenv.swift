@@ -29,7 +29,7 @@ class NnHtcTenv_IService: IpcService {
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
 		case 0:
-			let ret = try getVariable(im.getBytes(8, 0x40), im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			let ret = try getVariable(im.getBytes(8, 0x40), im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 8)
 			om.setData(8, ret)
 		

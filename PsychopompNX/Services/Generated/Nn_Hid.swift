@@ -217,7 +217,7 @@ class NnHid_IHidServer: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 55:
-			let ret = try getXpadIds(im.getBuffer(0xa, 0) as Buffer<NnHid_BasicXpadId>)
+			let ret = try getXpadIds(im.getBuffer(0xa, 0)! as Buffer<NnHid_BasicXpadId>)
 			om.initialize(0, 0, 8)
 			om.setData(8, ret)
 		
@@ -231,7 +231,7 @@ class NnHid_IHidServer: IpcService {
 			om.copy(0, ret)
 		
 		case 59:
-			let ret = try getJoyXpadIds(im.getBuffer(0xa, 0) as Buffer<NnHid_JoyXpadId>)
+			let ret = try getJoyXpadIds(im.getBuffer(0xa, 0)! as Buffer<NnHid_JoyXpadId>)
 			om.initialize(0, 0, 8)
 			om.setData(8, ret)
 		
@@ -356,7 +356,7 @@ class NnHid_IHidServer: IpcService {
 			om.setData(8, ret)
 		
 		case 102:
-			try setSupportedNpadIdType(im.getData(8) as UInt64, im.pid, im.getBuffer(0x9, 0) as Buffer<UInt32>)
+			try setSupportedNpadIdType(im.getData(8) as UInt64, im.pid, im.getBuffer(0x9, 0)! as Buffer<UInt32>)
 			om.initialize(0, 0, 0)
 		
 		case 103:
@@ -470,7 +470,7 @@ class NnHid_IHidServer: IpcService {
 			om.setData(8, UInt32(ret ? 1 : 0))
 		
 		case 206:
-			try sendVibrationValues(im.getData(8) as UInt64, im.getBuffer(0x9, 0) as Buffer<NnHid_VibrationDeviceHandle>, im.getBuffer(0x9, 1) as Buffer<NnHid_VibrationValue>)
+			try sendVibrationValues(im.getData(8) as UInt64, im.getBuffer(0x9, 0)! as Buffer<NnHid_VibrationDeviceHandle>, im.getBuffer(0x9, 1)! as Buffer<NnHid_VibrationValue>)
 			om.initialize(0, 0, 0)
 		
 		case 207:
@@ -586,7 +586,7 @@ class NnHid_IHidServer: IpcService {
 			om.copy(0, ret)
 		
 		case 503:
-			let ret = try getPalmaOperationInfo(im.getData(8) as UInt64, im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			let ret = try getPalmaOperationInfo(im.getData(8) as UInt64, im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 8)
 			om.setData(8, ret)
 		
@@ -615,7 +615,7 @@ class NnHid_IHidServer: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 510:
-			try writePalmaApplicationSection(im.getData(8) as UInt64, im.getData(16) as UInt64, im.getBuffer(0x19, 0) as Buffer<NnHid_PalmaApplicationSectionAccessBuffer>, im.getData(24) as UInt64)
+			try writePalmaApplicationSection(im.getData(8) as UInt64, im.getData(16) as UInt64, im.getBuffer(0x19, 0)! as Buffer<NnHid_PalmaApplicationSectionAccessBuffer>, im.getData(24) as UInt64)
 			om.initialize(0, 0, 0)
 		
 		case 511:
@@ -631,7 +631,7 @@ class NnHid_IHidServer: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 514:
-			try writePalmaRgbLedPatternEntry(im.getData(8) as UInt64, im.getBuffer(0x5, 0) as Buffer<UInt8>, im.getData(16) as UInt64)
+			try writePalmaRgbLedPatternEntry(im.getData(8) as UInt64, im.getBuffer(0x5, 0)! as Buffer<UInt8>, im.getData(16) as UInt64)
 			om.initialize(0, 0, 0)
 		
 		case 515:
@@ -952,7 +952,7 @@ class NnHid_IHidSystemServer: IpcService {
 			om.copy(0, ret)
 		
 		case 211:
-			let ret = try getNpadsWithNfc(im.getBuffer(0xa, 0) as Buffer<UInt32>)
+			let ret = try getNpadsWithNfc(im.getBuffer(0xa, 0)! as Buffer<UInt32>)
 			om.initialize(0, 0, 8)
 			om.setData(8, ret)
 		
@@ -1024,7 +1024,7 @@ class NnHid_IHidSystemServer: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 321:
-			let ret = try getUniquePadsFromNpad(im.getData(8) as UInt32, im.getBuffer(0xa, 0) as Buffer<NnHidSystem_UniquePadId>)
+			let ret = try getUniquePadsFromNpad(im.getData(8) as UInt32, im.getBuffer(0xa, 0)! as Buffer<NnHidSystem_UniquePadId>)
 			om.initialize(0, 0, 8)
 			om.setData(8, ret)
 		
@@ -1093,7 +1093,7 @@ class NnHid_IHidSystemServer: IpcService {
 			om.copy(0, ret)
 		
 		case 541:
-			let ret = try getPlayReportControllerUsages(im.getBuffer(0xa, 0) as Buffer<NnHidSystem_PlayReportControllerUsage>)
+			let ret = try getPlayReportControllerUsages(im.getBuffer(0xa, 0)! as Buffer<NnHidSystem_PlayReportControllerUsage>)
 			om.initialize(0, 0, 8)
 			om.setData(8, ret)
 		
@@ -1103,7 +1103,7 @@ class NnHid_IHidSystemServer: IpcService {
 			om.copy(0, ret)
 		
 		case 543:
-			let ret = try getRegisteredDevicesOld(im.getBuffer(0xa, 0) as Buffer<NnHidSystem_RegisteredDevice>)
+			let ret = try getRegisteredDevicesOld(im.getBuffer(0xa, 0)! as Buffer<NnHidSystem_RegisteredDevice>)
 			om.initialize(0, 0, 8)
 			om.setData(8, ret)
 		
@@ -1140,7 +1140,7 @@ class NnHid_IHidSystemServer: IpcService {
 			om.copy(0, ret)
 		
 		case 703:
-			let ret = try getUniquePadIds(im.getBuffer(0xa, 0) as Buffer<NnHidSystem_UniquePadId>)
+			let ret = try getUniquePadIds(im.getBuffer(0xa, 0)! as Buffer<NnHidSystem_UniquePadId>)
 			om.initialize(0, 0, 8)
 			om.setData(8, ret)
 		
@@ -1150,7 +1150,7 @@ class NnHid_IHidSystemServer: IpcService {
 			om.copy(0, ret)
 		
 		case 800:
-			let ret = try listSixAxisSensorHandles(im.getData(8) as UInt64, im.getBuffer(0xa, 0) as Buffer<NnHidSystem_UniqueSixAxisSensorHandle>)
+			let ret = try listSixAxisSensorHandles(im.getData(8) as UInt64, im.getBuffer(0xa, 0)! as Buffer<NnHidSystem_UniqueSixAxisSensorHandle>)
 			om.initialize(0, 0, 8)
 			om.setData(8, ret)
 		
@@ -1310,7 +1310,7 @@ class NnHid_IHidSystemServer: IpcService {
 			om.copy(0, ret)
 		
 		case 1010:
-			let ret = try getAudioControlStates(im.getBuffer(0xa, 0) as Buffer<NnHidSystem_AudioControlState>)
+			let ret = try getAudioControlStates(im.getBuffer(0xa, 0)! as Buffer<NnHidSystem_AudioControlState>)
 			om.initialize(0, 0, 8)
 			om.setData(8, ret)
 		
@@ -1523,7 +1523,7 @@ class NnHid_IHidDebugServer: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 11:
-			try setTouchScreenAutoPilotState(im.getBuffer(0x5, 0) as Buffer<NnHid_TouchState>)
+			try setTouchScreenAutoPilotState(im.getBuffer(0x5, 0)! as Buffer<NnHid_TouchState>)
 			om.initialize(0, 0, 0)
 		
 		case 12:

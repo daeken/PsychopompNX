@@ -18,11 +18,11 @@ class NnEupldSf_IRequest: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 2:
-			try uploadSelected(im.getBuffer(0x5, 0) as Buffer<UInt8>)
+			try uploadSelected(im.getBuffer(0x5, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 3:
-			try getUploadStatus(im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			try getUploadStatus(im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 4:
@@ -60,15 +60,15 @@ class NnEupldSf_IControl: IpcService {
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
 		case 0:
-			try setUrl(im.getBuffer(0x5, 0) as Buffer<UInt8>)
+			try setUrl(im.getBuffer(0x5, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 1:
-			try importCrt(im.getBuffer(0x5, 0) as Buffer<UInt8>)
+			try importCrt(im.getBuffer(0x5, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 2:
-			try importPki(im.getBuffer(0x5, 0) as Buffer<UInt8>, im.getBuffer(0x5, 1) as Buffer<UInt8>)
+			try importPki(im.getBuffer(0x5, 0)! as Buffer<UInt8>, im.getBuffer(0x5, 1)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 3:

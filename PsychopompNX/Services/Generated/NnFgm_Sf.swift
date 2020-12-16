@@ -53,7 +53,7 @@ class NnFgmSf_IDebugger: IpcService {
 			om.copy(0, ret)
 		
 		case 1:
-			let (_0, _1, _2) = try read(im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			let (_0, _1, _2) = try read(im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 12)
 			om.setData(8, _0)
 			om.setData(12, _1)

@@ -81,7 +81,7 @@ class NnBgtc_ITaskService: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 5:
-			try unknown5(im.getBuffer(0x9, 0) as Buffer<UInt8>)
+			try unknown5(im.getBuffer(0x9, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 6:

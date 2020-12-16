@@ -58,7 +58,7 @@ class NnNewsDetailIpc_INewsDataService: IpcService {
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
 		case 0:
-			try unknown0(im.getBuffer(0x9, 0) as Buffer<UInt8>)
+			try unknown0(im.getBuffer(0x9, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 1:
@@ -66,7 +66,7 @@ class NnNewsDetailIpc_INewsDataService: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 2:
-			let ret = try unknown2(nil, im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			let ret = try unknown2(nil, im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 3:
@@ -100,27 +100,27 @@ class NnNewsDetailIpc_INewsDatabaseService: IpcService {
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
 		case 0:
-			let ret = try unknown0(nil, im.getBuffer(0x9, 0) as Buffer<UInt8>, im.getBuffer(0x9, 1) as Buffer<UInt8>, im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			let ret = try unknown0(nil, im.getBuffer(0x9, 0)! as Buffer<UInt8>, im.getBuffer(0x9, 1)! as Buffer<UInt8>, im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 1:
-			let ret = try unknown1(im.getBuffer(0x9, 0) as Buffer<UInt8>)
+			let ret = try unknown1(im.getBuffer(0x9, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 2:
-			let ret = try unknown2(nil, im.getBuffer(0x9, 0) as Buffer<UInt8>, im.getBuffer(0x9, 1) as Buffer<UInt8>)
+			let ret = try unknown2(nil, im.getBuffer(0x9, 0)! as Buffer<UInt8>, im.getBuffer(0x9, 1)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 3:
-			try unknown3(nil, im.getBuffer(0x9, 0) as Buffer<UInt8>, im.getBuffer(0x9, 1) as Buffer<UInt8>)
+			try unknown3(nil, im.getBuffer(0x9, 0)! as Buffer<UInt8>, im.getBuffer(0x9, 1)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 4:
-			try unknown4(nil, im.getBuffer(0x9, 0) as Buffer<UInt8>, im.getBuffer(0x9, 1) as Buffer<UInt8>)
+			try unknown4(nil, im.getBuffer(0x9, 0)! as Buffer<UInt8>, im.getBuffer(0x9, 1)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 5:
-			try unknown5(im.getBuffer(0x9, 0) as Buffer<UInt8>, im.getBuffer(0x9, 1) as Buffer<UInt8>, im.getBuffer(0x9, 2) as Buffer<UInt8>)
+			try unknown5(im.getBuffer(0x9, 0)! as Buffer<UInt8>, im.getBuffer(0x9, 1)! as Buffer<UInt8>, im.getBuffer(0x9, 2)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		default:
@@ -207,19 +207,19 @@ class NnNewsDetailIpc_INewsService: IpcService {
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
 		case 10100:
-			try unknown10100(im.getBuffer(0x5, 0) as Buffer<UInt8>)
+			try unknown10100(im.getBuffer(0x5, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 20100:
-			try unknown20100(nil, im.getBuffer(0x9, 0) as Buffer<UInt8>)
+			try unknown20100(nil, im.getBuffer(0x9, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 30100:
-			let ret = try unknown30100(im.getBuffer(0x9, 0) as Buffer<UInt8>)
+			let ret = try unknown30100(im.getBuffer(0x9, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 30101:
-			let ret = try unknown30101(nil, im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			let ret = try unknown30101(nil, im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 30200:
@@ -227,11 +227,11 @@ class NnNewsDetailIpc_INewsService: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 30300:
-			try unknown30300(im.getBuffer(0x9, 0) as Buffer<UInt8>)
+			try unknown30300(im.getBuffer(0x9, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 30400:
-			let ret = try unknown30400(im.getBuffer(0x5, 0) as Buffer<UInt8>, im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			let ret = try unknown30400(im.getBuffer(0x5, 0)! as Buffer<UInt8>, im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 30900:
@@ -250,7 +250,7 @@ class NnNewsDetailIpc_INewsService: IpcService {
 			om.move(0, ret)
 		
 		case 40100:
-			try unknown40100(nil, im.getBuffer(0x9, 0) as Buffer<UInt8>)
+			try unknown40100(nil, im.getBuffer(0x9, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 40101:
@@ -266,7 +266,7 @@ class NnNewsDetailIpc_INewsService: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 90100:
-			let ret = try unknown90100(im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			let ret = try unknown90100(im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		default:

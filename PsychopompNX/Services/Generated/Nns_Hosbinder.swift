@@ -7,7 +7,7 @@ class NnsHosbinder_IHOSBinderDriver: IpcService {
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
 		case 0:
-			try transactParcel(im.getData(8) as Int32, im.getData(12) as UInt32, im.getBuffer(0x5, 0) as Buffer<UInt8>, im.getData(16) as UInt32, im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			try transactParcel(im.getData(8) as Int32, im.getData(12) as UInt32, im.getBuffer(0x5, 0)! as Buffer<UInt8>, im.getData(16) as UInt32, im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 1:
@@ -20,7 +20,7 @@ class NnsHosbinder_IHOSBinderDriver: IpcService {
 			om.copy(0, ret)
 		
 		case 3:
-			try transactParcelAuto(im.getData(8) as Int32, im.getData(12) as UInt32, im.getBuffer(0x21, 0) as Buffer<UInt8>, im.getData(16) as UInt32, im.getBuffer(0x22, 0) as Buffer<UInt8>)
+			try transactParcelAuto(im.getData(8) as Int32, im.getData(12) as UInt32, im.getBuffer(0x21, 0)! as Buffer<UInt8>, im.getData(16) as UInt32, im.getBuffer(0x22, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		default:

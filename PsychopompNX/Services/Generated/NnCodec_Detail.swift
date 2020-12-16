@@ -9,34 +9,34 @@ class NnCodecDetail_IHardwareOpusDecoder: IpcService {
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
 		case 0:
-			let (_0, _1) = try decodeInterleaved(im.getBuffer(0x5, 0) as Buffer<UInt8>, im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			let (_0, _1) = try decodeInterleaved(im.getBuffer(0x5, 0)! as Buffer<UInt8>, im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 8)
 			om.setData(8, _0)
 			om.setData(12, _1)
 		
 		case 1:
-			try setContext(im.getBuffer(0x5, 0) as Buffer<UInt8>)
+			try setContext(im.getBuffer(0x5, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 2:
-			let (_0, _1) = try unknown2(im.getBuffer(0x5, 0) as Buffer<UInt8>, im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			let (_0, _1) = try unknown2(im.getBuffer(0x5, 0)! as Buffer<UInt8>, im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 8)
 			om.setData(8, _0)
 			om.setData(12, _1)
 		
 		case 3:
-			try unknown3(im.getBuffer(0x5, 0) as Buffer<UInt8>)
+			try unknown3(im.getBuffer(0x5, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 4:
-			let (_0, _1, _2) = try unknown4(im.getBuffer(0x5, 0) as Buffer<UInt8>, im.getBuffer(0x46, 0) as Buffer<UInt8>)
+			let (_0, _1, _2) = try unknown4(im.getBuffer(0x5, 0)! as Buffer<UInt8>, im.getBuffer(0x46, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 16)
 			om.setData(8, _0)
 			om.setData(12, _1)
 			om.setData(16, _2)
 		
 		case 5:
-			let (_0, _1, _2) = try unknown5(im.getBuffer(0x5, 0) as Buffer<UInt8>, im.getBuffer(0x46, 0) as Buffer<UInt8>)
+			let (_0, _1, _2) = try unknown5(im.getBuffer(0x5, 0)! as Buffer<UInt8>, im.getBuffer(0x46, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 16)
 			om.setData(8, _0)
 			om.setData(12, _1)
@@ -79,12 +79,12 @@ class NnCodecDetail_IHardwareOpusDecoderManager: IpcService {
 			om.setData(8, ret)
 		
 		case 2:
-			let ret = try initializeMultiStream(im.getData(8) as UInt32, try Emulator.instance!.kernel.tryGetHandle(im.getCopy(0)) as KObject, im.getBuffer(0x19, 0) as Buffer<UInt8>)
+			let ret = try initializeMultiStream(im.getData(8) as UInt32, try Emulator.instance!.kernel.tryGetHandle(im.getCopy(0)) as KObject, im.getBuffer(0x19, 0)! as Buffer<UInt8>)
 			om.initialize(1, 0, 0)
 			om.move(0, ret)
 		
 		case 3:
-			let ret = try getWorkBufferSizeMultiStream(im.getBuffer(0x19, 0) as Buffer<UInt8>)
+			let ret = try getWorkBufferSizeMultiStream(im.getBuffer(0x19, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 4)
 			om.setData(8, ret)
 		

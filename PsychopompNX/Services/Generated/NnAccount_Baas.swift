@@ -33,12 +33,12 @@ class NnAccountBaas_IManagerForSystemService: IpcService {
 			om.move(0, ret)
 		
 		case 3:
-			let ret = try loadIdTokenCache(im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			let ret = try loadIdTokenCache(im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 4)
 			om.setData(8, ret)
 		
 		case 100:
-			try setSystemProgramIdentification(im.getData(8) as UInt64, im.pid, im.getBuffer(0x19, 0) as Buffer<NnAccount_SystemProgramIdentification>)
+			try setSystemProgramIdentification(im.getData(8) as UInt64, im.pid, im.getBuffer(0x19, 0)! as Buffer<NnAccount_SystemProgramIdentification>)
 			om.initialize(0, 0, 0)
 		
 		case 110:
@@ -60,7 +60,7 @@ class NnAccountBaas_IManagerForSystemService: IpcService {
 			om.setData(8, ret)
 		
 		case 130:
-			let ret = try getNintendoAccountUserResourceCache(im.getBuffer(0x1a, 0) as Buffer<NnAccountNas_NasUserBase>, im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			let ret = try getNintendoAccountUserResourceCache(im.getBuffer(0x1a, 0)! as Buffer<NnAccountNas_NasUserBase>, im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 8)
 			om.setData(8, ret)
 		
@@ -88,7 +88,7 @@ class NnAccountBaas_IManagerForSystemService: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 150:
-			let ret = try createAuthorizationRequest(im.getData(8) as UInt32, try Emulator.instance!.kernel.tryGetHandle(im.getCopy(0)) as KObject, im.getBuffer(0x19, 0) as Buffer<NnAccountNas_NasClientInfo>, im.getBuffer(0x19, 1) as Buffer<NnAccount_NintendoAccountAuthorizationRequestParameters>)
+			let ret = try createAuthorizationRequest(im.getData(8) as UInt32, try Emulator.instance!.kernel.tryGetHandle(im.getCopy(0)) as KObject, im.getBuffer(0x19, 0)! as Buffer<NnAccountNas_NasClientInfo>, im.getBuffer(0x19, 1)! as Buffer<NnAccount_NintendoAccountAuthorizationRequestParameters>)
 			om.initialize(1, 0, 0)
 			om.move(0, ret)
 		
@@ -153,16 +153,16 @@ class NnAccountBaas_IFloatingRegistrationRequest: IpcService {
 			om.setData(8, ret)
 		
 		case 14:
-			try getNickname(im.getBuffer(0xa, 0) as Buffer<UInt8>)
+			try getNickname(im.getBuffer(0xa, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 15:
-			let ret = try getProfileImage(im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			let ret = try getProfileImage(im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 4)
 			om.setData(8, ret)
 		
 		case 21:
-			let ret = try loadIdTokenCache(im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			let ret = try loadIdTokenCache(im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 4)
 			om.setData(8, ret)
 		
@@ -187,7 +187,7 @@ class NnAccountBaas_IFloatingRegistrationRequest: IpcService {
 			om.move(0, ret)
 		
 		case 110:
-			try setSystemProgramIdentification(im.getData(8) as UInt64, im.pid, im.getBuffer(0x19, 0) as Buffer<NnAccount_SystemProgramIdentification>)
+			try setSystemProgramIdentification(im.getData(8) as UInt64, im.pid, im.getBuffer(0x19, 0)! as Buffer<NnAccount_SystemProgramIdentification>)
 			om.initialize(0, 0, 0)
 		
 		case 111:
@@ -245,17 +245,17 @@ class NnAccountBaas_IManagerForApplication: IpcService {
 			om.move(0, ret)
 		
 		case 3:
-			let ret = try loadIdTokenCache(im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			let ret = try loadIdTokenCache(im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 4)
 			om.setData(8, ret)
 		
 		case 130:
-			let ret = try getNintendoAccountUserResourceCacheForApplication(im.getBuffer(0x1a, 0) as Buffer<NnAccountNas_NasUserBaseForApplication>, im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			let ret = try getNintendoAccountUserResourceCacheForApplication(im.getBuffer(0x1a, 0)! as Buffer<NnAccountNas_NasUserBaseForApplication>, im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 8)
 			om.setData(8, ret)
 		
 		case 150:
-			let ret = try createAuthorizationRequest(im.getData(8) as UInt32, try Emulator.instance!.kernel.tryGetHandle(im.getCopy(0)) as KObject, im.getBuffer(0x19, 0) as Buffer<NnAccount_NintendoAccountAuthorizationRequestParameters>)
+			let ret = try createAuthorizationRequest(im.getData(8) as UInt32, try Emulator.instance!.kernel.tryGetHandle(im.getCopy(0)) as KObject, im.getBuffer(0x19, 0)! as Buffer<NnAccount_NintendoAccountAuthorizationRequestParameters>)
 			om.initialize(1, 0, 0)
 			om.move(0, ret)
 		
@@ -334,12 +334,12 @@ class NnAccountBaas_IAdministrator: IpcService {
 			om.move(0, ret)
 		
 		case 3:
-			let ret = try loadIdTokenCache(im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			let ret = try loadIdTokenCache(im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 4)
 			om.setData(8, ret)
 		
 		case 100:
-			try setSystemProgramIdentification(im.getData(8) as UInt64, im.pid, im.getBuffer(0x19, 0) as Buffer<NnAccount_SystemProgramIdentification>)
+			try setSystemProgramIdentification(im.getData(8) as UInt64, im.pid, im.getBuffer(0x19, 0)! as Buffer<NnAccount_SystemProgramIdentification>)
 			om.initialize(0, 0, 0)
 		
 		case 110:
@@ -361,7 +361,7 @@ class NnAccountBaas_IAdministrator: IpcService {
 			om.setData(8, ret)
 		
 		case 130:
-			let ret = try getNintendoAccountUserResourceCache(im.getBuffer(0x1a, 0) as Buffer<NnAccountNas_NasUserBase>, im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			let ret = try getNintendoAccountUserResourceCache(im.getBuffer(0x1a, 0)! as Buffer<NnAccountNas_NasUserBase>, im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 8)
 			om.setData(8, ret)
 		
@@ -389,7 +389,7 @@ class NnAccountBaas_IAdministrator: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 150:
-			let ret = try createAuthorizationRequest(im.getData(8) as UInt32, try Emulator.instance!.kernel.tryGetHandle(im.getCopy(0)) as KObject, im.getBuffer(0x19, 0) as Buffer<NnAccountNas_NasClientInfo>, im.getBuffer(0x19, 1) as Buffer<NnAccount_NintendoAccountAuthorizationRequestParameters>)
+			let ret = try createAuthorizationRequest(im.getData(8) as UInt32, try Emulator.instance!.kernel.tryGetHandle(im.getCopy(0)) as KObject, im.getBuffer(0x19, 0)! as Buffer<NnAccountNas_NasClientInfo>, im.getBuffer(0x19, 1)! as Buffer<NnAccount_NintendoAccountAuthorizationRequestParameters>)
 			om.initialize(1, 0, 0)
 			om.move(0, ret)
 		
@@ -549,16 +549,16 @@ class NnAccountBaas_IGuestLoginRequest: IpcService {
 			om.setData(8, ret)
 		
 		case 14:
-			try getNickname(im.getBuffer(0xa, 0) as Buffer<UInt8>)
+			try getNickname(im.getBuffer(0xa, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 15:
-			let ret = try getProfileImage(im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			let ret = try getProfileImage(im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 4)
 			om.setData(8, ret)
 		
 		case 21:
-			let ret = try loadIdTokenCache(im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			let ret = try loadIdTokenCache(im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 4)
 			om.setData(8, ret)
 		

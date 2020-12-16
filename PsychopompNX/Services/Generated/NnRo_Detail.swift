@@ -51,7 +51,7 @@ class NnRoDetail_IDebugMonitorInterface: IpcService {
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
 		case 0:
-			let ret = try unknown0(nil, im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			let ret = try unknown0(nil, im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		default:

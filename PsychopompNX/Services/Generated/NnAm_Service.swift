@@ -175,7 +175,7 @@ class NnAmService_ILibraryAppletSelfAccessor: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 15:
-			try getMainAppletApplicationControlProperty(im.getBuffer(0x16, 0) as Buffer<NnNs_ApplicationControlProperty>)
+			try getMainAppletApplicationControlProperty(im.getBuffer(0x16, 0)! as Buffer<NnNs_ApplicationControlProperty>)
 			om.initialize(0, 0, 0)
 		
 		case 16:
@@ -184,7 +184,7 @@ class NnAmService_ILibraryAppletSelfAccessor: IpcService {
 			om.setData(8, ret)
 		
 		case 17:
-			let ret = try getCallerAppletIdentityInfoStack(im.getBuffer(0x6, 0) as Buffer<NnAmService_AppletIdentityInfo>)
+			let ret = try getCallerAppletIdentityInfoStack(im.getBuffer(0x6, 0)! as Buffer<NnAmService_AppletIdentityInfo>)
 			om.initialize(0, 0, 4)
 			om.setData(8, ret)
 		
@@ -225,7 +225,7 @@ class NnAmService_ILibraryAppletSelfAccessor: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 51:
-			try reportVisibleErrorWithErrorContext(im.getBytes(8, 0x8), im.getBuffer(0x15, 0) as Buffer<NnErr_ErrorContext>)
+			try reportVisibleErrorWithErrorContext(im.getBytes(8, 0x8), im.getBuffer(0x15, 0)! as Buffer<NnErr_ErrorContext>)
 			om.initialize(0, 0, 0)
 		
 		case 60:
@@ -930,7 +930,7 @@ class NnAmService_IAllSystemAppletProxiesService: IpcService {
 			om.move(0, ret)
 		
 		case 201:
-			let ret = try openLibraryAppletProxy(im.getData(8) as UInt64, im.pid, try Emulator.instance!.kernel.tryGetHandle(im.getCopy(0)) as KObject, im.getBuffer(0x15, 0) as Buffer<NnAm_AppletAttribute>)
+			let ret = try openLibraryAppletProxy(im.getData(8) as UInt64, im.pid, try Emulator.instance!.kernel.tryGetHandle(im.getCopy(0)) as KObject, im.getBuffer(0x15, 0)! as Buffer<NnAm_AppletAttribute>)
 			om.initialize(1, 0, 0)
 			om.move(0, ret)
 		
@@ -1665,7 +1665,7 @@ class NnAmService_IDisplayController: IpcService {
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
 		case 0:
-			try getLastForegroundCaptureImage(im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			try getLastForegroundCaptureImage(im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 1:
@@ -1673,11 +1673,11 @@ class NnAmService_IDisplayController: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 2:
-			try getLastApplicationCaptureImage(im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			try getLastApplicationCaptureImage(im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 3:
-			try getCallerAppletCaptureImage(im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			try getCallerAppletCaptureImage(im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 4:
@@ -1685,17 +1685,17 @@ class NnAmService_IDisplayController: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 5:
-			let ret = try getLastForegroundCaptureImageEx(im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			let ret = try getLastForegroundCaptureImageEx(im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 1)
 			om.setData(8, ret)
 		
 		case 6:
-			let ret = try getLastApplicationCaptureImageEx(im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			let ret = try getLastApplicationCaptureImageEx(im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 1)
 			om.setData(8, ret)
 		
 		case 7:
-			let ret = try getCallerAppletCaptureImageEx(im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			let ret = try getCallerAppletCaptureImageEx(im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 1)
 			om.setData(8, ret)
 		
@@ -1885,11 +1885,11 @@ class NnAmService_IStorageAccessor: IpcService {
 			om.setData(8, ret)
 		
 		case 10:
-			try write(im.getData(8) as UInt64, im.getBuffer(0x21, 0) as Buffer<UInt8>)
+			try write(im.getData(8) as UInt64, im.getBuffer(0x21, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 11:
-			try read(im.getData(8) as UInt64, im.getBuffer(0x22, 0) as Buffer<UInt8>)
+			try read(im.getData(8) as UInt64, im.getBuffer(0x22, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		default:
@@ -2150,7 +2150,7 @@ class NnAmService_ISelfController: IpcService {
 			om.setData(8, ret)
 		
 		case 70:
-			try reportMultimediaError(im.getData(8) as UInt32, im.getBuffer(0x5, 0) as Buffer<UInt8>)
+			try reportMultimediaError(im.getData(8) as UInt32, im.getBuffer(0x5, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 80:
@@ -2310,11 +2310,11 @@ class NnAmService_IApplicationAccessor: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 122:
-			try getApplicationControlProperty(im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			try getApplicationControlProperty(im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 123:
-			try getApplicationLaunchProperty(im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			try getApplicationLaunchProperty(im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		default:

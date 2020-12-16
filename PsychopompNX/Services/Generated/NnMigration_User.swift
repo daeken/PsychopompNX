@@ -52,7 +52,7 @@ class NnMigrationUser_IService: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 100:
-			let ret = try createServer(nil, try Emulator.instance!.kernel.tryGetHandle(im.getCopy(0)) as KObject, im.getBuffer(0x19, 0) as Buffer<UInt8>)
+			let ret = try createServer(nil, try Emulator.instance!.kernel.tryGetHandle(im.getCopy(0)) as KObject, im.getBuffer(0x19, 0)! as Buffer<UInt8>)
 			om.initialize(1, 0, 0)
 			om.move(0, ret)
 		
@@ -62,7 +62,7 @@ class NnMigrationUser_IService: IpcService {
 			om.move(0, ret)
 		
 		case 200:
-			let ret = try createClient(nil, try Emulator.instance!.kernel.tryGetHandle(im.getCopy(0)) as KObject, im.getBuffer(0x19, 0) as Buffer<UInt8>)
+			let ret = try createClient(nil, try Emulator.instance!.kernel.tryGetHandle(im.getCopy(0)) as KObject, im.getBuffer(0x19, 0)! as Buffer<UInt8>)
 			om.initialize(1, 0, 0)
 			om.move(0, ret)
 		
@@ -113,7 +113,7 @@ class NnMigrationUser_IClient: IpcService {
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
 		case 0:
-			try getClientProfile(im.getBuffer(0x1a, 0) as Buffer<UInt8>)
+			try getClientProfile(im.getBuffer(0x1a, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 10:
@@ -129,7 +129,7 @@ class NnMigrationUser_IClient: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 13:
-			let ret = try getUserProfileImage(im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			let ret = try getUserProfileImage(im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 100:
@@ -147,7 +147,7 @@ class NnMigrationUser_IClient: IpcService {
 			om.move(0, ret)
 		
 		case 201:
-			let ret = try listServers(im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			let ret = try listServers(im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 210:
@@ -172,7 +172,7 @@ class NnMigrationUser_IClient: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 311:
-			let ret = try getCurrentRelatedApplications(im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			let ret = try getCurrentRelatedApplications(im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 320:
@@ -251,7 +251,7 @@ class NnMigrationUser_IServer: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 1:
-			try getServerProfile(im.getBuffer(0x1a, 0) as Buffer<UInt8>)
+			try getServerProfile(im.getBuffer(0x1a, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 100:
@@ -269,7 +269,7 @@ class NnMigrationUser_IServer: IpcService {
 			om.move(0, ret)
 		
 		case 201:
-			try getClientProfile(im.getBuffer(0x1a, 0) as Buffer<UInt8>)
+			try getClientProfile(im.getBuffer(0x1a, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 202:

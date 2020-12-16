@@ -7,73 +7,75 @@
 
 import Foundation
 
-public protocol SpanProtocol: Collection where Index == Int {
-    associatedtype Element
+public class Span<Element>: Collection {
+    public typealias Index = Int
+    public typealias Element = Element
     
-    var length: Int { get }
-    var byteLength: Int { get }
-    var stride: Int { get }
-    
-    subscript(_ index: Int) -> Element { get set }
-    subscript(_ range: Range<Int>) -> Self { get set }
-
-    static func +(left: Self, right: Int) -> Self
-    static func +=(left: inout Self, right: Int)
-    
-    func offsetBy(bytes: Int) -> Self
-    func offsetBy(elements: Int) -> Self
-}
-
-public extension SpanProtocol {
-    var startIndex: Int { 0 }
-    var endIndex: Int { length }
-    
-    func index(after i: Int) -> Int { i + 1 }
-    
-    subscript<T: SpanProtocol>(_ range: Range<Int>) -> T? where T.Element == Element {
-        get { nil }
-        set {
-            copyFrom(source: newValue!, toOffset: range.lowerBound, length: range.upperBound - range.lowerBound)
-        }
-    }
-    
-    subscript(_ range: ClosedRange<Int>) -> Self {
-        get { self[range.lowerBound..<(range.upperBound + 1)] }
-        set { self[range.lowerBound..<(range.upperBound + 1)] = newValue }
-    }
-    
-    subscript<T: SpanProtocol>(_ range: ClosedRange<Int>) -> T? where T.Element == Element {
-        get { self[range.lowerBound..<(range.upperBound + 1)] }
-        set { self[range.lowerBound..<(range.upperBound + 1)] = newValue }
-    }
-    
-    mutating func copyFrom<T: Collection>(source: T, toOffset: Int, length: Int? = nil) where T.Index == Int, T.Element == Element {
-        for i in 0..<(length ?? source.count) {
-            self[toOffset + i] = source[i]
-        }
-    }
-}
-
-public class Span<Element> {
-    public static func from(data: DataBox, length: Int? = nil, byteOffset: Int = 0) -> DataSpan<Element> {
+    public static func from(data: DataBox, length: Int? = nil, byteOffset: Int = 0) -> Span<Element> {
         DataSpan<Element>(data, byteOffset, (length ?? data.data.count) / MemoryLayout<Element>.size)
     }
-    public static func from(pointer: UnsafePointer<Element>, length: Int, byteOffset: Int = 0) -> PointerSpan<Element> {
+    public static func from(pointer: UnsafePointer<Element>, length: Int, byteOffset: Int = 0) -> Span<Element> {
         let raw = UnsafeMutableRawPointer(mutating: pointer).advanced(by: byteOffset)
         let retyped = raw.bindMemory(to: Element.self, capacity: length)
         return PointerSpan<Element>(retyped, length)
     }
-    public static func from<T>(pointer: UnsafePointer<T>, length: Int, byteOffset: Int = 0) -> PointerSpan<Element> {
+    public static func from<T>(pointer: UnsafePointer<T>, length: Int, byteOffset: Int = 0) -> Span<Element> {
         let raw = UnsafeMutableRawPointer(mutating: pointer).advanced(by: byteOffset)
         let retyped = raw.bindMemory(to: Element.self, capacity: length)
         return PointerSpan<Element>(retyped, length)
     }
-    public static func from(mutablePointer: UnsafeMutablePointer<Element>, length: Int, byteOffset: Int = 0) -> PointerSpan<Element> {
+    public static func from(mutablePointer: UnsafeMutablePointer<Element>, length: Int, byteOffset: Int = 0) -> Span<Element> {
         PointerSpan<Element>(mutablePointer, length)
     }
-    public static func from<T>(mutablePointer: UnsafeMutablePointer<T>, length: Int, byteOffset: Int = 0) -> PointerSpan<Element> {
+    public static func from<T>(mutablePointer: UnsafeMutablePointer<T>, length: Int, byteOffset: Int = 0) -> Span<Element> {
         let raw = UnsafeMutableRawPointer(mutablePointer).advanced(by: byteOffset)
         let retyped = raw.bindMemory(to: Element.self, capacity: length)
         return PointerSpan<Element>(retyped, length)
     }
+    
+    public let length: Int
+    public let byteLength: Int
+    public let stride: Int = MemoryLayout<Element>.size
+    
+    let arr = [Element]()
+    
+    init(length: Int) {
+        self.length = length
+        byteLength = length * stride
+    }
+    
+    public subscript(_ index: Int) -> Element {
+        get { arr[0] }
+        set { }
+    }
+    public subscript(_ range: Range<Int>) -> Span<Element> { get { self } set { } }
+
+    subscript(_ range: ClosedRange<Int>) -> Span<Element> {
+        get { self[range.lowerBound..<(range.upperBound + 1)] }
+        set { self[range.lowerBound..<(range.upperBound + 1)] = newValue }
+    }
+    
+    public static func +(left: Span<Element>, right: Int) -> Span<Element> {
+        left.offsetBy(elements: right)
+    }
+    public static func +=(left: inout Span<Element>, right: Int) {
+        left = left.offsetBy(elements: right)
+    }
+    
+    public func offsetBy(bytes: Int) -> Span<Element> { self }
+    public func offsetBy(elements: Int) -> Span<Element> { self }
+    
+    public func copyFrom<T: Collection>(source: T, toOffset: Int, length: Int? = nil) where T.Index == Int, T.Element == Element {
+        for i in 0..<(length ?? source.count) {
+            self[toOffset + i] = source[i]
+        }
+    }
+    
+    public func to(type: Element.Type) -> Span<Element> { self }
+    public func to<T>(type: T.Type) -> Span<T> { Span<T>(length: -1) }
+    
+    public var startIndex: Int { 0 }
+    public var endIndex: Int { length }
+    
+    public func index(after i: Int) -> Int { i + 1 }
 }

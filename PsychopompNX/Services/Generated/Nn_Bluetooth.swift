@@ -71,15 +71,15 @@ class NnBluetooth_IBluetoothDriver: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 5:
-			try getAdapterProperties(im.getBuffer(0x1a, 0) as Buffer<UInt8>)
+			try getAdapterProperties(im.getBuffer(0x1a, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 6:
-			try getAdapterProperty(nil, im.getBuffer(0xa, 0) as Buffer<UInt8>)
+			try getAdapterProperty(nil, im.getBuffer(0xa, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 7:
-			try setAdapterProperty(nil, im.getBuffer(0x9, 0) as Buffer<UInt8>)
+			try setAdapterProperty(nil, im.getBuffer(0x9, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 8:
@@ -91,7 +91,7 @@ class NnBluetooth_IBluetoothDriver: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 10:
-			try createBond(nil, im.getBuffer(0x19, 0) as Buffer<UInt8>)
+			try createBond(nil, im.getBuffer(0x19, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 11:
@@ -111,7 +111,7 @@ class NnBluetooth_IBluetoothDriver: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 15:
-			let ret = try unknown15(im.getBuffer(0xa, 0) as Buffer<UInt8>)
+			let ret = try unknown15(im.getBuffer(0xa, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 16:
@@ -128,15 +128,15 @@ class NnBluetooth_IBluetoothDriver: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 19:
-			try hidHostInterface_SendData(nil, im.getBuffer(0x19, 0) as Buffer<UInt8>)
+			try hidHostInterface_SendData(nil, im.getBuffer(0x19, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 20:
-			try hidHostInterface_SendData2(nil, im.getBuffer(0x9, 0) as Buffer<UInt8>)
+			try hidHostInterface_SendData2(nil, im.getBuffer(0x9, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 21:
-			try hidHostInterface_SetReport(nil, im.getBuffer(0x19, 0) as Buffer<UInt8>)
+			try hidHostInterface_SetReport(nil, im.getBuffer(0x19, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 22:
@@ -148,11 +148,11 @@ class NnBluetooth_IBluetoothDriver: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 24:
-			try hidHostInterface_AddPairedDevice(im.getBuffer(0x19, 0) as Buffer<UInt8>)
+			try hidHostInterface_AddPairedDevice(im.getBuffer(0x19, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 25:
-			try hidHostInterface_GetPairedDevice(nil, im.getBuffer(0x1a, 0) as Buffer<UInt8>)
+			try hidHostInterface_GetPairedDevice(nil, im.getBuffer(0x1a, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 26:
@@ -160,7 +160,7 @@ class NnBluetooth_IBluetoothDriver: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 27:
-			let ret = try unknown27(im.getBuffer(0xa, 0) as Buffer<UInt8>)
+			let ret = try unknown27(im.getBuffer(0xa, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 28:
@@ -172,7 +172,7 @@ class NnBluetooth_IBluetoothDriver: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 30:
-			try extInterface_SetZeroRetran(nil, im.getBuffer(0x9, 0) as Buffer<UInt8>)
+			try extInterface_SetZeroRetran(nil, im.getBuffer(0x9, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 31:
@@ -205,11 +205,11 @@ class NnBluetooth_IBluetoothDriver: IpcService {
 			om.copy(0, ret)
 		
 		case 38:
-			let ret = try hidHostInterface_GetLatestPlr(im.getBuffer(0xa, 0) as Buffer<UInt8>)
+			let ret = try hidHostInterface_GetLatestPlr(im.getBuffer(0xa, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 39:
-			try extInterface_GetPendingConnections(im.getBuffer(0x16, 0) as Buffer<UInt8>)
+			try extInterface_GetPendingConnections(im.getBuffer(0x16, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 40:
@@ -217,7 +217,7 @@ class NnBluetooth_IBluetoothDriver: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 41:
-			try setIsBluetoothBoostEnabled(im.getBuffer(0x16, 0) as Buffer<UInt8>)
+			try setIsBluetoothBoostEnabled(im.getBuffer(0x16, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 42:

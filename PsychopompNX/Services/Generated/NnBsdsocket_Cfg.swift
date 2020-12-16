@@ -16,32 +16,32 @@ class NnBsdsocketCfg_ServerInterface: IpcService {
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
 		case 0:
-			try setIfUp(nil, im.getBuffer(0x5, 0) as Buffer<UInt8>)
+			try setIfUp(nil, im.getBuffer(0x5, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 1:
-			let ret = try setIfUpWithEvent(nil, im.getBuffer(0x5, 0) as Buffer<UInt8>)
+			let ret = try setIfUpWithEvent(nil, im.getBuffer(0x5, 0)! as Buffer<UInt8>)
 			om.initialize(0, 1, 0)
 			om.copy(0, ret)
 		
 		case 2:
-			try cancelIf(im.getBuffer(0x5, 0) as Buffer<UInt8>)
+			try cancelIf(im.getBuffer(0x5, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 3:
-			try setIfDown(nil, im.getBuffer(0x5, 0) as Buffer<UInt8>)
+			try setIfDown(nil, im.getBuffer(0x5, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 4:
-			try getIfState(im.getBuffer(0x5, 0) as Buffer<UInt8>, im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			try getIfState(im.getBuffer(0x5, 0)! as Buffer<UInt8>, im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 5:
-			try dhcpRenew(im.getBuffer(0x5, 0) as Buffer<UInt8>)
+			try dhcpRenew(im.getBuffer(0x5, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 6:
-			try addStaticArpEntry(nil, im.getBuffer(0x5, 0) as Buffer<UInt8>)
+			try addStaticArpEntry(nil, im.getBuffer(0x5, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 7:
@@ -49,11 +49,11 @@ class NnBsdsocketCfg_ServerInterface: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 8:
-			try lookupArpEntry(nil, im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			try lookupArpEntry(nil, im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 9:
-			try lookupArpEntry2(im.getBuffer(0x5, 0) as Buffer<UInt8>, im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			try lookupArpEntry2(im.getBuffer(0x5, 0)! as Buffer<UInt8>, im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 10:
@@ -61,7 +61,7 @@ class NnBsdsocketCfg_ServerInterface: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 11:
-			try clearArpEntries2(im.getBuffer(0x5, 0) as Buffer<UInt8>)
+			try clearArpEntries2(im.getBuffer(0x5, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 12:

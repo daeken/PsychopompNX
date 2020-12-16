@@ -19,39 +19,39 @@ class NnLr_ILocationResolver: IpcService {
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
 		case 0:
-			try resolveProgramPath(nil, im.getBuffer(0x1a, 0) as Buffer<UInt8>)
+			try resolveProgramPath(nil, im.getBuffer(0x1a, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 1:
-			try redirectProgramPath(nil, im.getBuffer(0x19, 0) as Buffer<UInt8>)
+			try redirectProgramPath(nil, im.getBuffer(0x19, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 2:
-			try resolveApplicationControlPath(nil, im.getBuffer(0x1a, 0) as Buffer<UInt8>)
+			try resolveApplicationControlPath(nil, im.getBuffer(0x1a, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 3:
-			try resolveApplicationHtmlDocumentPath(nil, im.getBuffer(0x1a, 0) as Buffer<UInt8>)
+			try resolveApplicationHtmlDocumentPath(nil, im.getBuffer(0x1a, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 4:
-			try resolveDataPath(nil, im.getBuffer(0x1a, 0) as Buffer<UInt8>)
+			try resolveDataPath(nil, im.getBuffer(0x1a, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 5:
-			try redirectApplicationControlPath(nil, im.getBuffer(0x19, 0) as Buffer<UInt8>)
+			try redirectApplicationControlPath(nil, im.getBuffer(0x19, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 6:
-			try redirectApplicationHtmlDocumentPath(nil, im.getBuffer(0x19, 0) as Buffer<UInt8>)
+			try redirectApplicationHtmlDocumentPath(nil, im.getBuffer(0x19, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 7:
-			try resolveApplicationLegalInformationPath(nil, im.getBuffer(0x1a, 0) as Buffer<UInt8>)
+			try resolveApplicationLegalInformationPath(nil, im.getBuffer(0x1a, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 8:
-			try redirectApplicationLegalInformationPath(nil, im.getBuffer(0x19, 0) as Buffer<UInt8>)
+			try redirectApplicationLegalInformationPath(nil, im.getBuffer(0x19, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 9:
@@ -123,11 +123,11 @@ class NnLr_IRegisteredLocationResolver: IpcService {
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
 		case 0:
-			try resolveProgramPath(nil, im.getBuffer(0x1a, 0) as Buffer<UInt8>)
+			try resolveProgramPath(nil, im.getBuffer(0x1a, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 1:
-			try registerProgramPath(nil, im.getBuffer(0x19, 0) as Buffer<UInt8>)
+			try registerProgramPath(nil, im.getBuffer(0x19, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 2:
@@ -135,15 +135,15 @@ class NnLr_IRegisteredLocationResolver: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 3:
-			try redirectProgramPath(nil, im.getBuffer(0x19, 0) as Buffer<UInt8>)
+			try redirectProgramPath(nil, im.getBuffer(0x19, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 4:
-			try resolveHtmlDocumentPath(nil, im.getBuffer(0x1a, 0) as Buffer<UInt8>)
+			try resolveHtmlDocumentPath(nil, im.getBuffer(0x1a, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 5:
-			try registerHtmlDocumentPath(nil, im.getBuffer(0x19, 0) as Buffer<UInt8>)
+			try registerHtmlDocumentPath(nil, im.getBuffer(0x19, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 6:
@@ -151,7 +151,7 @@ class NnLr_IRegisteredLocationResolver: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 7:
-			try redirectHtmlDocumentPath(nil, im.getBuffer(0x19, 0) as Buffer<UInt8>)
+			try redirectHtmlDocumentPath(nil, im.getBuffer(0x19, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		default:
@@ -182,7 +182,7 @@ class NnLr_IAddOnContentLocationResolver: IpcService {
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
 		case 0:
-			try resolveAddOnContentPath(nil, im.getBuffer(0x1a, 0) as Buffer<UInt8>)
+			try resolveAddOnContentPath(nil, im.getBuffer(0x1a, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 1:

@@ -104,11 +104,11 @@ class NnPctlDetailIpc_IParentalControlService: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 1002:
-			try confirmLaunchApplicationPermission(im.getData(8) as UInt8, im.getData(16) as UInt64, im.getBuffer(0x9, 0) as Buffer<Int8>)
+			try confirmLaunchApplicationPermission(im.getData(8) as UInt8, im.getData(16) as UInt64, im.getBuffer(0x9, 0)! as Buffer<Int8>)
 			om.initialize(0, 0, 0)
 		
 		case 1003:
-			try confirmResumeApplicationPermission(im.getData(8) as UInt8, im.getData(16) as UInt64, im.getBuffer(0x9, 0) as Buffer<Int8>)
+			try confirmResumeApplicationPermission(im.getData(8) as UInt8, im.getData(16) as UInt64, im.getBuffer(0x9, 0)! as Buffer<Int8>)
 			om.initialize(0, 0, 0)
 		
 		case 1004:
@@ -215,12 +215,12 @@ class NnPctlDetailIpc_IParentalControlService: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 1044:
-			let ret = try getFreeCommunicationApplicationList(im.getData(8) as UInt32, im.getBuffer(0x6, 0) as Buffer<NnPctl_FreeCommunicationApplicationInfo>)
+			let ret = try getFreeCommunicationApplicationList(im.getData(8) as UInt32, im.getBuffer(0x6, 0)! as Buffer<NnPctl_FreeCommunicationApplicationInfo>)
 			om.initialize(0, 0, 4)
 			om.setData(8, ret)
 		
 		case 1045:
-			try updateFreeCommunicationApplicationList(im.getBuffer(0x5, 0) as Buffer<NnPctl_FreeCommunicationApplicationInfo>)
+			try updateFreeCommunicationApplicationList(im.getBuffer(0x5, 0)! as Buffer<NnPctl_FreeCommunicationApplicationInfo>)
 			om.initialize(0, 0, 0)
 		
 		case 1046:
@@ -253,15 +253,15 @@ class NnPctlDetailIpc_IParentalControlService: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 1201:
-			try unlockRestrictionTemporarily(im.getBuffer(0x9, 0) as Buffer<UInt8>)
+			try unlockRestrictionTemporarily(im.getBuffer(0x9, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 1202:
-			try unlockSystemSettingsRestriction(im.getBuffer(0x9, 0) as Buffer<UInt8>)
+			try unlockSystemSettingsRestriction(im.getBuffer(0x9, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 1203:
-			try setPinCode(im.getBuffer(0x9, 0) as Buffer<UInt8>)
+			try setPinCode(im.getBuffer(0x9, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 1204:
@@ -271,7 +271,7 @@ class NnPctlDetailIpc_IParentalControlService: IpcService {
 			om.setBytes(8, ret)
 		
 		case 1205:
-			let ret = try checkMasterKey(im.getBytes(8, 0x20), im.getBuffer(0x9, 0) as Buffer<UInt8>)
+			let ret = try checkMasterKey(im.getBytes(8, 0x20), im.getBuffer(0x9, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 1)
 			om.setData(8, ret)
 		
@@ -286,7 +286,7 @@ class NnPctlDetailIpc_IParentalControlService: IpcService {
 			om.copy(0, ret)
 		
 		case 1208:
-			let ret = try getPinCode(im.getBuffer(0xa, 0) as Buffer<UInt8>)
+			let ret = try getPinCode(im.getBuffer(0xa, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 4)
 			om.setData(8, ret)
 		
@@ -307,7 +307,7 @@ class NnPctlDetailIpc_IParentalControlService: IpcService {
 			om.setBytes(8, ret)
 		
 		case 1421:
-			let ret = try getAccountNickname(im.getBytes(8, 0x10), im.getBuffer(0xa, 0) as Buffer<UInt8>)
+			let ret = try getAccountNickname(im.getBytes(8, 0x10), im.getBuffer(0xa, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 4)
 			om.setData(8, ret)
 		
@@ -443,7 +443,7 @@ class NnPctlDetailIpc_IParentalControlService: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 2001:
-			let (_0, _1) = try requestPairingAsync(im.getBuffer(0x9, 0) as Buffer<UInt8>)
+			let (_0, _1) = try requestPairingAsync(im.getBuffer(0x9, 0)! as Buffer<UInt8>)
 			om.initialize(0, 1, 8)
 			if _0.count != 0x8 { throw IpcError.byteCountMismatch }
 			om.setBytes(8, _0)
@@ -493,7 +493,7 @@ class NnPctlDetailIpc_IParentalControlService: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 2009:
-			let (_0, _1, _2) = try getAccountMiiImageAsync(im.getBytes(8, 0x10), im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			let (_0, _1, _2) = try getAccountMiiImageAsync(im.getBytes(8, 0x10), im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 1, 12)
 			if _0.count != 0x8 { throw IpcError.byteCountMismatch }
 			om.setBytes(8, _0)
@@ -501,12 +501,12 @@ class NnPctlDetailIpc_IParentalControlService: IpcService {
 			om.copy(0, _2)
 		
 		case 2010:
-			let ret = try finishGetAccountMiiImage(im.getBytes(8, 0x8), im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			let ret = try finishGetAccountMiiImage(im.getBytes(8, 0x8), im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 4)
 			om.setData(8, ret)
 		
 		case 2011:
-			let (_0, _1, _2) = try getAccountMiiImageContentTypeAsync(im.getBytes(8, 0x10), im.getBuffer(0xa, 0) as Buffer<UInt8>)
+			let (_0, _1, _2) = try getAccountMiiImageContentTypeAsync(im.getBytes(8, 0x10), im.getBuffer(0xa, 0)! as Buffer<UInt8>)
 			om.initialize(0, 1, 12)
 			if _0.count != 0x8 { throw IpcError.byteCountMismatch }
 			om.setBytes(8, _0)
@@ -514,7 +514,7 @@ class NnPctlDetailIpc_IParentalControlService: IpcService {
 			om.copy(0, _2)
 		
 		case 2012:
-			let ret = try finishGetAccountMiiImageContentType(im.getBytes(8, 0x8), im.getBuffer(0xa, 0) as Buffer<UInt8>)
+			let ret = try finishGetAccountMiiImageContentType(im.getBytes(8, 0x8), im.getBuffer(0xa, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 4)
 			om.setData(8, ret)
 		

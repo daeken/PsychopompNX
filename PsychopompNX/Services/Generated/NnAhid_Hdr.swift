@@ -12,15 +12,15 @@ class NnAhidHdr_ISession: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 1:
-			let ret = try unknown1(nil, im.getBuffer(0x5, 0) as Buffer<UInt8>, im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			let ret = try unknown1(nil, im.getBuffer(0x5, 0)! as Buffer<UInt8>, im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 2:
-			try unknown2(nil, im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			try unknown2(nil, im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 3:
-			let ret = try unknown3(im.getBuffer(0x5, 0) as Buffer<UInt8>)
+			let ret = try unknown3(im.getBuffer(0x5, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 4:

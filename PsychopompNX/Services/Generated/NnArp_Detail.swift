@@ -15,11 +15,11 @@ class NnArpDetail_IReader: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 2:
-			try getApplicationControlProperty(nil, im.getBuffer(0x16, 0) as Buffer<UInt8>)
+			try getApplicationControlProperty(nil, im.getBuffer(0x16, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 3:
-			try getApplicationControlPropertyWithApplicationId(nil, im.getBuffer(0x16, 0) as Buffer<UInt8>)
+			try getApplicationControlPropertyWithApplicationId(nil, im.getBuffer(0x16, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		default:
@@ -83,7 +83,7 @@ class NnArpDetail_IRegistrar: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 2:
-			try setApplicationControlProperty(im.getBuffer(0x15, 0) as Buffer<UInt8>)
+			try setApplicationControlProperty(im.getBuffer(0x15, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		default:

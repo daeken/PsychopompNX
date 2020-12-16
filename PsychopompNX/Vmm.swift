@@ -53,7 +53,7 @@ class Vmm {
     let chunkSize: UInt64 = 0x1000000
     var physTop: UInt64 = 0x10000000
     var freeTables = [UInt64]()
-    var physMappings = [PointerSpan<UInt8>?](repeating: nil, count: 4096)
+    var physMappings = [Span<UInt8>?](repeating: nil, count: 4096)
     var pageTableBase = GuestPhysicalPointer<UInt64>(0)
     var pageTables = [(GuestPhysicalPointer<UInt64>, [(GuestPhysicalPointer<UInt64>, [(UInt64, AccessFlags)?])?])?](repeating: nil, count: 512)
 
@@ -252,6 +252,36 @@ class Vmm {
         }
         return phys | (virtAddr & 0xFFF)
     }
+    
+    func getVirtualSpan( _ address: uint64, _ size: uint64) throws -> Span<UInt8> {
+        let pageOffset = address & 0xFFF
+        let pageBase = address ^ pageOffset
+        let boostSize = size + pageOffset
+        
+        var ppages = [UInt64]()
+        var lastAddr: UInt64 = 0
+        var firstAddr: UInt64? = nil
+        
+        for vpage in stride(from: pageBase, to: pageBase + boostSize, by: 0x1000) {
+            let ppage = try translate(vpage)
+            if firstAddr != nil && lastAddr + 0x1000 != ppage {
+                try! bailout()
+            }
+            lastAddr = ppage
+            if firstAddr == nil {
+                firstAddr = ppage
+            }
+            ppages.append(ppage)
+        }
+        
+        if ppages.count == 0 { try! bailout() }
+        
+        guard let ptr = physMappings[Int((firstAddr! >> 24) & 0xFFF)] else {
+            throw VmmError.unmappedPhysicalMemory
+        }
+        let poff = Int((firstAddr! & 0xFF_FFFF) + pageOffset)
+        return ptr[poff..<(poff+Int(size))]
+    }
 
     func readPhysByte(_ address: uint64) throws -> uint8 {
         guard let ptr = physMappings[Int((address >> 24) & 0xFFF)] else {
@@ -282,20 +312,11 @@ class Vmm {
     }
 
     func readVirtMem<T>(_ address: uint64) throws -> T {
-        let data = try (0..<MemoryLayout<T>.size).map {
-            try readPhysByte(try translate(address + UInt64($0)))
-        }
-        return data.withUnsafeBytes {
-            $0.load(as: T.self)
-        }
+        try getVirtualSpan(address, uint64(MemoryLayout<T>.size)).to(type: T.self)[0]
     }
 
     func writeVirtMem<T>(_ address: uint64, _ value: T) throws {
-        try withUnsafeBytes(of: value) {
-            try $0.enumerated().forEach {
-                try writePhysByte(try translate(address + UInt64($0.offset)), $0.element)
-            }
-        }
+        try getVirtualSpan(address, uint64(MemoryLayout<T>.size)).to(type: T.self)[0] = value
     }
 
     func getVirtMappings() -> [(base: uint64, size: uint64, accessFlags: AccessFlags)] {

@@ -20,11 +20,11 @@ class NnNsdDetail_IManager: IpcService {
 	override func dispatch(_ im: IncomingMessage, _ om: OutgoingMessage) throws {
 		switch im.commandId {
 		case 10:
-			try getSettingName(im.getBuffer(0x16, 0) as Buffer<UInt8>)
+			try getSettingName(im.getBuffer(0x16, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 11:
-			try getEnvironmentIdentifier(im.getBuffer(0x16, 0) as Buffer<UInt8>)
+			try getEnvironmentIdentifier(im.getBuffer(0x16, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 12:
@@ -38,55 +38,55 @@ class NnNsdDetail_IManager: IpcService {
 			om.initialize(0, 0, 0)
 		
 		case 14:
-			try importSettings(im.getData(8) as UInt32, im.getBuffer(0x5, 0) as Buffer<UInt8>, im.getBuffer(0x6, 0) as Buffer<UInt8>)
+			try importSettings(im.getData(8) as UInt32, im.getBuffer(0x5, 0)! as Buffer<UInt8>, im.getBuffer(0x6, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 20:
-			try resolve(im.getBuffer(0x15, 0) as Buffer<UInt8>, im.getBuffer(0x16, 0) as Buffer<UInt8>)
+			try resolve(im.getBuffer(0x15, 0)! as Buffer<UInt8>, im.getBuffer(0x16, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 21:
-			let ret = try resolveEx(im.getBuffer(0x15, 0) as Buffer<UInt8>, im.getBuffer(0x16, 0) as Buffer<UInt8>)
+			let ret = try resolveEx(im.getBuffer(0x15, 0)! as Buffer<UInt8>, im.getBuffer(0x16, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 4)
 			om.setData(8, ret)
 		
 		case 30:
-			try getNasServiceSetting(im.getBuffer(0x15, 0) as Buffer<UInt8>, im.getBuffer(0x16, 0) as Buffer<UInt8>)
+			try getNasServiceSetting(im.getBuffer(0x15, 0)! as Buffer<UInt8>, im.getBuffer(0x16, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 31:
-			let ret = try getNasServiceSettingEx(im.getBuffer(0x15, 0) as Buffer<UInt8>, im.getBuffer(0x16, 0) as Buffer<UInt8>)
+			let ret = try getNasServiceSettingEx(im.getBuffer(0x15, 0)! as Buffer<UInt8>, im.getBuffer(0x16, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 4)
 			om.setData(8, ret)
 		
 		case 40:
-			try getNasRequestFqdn(im.getBuffer(0x16, 0) as Buffer<UInt8>)
+			try getNasRequestFqdn(im.getBuffer(0x16, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 41:
-			let ret = try getNasRequestFqdnEx(im.getBuffer(0x16, 0) as Buffer<UInt8>)
+			let ret = try getNasRequestFqdnEx(im.getBuffer(0x16, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 4)
 			om.setData(8, ret)
 		
 		case 42:
-			try getNasApiFqdn(im.getBuffer(0x16, 0) as Buffer<UInt8>)
+			try getNasApiFqdn(im.getBuffer(0x16, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 43:
-			let ret = try getNasApiFqdnEx(im.getBuffer(0x16, 0) as Buffer<UInt8>)
+			let ret = try getNasApiFqdnEx(im.getBuffer(0x16, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 4)
 			om.setData(8, ret)
 		
 		case 50:
-			try getCurrentSetting(im.getBuffer(0x16, 0) as Buffer<UInt8>)
+			try getCurrentSetting(im.getBuffer(0x16, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 60:
-			try readSaveDataFromFsForTest(im.getBuffer(0x16, 0) as Buffer<UInt8>)
+			try readSaveDataFromFsForTest(im.getBuffer(0x16, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 61:
-			try writeSaveDataToFsForTest(im.getBuffer(0x15, 0) as Buffer<UInt8>)
+			try writeSaveDataToFsForTest(im.getBuffer(0x15, 0)! as Buffer<UInt8>)
 			om.initialize(0, 0, 0)
 		
 		case 62:
