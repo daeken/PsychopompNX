@@ -180,6 +180,9 @@
 		4CD115BA258AA62000780479 /* Nns_Hosbinder_Impl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD115B9258AA62000780479 /* Nns_Hosbinder_Impl.swift */; };
 		4CD115BD258AADE600780479 /* NvFlinger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD115BC258AADE600780479 /* NvFlinger.swift */; };
 		4CD115C0258AB1C100780479 /* GraphicCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD115BF258AB1C100780479 /* GraphicCore.swift */; };
+		4CD115C3258AB5FA00780479 /* NvDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD115C2258AB5FA00780479 /* NvDevice.swift */; };
+		4CD115C6258AB75000780479 /* NvhostCtrlGpu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD115C5258AB75000780479 /* NvhostCtrlGpu.swift */; };
+		4CD115C9258AC13A00780479 /* NvhostAsGpu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD115C8258AC13A00780479 /* NvhostAsGpu.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -358,6 +361,9 @@
 		4CD115B9258AA62000780479 /* Nns_Hosbinder_Impl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nns_Hosbinder_Impl.swift; sourceTree = "<group>"; };
 		4CD115BC258AADE600780479 /* NvFlinger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NvFlinger.swift; sourceTree = "<group>"; };
 		4CD115BF258AB1C100780479 /* GraphicCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphicCore.swift; sourceTree = "<group>"; };
+		4CD115C2258AB5FA00780479 /* NvDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NvDevice.swift; sourceTree = "<group>"; };
+		4CD115C5258AB75000780479 /* NvhostCtrlGpu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NvhostCtrlGpu.swift; sourceTree = "<group>"; };
+		4CD115C8258AC13A00780479 /* NvhostAsGpu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NvhostAsGpu.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -614,6 +620,9 @@
 				4CD115B9258AA62000780479 /* Nns_Hosbinder_Impl.swift */,
 				4CD115BC258AADE600780479 /* NvFlinger.swift */,
 				4CD115BF258AB1C100780479 /* GraphicCore.swift */,
+				4CD115C2258AB5FA00780479 /* NvDevice.swift */,
+				4CD115C5258AB75000780479 /* NvhostCtrlGpu.swift */,
+				4CD115C8258AC13A00780479 /* NvhostAsGpu.swift */,
 			);
 			path = Graphics;
 			sourceTree = "<group>";
@@ -696,6 +705,7 @@
 				4C96227A2584AD270096E007 /* NnVi_Native.swift in Sources */,
 				4C9622462584AD270096E007 /* NnErpt_Sf.swift in Sources */,
 				4C96225A2584AD270096E007 /* NnMii_Detail.swift in Sources */,
+				4CD115C6258AB75000780479 /* NvhostCtrlGpu.swift in Sources */,
 				4C9622792584AD270096E007 /* NnPrepoDetail_Ipc.swift in Sources */,
 				4CD115AF2589EC8000780479 /* Nns_Nvdrv_Impl.swift in Sources */,
 				4C961F13258499B00096E007 /* ServiceMappings.swift in Sources */,
@@ -820,10 +830,12 @@
 				4C9622842584AD270096E007 /* NnSfHipc_Detail.swift in Sources */,
 				4C96225F2584AD270096E007 /* Nn_Mmnv.swift in Sources */,
 				4C96228E2584AD270096E007 /* Nn_Gpio.swift in Sources */,
+				4CD115C9258AC13A00780479 /* NvhostAsGpu.swift in Sources */,
 				4C9622482584AD270096E007 /* NnXcd_Detail.swift in Sources */,
 				4C9622A02584AD270096E007 /* Nn_Capsrv.swift in Sources */,
 				4C9622612584AD270096E007 /* NnLdr_Detail.swift in Sources */,
 				4C9622772584AD270096E007 /* NnSettings_Factory.swift in Sources */,
+				4CD115C3258AB5FA00780479 /* NvDevice.swift in Sources */,
 				4C9622722584AD270096E007 /* Nn_Mii.swift in Sources */,
 				4C9622622584AD270096E007 /* Nn_Es.swift in Sources */,
 				4CD115C0258AB1C100780479 /* GraphicCore.swift in Sources */,
