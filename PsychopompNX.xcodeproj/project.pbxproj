@@ -179,6 +179,7 @@
 		4CD115B6258A9E3200780479 /* Parcel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD115B5258A9E3200780479 /* Parcel.swift */; };
 		4CD115BA258AA62000780479 /* Nns_Hosbinder_Impl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD115B9258AA62000780479 /* Nns_Hosbinder_Impl.swift */; };
 		4CD115BD258AADE600780479 /* NvFlinger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD115BC258AADE600780479 /* NvFlinger.swift */; };
+		4CD115C0258AB1C100780479 /* GraphicCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD115BF258AB1C100780479 /* GraphicCore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -356,6 +357,7 @@
 		4CD115B5258A9E3200780479 /* Parcel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parcel.swift; sourceTree = "<group>"; };
 		4CD115B9258AA62000780479 /* Nns_Hosbinder_Impl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nns_Hosbinder_Impl.swift; sourceTree = "<group>"; };
 		4CD115BC258AADE600780479 /* NvFlinger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NvFlinger.swift; sourceTree = "<group>"; };
+		4CD115BF258AB1C100780479 /* GraphicCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphicCore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -611,6 +613,7 @@
 				4CD115B5258A9E3200780479 /* Parcel.swift */,
 				4CD115B9258AA62000780479 /* Nns_Hosbinder_Impl.swift */,
 				4CD115BC258AADE600780479 /* NvFlinger.swift */,
+				4CD115BF258AB1C100780479 /* GraphicCore.swift */,
 			);
 			path = Graphics;
 			sourceTree = "<group>";
@@ -823,6 +826,7 @@
 				4C9622772584AD270096E007 /* NnSettings_Factory.swift in Sources */,
 				4C9622722584AD270096E007 /* Nn_Mii.swift in Sources */,
 				4C9622622584AD270096E007 /* Nn_Es.swift in Sources */,
+				4CD115C0258AB1C100780479 /* GraphicCore.swift in Sources */,
 				4C9622B92584AD270096E007 /* Nn_Cec.swift in Sources */,
 				4C9622642584AD270096E007 /* NnNifmDetail_Sf.swift in Sources */,
 				4C21AC3C257F35230023284C /* Utilities.swift in Sources */,

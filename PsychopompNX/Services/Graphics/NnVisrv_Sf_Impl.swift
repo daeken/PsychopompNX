@@ -44,11 +44,15 @@ class NnVisrvSf_IApplicationDisplayService_Impl: NnVisrvSf_IApplicationDisplaySe
     override func closeLayer(_ _0: UInt64) throws { throw IpcError.unimplemented(name: "nn::visrv::sf::nn::visrv::sf::IApplicationDisplayService#CloseLayer") }
     override func createStrayLayer(_ _0: UInt32, _ _1: UInt64, _ _2: Buffer<UInt8>) throws -> (UInt64, UInt64) { throw IpcError.unimplemented(name: "nn::visrv::sf::nn::visrv::sf::IApplicationDisplayService#CreateStrayLayer") }
     override func destroyStrayLayer(_ _0: UInt64) throws { throw IpcError.unimplemented(name: "nn::visrv::sf::nn::visrv::sf::IApplicationDisplayService#DestroyStrayLayer") }
-    override func setLayerScalingMode(_ _0: UInt32, _ _1: UInt64) throws { throw IpcError.unimplemented(name: "nn::visrv::sf::nn::visrv::sf::IApplicationDisplayService#SetLayerScalingMode") }
+    
+    override func setLayerScalingMode(_ _0: UInt32, _ _1: UInt64) throws { }
+    
     override func convertScalingMode(_ _0: Any?) throws -> Any? { throw IpcError.unimplemented(name: "nn::visrv::sf::nn::visrv::sf::IApplicationDisplayService#ConvertScalingMode") }
     override func getIndirectLayerImageMap(_ _0: UInt64, _ _1: UInt64, _ _2: UInt64, _ _3: NnApplet_AppletResourceUserId, _ _4: Pid, _ _5: Buffer<UInt8>) throws -> (UInt64, UInt64) { throw IpcError.unimplemented(name: "nn::visrv::sf::nn::visrv::sf::IApplicationDisplayService#GetIndirectLayerImageMap") }
     override func getIndirectLayerImageCropMap(_ _0: Float32, _ _1: Float32, _ _2: Float32, _ _3: Float32, _ _4: UInt64, _ _5: UInt64, _ _6: UInt64, _ _7: NnApplet_AppletResourceUserId, _ _8: Pid, _ _9: Buffer<UInt8>) throws -> (UInt64, UInt64) { throw IpcError.unimplemented(name: "nn::visrv::sf::nn::visrv::sf::IApplicationDisplayService#GetIndirectLayerImageCropMap") }
     override func getIndirectLayerImageRequiredMemoryInfo(_ _0: UInt64, _ _1: UInt64) throws -> (UInt64, UInt64) { throw IpcError.unimplemented(name: "nn::visrv::sf::nn::visrv::sf::IApplicationDisplayService#GetIndirectLayerImageRequiredMemoryInfo") }
-    override func getDisplayVsyncEvent(_ _0: UInt64) throws -> KObject { throw IpcError.unimplemented(name: "nn::visrv::sf::nn::visrv::sf::IApplicationDisplayService#GetDisplayVsyncEvent") }
+    
+    override func getDisplayVsyncEvent(_ _0: UInt64) throws -> KObject { KEvent() }
+    
     override func getDisplayVsyncEventForDebug(_ _0: UInt64) throws -> KObject { throw IpcError.unimplemented(name: "nn::visrv::sf::nn::visrv::sf::IApplicationDisplayService#GetDisplayVsyncEventForDebug") }
 }

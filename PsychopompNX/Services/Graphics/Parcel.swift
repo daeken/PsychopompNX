@@ -22,3 +22,8 @@ func makeParcel(_ buf: Span<UInt8>, _ objs: [UInt8], _ body: (_ sw: SpanWriter) 
     
     return UInt64(16 + sw.bytesWritten + objs.count)
 }
+
+func getParcelData(_ buf: Span<UInt8>) -> Span<UInt8> {
+    let bi = buf.to(type: UInt32.self)
+    return buf[Int(bi[1])..<Int(bi[1] + bi[0])]
+}
