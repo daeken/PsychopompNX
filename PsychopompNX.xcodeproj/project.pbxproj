@@ -175,6 +175,7 @@
 		4C9622E525859C320096E007 /* NnFssrv_Sf_Impl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9622E425859C320096E007 /* NnFssrv_Sf_Impl.swift */; };
 		4CD115AC2589CCE000780479 /* LibSwiftHac in Frameworks */ = {isa = PBXBuildFile; productRef = 4CD115AB2589CCE000780479 /* LibSwiftHac */; };
 		4CD115AF2589EC8000780479 /* Nns_Nvdrv_Impl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD115AE2589EC8000780479 /* Nns_Nvdrv_Impl.swift */; };
+		4CD115B22589EE0400780479 /* NnVisrv_Sf_Impl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD115B12589EE0400780479 /* NnVisrv_Sf_Impl.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -348,6 +349,7 @@
 		4C9622E125858E290096E007 /* NnPctlDetail_Ipc_Impl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NnPctlDetail_Ipc_Impl.swift; sourceTree = "<group>"; };
 		4C9622E425859C320096E007 /* NnFssrv_Sf_Impl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NnFssrv_Sf_Impl.swift; sourceTree = "<group>"; };
 		4CD115AE2589EC8000780479 /* Nns_Nvdrv_Impl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nns_Nvdrv_Impl.swift; sourceTree = "<group>"; };
+		4CD115B12589EE0400780479 /* NnVisrv_Sf_Impl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NnVisrv_Sf_Impl.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -383,6 +385,7 @@
 				4C9622E125858E290096E007 /* NnPctlDetail_Ipc_Impl.swift */,
 				4C9622E425859C320096E007 /* NnFssrv_Sf_Impl.swift */,
 				4CD115AE2589EC8000780479 /* Nns_Nvdrv_Impl.swift */,
+				4CD115B12589EE0400780479 /* NnVisrv_Sf_Impl.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -719,6 +722,7 @@
 				4C21AC2C257ABA8A0023284C /* GuestPointer.swift in Sources */,
 				4C9622AE2584AD270096E007 /* Nn_Usb.swift in Sources */,
 				4C9622942584AD270096E007 /* Nn_Pwm.swift in Sources */,
+				4CD115B22589EE0400780479 /* NnVisrv_Sf_Impl.swift in Sources */,
 				4C9622A52584AD270096E007 /* Nn_Psm.swift in Sources */,
 				4C9622992584AD270096E007 /* NnLdn_Detail.swift in Sources */,
 				4C96229E2584AD270096E007 /* NnSpsm_Detail.swift in Sources */,

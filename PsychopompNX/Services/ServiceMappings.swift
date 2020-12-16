@@ -79,7 +79,7 @@ let ipcServiceMappings: [String: () -> IpcService] =
             "set:fd": { NnSettings_IFirmwareDebugSettingsServer() }, 
             "set:cal": { NnSettings_IFactorySettingsServer() }, 
             "vi:u": { NnVisrvSf_IApplicationRootService() }, 
-            "vi:m": { NnVisrvSf_IManagerRootService() }, 
+            "vi:m": { NnVisrvSf_IManagerRootService_Impl() }, 
             "vi:s": { NnVisrvSf_ISystemRootService() }, 
             "pwm": { NnPwm_IManager() }, 
             "es": { NnEs_IETicketService() }, 

@@ -78,7 +78,9 @@ class NnAmService_ISelfController_Impl: NnAmService_ISelfController {
     override func setRequiresCaptureButtonShortPressedMessage(_ _0: UInt8) throws { }
     override func setScreenShotImageOrientation(_ _0: UInt32) throws { }
     override func setDesirableKeyboardLayout(_ _0: UInt32) throws { }
-    override func createManagedDisplayLayer() throws -> UInt64 { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::ISelfController#CreateManagedDisplayLayer") }
+    
+    override func createManagedDisplayLayer() throws -> UInt64 { 0 }
+    
     override func isSystemBufferSharingEnabled() throws { }
     override func getSystemSharedLayerHandle() throws -> (NnViFbshare_SharedBufferHandle, NnViFbshare_SharedLayerHandle) { throw IpcError.unimplemented(name: "nn::am::service::nn::am::service::ISelfController#GetSystemSharedLayerHandle") }
     override func setHandlesRequestToDisplay(_ _0: UInt8) throws { }
