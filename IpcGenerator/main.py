@@ -303,7 +303,7 @@ let ipcServiceMappings: [String: () -> IpcService] =
 								bufferNums[type[2]] = 0
 							cbo = bufferNums[type[2]]
 							bufferNums[type[2]] += 1
-							return 'im.getBuffer(0x%x, %i) as %s' % (type[2], cbo, genType(type))
+							return 'im.getBuffer(0x%x, %i)! as %s' % (type[2], cbo, genType(type))
 						elif type[0] == 'bytes':
 							ret = 'im.getBytes(%i, 0x%x)' % (self.inputOffset, type[1])
 							self.inputOffset += type[1]
@@ -351,7 +351,7 @@ let ipcServiceMappings: [String: () -> IpcService] =
 								bufferNums[type[2]] = 0
 							cbo = bufferNums[type[2]]
 							bufferNums[type[2]] += 1
-							return 'im.getBuffer(0x%x, %i) as %s' % (type[2], cbo, genType(type))
+							return 'im.getBuffer(0x%x, %i)! as %s' % (type[2], cbo, genType(type))
 						print type
 						assert False
 

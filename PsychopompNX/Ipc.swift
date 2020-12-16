@@ -300,6 +300,11 @@ class IpcService: KObject {
                 case 3: // QueryPointerBufferSize
                     om.initialize(0, 0, 4)
                     om.setData(8, UInt32(0x500))
+                case 4: // DuplicateSessionEx
+                    om.isDomainObject = false
+                    om.initialize(1, 0, 0)
+                    om.move(0, target)
+                    om.errCode = 0
                 default:
                     print("Unhandled meta command: \(im.commandId)")
                     try! bailout()

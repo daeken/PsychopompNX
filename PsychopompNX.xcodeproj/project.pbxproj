@@ -173,6 +173,8 @@
 		4C9622DF258589F20096E007 /* Synchronization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9622DE258589F20096E007 /* Synchronization.swift */; };
 		4C9622E225858E290096E007 /* NnPctlDetail_Ipc_Impl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9622E125858E290096E007 /* NnPctlDetail_Ipc_Impl.swift */; };
 		4C9622E525859C320096E007 /* NnFssrv_Sf_Impl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9622E425859C320096E007 /* NnFssrv_Sf_Impl.swift */; };
+		4CD115AC2589CCE000780479 /* LibSwiftHac in Frameworks */ = {isa = PBXBuildFile; productRef = 4CD115AB2589CCE000780479 /* LibSwiftHac */; };
+		4CD115AF2589EC8000780479 /* Nns_Nvdrv_Impl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD115AE2589EC8000780479 /* Nns_Nvdrv_Impl.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -345,6 +347,7 @@
 		4C9622DE258589F20096E007 /* Synchronization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Synchronization.swift; sourceTree = "<group>"; };
 		4C9622E125858E290096E007 /* NnPctlDetail_Ipc_Impl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NnPctlDetail_Ipc_Impl.swift; sourceTree = "<group>"; };
 		4C9622E425859C320096E007 /* NnFssrv_Sf_Impl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NnFssrv_Sf_Impl.swift; sourceTree = "<group>"; };
+		4CD115AE2589EC8000780479 /* Nns_Nvdrv_Impl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nns_Nvdrv_Impl.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -353,6 +356,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4C00237C2587FED500444554 /* LibSpan in Frameworks */,
+				4CD115AC2589CCE000780479 /* LibSwiftHac in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -370,6 +374,7 @@
 		4C21AC47258094AD0023284C /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				4CD115A92589C49B00780479 /* Filesystem */,
 				4C9620962584AAC50096E007 /* Generated */,
 				4C961F12258499B00096E007 /* ServiceMappings.swift */,
 				4C9622D12584B0FE0096E007 /* NnSm_Detail_Impl.swift */,
@@ -377,6 +382,7 @@
 				4C9622D8258547020096E007 /* NnAm_Service_Impl.swift */,
 				4C9622E125858E290096E007 /* NnPctlDetail_Ipc_Impl.swift */,
 				4C9622E425859C320096E007 /* NnFssrv_Sf_Impl.swift */,
+				4CD115AE2589EC8000780479 /* Nns_Nvdrv_Impl.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -582,6 +588,13 @@
 			name = Generated;
 			sourceTree = "<group>";
 		};
+		4CD115A92589C49B00780479 /* Filesystem */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Filesystem;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -600,6 +613,7 @@
 			name = PsychopompNX;
 			packageProductDependencies = (
 				4C00237B2587FED500444554 /* LibSpan */,
+				4CD115AB2589CCE000780479 /* LibSwiftHac */,
 			);
 			productName = PsychopompNX;
 			productReference = 4C83798E2579AA64006FF416 /* PsychopompNX.app */;
@@ -660,6 +674,7 @@
 				4C9622462584AD270096E007 /* NnErpt_Sf.swift in Sources */,
 				4C96225A2584AD270096E007 /* NnMii_Detail.swift in Sources */,
 				4C9622792584AD270096E007 /* NnPrepoDetail_Ipc.swift in Sources */,
+				4CD115AF2589EC8000780479 /* Nns_Nvdrv_Impl.swift in Sources */,
 				4C961F13258499B00096E007 /* ServiceMappings.swift in Sources */,
 				4C96226E2584AD270096E007 /* Nn_Grcsrv.swift in Sources */,
 				4C96229B2584AD270096E007 /* Nn_Fgm.swift in Sources */,
@@ -1011,6 +1026,10 @@
 		4C00237B2587FED500444554 /* LibSpan */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = LibSpan;
+		};
+		4CD115AB2589CCE000780479 /* LibSwiftHac */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = LibSwiftHac;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
