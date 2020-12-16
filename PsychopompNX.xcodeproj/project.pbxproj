@@ -176,6 +176,9 @@
 		4CD115AC2589CCE000780479 /* LibSwiftHac in Frameworks */ = {isa = PBXBuildFile; productRef = 4CD115AB2589CCE000780479 /* LibSwiftHac */; };
 		4CD115AF2589EC8000780479 /* Nns_Nvdrv_Impl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD115AE2589EC8000780479 /* Nns_Nvdrv_Impl.swift */; };
 		4CD115B22589EE0400780479 /* NnVisrv_Sf_Impl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD115B12589EE0400780479 /* NnVisrv_Sf_Impl.swift */; };
+		4CD115B6258A9E3200780479 /* Parcel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD115B5258A9E3200780479 /* Parcel.swift */; };
+		4CD115BA258AA62000780479 /* Nns_Hosbinder_Impl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD115B9258AA62000780479 /* Nns_Hosbinder_Impl.swift */; };
+		4CD115BD258AADE600780479 /* NvFlinger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD115BC258AADE600780479 /* NvFlinger.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -350,6 +353,9 @@
 		4C9622E425859C320096E007 /* NnFssrv_Sf_Impl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NnFssrv_Sf_Impl.swift; sourceTree = "<group>"; };
 		4CD115AE2589EC8000780479 /* Nns_Nvdrv_Impl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nns_Nvdrv_Impl.swift; sourceTree = "<group>"; };
 		4CD115B12589EE0400780479 /* NnVisrv_Sf_Impl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NnVisrv_Sf_Impl.swift; sourceTree = "<group>"; };
+		4CD115B5258A9E3200780479 /* Parcel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parcel.swift; sourceTree = "<group>"; };
+		4CD115B9258AA62000780479 /* Nns_Hosbinder_Impl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nns_Hosbinder_Impl.swift; sourceTree = "<group>"; };
+		4CD115BC258AADE600780479 /* NvFlinger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NvFlinger.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -376,6 +382,7 @@
 		4C21AC47258094AD0023284C /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				4CD115B4258A9E1F00780479 /* Graphics */,
 				4CD115A92589C49B00780479 /* Filesystem */,
 				4C9620962584AAC50096E007 /* Generated */,
 				4C961F12258499B00096E007 /* ServiceMappings.swift */,
@@ -384,8 +391,6 @@
 				4C9622D8258547020096E007 /* NnAm_Service_Impl.swift */,
 				4C9622E125858E290096E007 /* NnPctlDetail_Ipc_Impl.swift */,
 				4C9622E425859C320096E007 /* NnFssrv_Sf_Impl.swift */,
-				4CD115AE2589EC8000780479 /* Nns_Nvdrv_Impl.swift */,
-				4CD115B12589EE0400780479 /* NnVisrv_Sf_Impl.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -598,6 +603,18 @@
 			path = Filesystem;
 			sourceTree = "<group>";
 		};
+		4CD115B4258A9E1F00780479 /* Graphics */ = {
+			isa = PBXGroup;
+			children = (
+				4CD115AE2589EC8000780479 /* Nns_Nvdrv_Impl.swift */,
+				4CD115B12589EE0400780479 /* NnVisrv_Sf_Impl.swift */,
+				4CD115B5258A9E3200780479 /* Parcel.swift */,
+				4CD115B9258AA62000780479 /* Nns_Hosbinder_Impl.swift */,
+				4CD115BC258AADE600780479 /* NvFlinger.swift */,
+			);
+			path = Graphics;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -700,6 +717,7 @@
 				4C9622562584AD270096E007 /* Nns_Hosbinder.swift in Sources */,
 				4C9622A12584AD270096E007 /* Nn_Profiler.swift in Sources */,
 				4C9622CF2584B02F0096E007 /* UInt128.swift in Sources */,
+				4CD115BD258AADE600780479 /* NvFlinger.swift in Sources */,
 				4C9622AC2584AD270096E007 /* Nn_Oe.swift in Sources */,
 				4C96227E2584AD270096E007 /* Nn_Npns.swift in Sources */,
 				4C9622DC258549010096E007 /* KEvent.swift in Sources */,
@@ -771,6 +789,7 @@
 				4C96227C2584AD270096E007 /* Nn_I2c.swift in Sources */,
 				4C8379922579AA64006FF416 /* PsychopompNXApp.swift in Sources */,
 				4C9622A82584AD270096E007 /* NnSsl_Sf.swift in Sources */,
+				4CD115BA258AA62000780479 /* Nns_Hosbinder_Impl.swift in Sources */,
 				4C9622632584AD270096E007 /* Nn_Pcm.swift in Sources */,
 				4C96224C2584AD270096E007 /* Nn_Irsensor.swift in Sources */,
 				4C21AC36257C4FD80023284C /* TaskManager.swift in Sources */,
@@ -825,6 +844,7 @@
 				4C96228A2584AD270096E007 /* Nn.swift in Sources */,
 				4C9622B02584AD270096E007 /* Nn_Sasbus.swift in Sources */,
 				4C9622C42584AD270096E007 /* Nn_Btm.swift in Sources */,
+				4CD115B6258A9E3200780479 /* Parcel.swift in Sources */,
 				4C9622D62584B8440096E007 /* Nn_Lm_Impl.swift in Sources */,
 				4C9622B52584AD270096E007 /* NnAccount_Profile.swift in Sources */,
 				4C9622472584AD270096E007 /* NnPctlDetail_Ipc.swift in Sources */,

@@ -13,10 +13,10 @@ class NnVisrvSf_IManagerRootService_Impl: NnVisrvSf_IManagerRootService {
 }
 
 class NnVisrvSf_IApplicationDisplayService_Impl: NnVisrvSf_IApplicationDisplayService {
-    override func getRelayService() throws -> NnsHosbinder_IHOSBinderDriver { NnsHosbinder_IHOSBinderDriver() }
+    override func getRelayService() throws -> NnsHosbinder_IHOSBinderDriver { NnsHosbinder_IHOSBinderDriver_Impl() }
     override func getSystemDisplayService() throws -> NnVisrvSf_ISystemDisplayService { NnVisrvSf_ISystemDisplayService() }
     override func getManagerDisplayService() throws -> NnVisrvSf_IManagerDisplayService { NnVisrvSf_IManagerDisplayService() }
-    override func getIndirectDisplayTransactionService() throws -> NnsHosbinder_IHOSBinderDriver { NnsHosbinder_IHOSBinderDriver() }
+    override func getIndirectDisplayTransactionService() throws -> NnsHosbinder_IHOSBinderDriver { NnsHosbinder_IHOSBinderDriver_Impl() }
     
     override func listDisplays(_ _0: Buffer<NnVi_DisplayInfo>) throws -> UInt64 { throw IpcError.unimplemented(name: "nn::visrv::sf::nn::visrv::sf::IApplicationDisplayService#ListDisplays") }
     
@@ -26,7 +26,21 @@ class NnVisrvSf_IApplicationDisplayService_Impl: NnVisrvSf_IApplicationDisplaySe
     override func closeDisplay(_ _0: UInt64) throws { throw IpcError.unimplemented(name: "nn::visrv::sf::nn::visrv::sf::IApplicationDisplayService#CloseDisplay") }
     override func setDisplayEnabled(_ _0: UInt8, _ _1: UInt64) throws { throw IpcError.unimplemented(name: "nn::visrv::sf::nn::visrv::sf::IApplicationDisplayService#SetDisplayEnabled") }
     override func getDisplayResolution(_ _0: UInt64) throws -> (UInt64, UInt64) { throw IpcError.unimplemented(name: "nn::visrv::sf::nn::visrv::sf::IApplicationDisplayService#GetDisplayResolution") }
-    override func openLayer(_ _0: NnVi_DisplayName, _ _1: UInt64, _ _2: NnApplet_AppletResourceUserId, _ _3: Pid, _ _4: Buffer<UInt8>) throws -> UInt64 { throw IpcError.unimplemented(name: "nn::visrv::sf::nn::visrv::sf::IApplicationDisplayService#OpenLayer") }
+    
+    override func openLayer(_ _0: NnVi_DisplayName, _ _1: UInt64, _ _2: NnApplet_AppletResourceUserId, _ _3: Pid, _ parcelBuf: Buffer<UInt8>) throws -> UInt64 {
+        makeParcel(parcelBuf, [UInt8](repeating: 0, count: 4)) {
+            $0.write(UInt32(2))
+            $0.write(UInt32(0))
+            $0.write(UInt32(0x20))
+            $0.write(UInt32(0))
+            $0.write(UInt32(0))
+            $0.write(UInt32(0))
+            $0.writeAll("dispdrv".utf8.map { UInt8($0) })
+            $0.write(UInt8(0))
+            $0.write(UInt64(0))
+        }
+    }
+    
     override func closeLayer(_ _0: UInt64) throws { throw IpcError.unimplemented(name: "nn::visrv::sf::nn::visrv::sf::IApplicationDisplayService#CloseLayer") }
     override func createStrayLayer(_ _0: UInt32, _ _1: UInt64, _ _2: Buffer<UInt8>) throws -> (UInt64, UInt64) { throw IpcError.unimplemented(name: "nn::visrv::sf::nn::visrv::sf::IApplicationDisplayService#CreateStrayLayer") }
     override func destroyStrayLayer(_ _0: UInt64) throws { throw IpcError.unimplemented(name: "nn::visrv::sf::nn::visrv::sf::IApplicationDisplayService#DestroyStrayLayer") }

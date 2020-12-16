@@ -124,3 +124,7 @@ extension Array {
         }
     }
 }
+
+func ord(_ c: String) -> UInt8 {
+    UInt8(c.utf8.first!)
+}
